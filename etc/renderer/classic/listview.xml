@@ -1,0 +1,16 @@
+<renderer class="Classic.ListView" extends="renderer::Classic.ItemView">
+	<set-property name="Class" value="listview"/>
+	
+	<set-property name="ColorBgSelItem" value="0"/>
+	<set-property name="ColorFgSelItem" value="0"/>
+	<set-property name="ColorFgHiliteItem" value="0"/>
+	<set-property name="ColorFgSignificantItem" value="0"/>
+	<set-property name="ColorBgSignificantItem" value="0"/>
+
+	<!-- <property name="ColorFg3DBody" id="28672" type="color" default="0xFF000000"/> -->
+	<property name="ColorBg3DBody" id="28928" type="color" default="0xFFCED3D6"/>
+	<!-- NCS_BGC_DISABLED_ITEM -->
+	<property name="ColorBgDisable" id="28932" type="color" default="0xFFCED3D6"/>
+	<!-- NCS_FGC_DISABLED_ITEM -->
+	<property name="ColorTextDisable" id="28676" type="color" default="0xFF848284"/>
+</renderer>

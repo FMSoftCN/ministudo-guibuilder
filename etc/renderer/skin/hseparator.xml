@@ -1,0 +1,2 @@
+<renderer class="Skin.HSeparator" extends="renderer::Skin.Separator">
+</renderer>

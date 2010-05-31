@@ -1,0 +1,2249 @@
+
+#include <minigui/common.h>                                   
+#include <minigui/minigui.h>        
+#include <minigui/gdi.h>      
+#include <minigui/window.h>     
+#include <minigui/control.h>     
+
+static CTRLDATA _FontManager_controls[] = {
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			304, /* x */
+			369, /* y */
+			80, /* w */
+			30, /* h */
+			1, /* id */
+			"OK", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			403, /* x */
+			369, /* y */
+			80, /* w */
+			30, /* h */
+			2, /* id */
+			"Cancel", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			206, /* x */
+			369, /* y */
+			80, /* w */
+			30, /* h */
+			163, /* id */
+			"Import", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"listview", /* class_name */
+			0x08410001, /* style */
+			20, /* x */
+			32, /* y */
+			464, /* w */
+			195, /* h */
+			161, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010000, /* style */
+			20, /* x */
+			237, /* y */
+			464, /* w */
+			114, /* h */
+			11, /* id */
+			"Default Fonts for Project", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010010, /* style */
+			21, /* x */
+			8, /* y */
+			381, /* w */
+			23, /* h */
+			12, /* id */
+			"System Device Font Name:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010030, /* style */
+			28, /* x */
+			260, /* y */
+			106, /* w */
+			30, /* h */
+			13, /* id */
+			"Caption Font:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010030, /* style */
+			26, /* x */
+			302, /* y */
+			107, /* w */
+			30, /* h */
+			14, /* id */
+			"Client Font:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"sledit", /* class_name */
+			0x08410000, /* style */
+			138, /* x */
+			261, /* y */
+			264, /* w */
+			30, /* h */
+			166, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"sledit", /* class_name */
+			0x08410000, /* style */
+			138, /* x */
+			303, /* y */
+			264, /* w */
+			30, /* h */
+			168, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			415, /* x */
+			261, /* y */
+			56, /* w */
+			30, /* h */
+			167, /* id */
+			"...", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			415, /* x */
+			303, /* y */
+			56, /* w */
+			30, /* h */
+			169, /* id */
+			"...", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+};
+static DLGTEMPLATE _FontManager_templ = {
+	0x30C00000,/* style */
+	0, /* exstyle */
+	0, /* x */
+	0, /* y */
+	506, /* w */
+	440, /* h */
+	"Font Management", /* caption */
+	0, /* hIcon */
+	0, /* hMenu */
+	sizeof(_FontManager_controls)/sizeof(CTRLDATA), /* controlnr */
+	_FontManager_controls, /* controls */
+	0 /* dwAddData */
+};
+
+static CTRLDATA _ImportImage_controls[] = {
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			44, /* x */
+			128, /* y */
+			100, /* w */
+			32, /* h */
+			202, /* id */
+			"Import", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			176, /* x */
+			128, /* y */
+			100, /* w */
+			32, /* h */
+			2, /* id */
+			"Cancel", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"sledit", /* class_name */
+			0x08410000, /* style */
+			34, /* x */
+			62, /* y */
+			252, /* w */
+			30, /* h */
+			201, /* id */
+			"IDB_IMG_FILENAME", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010010, /* style */
+			36, /* x */
+			28, /* y */
+			203, /* w */
+			30, /* h */
+			12, /* id */
+			"Input Image ID Name:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+};
+static DLGTEMPLATE _ImportImage_templ = {
+	0x38C00000,/* style */
+	0, /* exstyle */
+	0, /* x */
+	0, /* y */
+	325, /* w */
+	214, /* h */
+	"Import Image Resource", /* caption */
+	0, /* hIcon */
+	0, /* hMenu */
+	sizeof(_ImportImage_controls)/sizeof(CTRLDATA), /* controlnr */
+	_ImportImage_controls, /* controls */
+	0 /* dwAddData */
+};
+
+static CTRLDATA _NewFile_controls[] = {
+		{
+			"propsheet", /* class_name */
+			0x08010000, /* style */
+			24, /* x */
+			40, /* y */
+			476, /* w */
+			220, /* h */
+			100, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"sledit", /* class_name */
+			0x08410000, /* style */
+			173, /* x */
+			280, /* y */
+			327, /* w */
+			29, /* h */
+			101, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010010, /* style */
+			24, /* x */
+			287, /* y */
+			144, /* w */
+			14, /* h */
+			11, /* id */
+			"Input File Name:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			264, /* x */
+			320, /* y */
+			100, /* w */
+			34, /* h */
+			1, /* id */
+			"OK", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			400, /* x */
+			320, /* y */
+			100, /* w */
+			34, /* h */
+			2, /* id */
+			"Cancel", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010003, /* style */
+			20, /* x */
+			320, /* y */
+			200, /* w */
+			28, /* h */
+			102, /* id */
+			"Overwrite exist file", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010010, /* style */
+			24, /* x */
+			16, /* y */
+			344, /* w */
+			21, /* h */
+			15, /* id */
+			"Please select a window template:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+};
+static DLGTEMPLATE _NewFile_templ = {
+	0x30C00000,/* style */
+	0, /* exstyle */
+	0, /* x */
+	0, /* y */
+	526, /* w */
+	404, /* h */
+	"New File ...", /* caption */
+	0, /* hIcon */
+	0, /* hMenu */
+	sizeof(_NewFile_controls)/sizeof(CTRLDATA), /* controlnr */
+	_NewFile_controls, /* controls */
+	0 /* dwAddData */
+};
+
+static CTRLDATA _NewRenderer_controls[] = {
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			84, /* x */
+			228, /* y */
+			100, /* w */
+			32, /* h */
+			1, /* id */
+			"OK", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			228, /* x */
+			228, /* y */
+			100, /* w */
+			32, /* h */
+			2, /* id */
+			"Cancel", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010000, /* style */
+			28, /* x */
+			20, /* y */
+			344, /* w */
+			184, /* h */
+			15, /* id */
+			"New Renderer", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010030, /* style */
+			37, /* x */
+			65, /* y */
+			124, /* w */
+			32, /* h */
+			16, /* id */
+			"Renderer Type:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010030, /* style */
+			37, /* x */
+			113, /* y */
+			124, /* w */
+			32, /* h */
+			17, /* id */
+			"Control Type:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010030, /* style */
+			37, /* x */
+			157, /* y */
+			124, /* w */
+			32, /* h */
+			18, /* id */
+			"ID Name:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"sledit", /* class_name */
+			0x08410000, /* style */
+			168, /* x */
+			152, /* y */
+			176, /* w */
+			28, /* h */
+			120, /* id */
+			"IDR_", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"combobox", /* class_name */
+			0x0801000B, /* style */
+			168, /* x */
+			60, /* y */
+			180, /* w */
+			28, /* h */
+			100, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"combobox", /* class_name */
+			0x0801000B, /* style */
+			168, /* x */
+			108, /* y */
+			180, /* w */
+			28, /* h */
+			110, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+};
+static DLGTEMPLATE _NewRenderer_templ = {
+	0x30C00000,/* style */
+	0, /* exstyle */
+	0, /* x */
+	0, /* y */
+	401, /* w */
+	310, /* h */
+	"Create New Renderer", /* caption */
+	0, /* hIcon */
+	0, /* hMenu */
+	sizeof(_NewRenderer_controls)/sizeof(CTRLDATA), /* controlnr */
+	_NewRenderer_controls, /* controls */
+	0 /* dwAddData */
+};
+
+static CTRLDATA _NewRendererSet_controls[] = {
+		{
+			"static", /* class_name */
+			0x08010000, /* style */
+			28, /* x */
+			20, /* y */
+			344, /* w */
+			169, /* h */
+			9, /* id */
+			"New Renderer Set", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			84, /* x */
+			224, /* y */
+			100, /* w */
+			32, /* h */
+			1, /* id */
+			"OK", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			224, /* x */
+			224, /* y */
+			100, /* w */
+			32, /* h */
+			2, /* id */
+			"Cancel", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010030, /* style */
+			34, /* x */
+			73, /* y */
+			125, /* w */
+			30, /* h */
+			12, /* id */
+			"Renderer Type:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010030, /* style */
+			34, /* x */
+			122, /* y */
+			125, /* w */
+			30, /* h */
+			13, /* id */
+			"Set ID Name:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"sledit", /* class_name */
+			0x08410000, /* style */
+			168, /* x */
+			117, /* y */
+			176, /* w */
+			28, /* h */
+			120, /* id */
+			"IDRS_", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"combobox", /* class_name */
+			0x0801000B, /* style */
+			168, /* x */
+			68, /* y */
+			176, /* w */
+			28, /* h */
+			100, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+};
+static DLGTEMPLATE _NewRendererSet_templ = {
+	0x30C00000,/* style */
+	0, /* exstyle */
+	0, /* x */
+	0, /* y */
+	401, /* w */
+	310, /* h */
+	"Create New Renderer Set", /* caption */
+	0, /* hIcon */
+	0, /* hMenu */
+	sizeof(_NewRendererSet_controls)/sizeof(CTRLDATA), /* controlnr */
+	_NewRendererSet_controls, /* controls */
+	0 /* dwAddData */
+};
+
+static CTRLDATA _AddRenderer_controls[] = {
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			50, /* x */
+			230, /* y */
+			80, /* w */
+			30, /* h */
+			1, /* id */
+			"OK", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			270, /* x */
+			230, /* y */
+			80, /* w */
+			30, /* h */
+			2, /* id */
+			"Cancel", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"listbox", /* class_name */
+			0x08410009, /* style */
+			17, /* x */
+			19, /* y */
+			355, /* w */
+			190, /* h */
+			100, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+};
+static DLGTEMPLATE _AddRenderer_templ = {
+	0x30C00000,/* style */
+	0, /* exstyle */
+	0, /* x */
+	0, /* y */
+	400, /* w */
+	310, /* h */
+	"Main Frame", /* caption */
+	0, /* hIcon */
+	0, /* hMenu */
+	sizeof(_AddRenderer_controls)/sizeof(CTRLDATA), /* controlnr */
+	_AddRenderer_controls, /* controls */
+	0 /* dwAddData */
+};
+
+static CTRLDATA _SetDefaultRenderer_controls[] = {
+		{
+			"listbox", /* class_name */
+			0x08410001, /* style */
+			24, /* x */
+			44, /* y */
+			172, /* w */
+			152, /* h */
+			100, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010010, /* style */
+			24, /* x */
+			16, /* y */
+			172, /* w */
+			24, /* h */
+			10, /* id */
+			"Select renderer:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			224, /* x */
+			46, /* y */
+			100, /* w */
+			32, /* h */
+			1, /* id */
+			"OK", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			224, /* x */
+			94, /* y */
+			100, /* w */
+			32, /* h */
+			2, /* id */
+			"Cancel", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+};
+static DLGTEMPLATE _SetDefaultRenderer_templ = {
+	0x38C00000,/* style */
+	0, /* exstyle */
+	0, /* x */
+	0, /* y */
+	348, /* w */
+	244, /* h */
+	"Set Default Renderer", /* caption */
+	0, /* hIcon */
+	0, /* hMenu */
+	sizeof(_SetDefaultRenderer_controls)/sizeof(CTRLDATA), /* controlnr */
+	_SetDefaultRenderer_controls, /* controls */
+	0 /* dwAddData */
+};
+
+static CTRLDATA _SetScreenSize_controls[] = {
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			44, /* x */
+			174, /* y */
+			90, /* w */
+			32, /* h */
+			1, /* id */
+			"OK", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			164, /* x */
+			174, /* y */
+			90, /* w */
+			32, /* h */
+			2, /* id */
+			"Cancel", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"sledit", /* class_name */
+			0x08410000, /* style */
+			132, /* x */
+			37, /* y */
+			122, /* w */
+			30, /* h */
+			100, /* id */
+			"SlEdit1", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"sledit", /* class_name */
+			0x08410000, /* style */
+			132, /* x */
+			82, /* y */
+			122, /* w */
+			30, /* h */
+			101, /* id */
+			"SlEdit1", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010030, /* style */
+			27, /* x */
+			33, /* y */
+			80, /* w */
+			34, /* h */
+			12, /* id */
+			"Width:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010030, /* style */
+			27, /* x */
+			122, /* y */
+			80, /* w */
+			34, /* h */
+			11, /* id */
+			"Depth:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010030, /* style */
+			27, /* x */
+			80, /* y */
+			80, /* w */
+			34, /* h */
+			13, /* id */
+			"Height:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"combobox", /* class_name */
+			0x0801100B, /* style */
+			132, /* x */
+			127, /* y */
+			122, /* w */
+			25, /* h */
+			15, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+};
+static DLGTEMPLATE _SetScreenSize_templ = {
+	0x38C00000,/* style */
+	0, /* exstyle */
+	0, /* x */
+	0, /* y */
+	300, /* w */
+	250, /* h */
+	"Set Screen Size", /* caption */
+	0, /* hIcon */
+	0, /* hMenu */
+	sizeof(_SetScreenSize_controls)/sizeof(CTRLDATA), /* controlnr */
+	_SetScreenSize_controls, /* controls */
+	0 /* dwAddData */
+};
+
+static CTRLDATA _AddLang_controls[] = {
+		{
+			"combobox", /* class_name */
+			0x0801000B, /* style */
+			29, /* x */
+			46, /* y */
+			215, /* w */
+			28, /* h */
+			2100, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			36, /* x */
+			96, /* y */
+			90, /* w */
+			32, /* h */
+			1, /* id */
+			"OK", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			143, /* x */
+			96, /* y */
+			90, /* w */
+			32, /* h */
+			2, /* id */
+			"Cancel", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010000, /* style */
+			25, /* x */
+			16, /* y */
+			146, /* w */
+			28, /* h */
+			17, /* id */
+			"Select Language:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+};
+static DLGTEMPLATE _AddLang_templ = {
+	0x30C00000,/* style */
+	0, /* exstyle */
+	0, /* x */
+	0, /* y */
+	276, /* w */
+	168, /* h */
+	"Add Language", /* caption */
+	0, /* hIcon */
+	0, /* hMenu */
+	sizeof(_AddLang_controls)/sizeof(CTRLDATA), /* controlnr */
+	_AddLang_controls, /* controls */
+	0 /* dwAddData */
+};
+static CTRLDATA _TextProfile_controls[] = {
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			316, /* x */
+			29, /* y */
+			98, /* w */
+			30, /* h */
+			300, /* id */
+			"Add", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			317, /* x */
+			71, /* y */
+			98, /* w */
+			30, /* h */
+			400, /* id */
+			"Delete", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			317, /* x */
+			111, /* y */
+			98, /* w */
+			30, /* h */
+			500, /* id */
+			"Set Default", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			317, /* x */
+			155, /* y */
+			98, /* w */
+			30, /* h */
+			600, /* id */
+			"Set Current", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			192, /* x */
+			232, /* y */
+			100, /* w */
+			32, /* h */
+			1, /* id */
+			"OK", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			315, /* x */
+			232, /* y */
+			100, /* w */
+			32, /* h */
+			2, /* id */
+			"Cancel", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"listview", /* class_name */
+			0x084D0001, /* style */
+			24, /* x */
+			28, /* y */
+			269, /* w */
+			168, /* h */
+			100, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+};
+static DLGTEMPLATE _TextProfile_templ = {
+	0x30C00000,/* style */
+	0, /* exstyle */
+	0, /* x */
+	0, /* y */
+	443, /* w */
+	303, /* h */
+	"Profile ...", /* caption */
+	0, /* hIcon */
+	0, /* hMenu */
+	sizeof(_TextProfile_controls)/sizeof(CTRLDATA), /* controlnr */
+	_TextProfile_controls, /* controls */
+	0 /* dwAddData */
+};
+
+static CTRLDATA _ConnectEvent_controls[] = {
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			303, /* x */
+			231, /* y */
+			80, /* w */
+			30, /* h */
+			2, /* id */
+			"Cancel", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"combobox", /* class_name */
+			0x0801000B, /* style */
+			15, /* x */
+			32, /* y */
+			273, /* w */
+			25, /* h */
+			103, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			303, /* x */
+			33, /* y */
+			80, /* w */
+			30, /* h */
+			107, /* id */
+			"Add", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			303, /* x */
+			72, /* y */
+			80, /* w */
+			30, /* h */
+			106, /* id */
+			"Delete", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			303, /* x */
+			111, /* y */
+			80, /* w */
+			30, /* h */
+			116, /* id */
+			"Modify", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			303, /* x */
+			150, /* y */
+			80, /* w */
+			30, /* h */
+			117, /* id */
+			"Source", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010010, /* style */
+			15, /* x */
+			5, /* y */
+			250, /* w */
+			23, /* h */
+			14, /* id */
+			"Event Listener:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"listview", /* class_name */
+			0x084D0001, /* style */
+			15, /* x */
+			63, /* y */
+			273, /* w */
+			198, /* h */
+			115, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			303, /* x */
+			189, /* y */
+			80, /* w */
+			30, /* h */
+			1, /* id */
+			"OK", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+};
+static DLGTEMPLATE _ConnectEvent_templ = {
+	0x30C00000,/* style */
+	0, /* exstyle */
+	0, /* x */
+	0, /* y */
+	407, /* w */
+	320, /* h */
+	"Connect Events", /* caption */
+	0, /* hIcon */
+	0, /* hMenu */
+	sizeof(_ConnectEvent_controls)/sizeof(CTRLDATA), /* controlnr */
+	_ConnectEvent_controls, /* controls */
+	0 /* dwAddData */
+};
+static CTRLDATA _SelectEvent_controls[] = {
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			137, /* x */
+			323, /* y */
+			80, /* w */
+			30, /* h */
+			1, /* id */
+			"OK", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			248, /* x */
+			324, /* y */
+			80, /* w */
+			30, /* h */
+			2, /* id */
+			"Cancel", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010010, /* style */
+			22, /* x */
+			13, /* y */
+			323, /* w */
+			22, /* h */
+			17, /* id */
+			"Step 1: Select An Event:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"combobox", /* class_name */
+			0x0801000B, /* style */
+			22, /* x */
+			40, /* y */
+			323, /* w */
+			25, /* h */
+			102, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"listbox", /* class_name */
+			0x08410001, /* style */
+			22, /* x */
+			70, /* y */
+			323, /* w */
+			127, /* h */
+			105, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010010, /* style */
+			22, /* x */
+			200, /* y */
+			323, /* w */
+			22, /* h */
+			20, /* id */
+			"Step 2: Input Event Name:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"sledit", /* class_name */
+			0x08410000, /* style */
+			22, /* x */
+			225, /* y */
+			323, /* w */
+			30, /* h */
+			108, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010010, /* style */
+			22, /* x */
+			262, /* y */
+			323, /* w */
+			60, /* h */
+			22, /* id */
+			"Note: The Event Name Must Be a Validate C Function Name.", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+};
+static DLGTEMPLATE _SelectEvent_templ = {
+	0x30C30000,/* style */
+	0, /* exstyle */
+	0, /* x */
+	0, /* y */
+	396, /* w */
+	403, /* h */
+	"Select Event", /* caption */
+	0, /* hIcon */
+	0, /* hMenu */
+	sizeof(_SelectEvent_controls)/sizeof(CTRLDATA), /* controlnr */
+	_SelectEvent_controls, /* controls */
+	0 /* dwAddData */
+};
+static CTRLDATA _InputEventName_controls[] = {
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			105, /* x */
+			163, /* y */
+			80, /* w */
+			30, /* h */
+			1, /* id */
+			"OK", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			210, /* x */
+			163, /* y */
+			80, /* w */
+			30, /* h */
+			2, /* id */
+			"Cancel", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010010, /* style */
+			13, /* x */
+			6, /* y */
+			271, /* w */
+			22, /* h */
+			23, /* id */
+			"Input Event Name:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"sledit", /* class_name */
+			0x08410000, /* style */
+			13, /* x */
+			37, /* y */
+			271, /* w */
+			30, /* h */
+			120, /* id */
+			"SlEdit2", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010010, /* style */
+			13, /* x */
+			82, /* y */
+			271, /* w */
+			58, /* h */
+			25, /* id */
+			"Note: The Function Name Must Be A Validate C Function Name.", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+};
+static DLGTEMPLATE _InputEventName_templ = {
+	0x30C00000,/* style */
+	0, /* exstyle */
+	0, /* x */
+	0, /* y */
+	333, /* w */
+	245, /* h */
+	"Input Event Name", /* caption */
+	0, /* hIcon */
+	0, /* hMenu */
+	sizeof(_InputEventName_controls)/sizeof(CTRLDATA), /* controlnr */
+	_InputEventName_controls, /* controls */
+	0 /* dwAddData */
+};
+
+static CTRLDATA _FontSelect_controls[] = {
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			242, /* x */
+			344, /* y */
+			80, /* w */
+			30, /* h */
+			530, /* id */
+			"OK", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			344, /* x */
+			344, /* y */
+			80, /* w */
+			30, /* h */
+			531, /* id */
+			"Cancel", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010010, /* style */
+			12, /* x */
+			8, /* y */
+			100, /* w */
+			24, /* h */
+			521, /* id */
+			"File Path:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"combobox", /* class_name */
+			0x0801000B, /* style */
+			107, /* x */
+			8, /* y */
+			269, /* w */
+			25, /* h */
+			522, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			383, /* x */
+			8, /* y */
+			46, /* w */
+			25, /* h */
+			523, /* id */
+			"UP", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"listview", /* class_name */
+			0x084D0001, /* style */
+			12, /* x */
+			41, /* y */
+			417, /* w */
+			216, /* h */
+			524, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010010, /* style */
+			12, /* x */
+			274, /* y */
+			100, /* w */
+			24, /* h */
+			525, /* id */
+			"File Name:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010010, /* style */
+			12, /* x */
+			304, /* y */
+			100, /* w */
+			24, /* h */
+			527, /* id */
+			"File Type:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"sledit", /* class_name */
+			0x08410000, /* style */
+			112, /* x */
+			269, /* y */
+			317, /* w */
+			25, /* h */
+			526, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"combobox", /* class_name */
+			0x0801000B, /* style */
+			112, /* x */
+			305, /* y */
+			317, /* w */
+			25, /* h */
+			528, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010003, /* style */
+			8, /* x */
+			344, /* y */
+			120, /* w */
+			30, /* h */
+			529, /* id */
+			"Hide File", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+};
+static DLGTEMPLATE _FontSelect_templ = {
+	0x38C00000,/* style */
+	0, /* exstyle */
+	0, /* x */
+	0, /* y */
+	458, /* w */
+	417, /* h */
+	"Open Or Save File", /* caption */
+	0, /* hIcon */
+	0, /* hMenu */
+	sizeof(_FontSelect_controls)/sizeof(CTRLDATA), /* controlnr */
+	_FontSelect_controls, /* controls */
+	0 /* dwAddData */
+};
+
+static CTRLDATA _IDRangeEditor_controls[] = {
+		{
+			"static", /* class_name */
+			0x08010010, /* style */
+			6, /* x */
+			7, /* y */
+			75, /* w */
+			23, /* h */
+			9, /* id */
+			"Res Type:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"combobox", /* class_name */
+			0x0801000B, /* style */
+			88, /* x */
+			8, /* y */
+			310, /* w */
+			24, /* h */
+			10, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"listview", /* class_name */
+			0x084D0001, /* style */
+			8, /* x */
+			48, /* y */
+			391, /* w */
+			108, /* h */
+			11, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			7, /* x */
+			173, /* y */
+			123, /* w */
+			30, /* h */
+			12, /* id */
+			"New Range", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			318, /* x */
+			173, /* y */
+			80, /* w */
+			30, /* h */
+			13, /* id */
+			"Exit", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			140, /* x */
+			173, /* y */
+			123, /* w */
+			30, /* h */
+			14, /* id */
+			"Extend Range", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+};
+static DLGTEMPLATE _IDRangeEditor_templ = {
+	0x38C00000,/* style */
+	0, /* exstyle */
+	0, /* x */
+	0, /* y */
+	414, /* w */
+	252, /* h */
+	"ID Range Editor", /* caption */
+	0, /* hIcon */
+	0, /* hMenu */
+	sizeof(_IDRangeEditor_controls)/sizeof(CTRLDATA), /* controlnr */
+	_IDRangeEditor_controls, /* controls */
+	0 /* dwAddData */
+};
+static CTRLDATA _NewIDRange_controls[] = {
+		{
+			"listview", /* class_name */
+			0x084D0001, /* style */
+			8, /* x */
+			67, /* y */
+			344, /* w */
+			96, /* h */
+			24, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010010, /* style */
+			8, /* x */
+			40, /* y */
+			339, /* w */
+			25, /* h */
+			25, /* id */
+			"Free Range:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			274, /* x */
+			301, /* y */
+			82, /* w */
+			31, /* h */
+			1, /* id */
+			"OK", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"sledit", /* class_name */
+			0x08410000, /* style */
+			92, /* x */
+			204, /* y */
+			115, /* w */
+			24, /* h */
+			38, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"sledit", /* class_name */
+			0x08410000, /* style */
+			236, /* x */
+			204, /* y */
+			115, /* w */
+			24, /* h */
+			39, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010000, /* style */
+			212, /* x */
+			212, /* y */
+			23, /* w */
+			10, /* h */
+			31, /* id */
+			"~", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"combobox", /* class_name */
+			0x0801000B, /* style */
+			92, /* x */
+			267, /* y */
+			263, /* w */
+			26, /* h */
+			33, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010010, /* style */
+			8, /* x */
+			207, /* y */
+			76, /* w */
+			25, /* h */
+			34, /* id */
+			"Range:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010010, /* style */
+			8, /* x */
+			267, /* y */
+			76, /* w */
+			25, /* h */
+			35, /* id */
+			"User:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			175, /* x */
+			301, /* y */
+			82, /* w */
+			31, /* h */
+			2, /* id */
+			"Cancel", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x0C010010, /* style */
+			9, /* x */
+			6, /* y */
+			346, /* w */
+			34, /* h */
+			26, /* id */
+			"Step 1: Select a Free Range As You New Range.", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x0C010010, /* style */
+			7, /* x */
+			169, /* y */
+			346, /* w */
+			34, /* h */
+			29, /* id */
+			"Step 2: Input A Range. You Should Avoid Conflict With Other Developers", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x0C010010, /* style */
+			6, /* x */
+			233, /* y */
+			346, /* w */
+			34, /* h */
+			30, /* id */
+			"Step 3: Select Or Input a User Name Who Would Use The Range", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			7, /* x */
+			301, /* y */
+			163, /* w */
+			31, /* h */
+			36, /* id */
+			"Learn More ID Range", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+};
+static DLGTEMPLATE _NewIDRange_templ = {
+	0x28C00000,/* style */
+	0, /* exstyle */
+	0, /* x */
+	0, /* y */
+	376, /* w */
+	375, /* h */
+	"New Range", /* caption */
+	0, /* hIcon */
+	0, /* hMenu */
+	sizeof(_NewIDRange_controls)/sizeof(CTRLDATA), /* controlnr */
+	_NewIDRange_controls, /* controls */
+	0 /* dwAddData */
+};
+static CTRLDATA _ExtendIDRange_controls[] = {
+		{
+			"sledit", /* class_name */
+			0x08410000, /* style */
+			88, /* x */
+			9, /* y */
+			83, /* w */
+			24, /* h */
+			38, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"sledit", /* class_name */
+			0x08410000, /* style */
+			204, /* x */
+			9, /* y */
+			81, /* w */
+			24, /* h */
+			39, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010000, /* style */
+			176, /* x */
+			16, /* y */
+			23, /* w */
+			10, /* h */
+			40, /* id */
+			"~", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			86, /* x */
+			60, /* y */
+			82, /* w */
+			31, /* h */
+			1, /* id */
+			"OK", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			206, /* x */
+			59, /* y */
+			82, /* w */
+			31, /* h */
+			2, /* id */
+			"Cancel", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010030, /* style */
+			3, /* x */
+			9, /* y */
+			80, /* w */
+			25, /* h */
+			45, /* id */
+			"100<", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010010, /* style */
+			290, /* x */
+			9, /* y */
+			89, /* w */
+			25, /* h */
+			46, /* id */
+			">=1000", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+};
+static DLGTEMPLATE _ExtendIDRange_templ = {
+	0x28C00000,/* style */
+	0, /* exstyle */
+	0, /* x */
+	0, /* y */
+	394, /* w */
+	141, /* h */
+	"Extend Range", /* caption */
+	0, /* hIcon */
+	0, /* hMenu */
+	sizeof(_ExtendIDRange_controls)/sizeof(CTRLDATA), /* controlnr */
+	_ExtendIDRange_controls, /* controls */
+	0 /* dwAddData */
+};
+
+static CTRLDATA _About_controls[] = {
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			128, /* x */
+			220, /* y */
+			90, /* w */
+			32, /* h */
+			1, /* id */
+			"OK", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010009, /* style */
+			40, /* x */
+			12, /* y */
+			247, /* w */
+			52, /* h */
+			104, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010020, /* style */
+			24, /* x */
+			176, /* y */
+			296, /* w */
+			40, /* h */
+			10, /* id */
+			"Copyright (c) 2010 Beijing Feynman Software Technology Co., Ltd.", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010030, /* style */
+			24, /* x */
+			108, /* y */
+			72, /* w */
+			28, /* h */
+			11, /* id */
+			"Version:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010030, /* style */
+			36, /* x */
+			140, /* y */
+			60, /* w */
+			24, /* h */
+			12, /* id */
+			"Build:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010000, /* style */
+			112, /* x */
+			108, /* y */
+			160, /* w */
+			28, /* h */
+			100, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010000, /* style */
+			112, /* x */
+			140, /* y */
+			159, /* w */
+			24, /* h */
+			101, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010020, /* style */
+			36, /* x */
+			76, /* y */
+			253, /* w */
+			24, /* h */
+			13, /* id */
+			"A GUI Builder for MiniGUI.", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+};
+static DLGTEMPLATE _About_templ = {
+	0x38C00000,/* style */
+	0, /* exstyle */
+	0, /* x */
+	0, /* y */
+	352, /* w */
+	304, /* h */
+	"About GUI Builder", /* caption */
+	0, /* hIcon */
+	0, /* hMenu */
+	sizeof(_About_controls)/sizeof(CTRLDATA), /* controlnr */
+	_About_controls, /* controls */
+	0 /* dwAddData */
+};
+
+
+static DLGTEMPLATE* templs[] = {
+	&_FontManager_templ,
+	&_ImportImage_templ,
+	&_NewFile_templ,
+	&_NewRenderer_templ,
+	&_NewRendererSet_templ,
+	&_AddRenderer_templ,
+	&_SetDefaultRenderer_templ,
+	&_SetScreenSize_templ,
+	&_AddLang_templ,
+	&_TextProfile_templ,
+	&_ConnectEvent_templ,
+	&_SelectEvent_templ,
+	&_InputEventName_templ,
+	&_FontSelect_templ,
+	&_IDRangeEditor_templ,
+	&_NewIDRange_templ,
+	&_ExtendIDRange_templ,
+	&_About_templ,
+};
+
+
+DLGTEMPLATE * GetDlgTemplate(int id)
+{
+	int count = sizeof(templs) / sizeof(DLGTEMPLATE*);
+	id -= 10000;
+	if(id < 0 || id >= count)
+		return NULL;
+
+	if(templs[id])
+		templs[id]->dwStyle &= ~WS_VISIBLE;
+	
+	return templs[id];
+}
+
+int AutoCenterDlgProc(HWND hwnd, int message, WPARAM wParam, LPARAM lParam)
+{
+	int ret = DefaultDialogProc(hwnd, message, wParam, lParam);
+
+	if(message == MSG_CREATE)
+	{
+		RECT rcSelf, rcParent;
+		HWND hMain;
+		int x, y;
+		GetWindowRect(hwnd, &rcSelf);
+		hMain = GetMainWindowHandle(hwnd);
+		if(hMain == hwnd){
+			rcParent = g_rcScr;
+		}
+		else
+		{
+			GetWindowRect(hwnd, &rcParent);
+		}
+		
+		x = rcParent.left + (RECTW(rcParent) - RECTW(rcSelf)) / 3;
+		y = rcParent.top + (RECTH(rcParent) - RECTH(rcSelf)) / 3;
+		MoveWindow(hwnd, x, y, RECTW(rcSelf), RECTH(rcSelf), TRUE);
+	}
+	return ret;
+}
+
+
+PCTRLDATA GetControlData(DLGTEMPLATE *tmpl, int id)
+{
+	PCTRLDATA pctrl;
+	int i;
+	if(!tmpl)
+		return NULL;
+
+	for(i = 0; i < tmpl->controlnr; i++)
+	{
+		pctrl = &tmpl->controls[i];
+		if(pctrl->id == id)
+			return pctrl;
+	}
+	return NULL;
+}
+

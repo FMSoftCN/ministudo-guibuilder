@@ -1,0 +1,7 @@
+<renderer class="Skin.RadioButton" extends="renderer::Skin.CheckButton">
+	<set-property name="Class" value="radiobutton"/>
+	
+	<set-property name="ImageCheckButton" value="0"/>
+	<!--  -->
+  <property name="ImageRadioButton" id="32773" type="image"/>
+</renderer>

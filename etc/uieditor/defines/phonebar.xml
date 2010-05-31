@@ -1,0 +1,18 @@
+<window class="PhoneBar" extends="Widget">
+	<set-property name="Class" value="phonebar"/>
+	<default-property name="Width" value="130"/>
+	<default-property name="Height" value="20"/>
+	<default-property name="Border" value="FALSE"/>
+	<default-property name="BgColor" value="0xFFFFFFFF"/>
+	<set-property name="BgImage" value="0"/>
+	<set-property name="BgImageMode" value="Normal"/>
+
+
+	<property name="Vert" id="2005" type="enum" default="False">
+		<enum>
+			<option name="True" value="0x8"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+	
+</window>

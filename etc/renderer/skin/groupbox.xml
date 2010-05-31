@@ -1,0 +1,5 @@
+<renderer class="Skin.GroupBox" extends="renderer::Skin.Static">
+	<set-property name="Class" value="groupbox"/>
+	<property name="ColorFrame" id="28928" type="color" default="0xFFCED3D6"/>
+</renderer>
+

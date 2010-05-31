@@ -1,0 +1,2 @@
+<renderer class="Classic.HSpinner" extends="renderer::Classic.Spinner">
+</renderer>

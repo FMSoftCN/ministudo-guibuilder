@@ -1,0 +1,6 @@
+
+<translator class="window::MenuButton" extends="window::Widget">
+
+	<set name="class" value="menubutton" type="string"/>
+
+</translator>

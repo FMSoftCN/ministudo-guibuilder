@@ -1,0 +1,5 @@
+<window class="DialogBox" extends="MainWnd">
+	<set-property name="Class" value="dialogbox"/>
+	<default-property name="Width" value="200"/>
+	<default-property name="Height" value="200"/>
+</window>

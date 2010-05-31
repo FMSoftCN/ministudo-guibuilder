@@ -1,0 +1,23 @@
+<window class="Separator" extends="Widget">
+	
+	<set-property name="Class" value="separator"/>
+	<set-property name="Border" value="False"/>
+	<set-property name="BgImage" value="0"/>
+	<set-property name="BgImageMode" value="Normal"/>
+	<set-property name="Text" value="0"/>
+	<set-property name="Font" value=""/>
+	<set-property name="Renderer" value="0"/>
+	<set-property name="Enabled" value="True"/>
+	<default-property name="Transparent" value="True"/>
+	<default-property name="Notify" value="False"/>
+	
+	
+	<property name="Direction" id="2005" type="enum">
+		<enum>
+			<option name="Horz" value="0"/>
+			<option name="Vert" value="0x4"/>
+		</enum>
+	</property>
+
+</window>
+

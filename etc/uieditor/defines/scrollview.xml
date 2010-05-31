@@ -1,0 +1,3 @@
+<window class="ScrollView" extends="ItemView">
+	<set-property name="Class" value="scrollview"/>
+</window>

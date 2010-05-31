@@ -1,0 +1,3 @@
+<translator class="window::VSpinner" extends="window::Spinner">
+	<set name="class" value="spinbox" type="string"/>
+</translator>

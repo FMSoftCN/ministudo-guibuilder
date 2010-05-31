@@ -1,0 +1,29 @@
+<translator class="window::IconView" extends="window::Widget">
+	<set name="class" value="iconview" type="string"/>
+
+	<translate>
+		<source name="Notify" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>2</True>
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="AutoSort" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>4</True> <!-- IVS_AUTOSORT -->
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="Loop" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x08</True> <!--LVS_LOOP -->
+		</enum-map>
+	</translate>
+
+</translator>
+

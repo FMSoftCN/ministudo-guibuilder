@@ -1,0 +1,105 @@
+<window class="window::MainWnd">
+	<ID>-1</ID>
+	<X>0</X>
+	<Y>0</Y>
+	<Width>458</Width>
+	<Height>417</Height>
+	<Text>Open Or Save File</Text>
+	<Border>True</Border>
+	<HasCaption>True</HasCaption>
+	<SystemMenu>True</SystemMenu>
+	<BorderType>DlgFrame</BorderType>
+	<MinimizeBox>False</MinimizeBox>
+	<MaximizeBox>False</MaximizeBox>
+	<window class="window::Button">
+		<ID name="ID_FOSD_OK" type="16384">0x40000212</ID>
+		<X>242</X>
+		<Y>344</Y>
+		<Width>80</Width>
+		<Height>30</Height>
+		<Text>OK</Text>
+		<Visible>True</Visible>
+	</window>
+	<window class="window::Button">
+		<ID name="ID_FOSD_CANCEL" type="16384">0x40000213</ID>
+		<X>344</X>
+		<Y>344</Y>
+		<Width>80</Width>
+		<Height>30</Height>
+		<Text>Cancel</Text>
+		<Visible>True</Visible>
+	</window>
+	<window class="window::Static">
+		<ID name="IDC_FOSD_PATH_NOTE" type="16384">0x40000209</ID>
+		<Align>Left</Align>
+		<X>12</X>
+		<Y>8</Y>
+		<Width>100</Width>
+		<Height>24</Height>
+		<Text>File Path:</Text>
+	</window>
+	<window class="window::Combobox">
+		<ID name="IDC_FOSD_PATH" type="16384">0x4000020a</ID>
+		<X>107</X>
+		<Y>8</Y>
+		<Width>269</Width>
+		<Height>25</Height>
+	</window>
+	<window class="window::Button">
+		<ID name="IDC_FOSD_UP" type="16384">0x4000020b</ID>
+		<X>383</X>
+		<Y>8</Y>
+		<Width>46</Width>
+		<Height>25</Height>
+		<Text>UP</Text>
+	</window>
+	<window class="window::ListView">
+		<ID name="IDC_FOSD_FILELIIST" type="16384">0x4000020c</ID>
+		<ScrollBarMode>Always</ScrollBarMode>
+		<X>12</X>
+		<Y>41</Y>
+		<Width>417</Width>
+		<Height>216</Height>
+	</window>
+	<window class="window::Static">
+		<ID name="IDC_FOSD_FILENAEME_NOTE" type="16384">0x4000020d</ID>
+		<Align>Left</Align>
+		<X>12</X>
+		<Y>274</Y>
+		<Width>100</Width>
+		<Height>24</Height>
+		<Text>File Name:</Text>
+	</window>
+	<window class="window::Static">
+		<ID name="IDC_FOSD_FILETYPE_NOTE" type="16384">0x4000020f</ID>
+		<Align>Left</Align>
+		<X>12</X>
+		<Y>304</Y>
+		<Width>100</Width>
+		<Height>24</Height>
+		<Text>File Type:</Text>
+	</window>
+	<window class="window::SlEdit">
+		<ID name="IDC_FOSD_FILENAME" type="16384">0x4000020e</ID>
+		<X>112</X>
+		<Y>269</Y>
+		<Width>317</Width>
+		<Height>25</Height>
+		<Text>SlEdit1</Text>
+	</window>
+	<window class="window::Combobox">
+		<ID name="IDC_FOSD_FILETYPE" type="16384">0x40000210</ID>
+		<X>112</X>
+		<Y>305</Y>
+		<Width>317</Width>
+		<Height>25</Height>
+	</window>
+	<window class="window::CheckButton">
+		<ID name="IDC_FOSD_ISHIDE" type="16384">0x40000211</ID>
+		<X>8</X>
+		<Y>344</Y>
+		<Width>120</Width>
+		<Height>30</Height>
+		<Text>Hide File</Text>
+	</window>
+</window>

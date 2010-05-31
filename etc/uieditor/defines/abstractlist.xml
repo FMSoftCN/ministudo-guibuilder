@@ -1,0 +1,16 @@
+<window class="AbstractList" extends="ScrollWidget">
+	<set-property name="Class" value="abstractlist"/>
+	<default-property name="BgColor" value="0xFFFFFFFF"/>
+
+	<!-- style of AbstractList-->
+	<property name="AutoSort" id="2006" type="enum" value="False">
+		<enum>
+			<option name="True" value="0x2"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+	
+	<property name="defNodeH" id="18" type="int" default="24"/>
+	<property name="textIndent" id="24" type="int" default="-1"/>
+	<property name="imageIndent" id="25" type="int" default="-1"/>
+</window>

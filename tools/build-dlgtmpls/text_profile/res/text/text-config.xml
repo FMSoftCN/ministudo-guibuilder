@@ -1,0 +1,27 @@
+<text-configuration>
+	<text status="default">
+		<lang>en</lang>
+		<country>US</country>
+		<charset>utf-8</charset>
+	</text>
+	<text status="0">
+		<lang>zh</lang>
+		<country>TW</country>
+		<charset>utf-8</charset>
+	</text>
+	<text status="0">
+		<lang>ja</lang>
+		<country>JP</country>
+		<charset>utf-8</charset>
+	</text>
+	<text status="0">
+		<lang>ko</lang>
+		<country>KO</country>
+		<charset>utf-8</charset>
+	</text>
+	<text status="0">
+		<lang>zh</lang>
+		<country>CN</country>
+		<charset>utf-8</charset>
+	</text>
+</text-configuration>

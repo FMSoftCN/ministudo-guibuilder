@@ -1,0 +1,3 @@
+<renderer class="Fashion.Slider" extends="renderer::Fashion.Widget">
+	<set-property name="Class" value="Slider"/>
+</renderer>

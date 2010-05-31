@@ -1,0 +1,83 @@
+<window class="window::MainWnd" serial-number="4206714880">
+	<ID>0x80002</ID>
+	<X>0</X>
+	<Y>0</Y>
+	<Width>300</Width>
+	<Height>250</Height>
+	<Text>0x00022712</Text>
+	<Border>True</Border>
+	<HasCaption>True</HasCaption>
+	<SystemMenu>True</SystemMenu>
+	<BorderType>DlgFrame</BorderType>
+	<MinimizeBox>False</MinimizeBox>
+	<MaximizeBox>False</MaximizeBox>
+	<window class="window::Button" serial-number="4181139456">
+		<ID>0x40000001</ID>
+		<X>44</X>
+		<Y>174</Y>
+		<Width>90</Width>
+		<Height>32</Height>
+		<Text>0x00022713</Text>
+		<Visible>True</Visible>
+	</window>
+	<window class="window::Button" serial-number="4223623168">
+		<ID>0x40000002</ID>
+		<X>164</X>
+		<Y>174</Y>
+		<Width>90</Width>
+		<Height>32</Height>
+		<Text>0x00022714</Text>
+		<Visible>True</Visible>
+	</window>
+	<window class="window::SlEdit" serial-number="3194097664">
+		<ID>0x40000064</ID>
+		<X>132</X>
+		<Y>37</Y>
+		<Width>122</Width>
+		<Height>30</Height>
+		<Text>0x00022716</Text>
+	</window>
+	<window class="window::SlEdit" serial-number="4246065152">
+		<ID>0x40000065</ID>
+		<X>132</X>
+		<Y>82</Y>
+		<Width>122</Width>
+		<Height>30</Height>
+		<Text>0x00022718</Text>
+	</window>
+	<window class="window::Static" serial-number="2133598208">
+		<ID>0x4000000c</ID>
+		<Align>Right</Align>
+		<X>27</X>
+		<Y>33</Y>
+		<Width>80</Width>
+		<Height>34</Height>
+		<Text>0x00022719</Text>
+	</window>
+	<window class="window::Static" serial-number="4152274944">
+		<ID>0x4000000b</ID>
+		<Align>Right</Align>
+		<X>27</X>
+		<Y>122</Y>
+		<Width>80</Width>
+		<Height>34</Height>
+		<Text>0x0002271A</Text>
+	</window>
+	<window class="window::Static" serial-number="2775277568">
+		<ID>0x4000000d</ID>
+		<Align>Right</Align>
+		<X>27</X>
+		<Y>80</Y>
+		<Width>80</Width>
+		<Height>34</Height>
+		<Text>0x0002271B</Text>
+	</window>
+	<window class="window::Combobox" serial-number="2080251904">
+		<ID>0x4000000f</ID>
+		<X>132</X>
+		<Y>127</Y>
+		<Width>122</Width>
+		<Height>25</Height>
+		<ReadOnly>True</ReadOnly>
+	</window>
+</window>

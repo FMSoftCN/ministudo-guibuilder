@@ -1,0 +1,18 @@
+<renderer class="Skin.ScrollWidget" extends="renderer::Skin.Widget">
+	<set-property name="Class" value="scrollwidget"/>
+	
+	<!-- WE_LFSKIN_SCROLLBAR_HSHAFT -->
+	<property name="ImageHScrollBar" id="20485" type="image"/>
+	
+	<!--WE_LFSKIN_SCROLLBAR_VSHAFT  -->
+	<property name="ImageVScrollBar" id="20483" type="image"/>
+	
+	<!-- WE_LFSKIN_SCROLLBAR_ARROWS -->
+	<property name="ImageSbArrows" id="20487" type="image"/>
+	
+	<!-- WE_LFSKIN_SCROLLBAR_HTHUMB -->
+	<property name="ImageHThumb" id="20486" type="image"/>
+	
+	<!-- WE_LFSKIN_SCROLLBAR_VTHUMB -->
+	<property name="ImageVThumb" id="20484" type="image"/>
+</renderer>

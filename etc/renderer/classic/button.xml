@@ -1,0 +1,14 @@
+<renderer class="Classic.Button" extends="renderer::Classic.Widget">
+    <set-property name="Class" value="button" />
+
+		<set-property name="ColorFgWindow" value="0"/>
+		<set-property name="ColorBgWindow" value="0"/>
+		
+		<property name="ColorFg3DBody" id="28672" type="color" default="0xFF000000"/>
+		<property name="ColorBg3DBody" id="28928" type="color" default="0xFFCED3D6"/>
+		<!-- NCS_BGC_DISABLED_ITEM -->
+		<property name="ColorBgDisable" id="28932" type="color" default="0xFFCED3D6"/>
+		<!-- NCS_FGC_DISABLED_ITEM -->
+		<property name="ColorTextDisable" id="28676" type="color" default="0xFF848284"/>
+
+</renderer>

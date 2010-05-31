@@ -1,0 +1,12 @@
+<component class="InvisibleComponent">
+
+	<property name="Class" id="1000" type="string"/>
+	<property name="X" type="int" default="0"/>
+	<property name="Y" type="int" default="0"/>
+	<property name="Width" type="int" default="30"/>
+	<property name="Height" type="int" default="30"/>
+
+	<set-property name="Width" value="24"/>
+	<set-property name="Height" value="24"/>
+
+</component>

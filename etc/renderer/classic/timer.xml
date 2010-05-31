@@ -1,0 +1,2 @@
+<renderer class="Classic.Timer" extends="renderer::Classic.InvisibleComponent">
+</renderer>

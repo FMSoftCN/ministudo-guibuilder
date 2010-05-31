@@ -1,0 +1,270 @@
+/*
+ * screen_setting_templ.c
+ *
+ *  Created on: 2009-6-26
+ *      Author: dongjunjie
+ */
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#define ID_WIDTH 100
+#define ID_HEIGHT 101
+#define ID_CBDEPTH 15
+
+#if 0
+static CTRLDATA _SetScreen_controls[] = {
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			40, /* x */
+			116, /* y */
+			80, /* w */
+			30, /* h */
+			1, /* id */
+			"OK", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			132, /* x */
+			116, /* y */
+			80, /* w */
+			30, /* h */
+			2, /* id */
+			"Cancel", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x0801000B, /* style */
+			20, /* x */
+			32, /* y */
+			76, /* w */
+			29, /* h */
+			9, /* id */
+			"Width:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x0801000B, /* style */
+			20, /* x */
+			60, /* y */
+			76, /* w */
+			24, /* h */
+			10, /* id */
+			"Height:", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"sledit", /* class_name */
+			0x08410000, /* style */
+			100, /* x */
+			28, /* y */
+			112, /* w */
+			28, /* h */
+			100, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"sledit", /* class_name */
+			0x08410000, /* style */
+			100, /* x */
+			60, /* y */
+			112, /* w */
+			28, /* h */
+			101, /* id */
+			"", /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+};
+DLGTEMPLATE _SetScreen_templ = {
+	0x38C30000,/* style */
+	0, /* exstyle */
+	146, /* x */
+	104, /* y */
+	264, /* w */
+	200, /* h */
+	"Set Screen Size", /* caption */
+	0, /* hIcon */
+	0, /* hMenu */
+	sizeof(_SetScreen_controls)/sizeof(CTRLDATA), /* controlnr */
+	_SetScreen_controls, /* controls */
+	0 /* dwAddData */
+};
+#else
+#include "dlgtmpls.h"
+#endif
+
+typedef struct ScreenSetting{
+	int width;
+	int height;
+	int depth;
+}ScreenSetting;
+
+static const char* depth_info[] = {
+	"16bpp.rgb565",
+	"16bpp.rgb555",
+	"24bpp",
+	"32bpp",
+	NULL
+};
+
+static void init_depth(HWND hcb)
+{
+	int i;
+	for(i = 0; depth_info[i]; i++)
+	{
+		SendMessage(hcb, CB_ADDSTRING, 0, (LPARAM)depth_info[i]);
+	}
+}
+
+static WNDPROC _old_edit = NULL;
+static int _number_edit_proc(HWND hwnd, int message, WPARAM wParam, LPARAM lParam)
+{
+	if(message == MSG_CHAR)
+	{
+		if( !(wParam >='0' && wParam <='9') && wParam != 127 )
+			return 0;
+	}
+
+	return _old_edit(hwnd, message, wParam, lParam);
+}
+
+static int test_screen_setting(HWND hwnd)
+{
+	char szText[100];
+	int num;
+	if(GetWindowText(hwnd,szText,sizeof(szText)-1)<=0)
+	{
+		strcpy(szText,"Please input Number!");
+		goto FAILED;
+	}
+
+	num = strtol(szText, NULL, 0);
+	if(num <= 0 || num > 600000)
+	{
+		strcpy(szText, "Please input a validate Number!");
+		goto FAILED;
+	}
+
+	return num;
+
+FAILED:
+	MessageBox(hwnd, szText,"Error", 0);
+	SetFocus(hwnd);
+	SendMessage(hwnd,EM_SELECTALL,0,0);
+	return 0;
+
+}
+
+
+static int _screen_setting_proc(HWND hwnd, int message, WPARAM wParam, LPARAM lParam)
+{
+	ScreenSetting * ss;
+	char szText[100];
+	int num;
+	HWND hWidth, hHeight;
+	switch(message)
+	{
+	case MSG_INITDIALOG:
+		ss = (ScreenSetting*)lParam;
+		SetWindowAdditionalData(hwnd, lParam);
+		_old_edit = SetWindowCallbackProc(GetDlgItem(hwnd, ID_WIDTH),_number_edit_proc);
+		SetWindowCallbackProc(GetDlgItem(hwnd, ID_HEIGHT),_number_edit_proc);
+		sprintf(szText,"%d",ss->width);
+		SetDlgItemText(hwnd, ID_WIDTH, szText);
+		sprintf(szText,"%d", ss->height);
+		SetDlgItemText(hwnd, ID_HEIGHT, szText);
+		init_depth(GetDlgItem(hwnd, ID_CBDEPTH));
+		SendDlgItemMessage(hwnd, ID_CBDEPTH, CB_SETCURSEL, ss->depth, 0);
+		return TRUE;
+	case MSG_COMMAND:
+		switch(LOWORD(wParam))
+		{
+		case IDOK:
+			ss = (ScreenSetting*)GetWindowAdditionalData(hwnd);
+			hWidth = GetDlgItem(hwnd, ID_WIDTH);
+			hHeight = GetDlgItem(hwnd, ID_HEIGHT);
+			num = test_screen_setting(hWidth);
+			if(!num)
+				return FALSE;
+			ss->width = num;
+			num = test_screen_setting(hHeight);
+			if(!num)
+				return FALSE;
+			ss->height = num;
+			
+			if(ss->width > RECTW(g_rcScr) || ss->height > RECTH(g_rcScr))
+			{
+				char szText[256];
+				sprintf(szText,"The Size is larger than Screen, please Resize(%d,%d)",RECTW(g_rcScr),RECTH(g_rcScr));
+				MessageBox(hwnd, szText,"Error",0);
+				if(ss->width>RECTW(g_rcScr)){
+					sprintf(szText,"%d",RECTW(g_rcScr));
+					SetWindowText(hWidth, szText);
+				}
+				if(ss->height > RECTH(g_rcScr)){
+					sprintf(szText,"%d",RECTH(g_rcScr));
+					SetWindowText(hHeight, szText);
+				}
+				SetFocus(ss->width>RECTW(g_rcScr)?hWidth:hHeight);
+				return TRUE;
+			}
+			
+			ss->depth = SendDlgItemMessage(hwnd, ID_CBDEPTH, CB_GETCURSEL, 0, 0);
+
+			EndDialog(hwnd,TRUE);
+			return TRUE;
+		case IDCANCEL:
+			EndDialog(hwnd, FALSE);
+		}
+		return TRUE;
+	}
+
+	return AutoCenterDlgProc(hwnd, message, wParam, lParam);
+}
+
+static BOOL getScreenSetting(HWND hwnd, int *pwidth, int *pheight, int *pdepth)
+{
+	ScreenSetting ss = {*pwidth, *pheight, *pdepth};
+#if 0
+	if(DialogBoxIndirectParam(&_SetScreen_templ,hwnd,_screen_setting_proc,(LPARAM)&ss))
+#else
+	if(DialogBoxIndirectParam(GetDlgTemplate(ID_SETSCREENSIZE), hwnd, _screen_setting_proc, (LPARAM)&ss))
+#endif
+	{
+		*pwidth = ss.width;
+		*pheight = ss.height;
+		*pdepth = ss.depth;
+		return TRUE;
+	}
+	return FALSE;
+}
+
+#ifdef __cplusplus
+}
+#endif
+

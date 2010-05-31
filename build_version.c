@@ -1,0 +1,5 @@
+
+#ifndef BUILD_VERSION
+#define BUILD_VERSION "20100207001"
+#endif
+

@@ -1,0 +1,11 @@
+<renderer class="Flat.Widget">
+   <property name="Class" id="1000" type="string" default="widget"/>
+   
+   <property name="ColorFgWindow" id="28673" type="color" default="0xFF000000"/>
+   <property name="ColorBgWindow" id="28929" type="color" default="0xFFFFFFFF"/>
+   
+   <!-- No Client Properties, Implement by MiniGUI 3.0 -->
+   <!-- WE_FGC_INACTIVE_WND_BORDER -->
+  	<property name="ColorBorderInActive" id="12548" type="color" default="0xFF000000"/>
+ 
+</renderer>

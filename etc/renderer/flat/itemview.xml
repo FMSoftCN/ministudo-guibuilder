@@ -1,0 +1,25 @@
+<renderer class="Flat.ItemView" extends="renderer::Flat.ScrollWidget">
+	<set-property name="Class" value="itemview"/>
+
+	<!--  NCS_FGC_HILIGHT_ITEM -->
+	<property name="ColorFgHiliteItem" id="28675" type="color" default="0xFFFFFFFF"/>
+	<!--  NCS_BGC_HILIGHT_ITEM -->
+	<property name="ColorBgHiliteItem" id="28931" type="color" default="0xFF000000"/>
+
+	<!-- NCS_BGC_SELECTED_ITEM -->
+	<property name="ColorBgSelItem" id="28930" type="color" default="0xFFFFFFFF"/>
+	<!-- NCS_FGC_SELECTED_ITEM -->
+	<property name="ColorFgSelItem" id="28674" type="color" default="0xFF000000"/>
+	
+	<!--  NCS_FGC_DISABLED_ITEM -->
+	<property name="ColorFgDisableItem" id="28676" type="color" default="0xFF99A8AC"/>
+	<!--  NCS_BGC_DISABLED_ITEM -->
+	<property name="ColorBgDisableItem" id="28932" type="color" default="0xFFFFFFFF"/>
+	
+	<!--  WE_FGC_SIGNIFICANT_ITEM -->
+	<property name="ColorFgSignificantItem" id="12300" type="color" default="0xFFFFFFFF"/>
+	<!--  WE_BGC_SIGNIFICANT_ITEM -->
+	<property name="ColorBgDisableItem" id="12556" type="color" default="0xFF000000"/>
+	
+	
+</renderer>

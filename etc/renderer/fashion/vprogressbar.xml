@@ -1,0 +1,2 @@
+<renderer class="Fashion.VProgressBar" extends="renderer::Fashion.ProgressBar">
+</renderer>

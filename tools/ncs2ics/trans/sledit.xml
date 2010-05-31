@@ -1,0 +1,21 @@
+<translator class="window::SlEdit" extends="window::Edit">
+
+	<set name="class" value="sledit" type="string"/>
+
+	<translate>
+		<source name="ToolTip" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x8000</True> <!-- ES_TIP -->
+		</enum-map>
+	</translate>
+	<translate>
+		<source name="Password" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x20</True> <!-- ES_PASSWORD -->
+		</enum-map>
+	</translate>
+
+</translator>
+

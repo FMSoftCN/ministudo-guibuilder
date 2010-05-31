@@ -1,0 +1,57 @@
+<res-ids>
+	<res-id>
+		<id name="ID_MAINWND1"  value="0x80016"/>
+		<type>8</type>
+		<source>res/ui/new_rdrset.xml</source>
+	</res-id>
+	<res-id>
+		<id name="IDOK"  value="0x40000001"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="IDCANCEL"  value="0x40000002"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_GROUPBOX1"  value="0x40000009"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC1"  value="0x4000000c"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC2"  value="0x4000000d"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_BUTTON3"  value="0x4000000e"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_COMBOBOX1"  value="0x4000000f"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_LISTBOX1"  value="0x40000010"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_COMBOBOX2"  value="0x40000064"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_SLEDIT1"  value="0x40000078"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+</res-ids>

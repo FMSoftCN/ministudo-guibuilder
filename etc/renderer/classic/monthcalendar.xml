@@ -1,0 +1,15 @@
+<renderer class="Classic.MonthCalendar" extends="renderer::Classic.Widget">
+	<set-property name="Class" value="monthcal"/>
+	
+	<property name="ColorFgArrow" id="28672" type="color" default="0xFF000000"/>
+	<property name="ColorBgArrow" id="28928" type="color" default="0xFFCED3D6"/>
+	<!-- NCS_BGC_DISABLED_ITEM -->
+	<property name="ColorBgDisable" id="28932" type="color" default="0xFFCED3D6"/>
+	<!-- NCS_FGC_DISABLED_ITEM -->
+	<property name="ColorTextDisable" id="28676" type="color" default="0xFF848284"/>
+	<!-- NCS_BGC_SELECTED_ITEM -->
+	<property name="ColorBgSelected" id="28930" type="color" default="0xFF6B2408"/>
+	<!-- NCS_FGC_SELECTED_ITEM -->
+	<property name="ColorFgSelected" id="28674" type="color" default="0xFFFFFFFF"/>
+	
+</renderer>

@@ -1,0 +1,7 @@
+<window class="IconView" extends="ItemView">
+	<set-property name="Class" value="iconview"/>
+	<set-property name="Text" value="0"/>
+	<default-property name="Width" value="150"/>
+	<default-property name="Height" value="150"/>
+	<default-property name="Border" value="True"/>
+</window>

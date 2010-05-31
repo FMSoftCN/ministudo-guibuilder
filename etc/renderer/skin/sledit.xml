@@ -1,0 +1,10 @@
+<renderer class="Skin.SlEdit" extends="renderer::Skin.Edit">
+
+	<set-property name="Class" value="sledit"/>
+
+	<set-property name="ImageHScrollBar" value="0"/>
+	<set-property name="ImageVScrollBar" value="0"/>
+	<set-property name="ImageSbArrows" value="0"/>
+	<set-property name="ImageHThumb" value="0"/>
+	<set-property name="ImageVThumb" value="0"/>
+</renderer>

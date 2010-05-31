@@ -1,0 +1,13 @@
+#The Text of en_US
+0x00022712	"About GUI Builder"
+0x00022713	"OK"
+0x00022714	"Cancel"
+0x00022715	"Copyright (c) 2010 Beijing Feynman Software Technology Co., Ltd."
+0x00022716	"Version:"
+0x00022717	"Vesrion:"
+0x00022718	"Build:"
+0x00022719	""
+0x0002271A	"Static5"
+0x0002271B	""
+0x0002271C	"Static6"
+0x0002271D	"A GUI Builder for MiniGUI."

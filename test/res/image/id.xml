@@ -1,0 +1,12 @@
+<res-ids>
+	<res-id>
+		<id name="IDB_IMG1"  value="0x40101"/>
+		<type>4</type>
+		<source>res/image/img-1.png</source>
+	</res-id>
+	<res-id>
+		<id name="IDB_IMG2"  value="0x40102"/>
+		<type>4</type>
+		<source>res/image/img-2.png</source>
+	</res-id>
+</res-ids>

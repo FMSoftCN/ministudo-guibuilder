@@ -1,0 +1,3 @@
+<renderer class="Fashion.Panel" extends="renderer::Fashion.Widget">
+	<set-property name="Class" value="panel"/>
+</renderer>

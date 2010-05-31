@@ -1,0 +1,28 @@
+<res-ids>
+	<file>res/renderer/rdr.xml</file>
+	<res-id>
+		<id name="IDRDRS_CLASSIC"  value="0x100001"/>
+		<type>16</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="IDRDR_CSTATIC1"  value="0x200001"/>
+		<type>32</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="IDRDR_CSTATIC2"  value="0x200002"/>
+		<type>32</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="IDRDR_CBUTTON1"  value="0x200003"/>
+		<type>32</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="IDS_TEST_CBTN"  value="0x200004"/>
+		<type>32</type>
+		<source></source>
+	</res-id>
+</res-ids>

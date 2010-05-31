@@ -1,0 +1,78 @@
+<window class="Edit" extends="ScrollView">
+	<set-property name="Class" value="edit"/>
+	<set-property name="AutoSort" value="False"/>
+	<set-property name="Loop" value="False"/>
+	<set-property name="HStepValue" value="0"/>
+	<set-property name="VStepValue" value="0"/>
+	
+	<default-property name="Border" value="True"/>
+	<default-property name="BgColor" value="0xFFFFFFFF"/>
+	
+	<property name="Align" id="2009" type="enum" default="Left">
+		<enum>
+			<option name="Left" value="0"/>
+			<option name="Center" value="0x20"/>
+			<option name="Right" value="0x40"/>
+		</enum>
+	</property>
+	<property name="Case" type="enum" default="None">
+		<enum>
+			<option name="None" value="0"/>
+			<option name="Lower" value="0x100"/>
+			<option name="Upper" value="0x080"/>
+		</enum>
+	</property> 
+	<property name="HideSel" type="enum" default="True">
+		<enum>
+			<option name="True" value="0"/>
+			<option name="False" value="0x200"/>
+		</enum>
+	</property>
+	<property name="ReadOnly" type="enum" default="False">
+		<enum>
+			<option name="False" value="0"/>
+			<option name="True" value="0x400"/>
+		</enum>
+	</property>
+	<property name="BaseLine" type="enum" default="False">
+		<enum>
+			<option name="True" value="0x800"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+
+	<property name="NeedIME" id="3001" type="enum" default="True">
+		<enum>
+			<option name="True" value="0"/>
+			<option name="False" value="1"/>
+		</enum>
+	</property>
+	
+	<property name="MaxLength" id="22" type="int" default="-1"/>
+	
+	<event id="4150">
+		<handler>void onEditChanged(mEdit *self, int id, int nc, DWORD add_data)</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_EDIT_CHANGE)</code>
+	</event>
+	
+	<event>
+		<handler>onContentChanged</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_EDIT_CONTCHANGED)</code>
+	</event>
+	
+	<event>
+		<handler>onUpdate</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_EDIT_UPDATE)</code>
+	</event>
+	
+	<event>
+		<handler>onSelTextChanged</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_EDIT_SELCHANGED)</code>
+	</event>
+	
+	<event>
+		<handler>onTextReachMax</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_EDIT_MAXTEXT)</code>
+	</event>
+	
+</window>

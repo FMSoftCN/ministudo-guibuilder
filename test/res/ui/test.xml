@@ -1,0 +1,23 @@
+<window class="window::MainWindow" serial-number="2146478080">
+	<ID>524390</ID>
+	<Text>1</Text>
+	<X>0</X>
+	<Y>0</Y>
+	<Width>300</Width>
+	<Height>250</Height>
+	<Border>True</Border>
+	<HasCaption>True</HasCaption>
+	<SystemMenu>True</SystemMenu>
+	<BorderType>DlgFrame</BorderType>
+	<MinimizeBox>True</MinimizeBox>
+	<MaximizeBox>True</MaximizeBox>
+	<onCreate>onCreate</onCreate>
+	<window class="window::Button" serial-number="787828736">
+		<ID>1073741826</ID>
+		<X>79</X>
+		<Y>84</Y>
+		<Width>152</Width>
+		<Height>48</Height>
+		<onClicked>onClicked</onClicked>
+	</window>
+</window>

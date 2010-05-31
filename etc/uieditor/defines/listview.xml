@@ -1,0 +1,75 @@
+<window class="ListView" extends="ItemView">
+	<set-property name="Class" value="listview"/>
+	<set-property name="Text" value="0"/>
+	<default-property name="Width" value="250"/>
+	<default-property name="Height" value="250"/>
+	<default-property name="Border" value="True"/>
+	
+	<property name="CheckBox" id="2009" type="enum" default="False">
+		<enum>
+			<option name="True" value="0x20"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+	<property name="AutoCheck" type="enum" default="False">
+		<enum>
+			<option name="True" value="0x40"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+	<property name="Tree" type="enum" default="False">
+		<enum>
+			<option name="True" value="0x80"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+	<property name="WithIcon" type="enum" default="False">
+		<enum>
+			<option name="True" value="0x100"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+	
+	<property name="HeadHeight" id="21" type="int" default="25"/>
+	<!--property name="HeadWidth" type="int" default=80/-->
+	<property name="HeadVisible" id= "23" type="enum Boolean" default="True"/>
+	<!-- <property name="MainSortColumn" type="int"/> -->
+	<property name="GridLineWidth" id="25" type="int" default="0"/>
+	<property name="GridLineColor" type="color" default="0x777777"/>
+	
+	<event id="4150">
+		<handler>void onItemRDown(mListView *self, int id, int nc, DWORD add_data)</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_LISTV_ITEMRDOWN)</code>
+	</event>
+	
+	<event>
+		<handler>onItemRUp</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_LISTV_ITEMRUP)</code>
+	</event>
+	
+	<event>
+		<handler>onHdrRDown</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_LISTV_HDRRDOWN)</code>
+	</event>
+	
+	<event>
+		<handler>onHdrRUp</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_LISTV_HDRRUP)</code>
+	</event>
+	
+	<event>
+		<handler>onItemDBClk</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_LISTV_ITEMDBCLK)</code>
+	</event>
+
+	<event>
+		<handler>onFoldItem</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_LISTV_FOLDITEM)</code>
+	</event>
+	
+	<event>
+		<handler>onUnfoldItem</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_LISTV_UNFOLDITEM)</code>
+	</event>
+	
+</window>

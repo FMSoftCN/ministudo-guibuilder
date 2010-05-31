@@ -1,0 +1,31 @@
+#!/bin/sh
+
+#get times of guiuilder
+
+COUNT=1
+
+DATE=`date +%Y%m%d`
+
+if [ -e build_version.c ]; then
+	BUILDVER=`sed -n 's/#define BUILD_VERSION \"//pg' < build_version.c | sed -n 's/\"$//pg'`
+	BUILDATE=`expr substr ${BUILDVER} 1 8`
+	BUILDCOUNT=`expr substr ${BUILDVER} 9 3`
+
+	if [ `echo "${BUILDATE} >= ${DATE}" | bc` = "1" ]; then
+		DATE=${BUILDATE}
+		COUNT=`expr ${BUILDCOUNT} + 1`
+	fi
+fi
+
+COUNT=`printf "%03d" ${COUNT}`
+
+cat >build_version.c << _ACEOF
+
+#ifndef BUILD_VERSION
+#define BUILD_VERSION "${DATE}${COUNT}"
+#endif
+
+_ACEOF
+
+
+

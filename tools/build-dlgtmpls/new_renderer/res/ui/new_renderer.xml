@@ -1,0 +1,93 @@
+<window class="window::MainWnd" serial-number="4208449536">
+	<ID>0x80002</ID>
+	<X>0</X>
+	<Y>0</Y>
+	<Width>401</Width>
+	<Height>310</Height>
+	<Text>0x00022712</Text>
+	<Border>True</Border>
+	<Visible>False</Visible>
+	<HasCaption>True</HasCaption>
+	<SystemMenu>True</SystemMenu>
+	<BorderType>DlgFrame</BorderType>
+	<MinimizeBox>False</MinimizeBox>
+	<MaximizeBox>False</MaximizeBox>
+	<window class="window::Button" serial-number="4283314176">
+		<ID>0x40000001</ID>
+		<X>84</X>
+		<Y>228</Y>
+		<Width>100</Width>
+		<Height>32</Height>
+		<Text>0x00022713</Text>
+		<Visible>True</Visible>
+	</window>
+	<window class="window::Button" serial-number="4012748800">
+		<ID>0x40000002</ID>
+		<X>228</X>
+		<Y>228</Y>
+		<Width>100</Width>
+		<Height>32</Height>
+		<Text>0x00022714</Text>
+		<Visible>True</Visible>
+	</window>
+	<window class="window::GroupBox" serial-number="1719336960">
+		<ID>0x4000000f</ID>
+		<X>28</X>
+		<Y>20</Y>
+		<Width>344</Width>
+		<Height>184</Height>
+		<Text>0x00022719</Text>
+	</window>
+	<window class="window::Static" serial-number="4127096832">
+		<ID>0x40000010</ID>
+		<Align>Right</Align>
+		<Valign>Top</Valign>
+		<X>37</X>
+		<Y>65</Y>
+		<Width>124</Width>
+		<Height>32</Height>
+		<Text>0x0002271A</Text>
+	</window>
+	<window class="window::Static" serial-number="4249337856">
+		<ID>0x40000011</ID>
+		<Align>Right</Align>
+		<Valign>Top</Valign>
+		<X>37</X>
+		<Y>113</Y>
+		<Width>124</Width>
+		<Height>32</Height>
+		<Text>0x0002271B</Text>
+	</window>
+	<window class="window::Static" serial-number="4286394368">
+		<ID>0x40000012</ID>
+		<Align>Right</Align>
+		<Valign>Top</Valign>
+		<X>37</X>
+		<Y>157</Y>
+		<Width>124</Width>
+		<Height>32</Height>
+		<Text>0x0002271C</Text>
+	</window>
+	<window class="window::SlEdit" serial-number="3694919680">
+		<ID>0x40000078</ID>
+		<X>168</X>
+		<Y>152</Y>
+		<Width>176</Width>
+		<Height>28</Height>
+		<Text>0x0002271D</Text>
+	</window>
+	<window class="window::Combobox" serial-number="3497283584">
+		<ID>0x40000064</ID>
+		<X>168</X>
+		<Y>60</Y>
+		<Width>180</Width>
+		<Height>28</Height>
+	</window>
+	<window class="window::Combobox" serial-number="4002314240">
+		<ID>0x4000006e</ID>
+		<X>168</X>
+		<Y>108</Y>
+		<Width>180</Width>
+		<Height>28</Height>
+	</window>
+</window>

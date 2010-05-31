@@ -1,0 +1,3 @@
+<renderer class="Classic.SpinBox" extends="renderer::Classic.Spinner">
+	<set-property name="Class" value="spinbox"/>
+</renderer>

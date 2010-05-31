@@ -1,0 +1,65 @@
+<window class="window::Dialog">
+	<ID>524389</ID>
+	<Text>1</Text>
+	<X>0</X>
+	<Y>0</Y>
+	<Width>400</Width>
+	<Height>250</Height>
+	<Border>True</Border>
+	<HasCaption>True</HasCaption>
+	<SystemMenu>True</SystemMenu>
+	<BorderType>DlgFrame</BorderType>
+	<MinimizeBox>True</MinimizeBox>
+	<MaximizeBox>True</MaximizeBox>
+	<paged-window class="paged-window::PropSheet">
+		<ID>200</ID>
+		<ActivePageIndex>0</ActivePageIndex>
+		<X>10</X>
+		<Y>10</Y>
+		<Width>300</Width>
+		<Height>200</Height>
+		<window class="window::Page">
+			<ID>-1</ID>
+			<window class="window::Radiobutton">
+				<ID>524292</ID>
+				<X>30</X>
+				<Y>136</Y>
+				<Width>114</Width>
+				<Height>23</Height>
+			</window>
+			<window class="window::Checkbutton">
+				<ID>524291</ID>
+				<X>169</X>
+				<Y>29</Y>
+				<Width>103</Width>
+				<Height>34</Height>
+			</window>
+			<window class="window::Button">
+				<ID>524290</ID>
+				<X>90</X>
+				<Y>91</Y>
+				<Width>117</Width>
+				<Height>31</Height>
+			</window>
+			<window class="window::Button">
+				<ID>101</ID>
+				<X>50</X>
+				<Y>43</Y>
+				<Width>80</Width>
+				<Height>30</Height>
+				<Visible>True</Visible>
+			</window>
+		</window>
+		<window class="window::Page">
+			<ID>-1</ID>
+			<window class="window::Button">
+				<ID>100</ID>
+				<X>41</X>
+				<Y>15</Y>
+				<Width>145</Width>
+				<Height>45</Height>
+				<Visible>True</Visible>
+			</window>
+		</window>
+	</paged-window>
+</window>

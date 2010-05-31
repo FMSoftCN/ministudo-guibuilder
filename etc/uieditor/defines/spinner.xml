@@ -1,0 +1,39 @@
+<window class="Spinner" extends="Widget">
+	<set-property name="Class" value="spinner"/>
+	<set-property name="Font" value=""/>
+	
+	<set-property name="Text" value="0"/>
+	<set-property name="BgImage" value="0"/>
+	<set-property name="BgImageMode" value="Normal"/>
+	<set-property name="BgColor" value="0xFFC0C0C0"/>
+	<set-property name="Transparent" value="False"/>
+	
+	<!--  style of spinner -->
+	<property name="Direction" id="2005" type="enum Direction"/>
+	<property name="AutoLoop" type="enum" >
+		<enum>
+			<option name="True" value="0x04"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+	
+	<!--   property of spinner -->
+	<property name="MaxPos" id="7" type="int" default="100"/>
+	<property name="MinPos" type="int" default="0"/>
+	<property name="CurPos" type="int" default="0"/>
+	<property name="LineStep" type="int" default="5"/>
+	
+	<!--  event of spinner -->
+	<event id="4050">
+		<handler>void onPosChanged(mSpinner*self, int id, int nc)</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_SPNR_CHANGED)</code>
+	</event>
+	<event>
+		<handler>onReachMax</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_SPNR_REACHMAX)</code>
+	</event>
+	<event>
+		<handler>onReachMin</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_SPNR_REACHMIN)</code>
+	</event>
+</window>

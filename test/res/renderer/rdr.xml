@@ -1,0 +1,27 @@
+<rdr>
+	<rdrset class="Classic">
+		<ID>0x100001</ID>
+		<SubID>0x200001</SubID>
+	</rdrset>
+	<renderer class="Classic.Static">
+		<ID>0x200001</ID>
+		<ThreeDFGColor>0xFFFF0000</ThreeDFGColor>
+		<ClientFGColor>0xFF0000FF</ClientFGColor>
+		<BorderSize>1</BorderSize>
+	</renderer>
+	<renderer class="Classic.Static">
+		<ID>0x200002</ID>
+		<ThreeDFGColor>0xFFFFFF00</ThreeDFGColor>
+		<ClientFGColor>0xFF00FFFF</ClientFGColor>
+		<BorderSize>1</BorderSize>
+	</renderer>
+	<renderer class="Classic.Button">
+		<ID>0x200003</ID>
+		<ThreeDFGColor>0xFFFFFFFF</ThreeDFGColor>
+		<ClientFGColor>0xFF000000</ClientFGColor>
+		<BorderSize>1</BorderSize>
+	</renderer>
+	<renderer class="Classic.Button">
+		<ID>0x200004</ID>
+	</renderer>
+</rdr>

@@ -1,0 +1,8 @@
+<window class="VTrackBar" extends="TrackBar">
+	<set-property name="Direction" value="Vert"/>
+	<default-property name="Width" value="40"/>
+	<default-property name="Height" value="200"/>
+	
+	<default-property name="ThumbWidth" value="12"/>
+	<default-property name="ThumbHeight" value="24"/>
+</window>

@@ -1,0 +1,12 @@
+<component class="Timer" extends="InvisibleComponent">
+	<set-property name="Class" value="Timer"/>
+	
+	<property name="Interval" id="1" type="int" default="200"/>
+	
+	<event id="4050">
+		<handler>BOOL onTimer(mTimer* timer, DWORD total_count);</handler>
+		<code>MSG_TIMER</code>
+		<content>return TRUE; /*TRUE: Continue timer; FALSE: Stop timer*/</content>
+	</event>
+	
+</component>

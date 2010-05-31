@@ -1,0 +1,13 @@
+<window class="VScrollBar" extends="ScrollBar">
+	<set-property name="Direction" value="Vert"/>
+	<default-property name="Width" value="25"/>
+	<default-property name="Height" value="200"/>
+	
+	<property name="DoubleArrows" id="2007" type="enum" default="None">
+		<enum>
+			<option name="None" value="0"/>
+			<option name="Up" value="0x10"/>
+			<option name="Down" value="0x20"/>
+		</enum>
+	</property>
+</window>

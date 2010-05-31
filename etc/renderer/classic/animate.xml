@@ -1,0 +1,5 @@
+<renderer class="Classic.Animate" extends="renderer::Classic.Static">
+	<set-property name="Class" value="animate"/>
+	<set-property name="ColorTextEnable" value="0"/>
+	<set-property name="ColorTextDisable" value="0"/>
+</renderer>

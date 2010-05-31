@@ -1,0 +1,17 @@
+<window class="Image" extends="Static">
+	<set-property name="Class" value="image"/>
+	<set-property name="BgImage" value="0"/>
+	<set-property name="BgImageMode" value="Normal"/>
+	<set-property name="AutoWrap" value="False"/>
+	<set-property name="Text" value="0"/>
+	<set-property name="Font" value=""/>
+	
+	<default-property name="Border" value="False"/>
+	<default-property name="Width" value="100"/>
+	<default-property name="Height" value="100"/>
+	
+
+	<property name="Image" id="11" type="image"/>
+	<property name="DrawMode" id="13" type="enum DrawMode" default="Normal"/>
+</window>
+

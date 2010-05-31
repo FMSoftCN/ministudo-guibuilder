@@ -1,0 +1,4 @@
+<renderer class="Skin.VProgressBar" extends="renderer::Skin.ProgressBar">
+	<!-- NCS_IMAGE_PRGBAR_VCHUNK -->
+  <property name="ImageChunk"  id="32778" type="image"/>
+</renderer>

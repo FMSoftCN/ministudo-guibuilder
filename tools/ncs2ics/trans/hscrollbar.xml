@@ -1,0 +1,4 @@
+<translator class="window::HScrollBar" extends="window::ScrollBar">
+	<set name="class" value="scrollbar" type="string"/>
+	<set name="style" value="0x1000" type="int"/>
+</translator>

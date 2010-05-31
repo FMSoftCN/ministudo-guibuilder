@@ -1,0 +1,3 @@
+<renderer class="Flat.MenuButton" extends="renderer::Flat.Button">
+	<set-property name="Class" value="menubutton"/>
+</renderer>

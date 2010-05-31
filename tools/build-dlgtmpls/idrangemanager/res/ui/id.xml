@@ -1,0 +1,207 @@
+<res-ids>
+	<res-id>
+		<id name="ID_RANGEDITOR"  value="0x80002"/>
+		<type>8</type>
+		<source>res/ui/newid.xml</source>
+	</res-id>
+	<res-id>
+		<id name="ID_MAINWND2"  value="0x80003"/>
+		<type>8</type>
+		<source>res/ui/newrange.xml</source>
+	</res-id>
+	<res-id>
+		<id name="ID_MAINWND3"  value="0x80004"/>
+		<type>8</type>
+		<source>res/ui/extend-range.xml</source>
+	</res-id>
+	<res-id>
+		<id name="IDOK"  value="0x40000001"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="IDCANCEL"  value="0x40000002"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC1"  value="0x40000009"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_CB_RESTYPE"  value="0x4000000a"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_LV_USEDRANGE"  value="0x4000000b"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_BTN_NEWRANGE"  value="0x4000000c"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_BTN_EXIT"  value="0x4000000d"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_BTN_EXTEND"  value="0x4000000e"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC2"  value="0x4000000f"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_SLEDIT1"  value="0x40000010"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_SLEDIT3"  value="0x40000011"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC3"  value="0x40000012"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_BUTTON5"  value="0x40000013"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_SLEDIT4"  value="0x40000014"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_COMBOBOX2"  value="0x40000015"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC4"  value="0x40000016"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC6"  value="0x40000017"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_LV_FREERANGE"  value="0x40000018"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_LBL_TIP"  value="0x40000019"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC9"  value="0x4000001a"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_BUTTON7"  value="0x4000001b"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_BUTTON9"  value="0x4000001c"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC11"  value="0x4000001d"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC12_COPY"  value="0x4000001e"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC12"  value="0x4000001f"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_BUTTON11"  value="0x40000020"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_CB_USER"  value="0x40000021"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC13"  value="0x40000022"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC14"  value="0x40000023"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_LEARNMORE"  value="0x40000024"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC15"  value="0x40000025"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_SLE_MIN"  value="0x40000026"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_SLE_MAX"  value="0x40000027"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC17"  value="0x40000028"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_BUTTON18"  value="0x4000002b"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_BUTTON19"  value="0x4000002c"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_LBL_MIN"  value="0x4000002d"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_LBL_MAX"  value="0x4000002e"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+</res-ids>

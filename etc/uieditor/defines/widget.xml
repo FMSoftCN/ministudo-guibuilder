@@ -1,0 +1,205 @@
+<window class="Widget">
+	
+	<property name="Class" id="1000" type="string" default="widget"/>
+	<property name="X" type="int" default="0"/>
+	<property name="Y" type="int" default="0"/>
+	<property name="Width" type="int" default="80"/>
+	<property name="Height" type="int" default="30"/>
+	<property name="Text" type="text"/>
+	<property name="Renderer" type="renderer"/>
+	<property name="BgColor" type="color" default="0xFFCED3D6"/>
+	<property name="Font" type="font"/>
+
+	<!-- id for style, from 2000 -->
+	<property name="Notify" id="2000" type="enum Boolean" default="True"/>
+
+	<property name="Border" type="enum" default="False">
+		<enum>
+			<option name="True" value="0x00400000"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+
+	<property name="Visible" type="enum" default="True">
+		<enum>
+			<option name="True" value="0x08000000L"/> <!-- WS_VISIBLE -->
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+	<property name="Enabled" type="enum" default="True">
+		<enum>
+			<option name="True" value="0"/>
+			<option name="False" value="0x04000000L"/>
+		</enum>
+	</property>
+	<property name="TabStop" type="enum" default="True">
+		<enum>
+			<option name="True" value="0x00010000"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+
+	<!-- id for exstyle, from 3000 -->
+	<property name="Transparent" id="3000" type="enum" default="False">
+		<enum>
+			<option name="True" value="0x00002000L"/> 
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+
+	<!-- id from ncs property from 1 -->
+	<property name="BgImage" id="3" type="image" />
+	<property name="BgImageMode" type="enum DrawMode" default="Normal"/>
+
+	<!-- define the event handler -->
+	<event id="4000">
+		<handler>BOOL onCreate(mWidget* self, DWORD dwAddData)</handler>
+		<code>MSG_CREATE</code>
+		<content>return TRUE;</content>
+	</event>
+
+	<event>
+		<handler>void onSizeChanging(mWidget* self, PRECT prcIn, PRECT prcOut)</handler>
+		<code>MSG_SIZECHANGING</code>
+		<content>*prcOut = *prcIn;</content>
+	</event>
+	<event>
+		<handler>BOOL onSizeChanged(mWidget* self, PRECT prcClient)</handler>
+		<code>MSG_SIZECHANGED</code>
+		<content>return _c(self)->onSizeChanged(self, prcClient);</content>
+	</event>
+	<event>
+		<handler>void onCSizeChanged(mWidget* self, int client_width, int client_height)</handler>
+		<code>MSG_CSIZECHANGED</code>
+	</event>
+	<event>
+		<handler>BOOL onFontChanging(mWidget* self, PLOGFONT log_font)</handler>
+		<code>MSG_FONTCHANGING</code>
+		<content>return TRUE;</content>
+	</event>
+	<event>
+		<handler>void onFontChanged(mWidget* self, int message)</handler>
+		<code>MSG_FONTCHANGED</code>
+	</event>
+	<event>
+		<handler>BOOL onEraseBkgrnd(mWidget* self, HDC hdc, const PRECT clip)</handler>
+		<code>MSG_ERASEBKGND</code>
+		<content> return NCSR_STOP_MSG; /*Don't call default EraseBkgrnd*/</content>
+	</event>
+	<event>
+		<handler>void onPaint(mWidget* self, HDC hdc, const PCLIPRGN clip_rgn)</handler>
+		<code>MSG_PAINT</code>
+	</event>
+	<event>
+		<handler>BOOL onClose(mWidget* self, int message)</handler>
+		<code>MSG_CLOSE</code>
+		<content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
+	</event>
+	<event>
+		<handler>BOOL onKeyDown(mWidget* self, int message, int scancode, DWORD key_status)</handler>
+		<code>MSG_KEYDOWN</code>
+		<content>return NCSR_CONTINUE_MSG; /*continue Default message process*/</content>
+	</event>
+	<event>
+		<handler>BOOL onKeyUp(mWidget* self, int message, int scancode, DWORD key_status)</handler>
+		<code>MSG_KEYUP</code>
+		<content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
+	</event>
+	<event>
+		<handler>BOOL onChar(mWidget* self, int message, int scancode, DWORD key_status)</handler>
+		<code>MSG_CHAR</code>
+		<content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
+	</event>
+	<event>
+		<handler>BOOL onSysKeyDown(mWidget* self, int message, int scancode, DWORD key_status)</handler>
+		<code>MSG_SYSKEYDOWN</code>
+		<content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
+	</event>
+	<event>
+		<handler>BOOL onSysKeyUp(mWidget* self, int message, int scancode, DWORD key_status)</handler>
+		<code>MSG_SYSKEYUP</code>
+		<content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
+	</event>
+	<event>
+		<handler>BOOL onSysChar(mWidget* self, int ch, int scancode, DWORD key_status)</handler>
+		<code>MSG_SYSCHAR</code>
+		<content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
+	</event>
+	<event>
+		<handler>BOOL onKeyLongPress(mWidget* self, int message, int scancode, DWORD key_status)</handler>
+		<code>MSG_KEYLONGPRESS</code>
+		<content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
+	</event>
+	<event>
+		<handler>BOOL onKeyAlwaysPress(mWidget* self, int message, int scancode, DWORD key_status)</handler>
+		<code>MSG_KEYALWAYSPRESS</code>
+		<content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
+	</event>
+	<event>
+		<handler>BOOL onLButtonDown(mWidget* self, int message, int x, int y, DWORD key_status)</handler>
+		<code>MSG_LBUTTONDOWN</code>
+		<content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
+	</event>
+	<event>
+		<handler>BOOL onLButtonUp(mWidget* self, int message, int x, int y, DWORD key_status)</handler>
+		<code>MSG_LBUTTONUP</code>
+		<content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
+	</event>
+	<event>
+		<handler>BOOL onLButtonDblClk(mWidget* self, int message, int x, int y, DWORD key_status)</handler>
+		<code>MSG_LBUTTONDBLCLK</code>
+		<content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
+	</event>
+	<event>
+		<handler>BOOL onMouseMove(mWidget* self, int message, int x, int y, DWORD key_status)</handler>
+		<code>MSG_MOUSEMOVE</code>
+		<content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
+	</event>
+	<event>
+		<handler>BOOL onRButtonDown(mWidget* self, int message, int x, int y, DWORD key_status)</handler>
+		<code>MSG_RBUTTONDOWN</code>
+		<content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
+	</event>
+	<event>
+		<handler>BOOL onRButtonUp(mWidget* self, int message, int x, int y, DWORD key_status)</handler>
+		<code>MSG_RBUTTONUP</code>
+		<content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
+	</event>
+	<event>
+		<handler>BOOL onRButtonDblClk(mWidget* self, int message, int x, int y, DWORD key_status)</handler>
+		<code>MSG_RBUTTONDBLCLK</code>
+		<content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
+	</event>
+	<event>
+		<handler>int onHitTest(mWidget* self, int message, int x, int y)</handler>
+		<code>MSG_HITTEST</code>
+		<content>return _c(self)->wndProc(self, message, (WPARAM)x, (LPARAM)y);</content>
+	</event>
+	<event>
+		<handler>BOOL onCommand(mWidget* self, int id, int code, HWND hCtrl)</handler>
+		<code>MSG_COMMAND</code>
+		<content>return NCSR_CONTINUE_MSG;/*continue default message process*/</content>
+	</event>
+	<event>
+		<handler>void onDestroy(mWidget* self, int message)</handler>
+		<code>MSG_DESTROY</code>
+	</event>
+	<event>
+		<handler>void onSetFocus(mWidget* self, int message)</handler>
+		<code>MSG_SETFOCUS</code>
+		<content/>
+	</event>
+	<event>
+		<handler>void onKillFocus(mWidget* self, int message)</handler>
+		<code>MSG_KILLFOCUS</code>
+		<content/>
+	</event>
+	
+	<event>
+		<handler>void onActive(mWidget* self, int message)</handler>
+		<code>MSG_ACTIVE</code>
+		<content/>
+	</event>
+
+</window>
+

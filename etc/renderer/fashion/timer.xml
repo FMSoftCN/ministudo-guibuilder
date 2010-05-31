@@ -1,0 +1,2 @@
+<renderer class="Fashion.Timer" extends="renderer::Fashion.InvisibleComponent">
+</renderer>

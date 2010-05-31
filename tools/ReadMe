@@ -1,0 +1,28 @@
+
+ncs2ics:
+	New Control Set TO Intrinsic Control Set
+
+build-dlgtmpls:
+	build the dialog template use guibuilder for guibuilder
+	
+	$ cd build-dlgtmpls
+	$ ./mk.sh
+
+	mk.sh will call ncs2ics to translate NCS templates to ICS templates, and out the file ../../include/dlgtmpls.h and ../../mainframe/dlgtmpls.c
+
+	if you want to add a new template, do:
+		1) cd build-dlgtmpls and mkdir <project-name>
+		2) start guibuilder: guibuilder -project <project-name> -config-file /usr/local/etc/guibuilder/guibuilder.cfg
+		3) edit the templates in guibuilder
+		4) change the mk.sh. open mk.sh and find Array Variable "SRCS" , add a string as the last element:
+			"<project-name> <template-name1> [<template-name2> ... ]"
+			template-name is the main window's name, it will be
+				a. in dlgtmpl.c, generate the DLGTEMPLATE with name "_<template-name>_templ"
+				b. in dlgtmpl.h, generate the ID of main window: " ID_<TEMPLATE-NAME>", the <template-name> is uppered
+
+	if you want to use a template:
+		1) include "dlgtmpls.h"
+		2) use GetDlgTemplate to get DLGTEMPLATE*
+		3) if you want center you dialog, use AutoCenterDlgProc to replace DefaultDialogProc
+
+

@@ -1,0 +1,3 @@
+<renderer class="Skin.MlEdit" extends="renderer::Skin.Edit">
+	<set-property name="Class" value="mledit"/>
+</renderer>

@@ -1,0 +1,48 @@
+<window class="MainWindow" name="windo1">
+	<ID> 100 </ID>
+	<Text>1</Text>
+
+	<X>0</X>
+	<Y>0</Y>
+	<Width>400</Width>
+	<Height>250</Height>
+	<Border>True</Border>
+	<HasCaption>True</HasCaption>
+	<SystemMenu>True</SystemMenu>
+	<BorderType>DlgFrame</BorderType>
+	<MinimizeBox>True</MinimizeBox>
+	<MaximizeBox>True</MaximizeBox>
+
+	<paged-window class="paged-window::PropSheet">
+		<ID>200</ID>
+		<X>10</X>
+		<Y>10</Y>
+		<Width>300</Width>
+		<Height>200</Height>
+		<ActivePageIndex>0</ActivePageIndex>
+		<window class="Page">
+			<window class="Button">
+				<ID>100</ID>
+				<X>50</X>
+				<Y>8</Y>
+				<Width>80</Width>
+				<Height>30</Height>
+				<Visible>True</Visible>
+				<Enable>True</Enable>
+			</window>
+		</window>
+		<window class="Page">
+			<window class="Button">
+				<ID>101</ID>
+				<X>50</X>
+				<Y>43</Y>
+				<Width>80</Width>
+				<Height>30</Height>
+				<Visible>True</Visible>
+				<Enable>True</Enable>
+			</window>
+		</window>
+	</paged-window>
+
+</window>
+

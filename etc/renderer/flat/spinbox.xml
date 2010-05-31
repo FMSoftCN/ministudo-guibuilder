@@ -1,0 +1,6 @@
+<renderer class="Flat.SpinBox" extends="renderer::Flat.Spinner">
+	<set-property name="Class" value="spinbox"/>
+	
+	<!-- <default-property name="RoundX" value="1"/>
+	<default-property name="RoundY" value="1"/> -->
+</renderer>

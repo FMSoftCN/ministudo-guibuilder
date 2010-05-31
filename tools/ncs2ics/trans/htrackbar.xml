@@ -1,0 +1,4 @@
+<translator class="window::HTrackBar" extends="window::Widget">
+	<set name="class" value="trackbar" type="string"/>
+
+</translator>

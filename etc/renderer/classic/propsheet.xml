@@ -1,0 +1,10 @@
+<renderer class="Classic.paged-window::PropSheet" extends="renderer::Classic.Widget">
+	<set-property name="Class" value="propsheet"/>	
+	
+	<set-property name="ColorFgWindow" value="0"/>
+	<set-property name="ColorBgWindow" value="0"/>
+
+	<!-- NCS_BGC_3DBODY -->
+	<property name="ColorTabBorderInActive" id="28928" type="color" default="0xFFCED3D6"/>
+	
+</renderer>

@@ -1,0 +1,28 @@
+<renderer class="Flat.TextEditor" extends="renderer::Flat.Widget">
+	<set-property name="Class" value="texteditor"/>
+	
+	<!-- WE_METRICS_SCROLLBAR -->
+	<property name="ScrollBarSize" id="8197" type="int" default="16"/>
+	<!-- WE_MAINC_THREED_BODY -->
+	<property name="ColorScrollBar" id="12552" type="color" default="0xFFFFFFFF"/>
+	<!-- WE_FGC_THREED_BODY -->
+	<property name="ColorScrollArrow" id="12296" type="color" default="0xFF000000"/>
+	<!-- WE_FGC_DISABLED_ITEM -->
+	<property name="ColorScrollArrowDisable" id="12298" type="color" default="0xFF848284"/>
+
+	<!--  NCS_FGC_HILIGHT_ITEM -->
+	<property name="ColorFgHiliteItem" id="28675" type="color" default="0xFFFFFFFF"/>
+	<!--  NCS_BGC_HILIGHT_ITEM -->
+	<property name="ColorBgHiliteItem" id="28931" type="color" default="0xFF000000"/>
+
+	<!-- NCS_BGC_SELECTED_ITEM -->
+	<property name="ColorBgSelItem" id="28930" type="color" default="0xFFFFFFFF"/>
+	<!-- NCS_FGC_SELECTED_ITEM -->
+	<property name="ColorFgSelItem" id="28674" type="color" default="0xFF000000"/>
+	
+	<!--  NCS_FGC_DISABLED_ITEM -->
+	<property name="ColorFgDisableItem" id="28676" type="color" default="0xFF99A8AC"/>
+	<!--  NCS_BGC_DISABLED_ITEM -->
+	<property name="ColorBgDisableItem" id="28932" type="color" default="0xFFFFFFFF"/>
+	
+</renderer>

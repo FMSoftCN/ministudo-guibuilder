@@ -1,0 +1,10 @@
+<renderer class="Fashion.Static" extends="renderer::Fashion.Widget">
+	<set-property name="Class" value="static"/>
+
+	<set-property name="ColorFgWindow" value="0"/>
+	<set-property name="ColorBgWindow" value="0"/>
+		
+	<property name="ColorTextEnable" id="28672" type="color" default="0xFF000000"/>
+	<!-- NCS_FGC_DISABLED_ITEM -->
+	<property name="ColorTextDisable" id="28676" type="color" default="0xFF848284"/>
+</renderer>

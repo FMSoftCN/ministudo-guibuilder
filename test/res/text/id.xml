@@ -1,0 +1,47 @@
+<res-ids>
+	<res-id>
+		<id name="IDB_FILE"  value="0x20064"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="IDB_EDIT"  value="0x20065"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="IDB_HELP"  value="0x20066"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="IDS_TEST1"  value="0x20067"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="IDS_TEST2"  value="0x20068"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="IDS_TEST3"  value="0x20069"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="IDS_TEST4"  value="0x2006a"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="IDS_TEST5"  value="0x2006b"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="IDS_TEST6"  value="0x2006c"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+</res-ids>

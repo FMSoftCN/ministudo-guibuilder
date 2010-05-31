@@ -1,0 +1,107 @@
+<res-ids>
+	<res-id>
+		<id name="ID_MAINWND1"  value="0x80002"/>
+		<type>8</type>
+		<source>res/ui/connect-events.xml</source>
+	</res-id>
+	<res-id>
+		<id name="ID_MAINWND2"  value="0x80003"/>
+		<type>8</type>
+		<source>res/ui/select-events.xml</source>
+	</res-id>
+	<res-id>
+		<id name="ID_MAINWND3"  value="0x80004"/>
+		<type>8</type>
+		<source>res/ui/input-event.xml</source>
+	</res-id>
+	<res-id>
+		<id name="IDOK"  value="0x40000001"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="IDCANCEL"  value="0x40000002"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC1"  value="0x4000000e"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC2"  value="0x40000011"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC4"  value="0x40000014"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC6"  value="0x40000016"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC7"  value="0x40000017"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC9"  value="0x40000019"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_CB_SENDER"  value="0x40000066"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_CB_LISTENER"  value="0x40000067"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_LB_SENDER"  value="0x40000069"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_DELETE"  value="0x4000006a"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_ADD"  value="0x4000006b"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_SLE_EVENT"  value="0x4000006c"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_LV_LISTENTER"  value="0x40000073"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_MODIFY"  value="0x40000074"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_sKIP"  value="0x40000075"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_SLE_INPUTEVENT"  value="0x40000078"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+</res-ids>

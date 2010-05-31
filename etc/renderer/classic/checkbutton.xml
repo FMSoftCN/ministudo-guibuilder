@@ -1,0 +1,5 @@
+<renderer class="Classic.CheckButton" extends="renderer::Classic.Button">
+	<set-property name="Class" value="checkbutton"/>
+	<set-property name="ColorBg3DBody" value="0xFFCED3D6"/>
+    <!-- fgcolor: ThreeDFGColor; -->
+</renderer>

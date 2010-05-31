@@ -1,0 +1,3 @@
+<renderer class="Classic.Panel" extends="renderer::Classic.Widget">
+	<set-property name="Class" value="panel"/>
+</renderer>

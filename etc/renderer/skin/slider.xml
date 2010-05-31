@@ -1,0 +1,3 @@
+<renderer class="Skin.Slider" extends="renderer::Skin.Widget">
+	<set-property name="Class" value="Slider"/>
+</renderer>

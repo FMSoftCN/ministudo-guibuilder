@@ -1,0 +1,6 @@
+#The Text of en_US
+0x00022712	"Set Default Renderer"
+0x00022713	"Select renderer:"
+0x00022714	"OK"
+0x00022715	"Button1"
+0x00022716	"Cancel"

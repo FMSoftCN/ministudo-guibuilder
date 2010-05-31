@@ -1,0 +1,2 @@
+<renderer class="Skin.HSpinner" extends="renderer::Skin.Spinner">
+</renderer>

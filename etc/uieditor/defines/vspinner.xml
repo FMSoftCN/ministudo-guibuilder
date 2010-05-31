@@ -1,0 +1,5 @@
+<window class="VSpinner" extends="Spinner">
+	<set-property name="Direction" value="Vert"/>
+	<default-property name="Width" value="32"/>
+	<default-property name="Height" value="32"/>
+</window>

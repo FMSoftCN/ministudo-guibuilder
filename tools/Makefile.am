@@ -1,0 +1,3 @@
+
+SUBDIRS=ncs2ics
+

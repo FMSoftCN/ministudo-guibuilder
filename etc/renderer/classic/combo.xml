@@ -1,0 +1,7 @@
+<renderer class="Classic.Combobox" extends="renderer::Classic.Panel">
+	<set-property name="Class" value="combobox"/>
+	
+	<set-property name="ColorBgWindow" value="0"/>
+		
+	<property name="ColorBg3DBody" id="28928" type="color" default="0xFFCED3D6"/>
+</renderer>

@@ -1,0 +1,2 @@
+<renderer class="Flat.HProgressBar" extends="renderer::Flat.ProgressBar">
+</renderer>

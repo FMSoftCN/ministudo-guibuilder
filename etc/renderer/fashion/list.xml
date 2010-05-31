@@ -1,0 +1,6 @@
+<renderer class="Fashion.List" extends="renderer::Fashion.AbstractList">
+	<set-property name="Class" value="list"/>
+	<set-property name="ColorFgHiliteItem" value="0"/>
+	<set-property name="ColorFgSignificantItem" value="0"/>
+	<set-property name="ColorBgSignificantItem" value="0"/>
+</renderer>

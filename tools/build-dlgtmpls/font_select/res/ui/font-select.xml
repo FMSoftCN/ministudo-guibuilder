@@ -1,0 +1,105 @@
+<window class="window::MainWnd" serial-number="1923629056">
+	<ID>0x80002</ID>
+	<X>0</X>
+	<Y>0</Y>
+	<Width>458</Width>
+	<Height>417</Height>
+	<Text>0x00022712</Text>
+	<Border>True</Border>
+	<HasCaption>True</HasCaption>
+	<SystemMenu>True</SystemMenu>
+	<BorderType>DlgFrame</BorderType>
+	<MinimizeBox>False</MinimizeBox>
+	<MaximizeBox>False</MaximizeBox>
+	<window class="window::Button" serial-number="4285284352">
+		<ID>0x40000212</ID>
+		<X>242</X>
+		<Y>344</Y>
+		<Width>80</Width>
+		<Height>30</Height>
+		<Text>0x00022713</Text>
+		<Visible>True</Visible>
+	</window>
+	<window class="window::Button" serial-number="3684616192">
+		<ID>0x40000213</ID>
+		<X>344</X>
+		<Y>344</Y>
+		<Width>80</Width>
+		<Height>30</Height>
+		<Text>0x00022714</Text>
+		<Visible>True</Visible>
+	</window>
+	<window class="window::Static" serial-number="4135002112">
+		<ID>0x40000209</ID>
+		<Align>Left</Align>
+		<X>12</X>
+		<Y>8</Y>
+		<Width>100</Width>
+		<Height>24</Height>
+		<Text>0x00022715</Text>
+	</window>
+	<window class="window::Combobox" serial-number="1954250752">
+		<ID>0x4000020a</ID>
+		<X>107</X>
+		<Y>8</Y>
+		<Width>269</Width>
+		<Height>25</Height>
+	</window>
+	<window class="window::Button" serial-number="4202352640">
+		<ID>0x4000020b</ID>
+		<X>383</X>
+		<Y>8</Y>
+		<Width>46</Width>
+		<Height>25</Height>
+		<Text>0x00022716</Text>
+	</window>
+	<window class="window::ListView" serial-number="1807122432">
+		<ID>0x4000020c</ID>
+		<ScrollBarMode>Always</ScrollBarMode>
+		<X>12</X>
+		<Y>41</Y>
+		<Width>417</Width>
+		<Height>216</Height>
+	</window>
+	<window class="window::Static" serial-number="2133061632">
+		<ID>0x4000020d</ID>
+		<Align>Left</Align>
+		<X>12</X>
+		<Y>274</Y>
+		<Width>100</Width>
+		<Height>24</Height>
+		<Text>0x00022718</Text>
+	</window>
+	<window class="window::Static" serial-number="1872433152">
+		<ID>0x4000020f</ID>
+		<Align>Left</Align>
+		<X>12</X>
+		<Y>304</Y>
+		<Width>100</Width>
+		<Height>24</Height>
+		<Text>0x00022719</Text>
+	</window>
+	<window class="window::SlEdit" serial-number="4188749824">
+		<ID>0x4000020e</ID>
+		<X>112</X>
+		<Y>269</Y>
+		<Width>317</Width>
+		<Height>25</Height>
+		<Text>0x0002271A</Text>
+	</window>
+	<window class="window::Combobox" serial-number="3071545344">
+		<ID>0x40000210</ID>
+		<X>112</X>
+		<Y>305</Y>
+		<Width>317</Width>
+		<Height>25</Height>
+	</window>
+	<window class="window::CheckButton" serial-number="4064133120">
+		<ID>0x40000211</ID>
+		<X>8</X>
+		<Y>344</Y>
+		<Width>120</Width>
+		<Height>30</Height>
+		<Text>0x0002271B</Text>
+	</window>
+</window>

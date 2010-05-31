@@ -1,0 +1,8 @@
+<window class="HSeparator" extends="Separator">
+	
+	<set-property name="Direction" value="Horz"/>
+	<default-property name="Width" value="200"/>
+	<default-property name="Height" value="5"/>
+
+</window>
+

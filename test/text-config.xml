@@ -1,0 +1,14 @@
+<text-configuration>
+	<text status="(default|current)">
+		<lang>en</lang>
+		<country>US</country>
+		<charset>unicode</charset>
+		<font-name>no</font-name>
+	</text>
+	<text status="">
+		<lang>en</lang>
+		<country>UK</country>
+		<charset>unicode</charset>
+		<font-name>no</font-name>
+	</text>
+</text-configuration>

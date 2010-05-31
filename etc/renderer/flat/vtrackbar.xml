@@ -1,0 +1,2 @@
+<renderer class="Flat.VTrackBar" extends="renderer::Flat.TrackBar">
+</renderer>

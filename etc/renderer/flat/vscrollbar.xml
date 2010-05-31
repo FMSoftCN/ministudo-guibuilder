@@ -1,0 +1,2 @@
+<renderer class="Flat.VScrollBar" extends="renderer::Flat.ScrollBar">
+</renderer>

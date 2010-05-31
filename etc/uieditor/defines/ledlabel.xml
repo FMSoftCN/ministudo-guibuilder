@@ -1,0 +1,13 @@
+<window class="LEDLabel" extends="Static">
+	
+	<set-property name="Class" value="ledlabel"/>
+	<set-property name="Font" value=""/>
+	<default-property name="Height" value="30"/>
+
+	<property name="LedColor" id="11" type="color" default="0xFFFFFFFF"/>
+	<property name="LedWidth" id="12" type="int" default="20"/>
+	<property name="LedHeight" id="13" type="int" default="30"/>
+	<property name="LedGap" id="14" type="int" default="5"/>
+
+</window>
+

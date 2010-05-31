@@ -1,0 +1,12 @@
+<window class="ButtonGroup" extends="GroupBox">
+	<set-property name="Class" value="buttongroup"/>
+	<default-property name="Width" value="100"/>
+	<default-property name="Height" value="100"/>
+
+	<event id="4050">
+		<handler>void onRadioButtonChanged(mButtonGroup* self, int id, int nc, DWORD sel_rdbtn_id);</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_BTNGRP_SELCHANGED)</code>
+	</event>
+
+</window>
+

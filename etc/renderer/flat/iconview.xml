@@ -1,0 +1,3 @@
+<renderer class="Flat.IconView" extends="renderer::Flat.ItemView">
+	<set-property name="Class" value="iconview"/>
+</renderer>

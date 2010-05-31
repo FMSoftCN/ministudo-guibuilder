@@ -1,0 +1,4 @@
+<renderer class="Flat.Container" extends="renderer::Flat.ScrollWidget">
+	<set-property name="Class" value="container"/>
+    <!-- no set -->
+</renderer>

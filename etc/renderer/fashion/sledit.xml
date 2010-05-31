@@ -1,0 +1,9 @@
+<renderer class="Fashion.SlEdit" extends="renderer::Fashion.Edit">
+	<set-property name="Class" value="sledit"/>
+	
+	<set-property name="ScrollBarSize" value="0"/>
+	<set-property name="ColorScrollBar" value="0"/>
+	<set-property name="ColorScrollArrow" value="0"/>
+	<set-property name="ColorScrollArrowDisable" value="0"/>
+	<set-property name="ItemGradientMode" value="Vert"/>
+</renderer>

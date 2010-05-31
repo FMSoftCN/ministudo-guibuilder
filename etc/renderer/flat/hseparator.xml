@@ -1,0 +1,2 @@
+<renderer class="Flat.HSeparator" extends="renderer::Flat.Separator">
+</renderer>

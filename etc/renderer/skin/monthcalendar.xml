@@ -1,0 +1,21 @@
+<renderer class="Skin.MonthCalendar" extends="renderer::Skin.Widget">
+	<set-property name="Class" value="monthcal"/>
+	
+	<property name="ColorFgArrow" id="28672" type="color" default="0xFF000000"/>
+	<property name="ColorBgArrow" id="28928" type="color" default="0xFFD8E9EC"/>
+	<!-- NCS_BGC_DISABLED_ITEM -->
+	<property name="ColorBgDisable" id="28932" type="color" default="0xFFFFFFFF"/>
+	<!-- NCS_FGC_DISABLED_ITEM -->
+	<property name="ColorTextDisable" id="28676" type="color" default="0xFF99A8AC"/>
+	<!-- NCS_BGC_SELECTED_ITEM -->
+	<property name="ColorBgSelected" id="28930" type="color" default="0xFFC56A31"/>
+	<!-- NCS_FGC_SELECTED_ITEM -->
+	<property name="ColorFgSelected" id="28674" type="color" default="0xFFFFFFFF"/>
+	
+	<!-- NCS_IMAGE_ARROWSHELL -->
+	<property name="ImageArrowShell" id="32770" type="image"/>
+	
+	 <!-- NCS_IMAGE_ARROWS -->
+  <property name="ImageArrows" id="32679" type="image"/>
+	
+</renderer>

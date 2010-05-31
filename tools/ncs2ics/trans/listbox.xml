@@ -1,0 +1,65 @@
+
+<translator class="window::ListBox" extends="window::Widget">
+
+	<set name="class" value="listbox" type="string"/>
+	<source-default name="Border" value="True" type="enum"/>
+
+	<translate>
+		<source name="Notify" type="enum"/>
+		<dest name="style" tyle="int"/>
+		<enum-map>
+			<True>1</True>
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="MouseFollow" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x10</True> <!--LBS_MOUSEFOLLOW -->
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="Checkable" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x1000</True> <!--LBS_CHECKBOX -->
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="AutoCheck" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x4000</True> <!--LBS_AUTOCHECK -->
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="AutoSort" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>2</True> <!-- LBS_SORT -->
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="Multi" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x08</True> <!-- LBS_MULTIPLESEL -->
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="Automatic" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<Always>0x8000</Always> <!-- LBS_SBALWAYS -->
+		</enum-map>
+	</translate>
+
+</translator>
+
+

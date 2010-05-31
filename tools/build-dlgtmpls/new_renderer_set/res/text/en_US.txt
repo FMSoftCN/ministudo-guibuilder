@@ -1,0 +1,9 @@
+#The Text of en_US
+0x00022712	"Create New Renderer Set"
+0x00022713	"New Renderer Set"
+0x00022714	"OK"
+0x00022715	"Cancel"
+0x00022716	"Renderer Type:"
+0x00022717	"Set ID Name:"
+0x00022718	"IDRS_"
+0x00022719	"Button3"

@@ -1,0 +1,83 @@
+<window class="window::MainWnd" serial-number="644812800">
+	<ID>0x80002</ID>
+	<X>0</X>
+	<Y>0</Y>
+	<Width>352</Width>
+	<Height>304</Height>
+	<Text>0x00022712</Text>
+	<Border>True</Border>
+	<HasCaption>True</HasCaption>
+	<SystemMenu>True</SystemMenu>
+	<BorderType>DlgFrame</BorderType>
+	<MinimizeBox>False</MinimizeBox>
+	<MaximizeBox>False</MaximizeBox>
+	<window class="window::Button" serial-number="2004582400">
+		<ID>0x40000001</ID>
+		<X>128</X>
+		<Y>220</Y>
+		<Width>90</Width>
+		<Height>32</Height>
+		<Text>0x00022713</Text>
+		<Visible>True</Visible>
+	</window>
+	<window class="window::Image" serial-number="2133794816">
+		<ID>0x40000068</ID>
+		<X>40</X>
+		<Y>12</Y>
+		<Width>247</Width>
+		<Height>52</Height>
+	</window>
+	<window class="window::Static" serial-number="2950057984">
+		<ID>0x4000000a</ID>
+		<Align>Center</Align>
+		<AutoWrap>True</AutoWrap>
+		<X>24</X>
+		<Y>176</Y>
+		<Width>296</Width>
+		<Height>40</Height>
+		<Text>0x00022715</Text>
+	</window>
+	<window class="window::Static" serial-number="4222576640">
+		<ID>0x4000000b</ID>
+		<Align>Right</Align>
+		<X>24</X>
+		<Y>108</Y>
+		<Width>72</Width>
+		<Height>28</Height>
+		<Text>0x00022716</Text>
+	</window>
+	<window class="window::Static" serial-number="4293509120">
+		<ID>0x4000000c</ID>
+		<Align>Right</Align>
+		<X>36</X>
+		<Y>140</Y>
+		<Width>60</Width>
+		<Height>24</Height>
+		<Text>0x00022718</Text>
+	</window>
+	<window class="window::Static" serial-number="1028751360">
+		<ID>0x40000064</ID>
+		<X>112</X>
+		<Y>108</Y>
+		<Width>160</Width>
+		<Height>28</Height>
+		<Text>0x00022719</Text>
+	</window>
+	<window class="window::Static" serial-number="3619057664">
+		<ID>0x40000065</ID>
+		<X>112</X>
+		<Y>140</Y>
+		<Width>159</Width>
+		<Height>24</Height>
+		<Text>0x0002271B</Text>
+	</window>
+	<window class="window::Static" serial-number="2447343616">
+		<ID>0x4000000d</ID>
+		<Align>Center</Align>
+		<X>36</X>
+		<Y>76</Y>
+		<Width>253</Width>
+		<Height>24</Height>
+		<Text>0x0002271D</Text>
+	</window>
+</window>

@@ -1,0 +1,78 @@
+<window class="window::MainWnd" serial-number="1837101056">
+	<ID>0x80457</ID>
+	<X>0</X>
+	<Y>0</Y>
+	<Width>443</Width>
+	<Height>303</Height>
+	<Text>0x00022712</Text>
+	<Border>True</Border>
+	<Visible>False</Visible>
+	<HasCaption>True</HasCaption>
+	<SystemMenu>True</SystemMenu>
+	<BorderType>DlgFrame</BorderType>
+	<MinimizeBox>False</MinimizeBox>
+	<MaximizeBox>False</MaximizeBox>
+	<window class="window::Button" serial-number="1026926592">
+		<ID>0x4000012c</ID>
+		<X>316</X>
+		<Y>29</Y>
+		<Width>98</Width>
+		<Height>30</Height>
+		<Text>0x00022713</Text>
+	</window>
+	<window class="window::Button" serial-number="758366208">
+		<ID>0x40000190</ID>
+		<X>317</X>
+		<Y>71</Y>
+		<Width>98</Width>
+		<Height>30</Height>
+		<Text>0x00022715</Text>
+	</window>
+	<window class="window::Button" serial-number="855347200">
+		<ID>0x400001f4</ID>
+		<X>317</X>
+		<Y>111</Y>
+		<Width>98</Width>
+		<Height>30</Height>
+		<Text>0x00022717</Text>
+	</window>
+	<window class="window::Button" serial-number="4007608320">
+		<ID>0x40000258</ID>
+		<X>317</X>
+		<Y>155</Y>
+		<Width>98</Width>
+		<Height>30</Height>
+		<Text>0x00022718</Text>
+	</window>
+	<window class="window::Button" serial-number="3588018176">
+		<ID>0x40000001</ID>
+		<X>192</X>
+		<Y>232</Y>
+		<Width>100</Width>
+		<Height>32</Height>
+		<Text>0x0002271A</Text>
+	</window>
+	<window class="window::Button" serial-number="4294377472">
+		<ID>0x40000002</ID>
+		<X>315</X>
+		<Y>232</Y>
+		<Width>100</Width>
+		<Height>32</Height>
+		<Text>0x0002271B</Text>
+	</window>
+	<window class="window::ListView" serial-number="531701760">
+		<ID>0x40000064</ID>
+		<ScrollBarMode>Always</ScrollBarMode>
+		<X>24</X>
+		<Y>28</Y>
+		<Width>269</Width>
+		<Height>168</Height>
+	</window>
+	<window class="window::HSeparator" serial-number="2147444736">
+		<ID>0x40000014</ID>
+		<X>2</X>
+		<Y>203</Y>
+		<Width>435</Width>
+		<Height>20</Height>
+	</window>
+</window>

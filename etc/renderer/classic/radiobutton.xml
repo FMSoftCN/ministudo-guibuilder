@@ -1,0 +1,4 @@
+<renderer class="Classic.RadioButton" extends="renderer::Classic.CheckButton">
+	<set-property name="Class" value="radiobutton"/>
+	<set-property name="ColorBg3DBody" value="0xFFCED3D6"/>
+</renderer>

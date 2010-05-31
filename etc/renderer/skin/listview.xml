@@ -1,0 +1,12 @@
+<renderer class="Skin.ListView" extends="renderer::Skin.ItemView">
+	<set-property name="Class" value="listview"/>
+	
+	<set-property name="ColorBgSelItem" value="0"/>
+	<set-property name="ColorFgSelItem" value="0"/>
+	<set-property name="ColorFgHiliteItem" value="0"/>
+	<set-property name="ColorFgSignificantItem" value="0"/>
+	<set-property name="ColorBgSignificantItem" value="0"/>
+	
+	<!-- NCS_IMAGE_HEADER -->
+	<property name="ImageHeader" id="32775" type="image"/>
+</renderer>

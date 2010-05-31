@@ -1,0 +1,7 @@
+
+<translator class="window::GroupBox" extends="window::Static" >
+
+	<set name="class" value="static" type="string"/>
+	<set name="style" value="0xi7" type="int"/> <!-- SS_GROUPBOX -->
+
+</translator>

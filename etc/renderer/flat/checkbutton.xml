@@ -1,0 +1,6 @@
+<renderer class="Flat.CheckButton" extends="renderer::Flat.Button">
+	<set-property name="Class" value="checkbutton"/>
+
+ <!-- <set-property name="RoundX" value="0"/>
+ <set-property name="RoundY" value="0"/> -->
+</renderer>

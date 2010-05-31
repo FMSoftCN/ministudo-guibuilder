@@ -1,0 +1,14 @@
+<renderer class="Fashion.Combobox" extends="renderer::Fashion.Panel">
+	<set-property name="Class" value="combobox"/>
+	
+	<set-property name="ColorBgWindow" value="0"/>
+		
+	<property name="ColorBg3DBody" id="28928" type="color" default="0xFFFF3000"/>
+	
+	<!-- NCS_MODE_BGC -->
+	<property name="GradientMode" id="36865" type="enum GradientMode" default="Vert"/>
+	<!-- NCS_METRICS_3DBODY_ROUNDX -->
+	<property name="RoundX" id="24576" type="int" default="3"/>
+	<property name="RoundY" id="24577" type="int" default="3"/>
+	
+</renderer>

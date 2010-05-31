@@ -1,0 +1,10 @@
+<window class="Container" extends="ScrollWidget" accept="true">
+	<set-property name="Class" value="container"/>
+	<set-property name="Text" value="0"/>
+	<set-property name="Font" value=""/>
+	<default-property name="Width" value="200"/>
+	<default-property name="Height" value="200"/>
+	<default-property name="Border" value="True"/>
+
+</window>
+

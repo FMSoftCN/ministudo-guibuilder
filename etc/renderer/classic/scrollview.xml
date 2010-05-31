@@ -1,0 +1,3 @@
+<renderer class="Classic.ScrollView" extends="renderer::Classic.ItemView">
+	<set-property name="Class" value="scrollview"/>
+</renderer>

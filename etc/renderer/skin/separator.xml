@@ -1,0 +1,2 @@
+<renderer class="Skin.Separator" extends="renderer::Skin.Widget">
+</renderer>

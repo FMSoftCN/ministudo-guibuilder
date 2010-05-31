@@ -1,0 +1,60 @@
+<window class="window::MainWnd" serial-number="2671357952">
+	<ID>0x80004</ID>
+	<X>0</X>
+	<Y>0</Y>
+	<Width>333</Width>
+	<Height>245</Height>
+	<Text>0x00022724</Text>
+	<Border>True</Border>
+	<Visible>False</Visible>
+	<HasCaption>True</HasCaption>
+	<SystemMenu>True</SystemMenu>
+	<BorderType>DlgFrame</BorderType>
+	<MinimizeBox>False</MinimizeBox>
+	<MaximizeBox>False</MaximizeBox>
+	<window class="window::Button" serial-number="150435840">
+		<ID>0x40000001</ID>
+		<X>105</X>
+		<Y>163</Y>
+		<Width>80</Width>
+		<Height>30</Height>
+		<Text>0x00022725</Text>
+		<Visible>True</Visible>
+	</window>
+	<window class="window::Button" serial-number="2629187584">
+		<ID>0x40000002</ID>
+		<X>210</X>
+		<Y>163</Y>
+		<Width>80</Width>
+		<Height>30</Height>
+		<Text>0x00022726</Text>
+		<Visible>True</Visible>
+	</window>
+	<window class="window::Static" serial-number="3748061184">
+		<ID>0x40000017</ID>
+		<Align>Left</Align>
+		<X>13</X>
+		<Y>6</Y>
+		<Width>271</Width>
+		<Height>22</Height>
+		<Text>0x00022727</Text>
+	</window>
+	<window class="window::SlEdit" serial-number="1230964736">
+		<ID>0x40000078</ID>
+		<X>13</X>
+		<Y>37</Y>
+		<Width>271</Width>
+		<Height>30</Height>
+		<Text>0x00022728</Text>
+	</window>
+	<window class="window::Static" serial-number="4190855168">
+		<ID>0x40000019</ID>
+		<Align>Left</Align>
+		<AutoWrap>True</AutoWrap>
+		<X>13</X>
+		<Y>82</Y>
+		<Width>271</Width>
+		<Height>58</Height>
+		<Text>0x0002272A</Text>
+	</window>
+</window>

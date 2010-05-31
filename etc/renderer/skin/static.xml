@@ -1,0 +1,7 @@
+<renderer class="Skin.Static" extends="renderer::Skin.Widget">
+	<set-property name="Class" value="static"/>
+	
+	<property name="ColorTextEnable" id="28672" type="color" default="0xFF000000"/>
+	<!-- NCS_FGC_DISABLED_ITEM -->
+	<property name="ColorTextDisable" id="28676" type="color" default="0xFF848284"/>
+</renderer>

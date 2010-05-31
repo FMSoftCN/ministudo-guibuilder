@@ -1,0 +1,7 @@
+<renderer class="Skin.ListBox" extends="renderer::Skin.ItemView">
+	<set-property name="Class" value="listbox"/>
+	<set-property name="ColorFgHiliteItem" value="0"/>
+	<set-property name="ColorFgSignificantItem" value="0"/>
+	<set-property name="ColorBgSignificantItem" value="0"/>
+	
+</renderer>

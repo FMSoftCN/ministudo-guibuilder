@@ -1,0 +1,8 @@
+<renderer class="Skin.VScrollBar" extends="renderer::Skin.ScrollBar">
+
+	<!-- WE_LFSKIN_SCROLLBAR_VSHAFT -->
+	<property name="ImageBar" id="20483" type="image"/>
+	
+	<!-- WE_LFSKIN_SCROLLBAR_VTHUMB -->
+	<property name="ImageThumb" id="20484" type="image"/>
+</renderer>

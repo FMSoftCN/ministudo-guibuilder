@@ -1,0 +1,13 @@
+<renderer class="Fashion.GroupBox" extends="renderer::Fashion.Static">
+	<set-property name="Class" value="groupbox"/>
+	
+	<property name="ColorFrame" id="28928" type="color" default="0xFFFF3000"/>
+	<!--  NCS_MODE_USEFLAT -->
+	<property name="UseFlat" id="36868" type="enum Boolean" default="False"/>
+	
+	<!-- NCS_METRICS_3DBODY_ROUNDX -->
+	<property name="RoundX" id="24576" type="int" default="3"/>
+	<property name="RoundY" id="24577" type="int" default="3"/>
+	
+</renderer>
+

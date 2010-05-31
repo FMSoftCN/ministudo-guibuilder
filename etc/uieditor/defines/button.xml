@@ -1,0 +1,100 @@
+<window class="Button" extends="Widget">
+
+	<set-property name="Class" value="button"/>
+	<set-property name="Transparent" value="False"/>
+
+	<!--default-property name="Border" value="False"/-->
+	<default-property name="Width" value="80"/>
+	<default-property name="Height" value="30"/>
+	<default-property name="Border" value="False"/>
+	
+	<set-property name="BgImage" value="0"/>
+	<set-property name="BgImageMode" value="Normal"/>
+
+	<property name="LabelType" id="2005" type="enum" default="Label">
+		<enum>
+			<option name="Label" value="0x0"/>
+			<option name="Image" value="0x02"/>
+			<option name="ImageLabel" value="0x20"/>
+			<option name="VertImageLabel" value="0x60"/>
+		</enum>
+	</property>
+	
+	<property name="Checkable" id="2006" type="enum" default="False">
+		<enum>
+			<option name="True" value="0x4"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+	
+	<property name="AutoCheck" id="2007" type="enum" default="False">
+		<enum>
+			<option name="True" value="0x8"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+	
+	<property name="ThreeDCheck" id="2008" type="enum" default="False">
+		<enum>
+			<option name="True" value="0x10"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+	
+	<property name="Align" id="7" type="enum Align" default="Center"/>
+	<property name="VAlign" type="enum VAlign" default="Middle"/>
+	<property name="WordWrap" type="enum Boolean" default="False"/>
+	<property name="Image" id="10" type="image"/>
+	<!-- NCSP_BUTTON_IMAGE_SIZE_PERCENT -->
+	<property name="ImageSizePercent" id="12" type="int" default="25"/>	
+	<!-- property name="ImageFile" type="file image"/-->
+	<!-- NCSP_BUTTON_GROUPID-->
+	<property name="GroupId" type="group" default="-1"/>
+
+	<event id="4050">
+		<handler>void onClicked(mButton* self, int id, int nc)</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_WIDGET_CLICKED)</code>
+	</event>
+<!-- -
+	<event>
+		<handler>onDblClicked</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_WIDGET_DBCLICKED)</code>
+	</event>
+	<event>
+		<handler>onEnabled</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_WIDGET_ENABLED)</code>
+	</event>
+	<event>
+		<handler>onDisabled</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_WIDGET_DISABLED)</code>
+	</event>
+	
+	<event>
+		<handler>onHilite</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_BUTTON_HILITE)</code>
+	</event>
+	<event>
+		<handler>onUnHilite</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_BUTTON_UNHILITE)</code>
+	</event>
+-->
+	<event>
+		<handler>onPushed</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_BUTTON_PUSHED)</code>
+	</event>
+	<!-- 
+	<event>
+		<handler>onUnPushed</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_BUTTON_UNPUSHED)</code>
+	</event>
+	<event>
+		<handler>onSetFocus</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_BUTTON_SETFOCUS)</code>
+	</event>
+	<event>
+		<handler>onKillFocus</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_BUTTON_KILLFOCUS)</code>
+	</event>
+-->
+</window>
+

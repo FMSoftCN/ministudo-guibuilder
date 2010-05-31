@@ -1,0 +1,62 @@
+<res-ids>
+	<res-id>
+		<id name="ID_FONTSELECT"  value="0x80002"/>
+		<type>8</type>
+		<source>res/ui/font-select.xml</source>
+	</res-id>
+	<res-id>
+		<id name="IDC_FOSD_PATH_NOTE"  value="0x40000209"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="IDC_FOSD_PATH"  value="0x4000020a"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="IDC_FOSD_UP"  value="0x4000020b"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="IDC_FOSD_FILELIIST"  value="0x4000020c"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="IDC_FOSD_FILENAEME_NOTE"  value="0x4000020d"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="IDC_FOSD_FILENAME"  value="0x4000020e"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="IDC_FOSD_FILETYPE_NOTE"  value="0x4000020f"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="IDC_FOSD_FILETYPE"  value="0x40000210"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="IDC_FOSD_ISHIDE"  value="0x40000211"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_FOSD_OK"  value="0x40000212"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_FOSD_CANCEL"  value="0x40000213"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+</res-ids>

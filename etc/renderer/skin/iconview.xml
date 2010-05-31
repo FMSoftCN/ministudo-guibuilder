@@ -1,0 +1,3 @@
+<renderer class="Skin.IconView" extends="renderer::Skin.ItemView">
+	<set-property name="Class" value="iconview"/>
+</renderer>

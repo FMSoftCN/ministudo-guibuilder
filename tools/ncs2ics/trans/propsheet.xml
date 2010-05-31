@@ -1,0 +1,23 @@
+<translator class="paged-window::PropSheet" extends="window::Widget">
+	<set name="class" value="propsheet" type="string"/>
+	
+	<translate>
+		<source name="style" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<Simple>0</Simple><!-- PSS_SIMPLE -->
+			<Compact>1</Compact><!-- PSS_COMPACTTAB -->
+			<Scrollable>2</Scrollable> <!-- PSS_SCROLLABLE -->
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="TabPos" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<Top>0</Top>
+			<Bottom>0x10</Bottom> <!-- PSS_BOTTOM -->
+		</enum-map>
+	</translate>
+
+</translator>

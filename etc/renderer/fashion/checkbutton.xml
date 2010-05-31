@@ -1,0 +1,8 @@
+<renderer class="Fashion.CheckButton" extends="renderer::Fashion.Button">
+	<set-property name="Class" value="checkbutton"/>
+	
+	<set-property name="GradientMode" value="Vert"/>
+	<set-property name="RoundX" value="0"/>
+	<set-property name="RoundY" value="0"/>
+	<set-property name="ColorBg3DBody" value="0xFFCED3D6"/>
+</renderer>

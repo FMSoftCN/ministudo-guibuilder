@@ -1,0 +1,2 @@
+<renderer class="Fashion.VTrackBar" extends="renderer::Fashion.TrackBar">
+</renderer>

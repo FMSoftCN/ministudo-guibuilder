@@ -1,0 +1,3 @@
+<renderer class="Classic.Edit" extends="renderer::Classic.ScrollView">
+	<set-property name="Class" value="edit"/>
+</renderer>

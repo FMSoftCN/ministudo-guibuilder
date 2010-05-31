@@ -1,0 +1,62 @@
+<res-ids>
+	<res-id>
+		<id name="ID_MAINWND1"  value="0x80002"/>
+		<type>8</type>
+		<source>res/ui/set_screen_size.xml</source>
+	</res-id>
+	<res-id>
+		<id name="IDOK"  value="0x40000001"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="IDCANCEL"  value="0x40000002"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC1"  value="0x40000009"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_GROUPBOX1"  value="0x4000000a"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC5"  value="0x4000000b"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC2"  value="0x4000000c"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC4"  value="0x4000000d"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_GROUPBOX1_COPY"  value="0x4000000e"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_CBDEPATH"  value="0x4000000f"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_width"  value="0x40000064"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_height"  value="0x40000065"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+</res-ids>

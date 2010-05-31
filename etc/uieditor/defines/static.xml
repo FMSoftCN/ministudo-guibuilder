@@ -1,0 +1,13 @@
+<window class="Static" extends="Widget">
+	
+	<set-property name="Class" value="static"/>
+	<default-property name="Width" value="100"/>
+	<default-property name="Height" value="25"/>
+	<default-property name="TabStop" value="False"/>
+	
+	<property name="Align" id="7" type="enum Align" default="Center"/>
+	<property name="Valign" type="enum VAlign" default="Middle"/>
+	<property name="AutoWrap" type="enum Boolean" default="False"/>
+
+</window>
+

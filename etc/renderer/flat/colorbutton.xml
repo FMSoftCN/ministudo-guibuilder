@@ -1,0 +1,5 @@
+<renderer class="Flat.ColorButton" extends="renderer::Flat.Button">
+	<set-property name="Class" value="colorbutton"/>
+	<set-property name="ColorFg3DBody" value="0xFF000000"/>
+	<set-property name="ColorTextDisable" value="0xFF848284"/>
+</renderer>

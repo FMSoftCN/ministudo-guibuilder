@@ -1,0 +1,3 @@
+<renderer class="Fashion.DialogBox" extends="renderer::Fashion.MainWnd">
+	<set-property name="Class" value="dialogbox"/>
+</renderer>

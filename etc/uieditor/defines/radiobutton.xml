@@ -1,0 +1,8 @@
+<window class="RadioButton" extends="CheckButton">
+	<set-property name="Class" value="radiobutton"/>
+	<set-property name="Checkable" value="True"/>
+	<default-property name="GroupId" value="-1"/>
+
+ 
+</window>
+

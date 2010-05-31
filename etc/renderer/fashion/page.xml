@@ -1,0 +1,3 @@
+<renderer class="Fashion.Page" extends="renderer::Fashion.Container">
+	<set-property name="Class" value="page"/>
+</renderer>

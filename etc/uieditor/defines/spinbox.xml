@@ -1,0 +1,51 @@
+<window class="SpinBox" extends="Spinner">
+	<set-property name="Class" value="spinbox"/>
+	<default-property name="Width" value="70"/>
+	<default-property name="Height" value="32"/>
+	<default-property name="Font" value=""/>
+	
+	<!-- style of spinbox -->
+	<property name="ContentType" id="2007" type="enum">
+		<enum>
+			<option name="Number" value="0"/>
+			<option name="String" value="0x8"/>
+		</enum>
+	</property>
+	<property name="Sort" type="enum">
+		<enum>
+			<option name="True" value="0x10"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+	<property name="EditBorder" type="enum" default="True">
+		<enum>
+			<option name="True" value="0"/>
+			<option name="False" value="0x20"/>
+		</enum>
+	</property>
+	<property name="EditBaseLine" type="enum">
+		<enum>
+			<option name="True" value="0x40"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+	<property name="ReadOnly" type="enum">
+		<enum>
+			<option name="True" value="0x80"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+	<property name="Case" type="enum">
+		<enum>
+			<option name="NoCase" value="0"/>
+			<option name="Upper" value="0x100"/>
+			<option name="Lower" value="0x200"/>
+		</enum>
+	</property>
+	<property name="AutoFocus" type="enum">
+		<enum>
+			<option name="True" value="0x400"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+</window>

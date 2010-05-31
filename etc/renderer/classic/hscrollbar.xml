@@ -1,0 +1,2 @@
+<renderer class="Classic.HScrollBar" extends="renderer::Classic.ScrollBar">
+</renderer>

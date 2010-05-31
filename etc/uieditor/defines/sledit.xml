@@ -1,0 +1,26 @@
+<window class="SlEdit" extends="Edit">
+	<set-property name="Class" value="sledit"/>
+	<set-property name="Multi" value="False"/>
+	<set-property name="ScrollBarMode" value="Never"/>
+	<set-property name="VScroll" value="False"/>
+
+	<default-property name="Width" value="200"/>
+	<default-property name="Height" value="30"/>
+	
+	<property name="Password" id="2014" type="enum" default="False">
+		<enum>
+			<option name="True" value="0x2000"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+	
+	<property name="AutoSelect" type="enum" default="False">
+		<enum>
+			<option name="True" value="0x4000"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+	
+	<property name="ToolTip" id="25" type="text" />
+	<property name="PasswordChar" id="26" type="char" default="*"/>
+</window>

@@ -1,0 +1,4 @@
+<translator class="window::VProgressBar" extends="window::ProgressBar">
+	<set name="class" value="progressbar" type="string"/>
+	<set name="style" value="2" type="int"/> <!-- PBS_VERTICAL -->
+</translator>

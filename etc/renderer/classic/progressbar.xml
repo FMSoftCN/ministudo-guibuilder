@@ -1,0 +1,9 @@
+<renderer class="Classic.ProgressBar" extends="renderer::Classic.Widget">
+	<set-property name="Class" value="progressbar"/>
+	
+	<set-property name="ColorFgWindow" value="0"/>
+	<set-property name="ColorBgWindow" value="0"/>
+
+	<!-- NCS_BGC_HILIGHT_ITEM -->
+	<property name="ColorChunk" id="28931" type="color" default="0xFF6B2408"/>
+</renderer>

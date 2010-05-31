@@ -1,0 +1,7 @@
+<renderer class="Skin.Button" extends="renderer::Skin.Widget">
+  <set-property name="Class" value="button" />
+    
+  <!-- NCS_IMAGE_PUSHBUTTON -->
+  <property name="ImageButton" id="32771" type="image"/>
+
+</renderer>

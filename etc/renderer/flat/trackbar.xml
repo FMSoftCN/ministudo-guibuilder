@@ -1,0 +1,14 @@
+<renderer class="Flat.TrackBar" extends="renderer::Flat.Widget">
+	<set-property name="Class" value="trackbar"/>
+	
+	<set-property name="ColorFgWindow" value="0"/>
+	<set-property name="ColorBgWindow" value="0"/>
+
+	<property name="ColorFg3DBody" id="28672" type="color" default="0xFF000000"/>
+	<property name="ColorBg3DBody" id="28928" type="color" default="0xFFFFFFFF"/>
+	
+	<!-- NCS_METRICS_3DBODY_ROUNDX -->
+	<!-- <property name="RoundX" id="24576" type="int" default="3"/>
+	<property name="RoundY" id="24577" type="int" default="3"/> -->
+	
+</renderer>

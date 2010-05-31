@@ -1,0 +1,9 @@
+<renderer class="Flat.GroupBox" extends="renderer::Flat.Static">
+	<set-property name="Class" value="groupbox"/>
+	
+	<set-property name="ColorTextEnable" value="0"/>
+	<set-property name="ColorTextDisable" value="0"/>
+	<!--NCS_FGC_3DBODY  -->
+	<property name="ColorFrame" id="28672" type="color" default="0xFFFFFFFF"/>
+</renderer>
+

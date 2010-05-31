@@ -1,0 +1,88 @@
+<window class="window::MainWnd" serial-number="4045402112">
+	<ID>0x80002</ID>
+	<X>0</X>
+	<Y>0</Y>
+	<Width>407</Width>
+	<Height>320</Height>
+	<Text>0x00022712</Text>
+	<Border>True</Border>
+	<Visible>False</Visible>
+	<HasCaption>True</HasCaption>
+	<SystemMenu>True</SystemMenu>
+	<BorderType>DlgFrame</BorderType>
+	<MinimizeBox>False</MinimizeBox>
+	<MaximizeBox>False</MaximizeBox>
+	<window class="window::Button" serial-number="2139062272">
+		<ID>0x40000002</ID>
+		<X>303</X>
+		<Y>231</Y>
+		<Width>80</Width>
+		<Height>30</Height>
+		<Text>0x00022714</Text>
+		<Visible>True</Visible>
+	</window>
+	<window class="window::Combobox" serial-number="4108795904">
+		<ID>0x40000067</ID>
+		<X>15</X>
+		<Y>32</Y>
+		<Width>273</Width>
+		<Height>25</Height>
+	</window>
+	<window class="window::Button" serial-number="2132992000">
+		<ID>0x4000006b</ID>
+		<X>303</X>
+		<Y>33</Y>
+		<Width>80</Width>
+		<Height>30</Height>
+		<Text>0x00022715</Text>
+	</window>
+	<window class="window::Button" serial-number="3190591488">
+		<ID>0x4000006a</ID>
+		<X>303</X>
+		<Y>72</Y>
+		<Width>80</Width>
+		<Height>30</Height>
+		<Text>0x00022716</Text>
+	</window>
+	<window class="window::Button" serial-number="2013179904">
+		<ID>0x40000074</ID>
+		<X>303</X>
+		<Y>111</Y>
+		<Width>80</Width>
+		<Height>30</Height>
+		<Text>0x00022717</Text>
+	</window>
+	<window class="window::Button" serial-number="3738357760">
+		<ID>0x40000075</ID>
+		<X>303</X>
+		<Y>150</Y>
+		<Width>80</Width>
+		<Height>30</Height>
+		<Text>0x00022718</Text>
+	</window>
+	<window class="window::Static" serial-number="4006461440">
+		<ID>0x4000000e</ID>
+		<Align>Left</Align>
+		<X>15</X>
+		<Y>5</Y>
+		<Width>250</Width>
+		<Height>23</Height>
+		<Text>0x00022719</Text>
+	</window>
+	<window class="window::ListView" serial-number="4291620352">
+		<ID>0x40000073</ID>
+		<ScrollBarMode>Always</ScrollBarMode>
+		<X>15</X>
+		<Y>63</Y>
+		<Width>273</Width>
+		<Height>198</Height>
+	</window>
+	<window class="window::Button" serial-number="4148154368">
+		<ID>0x40000001</ID>
+		<X>303</X>
+		<Y>189</Y>
+		<Width>80</Width>
+		<Height>30</Height>
+		<Text>0x0002271D</Text>
+	</window>
+</window>

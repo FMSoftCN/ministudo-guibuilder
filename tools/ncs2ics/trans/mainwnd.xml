@@ -1,0 +1,68 @@
+
+<translator class="window::MainWnd" extends="window::Widget">
+
+	<source-default name="Border" value="True" type="enum"/>
+	<source-default name="HasCaption" value="True" type="enum"/>
+	<source-default name="SystemMenu" value="True" type="enum"/>
+	<source-default name="MinimizeBox" value="True" type="enum"/>
+	<source-default name="MaximizeBox" value="True" type="enum"/>
+	<source-default name="TabStop" type="enum" value="False"/>
+
+
+	<translate>
+		<source name="HasCaption" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x20000000L</True>
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="SystemMenu" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x10000000L</True>
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="BorderType" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<Thick>0x00200000</Thick>
+			<Thin>0x00100000</Thin>
+			<DlgFrame>0x00800000L</DlgFrame>
+			<True>0x10000000L</True>
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="MinimizeBox" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x00020000</True>
+		</enum-map>
+	</translate>
+	
+	<translate>
+		<source name="MaximizeBox" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x00010000</True>
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="SecondaryDC" type="enum"/>
+		<dest name="exstyle" type="int"/>
+		<enum-map>
+			<True>0x00001000</True>
+		</enum-map>
+	</translate>
+
+
+
+
+
+</translator>
+

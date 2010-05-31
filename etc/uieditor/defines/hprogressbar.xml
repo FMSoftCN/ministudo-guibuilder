@@ -1,0 +1,6 @@
+<window class="HProgressBar" extends="ProgressBar">
+	<set-property name="Direction" value="Horz"/>
+	<default-property name="Width" value="200"/>
+	<default-property name="Height" value="30"/>
+	<default-property name="CurPos" value="20"/>
+</window>

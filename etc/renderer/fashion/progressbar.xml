@@ -1,0 +1,6 @@
+<renderer class="Fashion.ProgressBar" extends="renderer::Fashion.Widget">
+  <set-property name="Class" value="progressbar"/>
+    
+  <!-- NCS_BGC_PRGBAR_CHUNK -->
+  <property name="ColorChunk" id="28934" type="color" default="0xFFC56A31"/>
+</renderer>

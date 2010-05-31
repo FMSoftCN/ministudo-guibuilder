@@ -1,0 +1,3 @@
+<renderer class="Fashion.Container" extends="renderer::Fashion.ScrollWidget">
+	<set-property name="Class" value="container"/>
+</renderer>

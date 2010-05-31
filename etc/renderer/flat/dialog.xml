@@ -1,0 +1,3 @@
+<renderer class="Flat.DialogBox" extends="renderer::Flat.MainWnd">
+	<set-property name="Class" value="dialogbox"/>
+</renderer>

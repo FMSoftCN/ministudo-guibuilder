@@ -1,0 +1,2 @@
+<renderer class="Classic.VProgressBar" extends="renderer::Classic.ProgressBar">
+</renderer>

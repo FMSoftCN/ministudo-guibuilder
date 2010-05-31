@@ -1,0 +1,6 @@
+<window class="VProgressBar" extends="ProgressBar">
+	<set-property name="Direction" value="Vert"/>
+	<default-property name="Width" value="30"/>
+	<default-property name="Height" value="200"/>
+	<default-property name="CurPos" value="20"/>
+</window>

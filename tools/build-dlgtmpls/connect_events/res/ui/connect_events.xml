@@ -1,0 +1,38 @@
+<window class="MainWnd" name="windo1">
+	<ID>-1</ID>
+	<Text>Main Frame</Text>
+	<X>0</X>
+	<Y>0</Y>
+	<Width>300</Width>
+	<Height>250</Height>
+	<Border>True</Border>
+	<HasCaption>True</HasCaption>
+	<SystemMenu>True</SystemMenu>
+	<BorderType>DlgFrame</BorderType>
+	<MinimizeBox>True</MinimizeBox>
+	<MaximizeBox>True</MaximizeBox>
+
+	<window class="Button">
+		<ID name="IDOK">0x40000001</ID>
+		<X>50</X>
+		<Y>8</Y>
+		<Text>OK</Text>
+		<Width>80</Width>
+		<Height>30</Height>
+		<Visible>True</Visible>
+		<Enable>True</Enable>
+	</window>
+
+	<window class="Button">
+		<ID name="IDCANCEL">0x40000002</ID>
+		<X>50</X>
+		<Y>43</Y>
+		<Text>Cancel</Text>
+		<Width>80</Width>
+		<Height>30</Height>
+		<Visible>True</Visible>
+		<Enable>True</Enable>
+	</window>
+
+</window>
+

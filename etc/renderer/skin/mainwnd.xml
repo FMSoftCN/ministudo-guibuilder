@@ -1,0 +1,41 @@
+<renderer class="Skin.MainWnd" extends="renderer::Skin.Panel">
+	<set-property name="Class" value="mainwnd"/>
+	<set-property name="ColorBorderActive" value="0"/>
+	<set-property name="ColorBorderInActive" value="0"/>
+
+	<property name="ColorBorderInActive" id="12552" type="color" default="0xFFCED3D6"/>
+	<property name="ImageLeftBorder" id="20490" type="image"/>
+	<property name="ImageTopBorder" id="20488" type="image"/>
+	<property name="ImageRightBorder" id="20491" type="image"/>
+	<property name="ImageBottomBorder" id="20489" type="image"/>
+
+	
+	<!-- WE_LFSKIN_SCROLLBAR_HSHAFT -->
+	<property name="ImageHScrollBar" id="20485" type="image"/>
+	
+	<!--WE_LFSKIN_SCROLLBAR_VSHAFT  -->
+	<property name="ImageVScrollBar" id="20483" type="image"/>
+	
+	<!-- WE_LFSKIN_SCROLLBAR_ARROWS -->
+	<property name="ImageSbArrows" id="20487" type="image"/>
+	
+	<!-- WE_LFSKIN_SCROLLBAR_HTHUMB -->
+	<property name="ImageHThumb" id="20486" type="image"/>
+	
+	<!-- WE_LFSKIN_SCROLLBAR_VTHUMB -->
+	<property name="ImageVThumb" id="20484" type="image"/>
+	
+	<!--  WE_METRICS_CAPTION -->
+	<property name="CaptionHeight" id="8192" type="int" default="20"/>
+	<!--  WE_FONT_CAPTION  -->
+	<property name="CaptionFont" id="4096" type="font" default=""/>
+	<!-- WE_FGC_ACTIVE_CAPTION -->
+	<property name="ColorFgCaptionActive" id="12288" type="color" default="0xFFFFFFFF"/>
+	<!-- WE_FGC_INACTIVE_CAPTION -->
+	<property name="ColorFgCaptionInActive" id="12294" type="color" default="0xFFF8E4D8"/>
+	<!-- WE_LFSKIN_CAPTION -->
+	<property name="ImageCaption" id="20481" type="image"/>
+	<!-- WE_LFSKIN_CAPTION_BTN -->
+	<property name="ImageCaptionBtns" id="20482" type="image"/>
+	
+</renderer>

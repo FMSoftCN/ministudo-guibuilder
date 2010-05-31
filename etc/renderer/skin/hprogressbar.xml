@@ -1,0 +1,5 @@
+<renderer class="Skin.HProgressBar" extends="renderer::Skin.ProgressBar">
+	
+	<!-- NCS_IMAGE_PRGBAR_HCHUNK -->
+  <property name="ImageChunk"  id="32777" type="image"/>
+</renderer>

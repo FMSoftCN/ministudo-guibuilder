@@ -1,0 +1,11 @@
+<translator class="window::ScrollBar" extends="window::Widget">
+	<set name="class" value="scrollbar" type="string"/>
+	
+	<translate>
+		<source name="HaveArrows" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<False>4</False> <!-- SBS_NOARROW -->
+		</enum-map>
+	</translate>
+</translator>

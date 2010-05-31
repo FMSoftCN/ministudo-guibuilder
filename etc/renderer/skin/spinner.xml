@@ -1,0 +1,10 @@
+<renderer class="Skin.Spinner" extends="renderer::Skin.Widget">
+	<set-property name="Class" value="spinner"/>
+	
+	<!-- NCS_IMAGE_ARROWSHELL -->
+	<property name="ImageArrowShell" id="32770" type="image"/>
+	
+	<!-- NCS_IMAGE_ARROWS -->
+  <property name="ImageArrows" id="32679" type="image"/>
+  
+</renderer>

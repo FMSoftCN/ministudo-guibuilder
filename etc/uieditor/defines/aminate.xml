@@ -1,0 +1,42 @@
+<window class="Animate" extends="Static">
+	<set-property name="Class" value="animate"/>
+	<default-property name="Border" value="False"/>
+	<default-property name="Width" value="100"/>
+	<default-property name="Height" value="100"/>
+	
+	<set-property name="Text" value="0"/>
+	<set-property name="BgImage" value="0"/>
+	<set-property name="Font" value=""/>
+	<set-property name="BgImageMode" value="Normal"/>
+	<set-property name="AutoWrap" value="False"/>
+	
+	<property name="Loop" id="2005" type="enum" default="True">
+		<enum>
+			<option name="True" value="0x8"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+	
+	<property name="Scale" type="enum" default="None">
+		<enum>
+			<option name="None" value="0"/>
+			<option name="ImageScaled" value="0x10"/>
+			<option name="AutoFit" value="0x20"/>
+		</enum>
+	</property>
+	
+	<property name="Autoplay" id="2008" type="enum" default="True">
+		<enum>
+			<option name="True" value="0x40"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+	
+<!--	<set-property name="Align" value=""/>
+	<set-property name="Valign" value=""/>
+	-->
+	<property name="GIFFile" id="11" type="file GIF"/>
+	<property name="Dir" type="file Dir"/>
+	<property name="Interval" id="13" type="int" default="100"/>
+</window>
+

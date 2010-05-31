@@ -1,0 +1,27 @@
+
+<translator class="window::Static" extends="window::Widget">
+
+	<set name="class" value="static" type="string"/>
+	<!-- set name="style" value="0x0000000B" type="int"/ --><!-- SS_SIMPLE -->
+
+	<translate>
+		<source name="Align" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<Left>0x10</Left> <!-- SS_LEFT -->
+			<Center>0x20</Center> <!-- SS_CENTER -->
+			<Right>0x30</Right> <!-- SS_RIGHT -->
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="AutoWrap" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<False>0x400</False><!-- SS_LEFTNOWORDWRAP -->
+		</enum-map>
+	</translate>
+
+
+</translator>
+

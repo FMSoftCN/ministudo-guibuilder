@@ -1,0 +1,8 @@
+<window class="HTrackBar" extends="TrackBar">
+	<set-property name="Direction" value="Horz"/>
+	<default-property name="Width" value="200"/>
+	<default-property name="Height" value="40"/>
+	
+	<default-property name="ThumbWidth" value="24"/>
+	<default-property name="ThumbHeight" value="12"/>
+</window>

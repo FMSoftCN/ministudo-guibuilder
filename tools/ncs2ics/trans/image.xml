@@ -1,0 +1,7 @@
+
+<translator class="window::Image" extends="window::Static" >
+
+	<set name="class" value="static" type="string"/>
+	<set name="style" value="0x9" type="int"/> <!-- SS_BITMAP -->
+
+</translator>

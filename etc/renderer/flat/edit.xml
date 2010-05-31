@@ -1,0 +1,4 @@
+<renderer class="Flat.Edit" extends="renderer::Flat.ScrollView">
+	<set-property name="Class" value="edit"/>
+		
+</renderer>

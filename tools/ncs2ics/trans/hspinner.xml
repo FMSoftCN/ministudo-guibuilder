@@ -1,0 +1,4 @@
+<translator class="window::HSpinner" extends="window::Spinner">
+	<set name="class" value="spinbox" type="string"/>
+	<set name="style" value="0x10" type="int"/> <!-- SPS_HORIZONTAL -->
+</translator>

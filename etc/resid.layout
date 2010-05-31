@@ -1,0 +1,24 @@
+<panelLayout cols="1" rows="2">
+	<col idx="0" width="100%"/>
+	<row idx="1" height="100%"/>
+	
+	<!-- cell col="0" row="0">
+		<panelLayout cols="2" rows="1">
+			<row idx="0" height="100%"/>
+			<col idx="1" width="40"/>
+	
+			<cell col="0" row="0">
+				<window class="sledit" style="4194304" id="100" />
+			</cell>
+	
+			<cell col="1" row="0">
+				<window class="button" text="GO!" id="101"/>
+			</cell>
+		</panelLayout>
+	</cell --> 
+	
+	<cell col="0" row="1">
+		<panel class="ResIdListPanel"/>
+	</cell>
+	
+</panelLayout>

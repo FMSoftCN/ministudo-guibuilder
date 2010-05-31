@@ -1,0 +1,39 @@
+<renderer class="Fashion.MainWnd" extends="renderer::Fashion.Panel">
+	<set-property name="Class" value="mainwnd"/>
+	
+	<set-property name="BoderColor" value="0xFFF8E4D8"/>
+	
+	<!--  WE_METRICS_CAPTION -->
+	<property name="CaptionHeight" id="8192" type="int" default="20"/>
+		<!--  WE_FONT_CAPTION  -->
+	<property name="CaptionFont" id="4096" type="font" default=""/>
+	<!-- WE_FGC_ACTIVE_CAPTION -->
+	<property name="ColorFgCaptionActive" id="12288" type="color" default="0xFFFFFFFF"/>
+	<!--  WE_BGCA_ACTIVE_CAPTION -->
+	<property name="BgColorACaptionActive" id="12544" type="color" default="0xFFE35400"/>
+	<!--  WE_BGCB_ACTIVE_CAPTION -->
+	<property name="BgColorBCaptionActive" id="12800" type="color" default="0xFFFF953D"/>
+	<!-- WE_FGC_INACTIVE_CAPTION -->
+	<property name="ColorFgCaptionInActive" id="12294" type="color" default="0xFFF8E4D8"/>
+	<!--  WE_BGCA_INACTIVE_CAPTION -->
+	<property name="BgColorACaptionInActive" id="12550" type="color" default="0xFFDF967A"/>
+	<!--  WE_BGCB_INACTIVE_CAPTION -->
+	<property name="BgColorBCaptionInActive" id="12806" type="color" default="0xFFEBB99D"/>
+
+
+	<property name="Border" id="8196" type="int" default="2"/>
+	<property name="ColorBorderActive" id="12292" type="color" default="0xFFC8D0D4"/>
+	<property name="ColorFgBorderInActive" id="12548" type="color" default="0xFFC8D0D4"/>
+	
+	<!--  WE_FGC_THREED_BODY -->
+	<property name="CaptionBtnColor" id="12296" type="color" default="0xFF000000"/>
+	
+	<!-- WE_METRICS_SCROLLBAR -->
+	<property name="ScrollBarSize" id="8197" type="int" default="16"/>
+	<!-- WE_MAINC_THREED_BODY -->
+	<property name="ScrollBarBaseColor" id="12552" type="color" default="0xFFD8E9EC"/>
+	<!-- WE_BGCB_ACTIVE_CAPTION -->
+	<!-- <property name="BaseFgColorScrollBar" id="12800" type="color" default="0xFFFF953D"/>-->
+	
+	
+</renderer>

@@ -1,0 +1,14 @@
+<renderer class="Skin.paged-window::PropSheet" extends="renderer::Skin.Widget">
+	<set-property name="Class" value="propsheet"/>	
+	
+	<!-- NCS_FGC_WINDOW -->
+	<property name="ColorTextEnable" id="28673" type="color" default="0xFF000000"/>
+	<!-- NCS_BGC_3DBODY -->
+	<property name="ColorTabBorderInActive" id="28928" type="color" default="0xFFD8E9EC"/>
+	
+	<!-- NCS_IMAGE_TAB -->
+  <property name="ImageTab" id="32776" type="image"/>
+  
+  <!-- NCS_IMAGE_ARROWS -->
+  <property name="ImageArrows" id="32679" type="image"/>
+</renderer>

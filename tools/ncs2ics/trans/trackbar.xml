@@ -1,0 +1,20 @@
+<translator class="window::TrackBar" extends="window::Widget">
+	<set name="class" value="trackbar" type="string"/>
+	
+	<translate>
+		<source name="Ruler" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<False>0x10</False> <!-- TBS_NOTICK -->
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="Notify" type="enum"/>
+		<dest name="style" tyle="int"/>
+		<enum-map>
+			<True>1</True>
+		</enum-map>
+	</translate>
+</translator>
+	

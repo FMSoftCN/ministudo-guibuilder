@@ -1,0 +1,60 @@
+<window class="MainWnd" extends="Panel">
+	<default-property name="Class" value="mainwnd"/>
+	<set-property name="TabStop" value="False"/>
+	<default-property name="Border" value="True"/>
+	<default-property name="Width" value="200"/>
+	<default-property name="Height" value="200"/>
+	
+	<property name="HasCaption" id="2005" type="enum" default="True">
+		<enum>
+			<option name="True" value="0x20000000"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+	<property name="SystemMenu" type="enum" default="True">
+		<enum>
+			<option name="True" value="0x10000000"/>
+			<option name="False" vlaue="0"/>
+		</enum>
+	</property>
+
+	<property name="BorderType" type="enum" default="Simple">
+		<enum>
+			<option name="Simple" value="0"/>
+			<option name="Thick" value="0x00200000"/>
+			<option name="Thin" value="0x00100000"/>
+			<option name="DlgFrame" value="0x00800000"/>
+		</enum>
+	</property>
+	<property name="MinimizeBox" type="enum" default="True">
+		<enum>
+			<option name="True" value="0x00020000"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+	<property name="MaximizeBox" type="enum" default="True">
+		<enum>
+			<option name="True" value="0x00010000"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+
+	<property name="SecondaryDC" id="3001" type="enum" default="False">
+		<enum>
+			<option name="True" value="0x00001000L"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+    <property name="TopMost" type="enum" default="False">
+        <enum>
+            <option name="True" value="0x00004000L"/>
+            <option name="False" value="0"/>
+        </enum>
+    </property>
+    <property name="ToolWindow" type="enum" default="False">
+        <enum>
+            <option name="True" value="0x00008000L"/>
+            <option name="False" value="0"/>
+        </enum>
+    </property>
+</window>

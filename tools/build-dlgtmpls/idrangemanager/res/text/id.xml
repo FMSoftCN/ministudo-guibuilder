@@ -1,0 +1,307 @@
+<res-ids>
+	<res-id>
+		<id  value="0x22711"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x22712"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x22713"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x22714"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x22715"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x22716"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x22981"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x22a20"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x22c84"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x22db3"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x22de3"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x22de4"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x23051"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x23c45"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x23c46"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x23da3"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x23eff"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x24060"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x240f1"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2483a"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2513c"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2513d"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2523a"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2523b"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x25460"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x255c4"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x25635"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x25c7c"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x25da8"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x25f14"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x260ac"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x26fa7"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x26fa8"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2753e"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2753f"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x289a8"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x28a38"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x28a39"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x28c00"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x29720"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x29a72"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x29bb3"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x29bb4"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x29bb5"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x29bb6"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x29d83"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x29f2a"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2a15b"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2a4b5"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2a5af"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2a5b0"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2a793"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2a794"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2b135"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2b434"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2b435"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2b620"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2bc22"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2bc23"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2bc24"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2bc25"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+</res-ids>

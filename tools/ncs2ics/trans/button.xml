@@ -1,0 +1,80 @@
+
+<translator class="window::Button" extends="window::Widget">
+
+	<set name="class" value="button" type="string"/>
+
+	<translate>
+		<source name="Notify" type="enum"/>
+		<dest name="style" tyle="int"/>
+		<enum-map>
+			<True>0</True> <!-- don't need notify -->
+			<False>0</False>
+		</enum-map>
+	</translate>
+
+
+	
+	<translate>
+		<source name="LabelType" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<Label>0</Label>  <!-- BS_TEXT-->
+			<Image>0x00000080L</Image> <!-- BS_BITMAP -->
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="Checkable" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x00001000L</True> <!-- BS_PUSHLIKE -->
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="AutoCheck" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x00000007L</True><!--BS_AUTO3STATE -->
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="ThreeDCheck" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x00000006L</True><!--BS_3STATE -->
+		</enum-map>
+	</translate>
+
+
+	<translate>
+		<source name="Align" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<Left>0x00000100L</Left> <!-- BS_LEFT -->
+			<Center>0x00000300L</Center> <!-- BS_CENTER -->
+			<Right>0x00000200L</Right> <!-- BS_RIGHT -->
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="VAlign" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<Top>0x00000400L</Top>
+			<Middle>0x00000C00L</Middle>
+			<Bottom>0x00000800L</Bottom>
+		</enum-map>
+	</translate>
+
+
+	<translate>
+		<source name="WordWrap" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x00002000L</True>
+		</enum-map>
+	</translate>
+
+</translator>

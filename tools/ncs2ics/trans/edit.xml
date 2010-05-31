@@ -1,0 +1,69 @@
+
+<translator class="window::Edit" extends="window::Widget">
+	
+	<set name="class" value="sledit" type="string"/>
+	<source-default name="Border" value="True" type="enum"/>
+
+	<translate>
+		<source name="Notify" type="enum"/>
+		<dest name="style" tyle="int"/>
+		<enum-map>
+			<True>0</True> <!-- SlEdit and MlEdit don't need ES_NOTIFY -->
+			<False>0</False>
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="Align" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<Left>0</Left> <!-- ES_LEFT -->
+			<Right>2</Right> <!-- ES_RIGHT -->
+			<Center>1</Center> <!-- ES_CENTER -->
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="Case" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<Lower> 0x10</Lower> <!-- ES_LOWERCASE -->
+			<Upper> 0x8</Upper> <!-- ES_UPPERCASE -->
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="HideSel" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<False>0x100</False> <!-- ES_NOHIDESEL -->
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="ReadOnly" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x800</True> <!-- ES_READONLY -->
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="BaseLine" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x1000</True> <!-- ES_BASELINE -->
+		</enum-map>
+	</translate>
+
+
+	<translate>
+		<source name="AutoSelect" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x400</True> <!-- ES_AUTOSELECT -->
+		</enum-map>
+	</translate>
+
+</translator>
+

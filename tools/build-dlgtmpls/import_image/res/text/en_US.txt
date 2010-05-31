@@ -1,0 +1,9 @@
+#The Text of en_US
+0x00022712	"Import Image Resource"
+0x00022713	"Main Frame"
+0x00022714	"OK"
+0x00022715	"Cancel"
+0x00022716	"Import"
+0x00022717	"Cancel"
+0x00022718	"IDB_IMG_FILENAME"
+0x00022719	"Input Image ID Name:"

@@ -1,0 +1,3 @@
+<renderer class="Skin.MenuButton" extends="renderer::Skin.Button">
+	<set-property name="Class" value="menubutton"/>
+</renderer>

@@ -1,0 +1,31 @@
+<translator class="window::SpinBox" extends="window::Combobox">
+	<set name="class" value="combobox" type="string"/>
+	
+	<translate>
+		<source name="ContentType" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<Number>1</Number> <!-- CBS_AUTOSPIN -->
+			<String>2</String> <!-- CBS_SPINLIST -->
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="Direction" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<Horz>0x20</Horz> <!-- CBS_SPINARROW_LEFTRIGHT -->
+			<Vert>0x10</Vert> <!-- CBS_SPINARROW_TOPBOTTOM -->
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="AutoLoop" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x040</True> <!-- CBS_AUTOHSCROLL -->	
+		</enum-map>
+	</translate>
+
+</translator>
+

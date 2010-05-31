@@ -1,0 +1,8 @@
+<window class="VSeparator" extends="Separator">
+	
+	<set-property name="Direction" value="Vert"/>
+	<default-property name="Width" value="5"/>
+	<default-property name="Height" value="100"/>
+
+</window>
+

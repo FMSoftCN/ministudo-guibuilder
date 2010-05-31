@@ -1,0 +1,22 @@
+<res-ids>
+	<res-id>
+		<id name="ID_MAINWND1"  value="0x80002"/>
+		<type>8</type>
+		<source>res/ui/add_renderer.xml</source>
+	</res-id>
+	<res-id>
+		<id name="IDOK"  value="0x40000001"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="IDCANCEL"  value="0x40000002"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_IDLIST"  value="0x40000064"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+</res-ids>

@@ -1,0 +1,3 @@
+<renderer class="Flat.ButtonGroup" extends="renderer::Flat.GroupBox">
+    <set-property name="Class" value="buttongroup" />
+</renderer>

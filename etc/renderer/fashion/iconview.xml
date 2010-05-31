@@ -1,0 +1,3 @@
+<renderer class="Fashion.IconView" extends="renderer::Fashion.ItemView">
+	<set-property name="Class" value="iconview"/>
+</renderer>

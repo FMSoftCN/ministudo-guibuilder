@@ -1,0 +1,46 @@
+<panelLayout cols="5" rows="1">
+    <col idx="0" width="215"/>
+    <col idx="1" width="spliter"/>
+    <col idx="3" width="spliter"/>
+    <col idx="4" width="263"/>
+    <row idx="0" height="100%"/>
+    <cell row="0" col="0">
+        <page>
+            <panel class="ToolboxPanel" caption="Standard">
+				<param name="ctrllist">uieditor/control.cfg</param>
+			</panel>
+            <!-- <panel class="ToolboxPanel" caption="Phone">
+				<param name="ctrllist">uieditor/mobile.cfg</param>
+                <lib src="mgncsexmobile_msd" init="ncsMobileInitialize"/>
+			</panel>
+            -->
+        </page> 
+    </cell>
+
+    <cell row="0" col="2">
+        <panelLayout cols="1" rows="3">
+            <row idx="0" height="55%"/>
+            <row idx="1" height="spliter"/>
+            <col idx="0" width="100%"/>
+
+            <cell row="0" col="0" name="DesignArea">
+                <page/>
+            </cell>
+
+            <cell row="2" col="0">
+         	    <page active-index="0">
+         		    <panel class="NavigatorPanel" caption="Navigator"/>
+         		    <panel class="StructPanel" caption="Struct View"/>
+         	    </page>
+            </cell>
+        </panelLayout>
+    </cell>
+
+    <cell row="0" col="4">
+        <page active-index="0">
+            <panel class="PropertyPanel" caption="Property"/> 
+            <panel class="EventPanel" caption="Event"/>
+            <panel class="RendererPanel" caption="Renderer"/>
+        </page>
+    </cell>
+</panelLayout>

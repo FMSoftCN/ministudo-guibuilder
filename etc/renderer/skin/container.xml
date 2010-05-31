@@ -1,0 +1,3 @@
+<renderer class="Skin.Container" extends="renderer::Skin.ScrollWidget">
+	<set-property name="Class" value="container"/>
+</renderer>

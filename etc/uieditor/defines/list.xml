@@ -1,0 +1,55 @@
+<window class="List" extends="AbstractList">
+	<set-property name="Class" value="list"/>
+	<default-property name="Width" value="130"/>
+	<default-property name="Height" value="100"/>
+	<default-property name="Border" value="True"/>
+	<default-property name="BgColor" value="0xFFFFFFFF"/>
+
+	<!-- style of List-->
+	<property name="Loop" id="2007" type="enum" value="True">
+		<enum>
+			<option name="True" value="0x4"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+
+	<property name="layout" id="27" type="enum" value="True">
+		<enum>
+			<option name="list" value="0"/>
+			<option name="iconv" value="1"/>
+			<option name="iconh" value="2"/>
+			<option name="cboxh" value="3"/>
+			<option name="group" value="4"/>
+		</enum>
+	</property>
+	<property name="defNodeW" id="28" type="int" default="64"/>
+
+	<event id="4160">
+		<handler>void onSelChanged(mList *self, int id, int nc, DWORD addData)</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_LIST_SELCHANGED)</code>
+	</event>
+
+	<event>
+		<handler>onEnter</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_LIST_ENTER)</code>
+	</event>
+
+	<event>
+		<handler>onBackSpace</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_LIST_BACKSPACE)</code>
+	</event>
+
+	<event>
+		<handler>onEnterSubList</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_LIST_ENTERSUBLIST)</code>
+	</event>
+
+	<event>
+		<handler>onBackUpList</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_LIST_BACKUPLIST)</code>
+	</event>
+	<event>
+		<handler>onRootNodeChanged</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_LIST_ROOTNODECHANGED)</code>
+	</event>
+</window>

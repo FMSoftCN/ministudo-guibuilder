@@ -1,0 +1,2 @@
+<renderer class="Fashion.Separator" extends="renderer::Fashion.Widget">
+</renderer>

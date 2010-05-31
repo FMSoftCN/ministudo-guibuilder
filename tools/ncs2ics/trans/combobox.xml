@@ -1,0 +1,63 @@
+<translator class="window::Combobox" extends="window::Widget">
+	<set name="class" value="combobox" type="string"/>
+	<source-default name="Type" value="DropDownList" type="enum"/>
+
+	<translate>
+		<source name="Notify" type="enum"/>
+		<dest name="style" tyle="int"/>
+		<enum-map>
+			<True>0x08</True>
+		</enum-map>
+	</translate>
+	
+	<translate>
+		<source name="Type" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<Simple>0</Simple> <!-- CBS_SIMPLE -->
+			<DropDownList>3</DropDownList> <!-- CBS_DROPDOWNLIST-->
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="Sort" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x100</True> <!-- CBS_SORT -->
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="EditorHashBorder" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<False>0x400</False> <!-- CBS_EDITNOBORDER -->
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="ReadOnly" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x1000</True> <!-- CBS_READONLY -->
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="Case" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<Lower> 0x4000</Lower> <!-- CBS_LOWERCASE -->
+			<Upper> 0x2000</Upper> <!-- CBS_UPPERCASE -->
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="AutoFocus" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x8000</True> <!-- CBS_AUTOFOCUS -->
+		</enum-map>
+	</translate>	
+
+</translator>

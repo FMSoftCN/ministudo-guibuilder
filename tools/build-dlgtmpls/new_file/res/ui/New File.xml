@@ -1,0 +1,80 @@
+<window class="window::MainWnd" serial-number="3680466944">
+	<ID>0x80016</ID>
+	<X>0</X>
+	<Y>0</Y>
+	<Width>526</Width>
+	<Height>404</Height>
+	<Text>0x00022712</Text>
+	<Border>True</Border>
+	<Visible>False</Visible>
+	<HasCaption>True</HasCaption>
+	<SystemMenu>True</SystemMenu>
+	<BorderType>DlgFrame</BorderType>
+	<MinimizeBox>False</MinimizeBox>
+	<MaximizeBox>False</MaximizeBox>
+	<paged-window class="paged-window::PropSheet" serial-number="3627974656">
+		<ID>0x40000064</ID>
+		<X>24</X>
+		<Y>40</Y>
+		<Width>476</Width>
+		<Height>220</Height>
+		<window class="window::Page" serial-number="1056813056">
+			<ID>0xffffffff</ID>
+			<Text>0x0002271B</Text>
+		</window>
+		<window class="window::Page" serial-number="4013907968">
+			<ID>0xffffffff</ID>
+			<Text>0x0002271C</Text>
+		</window>
+	</paged-window>
+	<window class="window::SlEdit" serial-number="2944360448">
+		<ID>0x40000065</ID>
+		<X>173</X>
+		<Y>280</Y>
+		<Width>327</Width>
+		<Height>29</Height>
+		<Text>0x00022715</Text>
+	</window>
+	<window class="window::Static" serial-number="1232580608">
+		<ID>0x4000000b</ID>
+		<Align>Left</Align>
+		<X>24</X>
+		<Y>287</Y>
+		<Width>144</Width>
+		<Height>14</Height>
+		<Text>0x00022716</Text>
+	</window>
+	<window class="window::Button" serial-number="3924488192">
+		<ID>0x40000001</ID>
+		<X>264</X>
+		<Y>320</Y>
+		<Width>100</Width>
+		<Height>34</Height>
+		<Text>0x00022717</Text>
+	</window>
+	<window class="window::Button" serial-number="969703424">
+		<ID>0x40000002</ID>
+		<X>400</X>
+		<Y>320</Y>
+		<Width>100</Width>
+		<Height>34</Height>
+		<Text>0x00022719</Text>
+	</window>
+	<window class="window::CheckButton" serial-number="4273352704">
+		<ID>0x40000066</ID>
+		<X>20</X>
+		<Y>320</Y>
+		<Width>200</Width>
+		<Height>28</Height>
+		<Text>0x0002271A</Text>
+	</window>
+	<window class="window::Static" serial-number="2099382272">
+		<ID>0x4000000f</ID>
+		<Align>Left</Align>
+		<X>24</X>
+		<Y>16</Y>
+		<Width>344</Width>
+		<Height>21</Height>
+		<Text>0x0002271D</Text>
+	</window>
+</window>

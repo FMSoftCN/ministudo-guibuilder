@@ -1,0 +1,43 @@
+<window class="Slider" extends="Widget">
+	<set-property name="Class" value="Slider"/>
+	<set-property name="Text" value="0"/>
+	<set-property name="Font" value=""/>
+	<default-property name="Width" value="100"/>
+	<default-property name="Height" value="100"/>
+	<!-- style of slider -->
+	<property name="Direction" id="2005" type="enum" default="Horz">
+        <enum>
+            <option name="Horz" value="0x0"/>
+            <option name="Vert" value="0x2"/>
+        </enum>
+    </property>
+
+	<!--  property -->
+	<property name="MaxPos" id="7" type="int" default="10"/>
+	<property name="MinPos" type="int" default="0"/>
+	<property name="CurPos" type="int" default="0"/>
+	<property name="LineStep" type="int" default="1"/>
+	<property name="PageStep" type="int" default="3"/>
+	
+	<!-- event -->
+	<event id="4100">
+		<handler>void onPosChanged(mSlider* self, int id, int nc)</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_SLIDER_CHANGED)</code>
+	</event>
+	<event>
+		<handler>onReachMax</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_SLIDER_REACHMAX)</code>
+	</event>
+	<event>
+		<handler>onReachMin</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_SLIDER_REACHMIN)</code>
+	</event>
+<!--	<event>
+		<handler>onStartDrag</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_SLIDER_STARTDRAG)</code>
+	</event>
+	<event>
+		<handler>onStopDrag</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_SLIDER_STOPDRAG)</code>
+	</event> -->
+</window>

@@ -1,0 +1,22 @@
+<translator class="window::MlEdit" extends="window::Edit">
+
+	<set name="class" value="mledit" type="string"/>
+
+	<translate>
+		<source name="AutoWrap" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x4</True> <!-- ES_MULTILINE -->
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="HaveTitle" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x4000</True> <!-- ES_TITLE -->
+		</enum-map>
+	</translate>
+
+</translator>
+

@@ -1,0 +1,5 @@
+<renderer class="Skin.Rectangle" extends="renderer::Skin.Static">
+	<set-property name="Class" value="rectangle"/>
+	<set-property name="ColorTextEnable" value="0xFF000000"/>
+	<set-property name="ColorTextDisable" value="0xFF848284"/>
+</renderer>

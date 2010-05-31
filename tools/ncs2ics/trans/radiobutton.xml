@@ -1,0 +1,16 @@
+<translator class="window::RadioButton" extends="window::Button">
+
+	<set name="class" value="button" type="string"/>
+	<set name="style" value="0x00020004" type="int"/>	
+
+	<translate>
+		<source name="AutoCheck" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x00000005L</True>
+		</enum-map>
+	</translate>
+
+</translator>
+
+

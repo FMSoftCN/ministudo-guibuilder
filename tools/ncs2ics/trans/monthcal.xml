@@ -1,0 +1,13 @@
+<translator class="window::MonthCalendar" extends="window::Widget">
+
+	<set name="class" value="monthcal" type="string"/>
+
+	<translate>
+		<source name="Notify" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>4</True>
+		</enum-map>
+	</translate>
+
+</translator>

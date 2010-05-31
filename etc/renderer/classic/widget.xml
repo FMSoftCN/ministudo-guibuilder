@@ -1,0 +1,11 @@
+<renderer class="Classic.Widget">
+   <property name="Class" id="1000" type="string" default="widget"/>
+   
+   <property name="ColorFgWindow" id="28673" type="color" default="0xFF000000"/>
+   <property name="ColorBgWindow" id="28929" type="color" default="0xFFFFFFFF"/>
+   
+   <!-- No Client Properties, Implement by MiniGUI 3.0 -->
+   <!-- WE_MAINC_THREED_BODY -->
+   <property name="ColorBorder" id="12552" type="color" default="0xFFCED3D6"/>
+ 
+</renderer>

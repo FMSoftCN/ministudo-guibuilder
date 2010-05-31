@@ -1,0 +1,49 @@
+<window class="ProgressBar" extends="Widget">
+	<set-property name="Class" value="progressbar"/>
+	<set-property name="Text" value="0"/>
+	<set-property name="Enabled" value="True"/>
+	<default-property name="Border" value="True"/>
+	
+	<!-- <set-property name="BgImage" value="0"/>
+	<set-property name="BgImageMode" value="Normal"/>-->
+	
+	<!-- property from style  -->
+    <property name="Direction" id="2004" type="enum">
+        <enum>
+            <option name="Horz" value="0x0"/>
+            <option name="Vert" value="0x2"/>
+        </enum>
+    </property>
+	<property name="BlockChunk" type="enum" default="False">
+		<enum>
+			<option name="True" value="0x4"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+	<property name="ShowPercent" type="enum" default="False">
+		<enum>
+			<option name="True" value="0x8"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+	
+	<!--  propgress property -->
+	<property name="MaxPos" id="7" type="int" default="100"/>
+	<property name="MinPos" type="int" default="0"/>
+	<property name="CurPos" type="int"/>
+	<property name="LineStep" type="int" default="10"/>
+	
+	<!--  notify -->
+	<!-- <event id="4050">
+		<handler>void onPosChanged(mWidget*self, int id, int nc)</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_PRGBAR_CHANGED)</code>
+	</event>
+	<event>
+		<handler>onReachMax</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_PRGBAR_REACHMAX)</code>
+	</event>
+	<event>
+		<handler>onReachMin</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_PRGBAR_REACHMIN)</code>
+	</event> -->
+</window>

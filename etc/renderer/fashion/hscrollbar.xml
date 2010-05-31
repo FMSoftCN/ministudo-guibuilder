@@ -1,0 +1,2 @@
+<renderer class="Fashion.HScrollBar" extends="renderer::Fashion.ScrollBar">
+</renderer>

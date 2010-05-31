@@ -1,0 +1,7 @@
+<renderer class="Skin.CheckButton" extends="renderer::Skin.Button">
+	<set-property name="Class" value="checkbutton"/>
+	
+	<set-property name="ImageButton" value="0"/>
+	<!-- NCS_IMAGE_CHECKBUTTON -->
+  <property name="ImageCheckButton" id="32772" type="image"/>
+</renderer>

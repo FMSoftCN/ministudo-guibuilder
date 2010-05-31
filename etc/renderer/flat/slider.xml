@@ -1,0 +1,3 @@
+<renderer class="Flat.Slider" extends="renderer::Flat.Widget">
+	<set-property name="Class" value="Slider"/>
+</renderer>

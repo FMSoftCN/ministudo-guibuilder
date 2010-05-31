@@ -1,0 +1,46 @@
+<translator class="window::ListView" extends="window::Widget">
+	<set name="class" value="listview" type="string"/>
+	<source-default name="Border" value="True" type="enum"/>
+
+	<translate>
+		<source name="Notify" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>1</True>
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x1000</True> <!-- LVS_CHECKBOX -->
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="Autocheck" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x2000</True> <!-- LVS_AUTOCHECK -->
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="Tree" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x4000</True> <!-- LVS_TREEVIEW -->
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="Multi" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x08</True> <!-- LVS_MULTIPLESEL -->
+		</enum-map>
+	</translate>
+
+
+</translator>

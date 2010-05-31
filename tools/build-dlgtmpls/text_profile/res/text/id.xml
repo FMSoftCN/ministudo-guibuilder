@@ -1,0 +1,87 @@
+<res-ids>
+	<res-id>
+		<id  value="0x22712"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x22713"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x22714"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x22715"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x22716"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x22717"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x22718"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x22719"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2271a"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2271b"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2271c"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2271d"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2271e"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2271f"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x22720"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x22721"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x22722"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+</res-ids>

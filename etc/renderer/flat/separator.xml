@@ -1,0 +1,2 @@
+<renderer class="Flat.Separator" extends="renderer::Flat.Widget">
+</renderer>

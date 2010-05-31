@@ -1,0 +1,15 @@
+<window class="TrackBar" extends="Slider">
+	<set-property name="Class" value="trackbar"/>
+	
+	<!--  style of trackbar -->
+	<property name="Ruler" id="2006" type="enum" default="True">
+		<enum>
+			<option name="True" value="0"/>
+			<option name="False" value="0x08"/>
+		</enum>
+	</property>
+	
+	
+	<property name="ThumbWidth" id="13" type="int"/>
+	<property name="ThumbHeight" type="int"/>
+</window>

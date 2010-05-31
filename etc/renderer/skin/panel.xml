@@ -1,0 +1,4 @@
+<renderer class="Skin.Panel" extends="renderer::Skin.Widget">
+	<set-property name="Class" value="panel"/>
+
+</renderer>

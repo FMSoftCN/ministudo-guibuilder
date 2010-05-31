@@ -1,0 +1,11 @@
+<renderer class="Classic.TrackBar" extends="renderer::Classic.Widget">
+	<set-property name="Class" value="trackbar"/>
+	
+	<set-property name="ColorFgWindow" value="0"/>
+	<set-property name="ColorBgWindow" value="0"/>
+
+	<property name="ColorBg3DBody" id="28928" type="color" default="0xFFCED3D6"/>
+	<!-- NCS_BGC_DISABLED_ITEM -->
+	<property name="ColorBgDisable" id="28932" type="color" default="0xFFCED3D6"/>
+	<!-- NCS_FGC_DISABLED_ITEM -->
+</renderer>

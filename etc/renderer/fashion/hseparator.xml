@@ -1,0 +1,2 @@
+<renderer class="Fashion.HSeparator" extends="renderer::Fashion.Separator">
+</renderer>

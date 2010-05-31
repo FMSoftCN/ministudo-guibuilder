@@ -1,0 +1,20 @@
+<res-ids>
+	<res-id>
+		<id name="IDB_FILE" value="0x20001"/> 
+		<type>2</type>
+		<source></source>
+		<desc> id for file </desc>
+	</res-id>
+	<res-id>
+		<id name="IDB_EDIT" value="101"/> 
+		<type>2</type>
+		<source></source>
+		<desc> id for edit </desc>
+	</res-id>	
+	<res-id>
+		<id name="IDB_HELP" value="102"/> 
+		<type>2</type>
+		<source></source>
+		<desc> id for help </desc>
+	</res-id>
+</res-ids>

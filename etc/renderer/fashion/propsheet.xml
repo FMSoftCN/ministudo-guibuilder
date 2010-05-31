@@ -1,0 +1,17 @@
+<renderer class="Fashion.paged-window::PropSheet" extends="renderer::Fashion.Widget">
+	<set-property name="Class" value="propsheet"/>	
+	
+	<set-property name="ColorFgWindow" value="0"/>
+	<set-property name="ColorBgWindow" value="0"/>
+	
+	<!-- NCS_MODE_BGC -->
+	<property name="GradientMode" id="36865" type="enum GradientMode" default="Vert"/>
+	<!-- NCS_METRICS_3DBODY_ROUNDX -->
+	<property name="RoundX" id="24576" type="int" default="3"/>
+	<property name="RoundY" id="24577" type="int" default="3"/>
+	
+	<!-- NCS_BGC_3DBODY -->
+	<property name="TabColor" id="28928" type="color" default="0xFFFF3000"/>
+	
+	
+</renderer>

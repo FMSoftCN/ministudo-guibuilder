@@ -1,0 +1,12 @@
+<renderer class="Classic.ScrollWidget" extends="renderer::Classic.Widget">
+	<set-property name="Class" value="scrollwidget"/>
+	
+	<!-- WE_METRICS_SCROLLBAR -->
+	<property name="ScrollBarSize" id="8197" type="int" default="16"/>
+	<!-- WE_MAINC_THREED_BODY -->
+	<property name="ColorScrollBar" id="12552" type="color" default="0xFFCED3D6"/>
+	<!-- WE_FGC_THREED_BODY -->
+	<property name="ColorScrollArrow" id="12296" type="color" default="0xFF000000"/>
+	<!-- WE_FGC_DISABLED_ITEM -->
+	<property name="ColorScrollArrowDisable" id="12298" type="color" default="0xFF848284"/>
+</renderer>

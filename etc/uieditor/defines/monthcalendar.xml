@@ -1,0 +1,29 @@
+<window class="MonthCalendar" extends="Widget">
+	
+	<set-property name="Class" value="monthcal"/>
+	<set-property name="Text" value="0"/>
+	<default-property name="Width" value="250"/>
+	<default-property name="Height" value="150"/>
+	<default-property name="Border" value="True"/>
+	
+	<property name="Year" id="7" type="int"/>
+	<property name="Month" type="int"/>
+	<property name="Day" type="int"/>
+	
+	<event id="4050">
+		<handler>void onYearChanged(mMonthCalendar* self, int id, int nc, DWORD add_data)</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_CDR_YEAR_CHANGED)</code>
+	</event>
+	
+	<event>
+		<handler>onMonthChanged</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_CDR_MONTH_CHANGED)</code>
+	</event>
+	
+	<event>
+		<handler>onDayChanged</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_CDR_DAY_CHANGED)</code>
+	</event>
+
+</window>
+

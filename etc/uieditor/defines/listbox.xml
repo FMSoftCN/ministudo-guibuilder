@@ -1,0 +1,69 @@
+<window class="ListBox" extends="ItemView">
+	<set-property name="Class" value="listbox"/>
+	<set-property name="Text" value="0"/>
+	<set-property name="Loop" value="False"/>
+	<default-property name="Width" value="130"/>
+	<default-property name="Height" value="100"/>
+	<default-property name="Border" value="True"/>
+	<default-property name="BgColor" value="0xFFFFFFFF"/>
+	
+	<property name="Multi" id="2008" type="enum" value="False">
+		<enum>
+			<option name="True" value="0x10"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+
+	<property name="MouseFollow" id="2009" type="enum" default="False">
+		<enum>
+			<option name="True" value="0x20"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+	
+	<property name="UseBitmap" type="enum" default="False">
+		<enum>
+			<option name="True" value="0x40"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+	
+	<property name="Checkable" type="enum" default="False">
+		<enum>
+			<option name="True" value="0x80"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+		
+	<property name="AutoCheck" type="enum" default="False">
+		<enum>
+			<option name="True" value="0x100"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+	
+	<!-- property -->
+	<property name="ItemHeight" id="21" type="int" default="20"/>
+	<!-- <property name="TopItem" type="int"/> -->
+	<!-- <property name="HilightItem" type="int"/> -->
+	
+	<!--  notify -->
+	<event id="4150">
+		<handler>void onErrSpace(mListBox* self, int id, int nc)</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_LSTBOX_ERRSPACE)</code>
+	</event>
+	
+    <event>
+		<handler>onDBLClick</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_LSTBOX_DBCLK)</code>
+	</event>
+    <event>
+		<handler>onSelCancel</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_LSTBOX_SELCANCEL)</code>
+	</event>
+    <event>
+		<handler>onClickCheckMark</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_LSTBOX_CLKCHKMARK)</code>
+	</event>
+	
+</window> 

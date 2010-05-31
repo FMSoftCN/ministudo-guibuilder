@@ -1,0 +1,8 @@
+<renderer class="Skin.VTrackBar" extends="renderer::Skin.TrackBar">
+	
+	<!--  NCS_IMAGE_TB_VSLIDER -->
+	<property name="ImageSlider" id="32782" type="image"/>
+	<!-- NCS_IMAGE_TB_VTHUMB -->
+	<property name="ImageThumb" id="32784" type="image"/>
+
+</renderer>

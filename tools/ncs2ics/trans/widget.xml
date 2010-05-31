@@ -1,0 +1,109 @@
+
+<translator class="window::Widget">
+
+	<source-default name="Notify" type="enum" value="True"/>
+	<source-default name="Visible" type="enum" value="True"/>
+	<source-default name="TabStop" type="enum" value="True"/>
+	
+	<translate>
+		<source name="Class" type="string"/>
+		<dest name="class"/>
+	</translate>
+
+	<translate>
+		<source name="ID"/>
+		<dest name="id"/>
+	</translate>
+	
+	<translate>
+		<source name="X"/>
+		<dest name="x"/>
+	</translate>
+
+	<translate>
+		<source name="Y"/>
+		<dest name="y"/>
+	</translate>
+
+	<translate>
+		<source name="Width"/>
+		<dest name="width"/>
+	</translate>
+
+	<translate>
+		<source name="Height"/>
+		<dest name="height"/>
+	</translate>
+
+	<translate>
+		<source name="Text" type="text"/>
+		<dest name="caption" type="string"/>
+	</translate>
+
+	<translate>
+		<source name="Border" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x00400000</True>
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="Visible" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x08000000L</True>
+		</enum-map>
+	</translate>
+	
+	<translate>
+		<source name="Enabled" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<False>0x04000000</False>
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="TabStop" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x00010000</True>
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="Transparent" type="enum"/>
+		<dest name="exstyle" type="int"/>
+		<enum-map>
+			<True>0x00002000</True>
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="HScroll" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x00040000</True> <!-- WS_HSCROLL -->
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="VScroll" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>0x00080000</True> <!-- WS_VSCROLL -->
+		</enum-map>
+	</translate>
+
+	<translate>
+		<source name="ScrollBarMode" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<Always>0x000C0000</Always> <!-- WS_HSCROOL | WS_VSCROLL -->
+		</enum-map>
+	</translate>
+
+</translator>
+
+

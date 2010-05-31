@@ -1,0 +1,6 @@
+<renderer class="Skin.ProgressBar" extends="renderer::Skin.Widget">
+ 	<set-property name="Class" value="progressbar"/>
+    
+  <!-- NCS_BGC_HILIGHT_ITEM -->
+  <property name="PercentColor" id="28931" type="color" default="0xFFC56A31"/>
+</renderer>

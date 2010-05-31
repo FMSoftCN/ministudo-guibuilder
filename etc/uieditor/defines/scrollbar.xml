@@ -1,0 +1,15 @@
+<window class="ScrollBar" extends="Slider">
+	<set-property name="Class" value="scrollbar"/>
+	<set-property name="BgColor" value="0"/>
+	<set-property name="BgImage" value="0"/>
+	<set-property name="BgImageMode" value="Normal"/>
+	
+	<!--  style of scrollbar -->
+	<property name="HaveArrows" id="2006" type="enum" default="True">
+		<enum>
+			<option name="True" value="0x8"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+	
+</window>

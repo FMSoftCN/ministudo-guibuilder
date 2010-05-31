@@ -1,0 +1,3 @@
+<renderer class="Skin.TrackBar" extends="renderer::Skin.Widget">
+	<set-property name="Class" value="trackbar"/>
+</renderer>

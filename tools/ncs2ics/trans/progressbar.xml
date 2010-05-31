@@ -1,0 +1,13 @@
+<translator class="window::ProgressBar" extends="window::Widget">
+	<set name="class" value="progressbar" type="string"/>
+
+	<translate>
+		<source name="Notify" type="enum"/>
+		<dest name="style" type="int"/>
+		<enum-map>
+			<True>1</True>
+		</enum-map>
+	</translate>
+
+
+</translator>

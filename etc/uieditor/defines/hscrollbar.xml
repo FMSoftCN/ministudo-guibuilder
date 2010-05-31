@@ -1,0 +1,13 @@
+<window class="HScrollBar" extends="ScrollBar">
+	<set-property name="Direction" value="Horz"/>
+	<default-property name="Width" value="200"/>
+	<default-property name="Height" value="25"/>
+	
+	<property name="DoubleArrows" id="2007" type="enum" default="None">
+		<enum>
+			<option name="None" value="0"/>
+			<option name="Left" value="0x10"/>
+			<option name="Right" value="0x20"/>
+		</enum>
+	</property>
+</window>

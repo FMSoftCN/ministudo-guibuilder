@@ -1,0 +1,3 @@
+<renderer class="Flat.RadioButton" extends="renderer::Flat.CheckButton">
+	<set-property name="Class" value="radiobutton"/>
+</renderer>

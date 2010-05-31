@@ -1,0 +1,76 @@
+<window class="TextEditor" extends="Widget">
+
+	<set-property name="Class" value="texteditor"/>
+	<default-property name="Width" value="200"/>
+	<default-property name="Height" value="100"/>
+	<default-property name="Border" value="True"/>
+	<default-property name="BgColor" value="0xFFFFFFFF"/>
+
+	<property name="ReadOnly" id="7" type="enum" default="False">
+		<enum>
+			<option name="True"  value="1"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+
+	<property name="ScrollBarMode" type="enum" default="Automatic">
+        <enum>
+			<option name="Never"/> <!-- NCS_TEF_SCROLLBAR_NEVER -->
+			<option name="Automatic"/> <!-- NCS_TEF_SCROLLBAR_AUTO-->
+			<option name="Always"/> <!-- NCS_TEF_SCROLLBAR_ALWAYS-->
+        </enum>
+    </property>
+	
+	<property name="ScrollHStep" type="int" default="18"/>
+	<property name="ScrollVStep" type="int" default="18"/>
+	<property name="MaxLength"  type="int" default="-1"/>
+
+	<property name="Case" id="2007" type="enum" default="None">
+        <enum>
+			<option name="None" value="0"/>   <!---->
+			<option name="Lower" value="0x08"/> <!-- NCSS_TE_LOWERCASE-->
+			<option name="Upper" value="0x04"/> <!-- NCSS_TE_UPPERCASE-->
+        </enum>
+    </property>
+
+	<property name="HideSel" type="enum" default="True">
+		<enum>
+			<option name="True" value="0"/>
+			<option name="False" value="0x10"/>
+		</enum>
+	</property>
+	<property name="AutoWrap" type="enum" default="False">
+		<enum>
+			<option name="True" value="0x20"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+
+	<property name="NeedIME" id="3001" type="enum" default="True">
+		<enum>
+			<option name="True" value="0"/>
+			<option name="False" value="1"/>
+		</enum>
+	</property>
+	
+	<event id="4150">
+		<handler>void onContChanged(mTextEditor* self, int id, int nc)</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_TE_CONTENTCHANGED)</code>
+	</event>
+	<event>
+		<handler>onReachMaxText</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_TE_MAXTEXT)</code>
+	</event>
+	<event>
+		<handler>onChange</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_TE_CHANGE)</code>
+	</event>
+	<event>
+		<handler>onUpdate</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_TE_UPDATE)</code>
+	</event>
+	<event>
+		<handler>onSelChanged</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_TE_SELCHANGED)</code>
+	</event>
+</window>

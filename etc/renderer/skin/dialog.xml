@@ -1,0 +1,3 @@
+<renderer class="Skin.DialogBox" extends="renderer::Skin.MainWnd">
+	<set-property name="Class" value="dialogbox"/>
+</renderer>

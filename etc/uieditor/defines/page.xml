@@ -1,0 +1,29 @@
+<window class="Page" extends="Container">
+
+	<set-property name="Class" value="page"/>
+	<set-property name="X" value="0"/>
+	<set-property name="Y" value="0"/>
+	<set-property name="Width" value="0"/>
+	<set-property name="Height" value="0"/>
+	<default-property name="Text" value="0"/>
+	<default-property name="Border" value="False"/>
+
+	<event id="4100">
+		<handler>void onInitPage(mWidget* self, DWORD dwAddData)</handler>
+		<code>MSG_INITPAGE</code>
+	</event>
+
+	<event>
+		<handler>BOOL onShowPage(mWidget* self, HWND hPage, int showCmd)</handler>
+		<code>MSG_SHOWPAGE</code>
+		<content>return TRUE; /*TRUE: Successed; FALSE: Failed*/</content>
+	</event>
+
+	<event>
+		<handler>int onSheetCmd(mWidget* self, WPARAM wParam, LPARAM lParam)</handler>
+		<code>MSG_SHEETCMD</code>
+		<content>return 0;/*continue send message to other pages*/</content>
+	</event>
+
+</window>
+

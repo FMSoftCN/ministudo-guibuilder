@@ -1,0 +1,2 @@
+<renderer class="Fashion.ScrollView" extends="renderer::Fashion.ItemView">
+</renderer>

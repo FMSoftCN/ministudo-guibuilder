@@ -1,0 +1,6 @@
+<renderer class="Flat.Image" extends="renderer::Flat.Static">
+	<set-property name="Class" value="image"/>
+	
+	<set-property name="ColorTextEnable" value="0"/>
+	<set-property name="ColorTextDisable" value="0"/>
+</renderer>

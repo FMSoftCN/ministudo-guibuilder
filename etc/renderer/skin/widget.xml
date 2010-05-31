@@ -1,0 +1,12 @@
+<renderer class="Skin.Widget">
+  <property name="Class" id="1000" type="string" default="widget"/>
+    
+  <!-- No Client Properties, Implement by MiniGUI 3.0 -->
+  
+  
+  <!-- WE_BGCB_ACTIVE_CAPTION -->
+  <property name="ColorBorderActive" id="0x3200" type="color" default="0xFF686868"/>
+  <!-- WE_BGCB_INACTIVE_CAPTION -->
+  <property name="ColorBorderInActive" id="0x3206" type="color" default="0xFF686868"/>
+   
+</renderer>

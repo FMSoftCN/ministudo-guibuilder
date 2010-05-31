@@ -1,0 +1,6 @@
+<renderer class="Fashion.Rectangle" extends="renderer::Fashion.Static">
+	<set-property name="Class" value="rectangle"/>
+	
+	<set-property name="ColorTextEnable" value="0"/>
+	<set-property name="ColorTextDisable" value="0"/>
+</renderer>

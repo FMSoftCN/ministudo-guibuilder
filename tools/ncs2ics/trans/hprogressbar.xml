@@ -1,0 +1,3 @@
+<translator class="window::HProgressBar" extends="window::ProgressBar">
+	<set name="class" value="progressbar" type="string"/>
+</translator>

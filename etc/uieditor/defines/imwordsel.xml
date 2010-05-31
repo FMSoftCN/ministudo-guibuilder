@@ -1,0 +1,11 @@
+
+<window class="IMWordSel" extends="Widget">
+	<set-property name="Class" value="imwordsel"/>
+	
+	<event id="4050">
+		<handler>void onSelChanged(mWidget* self, int id, int nc)</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_IMWS_SELCHANGED)</code>
+	</event>
+</window>
+
+

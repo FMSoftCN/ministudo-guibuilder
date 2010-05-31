@@ -1,0 +1,41 @@
+<window class="window::MainWnd" serial-number="3980785664">
+	<ID>0x80002</ID>
+	<X>0</X>
+	<Y>0</Y>
+	<Width>400</Width>
+	<Height>310</Height>
+	<Text>0x00022712</Text>
+	<Border>True</Border>
+	<Visible>False</Visible>
+	<HasCaption>True</HasCaption>
+	<SystemMenu>True</SystemMenu>
+	<BorderType>DlgFrame</BorderType>
+	<MinimizeBox>False</MinimizeBox>
+	<MaximizeBox>False</MaximizeBox>
+	<window class="window::Button" serial-number="3984524800">
+		<ID>0x40000001</ID>
+		<X>50</X>
+		<Y>230</Y>
+		<Width>80</Width>
+		<Height>30</Height>
+		<Text>0x00022713</Text>
+		<Visible>True</Visible>
+	</window>
+	<window class="window::Button" serial-number="2799417344">
+		<ID>0x40000002</ID>
+		<X>270</X>
+		<Y>230</Y>
+		<Width>80</Width>
+		<Height>30</Height>
+		<Text>0x00022714</Text>
+		<Visible>True</Visible>
+	</window>
+	<window class="window::ListBox" serial-number="4158621696">
+		<ID>0x40000064</ID>
+		<X>17</X>
+		<Y>19</Y>
+		<Width>355</Width>
+		<Height>190</Height>
+		<Multi>True</Multi>
+	</window>
+</window>

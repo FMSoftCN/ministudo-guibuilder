@@ -1,0 +1,3 @@
+<renderer class="Skin.ButtonGroup" extends="renderer::Skin.GroupBox">
+    <set-property name="Class" value="buttongroup" />
+</renderer>

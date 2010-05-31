@@ -1,0 +1,52 @@
+<compound-type>
+
+	<enum name="Align">
+		<option name="Left"/>
+		<option name="Right"/>
+		<option name="Center"/>
+	</enum>
+
+	<enum name="VAlign">
+		<option name="Top"/>
+		<option name="Bottom"/>
+		<option name="Middle"/>
+	</enum>
+
+	<enum name="Boolean">
+		<option name="True" value="1"/>
+		<option name="False" value="0"/>
+	</enum>
+
+	<enum name="DrawMode">
+		<option name="Normal"/>
+		<option name="Scaled"/>
+		<option name="Tiled"/>
+	</enum>
+	
+	<enum name="Direction">
+		<option name="Horz" value="0x2"/>
+		<option name="Vert" value="0x0"/>
+	</enum>
+
+    <enum name="GradientMode">
+        <option name="Horz"/>
+        <option name="Vert"/>
+        <!--<option name="ForwardDiagonal"/>
+        <option name="BackwardDiagonal"/>-->
+	</enum>
+
+
+	<file name="image" filter="PNG File(*.png)|JPEG File(*.jpg;*.jpeg)|Bitmap (*.bmp)|GIF File(*.gif)"/>
+	<file name="icon" filter="Icon File(*.ico)"/>
+	<file name="GIF" filter="GIF File (*.gif)"/>
+	<file name="Dir" filter="Dir (*.*)"/>
+
+	<struct name="Rect">
+		<element name="Left" value="int"/>
+		<element name="Top" value="int"/>
+		<element name="Right" value="int"/>
+		<element name="Bottom" value="int"/>
+	</struct>
+
+</compound-type>
+

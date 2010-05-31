@@ -1,0 +1,17 @@
+<panelLayout cols="5" rows="1">
+	<col idx="0" width="32%"/>
+	<col idx="1" width="spliter"/>
+	<col idx="2" width="263"/>
+	<col idx="3" width="spliter"/>
+	<row idx="0" height="100%"/>
+	
+	<cell col="0" row="0">
+		<panel class="RendererTreePanel"/>
+	</cell>
+	<cell col="2" row="0">
+		<panel class="RendererPanel"/>
+	</cell>
+	<cell col="4" row="0">
+		<panel class="RendererPreviewPanel"/>
+	</cell>
+</panelLayout>

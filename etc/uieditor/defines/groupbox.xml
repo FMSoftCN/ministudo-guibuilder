@@ -1,0 +1,11 @@
+<window class="GroupBox" extends="Static">
+	<set-property name="Class" value="groupbox"/>
+	<default-property name="Border" value="False"/>
+	<default-property name="Width" value="100"/>
+	<default-property name="Height" value="100"/>
+	<set-property name="Align" value="Left"/>
+	<set-property name="Valign" value="Middle"/>
+	<set-property name="AutoWrap" value="False"/>
+
+</window>
+

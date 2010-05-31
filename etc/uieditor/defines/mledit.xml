@@ -1,0 +1,29 @@
+<window class="MlEdit" extends="Edit">
+	<set-property name="Class" value="mledit"/>
+    <set-property name="Align" value="Left"/>
+	<default-property name="Width" value="200"/>
+	<default-property name="Height" value="100"/>
+	
+	<property name="AutoWrap" id="2014" type="enum" default="False">
+		<enum>
+			<option name="True" value="0x2000"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+	
+	<property name="HaveTitle" type="enum" default="False">
+		<enum>
+			<option name="True" value="0x4000"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+	
+	<property name="LineHeight" id="23" type="int" />
+	<property name="LineSeparator" id="25" type="char" default="\n"/>
+	<property name="CaretShap" type="enum">
+		<enum>
+			<option name="Line"/>
+			<option name="Block"/>
+		</enum>
+	</property>
+</window>

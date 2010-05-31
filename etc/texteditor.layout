@@ -1,0 +1,30 @@
+<panelLayout cols="1" rows="2">
+	<col idx="0" width="100%"/>
+	<row idx="1" height="100%"/>
+	
+	<!-- cell col="0" row="0">
+		<panelLayout cols="3" rows="1">
+			<row idx="0" height="100%"/>
+			<col idx="1" width="40"/>
+			<col idx="2" width="80"/>
+	
+			<cell col="0" row="0">
+				<window class="sledit" style="4194304" id="100" />
+			</cell>
+	
+			<cell col="1" row="0">
+				<window class="button" text="GO!" id="101"/>
+			</cell>
+			
+			<cell col="2" row="0">
+				<window class="combobox" style="4194315" id="102" name="ComboboxForText"/>
+			</cell>
+			
+		</panelLayout>
+	</cell --> 
+	
+	<cell col="0" row="1">
+		<panel class="TextListPanel"/>
+	</cell>
+	
+</panelLayout>

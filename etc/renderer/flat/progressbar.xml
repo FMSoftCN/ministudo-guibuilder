@@ -1,0 +1,9 @@
+<renderer class="Flat.ProgressBar" extends="renderer::Flat.Widget">
+	<set-property name="Class" value="progressbar"/>
+	
+	<!-- set-property name="ColorFgWindow" value="0"/ -->
+	<set-property name="ColorBgWindow" value="0"/>
+
+	<!-- NCS_FGC_WINDOW -->
+	<!-- property name="ColorChunk" id="28673" type="color" default="0xFF000000"/ -->
+</renderer>

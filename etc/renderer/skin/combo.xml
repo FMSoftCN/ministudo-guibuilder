@@ -1,0 +1,9 @@
+<renderer class="Skin.Combobox" extends="renderer::Skin.Panel">
+	<set-property name="Class" value="combobox"/>
+	
+	<!-- NCS_IMAGE_ARROWSHELL -->
+	<property name="ImageArrowShell" id="32770" type="image"/>
+	
+	 <!-- NCS_IMAGE_ARROWS -->
+  <property name="ImageArrows" id="32679" type="image"/>
+</renderer>

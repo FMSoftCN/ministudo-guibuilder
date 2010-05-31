@@ -1,0 +1,3 @@
+<renderer class="Skin.Page" extends="renderer::Skin.Container">
+	<set-property name="Class" value="page"/>
+</renderer>

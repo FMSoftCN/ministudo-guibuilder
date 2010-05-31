@@ -1,0 +1,40 @@
+<res-project>
+	<configuration name="minigui-3-x-x-ncs" caption="MiniGUI 3.0 With New Control Set">
+		<minigui-version>3.x.x</minigui-version>
+		<control-set>ncs</control-set>
+		<path>/usr/local/etc/guibuilder/</path>
+	</configuration>
+	<id-range-manager>
+		<resource type="8">
+		</resource>
+		<resource type="16384">
+		</resource>
+		<resource type="32">
+		</resource>
+		<resource type="16">
+		</resource>
+		<resource type="4">
+		</resource>
+		<resource type="2" name="user">
+		</resource>
+		<resource type="2" name="anonymous">
+		</resource>
+	</id-range-manager>
+	<uieditor>
+		<extends>
+		</extends>
+		<def-renderer>Flat</def-renderer>
+		<screen>
+			<width>1024</width>
+			<height>768</height>
+		</screen>
+		<def-font>
+		</def-font>
+		<start-window>0x00080016</start-window>
+		<visible-window>0x00080016</visible-window>
+		<active-window>0x00080016</active-window>
+	</uieditor>
+	<image-editor>
+		<dir-path>/home/dongjunjie/</dir-path>
+	</image-editor>
+</res-project>

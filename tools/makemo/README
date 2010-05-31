@@ -1,0 +1,7 @@
+Language file generation manual
+
+1. Run "make" in the directory, to generate xml analyze tool.
+2. Execute "./str_gen.sh <locale>", collecting the key words in source codes and configuration files, generating "<locale>.po".
+3. Translate the key words in "<locale>.po", type the translated string in "msgstr".
+4. Execute "./mo_gen.sh <locale>", generating the language file .mo, modify <locale> to any locale needed, e.g. "zh", "en", "jp".
+5. Run makefile in mstudio folder to install the language file.

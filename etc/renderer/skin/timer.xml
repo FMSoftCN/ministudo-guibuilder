@@ -1,0 +1,2 @@
+<renderer class="Skin.Timer" extends="renderer::Skin.InvisibleComponent">
+</renderer>

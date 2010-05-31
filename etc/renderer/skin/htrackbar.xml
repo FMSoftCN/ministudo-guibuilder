@@ -1,0 +1,8 @@
+<renderer class="Skin.HTrackBar" extends="renderer::Skin.TrackBar">
+
+	<!--  NCS_IMAGE_TB_HSLIDER -->
+	<property name="ImageSlider" id="32781" type="image"/>
+	<!-- NCS_IMAGE_TB_HTHUMB -->
+	<property name="ImageThumb" id="32783" type="image"/>
+
+</renderer>

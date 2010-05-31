@@ -1,0 +1,3 @@
+<renderer class="Fashion.Edit" extends="renderer::Fashion.ScrollView">
+	<set-property name="Class" value="edit"/>
+</renderer>

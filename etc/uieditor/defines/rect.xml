@@ -1,0 +1,17 @@
+<window class="Rectangle" extends="Widget">
+	<set-property name="Class" value="rectangle"/>
+	<set-property name="Text" value="0"/>
+	<set-property name="BgImage" value="0"/>
+	<set-property name="BgImageMode" value="Normal"/>
+	<default-property name="Border" value="False"/>
+	<default-property name="Width" value="100"/>
+	<default-property name="Height" value="30"/>
+	<set-property name="Font" value=""/>
+
+	<property name="EdgeSize" id="7" type="int" default="1"/>
+	<property name="EdgeColor" type="color" default="0xFF000000"/>
+	<property name="FillColor" type="color" default="0xFFFFFFFF"/>
+	<property name="XRadius" type="int" default="0"/>
+	<property name="YRadius" type="int" default="0"/>
+</window>
+

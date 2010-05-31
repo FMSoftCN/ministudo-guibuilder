@@ -1,0 +1,76 @@
+<window class="window::MainWnd" serial-number="3719577600">
+	<ID>0x80016</ID>
+	<X>0</X>
+	<Y>0</Y>
+	<Width>401</Width>
+	<Height>310</Height>
+	<Text>0x00022712</Text>
+	<Border>True</Border>
+	<Visible>False</Visible>
+	<HasCaption>True</HasCaption>
+	<SystemMenu>True</SystemMenu>
+	<BorderType>DlgFrame</BorderType>
+	<MinimizeBox>False</MinimizeBox>
+	<MaximizeBox>False</MaximizeBox>
+	<window class="window::GroupBox" serial-number="3206385664">
+		<ID>0x40000009</ID>
+		<X>28</X>
+		<Y>20</Y>
+		<Width>344</Width>
+		<Height>169</Height>
+		<Text>0x00022713</Text>
+	</window>
+	<window class="window::Button" serial-number="498714624">
+		<ID>0x40000001</ID>
+		<X>84</X>
+		<Y>224</Y>
+		<Width>100</Width>
+		<Height>32</Height>
+		<Text>0x00022714</Text>
+	</window>
+	<window class="window::Button" serial-number="2122989568">
+		<ID>0x40000002</ID>
+		<X>224</X>
+		<Y>224</Y>
+		<Width>100</Width>
+		<Height>32</Height>
+		<Text>0x00022715</Text>
+	</window>
+	<window class="window::Static" serial-number="3021914112">
+		<ID>0x4000000c</ID>
+		<Align>Right</Align>
+		<Valign>Top</Valign>
+		<X>34</X>
+		<Y>73</Y>
+		<Width>125</Width>
+		<Height>30</Height>
+		<Text>0x00022716</Text>
+	</window>
+	<window class="window::Static" serial-number="2502832128">
+		<ID>0x4000000d</ID>
+		<Align>Right</Align>
+		<Valign>Top</Valign>
+		<X>34</X>
+		<Y>122</Y>
+		<Width>125</Width>
+		<Height>30</Height>
+		<Text>0x00022717</Text>
+	</window>
+	<window class="window::SlEdit" serial-number="4266975232">
+		<ID>0x40000078</ID>
+		<X>168</X>
+		<Y>117</Y>
+		<Width>176</Width>
+		<Height>28</Height>
+		<Text>0x00022718</Text>
+	</window>
+	<window class="window::Combobox" serial-number="1494020096">
+		<ID>0x40000064</ID>
+		<X>168</X>
+		<Y>68</Y>
+		<Width>176</Width>
+		<Height>28</Height>
+		<Type>DropDownList</Type>
+		<EditorHasBaseLine>False</EditorHasBaseLine>
+	</window>
+</window>

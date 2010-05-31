@@ -1,0 +1,21 @@
+<window class="ColorButton" extends="Widget">
+	<set-property name="Class" value="colorbutton"/>
+	<set-property name="Text" value="0"/>
+	<default-property name="Border" value="False"/>
+	<default-property name="Width" value="80"/>
+	<default-property name="Height" value="30"/>
+	<set-property name="Font" value=""/>
+	<set-property name="BgImage" value="0"/>
+	<set-property name="BgImageMode" value="Normal"/>
+	<set-property name="GroupId" value="-1"/>
+	<set-property name="BgColor" value="0"/>
+	<set-property name="Transparent" value="False"/>
+
+	<property name="CurColor" id="7" type="color" default="0xFFFFFFFF"/>
+
+	<event id="4050">
+		<handler>void onColorChanged(mColorButton *self, int id, int nc, DWORD add_data)</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_CLRBTN_COLORCHANGED)</code>
+	</event>
+</window>
+

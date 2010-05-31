@@ -1,0 +1,3 @@
+<renderer class="Classic.MlEdit" extends="renderer::Classic.Edit">
+	<set-property name="Class" value="mledit"/>
+</renderer>

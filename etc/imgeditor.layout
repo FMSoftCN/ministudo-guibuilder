@@ -1,0 +1,38 @@
+<panelLayout cols="3" rows="1">
+	<col idx="0" width="215"/>
+	<col idx="1" width="spliter"/>
+	<row idx="0" height="100%"/>
+	
+	<cell col="0" row="0">
+		<panelLayout cols="1" rows="3">
+			<row idx="0" height="40%"/>
+			<row idx="1" height="spliter"/>
+			<col idx="0" width="100%"/>
+			
+			<cell col="0" row="0">
+				<panel class="DirTreePanel"/>
+			</cell>
+			<cell col="0" row="2">
+				<panel class="ImageResListPanel"/>
+			</cell>
+		</panelLayout>
+	</cell>
+	
+	<cell col="2" row="0">
+		<panelLayout cols="1" rows="3">
+		 <row idx="1" height="spliter"/>
+			<row idx="0" height="90%"/>
+			<col idx="0" width="100%"/>
+			
+			<cell col="0" row="0">
+				<page>
+					<panel class="DirImageView" caption="Directory Image View"/>
+					<panel class="ResImageView" caption="Resource Image View"/>
+				</page>
+			</cell>
+			<cell col="0" row="2">
+				<panel class="ResDescPanel"/>
+			</cell>
+		</panelLayout>
+	</cell>
+</panelLayout>

@@ -1,0 +1,2 @@
+<renderer class="Classic.VSeparator" extends="renderer::Classic.Separator">
+</renderer>

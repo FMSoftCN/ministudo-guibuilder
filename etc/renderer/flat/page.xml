@@ -1,0 +1,3 @@
+<renderer class="Flat.Page" extends="renderer::Flat.Container">
+	<set-property name="Class" value="page"/>
+</renderer>

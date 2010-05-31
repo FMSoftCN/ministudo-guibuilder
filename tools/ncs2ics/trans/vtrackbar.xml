@@ -1,0 +1,4 @@
+<translator class="window::VTrackBar" extends="window::Widget">
+	<set name="class" value="trackbar" type="string"/>
+	<set name="style" value="2" type="int"/> <!-- TBS_VERTICAL -->
+</translator>

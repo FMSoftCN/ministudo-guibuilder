@@ -1,0 +1,46 @@
+<window class="ItemView" extends="ScrollWidget">
+	<set-property name="Class" value="itemview"/>
+	<default-property name="BgColor" value="0xFFFFFFFF"/>
+	
+	<!-- style of ItemManager -->
+	<property name="AutoSort" id="2006" type="enum" value="False">
+		<enum>
+			<option name="True" value="0x4"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+	
+	<property name="Loop" type="enum" value="False">
+		<enum>
+			<option name="True" value="0x8"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
+	
+	<event id="4100">
+		<handler>void onSelChanging(mItemView* self, int id, int nc, DWORD add_data)</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_ITEMV_SELCHANGING)</code>
+	</event>
+	<event>
+		<handler>void onClicked(mWidget* self, int id, int nc, DWORD add_data)</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_WIDGET_CLICKED)</code>
+	</event>
+	<event>
+		<handler>onSelChanged</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_ITEMV_SELCHANGED)</code>
+	</event>
+	<event>
+		<handler>onEnter</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_ITEMV_ENTER)</code>
+	</event>
+
+	<event>
+		<handler>onGainedFocus</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_ITEMV_SETFOCUS)</code>
+	</event>
+
+	<event>
+		<handler>onLostFocus</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_ITEMV_KILLFOCUS)</code>
+	</event>
+</window>

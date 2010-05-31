@@ -1,0 +1,7 @@
+<renderer class="Fashion.SpinBox" extends="renderer::Fashion.Spinner">
+	<set-property name="Class" value="spinbox"/>
+	
+	<!-- NCS_METRICS_3DBODY_ROUNDX -->
+	<default-property name="RoundX" value="1"/>
+	<default-property name="RoundY" value="1"/>
+</renderer>

@@ -1,0 +1,39 @@
+<paged-window class="PropSheet" extends="window::Widget" accept="true">
+
+	<set-property name="Class" value="propsheet"/>	
+	<default-property name="BgColor" value="0xFFC0C0C0"/>
+	<set-property name="Text" value="0"/>
+	<set-property name="Font" value=""/>
+	<default-property name="Width" value="200"/>
+	<default-property name="Height" value="200"/>
+
+	<property name="TabMinWidth" id="7" type="int" default="16"/>
+
+	<property name="TabMargin" type="int" default="8"/>
+
+	<property name="ActivePageIndex" id="10" type="int" default="0"/>
+
+	<property name="Page" id="500" type="string" />
+	<set-property name="Page" value="window::Page"/>
+
+	<event id="4050">
+		<handler>void onActiveChanged(mWidget* self, int id, int nc)</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_PRPSHT_ACTIVECHANGED)</code>
+	</event>
+
+	<!--  style of propsheet -->
+	<property name="Style" id="2005" type="enum">
+		<enum>
+			<option name="Simple" value="0x0"/>
+			<option name="Compact" value="0x02"/>
+			<option name="Scrollable" value="0x04"/>
+		</enum>
+	</property>
+
+    <property name="TabPos" type="enum">
+		<enum>
+			<option name="Top" value="0x0"/>
+			<option name="Bottom" value="0x08"/>
+		</enum>
+	</property>
+</paged-window>

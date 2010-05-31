@@ -1,0 +1,8 @@
+<renderer class="Skin.HScrollBar" extends="renderer::Skin.ScrollBar">
+
+	<!-- WE_LFSKIN_SCROLLBAR_HSHAFT -->
+	<property name="ImageBar" id="20485" type="image"/>
+	
+	<!-- WE_LFSKIN_SCROLLBAR_HTHUMB -->
+	<property name="ImageThumb" id="20486" type="image"/>
+</renderer>
