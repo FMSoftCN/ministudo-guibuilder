@@ -29,6 +29,8 @@ using namespace std;
 #include "stream.h"
 #include "resenv.h"
 
+#include "dlgtmpls.h"
+
 #include "valuetype.h"
 #include "class-instance.h"
 #include "../uieditor/font-dialog.h"
@@ -216,7 +218,7 @@ void FileValueEditor::onExtend()
 	strcpy(pfdd.filepath, lastPath.c_str());
 	strcpy(pfdd.filter, fvt->getFilter());
 	pfdd.is_save = FALSE;
-	if(FileOpenSaveDialog(NULL, hwnd, NULL, &pfdd))
+	if(FileOpenSaveDialog(GetDlgTemplate(ID_FONTSELECT), hwnd, NULL, &pfdd))
 	{
 		setValue(pfdd.filefullname);
 		SetWindowText(hwnd, pfdd.filefullname);
@@ -291,7 +293,7 @@ int ColorValueEditor::wndProc(int message, WPARAM wParam, LPARAM lParam)
 void ColorValueEditor::onExtend()
 {
 	//show color dialog
-	COLORDLGDATA pcdd = {0};
+	COLORDLGDATA pcdd = {0, 0, 0, 0, 0, 0, 0, FALSE, NULL};
 	memset (&pcdd, 0, sizeof(COLORDLGDATA));
 	pcdd.b = GetBValue(value);
 	pcdd.g = GetGValue(value);
@@ -339,31 +341,41 @@ static CTRLDATA _multi_text_ctrls [] = {
 			10, 10, 300, 150,
 			IDC_MLTEXT,
 			"",
-			0
+			0,
+            WS_EX_NONE,
+            NULL,
+            NULL
 		},
 		{
 			"button", WS_VISIBLE|BS_PUSHBUTTON,
 			140, 170, 80, 30,
 			IDOK,
 			"OK",
-			0
+			0,
+            WS_EX_NONE,
+            NULL,
+            NULL
 		},
 		{
 			"button", WS_VISIBLE|BS_PUSHBUTTON,
 			230, 170, 80, 30,
 			IDCANCEL,
 			"Cancel",
-			0
+			0,
+            WS_EX_NONE,
+            NULL,
+            NULL
 		}
 };
 static DLGTEMPLATE _multi_text_editor_dlg = {
-		WS_BORDER|WS_CAPTION|WS_DLGFRAME,
+		WS_BORDER|WS_CAPTION|WS_DLGFRAME|WS_VISIBLE,
 		WS_EX_NONE,
 		200,150, 330,230,
 		"Input Text",
 		0, 0,
 		sizeof(_multi_text_ctrls)/sizeof(CTRLDATA),
-		_multi_text_ctrls
+		_multi_text_ctrls,
+        0
 };
 
 int MutliStringEditor::_multiTextEditProc(HWND hDlg, int message, WPARAM wParam, LPARAM lParam)
@@ -469,8 +481,9 @@ void TCompositeValueType<TValue, TEditor, TSelf, VType>::cleanInstances()
 			it != _instances.end(); ++it)
 	{
 		if(it->second)
-			delete it->second;
+			it->second->release();
 	}
+	_instances.clear();
 
 }
 
@@ -886,7 +899,7 @@ void StructValueType::saveXMLStream(Value value, TextStream *stream)
 
 	int i = 0;
 
-	StructValue * sv = (StructValue*)sv;
+	StructValue * sv = (StructValue*)value;
 
 	stream->printf("\n");
 	stream->indent();
@@ -977,8 +990,7 @@ StructValue::~StructValue()
 		delete[] values;
 	}
 
-	if(binValues)
-		delete []binValues;
+    delete[] binValues;
 }
 
 string StructValue::toString(){

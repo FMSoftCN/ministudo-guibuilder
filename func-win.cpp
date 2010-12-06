@@ -1,3 +1,4 @@
+
 #ifdef WIN32
 #include <windows.h>
 #include <signal.h>
@@ -7,6 +8,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
+#include <stdarg.h>
 
 #include "gbconfig.h"
 
@@ -19,6 +21,53 @@
 
 #ifdef WIN32
 
+////////////////////////////////////////////////////////////////////////
+
+WCHAR*  utf8towchar(const char* str)
+{
+	//get size need
+	int wlen;
+	WCHAR * wstr = NULL;
+	if(!str)
+		return NULL;
+	wlen = MultiByteToWideChar(CP_UTF8, 0, str, -1, NULL, 0);
+
+	if(wlen <= 0)
+		return NULL;
+
+	wstr = (WCHAR*)malloc(wlen+sizeof(WCHAR));
+	memset(wstr, 0, wlen+sizeof(WCHAR));
+
+	if(!wstr)
+		return NULL;
+
+	MultiByteToWideChar(CP_UTF8, 0, str, -1, wstr, wlen+sizeof(WCHAR));
+
+	return wstr;
+}
+
+char* wchartoutf8(const WCHAR* wstr)
+{
+	//get size need
+	int ulen;
+	char* utf8str = NULL;
+	if(!wstr)
+		return NULL;
+	ulen = WideCharToMultiByte(CP_UTF8, 0, wstr, -1, NULL, 0, NULL, NULL);
+
+	if(ulen <= 0)
+		return NULL;
+
+	utf8str = (char*)calloc(1, ulen+1);
+
+	if(!utf8str)
+		return NULL;
+	WideCharToMultiByte(CP_UTF8, 0, wstr, -1, utf8str, ulen+1, NULL, NULL);
+	return utf8str;
+}
+
+
+////////////////////////////////////////////////////////////////////////
 /* Note:
  * MSDN says these functions are not thread-safe. We make no efforts to have
  * any kind of thread safety.
@@ -310,6 +359,8 @@ char *dlerror( void )
     return error_pointer;
 }
 
+
+
 void *win_mmap(const char *file)
 {
 	HANDLE obj;
@@ -327,10 +378,12 @@ void *win_mmap(const char *file)
 	fileSize = GetFileSize( hFile, NULL);
 
 	obj = CreateFileMapping( hFile, NULL, PAGE_READWRITE,
-           0, fileSize, file);
+           0, fileSize, NULL);
+
+	GetLastError();
 
 	if (obj){
-	    data = MapViewOfFile( obj, FILE_MAP_WRITE, 0, 0, 0);
+	    data = MapViewOfFile( obj, FILE_MAP_READ, 0, 0, 0);
 	}
 
 	CloseHandle(obj);
@@ -363,7 +416,7 @@ int win_mkfifo (const char *name, int size)
 
       if (hPipe == INVALID_HANDLE_VALUE)
       {
-          printf("CreateNamedPipe failed, GLE=%d.\n");
+          //printf("CreateNamedPipe failed, GLE=%d.\n");
           return -1;
       }
 	  return (int)hPipe;
@@ -405,27 +458,37 @@ int get_invalid_handle()
 
 int get_file_data_size (void)
 {
-	return sizeof(WIN32_FIND_DATA);
+	return sizeof(WIN32_FIND_DATAW);
 }
 
 int win_find_first_file (const char *dir, void *file_data)
 {
-	return (int)FindFirstFile(dir, (WIN32_FIND_DATA *)file_data);
+	//int ret;
+	//LPWSTR wdir = utf8towchar(dir);
+	WCHAR szwdir[1024];
+	MultiByteToWideChar(CP_UTF8, 0, dir, -1, szwdir, sizeof(szwdir)/sizeof(WCHAR));
+
+	return  (int)FindFirstFileW((LPCWSTR)szwdir, (WIN32_FIND_DATAW *)file_data);
+	//if(wdir)
+	//	free(wdir);
+	//return ret;
 }
 
 int win_find_next_file (int hFind, void *file_data)
 {
-	return (int)FindNextFile((HANDLE)hFind, (WIN32_FIND_DATA *)file_data);
+	return (int)FindNextFileW((HANDLE)hFind, (WIN32_FIND_DATAW *)file_data);
 }
 
 int win_is_dir(void *file_data)
 {
-	return(((WIN32_FIND_DATA *)file_data)->dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY);
+	return(((WIN32_FIND_DATAW *)file_data)->dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY);
 }
 
-char* win_get_file_name(void *file_data)
+char* win_get_file_name(void *file_data, char *buff, int len)
 {
-	return ((WIN32_FIND_DATA *)file_data)->cFileName;
+	//return (char*)wchartoutf8(((WIN32_FIND_DATAW *)file_data)->cFileName);
+	WideCharToMultiByte(CP_UTF8, 0, ((WIN32_FIND_DATAW *)file_data)->cFileName, -1, buff, len, NULL, NULL);
+	return buff;
 }
 
 void win_close_find(int hFind)
@@ -480,7 +543,6 @@ static inline bool is_space(char ch)
 char* splite_arg(char** pbegin)
 {
 	char end = 0;
-	int  idx = 0;
 	char* begin = *pbegin;
 	char* arg_start;
 	while(begin[0] && is_space(begin[0]))
@@ -524,6 +586,7 @@ char* splite_arg(char** pbegin)
 }
 
 #define MAX_ARGS    16
+extern int main(int argc, const char** argv);
 INT WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 {
 
@@ -544,17 +607,24 @@ INT WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	}
 	argc ++;
 
+
 	try{
 	/*	char szLogfile[1024];
 		sprintf(szLogfile, "%s.log",szPath);
 		freopen(szLogfile,"wt",stdout);
 		freopen(szLogfile,"wt",stderr);
 */
-		return guibuilder_main(argc, (const char**)argv);
-	}catch(...)
+		return main(argc, (const char**)argv);
+	}catch(const char* err)
 	{
-		return -1;
+		MessageBox(0,err,  "Error", 0);
 	}
+	catch(...)
+	{
+		MessageBox(0,"Unknown Error",  "Error", 0);
+	}
+	
+	return -1;
 
 }
 
@@ -765,6 +835,44 @@ const char* get_cur_user_name(char* puser_name, int max)
 	return NULL;
 }
 
+int win_system(const char* str_cmd)
+{
+	if(str_cmd == NULL)
+		return 0;
+
+	STARTUPINFO si;
+	PROCESS_INFORMATION pi;
+	ZeroMemory( &pi, sizeof(pi) );
+	ZeroMemory( &si, sizeof(si) );
+	si.cb = sizeof(si);
+
+	BOOL bRet = CreateProcess(NULL,
+		(char*)str_cmd, //command line
+		NULL,
+		NULL,
+		FALSE,
+		CREATE_DEFAULT_ERROR_MODE|NORMAL_PRIORITY_CLASS|CREATE_NO_WINDOW,
+		NULL,
+		NULL,
+		&si,
+		&pi);
+
+	if(!bRet)
+		return -1;
+
+	CloseHandle(pi.hThread);
+
+	WaitForSingleObject(pi.hProcess, INFINITE);
+
+	DWORD dwExitCode;
+	GetExitCodeProcess(pi.hProcess, &dwExitCode);
+
+	CloseHandle(pi.hProcess);
+
+	return (int)dwExitCode;
+
+}
+
 ////////////////////////////////////////////////////////////////
 //wait thread
 void * win_get_current_thread()
@@ -778,39 +886,60 @@ void win_wait_thread(void* thread)
 }
 
 
+////////////////////
+//usleep
+int usleep(unsigned long micro_sed)
+{
+	Sleep(micro_sed/1000);
+	return 0;
+}
+
+
+///////////////////////
+//vasprintf
+int vasprintf(char** strp, const char* format, va_list va)
+{
+	if(!strp || !format)
+		return 0;
+
+	*strp = NULL;
+
+	size_t len = _vscprintf(format, va);
+	if(len <= 0)
+		return 0;
+
+	*strp = (char*)malloc(len + 1);
+	return vsprintf(*strp, format, va);
+
+}
+
 #endif  //end of WIN32
 
 #ifdef _MSTUDIO_OFFICIAL_RELEASE
 
-struct FMSOFT_AUTH_INFO buff;
-
-int read_auth_key(char *fid)
+static int read_auth_key(char *fid, FMSOFT_AUTH_INFO* pInfo, unsigned long *retLen)
 {
 	SENSE4_CONTEXT ctx = {0};
 	SENSE4_CONTEXT *pctx = NULL;
-	unsigned long size = 0;
+    unsigned long size = 0;
 	unsigned long ret = 0;
-	unsigned long FileSize=0;
-	unsigned long WByte=0;
+    int infoLen = sizeof(FMSOFT_AUTH_INFO);
+
+    if (!pInfo)
+        return -1;
 
 	S4Enum(pctx, &size);
-	if (size == 0)
-	{
-		printf("EliteIV not found!\n");
+	if (size == 0) {
 		return MSTUDIO_ERR_NOAUTH;
 	}
 
 	pctx = (SENSE4_CONTEXT *)malloc(size);
-	if (pctx == NULL)
-	{
-		printf("Not enough memory!\n");
+	if (pctx == NULL) {
 		return MSTUDIO_ERR_NOAUTH;
 	}
 
 	ret = S4Enum(pctx, &size);
-	if (ret != S4_SUCCESS)
-	{
-		printf("Enumerate EliteIV error!\n");
+	if (ret != S4_SUCCESS) {
 		free(pctx);
 		return MSTUDIO_ERR_NOAUTH;
 	}
@@ -820,74 +949,155 @@ int read_auth_key(char *fid)
 	pctx = NULL;
 
 	ret = S4Open(&ctx);
-	if (ret != S4_SUCCESS)
-	{
-		printf("Open EliteIV failed!\n");
+	if (ret != S4_SUCCESS) {
 		return MSTUDIO_ERR_NOAUTH;
 	}
 
 	ret = S4ChangeDir(&ctx, "\\");
-	if (ret != S4_SUCCESS)
-	{
-		printf("No root directory found!\n");
+	if (ret != S4_SUCCESS) {
 		S4Close(&ctx);
 		return MSTUDIO_ERR_NOAUTH;
 	}
 
-	//FIXME: "12345678" is the UserPin for executing files
+	//"12345678" is the UserPin for executing files
 	ret = S4VerifyPin(&ctx, (BYTE*)"12345678", 8, S4_USER_PIN);
-	if (ret != S4_SUCCESS)
-	{
-		printf("Verify user PIN failed!\n");
+	if (ret != S4_SUCCESS) {
 		S4Close(&ctx);
 		return MSTUDIO_ERR_NOAUTH;
 	}
 
-	ret = S4Execute(&ctx, fid, 0, 0, &buff, sizeof(struct FMSOFT_AUTH_INFO), &size);
-	if (ret != S4_SUCCESS)
-	{
-		printf("Execute EliteIV exe failed!\n");
+	ret = S4Execute(&ctx, fid, &infoLen, sizeof(infoLen), pInfo, infoLen, &size);
+	if (ret != S4_SUCCESS) {
 		S4Close(&ctx);
 		return MSTUDIO_ERR_INVALIDAUTH;
 	}
 
 	S4Close(&ctx);
 
+    if (retLen)
+        *retLen = size;
+#if 0
+    printf ("\nsign:%s, clientID:%d, clientAbbr:%s, licenseMode:%s\neffectiveDate:%ld, curDate:%ld, expiredDate:%ld\n",
+            pInfo->sign,
+            pInfo->clientID,
+            pInfo->clientAbbr,
+            pInfo->licenseMode,
+            pInfo->effectiveDate,
+            pInfo->curDate,
+            pInfo->expiredDate);
+#endif
+
 	return MSTUDIO_ERR_VALIDAUTH;
+}
+
+static inline void genSNInfo(FMSOFT_AUTH_INFO *info, char* sn)
+{
+    if (info && sn) {
+        //SN:clientAbbr-clientID-licenseMode-effectiveDate-expiredDate
+        int startYear, startMon, startDay;
+        int endYear, endMon, endDay;
+        struct tm *date; 
+		time_t effectiveDate = info->effectiveDate;
+		time_t expiredDate = info->expiredDate; 
+
+        date = localtime(&effectiveDate);
+        startYear = date->tm_year + 1900;
+        startMon = date->tm_mon + 1;
+        startDay = date->tm_mday;
+
+        date = localtime(&expiredDate);
+        endYear = date->tm_year + 1900;
+        endMon = date->tm_mon + 1;
+        endDay = date->tm_mday;
+
+        snprintf (sn, MSTUDIO_SN_MAXLEN, "%s-%d-%s-%d%d%d-%d%d%d", 
+            info->clientAbbr,
+            info->clientID,
+            info->licenseMode,
+            startYear, startMon, startDay,
+            endYear, endMon, endDay);
+    }
+}
+
+int fmsoftCheckSNInfo(char* sn, char* license)
+{
+	char file_id[] = "ef01";
+    FMSOFT_AUTH_INFO auth_info;
+    unsigned long read_size = 0;
+
+    if (!sn)
+        return -1;
+
+	memset(&auth_info, 0, sizeof(auth_info));
+	if ((read_auth_key(file_id, &auth_info, &read_size) == MSTUDIO_ERR_VALIDAUTH)
+            && (read_size == sizeof(auth_info)))
+    {
+        genSNInfo(&auth_info, sn);
+        if (license) {
+            memcpy(license, auth_info.licenseMode, strlen(auth_info.licenseMode));
+        }
+        return 0;
+    }
+
+    return -1;
 }
 
 int fmsoftCheckDogValidity(int *remainDay)
 {
-    //TODO: check softdog device
 	int ret;
-	struct tm *ptm;
-
 	char file_id[] = "ef01";
+    FMSOFT_AUTH_INFO auth_info;
 
-	memset(&buff, 0, sizeof(struct FMSOFT_AUTH_INFO));
-
-	//FIXME: ef01 is the fileid inside dongle
-	ret = read_auth_key(file_id);
+	memset(&auth_info, 0, sizeof(auth_info));
+	ret = read_auth_key(file_id, &auth_info, NULL);
 
 	if (ret != MSTUDIO_ERR_VALIDAUTH)
-	{
 		return ret;
-	}
 
-//	fprintf(stderr, "sign is %s, id is %d, validDate is %d, curDate is %d, expiredDate is %d\n",
-//						buff.sign, buff.clientID, buff.validDate, buff.curDate, buff.expiredDate);
-
-	if (buff.curDate >= buff.expiredDate /*|| buff.curDate <= buff.validDate*/)
-	{
+	if (auth_info.curDate >= auth_info.expiredDate)
 		return MSTUDIO_ERR_DUETOAUTH;
-	}
 	else
-	{
-		*remainDay = difftime(buff.expiredDate, buff.curDate) / 86400;
-	}
-//	fprintf(stderr, "remainDay is %d\n", *remainDay);
+		*remainDay = difftime(auth_info.expiredDate, auth_info.curDate) / 86400;
+
 	return ret;
 }
 #endif
+
+#ifdef WIN32
+////////////////////////////////////////////
+char* utf8toascii(const char* utf8str, char* ascii_str, int buff)
+{
+	WCHAR wstr[1204*4];
+	int wlen;
+	if(!utf8str || !ascii_str || buff <= 0)
+		return NULL;
+
+	
+	//utf8 to wide char
+	wlen = MultiByteToWideChar(CP_UTF8, 0, utf8str, -1, wstr, sizeof(wstr));
+	WideCharToMultiByte(CP_ACP, 0, wstr, wlen, ascii_str, buff, NULL, NULL);
+	
+	return ascii_str;
+}
+
+char* asciitoutf8(const char* ascii_str, char* utf8str, int buff_len)
+{
+	WCHAR wstr[1204*4];
+	int wlen;
+	if(!utf8str || !ascii_str || buff_len <= 0)
+		return NULL;
+
+	
+	//utf8 to wide char
+	wlen = MultiByteToWideChar(CP_ACP, 0, ascii_str, -1, wstr, sizeof(wstr));
+	WideCharToMultiByte(CP_UTF8, 0, wstr, wlen, utf8str, buff_len, NULL, NULL);
+
+	return utf8str;
+}
+
+#endif
+
+
+
 
 

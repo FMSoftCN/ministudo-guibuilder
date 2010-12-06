@@ -39,11 +39,24 @@ auto_ptr<SocketClient> SocketClient::_singleton;
 SocketClient::SocketClient()
 {
     new_fd = -1;
+#ifdef WIN32
+	{
+		WORD wVersionRequested;
+		WSADATA wsaData;
+		wVersionRequested = MAKEWORD(2, 2);
+		WSAStartup(wVersionRequested, &wsaData);
+	}
+#endif
 };
 
 SocketClient::~SocketClient()
 {
 	closeSocket();
+
+#ifdef WIN32
+	WSACleanup();
+
+#endif
 }
 
 bool SocketClient::open(const char *addr, int p)

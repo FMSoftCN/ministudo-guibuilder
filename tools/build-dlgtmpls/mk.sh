@@ -19,7 +19,10 @@ SRCS=( "font_management FontManager" \
 	 "connect_events ConnectEvent SelectEvent InputEventName" \
 	 "font_select FontSelect" \
 	 "idrangemanager IDRangeEditor NewIDRange ExtendIDRange" \
-	 "about About" )
+	 "about About" \
+     "set_start_window SetStartWindow" \
+	 "translate_progress TranslateProgress" \
+	 "select_project_type SelectProjectType")
 
 cat > $HDRFILES <<_ACEOF
 /**
@@ -39,6 +42,10 @@ cat > $OUTFILE <<_ACEOF
 #include <minigui/gdi.h>      
 #include <minigui/window.h>     
 #include <minigui/control.h>     
+#include "msd_intl.h"
+
+#undef _
+#define _(x) x
 
 _ACEOF
 
@@ -108,11 +115,39 @@ done
 cat >> $OUTFILE <<_ACEOF
 };
 
+#ifdef _MSTUDIO_LOCALE
+static void init_international_text()
+{
+    static int _inited = 0;
+    int i;
+    if(_inited)
+        return;
+    _inited = 1;
+    for(i = 0; i < sizeof(templs) / sizeof(DLGTEMPLATE*); i ++) {
+        int j;
+        PCTRLDATA pctrls;
+        if(!templs[i])
+            continue;
+        templs[i]->caption = msd_gettext(templs[i]->caption);
+        pctrls = templs[i]->controls;
+        for(j = 0; j < templs[i]->controlnr; j ++)
+        {
+            pctrls[j].caption = msd_gettext(pctrls[j].caption);
+        }
+    }
+}
+
+
+#endif
+
 
 DLGTEMPLATE * GetDlgTemplate(int id)
 {
 	int count = sizeof(templs) / sizeof(DLGTEMPLATE*);
 	id -= 10000;
+#ifdef _MSTUDIO_LOCALE
+    init_international_text();
+#endif
 	if(id < 0 || id >= count)
 		return NULL;
 

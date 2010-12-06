@@ -6,4 +6,4 @@
 0x00022716	"Import"
 0x00022717	"Cancel"
 0x00022718	"IDB_IMG_FILENAME"
-0x00022719	"Input Image ID Name:"
+0x00022719	"Input image ID name:"

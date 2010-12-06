@@ -1,0 +1,11 @@
+#The Text of en_US
+0x00022711	"BurnDog"
+0x00022712	"KeyFile File Name"
+0x00022713	"ExeFile File Name"
+0x00022714	""
+0x00022715	"..."
+0x00022716	""
+0x00022717	"..."
+0x00022718	"..."
+0x00022719	"OK"
+0x0002271A	"CANCEL"

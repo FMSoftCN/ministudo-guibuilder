@@ -2,12 +2,12 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.61)
-AC_INIT([guibuilder], [1.0.4], -)
+AC_INIT([guibuilder], [1.0.6], -)
 AC_CONFIG_SRCDIR([main.cpp])
 
 guibuilder_MAJOR_VERSION=1
-guibuilder_MINOR_VERSION=4
-guibuilder_MICRO_VERSION=0
+guibuilder_MINOR_VERSION=0
+guibuilder_MICRO_VERSION=6
 guibuilder_INTERFACE_AGE=0
 guibuilder_BINARY_AGE=0
 guibuilder_VERSION=$guibuilder_MAJOR_VERSION.$guibuilder_MINOR_VERSION.$guibuilder_MICRO_VERSION
@@ -191,6 +191,7 @@ AC_OUTPUT([
 	etc/renderer/fashion/Makefile
 	etc/user-templates/Makefile
 	etc/lang/Makefile
+	etc/imgeditor/Makefile
 	imgeditor/Makefile
 	mgfc/Makefile
 	rdreditor/Makefile

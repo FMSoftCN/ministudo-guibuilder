@@ -50,7 +50,8 @@ DataFiles= animate.xml \
 	vspinner.xml \
 	vtrackbar.xml \
 	widget.xml  \
-	texteditor.xml
+	texteditor.xml \
+	imwordsel.xml
 
 
 ETCDIR=$(prefix)/etc/guibuilder/renderer/classic

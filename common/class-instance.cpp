@@ -203,8 +203,7 @@ Class::~Class()
 	for(map<int, FieldType*>::iterator it = fieldTypes.begin(); it!=fieldTypes.end(); ++it)
 	{
 		FieldType *ft = it->second;
-		if(ft)
-			delete ft;
+        delete ft;
 	}
 
 	if(super)
@@ -291,7 +290,6 @@ Class* Class::loadFromXML(xmlNodePtr node)
 	goto RETURN;
 
 FAILED:
-if(_class)
 	delete _class;
 
 RETURN:
@@ -304,10 +302,10 @@ RETURN:
 	return _class;
 }
 
-void Class::addFieldType(const char* name,int id, ValueType* vtype)
+void Class::addFieldType(const char* name,int id, ValueType* vtype, const char* error_tip /*= NULL*/)
 {
 	//create new Field Type
-	FieldType * ft = new FieldType(id, name, vtype);
+	FieldType * ft = new FieldType(id, name, vtype, error_tip);
 
 	DP( "id=%d, ft=%p", id, ft);
 	//insert into
@@ -370,7 +368,12 @@ BOOL Class::loadClassProperty(xmlNodePtr node, Class *_class, int& prop_id)
 		}
 	}
 
-	_class->addFieldType((const char*)xname,prop_id, vtype);
+	xmlChar * error_tip = xhGetChildText(node,  "error-tip");
+
+	_class->addFieldType((const char*)xname,prop_id, vtype, (const char*)error_tip);
+
+	if(error_tip)
+		xmlFree(error_tip);
 
 	if(haveDef)
 	{
@@ -447,7 +450,10 @@ BOOL Class::loadClassEvent(xmlNodePtr node, Class *_class, int& event_id, char *
 
 	*default_prototype = (char*)vtype->getPrototype();
 
-	_class->addFieldType(vtype->getName(),id, vtype);
+	xmlChar* error_tip = xhGetChildText(node, "error-tip");
+	_class->addFieldType(vtype->getName(),id, vtype, (const char*)error_tip);
+	if(error_tip)
+		xmlFree(error_tip);
 
 	return TRUE;
 }
@@ -583,6 +589,7 @@ Instance::Instance(Class* cls)
 	serialNum = genSerialNum(this);
 	ref_list = NULL;
 
+	_class->addRef();
 	_class_map_ref[cls] ++;
 }
 
@@ -1036,6 +1043,8 @@ Instance::~Instance()
 	//removeRefReses();
 	clearListens();
 	cleanAll(-1,-1, TRUE);
+	if(_class)
+		_class->release();
 }
 
 void Instance::cleanAll(int begin_id, int end_id, BOOL force_clean/*=FALSE*/)
@@ -1281,7 +1290,7 @@ BOOL Instance::cut(Instance** instances, int count)
 	return copy(instances, count);
 }
 
-Instance** Instance::paste()
+ObjectClipBoard<Instance*>::Array Instance::paste()
 {
 	return _instance_clipboard.top(0);
 }
@@ -1436,10 +1445,9 @@ void InstancePropertyUndoRedoCommand::execute()
 		return;
 
 	BOOL is_default = !inst->isSettedField(prop_id);
-	DWORD now_value = 0;
 	DWORD now_memo;
 	if(!is_default){
-		now_value = inst->getField(prop_id);
+		DWORD now_value = inst->getField(prop_id);
 		now_memo = vtype->toMemo(now_value);
 	}
 

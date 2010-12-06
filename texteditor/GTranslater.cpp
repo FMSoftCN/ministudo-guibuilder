@@ -33,8 +33,7 @@ GTranslater::GTranslater ()
 
 GTranslater::~GTranslater ()
 {
-	if (instance)
-		delete instance;
+    delete instance;
 }
 
 GTranslater *GTranslater ::getInstance(void)
@@ -148,6 +147,85 @@ int GTranslater::curl_deal (const char *url)
 	return 0;
 }
 
+#define MAP_ENTITY(_entityName, _entity) \
+    if(strncmp(_entityName, entityName, sizeof(_entityName)-1)  == 0) {\
+        *pref_size = sizeof(_entityName) -1; \
+        entity[0] = _entity; \
+        return 1; }
+static int entity_from_name(char* entity, const char* entityName, int *pref_size)
+{
+    if(*entityName == '#')
+    {
+        const char* strend = strchr(entityName, ';');
+        if(strend)
+            *pref_size = strend - entityName ;
+        else
+            *pref_size = strlen(entityName);
+
+        int value = 0;
+        if(entityName[1] == 'x') {
+            value = strtol(entityName + 2, NULL, 16);
+        }
+        else {
+            value = strtol(entityName + 1, NULL, 10);
+        }
+
+        char text[10];
+        int n = 0;
+        while(value != 0) {
+            text[n++] = (value & 0xFF);
+            value >>= 8;
+        }
+        for(int i = n - 1; i >= 0; i--)
+            entity[i] = text[n-i-1];
+        
+        return n;
+
+    }
+    else 
+    {
+        MAP_ENTITY("quot", '\"')
+        MAP_ENTITY("amp", '&')
+        MAP_ENTITY("apos", '\'')
+        MAP_ENTITY("lt", '<')
+        MAP_ENTITY("gt", '>')
+    }
+    return 0;
+}
+
+
+static void set_translate_result(string & dst, const char* src)
+{
+    dst="";
+    if(!src)
+        return;
+
+    char szText[1024];
+    while(*src) {
+        int i = 0;
+        while(*src && i < sizeof(szText)-1) {
+            if(*src == '&'){
+                int size = 0;
+                int c = entity_from_name(szText+i, src + 1, &size);
+                if(c == 0) {
+                    szText[i++] = *src ;
+                }
+                else {
+                    src += (size+1) ;
+                    i += c;
+                }
+            }
+            else
+            {
+                szText[i++] = *src;
+            }
+            src ++;
+        }
+        szText[i] = 0;
+        dst += szText;
+    }
+}
+
 static int parse_content (struct json_object *obj, GTranslater *_ths)
 {
 	int ret = 200;
@@ -164,7 +242,7 @@ static int parse_content (struct json_object *obj, GTranslater *_ths)
 				&& strcmp(key, "translatedText") == 0)
 		{
 			reslt = (char *)json_object_to_json_string(value);
-			_ths->result = reslt;
+			set_translate_result(_ths->result,reslt);
 			if (_ths->result.at(0) == '"') {
 				_ths->result.erase(0, 1);
 			}

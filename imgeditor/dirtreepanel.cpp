@@ -136,10 +136,13 @@ static int ItemListDir(MGTreeView *tree, GHANDLE parent, int depth)
 		do{
 			if (win_is_dir(ffd))
 			{
-				tvItemInfo.text = win_get_file_name(ffd);
+				char szText[MAX_PATH];
+				tvItemInfo.text = win_get_file_name(ffd,szText, MAX_PATH);
 				if(strcmp(tvItemInfo.text, ".") == 0
 					|| strcmp(tvItemInfo.text,"..") == 0)
+				{
 					continue;
+				}
 				tvItemInfo.dwFlags = TVIF_FOLD;
 				tvItemInfo.dwAddData = 0;
 
@@ -221,7 +224,7 @@ HWND DirTreePanel::createPanel(HWND hParent)
 #else
 	char tmp[] = "/";
 #endif 
-	TVITEMINFO info ={tmp, 0, 0};
+	TVITEMINFO info ={tmp, 0, 0, 0, 0};
 
 	::GetClientRect(hParent, &rt);
 
@@ -247,6 +250,19 @@ void DirTreePanel::OnCtrlNotified(MGWnd* wnd, int id, int code, DWORD add_data)
 
 		sel = GetSelItem();
 
+        //To contain the newest directory information, we reload current selected 
+        //directory's child subdirectory every time.
+        if (sel) {
+            GHANDLE child = GetFirstChild(sel);
+
+            while (child) {
+                DeleteTree(child);
+                child = GetNextSibling(child);
+            }
+            //reload children
+            SetItemAddData(sel, ItemListDir (this, sel, 0));
+        }
+
 		loadSubDirs(sel);
 
 		GetRealPath(this, sel, dir, MAX_PATH-1);
@@ -261,8 +277,7 @@ void DirTreePanel::loadSubDirs(GHANDLE hitem)
 	if (hitem && hitem != GetRoot())
 	{
 		GHANDLE child = GetFirstChild(hitem);
-		while (child)
-		{
+		while (child) {
 			if (GetItemAddData(child) == 0)
 			{
 				::ShowWindow(getHandler(), SW_HIDE);

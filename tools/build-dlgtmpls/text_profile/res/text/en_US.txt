@@ -1,4 +1,5 @@
 #The Text of en_US
+0x00022711	"Translate"
 0x00022712	"Profile ..."
 0x00022713	"Add"
 0x00022714	"CheckButton1"
@@ -13,6 +14,9 @@
 0x0002271D	"Add Language"
 0x0002271E	"OK"
 0x0002271F	"Cancel"
-0x00022720	"Select Language:"
-0x00022721	"Select Language"
-0x00022722	"Select Language:"
+0x00022720	"Select language:"
+0x00022721	"Select language"
+0x00022722	"Select language:"
+0x00022723	"OK"
+0x00022724	"Cancel"
+0x00022725	""

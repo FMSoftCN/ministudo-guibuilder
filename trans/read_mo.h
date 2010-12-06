@@ -19,7 +19,6 @@
 #define _READ_MO_H
 
 #include <errno.h>
-#include <stdbool.h>
 #include <stdio.h>
 #include <stddef.h>
 #include <stdlib.h>
@@ -64,8 +63,8 @@ struct binary_mo_file
 	size_t size;
 };
 
-typedef struct message_ty message_ty;
-struct message_ty
+typedef struct _message_ty message_ty;
+struct _message_ty
 {
 	/* The msgctxt string, if present.  */
 	const char *msgctxt;
@@ -83,8 +82,8 @@ struct message_ty
 	size_t msgstr_len;
 };
 
-typedef struct message_list_ty message_list_ty;
-struct message_list_ty
+typedef struct _message_list_ty message_list_ty;
+struct _message_list_ty
 {
 	message_ty *item;
 	//size_t hashtable_offset;

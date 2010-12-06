@@ -11,6 +11,8 @@
 #include <stdarg.h>
 #ifndef WIN32
 #include <stdint.h>
+#else
+#include "func-win.h"
 #endif
 #include <map>
 
@@ -18,6 +20,7 @@
 
 using namespace std;
 
+#include <string>
 #include "stream.h"
 
 //////////////////////
@@ -33,15 +36,20 @@ void TextStream::vprintf(const char* format, va_list args)
 		storage->write(prelen,prefix);
 	}
 
-	char szText[1024];
-	vsprintf(szText, format, args);
+	//char strp[1024*4];
+	char *strp = NULL;
+
+	vasprintf(&strp, format, args);
+	if(!strp)
+		return;
+
 	int i, begin=0;
-	for(i=0; szText[i]; i++)
+	for(i=0; strp[i]; i++)
 	{
-		if(szText[i] == '\r' || szText[i]=='\n')
+		if(strp[i] == '\r' || strp[i]=='\n')
 		{
 			bNewLine = true;
-			storage->write(i-begin+1, szText+begin);
+			storage->write(i-begin+1, strp+begin);
 			begin = i+1;
 		}
 		else
@@ -54,8 +62,9 @@ void TextStream::vprintf(const char* format, va_list args)
 	}
 	if(begin < i)
 	{
-		storage->write(i-begin, szText+begin);
+		storage->write(i-begin, strp+begin);
 	}
+	free(strp);
 }
 
 
@@ -158,3 +167,45 @@ void StrPoolBinStream::saveStr(const char* str, int size)
 	save32(offset);
 }
 #endif
+
+#define SET_ENTITY_REFERENCE(er) \
+{ strcpy(buff + idx, er); idx += (sizeof(er) - 1); }
+std::string EntityReferenceTranslate(const char* str)
+{
+	char buff[1024];
+	if(str == NULL)
+		return std::string("");
+
+	std::string xstr = "";
+	
+	int i;
+	int idx = 0;
+	for(i = 0; str[i]; i ++)
+	{
+		if(str[i] == '&')
+			SET_ENTITY_REFERENCE("&amp;")
+		else if(str[i] == '\'')
+			SET_ENTITY_REFERENCE("&apos;")
+		else if(str[i] == '\"')
+			SET_ENTITY_REFERENCE("&quot;")
+		else if(str[i] == '<')
+			SET_ENTITY_REFERENCE("&lt;")
+		else if(str[i] == '>')
+			SET_ENTITY_REFERENCE("&gt;")
+		else
+			buff[idx++] = str[i];
+		if(idx >= sizeof(buff)-1)
+		{
+			buff[idx] = 0;
+			xstr += buff;
+			idx = 0;
+		}
+	}
+
+	buff[idx] = 0;
+	xstr += buff;
+
+	return xstr;
+}
+
+

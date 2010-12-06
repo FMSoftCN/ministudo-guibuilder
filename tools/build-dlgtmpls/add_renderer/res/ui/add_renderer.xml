@@ -32,6 +32,7 @@
 	</window>
 	<window class="window::ListBox" serial-number="4158621696">
 		<ID>0x40000064</ID>
+		<ScrollBarMode>Always</ScrollBarMode>
 		<X>17</X>
 		<Y>19</Y>
 		<Width>355</Width>

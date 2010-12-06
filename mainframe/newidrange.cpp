@@ -41,6 +41,8 @@ NewIDRange::NewIDRange(HWND hParent, IDRangeManager* idrm,BOOL bEnableCancel)
 	this->idrm = idrm;
 
 	Create(hParent, GetDlgTemplate(ID_NEWIDRANGE));
+	if(!bEnableCancel)
+		::IncludeWindowExStyle(m_hWnd,WS_EX_NOCLOSEBOX);
 	EnableChild(IDCANCEL, bEnableCancel);
 	CenterWindow(TRUE);
 	ShowWindow(SW_SHOW);
@@ -93,7 +95,7 @@ BOOL NewIDRange::onInitDialog(HWND hFocus, LPARAM lParam)
 	}
 
 	char szText[256];
-	sprintf(szText,_("Free Range (For type : %s %s)"), idrm->getTypeName(), idrm->getName());
+	sprintf(szText,_("Usable range (for type : %s %s)"), idrm->getTypeName(), idrm->getName());
 	SetChildText(ID_LBL_TIP, szText);
 
 	SetFocus(GetChild(ID_SLE_MIN));
@@ -147,7 +149,7 @@ void NewIDRange::onOK()
 
 	if(owner == NULL)
 	{
-		if(YesNoBox(_("Query"), _("user \"%s\" is not exist, auto create it?"), szBuff) != IDYES)
+		if(YesNoBox(_("Question"), _("user \"%s\" does not exist, create it automatically?"), szBuff) != IDYES)
 			return ;
 
 		owner = om->newOwner(szBuff);
@@ -155,7 +157,7 @@ void NewIDRange::onOK()
 
 	if(min < idrm->getLimitMin() || max > idrm->getLimitMax())
 	{
-		InfoBox(_("Error"), _("The value of Min and max must be range (%d, %d]"), idrm->getLimitMin(), idrm->getLimitMax());
+		InfoBox(_("Error"), _("The value of Min and max must be in the range (%d, %d]"), idrm->getLimitMin(), idrm->getLimitMax());
 		SetFocus(GetChild(ID_SLE_MIN));
 		return ;
 	}
@@ -177,32 +179,38 @@ void NewIDRange::onOK()
 
 void NewIDRange::onCancel()
 {
-	EndDialog(0);
+    /*if(YesNoBox(_("Question"), _("Do you make sure input the right range?")) == IDYES)
+    {
+        onOK();
+    }
+    else
+    {
+        SetFocus(GetChild(ID_SLE_MIN));
+    }*/
+    EndDialog(0);
 }
 
-static const char* id_range_doc=_("\
-When a team develop a project using mStudio and use SVN or CVS to manager the souce codes, It's very \
-common that the resource info conflict caused by IDs. And It's hard to be resovled by mannually. \n\
- \n\
- \n\
-To avoid this condation, mStudio ask a Range for every developer. Every developer just use the \
-IDs in his ranges. \n\
- \n\
-Developer must distribute Range by himself, because mStudio don't known how to find an range which never conflict \
-with others, So the Project Manager must distribute the ranges for every developer. \n\
- \n\
-If mStudio find that there are not any range for the current developer, mStudio would pop a window and ask developer \
-to give a range. \n\
- \n\
-Every resource need a Range: \n\
- UI:  for MainWindow; \n\
- Control: for Controls; \n\
- Image : for Images; \n\
- Renderer: for Renderer Resource; \n\
- Renderer-Set: for Renderer Set Resource; \n\
- Text: for the Text Resource with a name; \n\
- Anonymity Text: for the Anonymity Text Resource; \
-");
+#define id_range_doc _( \
+"Since miniStudio is not a collaborative development platform, it is very easy to " \
+"cause ID resource conflict when developers work together to develop a project " \
+"by using miniStudio and SVN/CVS or other version control tools. And it is hard to " \
+"solve this problem by manual work.\n" \
+" \n" \
+"To avoid this, miniStudio asks each developer to specify an ID range only for itself." \
+"The different developer uses different ID range.\n" \
+" \n" \
+"If miniStudio doesn't find any ID range for current developmer, it will ask the" \
+"developer to specify an ID range.\n" \
+" \n" \
+"Every resource need a Range for its ID: \n" \
+" UI:  for MainWindow; \n" \
+" Control: for Controls; \n" \
+" Image : for Images; \n" \
+" Renderer: for Renderer Resource; \n" \
+" Renderer-Set: for Renderer Set Resource; \n" \
+" Text: for the Text Resource with a name; \n" \
+" Anonymous Text: for the Anonymous Text Resource; " \
+)
 
 void NewIDRange::onLearnMore()
 {

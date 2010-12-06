@@ -2018,7 +2018,7 @@ public:
 		if(len<=0) return NULL;
 		char *buffer = new char[len+1];
 		if(!GetPageTitle(index,buffer)){
-			delete buffer;
+			delete[] buffer;
 			return NULL;
 		}
 		return buffer;

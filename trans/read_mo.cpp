@@ -129,7 +129,6 @@ read_mo_file (message_list_ty *m_list, const char *filename)
 
 	for (i = 0; i < header.nstrings; i++)
 	{
-		message_ty *mp;
 		char *msgctxt;
 		char *msgid;
 		size_t msgid_len;

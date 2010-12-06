@@ -12,6 +12,6 @@
 	<property name="RoundY" id="24577" type="int" default="2"/>
 	
 	<!-- NCS_MODE_BGC -->
-	<property name="GradientMode" id="36865" type="enum GradientMode" default="Vert"/>
+	<property name="GradientMode" id="36865" type="enum GradientMode" default="Horz"/>
 	
 </renderer>

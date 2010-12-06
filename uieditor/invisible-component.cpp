@@ -193,6 +193,10 @@ int InvisibleComponent::saveBinToStream(BinStream *stream)
 	stream->save32(id);
 	//2). save component id
 	stream->save32(this->id&0xFFFF);
+
+    //save the serial num
+    stream->save32(getSerialNumber());
+
 	//3). save caption id //text
 	stream->save32(0);
 	//4) save rdr id

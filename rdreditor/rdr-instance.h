@@ -14,8 +14,7 @@ public:
 		elements = NULL;
 	}
 	~RendererInfo(){
-		if(elements)
-			delete[] elements;
+        delete[] elements;
 	}
 
 	inline NCS_RDR_ELEMENT& operator[](int idx)
@@ -29,8 +28,7 @@ public:
 		if(count <= 0)
 			return;
 
-		if(elements)
-			delete[] elements;
+        delete[] elements;
 
 		elements = new NCS_RDR_ELEMENT[count+1];
 		elements[count].id = -1;
@@ -77,7 +75,7 @@ public:
     HWND getHandler() { return hWnd; }
 	HWND createPreviewWindow(HWND hParent);
 	void destroyPreviewWindow();
-	void updatePreviewWindow(int element_id, HWND hwndToUp = HWND_INVALID);
+	void updatePreviewWindow(int* element_ids, HWND hwndToUp = HWND_INVALID);
 
 public:
 	/*

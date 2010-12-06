@@ -126,7 +126,7 @@ BOOL PropertyPanel::updatingValue(Value old_value, Value new_value,ValueType *vt
 			while(prev)
 			{
 				if(prev->getID() == (int)new_value){
-					InfoBox(_("Error"), _("This ID has exist in the window!"));
+					InfoBox(_("Error"), _("This ID is already in the window!"));
 					return FALSE;
 				}
 				prev = prev->getPrev();
@@ -136,7 +136,7 @@ BOOL PropertyPanel::updatingValue(Value old_value, Value new_value,ValueType *vt
 			{
 				if(next->getID() == (int)new_value)
 				{
-					InfoBox(_("Error"), _("This ID has exist in the window!"));
+					InfoBox(_("Error"), _("This ID is already in the window!"));
 					return FALSE;
 				}
 				next = next->getNext();
@@ -158,14 +158,14 @@ BOOL PropertyPanel::updatingValue(Value old_value, Value new_value,ValueType *vt
 		else if(id == ComponentInstance::PropWidth){
 			if(new_value > RECTW(g_rcScr))
 			{
-				InfoBox(_("Error"),_("The Window Width must smaller than Screen Width(%d)"),RECTW(g_rcScr));
+				InfoBox(_("Error"),_("The width of window must be less than the width of screen (%d)!"),RECTW(g_rcScr));
 				return FALSE;
 			}
 		}
 		else if(id == ComponentInstance::PropHeight){
 			if(new_value > RECTH(g_rcScr))
 			{
-				InfoBox(_("Error"),_("The Window Height must smaller than Screen Height(%d)"),RECTH(g_rcScr));
+				InfoBox(_("Error"),_("The height of window must be less than height of screen(%d)"),RECTH(g_rcScr));
 				return FALSE;
 			}
 		}
@@ -229,7 +229,7 @@ Value PropertyPanel::updateValue(Value value, ValueType *vtype,DWORD mask)
 		sendEvent(FIELDPANEL_INSTANCE_FIELD_CHANGED, (DWORD)instance, (DWORD)id);
 		return id;
 	}
-	else if(vtype->getType() == VT_INT)
+	else /*if(vtype->getType() == VT_INT || vtype->getType() == VT_TEXT)*/
 	{
 		BOOL bIsDefault = !instance->isSettedField(id);
 		Value old_value = 0;
@@ -248,13 +248,13 @@ Value PropertyPanel::updateValue(Value value, ValueType *vtype,DWORD mask)
 			return old_value;
 		}
 		else
-		{
+	  {
 			pushUndoRedoCommand(new InstancePropertyUndoRedoCommand(instance,(int)id,old_value, bIsDefault));
 			return instance->getField(id);
 		}
 	}
-	else
-		return FieldPanel::updateValue(value, vtype, mask);
+	/*else
+		return FieldPanel::updateValue(value, vtype, mask);*/
 }
 
 BOOL PropertyPanel::updateEditorContent(HWND hEditor, ValueType *vtype, Value value, DWORD mask)

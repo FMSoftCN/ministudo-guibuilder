@@ -33,6 +33,12 @@ using namespace std;
 #include "toolbox-panel.h"
 #include "log.h"
 
+#include "undo-redo.h"
+#include "stream.h"
+#include "resenv.h"
+#include "valuetype.h"
+#include "class-instance.h"
+
 struct ItemData{
 	string classname;
 	string desc;
@@ -156,6 +162,9 @@ BOOL ToolboxPanel::loadControl(xmlNodePtr node, HLVITEM hlvItem, int nItem)
 		{
 			itemdata = new ItemData;
 			itemdata->classname = (const char*)xclassname;
+            Class* cls = Class::getClassByName("window", (const char*)xclassname); 
+            cls->initAsControl(TRUE);
+
 			if(xdesc)
 				itemdata->desc = (const char*)xdesc;
             items.insert((char*)itemdata);

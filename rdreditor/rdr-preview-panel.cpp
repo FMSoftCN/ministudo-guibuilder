@@ -64,12 +64,12 @@ BEGIN_MSG_MAP(RendererPreviewPanel)
 	MAP_PAINT(onPaint)
 END_MSG_MAP
 
-void RendererPreviewPanel::updateInstanceField(RendererInstance *instance, int id)
+void RendererPreviewPanel::updateInstanceField(RendererInstance *instance, int* ids)
 {
 	if (!instance || instance != inst)
 		return;
 
-	inst->updatePreviewWindow(id);
+	inst->updatePreviewWindow(ids);
 
 	if(::IsMainWindow(inst->getHandler()))
 		InvalidateRect();
@@ -98,7 +98,7 @@ void draw_border(HWND hWnd, HDC hdc, BOOL is_active)
 
 static void dumpWindowRenderer(HWND hwnd)
 {
-	static WINDOW_ELEMENT_RENDERER editor_win_rdr = {{0}};
+	static WINDOW_ELEMENT_RENDERER editor_win_rdr = {{0}, };
 	ComponentInstance *inst = ComponentInstance::FromHandler(hwnd);
 	WINDOWINFO *win_info;
 	if(!inst)

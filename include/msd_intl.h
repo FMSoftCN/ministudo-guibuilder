@@ -10,11 +10,15 @@
 
 #include "gbconfig.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #ifdef _MSTUDIO_LOCALE
 
 const char* msd_gettext(const char *msgid);
 
-int msd_locale_init(const char *mylocale, const char *lang_path);
+int msd_locale_init(const char*str_cfg);
 
 void free_mo_info();
 
@@ -24,6 +28,10 @@ void free_mo_info();
 
 #define _
 
+#endif
+
+#ifdef __cplusplus
+}
 #endif
 
 #endif /* MSD_INTL_H_ */

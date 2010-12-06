@@ -189,8 +189,8 @@ void TextEditor::saveXmlConfig(const char *xmlFile)
 		}
 
 		stream.indent();
-		stream.println("<lang>%s</lang>", node->langType);
-		stream.println("<country>%s</country>", node->country);
+		stream.println("<lang>%s</lang>", _ERT(node->langType));
+		stream.println("<country>%s</country>", _ERT(node->country));
 		stream.println("<charset>utf-8</charset>");
 		stream.unindent();
 		stream.println("</text>");
@@ -470,7 +470,7 @@ void *TextEditor::_transAll(void *arg)
 
 	_ths->progDlg->setTotal(100 * _ths->reses.size());
 
-	for(it = _ths->reses.begin(), idx = 1; it != _ths->reses.end(); it++, idx++)
+	for(it = _ths->reses.begin(), idx = 1; it != _ths->reses.end(); ++it, idx++)
 	{
 		_ths->ts->reset();
 		id = it->first;
@@ -675,26 +675,25 @@ void TextEditor::_textCombobox_notifi(HWND hwnd, int id, int nc, DWORD add_data)
 
 void TextEditor::onTextComboboxNotification(HWND hwnd, int id, int nc, DWORD add_data)
 {
-	int cur_sel;
-	TeNode *pNode = NULL;
-	list<TeNode*>::iterator listIter;
+    TeNode *pNode = NULL;
+    list<TeNode*>::iterator listIter;
 
-	if(nc == CBN_SELCHANGE){
-		if (0 <= (cur_sel = ::SendMessage (hwnd, CB_GETCURSEL, 0, 0))) {
-			pNode = (TeNode *)(::SendMessage(hwnd, CB_GETITEMADDDATA, cur_sel, 0));
-			if (pNode != pCurTeNode) {
-				listPanel->setSubText(pNode);
-				if (pCurTeNode)
-					pCurTeNode->status = 0;
-				pNode->status |= TeNode::CUR_LANG;
-				pCurTeNode = pNode;
-				listPanel->updateHead(pDefTeNode, pCurTeNode);
-				listPanel->updateEditors();
-				g_env->updateAllRes(NCSRT_TEXT);
-			}
-		}
-	}
-	return;
+    if(nc == CBN_SELCHANGE){
+        int cur_sel;
+        if (0 <= (cur_sel = ::SendMessage (hwnd, CB_GETCURSEL, 0, 0))) {
+            pNode = (TeNode *)(::SendMessage(hwnd, CB_GETITEMADDDATA, cur_sel, 0));
+            if (pNode != pCurTeNode) {
+                listPanel->setSubText(pNode);
+                if (pCurTeNode)
+                    pCurTeNode->status = 0;
+                pNode->status |= TeNode::CUR_LANG;
+                pCurTeNode = pNode;
+                listPanel->updateHead(pDefTeNode, pCurTeNode);
+                listPanel->updateEditors();
+                g_env->updateAllRes(NCSRT_TEXT);
+            }
+        }
+    }
 }
 
 BOOL TextEditor::initEditor()
@@ -925,7 +924,7 @@ static string getString(FILE* fp)
 
 		szBuff[idx ++] = ch;
 
-		if(idx >= (int)sizeof(szBuff))
+		if(idx >= (int)sizeof(szBuff)-32)
 		{
 			szBuff[idx] = '\0';
 			str += szBuff;
@@ -1034,7 +1033,7 @@ static inline void save_fromated_text(TextStream& stream, string &str)
 			break;
 		}
 
-		if(idx % 80 == 0) //new line
+		if(idx >= 80) //new line
 		{
 			szBuff[idx++] = '\\';
 			szBuff[idx++] = '\0';

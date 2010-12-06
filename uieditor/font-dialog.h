@@ -149,6 +149,8 @@ protected:
 	void onCtrlFont();
 	BOOL onInitDialog(HWND hDlg, LPARAM lParam);
 
+    void loadExFont(ExFont* pExFont);
+
 	DECLARE_MSG_MAP;
 
 public:

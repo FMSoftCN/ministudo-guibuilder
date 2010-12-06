@@ -1,9 +1,9 @@
 #The Text of en_US
-0x00022712	"New File ..."
+0x00022712	"New file ..."
 0x00022713	"Page1"
 0x00022714	"Page2"
 0x00022715	""
-0x00022716	"Input File Name:"
+0x00022716	"Input file name:"
 0x00022717	"OK"
 0x00022718	"Button1"
 0x00022719	"Cancel"

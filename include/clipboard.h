@@ -68,17 +68,56 @@ public:
 			for(int i=0; i<max_count; i++)
 			{
 				if(objects[i])
-					objects[i]->decRef();
+					objects[i]->release();
 			}
 			delete[] objects;
 		}
 	}
 
-	TPtr * top(int idx=0){
+	template<class TPtrA>
+	class TArray{
+		friend class ObjectClipBoard<TPtrA>;
+		TPtrA *ptrs;
+		int  max;
+		int  top;
+		TArray(TPtrA *ptrs, int max, int top){
+			this->ptrs = ptrs;
+			this->max = max;
+			this->top = top;
+		}
+	public:
+		TArray() {
+			ptrs = NULL;
+			max = 0;
+			top = 0;
+		}
+		TArray(const TArray<TPtrA>& a) {
+			ptrs = a.ptrs;
+			max = a.max;
+			top = a.top;
+		}
+
+		bool operator!() {
+			return ptrs == NULL;
+		}
+
+		operator bool(){
+			return ptrs != NULL;
+		}
+
+		TPtrA operator[](int idx) {
+			int i = (top + idx) % max;
+			return ptrs[i];
+		}
+	};
+
+	typedef TArray<TPtr> Array;
+
+	Array top(int idx=0){
 		if(idx < 0)
 			idx = 0;
 		if(obj_top == max_count)
-			return NULL;
+			return Array();
 
 		int i = obj_top;
 
@@ -94,9 +133,9 @@ public:
 		}
 
 		if(idx != 0 || objects[i] == NULL)
-			return NULL;
+			return Array();
 
-		return &objects[i];
+		return Array(objects, max_count, i);
 	}
 
 	int push(TPtr* objs, int count)
@@ -105,7 +144,7 @@ public:
 		if(objs == NULL || count <= 0)
 			return 0;
 
-		if(count >= max_count)
+		if(count >= max_count-1)
 			return 0; //out of memory
 
 		i = 0;

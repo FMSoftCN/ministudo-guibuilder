@@ -22,7 +22,7 @@ install-data-local:
 	$(RM) $(ETCDIR)/lang.cfg.sh
 	chmod a+rw $(ETCDIR)/user-templates
 
-SUBDIRS=Emulator icon msd renderer uieditor user-templates lang
+SUBDIRS=Emulator icon renderer uieditor user-templates lang imgeditor
 
 
 EXTRA_DIST= $(DataFiles)

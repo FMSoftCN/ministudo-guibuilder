@@ -33,8 +33,7 @@ EditableListView::EditableListView(EditableListViewHandler * handler)
 }
 
 EditableListView::~EditableListView() {
-	if(editors)
-		delete[] editors;
+    delete[] editors;
 }
 
 void EditableListView::editable_listview_notifi(HWND hwnd, int id, int nc, DWORD add_data)
@@ -55,7 +54,11 @@ static void my_draw_hdr_bk (HWND hWnd, HLVHDR hlvhdr, HDC hdc, RECT *rcDraw)
     DWORD color = GetWindowElementAttr(hWnd, WE_BGC_HIGHLIGHT_ITEM);
 
     oldClr = SetBrushColor (hdc, DWORD2PIXEL(hdc, color));
-    FillBox (hdc, rcDraw->left, rcDraw->top, RECTWP(rcDraw), RECTHP(rcDraw));
+    if (rcDraw->left == 0)
+        rcDraw->left += 1;
+
+    if (rcDraw->right > rcDraw->left)
+        FillBox (hdc, rcDraw->left, rcDraw->top, RECTWP(rcDraw), RECTHP(rcDraw));
     SetBrushColor(hdc, oldClr);
 }
 
@@ -129,20 +132,22 @@ void EditableListView::hideAllEditors(BOOL updateItem)
 	{
 		for(int i=0; i<count; i++)
 		{
-			if(editors[i] == (HWND) 0 )
+			//IMPORTANT : avoid the hideAllEditors recalled
+			HWND editor = editors[i];
+			if(editor == (HWND) 0 )
 				continue;
 
 			//save value
-			if(!::SendMessage(editors[i],VTM_SAVEVALUE, 0, 0))
+			if(!::SendMessage(editor,VTM_SAVEVALUE, 0, 0))
 				continue;
 
 			if(updateItem){
 				char szText[512];
-				::GetWindowText(editors[i], szText, sizeof(szText)-1);
+				::GetWindowText(editor, szText, sizeof(szText)-1);
 				SetSubitemText(hOldSelItem, i, szText);
 			}
 			//hide editor
-			::ShowWindow(editors[i], SW_HIDE);
+			::ShowWindow(editor, SW_HIDE);
 			//remove editor
 			editors[i] = (HWND) 0;
 		}
@@ -169,6 +174,7 @@ void EditableListView::updateEditors()
 		editors[i] = getEditor(add_data, i);
 		if(::IsControl(editors[i]))
 		{
+			::ThrowAwayMessages(editors[i]);
 			::IncludeWindowStyle(editors[i], WS_BORDER);
 			::MoveWindow(editors[i], cx, rt.top, colwidth, RECTH(rt),FALSE);
 			::ShowWindow(editors[i], SW_SHOW);
@@ -303,12 +309,25 @@ BOOL EditableListView::WndProc(int iMsg,WPARAM wParam,LPARAM lParam,int *pret)
 	}
 	else if(iMsg == MSG_SETFOCUS)
 	{
-		for(int i=0; i<count; i++){
+	/*  for(int i=0; i<count; i++){
 			if(editors[i])
 				return FALSE;
-		}
-
+		}*/
 		updateEditors();
+		*pret = CallOldProc(iMsg, wParam, lParam);
+
+		if(!::IsWindow(GetFocus(m_hWnd)))
+		{
+			for(int i = 0; i < count; i++)
+			{
+				if(::IsWindow(editors[i]))
+				{
+					SetFocus(editors[i]);
+					break;
+				}
+			}
+		}
+		return TRUE;
 	}
 
 	return FALSE;

@@ -5,6 +5,7 @@
 	<set-property name="Y" value="0"/>
 	<set-property name="Width" value="0"/>
 	<set-property name="Height" value="0"/>
+	<set-property name="Visible" value="True"/>
 	<default-property name="Text" value="0"/>
 	<default-property name="Border" value="False"/>
 

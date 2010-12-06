@@ -33,52 +33,7 @@ using namespace std;
 #include "func-win.h"
 #endif
 
-static CTRLDATA _selectprj_templ_ctrls[] = {
-	{
-		CTRL_STATIC,
-		WS_VISIBLE,
-		10, 10, 180, 25,
-		-1,
-		_("Select A Project Type"),
-		0
-	},
-	{
-		CTRL_LISTBOX,
-		WS_VISIBLE|LBS_NOTIFY|LBS_SORT|WS_BORDER,
-		10, 40, 180, 150,
-		100,
-		"",
-		0
-	},
-	{
-		CTRL_BUTTON,
-		WS_VISIBLE|BS_PUSHBUTTON,
-		200, 40, 80,30,
-		IDOK,
-		_("OK"),
-		0
-	},
-	{
-		CTRL_BUTTON,
-		WS_VISIBLE|BS_PUSHBUTTON,
-		200, 80, 80,30,
-		IDCANCEL,
-		_("Cancel"),
-		0
-	}
-};
-
-static DLGTEMPLATE _selectprj_templ_tmpl = {
-	WS_BORDER|WS_CAPTION|WS_DLGFRAME,
-	WS_EX_NONE,
-	300,200,300,250,
-	_("Select Start Window ...."),
-	0,0,
-	sizeof(_selectprj_templ_ctrls)/sizeof(CTRLDATA),
-	_selectprj_templ_ctrls,
-	0
-};
-
+#include "dlgtmpls.h"
 
 SelectProjectTypeDlg::SelectProjectTypeDlg(HWND hParent,const char* cfgPath) {
 	// TODO Auto-generated constructor stub
@@ -88,20 +43,21 @@ SelectProjectTypeDlg::SelectProjectTypeDlg(HWND hParent,const char* cfgPath) {
 		this->cfgPath = strdup(cfgPath);
 
 	//create
-	Create(hParent,&_selectprj_templ_tmpl);
+	Create(hParent,GetDlgTemplate(ID_SELECTPROJECTTYPE));
 
 	if(!getAndInitGUIBuilderCfg()){
-		LOG_WARNING("cannot find any GuI Builder Configuration File, stop GUI Builder");
-		throw("cannot open gui builder file");
+		char szInfo[1024];
+		sprintf(szInfo, "cannot read GUI Builder Configuration File, stop GUI Builder (\"%s\")", cfgPath);
+		LOG_WARNING("%s", szInfo);
+		throw(szInfo);
 	}
+
 
 	CenterWindow();
 }
 
 SelectProjectTypeDlg::~SelectProjectTypeDlg() {
-	// TODO Auto-generated destructor stub
-	if(cfgPath)
-		free(cfgPath);
+    free(cfgPath);
 }
 
 BEGIN_MSG_MAP(SelectProjectTypeDlg)
@@ -119,7 +75,7 @@ void SelectProjectTypeDlg::onOK()
 	int idx = ::SendMessage(hwnd, LB_GETCURSEL, 0, 0);
 	if(idx < 0)
 	{
-		InfoBox(_("Error"), _("Please Select A Project Type Fristly!"));
+		InfoBox(_("Error"), _("Please select the project type fristly!"));
 		SetFocus(hwnd);
 		return ;
 	}
@@ -127,7 +83,7 @@ void SelectProjectTypeDlg::onOK()
 	const char* name = (const char*)::SendMessage(hwnd, LB_GETITEMADDDATA, idx, 0);
 	if(name == NULL)
 	{
-		InfoBox(_("Error"), _("This Project Type is Invalid, Please Selected Another!"));
+		InfoBox(_("Error"), _("The project type is invalid, please select another one."));
 		SetFocus(hwnd);
 		return;
 	}
@@ -136,7 +92,7 @@ void SelectProjectTypeDlg::onOK()
 	GHANDLE hEtc = LoadEtcFile(cfgPath);
 	if(hEtc == 0)
 	{
-		InfoBox(_("Fatel Error"), _("Cannot open the configuration file \"%s\", GUI Builder Cannot Continue, Please Check Your Configuration File"),cfgPath);
+		InfoBox(_("Fatel Error"), _("Cannot open the configuration file \"%s\", unable to continue GUI Builder, Please check your configuration fil"),cfgPath);
 		throw("cannot open the configuration");
 	}
 
@@ -145,7 +101,7 @@ void SelectProjectTypeDlg::onOK()
 	sprintf(szPath,"%s/res/res.project",g_env->getProjectPath());
 	FileStreamStorage fss(szPath);
 	TextStream stream(&fss);
-	stream.println("<res-project>");
+	stream.println("<res-project version=\"%s\">", g_env->getVersion());
 	stream.indent();
 	stream.printf("<configuration name=\"%s\"", name);
 	//save caption
@@ -211,7 +167,6 @@ void SelectProjectTypeDlg::onCancel()
 
 BOOL SelectProjectTypeDlg::getAndInitGUIBuilderCfg()
 {
-	char szPath[1024];
 	if(cfgPath && initProjectInfo(cfgPath))
 		return TRUE;
 
@@ -268,7 +223,6 @@ void SelectProjectTypeDlg::onDestroy()
 	for(int i=0; i< ::SendMessage(hwnd, LB_GETCOUNT, 0, 0); i++)
 	{
 		char* str = (char*)::SendMessage(hwnd, LB_GETITEMADDDATA, i, 0);
-		if(str)
-			free(str);
+        free(str);
 	}
 }

@@ -87,6 +87,8 @@ public:
 
 	virtual ResManager* getResManager(int type) = 0;
 
+    virtual const char* getVersion() = 0;
+
 	virtual int getAllResManager(ResManager*** resManagers) = 0;
 
 	virtual const char* getResourcePath() = 0;
@@ -127,6 +129,7 @@ public:
     virtual BOOL checkSoftDog(int* remainDay) = 0;
     virtual BOOL checkLimit() = 0;
     virtual BOOL isAuthMode() = 0;
+    virtual string checkSNInfo() = 0;
 #endif
 
 	virtual BOOL newIDRange(IDRangeManager* idrm) = 0;
@@ -262,7 +265,7 @@ public:
 
 	~IDRange(){ }
 
-	BOOL isCommon(){  return flags&COMMON == COMMON; }
+	BOOL isCommon(){  return (flags&COMMON) == COMMON; }
 	void operator++() { if(used == 0xFFFF)used =0;  used ++; }
 	void operator--() { if(used == 0)used = 0xFFFF; used --; }
 
@@ -277,6 +280,8 @@ public:
 	}
 
 	int getUsed(){ return used; }
+
+    int unusedCount() { return used - (max - min); }
 
 	BOOL isInRange(int id)
 	{
@@ -388,7 +393,6 @@ public:
 		return resManager && resManager->updateIDRangeManager(this);
 	}
 
-
 	class IDNewRangeIterator {
 		friend class IDRangeManager;
 
@@ -418,6 +422,7 @@ public:
 		IDNewRangeIterator& operator=(const IDNewRangeIterator& idnri){
 			current = idnri.current;
 			findNewIDrange();
+            return *this;
 		}
 
 		BOOL isEnd(){ return current == NULL ; }

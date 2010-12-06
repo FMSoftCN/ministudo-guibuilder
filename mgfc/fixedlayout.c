@@ -117,7 +117,8 @@ void  _fixedlayout_show(void* user_data, int show)
 static GRID_USER_TYPE_INF _fixed_out_type = {
 		/*.setRect = */_fixedlayout_setRect,
 		/*.user_to_gridlayout = */NULL,
-		/*.show = */_fixedlayout_show
+		/*.show = */_fixedlayout_show,
+		/*.free = */NULL
 };
 
 BOOL FixedLayoutInit(FIXED_LAYOUT * pfl)

@@ -57,4 +57,10 @@
             <option name="False" value="0"/>
         </enum>
     </property>
+	<property name="CloseBox" type="enum" default="True">
+		<enum>
+			<option name="True" value="0"/>
+			<option name="False" value="0x00400000"/>
+		</enum>
+	</property>
 </window>

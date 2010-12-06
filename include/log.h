@@ -8,7 +8,7 @@
 #ifndef LOG_H_
 #define LOG_H_
 
-#define DEBUG 1
+#define DEBUG 0
 #define COMMON_DEBUG 0x01 // 0
 #define VALUETYPE_DEBUG 0 //0x02 //0
 #define CLASS_INSTANCE_DEBUG 0 // 0x04
@@ -16,9 +16,14 @@
 #define UIEDITOR_DEBUG 0 //0x10
 #define EDITPANEL_DEBUG 0 //0x20
 
+#if 0
 #define LOG_WARNING(format,...) log_warning(__FILE__ ":%d:" format "\n", __LINE__, ##__VA_ARGS__)
 
 #define LOG_DEAD(format, ...) log_dead(__FILE__ ":%d" format "\n", __LINE__, ##__VA_ARGS__)
+#else
+#define LOG_WARNING(format,...)
+#define LOG_DEAD(format, ...)
+#endif
 
 #if DEBUG
 #define LOG_DEBUG(format, ...) log_debug(__FILE__ ":%d" format "\n", __LINE__, ##__VA_ARGS__)

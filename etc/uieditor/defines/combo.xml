@@ -8,9 +8,9 @@
 	<default-property name="Font" value=""/>
 
 	<property name="DropDownHeight" id="8" type="int" default="60"/>
-	<property name="TextLimit" type="int"/>
+	<property name="TextLimit" type="int" default="-1"/>
 	
-	<property name="ItemHeight" id="21" type="int"/>
+	<property name="ItemHeight" id="21" type="int" default="16"/>
 	<!-- property name="Select" id="10" type="int" default="0" -->
 
 	<!-- style of combobox -->
@@ -57,7 +57,7 @@
 		</enum>
 	</property>
 
-	<property name="AutoFocus" type="enum">
+	<property name="AutoFocus" type="enum" default="False">
 		<enum>
 			<option name="True" value="0x100"/>
 			<option name="False"/>

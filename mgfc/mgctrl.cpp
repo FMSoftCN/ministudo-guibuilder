@@ -207,8 +207,7 @@ int MGEdit::Find(const char* pFind,BOOL fDown/*=TRUE*/,BOOL fCaps/*=FALSE*/)
 	return ipos;
 
 FAIL:
-	if(ptext)
-		free(ptext);
+    free(ptext);
 	SetCaretPos(old_caret_line_pos,old_caret_char_pos);
 	SetSel(old_sel_line_pos,old_sel_char_pos);
 	return -1;

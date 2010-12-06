@@ -154,6 +154,8 @@ Value ResIdListPanel::updateValue(Value value, ValueType *vtype,DWORD mask)
             break;
     }
 
+	//enable the save item
+	sendEvent(RESIDLISTPANEL_CHANGED);
     return value;
 }
 
@@ -182,7 +184,7 @@ BOOL ResIdListPanel::updatingValue(Value old_value, Value new_value, ValueType *
 				if(owner && !owner->isInRange(new_id))
 				{
 					char szText[256];
-					sprintf(szText, _("The id(%d) is out of the current user \"%s\", do you want to set the id too?"), (int)new_value, owner->name.c_str());
+					sprintf(szText, _("The id(%d) is out of the range of current user \"%s\", do you want to reset it?"), (int)new_value, owner->name.c_str());
 					if(::MessageBox(getHandler(), szText, "Query", MB_YESNO|MB_ICONQUESTION|MB_DEFBUTTON1) !=IDYES)
 						return FALSE;
 				}

@@ -1,0 +1,49 @@
+<window class="window::MainWnd" serial-number="3563014144">
+	<ID>0x80001</ID>
+	<X>0</X>
+	<Y>0</Y>
+	<Width>455</Width>
+	<Height>316</Height>
+	<Text>0x00022711</Text>
+	<Border>True</Border>
+	<HasCaption>True</HasCaption>
+	<SystemMenu>True</SystemMenu>
+	<BorderType>DlgFrame</BorderType>
+	<MinimizeBox>False</MinimizeBox>
+	<MaximizeBox>False</MaximizeBox>
+	<window class="window::Button" serial-number="2860482560">
+		<ID>0x40000001</ID>
+		<X>342</X>
+		<Y>229</Y>
+		<Width>80</Width>
+		<Height>30</Height>
+		<Text>0x00022712</Text>
+		<Visible>True</Visible>
+	</window>
+	<window class="window::Button" serial-number="4176695296">
+		<ID>0x40000002</ID>
+		<X>237</X>
+		<Y>229</Y>
+		<Width>80</Width>
+		<Height>30</Height>
+		<Text>0x00022713</Text>
+		<Visible>True</Visible>
+	</window>
+	<window class="window::Static" serial-number="3147620352">
+		<ID>0x4000000a</ID>
+		<Align>Left</Align>
+		<X>21</X>
+		<Y>9</Y>
+		<Width>248</Width>
+		<Height>25</Height>
+		<Text>0x00022714</Text>
+	</window>
+	<window class="window::ListBox" serial-number="3217698816">
+		<ID>0x40000064</ID>
+		<ScrollBarMode>Always</ScrollBarMode>
+		<X>21</X>
+		<Y>36</Y>
+		<Width>401</Width>
+		<Height>169</Height>
+	</window>
+</window>

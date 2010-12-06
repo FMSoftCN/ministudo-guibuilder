@@ -1,0 +1,13 @@
+<renderer class="Flat.IMWordSel" extends="renderer::Classic.ItemView">
+	<set-property name="Class" value="imwordsel"/>
+	<!-- NCS_FGC_SELECTED_ITEM -->
+	<property name="ColorFgSelItem" id="28674" type="color" default="0xFFFFFFFF"/>
+	<!-- NCS_FGC_3DBODY -->
+	<property name="ColorFg3DBody" id="28928" type="color" default="0xFF000000"/>
+	<!-- NCS_BGC_3DBODY -->	
+	<property name="ColorBg3DBody" id="28928" type="color" default="0xFFCED3D6"/>
+	<!-- NCS_BGC_DISABLED_ITEM -->
+	<property name="ColorBgDisable" id="28932" type="color" default="0xFFCED3D6"/>
+	<!-- NCS_FGC_DISABLED_ITEM -->
+	<property name="ColorFgDisableItem" id="28676" type="color" default="0xFF848284"/>
+</renderer>

@@ -62,7 +62,7 @@ public:
 
 	HLVITEM findByAddData(DWORD data,HLVITEM pi=(HLVITEM)0);
 
-	HWND getCurentEditor(int sub_idx){
+	HWND getCurrentEditor(int sub_idx){
 		if(sub_idx < 0 || sub_idx >= count)
 			return HWND_INVALID;
 		return editors[sub_idx];
@@ -99,7 +99,7 @@ protected:
 
 public:
 	virtual void updateEditors();
-
+  
 private:
 	static int my_strcmp (const char* s1, const char* s2, size_t n)
 	{

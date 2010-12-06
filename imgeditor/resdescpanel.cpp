@@ -22,6 +22,10 @@ using namespace std;
 
 #include "resdescpanel.h"
 
+#ifdef WIN32
+#include "func-win.h"
+#endif
+
 #define ID_STATIC  1002
 
 ResDescPanel::ResDescPanel(PanelEventHandler* handler)
@@ -48,5 +52,11 @@ HWND ResDescPanel::createPanel(HWND hParent)
 
 void ResDescPanel::setText(const char *text)
 {
+#ifdef WIN32
+	char szText[1024]="";
+	asciitoutf8(text, szText, sizeof(szText));
+	SetWindowText(getHandler(),szText);
+#else
 	SetWindowText(getHandler(),text);
+#endif
 }

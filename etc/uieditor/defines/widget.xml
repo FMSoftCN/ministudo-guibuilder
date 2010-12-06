@@ -91,9 +91,9 @@
 		<code>MSG_PAINT</code>
 	</event>
 	<event>
-		<handler>BOOL onClose(mWidget* self, int message)</handler>
+		<handler>BOOL onClose(mWidget* self)</handler>
 		<code>MSG_CLOSE</code>
-		<content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
+        <content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
 	</event>
 	<event>
 		<handler>BOOL onKeyDown(mWidget* self, int message, int scancode, DWORD key_status)</handler>

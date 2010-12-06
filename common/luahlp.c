@@ -67,7 +67,7 @@ endwhile:
 #ifdef WIN32
 		sprintf(err_msg, "luaL_error running function `%s`: %s", func, lua_tostring(L,-1));
 #else
-		snprintf(err_msg, "luaL_error running function `%s`: %s", func, lua_tostring(L,-1));
+		sprintf(err_msg, "luaL_error running function `%s`: %s", func, lua_tostring(L,-1));
 #endif
     return luar_callfailed;
   }
@@ -101,7 +101,7 @@ endwhile:
 #ifdef WIN32
 		sprintf(err_msg, "invalid return option (%s)", sig-1);
 #else
-		snprintf(err_msg, "invalid return option (%s)", sig-1);
+		sprintf(err_msg, "invalid return option (%s)", sig-1);
 #endif
 		return luar_invalid_argsigs;
 	}

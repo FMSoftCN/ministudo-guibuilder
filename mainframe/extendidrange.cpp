@@ -70,28 +70,28 @@ void ExtendIDRange::onOK()
 
 	if(min >= max)
 	{
-		InfoBox(_("Error"), _("Please Input the valid range ( min < max)"));
+		InfoBox(_("Error"), _("Please input the valid range ( min < max)"));
 		SetFocus(GetChild(ID_SLE_MIN));
 		return ;
 	}
 
 	if(min < (idrange->prev?idrange->prev->max:idrange->manager->getLimitMin()))
 	{
-		InfoBox(_("Error"), _("The Min Value (%d) cannot less then %d"), idrange->prev?idrange->prev->max:idrange->manager->getLimitMin());
+		InfoBox(_("Error"), _("The Min Value (%d) must be greater then or equal %d"), idrange->prev?idrange->prev->max:idrange->manager->getLimitMin());
 		SetFocus(GetChild(ID_SLE_MIN));
 		return ;
 	}
 
 	if(max > (idrange->next?idrange->next->min:idrange->manager->getLimitMax()))
 	{
-		InfoBox(_("Error"), _("The Max Value  (%d) cannot geater then %d"), max, idrange->next?idrange->next->min:idrange->manager->getLimitMax());
+		InfoBox(_("Error"), _("The Max Value  (%d) must be less then or equal %d"), max, idrange->next?idrange->next->min:idrange->manager->getLimitMax());
 		SetFocus(GetChild(ID_SLE_MAX));
 		return ;
 	}
 
 	if(! idrange->extend(min, max))
 	{
-		InfoBox(_("Error"), _("The Range (%d,%d] is not accepted, please input the valid values"), min,max);
+		InfoBox(_("Error"), _("The range (%d,%d] is unacceptable, please input the valid values"), min,max);
 		SetFocus(GetChild(ID_SLE_MIN));
 		return ;
 	}
@@ -103,6 +103,14 @@ void ExtendIDRange::onOK()
 
 void ExtendIDRange::onCancel()
 {
+  /* if(YesNoBox(_("Question"), _("Do you make sure input the right range?")) == IDYES)
+    {
+        onOK();
+    }
+    else
+    {
+        SetFocus(GetChild(ID_SLE_MIN));
+    }*/
 	EndDialog(0);
 }
 

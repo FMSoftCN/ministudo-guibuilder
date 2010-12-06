@@ -1,0 +1,100 @@
+<window class="window::MainWnd" serial-number="746252288">
+	<ID>0x80001</ID>
+	<X>0</X>
+	<Y>0</Y>
+	<Width>424</Width>
+	<Height>307</Height>
+	<Text>0x00022711</Text>
+	<Border>True</Border>
+	<HasCaption>True</HasCaption>
+	<SystemMenu>True</SystemMenu>
+	<BorderType>DlgFrame</BorderType>
+	<MinimizeBox>True</MinimizeBox>
+	<MaximizeBox>True</MaximizeBox>
+	<window class="window::Static" serial-number="1065095168">
+		<ID>0x400003e9</ID>
+		<Align>Left</Align>
+		<X>19</X>
+		<Y>36</Y>
+		<Width>157</Width>
+		<Height>25</Height>
+		<Text>0x00022712</Text>
+	</window>
+	<window class="window::Static" serial-number="2996637696">
+		<ID>0x400003ea</ID>
+		<Align>Left</Align>
+		<X>19</X>
+		<Y>122</Y>
+		<Width>151</Width>
+		<Height>25</Height>
+		<Text>0x00022713</Text>
+	</window>
+	<window class="window::SlEdit" serial-number="787445760">
+		<ID>0x400003eb</ID>
+		<X>19</X>
+		<Y>66</Y>
+		<Width>320</Width>
+		<Height>28</Height>
+		<Text>0x00022714</Text>
+		<listen>
+			<sender>1073742828</sender>
+			<event>4050</event>
+			<prototype>sledit1_on_button1_clicked</prototype>
+		</listen>
+	</window>
+	<window class="window::Button" serial-number="724303872">
+		<ID>0x400003ec</ID>
+		<X>350</X>
+		<Y>66</Y>
+		<Width>35</Width>
+		<Height>28</Height>
+		<Text>0x00022715</Text>
+	</window>
+	<window class="window::SlEdit" serial-number="4228349952">
+		<ID>0x400003ed</ID>
+		<X>19</X>
+		<Y>154</Y>
+		<Width>320</Width>
+		<Height>28</Height>
+		<Text>0x00022716</Text>
+		<listen>
+			<sender>1073742830</sender>
+			<event>4050</event>
+			<prototype>sledit2_on_button3_clicked</prototype>
+		</listen>
+	</window>
+	<window class="window::Button" serial-number="2113349632">
+		<ID>0x400003ee</ID>
+		<X>350</X>
+		<Y>154</Y>
+		<Width>35</Width>
+		<Height>28</Height>
+		<Text>0x00022718</Text>
+	</window>
+	<window class="window::Button" serial-number="2619203584">
+		<ID>0x400003ef</ID>
+		<X>72</X>
+		<Y>225</Y>
+		<Width>100</Width>
+		<Height>30</Height>
+		<Text>0x00022719</Text>
+	</window>
+	<window class="window::Button" serial-number="1958737152">
+		<ID>0x400003f0</ID>
+		<X>241</X>
+		<Y>225</Y>
+		<Width>100</Width>
+		<Height>30</Height>
+		<Text>0x0002271A</Text>
+	</window>
+	<listen>
+		<sender>1073742831</sender>
+		<event>4050</event>
+		<prototype>mainwnd1_on_button4_clicked</prototype>
+	</listen>
+	<listen>
+		<sender>1073742832</sender>
+		<event>4050</event>
+		<prototype>mainwnd1_on_button5_clicked</prototype>
+	</listen>
+</window>

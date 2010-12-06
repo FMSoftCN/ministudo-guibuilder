@@ -49,7 +49,8 @@ DataFiles= animate.xml \
 	abstractlist.xml \
 	list.xml \
 	widget.xml \
-	texteditor.xml
+	texteditor.xml \
+	imwordsel.xml
 
 
 ETCDIR=$(prefix)/etc/guibuilder/renderer/fashion

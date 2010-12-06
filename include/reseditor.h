@@ -25,6 +25,7 @@ public:
 	virtual ~ResEditorNotificationHandler(){}
 	virtual void onNotification(ResEditor* editor, int nc, DWORD param) = 0;
 	virtual void onMenuStatusChanged(ResEditor* editor, int id, DWORD newStatus, int type=MSF_INCLUDE) = 0;
+    virtual int getEditorMenuStatus(ResEditor* editor, int id, UINT* status) = 0;
 
 };
 
@@ -139,6 +140,9 @@ public:
 		return 0;
 	}
 
+	int getMenuStatus(int id, UINT* status) {
+        return notification->getEditorMenuStatus(this, id, status);
+    }
 	enum commCommand {
         //File: global command < 50
 		GBC_SAVE = 1, //(const char* file=param)
@@ -156,10 +160,11 @@ public:
 		GBC_CUT,
 		GBC_PASTE,
 		GBC_DELETE,
+        INCORE_RES_MGNCSCFG = 40,
+        INCORE_RES_PACKAGE,
 		GBC_IDRANGEMANAGER = 47,
 		GBC_ABOUT = 48,
 		GBC_HELP = 49,
-
 	};
 
 	enum menuCommand {
@@ -181,6 +186,7 @@ public:
 
         EDITOR_MENUID_BASE = 50,
         EDITOR_MENUID_MAX  = MENUCMD_USERID_END,
+
 
         //Pop Menu Header Id 800~900
 		UI_PROP_POPMENU = 800,
@@ -326,6 +332,8 @@ public:
 		if (reses.find(newId) != reses.end())
 			return FALSE;
 
+		useId(newId);
+		unuseId(oldId);
 		Resource *resource = reses.at(oldId);
 		if(resource)
 		{
@@ -444,16 +452,18 @@ public:
 
 	BOOL updateIDRangeManager(IDRangeManager* idrm)
 	{
+		int res_type;
 		if(!idrm)
 			return FALSE;
+		res_type = idrm->getType();
 		IDRangeManager::IDNewRangeIterator idnri = idrm->getNewIDRanges();
 		while(!idnri.isEnd())
 		{
 			IDRange& idrange = *idnri;
 
 			int count = 0;
-			for(map<int, Resource*>::iterator it = reses.lower_bound(idrange.min+1);
-					it != reses.upper_bound(idrange.max); ++it)
+			for(map<int, Resource*>::iterator it = reses.lower_bound((idrange.min+1)|(res_type<<16));
+					it != reses.upper_bound(idrange.max|(res_type<<16)); ++it)
 				count ++;
 		
 			idrange.setUsed(count);	
@@ -462,6 +472,9 @@ public:
 		}
 		return TRUE;
 	}
+
+public:
+    virtual void setChanged(BOOL bChanged=TRUE) { }
 
 };
 

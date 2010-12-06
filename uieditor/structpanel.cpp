@@ -425,14 +425,16 @@ void StructPanel::setInstanceHidden(ComponentInstance *instance, BOOL bhide /*= 
 		return ;
 
 	//delete item
-	for(GHANDLE hchild = GetRelatedItem(hitem,TVIR_FIRSTCHILD); hchild;
-		hchild = GetRelatedItem(hchild, TVIR_NEXTSIBLING))
+	GHANDLE hchild = GetRelatedItem(hitem,TVIR_FIRSTCHILD);
+	while(hchild)
 	{
-		DeleteTree(hchild);
+		GHANDLE hdel = hchild;
+		hchild = GetRelatedItem(hchild, TVIR_NEXTSIBLING);
+		DeleteTree(hdel);
 	}
 
 	//reset name
-	const char *name;
+	const char *name = NULL;
 	char szName[100];
 	ResManager * res = g_env->getResManager(NCSRT_UI|NCSRT_CONTRL);
 

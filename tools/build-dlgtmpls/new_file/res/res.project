@@ -1,8 +1,8 @@
-<res-project>
+<res-project version="1.0.6">
 	<configuration name="minigui-3-x-x-ncs" caption="MiniGUI 3.0 With New Control Set">
 		<minigui-version>3.x.x</minigui-version>
 		<control-set>ncs</control-set>
-		<path>/home/dongjunjie/var/tmp/guibuilder/etc/</path>
+		<path>/usr/local/etc//guibuilder/</path>
 	</configuration>
 	<id-range-manager>
 		<resource type="8">
@@ -27,6 +27,7 @@
 		<screen>
 			<width>1024</width>
 			<height>768</height>
+			<depth>0</depth><!-- 0=16bpp.rgb565,1=16bpp.rgb555,2=24bpp,3=32bpp -->
 		</screen>
 		<def-font>
 		</def-font>

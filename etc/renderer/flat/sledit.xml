@@ -2,7 +2,7 @@
 	<set-property name="Class" value="sledit"/>
 	
 	<set-property name="ScrollBarSize" value="0"/>
-	<set-property name="ColorScrollBar" value="0"/>
+	<set-property name="ColorBorderScrollBar" value="0"/>
 	<set-property name="ColorScrollArrow" value="0"/>
 	<set-property name="ColorScrollArrowDisable" value="0"/>
 </renderer>

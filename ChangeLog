@@ -1,0 +1,376 @@
+************************************************************************************
+What's New in guibuilder 1.0.6 ( 2010/9 ~ )
+12/02. BUGFIXING #?. Changed the default screen size to 800x600, same as
+MiniGUI.cfg in process mode(dongjunjie)
+	* uieditor/uieditor.cpp
+
+11/30. BUGFIXING #5334. Fixed the bug of image editor(dongjunjie)
+	* imgeditor/imgeditor.cpp
+   
+11/29. BUGFIXING #?, Changed the name mStudio to miniStudio(dongjunjie)
+	* M       tools/makemo/zh.po
+	* M       mainframe/mainframe.cpp
+	* M       mainframe/mainframe.h
+	* M       mainframe/newidrange.cpp
+	* M       etc/lang/zh.mo
+	* M       etc/uieditor/trans/ncs-ctmpl.lua
+	* M       etc/uieditor/trans/ncs-wndhead.lua
+	* M       etc/uieditor/trans/minigui-cfg.lua
+
+11/24. BUGFIXING #5327, Fixed the bug import same file, didn't copy the
+bmAlphaMask when copy the same Preview bitmap(dongjunjie)
+	* imgeditor/imageview.h
+
+11/24. BUGFIXING #5326, Add the MSG_CLOSE process in SetScreen
+dialog(dongjunjie)
+	* uieditor/screen_setting_templ
+
+11/22. BUGFIXING #5316,?. Fixed the bug of image import and importall
+menuitem states And the bug when create a new window : the field panel is not
+changed(dongjunjie)
+	* M       imgeditor/imgeditor.cpp
+	* M       imgeditor/imgeditor.h
+	* M       imgeditor/img-event-id.h
+	* M       uieditor/uieditor.cpp
+
+11/19. BUGFIXING #5313. Fixed the bug of editablelisview(dongjunjie)
+	* common/editable-listview.cpp
+
+11/18. BUGFIXING #5311. Fixed the bug of code generator(dongjunjie)
+	* M       etc/uieditor/trans/ncs-ctmpl.lua
+	* M       etc/uieditor/trans/ncs-merge.lua
+
+11/17. BUGFIXING #5310. Fixed the bug of crash when paste renderer
+resource(dongjunjie)
+	* M       rdreditor/rdreditor.cpp
+	* M       rdreditor/rdr-instance.cpp
+
+11/17. BUGFIXING #5309. Fixed the bug of import the same file and language(dongjunjie)
+	* M       imgeditor/imageview.cpp
+	* M       imgeditor/resimgview.cpp
+	* M       imgeditor/imageview.h
+	* M       imgeditor/imgeditor.cpp
+	* M       imgeditor/resimgview.h
+	* M       tools/makemo/zh.po
+	* M       etc/lang/zh.mo
+
+11/11. BUGFIXING #5289. Fixed the bug of idrange(dongjunjie)
+	* M       include/reseditor.h
+	* M       include/resenv.h
+	* M       uieditor/uieditor.cpp
+	* M       mainframe/mainframe.cpp
+	* M       mainframe/idrange-editor.h
+	* M       mainframe/idrange-editor.cpp
+
+
+11/09. BUGFIXING #5283. Fixed the bug of buffer overflow(dongjunjie)
+	* M       common/stream.cpp
+	* M       texteditor/texteditor.cpp
+
+11/08. BUGFIXING #5276. Fixed the bug of uieditor and others(dongjnjjie)
+	* M       tools/makemo/zh.po
+	* M       func-win.cpp
+	* M       uieditor/edituipanel.cpp
+
+
+11/08. BUGFIXING #? Fixed the bug for International support and softdog support(dongjunjie)
+	* func-win.cpp
+	* func-win.h
+	* mainframe/mainframe.cpp
+	* trans/read_mo.h
+
+11/08. BUGFIXING #? Fixed the bug Windows need(dongjunjie)
+	* func-win.cpp
+	* func-win.h
+	* imgeditor/imageview.cpp
+	* mainframe/mainframe.cpp
+	* mainframe/select-project-type-dlg.cpp
+	* uieditor/connect-events-wnd.cpp
+	* uieditor/connect-events-wnd.h
+	* uieditor/fieldpanel.cpp
+
+11/05. BUGFIXING #5261. Remove the close box in NewIDRange dialog; And use new
+method to delete the mainwindow when close gvfb(dongjunjie)
+	* M       main.cpp
+	* M       include/clipboard.h
+	* M       mainframe/mainframe.cpp
+	* M       mainframe/newidrange.cpp
+
+11/05. BUGFIXING #5236. Fixed the bug of close window(dongjunjie)
+	* M       main.cpp
+	* M       mgfc/mgwnd.cpp
+
+11/03. BUGFIXING #?. Update the Dialog for SelectProjectType window and update
+the language; fixed the bug of resideditor cannot eanble the save item when
+changed the name and id of resource(dongjunjie)
+	* M       tools/build-dlgtmpls/mk.sh
+	* M       tools/makemo/zh.po
+	* M       include/msd_intl.h
+	* M       include/dlgtmpls.h
+	* M       trans/gettext.cpp
+	* M       rdreditor/rdr-dialog.cpp
+	* M       rdreditor/rdr-dialog.h
+	* M       mainframe/mainframe.cpp
+	* M       mainframe/select-project-type-dlg.cpp
+	* M       mainframe/dlgtmpls.c
+	* M       etc/lang/zh.mo
+	* M       resideditor/resid-list-panel.h
+	* M       resideditor/resid-editor.cpp
+	* M       resideditor/resid-list-panel.cpp
+	* A       tools/build-dlgtmpls/select_project_type
+	* A       tools/build-dlgtmpls/select_project_type/MiniGUI.cfg
+	* A       tools/build-dlgtmpls/select_project_type/include
+	* A       tools/build-dlgtmpls/select_project_type/include/ncs-window-types.h
+	* A       tools/build-dlgtmpls/select_project_type/include/ncs-windows.h
+	* A       tools/build-dlgtmpls/select_project_type/include/resource.h
+	* A       tools/build-dlgtmpls/select_project_type/src
+	* A       tools/build-dlgtmpls/select_project_type/src/select_project_type.c
+	* A       tools/build-dlgtmpls/select_project_type/res
+	* A       tools/build-dlgtmpls/select_project_type/res/image
+	* A       tools/build-dlgtmpls/select_project_type/res/text
+	* A       tools/build-dlgtmpls/select_project_type/res/text/text-config.xml
+	* A       tools/build-dlgtmpls/select_project_type/res/text/en_US.txt
+	* A       tools/build-dlgtmpls/select_project_type/res/text/id.xml
+	* A       tools/build-dlgtmpls/select_project_type/res/renderer
+	* A       tools/build-dlgtmpls/select_project_type/res/renderer/rdr.xml
+	* A       tools/build-dlgtmpls/select_project_type/res/ui
+	* A		  tools/build-dlgtmpls/select_project_type/res/ui/select_project_type.xml
+	* A       tools/build-dlgtmpls/select_project_type/res/ui/id.xml
+	* A       tools/build-dlgtmpls/select_project_type/res/res.project
+
+
+11/03. BUGFIXING #5221. Fixed guibuilder cann't exit normally.(xwyan)
+	* main.cpp
+
+10/29. BUGFIXING #5163. Fixed the copy, cut and paste bug in rdreditor.(xwyan)
+	* rdreditor/rdreditor.h
+	* rdreditor/rdreditor.cpp
+
+10/28. BUGFIXING #.  Modify the text of guibuilder(dongjunjie)
+	* many ...
+
+10/28. BUGFIXING #5199. Add the scrollbar for font manager window(dongjunjie)
+	* M       tools/build-dlgtmpls/font_management/MiniGUI.cfg
+	* M       tools/build-dlgtmpls/font_management/res/ui/font_management.xml
+	* M       tools/build-dlgtmpls/font_management/res/res.project
+	* M       mainframe/dlgtmpls.c
+
+10/26. BUGFIXING #5182. Fixed the bug. when set window text, to limit the
+length of text(dongjunjie)
+	* uieditor/window-instance.cpp
+
+10/26. BUGFIXING #5175 #?. Fixed the bug when load a null bitmap, and fixed the
+bug when save the xml file with the value include "<", ">" and "&"
+chars.(dongjunjie)
+   * M	imgeditor/imageview.h
+   * M  include/stream.h
+   * M  uieditor/uieditor.cpp
+   * M  common/reseditor.cpp
+   * M  common/stream.cpp
+   * M  texteditor/texteditor.cpp
+   * M  mainframe/mainframe.cpp
+
+10/25. BUGFIXING #4868. Fixed the bug when set default client font(dongjunjie)
+	* M       tools/ncs2ics/trans/groupbox.xml
+	* M       uieditor/edituipanel.h
+	* M       uieditor/uieditor.cpp
+	* M       uieditor/edituipanel.cpp
+	* M       rdreditor/rdr-dialog.cpp
+	* M       rdreditor/rdr-dialog.h
+	* M       mainframe/dlgtmpls.c
+
+
+10/22. BUGFIXING #5002. Fixed the EditableListView::hideAllEditors'bug,
+hideAlllEditors may reenter twice. Because updateEditors function is call when
+selchange and KillFocus(dongjunjie)
+	* common/editable-listview.cpp
+
+10/22. BUGFIXING #5050. Fixed the bug of rangeeditor(dongjunjie)
+	* common/reseditor.cpp
+
+10/22. BUGFIXING #5124. Fixed the bug when set the text of tooltip(dongjunjie)
+	* include/valuetype.h
+
+10/18. BUGFIXING #5011. fixed the bug when open a file failed(dongjunjie)
+	* uieditor/uieditor.cpp
+
+10/18. BUGFIXING #5060. fixed the bug of scrollbar of EditPanel(dongjunjie)
+	* M       uieditor/edituipanel.h
+	* M       uieditor/edituipanel.cpp
+	* M       mgfc/mgwnd.cpp
+
+10/16. BUGFIXING #4834. Connect the Events between the controls which is in
+the diffrent containers(dongjunjie)
+	* M       tools/build-dlgtmpls/connect_events/MiniGUI.cfg
+	* M       tools/build-dlgtmpls/connect_events/include/resource.h
+	* M       tools/build-dlgtmpls/connect_events/res/text/en_US.txt
+	* M       tools/build-dlgtmpls/connect_events/res/text/id.xml
+	* M       tools/build-dlgtmpls/connect_events/res/ui/select-events.xml
+	* M       tools/build-dlgtmpls/connect_events/res/ui/connect-events.xml
+	* M       tools/build-dlgtmpls/connect_events/res/ui/id.xml
+	* M       tools/build-dlgtmpls/connect_events/res/res.project
+	* M       uieditor/connect-events-wnd.h
+	* M       uieditor/edituipanel.cpp
+	* M       uieditor/connect-events-wnd.cpp
+	* M       mainframe/dlgtmpls.c
+
+
+10/16. BUGFIXING #5065: To remain the newest directory information, adopt
+reloading current selected directory's subdirectory every time.(xwyan)
+	* imgeditor/dirtreepanel.cpp
+
+10/16. BUGFIXING #5066: Add a random number as a ID name suffix, when
+occurs ID naming conflicts in importing image.  (xwyan)
+	* imgeditor/imgeditor.cpp
+	* imgeditor/imgeditor.h
+
+10/16. ENHANCEMENT #? : Add the error-tip in the xml file of control; It's
+used to help when the control reject the value inputed by user(dongjunjie)
+	* M       include/class-instance.h
+	* M       uieditor/edituipanel.cpp
+	* M       common/class-instance.cpp
+	* M       etc/uieditor/defines/slider.xml
+	* M       etc/uieditor/defines/sledit.xml
+	* M       etc/uieditor/defines/edit.xml
+	* M       etc/uieditor/defines/spinner.xml
+
+10/16. BUGFIXING #4996, 4997: Fixed the bug of showMessageBox.(xwyan)
+	* mainframe/mainframe.cpp
+
+10/14. BUGFIXING #5112 : Fixed a bug of EventValueEditor & RdrValueEditor when
+create a editor, pass 100 as ExStyle to the Combobox control (dongjunjie)
+	* include/valuetype.h
+
+10/13. BUGFIXING #5124 : add the HasToolTip property for msledit
+control(dongjunjie)
+	* etc/uieditor/defines/sledit.xml
+
+10/13. BUGFIXING #5101 ...,  add the CheckState property and event onStateChanged
+for button; Add Replace the FileDialog Template for class FileValueEditor (dongjunjie)
+	* common/valuetype.cpp
+	* etc/uieditor/defines/button.xml
+
+
+10/13. BUGFIXING #5100: Rename ColorBorder with ColorBorderScrollBar in
+renderer configuration file.(xwyan)
+	* etc/renderer/classic/sledit.xml
+	* etc/renderer/classic/texteditor.xml
+	* etc/renderer/classic/scrollwidget.xml
+	* etc/renderer/classic/widget.xml
+	* etc/renderer/classic/mainwnd.xml
+	* etc/renderer/flat/sledit.xml
+	* etc/renderer/flat/texteditor.xml
+	* etc/renderer/flat/scrollwidget.xml
+	* etc/renderer/flat/widget.xml
+	* etc/renderer/flat/mainwnd.xml
+	* etc/renderer/fashion/sledit.xml
+
+10/13. BUGFIXING #5128, 5132: (xwyan)
+	* etc/uieditor/defines/combo.xml
+
+10/13. BUGFIXING #5106: Fixed the config file question in listbox.xml.(xwyan)
+	* etc/uieditor/defines/listbox.xml
+
+10/12. BUGFIXING #5059, Fixed the bug of count the used id in a IDRange, after
+user extend the range(dongjunjie)
+	* include/reseditor.h
+
+10/12. ENHANCEMENT #? , Add the renderers of IMWordSel (dongjunjie)
+	* M       etc/renderer/classic/Makefile.am
+	* M       etc/renderer/rdrlist
+	* M       etc/renderer/skin/Makefile.am
+	* M       etc/renderer/flat/Makefile.am
+	* M       etc/renderer/fashion/Makefile.am
+	* A       etc/renderer/classic/imwordsel.xml
+	* A       etc/renderer/skin/imwordsel.xml
+	* A       etc/renderer/flat/imwordsel.xml
+	* A       etc/renderer/fashion/imwordsel.xml
+
+
+10/11. BUGFIXING #5064, Add a thread to load every image, and fixed of
+language(dongjunjie) 
+	* M       imgeditor/dirimgview.cpp
+	* M       imgeditor/imageview.cpp
+	* M       imgeditor/imgres-listpanel.cpp
+	* M       imgeditor/resimgview.cpp
+	* M       imgeditor/imageview.h
+	* M       imgeditor/imgeditor.cpp
+	* M       imgeditor/resimgview.h
+	* M       configure.in
+	* M       mainframe/mainframe.cpp
+	* M       etc/Makefile.am
+
+
+10/09. BUGFIXING #5081,5088: Fixed the refreshing and synchronization question when set
+or reset renderer properties.(xwyan)
+	* uieditor/edituipanel.h
+	* uieditor/fieldpanel.h
+	* uieditor/window-instance.cpp
+	* uieditor/uieditor.cpp
+	* uieditor/edituipanel.cpp
+	* uieditor/fieldpanel.cpp
+	* uieditor/uieditor.h
+	* rdreditor/rdr-instance.h
+	* rdreditor/rdreditor.cpp
+	* rdreditor/rdr-preview-panel.cpp
+	* rdreditor/rdreditor.h
+	* rdreditor/rdr-preview-panel.h
+	* rdreditor/rdr-instance.cpp
+
+10/09. BUGFIXING #5061 Update the lua script for save template
+source(dongjunjie)
+	* etc/uieditor/trans/dlgtmpl.lua
+
+10/09. BUGFIXING #5093: Delete visible property for page.(xwyan)
+	* etc/uieditor/defines/page.xml
+
+10/09. BUGFIXING #5050 Strip the '0' before a number, i.e "0011" =>
+"11", and fixed a free bug(dongjunjie)
+	* M       include/valuetype.h
+	* M       mainframe/menu-manager.cpp
+
+10/09. BUGFIXING #5052(xwyan)
+	* uieditor/uieditor.cpp
+
+10/08. BUGFIXING #5009: Tune renderer menu.(xwyan)
+	* rdreditor/rdreditor.cpp
+	* rdreditor/rdrtreepanel.cpp
+	* etc/mainframe.cfg
+
+09/30. BUGFIXING #5058 Add the Entity Refrence tranlsate in google tranlsate
+mode
+	* texteditor/GTranslater.cpp
+
+09/30. BUGFIXING #5013 Active the editor in the property panel when it is
+shown by switing the tab bar(dongjunjie)
+	* M       include/editable-listview.h
+	* M       uieditor/fieldpanel.cpp
+	* M       common/editable-listview.cpp
+	* M       common/panellayout.cpp
+
+09/30. BUGFIXING #5010 Repaint the NC area of a c a renderer
+preview control in rdreditor(dongjunjie)
+	* rdreditor/rdr-instance.cpp
+
+09/28. BUGFIXING #? Add the chinese support for guibuilder(dongjunjie)
+	* M       tools/build-dlgtmpls/mk.sh
+	* M       tools/ncs2ics/main.cpp
+	* M       tools/makemo/zh.po
+	* M       include/msd_intl.h
+	* M       include/dlgtmpls.h
+	* M       uieditor/uieditor.cpp
+	* M       mainframe/newidrange.cpp
+	* M       mainframe/dlgtmpls.c
+	* M       etc/lang/zh.mo
+
+
+09/27. BUGFIXING #5003 Modify the value of Renderer cannot change the state of
+"save" button in toolbar(dongjunjie)
+	* uieditor/uieditor.cpp
+
+09/27. BUGFIXING #5001 Make the Select Template Dialog can closed with the
+"close button" on the caption(dongjunjie)
+	* uieditor/select-template.cpp
+
+
+

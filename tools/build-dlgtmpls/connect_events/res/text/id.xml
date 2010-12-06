@@ -1,5 +1,10 @@
 <res-ids>
 	<res-id>
+		<id  value="0x22711"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
 		<id  value="0x22712"/>
 		<type>2</type>
 		<source></source>
@@ -121,6 +126,31 @@
 	</res-id>
 	<res-id>
 		<id  value="0x2272a"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2272b"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2272c"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2272d"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2272e"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x2272f"/>
 		<type>2</type>
 		<source></source>
 	</res-id>

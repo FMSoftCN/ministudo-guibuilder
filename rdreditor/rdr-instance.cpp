@@ -86,9 +86,8 @@ RendererInstance::RendererInstance(Class* cls)
 }
 
 RendererInstance::RendererInstance(const RendererInstance &rdrst)
-:Instance(NULL)
+:Instance(rdrst._class)
 {
-	_class = rdrst._class;
 	hWnd = HWND_NULL;
 	rdrName = rdrst.rdrName;
 	clsName = rdrst.clsName;
@@ -122,8 +121,7 @@ string RendererInstance::newName()
 
 RendererInstance::~RendererInstance()
 {
-    if(win_inst)
-        delete win_inst;
+    delete win_inst;
     win_inst = NULL;
 }
 
@@ -330,7 +328,7 @@ DWORD RendererInstance::getRdrElementValue(int id, Value val, ValueType *vtype)
 		{
 			const char* file = (const char*)dval;
 			RegisterResFromFile(HDC_SCREEN,file);
-			//FIXED ME : Speical for skin
+			//FIXED ME : Special for skin
 			if((WE_ATTR_TYPE_RDR==(WE_ATTR_TYPE_MASK&id))
 					&& ((WE_ATTR_INDEX_MASK&id)>=1 && (WE_ATTR_INDEX_MASK&id)<WE_LFSKIN_NUMBER))
 			{
@@ -407,26 +405,46 @@ HWND RendererInstance::createPreviewWindow(HWND hParent)
 	return hWnd;
 }
 
-void RendererInstance::updatePreviewWindow(int element_id, HWND hwndToUp/*=HWND_INVALID*/)
+void RendererInstance::updatePreviewWindow(int* element_ids, HWND hwndToUp/*=HWND_INVALID*/)
 {
-	if(hwndToUp == HWND_INVALID)
-		hwndToUp = hWnd;
-
 	if (hwndToUp == HWND_NULL)
 		return;
 
+    mWidget *previewObj = NULL; 
+	if(hwndToUp == HWND_INVALID) {
+		hwndToUp = hWnd;
+    }
+    else {
+        previewObj = ncsObjFromHandle(hWnd);
+    }
+
     FieldType *ft;
     Value val;
-    mWidget *self;
+    int id;
+    mWidget *self = ncsObjFromHandle(hwndToUp);
 
-    ft = _class->getFieldType(element_id);
-    val = getField(element_id);
+    while (*element_ids != 0) {
+        id = *element_ids;
+        ft = _class->getFieldType(id);
+        val = getField(id);
 
-    if (element_id > 0) {
-        self = ncsObjFromHandle(hwndToUp);
-		ncsSetElement(self, element_id, getRdrElementValue(element_id,val,ft->vtype));
-        //UpdateWindow(hwndToUp, TRUE);
-	InvalidateRect(hwndToUp,NULL, TRUE);
+        if (id > 0) {
+            ncsSetElement(self, id, getRdrElementValue(id, val, ft->vtype));
+            if (previewObj)
+                ncsSetElement(previewObj, id, getRdrElementValue(id, val, ft->vtype));
+        }
+        element_ids++;
+    }
+
+    SendMessage(hwndToUp, MSG_NCPAINT, 0, 0);
+    InvalidateRect(hwndToUp, NULL, TRUE);
+
+    RendererEditor* resMgr =
+        (RendererEditor*)(g_env->getResManager(NCSRT_RDR | NCSRT_RDRSET));
+    if (resMgr && previewObj) {
+        SendMessage(hWnd, MSG_NCPAINT, 0, 0);
+        InvalidateRect(hWnd, NULL, TRUE);
+        resMgr->refreshRdrPanel(this);
     }
 }
 

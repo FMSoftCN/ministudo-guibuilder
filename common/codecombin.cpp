@@ -86,8 +86,7 @@ TextElement::TextElement(const TextElement& te)
 
 TextElement::~TextElement()
 {
-	if(text)
-		free(text);
+    free(text);
 }
 
 bool TextElement::loadFromFile(FILE *fp)
@@ -178,9 +177,7 @@ void TextElement::setText(const char* str)
 	if(str == NULL)
 		return;
 
-	if(text)
-		free(text);
-
+    free(text);
 	text = strdup(str);
 }
 
@@ -233,8 +230,7 @@ CompoundElement::CompoundElement(const CompoundElement& ce)
 
 CompoundElement::~CompoundElement()
 {
-	if(name)
-		free(name);
+    free(name);
 
 	while(children){
 		Element * e = children;
@@ -250,8 +246,7 @@ bool CompoundElement::loadFromFile(FILE *fp)
 	if(fp == NULL)
 		return false;
 
-	if(name)
-		free(name);
+    free(name);
 	name = NULL;
 	//try to load id
 
@@ -672,12 +667,11 @@ int CodeCombinFiles(const char * fileFrom, const char* fileTo)
 	fclose(fp);
 
 	ret = 1;
-FAILED:
 
-	if(ceFrom)
-		delete ceFrom;
-	if(ceTo)
-		delete ceTo;
+FAILED:
+    delete ceFrom;
+    delete ceTo;
+
 	return ret;
 }
 

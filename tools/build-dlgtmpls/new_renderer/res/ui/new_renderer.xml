@@ -37,6 +37,8 @@
 		<Width>344</Width>
 		<Height>184</Height>
 		<Text>0x00022719</Text>
+		<Notify>False</Notify>
+		<Transparent>False</Transparent>
 	</window>
 	<window class="window::Static" serial-number="4127096832">
 		<ID>0x40000010</ID>

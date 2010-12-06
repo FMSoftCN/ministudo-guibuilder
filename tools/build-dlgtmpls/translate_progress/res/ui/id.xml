@@ -1,0 +1,22 @@
+<res-ids>
+	<res-id>
+		<id name="ID_TRANS_PROGRESS"  value="0x80001"/>
+		<type>8</type>
+		<source>res/ui/translate_progess.xml</source>
+	</res-id>
+	<res-id>
+		<id name="IDCANCEL"  value="0x40000002"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_TRANS_PROG"  value="0x4000006f"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STR_TRANS"  value="0x40000070"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+</res-ids>

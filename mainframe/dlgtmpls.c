@@ -4,6 +4,10 @@
 #include <minigui/gdi.h>      
 #include <minigui/window.h>     
 #include <minigui/control.h>     
+#include "msd_intl.h"
+
+#undef _
+#define _(x) x
 
 static CTRLDATA _FontManager_controls[] = {
 		{
@@ -14,7 +18,7 @@ static CTRLDATA _FontManager_controls[] = {
 			80, /* w */
 			30, /* h */
 			1, /* id */
-			"OK", /* caption */
+			_("OK"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -28,7 +32,7 @@ static CTRLDATA _FontManager_controls[] = {
 			80, /* w */
 			30, /* h */
 			2, /* id */
-			"Cancel", /* caption */
+			_("Cancel"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -42,7 +46,7 @@ static CTRLDATA _FontManager_controls[] = {
 			80, /* w */
 			30, /* h */
 			163, /* id */
-			"Import", /* caption */
+			_("Import"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -50,13 +54,13 @@ static CTRLDATA _FontManager_controls[] = {
 		},
 		{
 			"listview", /* class_name */
-			0x08410001, /* style */
+			0x084D0001, /* style */
 			20, /* x */
 			32, /* y */
 			464, /* w */
 			195, /* h */
 			161, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -64,13 +68,13 @@ static CTRLDATA _FontManager_controls[] = {
 		},
 		{
 			"static", /* class_name */
-			0x08010000, /* style */
+			0x08010007, /* style */
 			20, /* x */
 			237, /* y */
 			464, /* w */
 			114, /* h */
 			11, /* id */
-			"Default Fonts for Project", /* caption */
+			_("Default font for project"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -84,7 +88,7 @@ static CTRLDATA _FontManager_controls[] = {
 			381, /* w */
 			23, /* h */
 			12, /* id */
-			"System Device Font Name:", /* caption */
+			_("System device font name:"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -98,7 +102,7 @@ static CTRLDATA _FontManager_controls[] = {
 			106, /* w */
 			30, /* h */
 			13, /* id */
-			"Caption Font:", /* caption */
+			_("Caption font:"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -112,7 +116,7 @@ static CTRLDATA _FontManager_controls[] = {
 			107, /* w */
 			30, /* h */
 			14, /* id */
-			"Client Font:", /* caption */
+			_("Client font:"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -126,7 +130,7 @@ static CTRLDATA _FontManager_controls[] = {
 			264, /* w */
 			30, /* h */
 			166, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -140,7 +144,7 @@ static CTRLDATA _FontManager_controls[] = {
 			264, /* w */
 			30, /* h */
 			168, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -154,7 +158,7 @@ static CTRLDATA _FontManager_controls[] = {
 			56, /* w */
 			30, /* h */
 			167, /* id */
-			"...", /* caption */
+			_("..."), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -168,7 +172,7 @@ static CTRLDATA _FontManager_controls[] = {
 			56, /* w */
 			30, /* h */
 			169, /* id */
-			"...", /* caption */
+			_("..."), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -182,7 +186,7 @@ static DLGTEMPLATE _FontManager_templ = {
 	0, /* y */
 	506, /* w */
 	440, /* h */
-	"Font Management", /* caption */
+	_("Font Management"), /* caption */
 	0, /* hIcon */
 	0, /* hMenu */
 	sizeof(_FontManager_controls)/sizeof(CTRLDATA), /* controlnr */
@@ -199,7 +203,7 @@ static CTRLDATA _ImportImage_controls[] = {
 			100, /* w */
 			32, /* h */
 			202, /* id */
-			"Import", /* caption */
+			_("Import"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -213,7 +217,7 @@ static CTRLDATA _ImportImage_controls[] = {
 			100, /* w */
 			32, /* h */
 			2, /* id */
-			"Cancel", /* caption */
+			_("Cancel"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -227,7 +231,7 @@ static CTRLDATA _ImportImage_controls[] = {
 			252, /* w */
 			30, /* h */
 			201, /* id */
-			"IDB_IMG_FILENAME", /* caption */
+			_("IDB_IMG_FILENAME"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -241,7 +245,7 @@ static CTRLDATA _ImportImage_controls[] = {
 			203, /* w */
 			30, /* h */
 			12, /* id */
-			"Input Image ID Name:", /* caption */
+			_("Input image ID name:"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -255,7 +259,7 @@ static DLGTEMPLATE _ImportImage_templ = {
 	0, /* y */
 	325, /* w */
 	214, /* h */
-	"Import Image Resource", /* caption */
+	_("Import Image Resource"), /* caption */
 	0, /* hIcon */
 	0, /* hMenu */
 	sizeof(_ImportImage_controls)/sizeof(CTRLDATA), /* controlnr */
@@ -272,7 +276,7 @@ static CTRLDATA _NewFile_controls[] = {
 			476, /* w */
 			220, /* h */
 			100, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -286,7 +290,7 @@ static CTRLDATA _NewFile_controls[] = {
 			327, /* w */
 			29, /* h */
 			101, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -300,7 +304,7 @@ static CTRLDATA _NewFile_controls[] = {
 			144, /* w */
 			14, /* h */
 			11, /* id */
-			"Input File Name:", /* caption */
+			_("Input file name:"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -314,7 +318,7 @@ static CTRLDATA _NewFile_controls[] = {
 			100, /* w */
 			34, /* h */
 			1, /* id */
-			"OK", /* caption */
+			_("OK"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -328,7 +332,7 @@ static CTRLDATA _NewFile_controls[] = {
 			100, /* w */
 			34, /* h */
 			2, /* id */
-			"Cancel", /* caption */
+			_("Cancel"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -342,7 +346,7 @@ static CTRLDATA _NewFile_controls[] = {
 			200, /* w */
 			28, /* h */
 			102, /* id */
-			"Overwrite exist file", /* caption */
+			_("Overwrite exist file"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -356,7 +360,7 @@ static CTRLDATA _NewFile_controls[] = {
 			344, /* w */
 			21, /* h */
 			15, /* id */
-			"Please select a window template:", /* caption */
+			_("Please select a window template:"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -370,7 +374,7 @@ static DLGTEMPLATE _NewFile_templ = {
 	0, /* y */
 	526, /* w */
 	404, /* h */
-	"New File ...", /* caption */
+	_("New file ..."), /* caption */
 	0, /* hIcon */
 	0, /* hMenu */
 	sizeof(_NewFile_controls)/sizeof(CTRLDATA), /* controlnr */
@@ -387,7 +391,7 @@ static CTRLDATA _NewRenderer_controls[] = {
 			100, /* w */
 			32, /* h */
 			1, /* id */
-			"OK", /* caption */
+			_("OK"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -401,7 +405,7 @@ static CTRLDATA _NewRenderer_controls[] = {
 			100, /* w */
 			32, /* h */
 			2, /* id */
-			"Cancel", /* caption */
+			_("Cancel"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -409,15 +413,15 @@ static CTRLDATA _NewRenderer_controls[] = {
 		},
 		{
 			"static", /* class_name */
-			0x08010000, /* style */
+			0x08010007, /* style */
 			28, /* x */
 			20, /* y */
 			344, /* w */
 			184, /* h */
 			15, /* id */
-			"New Renderer", /* caption */
+			_("New LF renderer"), /* caption */
 			0, /* dwAddData */
-			0, /* exstye */
+			0x00000000, /* exstye */
 			NULL, /* werdr_name */
 			NULL /* we_attrs */
 		},
@@ -429,7 +433,7 @@ static CTRLDATA _NewRenderer_controls[] = {
 			124, /* w */
 			32, /* h */
 			16, /* id */
-			"Renderer Type:", /* caption */
+			_("Renderer type:"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -443,7 +447,7 @@ static CTRLDATA _NewRenderer_controls[] = {
 			124, /* w */
 			32, /* h */
 			17, /* id */
-			"Control Type:", /* caption */
+			_("Control type:"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -457,7 +461,7 @@ static CTRLDATA _NewRenderer_controls[] = {
 			124, /* w */
 			32, /* h */
 			18, /* id */
-			"ID Name:", /* caption */
+			_("ID name:"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -471,7 +475,7 @@ static CTRLDATA _NewRenderer_controls[] = {
 			176, /* w */
 			28, /* h */
 			120, /* id */
-			"IDR_", /* caption */
+			_("IDR_"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -485,7 +489,7 @@ static CTRLDATA _NewRenderer_controls[] = {
 			180, /* w */
 			28, /* h */
 			100, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -499,7 +503,7 @@ static CTRLDATA _NewRenderer_controls[] = {
 			180, /* w */
 			28, /* h */
 			110, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -513,7 +517,7 @@ static DLGTEMPLATE _NewRenderer_templ = {
 	0, /* y */
 	401, /* w */
 	310, /* h */
-	"Create New Renderer", /* caption */
+	_("Create New Renderer"), /* caption */
 	0, /* hIcon */
 	0, /* hMenu */
 	sizeof(_NewRenderer_controls)/sizeof(CTRLDATA), /* controlnr */
@@ -524,13 +528,13 @@ static DLGTEMPLATE _NewRenderer_templ = {
 static CTRLDATA _NewRendererSet_controls[] = {
 		{
 			"static", /* class_name */
-			0x08010000, /* style */
+			0x08010007, /* style */
 			28, /* x */
 			20, /* y */
 			344, /* w */
 			169, /* h */
 			9, /* id */
-			"New Renderer Set", /* caption */
+			_("New renderer set"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -544,7 +548,7 @@ static CTRLDATA _NewRendererSet_controls[] = {
 			100, /* w */
 			32, /* h */
 			1, /* id */
-			"OK", /* caption */
+			_("OK"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -558,7 +562,7 @@ static CTRLDATA _NewRendererSet_controls[] = {
 			100, /* w */
 			32, /* h */
 			2, /* id */
-			"Cancel", /* caption */
+			_("Cancel"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -572,7 +576,7 @@ static CTRLDATA _NewRendererSet_controls[] = {
 			125, /* w */
 			30, /* h */
 			12, /* id */
-			"Renderer Type:", /* caption */
+			_("Renderer type:"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -586,7 +590,7 @@ static CTRLDATA _NewRendererSet_controls[] = {
 			125, /* w */
 			30, /* h */
 			13, /* id */
-			"Set ID Name:", /* caption */
+			_("Set ID name:"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -600,7 +604,7 @@ static CTRLDATA _NewRendererSet_controls[] = {
 			176, /* w */
 			28, /* h */
 			120, /* id */
-			"IDRS_", /* caption */
+			_("IDRS_"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -614,7 +618,7 @@ static CTRLDATA _NewRendererSet_controls[] = {
 			176, /* w */
 			28, /* h */
 			100, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -628,7 +632,7 @@ static DLGTEMPLATE _NewRendererSet_templ = {
 	0, /* y */
 	401, /* w */
 	310, /* h */
-	"Create New Renderer Set", /* caption */
+	_("Create New Renderer Set"), /* caption */
 	0, /* hIcon */
 	0, /* hMenu */
 	sizeof(_NewRendererSet_controls)/sizeof(CTRLDATA), /* controlnr */
@@ -645,7 +649,7 @@ static CTRLDATA _AddRenderer_controls[] = {
 			80, /* w */
 			30, /* h */
 			1, /* id */
-			"OK", /* caption */
+			_("OK"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -659,7 +663,7 @@ static CTRLDATA _AddRenderer_controls[] = {
 			80, /* w */
 			30, /* h */
 			2, /* id */
-			"Cancel", /* caption */
+			_("Cancel"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -667,13 +671,13 @@ static CTRLDATA _AddRenderer_controls[] = {
 		},
 		{
 			"listbox", /* class_name */
-			0x08410009, /* style */
+			0x084D0009, /* style */
 			17, /* x */
 			19, /* y */
 			355, /* w */
 			190, /* h */
 			100, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -687,7 +691,7 @@ static DLGTEMPLATE _AddRenderer_templ = {
 	0, /* y */
 	400, /* w */
 	310, /* h */
-	"Main Frame", /* caption */
+	_("Add Renderer to RdrSet"), /* caption */
 	0, /* hIcon */
 	0, /* hMenu */
 	sizeof(_AddRenderer_controls)/sizeof(CTRLDATA), /* controlnr */
@@ -704,7 +708,7 @@ static CTRLDATA _SetDefaultRenderer_controls[] = {
 			172, /* w */
 			152, /* h */
 			100, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -718,7 +722,7 @@ static CTRLDATA _SetDefaultRenderer_controls[] = {
 			172, /* w */
 			24, /* h */
 			10, /* id */
-			"Select renderer:", /* caption */
+			_("Select renderer:"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -732,7 +736,7 @@ static CTRLDATA _SetDefaultRenderer_controls[] = {
 			100, /* w */
 			32, /* h */
 			1, /* id */
-			"OK", /* caption */
+			_("OK"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -746,7 +750,7 @@ static CTRLDATA _SetDefaultRenderer_controls[] = {
 			100, /* w */
 			32, /* h */
 			2, /* id */
-			"Cancel", /* caption */
+			_("Cancel"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -760,7 +764,7 @@ static DLGTEMPLATE _SetDefaultRenderer_templ = {
 	0, /* y */
 	348, /* w */
 	244, /* h */
-	"Set Default Renderer", /* caption */
+	_("Set Default Renderer"), /* caption */
 	0, /* hIcon */
 	0, /* hMenu */
 	sizeof(_SetDefaultRenderer_controls)/sizeof(CTRLDATA), /* controlnr */
@@ -777,7 +781,7 @@ static CTRLDATA _SetScreenSize_controls[] = {
 			90, /* w */
 			32, /* h */
 			1, /* id */
-			"OK", /* caption */
+			_("OK"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -791,7 +795,7 @@ static CTRLDATA _SetScreenSize_controls[] = {
 			90, /* w */
 			32, /* h */
 			2, /* id */
-			"Cancel", /* caption */
+			_("Cancel"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -805,7 +809,7 @@ static CTRLDATA _SetScreenSize_controls[] = {
 			122, /* w */
 			30, /* h */
 			100, /* id */
-			"SlEdit1", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -819,7 +823,7 @@ static CTRLDATA _SetScreenSize_controls[] = {
 			122, /* w */
 			30, /* h */
 			101, /* id */
-			"SlEdit1", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -833,7 +837,7 @@ static CTRLDATA _SetScreenSize_controls[] = {
 			80, /* w */
 			34, /* h */
 			12, /* id */
-			"Width:", /* caption */
+			_("Width:"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -847,7 +851,7 @@ static CTRLDATA _SetScreenSize_controls[] = {
 			80, /* w */
 			34, /* h */
 			11, /* id */
-			"Depth:", /* caption */
+			_("Depth:"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -861,7 +865,7 @@ static CTRLDATA _SetScreenSize_controls[] = {
 			80, /* w */
 			34, /* h */
 			13, /* id */
-			"Height:", /* caption */
+			_("Height:"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -875,7 +879,7 @@ static CTRLDATA _SetScreenSize_controls[] = {
 			122, /* w */
 			25, /* h */
 			15, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -889,7 +893,7 @@ static DLGTEMPLATE _SetScreenSize_templ = {
 	0, /* y */
 	300, /* w */
 	250, /* h */
-	"Set Screen Size", /* caption */
+	_("Set Screen Size"), /* caption */
 	0, /* hIcon */
 	0, /* hMenu */
 	sizeof(_SetScreenSize_controls)/sizeof(CTRLDATA), /* controlnr */
@@ -906,7 +910,7 @@ static CTRLDATA _AddLang_controls[] = {
 			215, /* w */
 			28, /* h */
 			2100, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -920,7 +924,7 @@ static CTRLDATA _AddLang_controls[] = {
 			90, /* w */
 			32, /* h */
 			1, /* id */
-			"OK", /* caption */
+			_("OK"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -934,7 +938,7 @@ static CTRLDATA _AddLang_controls[] = {
 			90, /* w */
 			32, /* h */
 			2, /* id */
-			"Cancel", /* caption */
+			_("Cancel"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -948,7 +952,7 @@ static CTRLDATA _AddLang_controls[] = {
 			146, /* w */
 			28, /* h */
 			17, /* id */
-			"Select Language:", /* caption */
+			_("Select language:"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -962,7 +966,7 @@ static DLGTEMPLATE _AddLang_templ = {
 	0, /* y */
 	276, /* w */
 	168, /* h */
-	"Add Language", /* caption */
+	_("Add Language"), /* caption */
 	0, /* hIcon */
 	0, /* hMenu */
 	sizeof(_AddLang_controls)/sizeof(CTRLDATA), /* controlnr */
@@ -978,7 +982,7 @@ static CTRLDATA _TextProfile_controls[] = {
 			98, /* w */
 			30, /* h */
 			300, /* id */
-			"Add", /* caption */
+			_("Add"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -992,7 +996,7 @@ static CTRLDATA _TextProfile_controls[] = {
 			98, /* w */
 			30, /* h */
 			400, /* id */
-			"Delete", /* caption */
+			_("Delete"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1006,7 +1010,7 @@ static CTRLDATA _TextProfile_controls[] = {
 			98, /* w */
 			30, /* h */
 			500, /* id */
-			"Set Default", /* caption */
+			_("Set Default"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1020,7 +1024,7 @@ static CTRLDATA _TextProfile_controls[] = {
 			98, /* w */
 			30, /* h */
 			600, /* id */
-			"Set Current", /* caption */
+			_("Set Current"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1034,7 +1038,7 @@ static CTRLDATA _TextProfile_controls[] = {
 			100, /* w */
 			32, /* h */
 			1, /* id */
-			"OK", /* caption */
+			_("OK"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1048,7 +1052,7 @@ static CTRLDATA _TextProfile_controls[] = {
 			100, /* w */
 			32, /* h */
 			2, /* id */
-			"Cancel", /* caption */
+			_("Cancel"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1062,7 +1066,7 @@ static CTRLDATA _TextProfile_controls[] = {
 			269, /* w */
 			168, /* h */
 			100, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1076,7 +1080,7 @@ static DLGTEMPLATE _TextProfile_templ = {
 	0, /* y */
 	443, /* w */
 	303, /* h */
-	"Profile ...", /* caption */
+	_("Profile ..."), /* caption */
 	0, /* hIcon */
 	0, /* hMenu */
 	sizeof(_TextProfile_controls)/sizeof(CTRLDATA), /* controlnr */
@@ -1093,21 +1097,7 @@ static CTRLDATA _ConnectEvent_controls[] = {
 			80, /* w */
 			30, /* h */
 			2, /* id */
-			"Cancel", /* caption */
-			0, /* dwAddData */
-			0, /* exstye */
-			NULL, /* werdr_name */
-			NULL /* we_attrs */
-		},
-		{
-			"combobox", /* class_name */
-			0x0801000B, /* style */
-			15, /* x */
-			32, /* y */
-			273, /* w */
-			25, /* h */
-			103, /* id */
-			"", /* caption */
+			_("Cancel"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1121,7 +1111,7 @@ static CTRLDATA _ConnectEvent_controls[] = {
 			80, /* w */
 			30, /* h */
 			107, /* id */
-			"Add", /* caption */
+			_("Add"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1135,7 +1125,7 @@ static CTRLDATA _ConnectEvent_controls[] = {
 			80, /* w */
 			30, /* h */
 			106, /* id */
-			"Delete", /* caption */
+			_("Delete"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1149,7 +1139,7 @@ static CTRLDATA _ConnectEvent_controls[] = {
 			80, /* w */
 			30, /* h */
 			116, /* id */
-			"Modify", /* caption */
+			_("Modify"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1163,7 +1153,7 @@ static CTRLDATA _ConnectEvent_controls[] = {
 			80, /* w */
 			30, /* h */
 			117, /* id */
-			"Source", /* caption */
+			_("GO Source"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1177,7 +1167,7 @@ static CTRLDATA _ConnectEvent_controls[] = {
 			250, /* w */
 			23, /* h */
 			14, /* id */
-			"Event Listener:", /* caption */
+			_("Event Listener:"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1191,7 +1181,7 @@ static CTRLDATA _ConnectEvent_controls[] = {
 			273, /* w */
 			198, /* h */
 			115, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1205,7 +1195,35 @@ static CTRLDATA _ConnectEvent_controls[] = {
 			80, /* w */
 			30, /* h */
 			1, /* id */
-			"OK", /* caption */
+			_("OK"), /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"sledit", /* class_name */
+			0x08410800, /* style */
+			15, /* x */
+			28, /* y */
+			230, /* w */
+			30, /* h */
+			103, /* id */
+			_(""), /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			248, /* x */
+			28, /* y */
+			40, /* w */
+			30, /* h */
+			110, /* id */
+			_("..."), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1219,7 +1237,7 @@ static DLGTEMPLATE _ConnectEvent_templ = {
 	0, /* y */
 	407, /* w */
 	320, /* h */
-	"Connect Events", /* caption */
+	_("Connect Events"), /* caption */
 	0, /* hIcon */
 	0, /* hMenu */
 	sizeof(_ConnectEvent_controls)/sizeof(CTRLDATA), /* controlnr */
@@ -1235,7 +1253,7 @@ static CTRLDATA _SelectEvent_controls[] = {
 			80, /* w */
 			30, /* h */
 			1, /* id */
-			"OK", /* caption */
+			_("OK"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1249,7 +1267,7 @@ static CTRLDATA _SelectEvent_controls[] = {
 			80, /* w */
 			30, /* h */
 			2, /* id */
-			"Cancel", /* caption */
+			_("Cancel"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1263,21 +1281,7 @@ static CTRLDATA _SelectEvent_controls[] = {
 			323, /* w */
 			22, /* h */
 			17, /* id */
-			"Step 1: Select An Event:", /* caption */
-			0, /* dwAddData */
-			0, /* exstye */
-			NULL, /* werdr_name */
-			NULL /* we_attrs */
-		},
-		{
-			"combobox", /* class_name */
-			0x0801000B, /* style */
-			22, /* x */
-			40, /* y */
-			323, /* w */
-			25, /* h */
-			102, /* id */
-			"", /* caption */
+			_("Step 1: Select an event:"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1285,13 +1289,13 @@ static CTRLDATA _SelectEvent_controls[] = {
 		},
 		{
 			"listbox", /* class_name */
-			0x08410001, /* style */
+			0x084D0001, /* style */
 			22, /* x */
 			70, /* y */
 			323, /* w */
 			127, /* h */
 			105, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1305,7 +1309,7 @@ static CTRLDATA _SelectEvent_controls[] = {
 			323, /* w */
 			22, /* h */
 			20, /* id */
-			"Step 2: Input Event Name:", /* caption */
+			_("Step 2: Input event name:"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1319,7 +1323,7 @@ static CTRLDATA _SelectEvent_controls[] = {
 			323, /* w */
 			30, /* h */
 			108, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1333,7 +1337,35 @@ static CTRLDATA _SelectEvent_controls[] = {
 			323, /* w */
 			60, /* h */
 			22, /* id */
-			"Note: The Event Name Must Be a Validate C Function Name.", /* caption */
+			_("Note: The event name must be a validate C language function name."), /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"sledit", /* class_name */
+			0x08410800, /* style */
+			22, /* x */
+			35, /* y */
+			280, /* w */
+			30, /* h */
+			102, /* id */
+			_(""), /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			305, /* x */
+			35, /* y */
+			40, /* w */
+			30, /* h */
+			109, /* id */
+			_("..."), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1347,7 +1379,7 @@ static DLGTEMPLATE _SelectEvent_templ = {
 	0, /* y */
 	396, /* w */
 	403, /* h */
-	"Select Event", /* caption */
+	_("Select Event"), /* caption */
 	0, /* hIcon */
 	0, /* hMenu */
 	sizeof(_SelectEvent_controls)/sizeof(CTRLDATA), /* controlnr */
@@ -1363,7 +1395,7 @@ static CTRLDATA _InputEventName_controls[] = {
 			80, /* w */
 			30, /* h */
 			1, /* id */
-			"OK", /* caption */
+			_("OK"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1377,7 +1409,7 @@ static CTRLDATA _InputEventName_controls[] = {
 			80, /* w */
 			30, /* h */
 			2, /* id */
-			"Cancel", /* caption */
+			_("Cancel"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1391,7 +1423,7 @@ static CTRLDATA _InputEventName_controls[] = {
 			271, /* w */
 			22, /* h */
 			23, /* id */
-			"Input Event Name:", /* caption */
+			_("Input event name:"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1405,7 +1437,7 @@ static CTRLDATA _InputEventName_controls[] = {
 			271, /* w */
 			30, /* h */
 			120, /* id */
-			"SlEdit2", /* caption */
+			_("SlEdit2"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1419,7 +1451,7 @@ static CTRLDATA _InputEventName_controls[] = {
 			271, /* w */
 			58, /* h */
 			25, /* id */
-			"Note: The Function Name Must Be A Validate C Function Name.", /* caption */
+			_("Note: The event name must be a validate C language function name."), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1433,7 +1465,7 @@ static DLGTEMPLATE _InputEventName_templ = {
 	0, /* y */
 	333, /* w */
 	245, /* h */
-	"Input Event Name", /* caption */
+	_("Input event name"), /* caption */
 	0, /* hIcon */
 	0, /* hMenu */
 	sizeof(_InputEventName_controls)/sizeof(CTRLDATA), /* controlnr */
@@ -1450,7 +1482,7 @@ static CTRLDATA _FontSelect_controls[] = {
 			80, /* w */
 			30, /* h */
 			530, /* id */
-			"OK", /* caption */
+			_("OK"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1464,7 +1496,7 @@ static CTRLDATA _FontSelect_controls[] = {
 			80, /* w */
 			30, /* h */
 			531, /* id */
-			"Cancel", /* caption */
+			_("Cancel"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1478,7 +1510,7 @@ static CTRLDATA _FontSelect_controls[] = {
 			100, /* w */
 			24, /* h */
 			521, /* id */
-			"File Path:", /* caption */
+			_("File path:"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1492,7 +1524,7 @@ static CTRLDATA _FontSelect_controls[] = {
 			269, /* w */
 			25, /* h */
 			522, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1506,7 +1538,7 @@ static CTRLDATA _FontSelect_controls[] = {
 			46, /* w */
 			25, /* h */
 			523, /* id */
-			"UP", /* caption */
+			_("UP"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1520,7 +1552,7 @@ static CTRLDATA _FontSelect_controls[] = {
 			417, /* w */
 			216, /* h */
 			524, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1534,7 +1566,7 @@ static CTRLDATA _FontSelect_controls[] = {
 			100, /* w */
 			24, /* h */
 			525, /* id */
-			"File Name:", /* caption */
+			_("File name:"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1548,7 +1580,7 @@ static CTRLDATA _FontSelect_controls[] = {
 			100, /* w */
 			24, /* h */
 			527, /* id */
-			"File Type:", /* caption */
+			_("File type:"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1562,7 +1594,7 @@ static CTRLDATA _FontSelect_controls[] = {
 			317, /* w */
 			25, /* h */
 			526, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1576,7 +1608,7 @@ static CTRLDATA _FontSelect_controls[] = {
 			317, /* w */
 			25, /* h */
 			528, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1590,7 +1622,7 @@ static CTRLDATA _FontSelect_controls[] = {
 			120, /* w */
 			30, /* h */
 			529, /* id */
-			"Hide File", /* caption */
+			_("Hide file"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1604,7 +1636,7 @@ static DLGTEMPLATE _FontSelect_templ = {
 	0, /* y */
 	458, /* w */
 	417, /* h */
-	"Open Or Save File", /* caption */
+	_("Open Or Save File"), /* caption */
 	0, /* hIcon */
 	0, /* hMenu */
 	sizeof(_FontSelect_controls)/sizeof(CTRLDATA), /* controlnr */
@@ -1621,7 +1653,7 @@ static CTRLDATA _IDRangeEditor_controls[] = {
 			75, /* w */
 			23, /* h */
 			9, /* id */
-			"Res Type:", /* caption */
+			_("Res type:"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1635,7 +1667,7 @@ static CTRLDATA _IDRangeEditor_controls[] = {
 			310, /* w */
 			24, /* h */
 			10, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1649,7 +1681,7 @@ static CTRLDATA _IDRangeEditor_controls[] = {
 			391, /* w */
 			108, /* h */
 			11, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1663,7 +1695,7 @@ static CTRLDATA _IDRangeEditor_controls[] = {
 			123, /* w */
 			30, /* h */
 			12, /* id */
-			"New Range", /* caption */
+			_("New range"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1677,7 +1709,7 @@ static CTRLDATA _IDRangeEditor_controls[] = {
 			80, /* w */
 			30, /* h */
 			13, /* id */
-			"Exit", /* caption */
+			_("Exit"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1691,7 +1723,7 @@ static CTRLDATA _IDRangeEditor_controls[] = {
 			123, /* w */
 			30, /* h */
 			14, /* id */
-			"Extend Range", /* caption */
+			_("Extend range"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1705,7 +1737,7 @@ static DLGTEMPLATE _IDRangeEditor_templ = {
 	0, /* y */
 	414, /* w */
 	252, /* h */
-	"ID Range Editor", /* caption */
+	_("ID range editor"), /* caption */
 	0, /* hIcon */
 	0, /* hMenu */
 	sizeof(_IDRangeEditor_controls)/sizeof(CTRLDATA), /* controlnr */
@@ -1721,7 +1753,7 @@ static CTRLDATA _NewIDRange_controls[] = {
 			344, /* w */
 			96, /* h */
 			24, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1735,7 +1767,7 @@ static CTRLDATA _NewIDRange_controls[] = {
 			339, /* w */
 			25, /* h */
 			25, /* id */
-			"Free Range:", /* caption */
+			_("Usable range:"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1749,7 +1781,7 @@ static CTRLDATA _NewIDRange_controls[] = {
 			82, /* w */
 			31, /* h */
 			1, /* id */
-			"OK", /* caption */
+			_("OK"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1763,7 +1795,7 @@ static CTRLDATA _NewIDRange_controls[] = {
 			115, /* w */
 			24, /* h */
 			38, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1777,7 +1809,7 @@ static CTRLDATA _NewIDRange_controls[] = {
 			115, /* w */
 			24, /* h */
 			39, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1791,7 +1823,7 @@ static CTRLDATA _NewIDRange_controls[] = {
 			23, /* w */
 			10, /* h */
 			31, /* id */
-			"~", /* caption */
+			_("~"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1805,7 +1837,7 @@ static CTRLDATA _NewIDRange_controls[] = {
 			263, /* w */
 			26, /* h */
 			33, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1819,7 +1851,7 @@ static CTRLDATA _NewIDRange_controls[] = {
 			76, /* w */
 			25, /* h */
 			34, /* id */
-			"Range:", /* caption */
+			_("Range:"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1833,7 +1865,7 @@ static CTRLDATA _NewIDRange_controls[] = {
 			76, /* w */
 			25, /* h */
 			35, /* id */
-			"User:", /* caption */
+			_("User:"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1842,12 +1874,12 @@ static CTRLDATA _NewIDRange_controls[] = {
 		{
 			"button", /* class_name */
 			0x08010000, /* style */
-			175, /* x */
+			186, /* x */
 			301, /* y */
 			82, /* w */
 			31, /* h */
 			2, /* id */
-			"Cancel", /* caption */
+			_("Cancel"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1861,7 +1893,7 @@ static CTRLDATA _NewIDRange_controls[] = {
 			346, /* w */
 			34, /* h */
 			26, /* id */
-			"Step 1: Select a Free Range As You New Range.", /* caption */
+			_("Step 1: Select a usable range as you new range."), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1875,7 +1907,7 @@ static CTRLDATA _NewIDRange_controls[] = {
 			346, /* w */
 			34, /* h */
 			29, /* id */
-			"Step 2: Input A Range. You Should Avoid Conflict With Other Developers", /* caption */
+			_("Step 2: Input a new range. You should avoid conflict with other developers"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1889,7 +1921,7 @@ static CTRLDATA _NewIDRange_controls[] = {
 			346, /* w */
 			34, /* h */
 			30, /* id */
-			"Step 3: Select Or Input a User Name Who Would Use The Range", /* caption */
+			_("Step 3: Select or input a developer name Who Would Use The Range"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1903,7 +1935,7 @@ static CTRLDATA _NewIDRange_controls[] = {
 			163, /* w */
 			31, /* h */
 			36, /* id */
-			"Learn More ID Range", /* caption */
+			_("Learn more ..."), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1917,7 +1949,7 @@ static DLGTEMPLATE _NewIDRange_templ = {
 	0, /* y */
 	376, /* w */
 	375, /* h */
-	"New Range", /* caption */
+	_("New range"), /* caption */
 	0, /* hIcon */
 	0, /* hMenu */
 	sizeof(_NewIDRange_controls)/sizeof(CTRLDATA), /* controlnr */
@@ -1933,7 +1965,7 @@ static CTRLDATA _ExtendIDRange_controls[] = {
 			83, /* w */
 			24, /* h */
 			38, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1947,7 +1979,7 @@ static CTRLDATA _ExtendIDRange_controls[] = {
 			81, /* w */
 			24, /* h */
 			39, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1961,7 +1993,7 @@ static CTRLDATA _ExtendIDRange_controls[] = {
 			23, /* w */
 			10, /* h */
 			40, /* id */
-			"~", /* caption */
+			_("~"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1975,7 +2007,7 @@ static CTRLDATA _ExtendIDRange_controls[] = {
 			82, /* w */
 			31, /* h */
 			1, /* id */
-			"OK", /* caption */
+			_("OK"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -1989,7 +2021,7 @@ static CTRLDATA _ExtendIDRange_controls[] = {
 			82, /* w */
 			31, /* h */
 			2, /* id */
-			"Cancel", /* caption */
+			_("Cancel"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -2003,7 +2035,7 @@ static CTRLDATA _ExtendIDRange_controls[] = {
 			80, /* w */
 			25, /* h */
 			45, /* id */
-			"100<", /* caption */
+			_("100<"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -2017,7 +2049,7 @@ static CTRLDATA _ExtendIDRange_controls[] = {
 			89, /* w */
 			25, /* h */
 			46, /* id */
-			">=1000", /* caption */
+			_(">=1000"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -2031,7 +2063,7 @@ static DLGTEMPLATE _ExtendIDRange_templ = {
 	0, /* y */
 	394, /* w */
 	141, /* h */
-	"Extend Range", /* caption */
+	_("Extend Range"), /* caption */
 	0, /* hIcon */
 	0, /* hMenu */
 	sizeof(_ExtendIDRange_controls)/sizeof(CTRLDATA), /* controlnr */
@@ -2043,12 +2075,12 @@ static CTRLDATA _About_controls[] = {
 		{
 			"button", /* class_name */
 			0x08010000, /* style */
-			128, /* x */
-			220, /* y */
-			90, /* w */
+			180, /* x */
+			340, /* y */
+			92, /* w */
 			32, /* h */
 			1, /* id */
-			"OK", /* caption */
+			_("OK"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -2057,12 +2089,12 @@ static CTRLDATA _About_controls[] = {
 		{
 			"static", /* class_name */
 			0x08010009, /* style */
-			40, /* x */
+			24, /* x */
 			12, /* y */
-			247, /* w */
+			416, /* w */
 			52, /* h */
 			104, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -2071,12 +2103,12 @@ static CTRLDATA _About_controls[] = {
 		{
 			"static", /* class_name */
 			0x08010020, /* style */
-			24, /* x */
-			176, /* y */
-			296, /* w */
+			28, /* x */
+			280, /* y */
+			412, /* w */
 			40, /* h */
 			10, /* id */
-			"Copyright (c) 2010 Beijing Feynman Software Technology Co., Ltd.", /* caption */
+			_("Copyright (c) 2010 Beijing Feynman Software Technology Co., Ltd."), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -2086,11 +2118,11 @@ static CTRLDATA _About_controls[] = {
 			"static", /* class_name */
 			0x08010030, /* style */
 			24, /* x */
-			108, /* y */
+			112, /* y */
 			72, /* w */
-			28, /* h */
+			40, /* h */
 			11, /* id */
-			"Version:", /* caption */
+			_("Version:"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -2099,12 +2131,12 @@ static CTRLDATA _About_controls[] = {
 		{
 			"static", /* class_name */
 			0x08010030, /* style */
-			36, /* x */
-			140, /* y */
-			60, /* w */
-			24, /* h */
+			24, /* x */
+			168, /* y */
+			72, /* w */
+			40, /* h */
 			12, /* id */
-			"Build:", /* caption */
+			_("Build:"), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -2112,13 +2144,13 @@ static CTRLDATA _About_controls[] = {
 		},
 		{
 			"static", /* class_name */
-			0x08010000, /* style */
+			0x08010010, /* style */
 			112, /* x */
-			108, /* y */
-			160, /* w */
-			28, /* h */
+			112, /* y */
+			344, /* w */
+			40, /* h */
 			100, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -2126,13 +2158,13 @@ static CTRLDATA _About_controls[] = {
 		},
 		{
 			"static", /* class_name */
-			0x08010000, /* style */
+			0x08010010, /* style */
 			112, /* x */
-			140, /* y */
-			159, /* w */
-			24, /* h */
+			168, /* y */
+			344, /* w */
+			40, /* h */
 			101, /* id */
-			"", /* caption */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -2141,12 +2173,40 @@ static CTRLDATA _About_controls[] = {
 		{
 			"static", /* class_name */
 			0x08010020, /* style */
-			36, /* x */
+			20, /* x */
 			76, /* y */
-			253, /* w */
+			420, /* w */
 			24, /* h */
 			13, /* id */
-			"A GUI Builder for MiniGUI.", /* caption */
+			_("A GUI Builder for MiniGUI (with mGNCS)."), /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010030, /* style */
+			24, /* x */
+			220, /* y */
+			72, /* w */
+			40, /* h */
+			105, /* id */
+			_("SN:"), /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010010, /* style */
+			112, /* x */
+			220, /* y */
+			344, /* w */
+			40, /* h */
+			106, /* id */
+			_(""), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -2158,13 +2218,218 @@ static DLGTEMPLATE _About_templ = {
 	0, /* exstyle */
 	0, /* x */
 	0, /* y */
-	352, /* w */
-	304, /* h */
-	"About GUI Builder", /* caption */
+	476, /* w */
+	424, /* h */
+	_("About GUI Builder"), /* caption */
 	0, /* hIcon */
 	0, /* hMenu */
 	sizeof(_About_controls)/sizeof(CTRLDATA), /* controlnr */
 	_About_controls, /* controls */
+	0 /* dwAddData */
+};
+
+static CTRLDATA _SetStartWindow_controls[] = {
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			223, /* x */
+			39, /* y */
+			80, /* w */
+			30, /* h */
+			1, /* id */
+			_("OK"), /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			223, /* x */
+			75, /* y */
+			80, /* w */
+			30, /* h */
+			2, /* id */
+			_("Cancel"), /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010010, /* style */
+			9, /* x */
+			9, /* y */
+			294, /* w */
+			25, /* h */
+			10, /* id */
+			_("Select start window"), /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"listbox", /* class_name */
+			0x08410001, /* style */
+			10, /* x */
+			37, /* y */
+			196, /* w */
+			162, /* h */
+			100, /* id */
+			_(""), /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+};
+static DLGTEMPLATE _SetStartWindow_templ = {
+	0x38C00000,/* style */
+	0, /* exstyle */
+	0, /* x */
+	0, /* y */
+	327, /* w */
+	250, /* h */
+	_("Select start window ..."), /* caption */
+	0, /* hIcon */
+	0, /* hMenu */
+	sizeof(_SetStartWindow_controls)/sizeof(CTRLDATA), /* controlnr */
+	_SetStartWindow_controls, /* controls */
+	0 /* dwAddData */
+};
+
+static CTRLDATA _TranslateProgress_controls[] = {
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			148, /* x */
+			102, /* y */
+			80, /* w */
+			30, /* h */
+			2, /* id */
+			_("Cancel"), /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010010, /* style */
+			7, /* x */
+			8, /* y */
+			363, /* w */
+			46, /* h */
+			112, /* id */
+			_(""), /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"progressbar", /* class_name */
+			0x08010001, /* style */
+			7, /* x */
+			66, /* y */
+			363, /* w */
+			25, /* h */
+			111, /* id */
+			_(""), /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+};
+static DLGTEMPLATE _TranslateProgress_templ = {
+	0x38C00000,/* style */
+	0, /* exstyle */
+	0, /* x */
+	0, /* y */
+	383, /* w */
+	173, /* h */
+	_("Translate"), /* caption */
+	0, /* hIcon */
+	0, /* hMenu */
+	sizeof(_TranslateProgress_controls)/sizeof(CTRLDATA), /* controlnr */
+	_TranslateProgress_controls, /* controls */
+	0 /* dwAddData */
+};
+
+static CTRLDATA _SelectProjectType_controls[] = {
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			342, /* x */
+			229, /* y */
+			80, /* w */
+			30, /* h */
+			1, /* id */
+			_("OK"), /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"button", /* class_name */
+			0x08010000, /* style */
+			237, /* x */
+			229, /* y */
+			80, /* w */
+			30, /* h */
+			2, /* id */
+			_("Cancel"), /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"static", /* class_name */
+			0x08010010, /* style */
+			21, /* x */
+			9, /* y */
+			248, /* w */
+			25, /* h */
+			10, /* id */
+			_("Select project type"), /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+		{
+			"listbox", /* class_name */
+			0x084D0001, /* style */
+			21, /* x */
+			36, /* y */
+			401, /* w */
+			169, /* h */
+			100, /* id */
+			_(""), /* caption */
+			0, /* dwAddData */
+			0, /* exstye */
+			NULL, /* werdr_name */
+			NULL /* we_attrs */
+		},
+};
+static DLGTEMPLATE _SelectProjectType_templ = {
+	0x38C00000,/* style */
+	0, /* exstyle */
+	0, /* x */
+	0, /* y */
+	455, /* w */
+	316, /* h */
+	_("Select project type"), /* caption */
+	0, /* hIcon */
+	0, /* hMenu */
+	sizeof(_SelectProjectType_controls)/sizeof(CTRLDATA), /* controlnr */
+	_SelectProjectType_controls, /* controls */
 	0 /* dwAddData */
 };
 
@@ -2188,13 +2453,44 @@ static DLGTEMPLATE* templs[] = {
 	&_NewIDRange_templ,
 	&_ExtendIDRange_templ,
 	&_About_templ,
+	&_SetStartWindow_templ,
+	&_TranslateProgress_templ,
+	&_SelectProjectType_templ,
 };
+
+#ifdef _MSTUDIO_LOCALE
+static void init_international_text()
+{
+    static int _inited = 0;
+    int i;
+    if(_inited)
+        return;
+    _inited = 1;
+    for(i = 0; i < sizeof(templs) / sizeof(DLGTEMPLATE*); i ++) {
+        int j;
+        PCTRLDATA pctrls;
+        if(!templs[i])
+            continue;
+        templs[i]->caption = msd_gettext(templs[i]->caption);
+        pctrls = templs[i]->controls;
+        for(j = 0; j < templs[i]->controlnr; j ++)
+        {
+            pctrls[j].caption = msd_gettext(pctrls[j].caption);
+        }
+    }
+}
+
+
+#endif
 
 
 DLGTEMPLATE * GetDlgTemplate(int id)
 {
 	int count = sizeof(templs) / sizeof(DLGTEMPLATE*);
 	id -= 10000;
+#ifdef _MSTUDIO_LOCALE
+    init_international_text();
+#endif
 	if(id < 0 || id >= count)
 		return NULL;
 

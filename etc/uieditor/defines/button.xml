@@ -1,7 +1,7 @@
 <window class="Button" extends="Widget">
 
 	<set-property name="Class" value="button"/>
-	<set-property name="Transparent" value="False"/>
+    <!-- <set-property name="Transparent" value="False"/> -->
 
 	<!--default-property name="Border" value="False"/-->
 	<default-property name="Width" value="80"/>
@@ -45,6 +45,13 @@
 	<property name="VAlign" type="enum VAlign" default="Middle"/>
 	<property name="WordWrap" type="enum Boolean" default="False"/>
 	<property name="Image" id="10" type="image"/>
+	<property name="CheckState" type="enum" default="UnChecked">
+		<enum>
+			<option name="UnChecked"/>
+			<option name="HalfChecked"/>
+			<option name="Checked"/>
+		</enum>
+	</property>
 	<!-- NCSP_BUTTON_IMAGE_SIZE_PERCENT -->
 	<property name="ImageSizePercent" id="12" type="int" default="25"/>	
 	<!-- property name="ImageFile" type="file image"/-->
@@ -81,6 +88,10 @@
 	<event>
 		<handler>onPushed</handler>
 		<code>NCS_NOTIFY_CODE(NCSN_BUTTON_PUSHED)</code>
+	</event>
+	<event>
+		<handler>onStateChanged</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_BUTTON_STATE_CHANGED)</code>
 	</event>
 	<!-- 
 	<event>

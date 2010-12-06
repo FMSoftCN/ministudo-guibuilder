@@ -9,8 +9,10 @@ using namespace std;
 #include "translater.h"
 
 Translater::Translater()
+    :progress(0)
 {
-	//TODO
+    sr_lang[0]='\0';
+    ta_lang[0]='\0';
 }
 
 Translater::~Translater()

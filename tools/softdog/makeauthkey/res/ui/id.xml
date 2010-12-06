@@ -1,0 +1,137 @@
+<res-ids>
+	<res-id>
+		<id name="ID_MAINWND1"  value="0x80002"/>
+		<type>8</type>
+		<source>res/ui/mwnd.xml</source>
+	</res-id>
+	<res-id>
+		<id name="ID_SLEDIT1"  value="0x40000009"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC1"  value="0x4000000a"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_SLEDIT2"  value="0x4000000b"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_SLEDIT3"  value="0x4000000c"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_SLEDIT4"  value="0x4000000d"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_SLEDIT5"  value="0x4000000e"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC2"  value="0x4000000f"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC3"  value="0x40000010"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC4"  value="0x40000011"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC5"  value="0x40000012"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC6"  value="0x40000013"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_SLEDIT11"  value="0x40000014"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC13"  value="0x40000015"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_SLEDIT12"  value="0x40000016"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_SLEDIT13"  value="0x40000017"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_SLEDIT14"  value="0x40000018"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_SLEDIT15"  value="0x40000019"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC14"  value="0x4000001a"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC15"  value="0x4000001b"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC16"  value="0x4000001c"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC17"  value="0x4000001d"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC18"  value="0x4000001e"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC19"  value="0x4000001f"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_SLEDIT16"  value="0x40000020"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_BUTTON1"  value="0x40000021"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_BUTTON2"  value="0x40000022"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+</res-ids>

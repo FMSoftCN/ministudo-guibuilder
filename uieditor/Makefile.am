@@ -35,6 +35,6 @@ libuieditor_a_SOURCES= component-instance.cpp \
 	uieditor.h \
 	ui-event-id.h \
 	window-instance.h \
-	font-dialog.c \
+	font-dialog.cpp \
 	font-dialog.h
 

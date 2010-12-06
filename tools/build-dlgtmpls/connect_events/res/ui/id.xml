@@ -55,12 +55,22 @@
 		<source></source>
 	</res-id>
 	<res-id>
-		<id name="ID_CB_SENDER"  value="0x40000066"/>
+		<id name="ID_CB_SENDER"  value="0x40000032"/>
 		<type>16384</type>
 		<source></source>
 	</res-id>
 	<res-id>
-		<id name="ID_CB_LISTENER"  value="0x40000067"/>
+		<id name="ID_CB_LISTENER"  value="0x40000033"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_SL_SENDER"  value="0x40000066"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_SL_LISTNER"  value="0x40000067"/>
 		<type>16384</type>
 		<source></source>
 	</res-id>
@@ -81,6 +91,16 @@
 	</res-id>
 	<res-id>
 		<id name="ID_SLE_EVENT"  value="0x4000006c"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_BT_SHOWWND"  value="0x4000006d"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_BT_LISTNER_MORE"  value="0x4000006e"/>
 		<type>16384</type>
 		<source></source>
 	</res-id>

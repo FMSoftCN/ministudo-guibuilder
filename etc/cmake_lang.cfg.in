@@ -1,0 +1,6 @@
+[LANGUAGE]
+lang=zh
+
+[LANGPATH]
+path=@etc_dir@
+

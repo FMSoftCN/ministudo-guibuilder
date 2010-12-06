@@ -61,129 +61,163 @@ using namespace std;
 /* default templates */
 CTRLDATA DefFontCtrl [] =
 {
-    { CTRL_STATIC,
+    { 
+        CTRL_STATIC,
         WS_CHILD | WS_VISIBLE | SS_LEFT,
         7, 5, 60, 20,
         IDC_NCSFD_FONT_NOTE,
         _("Family:"),
-        0, WS_EX_TRANSPARENT | WS_EX_USEPARENTRDR
+        0, WS_EX_TRANSPARENT | WS_EX_USEPARENTRDR,
+        NULL, NULL
     },
-    { CTRL_COMBOBOX,
+    { 
+        CTRL_COMBOBOX,
         WS_CHILD | WS_VISIBLE | WS_TABSTOP | CBS_DROPDOWNLIST
-        | CBS_NOTIFY | CBS_READONLY | WS_BORDER | CBS_EDITNOBORDER,
+            | CBS_NOTIFY | CBS_READONLY | WS_BORDER | CBS_EDITNOBORDER,
         7, 27, 123, 20,
         IDC_NCSFD_FONT,
         "",
-        0,  WS_EX_USEPARENTRDR
+        0,  WS_EX_USEPARENTRDR,
+        NULL, NULL
     },
-    { CTRL_STATIC,
+    { 
+        CTRL_STATIC,
         WS_CHILD | WS_VISIBLE | SS_LEFT,
         140, 5, 50, 20,
         IDC_NCSFD_STYLE_NOTE,
         _("Style:"),
-        0,  WS_EX_USEPARENTRDR
+        0,  WS_EX_USEPARENTRDR,
+        NULL, NULL
     },
-    { CTRL_COMBOBOX,
+    { 
+        CTRL_COMBOBOX,
         WS_CHILD | WS_VISIBLE | WS_TABSTOP | CBS_DROPDOWNLIST | CBS_NOTIFY
-        | CBS_READONLY | WS_BORDER | CBS_EDITNOBORDER,
+            | CBS_READONLY | WS_BORDER | CBS_EDITNOBORDER,
         140, 27, 100, 20,
         IDC_NCSFD_STYLE,
         "",
-        0,  WS_EX_USEPARENTRDR
+        0,  WS_EX_USEPARENTRDR,
+        NULL, NULL
     },
-    { CTRL_STATIC,
+    { 
+        CTRL_STATIC,
         WS_CHILD | WS_VISIBLE | SS_LEFT,
         250, 5, 40, 20,
         IDC_NCSFD_SIZE_NOTE,
         _("Size:"),
-        0, WS_EX_TRANSPARENT | WS_EX_USEPARENTRDR
+        0, WS_EX_TRANSPARENT | WS_EX_USEPARENTRDR,
+        NULL, NULL
     },
-    { CTRL_COMBOBOX,
+    { 
+        CTRL_COMBOBOX,
         WS_CHILD | WS_VISIBLE | WS_TABSTOP | CBS_DROPDOWNLIST | CBS_NOTIFY
-        | CBS_READONLY | WS_BORDER | CBS_EDITNOBORDER,
+            | CBS_READONLY | WS_BORDER | CBS_EDITNOBORDER,
         250, 27, 55, 20,
         IDC_NCSFD_SIZE,
         "",
-        0,  WS_EX_USEPARENTRDR
+        0,  WS_EX_USEPARENTRDR,
+        NULL, NULL
     },
-    { CTRL_STATIC,
+    { 
+        CTRL_STATIC,
         WS_CHILD | WS_VISIBLE | SS_GROUPBOX ,
         7, 50, 123, 90,
         IDC_NCSFD_EFFECTS_NOTE,
         _("Effects"),
-        0, WS_EX_USEPARENTRDR | WS_EX_TRANSPARENT
+        0, WS_EX_USEPARENTRDR | WS_EX_TRANSPARENT,
+        NULL, NULL
     },
-    { CTRL_BUTTON,
+    { 
+        CTRL_BUTTON,
         WS_CHILD | WS_VISIBLE | WS_TABSTOP | BS_AUTOCHECKBOX,
         10 , 70, 100, 20,
         IDC_NCSFD_ITALIC,
         _("Italic"),
-        0, WS_EX_USEPARENTRDR
+        0, WS_EX_USEPARENTRDR,
+        NULL, NULL
     },
-    { CTRL_BUTTON,
+    { 
+        CTRL_BUTTON,
         WS_CHILD | WS_VISIBLE | WS_TABSTOP | BS_AUTOCHECKBOX,
         10 , 90, 100, 20,
         IDC_NCSFD_STRIKEOUT,
         _("Strikeout"),
-        0, WS_EX_USEPARENTRDR
+        0, WS_EX_USEPARENTRDR,
+        NULL, NULL
     },
-    { CTRL_BUTTON,
+    { 
+        CTRL_BUTTON,
         WS_CHILD | WS_VISIBLE | WS_TABSTOP | BS_AUTOCHECKBOX,
         10 , 110, 100, 20,
         IDC_NCSFD_UNDERLINE,
         _("Underline"),
-        0, WS_EX_USEPARENTRDR
+        0, WS_EX_USEPARENTRDR,
+        NULL, NULL
     },
-    { CTRL_STATIC,
+    { 
+        CTRL_STATIC,
         WS_CHILD | WS_VISIBLE |SS_LEFT,
         140, 65, 60, 20,
         IDC_NCSFD_CHARSET_NOTE,
         _("Charset"),
-        0, WS_EX_TRANSPARENT | WS_EX_USEPARENTRDR
+        0, WS_EX_TRANSPARENT | WS_EX_USEPARENTRDR,
+        NULL, NULL
     },
-    { CTRL_COMBOBOX,
+    { 
+        CTRL_COMBOBOX,
         WS_CHILD | WS_VISIBLE | WS_TABSTOP | CBS_DROPDOWNLIST | CBS_NOTIFY
-        | CBS_READONLY | WS_BORDER | CBS_EDITNOBORDER,
+            | CBS_READONLY | WS_BORDER | CBS_EDITNOBORDER,
         205, 65, 100, 20,
         IDC_NCSFD_CHARSET,
         "",
-        0, WS_EX_USEPARENTRDR
+        0, WS_EX_USEPARENTRDR,
+        NULL, NULL
     },
-    { CTRL_STATIC,
+    { 
+        CTRL_STATIC,
         WS_CHILD | WS_VISIBLE | SS_LEFT,
         10, 150, 40, 20,
         IDC_NCSFD_FLIP_NOTE,
         _("Flip"),
-        0, WS_EX_TRANSPARENT | WS_EX_USEPARENTRDR
+        0, WS_EX_TRANSPARENT | WS_EX_USEPARENTRDR,
+        NULL, NULL
     },
-    { CTRL_COMBOBOX,
+    { 
+        CTRL_COMBOBOX,
         WS_CHILD | WS_VISIBLE | WS_TABSTOP | CBS_DROPDOWNLIST | CBS_NOTIFY
-        | CBS_READONLY | WS_BORDER | CBS_EDITNOBORDER,
+            | CBS_READONLY | WS_BORDER | CBS_EDITNOBORDER,
         50, 150, 80, 20,
         IDC_NCSFD_FLIP,
         "",
-        0,0
+        0,0,
+        NULL, NULL
     },
-    { CTRL_STATIC,
+    { 
+        CTRL_STATIC,
         WS_CHILD | WS_VISIBLE | WS_BORDER | SS_LEFT,
         140, 100, 165, 75,
         IDC_NCSFD_SAMPLE,
         _("Sample"),
-        0, WS_EX_TRANSPARENT | WS_EX_USEPARENTRDR
+        0, WS_EX_TRANSPARENT | WS_EX_USEPARENTRDR,
+        NULL, NULL
     },
-    { CTRL_BUTTON,
+    { 
+        CTRL_BUTTON,
         WS_CHILD | WS_VISIBLE | WS_TABSTOP | BS_PUSHBUTTON,
         80 , 180, 100, 25,
         IDC_NCSFD_CANCEL,
         _("Cancel"),
-        0, WS_EX_USEPARENTRDR
+        0, WS_EX_USEPARENTRDR,
+        NULL, NULL
     },
-    { CTRL_BUTTON,
+    { 
+        CTRL_BUTTON,
         WS_CHILD | WS_VISIBLE | WS_TABSTOP | BS_PUSHBUTTON,
         200, 180, 100, 25,
         IDC_NCSFD_OK,
         _("Ok"),
-        0, WS_EX_USEPARENTRDR
+        0, WS_EX_USEPARENTRDR,
+        NULL, NULL
     }
 };
 
@@ -421,8 +455,7 @@ static void FreeFontAttrList (NCS_PFONT font_head)
             chset_cur = chset_tmp;
         }
 
-		if(font_cur->supportSize)
-			free(font_cur->supportSize);
+        free(font_cur->supportSize);
 
         font_tmp = font_cur->next;
         free (font_cur);
@@ -1192,7 +1225,7 @@ FontMngDlg::~FontMngDlg ()
 int FontMngDlg::RefreshList (HWND hListView)
 {
 	unsigned int i;
-	LVITEM lvItem = {0};
+	LVITEM lvItem = {0, 0, 0, 0};
 	LVSUBITEM subdata;
     const DEVFONT* dev_font = NULL;
 	list<ExFont*>::iterator it;
@@ -1208,7 +1241,10 @@ int FontMngDlg::RefreshList (HWND hListView)
     	BOOL has = FALSE;
         for (it = fontList.begin(); it != fontList.end(); ++it)
          {
-         	if ((*it)->font_name.compare(dev_font->name) == 0)
+			ExFont *font = *it;
+			if(!font)
+				continue;
+         	if (font->font_name.compare(dev_font->name) == 0)
          		has = TRUE;
          }
         if (!has){
@@ -1278,10 +1314,8 @@ void FontMngDlg::onOK()
 {
 	list<ExFont *>::iterator it;
 
-	mngData->cap_font->clear();
-	mngData->cap_font->append(cap_font);
-	mngData->clt_font->clear();
-	mngData->clt_font->append(clt_font);
+	*mngData->cap_font = cap_font;
+	*mngData->clt_font = clt_font;
 
 	mngData->pExFontList->clear();
 	for (it = exFontList.begin(); it != exFontList.end(); it++)
@@ -1311,22 +1345,33 @@ static char *getFontName(const char *file)
 		strcat(tmp, "-rrncnn-0-0-UTF-8");
 		return strdup(tmp);
 	} else if (strcasecmp(ext, ".upf") == 0){
-		char * font_name;
+		char * font_name = NULL;
 #ifdef WIN32
 		void *head =  win_mmap(file);
-		font_name = strdup(((UPF_HEADER *)head)->font_name);
-		win_munmap (head);
+		if(head)
+		{
+			font_name = strdup(((UPF_HEADER *)head)->font_name);
+			win_munmap (head);
+		}
+		else
+			goto ERROR;
 #else
 		UPF_HEADER * head;
 		FILE* fp = NULL;
 		fp = fopen (file, "rb");
 		head = (UPF_HEADER *) mmap( 0, sizeof(UPF_HEADER), PROT_READ, MAP_SHARED, fileno(fp), 0 );
-		font_name = strdup(head->font_name);
-		munmap (head, sizeof(UPF_HEADER));
+		if(head)
+		{
+			font_name = strdup(head->font_name);
+			munmap (head, sizeof(UPF_HEADER));
+		}
 		fclose(fp);
+		if(!head)
+			goto ERROR;
 #endif
 		return font_name;
 	}
+ERROR:
 
 	return NULL;
 }
@@ -1357,9 +1402,12 @@ void FontMngDlg::onImport()
 		list<ExFont*>::iterator it;
 		char *font_name = getFontName(pfdd.filefullname);
 
+		if(!font_name)
+			return;
+
 		for (it = fontList.begin(); it != fontList.end(); ++it){
 			if ((*it)->font_name.compare(font_name) == 0){
-				MessageBox(_("This font has been load !"), _("Font existed"), MB_OK);
+				MessageBox(_("This font has been load !"), _("Font already exists"), MB_OK);
 			}
 		}
 
@@ -1369,7 +1417,7 @@ void FontMngDlg::onImport()
 		exfont->ref = 0;
 		exFontList.push_back(exfont);
 		//RefreshList (hListView);
-		LVITEM lvItem = {0};
+		LVITEM lvItem = {0, 0, 0, 0};
 		LVSUBITEM subdata;
 		lvItem.nItem = ::SendMessage(hListView, LVM_GETITEMCOUNT, 0, 0);
 		lvItem.nItemHeight = 25;
@@ -1381,14 +1429,39 @@ void FontMngDlg::onImport()
 	    subdata.subItem = 0;
 	    subdata.pszText = font_name;
 	    ::SendMessage (hListView, LVM_SETSUBITEM, item, (LPARAM) &subdata);
+        //load ExFont
+        loadExFont(exfont);
 
 		free(font_name);
 	}
 }
 
+extern BOOL copyfile(const char* filesrc, const char* filedst);
+void FontMngDlg::loadExFont(ExFont* exfont)
+{
+    size_t found = exfont->file_name.find_last_of("/\\");
+    string dest_file = g_env->getProjectPath();
+    string relative_file;
+
+    if (found != string::npos) {
+        dest_file += exfont->file_name.substr(found);
+        relative_file = exfont->file_name.substr(found + 1);
+    } else {
+        relative_file = exfont->file_name;
+        dest_file += relative_file;
+    }
+
+    if (copyfile(exfont->file_name.c_str(), dest_file.c_str())) {
+        exfont->file_name.clear();
+        exfont->file_name.append(relative_file);
+    }
+    //load
+    ::LoadDevFontFromFile(exfont->font_name.c_str(), dest_file.c_str());
+}
+
 void FontMngDlg::onCapFont()
 {
-	FONTDATA pfdd = {0};
+	FONTDATA pfdd = {0, 0, {0}};
 	pfdd.min_size = 0;
 	pfdd.max_size = 72;
 
@@ -1405,7 +1478,7 @@ void FontMngDlg::onCapFont()
 
 void FontMngDlg::onCltFont()
 {
-	FONTDATA pfdd = {0};
+	FONTDATA pfdd = {0, 0, {0}};
 	pfdd.min_size = 0;
 	pfdd.max_size = 72;
 

@@ -3,12 +3,30 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#: ../../mainframe/dlgtmpls.c:63 ../../mainframe/dlgtmpls.c:133
+#: ../../mainframe/dlgtmpls.c:147 ../../mainframe/dlgtmpls.c:279
+#: ../../mainframe/dlgtmpls.c:293 ../../mainframe/dlgtmpls.c:492
+#: ../../mainframe/dlgtmpls.c:506 ../../mainframe/dlgtmpls.c:621
+#: ../../mainframe/dlgtmpls.c:680 ../../mainframe/dlgtmpls.c:711
+#: ../../mainframe/dlgtmpls.c:882 ../../mainframe/dlgtmpls.c:913
+#: ../../mainframe/dlgtmpls.c:1069 ../../mainframe/dlgtmpls.c:1184
+#: ../../mainframe/dlgtmpls.c:1212 ../../mainframe/dlgtmpls.c:1298
+#: ../../mainframe/dlgtmpls.c:1326 ../../mainframe/dlgtmpls.c:1354
+#: ../../mainframe/dlgtmpls.c:1527 ../../mainframe/dlgtmpls.c:1555
+#: ../../mainframe/dlgtmpls.c:1597 ../../mainframe/dlgtmpls.c:1611
+#: ../../mainframe/dlgtmpls.c:1670 ../../mainframe/dlgtmpls.c:1684
+#: ../../mainframe/dlgtmpls.c:1756 ../../mainframe/dlgtmpls.c:1798
+#: ../../mainframe/dlgtmpls.c:1812 ../../mainframe/dlgtmpls.c:1840
+#: ../../mainframe/dlgtmpls.c:1968 ../../mainframe/dlgtmpls.c:1982
+#: ../../mainframe/dlgtmpls.c:2097 ../../mainframe/dlgtmpls.c:2153
+#: ../../mainframe/dlgtmpls.c:2167 ../../mainframe/dlgtmpls.c:2209
+#: ../../mainframe/dlgtmpls.c:2282
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-25 13:55+0800\n"
+"POT-Creation-Date: 2010-10-28 18:33+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,108 +34,906 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../rdreditor/rdreditor.cpp:675 ../../rdreditor/rdreditor.cpp:702
-#: ../../uieditor/connect-events-wnd.cpp:111
-#: ../../uieditor/connect-events-wnd.cpp:544
-#: ../../uieditor/connect-events-wnd.cpp:550 ../../uieditor/proppanel.cpp:129
+#: ../../uieditor/fieldpanel.cpp:60 ../../resideditor/resid-list-panel.cpp:73
+msgid "Name"
+msgstr "名称"
+
+#: ../../uieditor/fieldpanel.cpp:61 ../../resideditor/resid-list-panel.cpp:75
+msgid "Value"
+msgstr "值"
+
+#: ../../uieditor/fieldpanel.cpp:401
+msgid "Information"
+msgstr "信息"
+
+#: ../../uieditor/fieldpanel.cpp:401
+msgid ""
+"All the properties would be unrecoverable after erasing. Are you sure you "
+"want to erase them?"
+msgstr "清除后，所有属性无法恢复，您确定要清除所有属性吗？"
+
+#: ../../uieditor/connect-events-wnd.cpp:128
+#: ../../uieditor/connect-events-wnd.cpp:469
+#: ../../uieditor/connect-events-wnd.cpp:475
+#: ../../uieditor/edituipanel.cpp:2401 ../../uieditor/edituipanel.cpp:3832
+#: ../../uieditor/select-template.cpp:389
+#: ../../uieditor/select-template.cpp:398
+#: ../../uieditor/select-template.cpp:430
+#: ../../uieditor/select-template.cpp:455 ../../uieditor/proppanel.cpp:129
 #: ../../uieditor/proppanel.cpp:139 ../../uieditor/proppanel.cpp:161
-#: ../../uieditor/proppanel.cpp:168 ../../uieditor/uieditor.cpp:1395
-#: ../../uieditor/uieditor.cpp:1416 ../../uieditor/uieditor.cpp:1958
-#: ../../uieditor/uieditor.cpp:2084 ../../uieditor/edituipanel.cpp:2406
-#: ../../uieditor/edituipanel.cpp:3813 ../../uieditor/select-template.cpp:390
-#: ../../uieditor/select-template.cpp:399
-#: ../../uieditor/select-template.cpp:431
-#: ../../uieditor/select-template.cpp:456 ../../mainframe/newidrange.cpp:137
-#: ../../mainframe/newidrange.cpp:144 ../../mainframe/newidrange.cpp:154
-#: ../../mainframe/extendidrange.cpp:73 ../../mainframe/extendidrange.cpp:80
-#: ../../mainframe/extendidrange.cpp:87 ../../mainframe/extendidrange.cpp:94
+#: ../../uieditor/proppanel.cpp:168 ../../uieditor/uieditor.cpp:1272
+#: ../../uieditor/uieditor.cpp:1289 ../../uieditor/uieditor.cpp:1738
+#: ../../uieditor/uieditor.cpp:1857 ../../rdreditor/rdreditor.cpp:608
+#: ../../rdreditor/rdreditor.cpp:638 ../../imgeditor/imgeditor.cpp:134
+#: ../../imgeditor/imgeditor.cpp:331 ../../imgeditor/imgeditor.cpp:338
+#: ../../imgeditor/imgeditor.cpp:601 ../../imgeditor/imgeditor.cpp:626
+#: ../../imgeditor/imgeditor.cpp:635 ../../imgeditor/imgeditor.cpp:650
+#: ../../imgeditor/imgeditor.cpp:665 ../../imgeditor/imgeditor.cpp:671
+#: ../../imgeditor/imgeditor.cpp:687 ../../mainframe/mainframe.cpp:750
+#: ../../mainframe/newidrange.cpp:137 ../../mainframe/newidrange.cpp:158
+#: ../../mainframe/newidrange.cpp:168 ../../mainframe/extendidrange.cpp:73
+#: ../../mainframe/extendidrange.cpp:80 ../../mainframe/extendidrange.cpp:87
+#: ../../mainframe/extendidrange.cpp:94
+#: ../../mainframe/select-project-type-dlg.cpp:132
+#: ../../mainframe/select-project-type-dlg.cpp:140
 #: ../../mainframe/idrange-editor.cpp:91
 #: ../../mainframe/idrange-editor.cpp:110
 #: ../../mainframe/idrange-editor.cpp:118
-#: ../../mainframe/select-project-type-dlg.cpp:122
-#: ../../mainframe/select-project-type-dlg.cpp:130
-#: ../../mainframe/mainframe.cpp:726 ../../imgeditor/imgeditor.cpp:122
-#: ../../imgeditor/imgeditor.cpp:233 ../../imgeditor/imgeditor.cpp:451
-#: ../../imgeditor/imgeditor.cpp:457 ../../imgeditor/imgeditor.cpp:471
-#: ../../imgeditor/imgeditor.cpp:487 ../../imgeditor/imgeditor.cpp:492
-#: ../../imgeditor/imgeditor.cpp:508
 msgid "Error"
 msgstr "错误"
 
-#: ../../rdreditor/rdreditor.cpp:676
+#: ../../uieditor/connect-events-wnd.cpp:128
+msgid ""
+"Please input a valid event name.\n"
+"It must be a C language function name."
+msgstr ""
+"请输入有效的事件名.\n"
+"该事件名必须是C函数名."
+
+#: ../../uieditor/connect-events-wnd.cpp:469
+msgid "Please select a sender"
+msgstr "请选择发送者"
+
+#: ../../uieditor/connect-events-wnd.cpp:475
+msgid "Please select an event"
+msgstr "请选择事件"
+
+#: ../../uieditor/edituipanel.cpp:2402
 #, c-format
-msgid "The '%s' is used by other resource, cann't delete it."
-msgstr "'%s'已经被其他资源使用, 无法删除"
+msgid ""
+"The Value is invalid or the control cannot accept this value now!\n"
+"\n"
+"Please check the value range or other dependency properties.\n"
+"\n"
+"Error Tip: %s"
+msgstr ""
+"设置的值无效。\n"
+"请检查值范围或者其它依赖的属性.\n"
+"\n"
+"错误提示： %s"
 
-#: ../../rdreditor/rdreditor.cpp:703
-msgid "The RendererSet has the only reference resource, cann't delete it."
-msgstr "渲染器集只有此资源, 无法删除"
+#: ../../uieditor/edituipanel.cpp:3832
+msgid ""
+"Invalid Name, ID name must start with a capital letter, and only contain "
+"capital letter, '_', digit, e.g. IDB_IMAGE1"
+msgstr ""
+"非法ID名, ID名必须以大写字母开头, 并且只能包含大写字母, '_', 数字, 例如, "
+"IDB_IMAGE1"
 
-#: ../../rdreditor/rdr-dialog.cpp:108 ../../rdreditor/rdr-dialog.cpp:194
-#: ../../uieditor/select-template.cpp:438
-#: ../../uieditor/select-template.cpp:465 ../../mainframe/mainframe.cpp:115
+#: ../../uieditor/select-template.cpp:389
+msgid "Please select a template first!"
+msgstr "请先选择一个模板"
+
+#: ../../uieditor/select-template.cpp:398
+#, c-format
+msgid "Cannot create the new file \"%s\""
+msgstr "无法创建新文件(\"%s\")"
+
+#: ../../uieditor/select-template.cpp:430
+msgid "Please input filename!"
+msgstr "请输入文件名"
+
+#: ../../uieditor/select-template.cpp:437
+#: ../../uieditor/select-template.cpp:464 ../../rdreditor/rdr-dialog.cpp:108
+#: ../../rdreditor/rdr-dialog.cpp:224 ../../mainframe/mainframe.cpp:120
+#: ../../mainframe/mainframe.cpp:136
 msgid "Warning"
 msgstr "警告"
 
-#: ../../rdreditor/rdr-dialog.cpp:108 ../../rdreditor/rdr-dialog.cpp:194
+#: ../../uieditor/select-template.cpp:437
 msgid ""
-"The ID name is invalid or has been used. \n"
-" Please input again."
+"The filename is too long, and will be get cut off. Do you want to input "
+"another filename?"
+msgstr "文件名过长，系统只能保存部分文件名，是否输入一个新的文件名?"
+
+#: ../../uieditor/select-template.cpp:455
+#, c-format
+msgid "This file \"%s\" has been opened, please select another file!"
+msgstr "该文件（\"%s\"）已经打开，请选择其他文件"
+
+#: ../../uieditor/select-template.cpp:464
+#, c-format
+msgid "The File \"%s\" already exists, do you want to overwrite it?"
+msgstr "该文件（\"%s\"）已经存在，您想覆盖它吗？"
+
+#: ../../uieditor/proppanel.cpp:129 ../../uieditor/proppanel.cpp:139
+msgid "This ID is already in the window!"
+msgstr "该ID已经存在！"
+
+#: ../../uieditor/proppanel.cpp:161
+#, c-format
+msgid "The width of window must be less than the width of screen (%d)!"
+msgstr "窗口的宽度必须小于屏幕的宽度（%d）!"
+
+#: ../../uieditor/proppanel.cpp:168
+#, c-format
+msgid "The height of window must be less than height of screen(%d)"
+msgstr "窗口的宽度必须小于屏幕的宽度（%d）！"
+
+#: ../../uieditor/font-dialog.cpp:69
+msgid "Family:"
+msgstr "族："
+
+#: ../../uieditor/font-dialog.cpp:88
+msgid "Style:"
+msgstr "风格："
+
+#: ../../uieditor/font-dialog.cpp:107
+msgid "Size:"
+msgstr "大小："
+
+#: ../../uieditor/font-dialog.cpp:126
+msgid "Effects"
+msgstr "效果"
+
+#: ../../uieditor/font-dialog.cpp:135
+msgid "Italic"
+msgstr "斜体"
+
+#: ../../uieditor/font-dialog.cpp:144
+msgid "Strikeout"
+msgstr "删除线"
+
+#: ../../uieditor/font-dialog.cpp:153
+msgid "Underline"
+msgstr "下划线"
+
+#: ../../uieditor/font-dialog.cpp:162
+msgid "Charset"
+msgstr "字符集"
+
+#: ../../uieditor/font-dialog.cpp:181
+msgid "Flip"
+msgstr "镜像"
+
+#: ../../uieditor/font-dialog.cpp:200
+msgid "Sample"
+msgstr "示例"
+
+#: ../../uieditor/font-dialog.cpp:209 ../../mainframe/mainframe.cpp:328
+#: ../../mainframe/dlgtmpls.c:35 ../../mainframe/dlgtmpls.c:220
+#: ../../mainframe/dlgtmpls.c:335 ../../mainframe/dlgtmpls.c:408
+#: ../../mainframe/dlgtmpls.c:565 ../../mainframe/dlgtmpls.c:666
+#: ../../mainframe/dlgtmpls.c:753 ../../mainframe/dlgtmpls.c:798
+#: ../../mainframe/dlgtmpls.c:941 ../../mainframe/dlgtmpls.c:1055
+#: ../../mainframe/dlgtmpls.c:1100 ../../mainframe/dlgtmpls.c:1270
+#: ../../mainframe/dlgtmpls.c:1412 ../../mainframe/dlgtmpls.c:1499
+#: ../../mainframe/dlgtmpls.c:1882 ../../mainframe/dlgtmpls.c:2024
+#: ../../mainframe/dlgtmpls.c:2254
+#: ../../mainframe/select-project-type-dlg.cpp:75
+msgid "Cancel"
+msgstr "取消"
+
+#: ../../uieditor/font-dialog.cpp:218
+msgid "Ok"
+msgstr "确定"
+
+#: ../../uieditor/font-dialog.cpp:229
+msgid "Font Selecting"
+msgstr "选择字体"
+
+#: ../../uieditor/font-dialog.cpp:1407
+msgid "This font has been load !"
+msgstr "字体已被加载！"
+
+#: ../../uieditor/font-dialog.cpp:1407
+msgid "Font already exists"
+msgstr "字体已存在！"
+
+#: ../../uieditor/uieditor.cpp:495
+msgid "error"
+msgstr "错误"
+
+#: ../../uieditor/uieditor.cpp:495
+#, c-format
+msgid "The file \"%s\" is'nt a valid ui file."
+msgstr "文件（\"%s\"）不是有效的UI文件"
+
+#: ../../uieditor/uieditor.cpp:607 ../../mainframe/dlgtmpls.c:999
+#: ../../mainframe/dlgtmpls.c:1128 ../../tools/makemo/cfg.c:68
+msgid "Delete"
+msgstr "删除"
+
+#: ../../uieditor/uieditor.cpp:607
+#, c-format
+msgid "Do you want remove \"%s\" from disk?"
+msgstr "您确认从磁盘上删除\"%s\"？"
+
+#: ../../uieditor/uieditor.cpp:1272
+msgid "This ID already exists, please select another ID!"
+msgstr "ID已存在，请选择其它ID！"
+
+#: ../../uieditor/uieditor.cpp:1289
+#, c-format
+msgid ""
+"This ID is reserved ID and cannot be used. Please change the ID name as \"%s"
+"\" to keep using it"
+msgstr "该ID是保留ID，无法使用。如果仍想使用此ID，请更改ID名为 \"%s\"。"
+
+#: ../../uieditor/uieditor.cpp:1738
+msgid "Please select a start window"
+msgstr "请选择启动窗口"
+
+#: ../../uieditor/uieditor.cpp:1857
+msgid "Please select default look-and-feel renderer"
+msgstr "请选择默认外观渲染器"
+
+#: ../../rdreditor/rdr-dialog.cpp:108 ../../rdreditor/rdr-dialog.cpp:224
+msgid ""
+"The ID name is invalid or already used.\n"
+" Please input another name."
 msgstr ""
 "ID 名不可用或已被使用.\n"
-" 请重新输入."
+" 请重新输入。"
 
-#: ../../tools/makemo/cfg.c:1 ../../tools/makemo/cfg.c:43
+#: ../../rdreditor/rdreditor.cpp:609
+#, c-format
+msgid "The '%s' is used by other resource, cannot delete it."
+msgstr "'%s'已被其它资源占用，无法删除"
+
+#: ../../rdreditor/rdreditor.cpp:639
+msgid "The RendererSet only has the reference resource, cann't delete it."
+msgstr "外观渲染器集包含其他渲染器资源, 不能删除"
+
+#: ../../resideditor/resid-list-panel.cpp:74
+msgid "Type"
+msgstr "类型"
+
+#: ../../resideditor/resid-list-panel.cpp:185
+#, c-format
+msgid ""
+"The id(%d) is out of the range of current user \"%s\", do you want to reset "
+"it?"
+msgstr "id（%d）已超出当前用户 \"%s\" 范围，是否重新设置？"
+
+#: ../../resideditor/resid-editor.cpp:86
+msgid "Resource ID Editor"
+msgstr "Resource ID"
+
+#: ../../imgeditor/imgeditor.cpp:135
+#, c-format
+msgid "The '%s' cannot be removed. It's used by other resource or not exists."
+msgstr "'%s' 已被其他资源使用或不存在。"
+
+#: ../../imgeditor/imgeditor.cpp:330
+msgid ""
+"Invalid ID name, ID name must start with a Alpha, and only include Alpha, "
+"'_', digit, e.g. IDB_IMAGE1"
+msgstr ""
+"无效的ID名。 ID名必须以大写字母开头，并只能包含字母、'_'和数字。如，"
+"IDB_IMAGE1"
+
+#: ../../imgeditor/imgeditor.cpp:337
+msgid "ID name has been used. please input again."
+msgstr "ID名已经被使用，请输入其他名。"
+
+#: ../../imgeditor/imgeditor.cpp:602
+#, c-format
+msgid ""
+"There are too many ID names using \"%s\" as ID prefix. Insert image resource "
+"failure."
+msgstr "太多ID使用\"%s\"为ID的前缀，无法生成有效ID名。插入图片资源失败。"
+
+#: ../../imgeditor/imgeditor.cpp:627
+#, c-format
+msgid ""
+"Resource \"%s\" has been imported, do you want overwrite it?\n"
+"Source: \"%s\"\n"
+" Destination: \"%s\""
+msgstr ""
+"资源\"%s\"已经被导入，要覆盖吗？\n"
+"来自: \"%s\"\n"
+"目标：\"%s\""
+
+#: ../../imgeditor/imgeditor.cpp:636
+#, c-format
+msgid ""
+"Image \"%s\" has a different name in the resource.\n"
+"Do you want to repleace the Old Name [%s] to New Name [%s]?\n"
+msgstr ""
+"图片 \"%s\" 在资源中有不同名.\n"
+"是否将旧名字[%s]更改为新名字[%s]\n"
+
+#: ../../imgeditor/imgeditor.cpp:650 ../../imgeditor/imgeditor.cpp:671
+#, c-format
+msgid "Cannot copy file from \"%s\" to \"%s\""
+msgstr "不能复制文件从 \"%s\" 到 \"%s\""
+
+#: ../../imgeditor/imgeditor.cpp:665
+#, c-format
+msgid "Cannot create image resource \"%s\"(file=\"%s\")"
+msgstr "不能创建图片资源 \"%s\"(file=\"%s\")"
+
+#: ../../imgeditor/imgeditor.cpp:687
+msgid "Please select an image!"
+msgstr "请选择一张图片！"
+
+#: ../../texteditor/textlistpanel.cpp:388
+#, c-format
+msgid "Default Text (%s_%s)"
+msgstr "默认文本（%s_%s）"
+
+#: ../../texteditor/textlistpanel.cpp:394
+#, c-format
+msgid "Current Text (%s_%s)"
+msgstr "当前文本（%s_%s）"
+
+#: ../../texteditor/textlistpanel.cpp:401
+msgid "Current Text (not set)"
+msgstr "当前文本（未设置）"
+
+#: ../../mainframe/mainframe.cpp:121
+msgid "The evaluation version of miniStudio cannot open multi-windows project."
+msgstr "当前miniStudio为评估版，无法打开多窗口项目。"
+
+#: ../../mainframe/mainframe.cpp:122
+msgid ""
+"The evaluation version of miniStudio doesn't support such multi-window "
+"operations."
+msgstr "当前miniStudio为评估版，不支持多窗口操作。"
+
+#: ../../mainframe/mainframe.cpp:123
+msgid ""
+"Product license has expired. For the continued use of the software, please "
+"contact FMSoft."
+msgstr "证书已过期，如需继续使用，请联系飞漫软件。"
+
+#: ../../mainframe/mainframe.cpp:124
+msgid "Please make sure the softdog is connected."
+msgstr "请确认软件狗已连接。"
+
+#: ../../mainframe/mainframe.cpp:246
+msgid "MG GUI Builder 1.0.6"
+msgstr ""
+
+#: ../../mainframe/mainframe.cpp:325 ../../mainframe/dlgtmpls.c:21
+#: ../../mainframe/dlgtmpls.c:321 ../../mainframe/dlgtmpls.c:394
+#: ../../mainframe/dlgtmpls.c:551 ../../mainframe/dlgtmpls.c:652
+#: ../../mainframe/dlgtmpls.c:739 ../../mainframe/dlgtmpls.c:784
+#: ../../mainframe/dlgtmpls.c:927 ../../mainframe/dlgtmpls.c:1041
+#: ../../mainframe/dlgtmpls.c:1198 ../../mainframe/dlgtmpls.c:1256
+#: ../../mainframe/dlgtmpls.c:1398 ../../mainframe/dlgtmpls.c:1485
+#: ../../mainframe/dlgtmpls.c:1784 ../../mainframe/dlgtmpls.c:2010
+#: ../../mainframe/dlgtmpls.c:2083 ../../mainframe/dlgtmpls.c:2240
+#: ../../mainframe/select-project-type-dlg.cpp:64
+msgid "OK"
+msgstr "确定"
+
+#: ../../mainframe/mainframe.cpp:549
+msgid "Window"
+msgstr "窗口"
+
+#: ../../mainframe/mainframe.cpp:686
+msgid " - miniStudio 1.0 "
+msgstr ""
+
+#: ../../mainframe/mainframe.cpp:697
+#, c-format
+msgid " (%d days remaining)"
+msgstr "（剩余%d天）"
+
+#: ../../mainframe/mainframe.cpp:701
+#, c-format
+msgid "(Evaluation version, only support %d window!)"
+msgstr "（评估版本只支持%d个窗口）"
+
+#: ../../mainframe/mainframe.cpp:750
+msgid "Please select a valid resource. Do you want to reselect?"
+msgstr "请选择可用资源，请重选？"
+
+#: ../../mainframe/newidrange.cpp:96
+#, c-format
+msgid "Usable range (for type : %s %s)"
+msgstr "空闲范围（类型：%s %s）"
+
+#: ../../mainframe/newidrange.cpp:137
+#, c-format
+msgid "Min(%d) must < Max(%d), please reinput them"
+msgstr "最小 (%d) 必须小于 最大(%d), 请重新输入"
+
+#: ../../mainframe/newidrange.cpp:150
+msgid "Question"
+msgstr "询问"
+
+#: ../../mainframe/newidrange.cpp:150
+#, c-format
+msgid "user \"%s\" does not exist, create it automatically?"
+msgstr "开发者\"%s\"不存在，自动创建？"
+
+#: ../../mainframe/newidrange.cpp:158
+#, c-format
+msgid "The value of Min and max must be in the range (%d, %d]"
+msgstr "值必须大于%d且小于等于%d"
+
+#: ../../mainframe/newidrange.cpp:168
+#, c-format
+msgid "ID Range %d ~ %d is invalid"
+msgstr "ID范围 %d ~ %d无效"
+
+#: ../../mainframe/newidrange.cpp:192
+msgid ""
+"Since miniStudio is not a collaborative development platform, it is very easy "
+"to cause ID resource conflict when developers work together to develop a "
+"project by using miniStudio and SVN/CVS or other version control tools. And it "
+"is hard to solve this problem by manual work.\n"
+" \n"
+"To avoid this, miniStudio asks each developer to specify an ID range only for "
+"itself.The different developer uses different ID range.\n"
+" \n"
+"If miniStudio doesn't find any ID range for current developmer, it will ask "
+"thedeveloper to specify an ID range.\n"
+" \n"
+"Every resource need a Range for its ID: \n"
+" UI:  for MainWindow; \n"
+" Control: for Controls; \n"
+" Image : for Images; \n"
+" Renderer: for Renderer Resource; \n"
+" Renderer-Set: for Renderer Set Resource; \n"
+" Text: for the Text Resource with a name; \n"
+" Anonymous Text: for the Anonymous Text Resource; "
+msgstr ""
+"当多人团队使用miniStudio和SVN或者CVS等工具共同开发时，很容易造成ID冲突，而且难以"
+"手动解决。 \n"
+" \n"
+"为避免这种情况，miniStudio会向每个开发者询问一个ID范围，以避免开发者自动生成的ID"
+"发生冲突 \n"
+"miniStudio本身没有协作管理机制，开发者必须自己负责区分各自的范围。 \n"
+"如果miniStudio没有为当前开发者找到一个可用的范围，它将弹出一个窗口，并询问开发者"
+"提供一个范围\n"
+" \n"
+"每种类型的资源都需要一个ID范围：\n"
+" UI： 主窗口资源；\n"
+" Control：控件资源；\n"
+" Image：图片资源；\n"
+" Renderer：渲染器资源；\n"
+" Renderer-Set：渲染器集合资源；\n"
+" Text：有名字的文本资源；\n"
+" Anonymouse Text：匿名文本资源，这种资源只在内部使用。"
+
+#: ../../mainframe/newidrange.cpp:215
+msgid "ID Range Help"
+msgstr "ID范围帮助"
+
+#: ../../mainframe/dlgtmpls.c:49 ../../mainframe/dlgtmpls.c:206
+#: ../../tools/makemo/cfg.c:101 ../../tools/makemo/cfg.c:105
+msgid "Import"
+msgstr "导入"
+
+#: ../../mainframe/dlgtmpls.c:77
+msgid "Default font for project"
+msgstr ""
+
+#: ../../mainframe/dlgtmpls.c:91
+msgid "System device font name:"
+msgstr "系统设备字体："
+
+#: ../../mainframe/dlgtmpls.c:105
+msgid "Caption font:"
+msgstr "标题栏字体："
+
+#: ../../mainframe/dlgtmpls.c:119
+msgid "Client font:"
+msgstr "客户区字体："
+
+#: ../../mainframe/dlgtmpls.c:161 ../../mainframe/dlgtmpls.c:175
+#: ../../mainframe/dlgtmpls.c:1226 ../../mainframe/dlgtmpls.c:1368
+msgid "..."
+msgstr ""
+
+#: ../../mainframe/dlgtmpls.c:189
+msgid "Font Management"
+msgstr "字体管理"
+
+#: ../../mainframe/dlgtmpls.c:234
+msgid "IDB_IMG_FILENAME"
+msgstr ""
+
+#: ../../mainframe/dlgtmpls.c:248
+msgid "Input image ID name:"
+msgstr "请输入图片ID名："
+
+#: ../../mainframe/dlgtmpls.c:262
+msgid "Import Image Resource"
+msgstr "导入图片资源"
+
+#: ../../mainframe/dlgtmpls.c:307
+msgid "Input file name:"
+msgstr "请输入文件名："
+
+#: ../../mainframe/dlgtmpls.c:349
+msgid "Overwrite exist file"
+msgstr "覆盖已存在文件"
+
+#: ../../mainframe/dlgtmpls.c:363
+msgid "Please select a window template:"
+msgstr "请选择窗口模板："
+
+#: ../../mainframe/dlgtmpls.c:377
+msgid "New file ..."
+msgstr "新建..."
+
+#: ../../mainframe/dlgtmpls.c:422
+msgid "New LF renderer"
+msgstr "新建外观渲染器"
+
+#: ../../mainframe/dlgtmpls.c:436 ../../mainframe/dlgtmpls.c:579
+msgid "Renderer type:"
+msgstr "渲染器类型："
+
+#: ../../mainframe/dlgtmpls.c:450
+msgid "Control type:"
+msgstr "控件类型："
+
+#: ../../mainframe/dlgtmpls.c:464
+msgid "ID name:"
+msgstr "ID名："
+
+#: ../../mainframe/dlgtmpls.c:478
+msgid "IDR_"
+msgstr ""
+
+#: ../../mainframe/dlgtmpls.c:520
+msgid "Create New Renderer"
+msgstr "创建新外观渲染器"
+
+#: ../../mainframe/dlgtmpls.c:537
+msgid "New renderer set"
+msgstr "新建外观渲染器集合"
+
+#: ../../mainframe/dlgtmpls.c:593
+msgid "Set ID name:"
+msgstr "设置ID名："
+
+#: ../../mainframe/dlgtmpls.c:607
+msgid "IDRS_"
+msgstr ""
+
+#: ../../mainframe/dlgtmpls.c:635
+msgid "Create New Renderer Set"
+msgstr "创建新外观渲染器集"
+
+#: ../../mainframe/dlgtmpls.c:694
+msgid "Add Renderer to RdrSet"
+msgstr "添加外观渲染器到渲染器集中"
+
+#: ../../mainframe/dlgtmpls.c:725
+msgid "Select renderer:"
+msgstr "选择外观渲染器："
+
+#: ../../mainframe/dlgtmpls.c:767
+msgid "Set Default Renderer"
+msgstr "设置默认外观渲染器"
+
+#: ../../mainframe/dlgtmpls.c:840
+msgid "Width:"
+msgstr "宽度："
+
+#: ../../mainframe/dlgtmpls.c:854
+msgid "Depth:"
+msgstr "颜色深度："
+
+#: ../../mainframe/dlgtmpls.c:868
+msgid "Height:"
+msgstr "高度："
+
+#: ../../mainframe/dlgtmpls.c:896
+msgid "Set Screen Size"
+msgstr "设置屏幕大小"
+
+#: ../../mainframe/dlgtmpls.c:955
+msgid "Select language:"
+msgstr "选择语言："
+
+#: ../../mainframe/dlgtmpls.c:969
+msgid "Add Language"
+msgstr "添加语言"
+
+#: ../../mainframe/dlgtmpls.c:985 ../../mainframe/dlgtmpls.c:1114
+msgid "Add"
+msgstr "添加"
+
+#: ../../mainframe/dlgtmpls.c:1013
+msgid "Set Default"
+msgstr "设为默认"
+
+#: ../../mainframe/dlgtmpls.c:1027
+msgid "Set Current"
+msgstr "设为当前"
+
+#: ../../mainframe/dlgtmpls.c:1083 ../../tools/makemo/cfg.c:113
+msgid "Profile ..."
+msgstr "配置 ..."
+
+#: ../../mainframe/dlgtmpls.c:1142
+msgid "Modify"
+msgstr "修改"
+
+#: ../../mainframe/dlgtmpls.c:1156
+msgid "GO Source"
+msgstr "转到源码"
+
+#: ../../mainframe/dlgtmpls.c:1170
+msgid "Event Listener:"
+msgstr "事件监听者："
+
+#: ../../mainframe/dlgtmpls.c:1240
+msgid "Connect Events"
+msgstr "连接事件"
+
+#: ../../mainframe/dlgtmpls.c:1284
+msgid "Step 1: Select an event:"
+msgstr "步骤1：选择一个事件："
+
+#: ../../mainframe/dlgtmpls.c:1312
+msgid "Step 2: Input event name:"
+msgstr "步骤2：输入事件名："
+
+#: ../../mainframe/dlgtmpls.c:1340 ../../mainframe/dlgtmpls.c:1454
+msgid "Note: The event name must be a validate C language function name."
+msgstr "提示：事件名必须是有效的C函数名。"
+
+#: ../../mainframe/dlgtmpls.c:1382
+msgid "Select Event"
+msgstr "选择事件"
+
+#: ../../mainframe/dlgtmpls.c:1426
+msgid "Input event name:"
+msgstr "输入事件名："
+
+#: ../../mainframe/dlgtmpls.c:1440
+msgid "SlEdit2"
+msgstr ""
+
+#: ../../mainframe/dlgtmpls.c:1468
+msgid "Input event name"
+msgstr "输入事件名"
+
+#: ../../mainframe/dlgtmpls.c:1513
+msgid "File path:"
+msgstr "路径："
+
+#: ../../mainframe/dlgtmpls.c:1541
+msgid "UP"
+msgstr "上"
+
+#: ../../mainframe/dlgtmpls.c:1569
+msgid "File name:"
+msgstr "文件名："
+
+#: ../../mainframe/dlgtmpls.c:1583
+msgid "File type:"
+msgstr "文件类型："
+
+#: ../../mainframe/dlgtmpls.c:1625
+msgid "Hide file"
+msgstr "隐藏文件"
+
+#: ../../mainframe/dlgtmpls.c:1639
+msgid "Open Or Save File"
+msgstr "打开/保存文件"
+
+#: ../../mainframe/dlgtmpls.c:1656
+msgid "Res type:"
+msgstr "资源类型："
+
+#: ../../mainframe/dlgtmpls.c:1698 ../../mainframe/dlgtmpls.c:1952
+msgid "New range"
+msgstr "新范围"
+
+#: ../../mainframe/dlgtmpls.c:1712
+msgid "Exit"
+msgstr "退出"
+
+#: ../../mainframe/dlgtmpls.c:1726
+msgid "Extend range"
+msgstr "扩展范围"
+
+#: ../../mainframe/dlgtmpls.c:1740
+msgid "ID range editor"
+msgstr "ID范围编辑器"
+
+#: ../../mainframe/dlgtmpls.c:1770
+msgid "Usable range:"
+msgstr "空闲范围："
+
+#: ../../mainframe/dlgtmpls.c:1826 ../../mainframe/dlgtmpls.c:1996
+msgid "~"
+msgstr ""
+
+#: ../../mainframe/dlgtmpls.c:1854
+msgid "Range:"
+msgstr "范围："
+
+#: ../../mainframe/dlgtmpls.c:1868
+msgid "User:"
+msgstr "开发者："
+
+#: ../../mainframe/dlgtmpls.c:1896
+msgid "Step 1: Select a usable range as you new range."
+msgstr "步骤1：为自己选择空闲的范围。"
+
+#: ../../mainframe/dlgtmpls.c:1910
+msgid ""
+"Step 2: Input a new range. You should avoid conflict with other developers"
+msgstr "步骤2：输入一个新范围。新范围应避免和其他开发者冲突。"
+
+#: ../../mainframe/dlgtmpls.c:1924
+msgid "Step 3: Select or input a developer name Who Would Use The Range"
+msgstr "步骤3：选择或输入一个用户名。"
+
+#: ../../mainframe/dlgtmpls.c:1938
+msgid "Learn more ..."
+msgstr "了解更多..."
+
+#: ../../mainframe/dlgtmpls.c:2038
+msgid "100<"
+msgstr ""
+
+#: ../../mainframe/dlgtmpls.c:2052
+msgid ">=1000"
+msgstr ""
+
+#: ../../mainframe/dlgtmpls.c:2066
+msgid "Extend Range"
+msgstr "扩展范围"
+
+#: ../../mainframe/dlgtmpls.c:2111
+msgid "Copyright (c) 2010 Beijing Feynman Software Technology Co., Ltd."
+msgstr "Copyright (c) 2010 北京飞漫软件技术有限公司"
+
+#: ../../mainframe/dlgtmpls.c:2125
+msgid "Version:"
+msgstr "版本："
+
+#: ../../mainframe/dlgtmpls.c:2139
+msgid "Build:"
+msgstr "构建号："
+
+#: ../../mainframe/dlgtmpls.c:2181
+msgid "A GUI Builder for MiniGUI (with mGNCS)."
+msgstr "MiniGUI（mGNCS）界面设计器"
+
+#: ../../mainframe/dlgtmpls.c:2195
+msgid "SN:"
+msgstr "序列号："
+
+#: ../../mainframe/dlgtmpls.c:2223
+msgid "About GUI Builder"
+msgstr "关于界面设计器"
+
+#: ../../mainframe/dlgtmpls.c:2268
+msgid "Select start window"
+msgstr "选择启动窗口"
+
+#: ../../mainframe/dlgtmpls.c:2296
+msgid "Select start window ..."
+msgstr "选择启动窗口 ..."
+
+#: ../../mainframe/extendidrange.cpp:73
+msgid "Please input the valid range ( min < max)"
+msgstr "请输入有效的范围（min < max）"
+
+#: ../../mainframe/extendidrange.cpp:80
+#, c-format
+msgid "The Min Value (%d) must be greater then or equal %d"
+msgstr "最小值(%d)不能小于%d"
+
+#: ../../mainframe/extendidrange.cpp:87
+#, c-format
+msgid "The Max Value  (%d) must be less then or equal %d"
+msgstr "最大值(%d)不能大于%d"
+
+#: ../../mainframe/extendidrange.cpp:94
+#, c-format
+msgid "The range (%d,%d] is unacceptable, please input the valid values"
+msgstr "范围 (%d, %d] 不能接受， 请输入可用值"
+
+#: ../../mainframe/select-project-type-dlg.cpp:42
+msgid "Select Project Type"
+msgstr "选择工程类型"
+
+#: ../../mainframe/select-project-type-dlg.cpp:132
+msgid "Please select the project type fristly!"
+msgstr "请先选择工程类型"
+
+#: ../../mainframe/select-project-type-dlg.cpp:140
+msgid "The project type is invalid, please select another one."
+msgstr "工程类型无效，请选择其它类型"
+
+#: ../../mainframe/select-project-type-dlg.cpp:149
+msgid "Fatel Error"
+msgstr "致命错误"
+
+#: ../../mainframe/select-project-type-dlg.cpp:149
+#, c-format
+msgid ""
+"Cannot open the configuration file \"%s\", unable to continue GUI Builder, "
+"Please check your configuration fil"
+msgstr "无法打开配置文件 \"%s\", 界面编辑器无法继续运行, 请检查配置文件。"
+
+#: ../../mainframe/idrange-editor.cpp:91
+msgid "Please select the correct resource type first."
+msgstr "请先选择正确的资源类型"
+
+#: ../../mainframe/idrange-editor.cpp:110
+msgid "Please select an ID range first"
+msgstr "请先选择ID范围"
+
+#: ../../mainframe/idrange-editor.cpp:118
+msgid "The current ID range is Null, cannot extend it"
+msgstr "当前ID范围为空，不能扩展"
+
+#: ../../tools/makemo/cfg.c:1 ../../tools/makemo/cfg.c:45
 msgid "File"
 msgstr "文件"
 
 #: ../../tools/makemo/cfg.c:2
 msgid "New         Ctrl+N"
-msgstr "新建       Ctrl+N"
+msgstr "新建        Ctrl+N"
 
 #: ../../tools/makemo/cfg.c:3
 msgid "Import UI   Ctrl+O"
-msgstr "导入界面   Ctrl+O"
+msgstr "导入UI      Ctrl+O"
 
 #: ../../tools/makemo/cfg.c:4
 msgid "Save        Ctrl+S"
-msgstr "保存      Ctrl+S"
+msgstr "保存        Ctrl+S"
 
 #: ../../tools/makemo/cfg.c:5
 msgid "Close       Ctrl+W"
-msgstr "关闭      Ctrl+W"
+msgstr "关闭        Ctrl+W"
 
 #: ../../tools/makemo/cfg.c:6
 msgid "Exit        Ctrl+Q"
-msgstr "退出      Ctrl+Q"
+msgstr "退出        Ctrl+Q"
 
-#: ../../tools/makemo/cfg.c:7 ../../tools/makemo/cfg.c:129
+#: ../../tools/makemo/cfg.c:7 ../../tools/makemo/cfg.c:130
 msgid "Edit"
 msgstr "编辑"
 
 #: ../../tools/makemo/cfg.c:8
 msgid "Undo        Ctrl+Z"
-msgstr "取消      Ctrl+Z"
+msgstr "撤销        Ctrl+Z"
 
 #: ../../tools/makemo/cfg.c:9
 msgid "Redo        Ctrl+Y"
-msgstr "重做      Ctrl+Y"
+msgstr "重做        Ctrl+Y"
 
 #: ../../tools/makemo/cfg.c:10
 msgid "Copy        Ctrl+C"
-msgstr "复制      Ctrl+C"
+msgstr "复制        Ctrl+C"
 
 #: ../../tools/makemo/cfg.c:11
 msgid "Cut         Ctrl+X"
-msgstr "剪切      Ctrl+X"
+msgstr "剪切        Ctrl+X"
 
 #: ../../tools/makemo/cfg.c:12
 msgid "Paste       Ctrl+V"
-msgstr "粘贴      Ctrl+V"
+msgstr "粘贴        Ctrl+V"
 
 #: ../../tools/makemo/cfg.c:13
 msgid "Delete      Ctrl+D"
-msgstr "删除      Ctrl+D"
+msgstr "删除        Ctrl+D"
 
 #: ../../tools/makemo/cfg.c:14
 msgid "Advance"
@@ -125,987 +941,581 @@ msgstr "高级"
 
 #: ../../tools/makemo/cfg.c:15
 msgid "ID Range Manager..."
-msgstr "ID 范围管理器"
+msgstr "ID范围管理..."
 
 #: ../../tools/makemo/cfg.c:16
+msgid "Generate mgncs.cfg's incore resource "
+msgstr "生成mgncs.cfg的内建资源"
+
+#: ../../tools/makemo/cfg.c:17
+msgid "Generate resource package's incore resource "
+msgstr "生成资源包的内建资源"
+
+#: ../../tools/makemo/cfg.c:18
 msgid "Help"
 msgstr "帮助"
 
-#: ../../tools/makemo/cfg.c:17
+#: ../../tools/makemo/cfg.c:19
 msgid "About           "
-msgstr "关于         "
+msgstr "关于 "
 
-#: ../../tools/makemo/cfg.c:18
+#: ../../tools/makemo/cfg.c:20
 msgid "SetValue Menu"
 msgstr "设置值 菜单"
 
-#: ../../tools/makemo/cfg.c:19
-msgid "Set Default Value"
-msgstr "设置默认值"
+#: ../../tools/makemo/cfg.c:21
+msgid "Set default value"
+msgstr "恢复默认属性"
 
-#: ../../tools/makemo/cfg.c:20
-msgid "Set All Default Value"
-msgstr "设置所有默认值"
+#: ../../tools/makemo/cfg.c:22
+msgid "Set all default value"
+msgstr "恢复所有默认属性"
 
-#: ../../tools/makemo/cfg.c:21 ../../tools/makemo/cfg.c:26
+#: ../../tools/makemo/cfg.c:23 ../../tools/makemo/cfg.c:28
 msgid "UI"
-msgstr "界面"
+msgstr "窗体"
 
-#: ../../tools/makemo/cfg.c:22 ../../tools/makemo/cfg.c:77
-#: ../../tools/makemo/cfg.c:84 ../../tools/makemo/cfg.c:126
+#: ../../tools/makemo/cfg.c:24 ../../tools/makemo/cfg.c:79
+#: ../../tools/makemo/cfg.c:88 ../../tools/makemo/cfg.c:128
 msgid "Renderer"
-msgstr "渲染器"
+msgstr "外观渲染器"
 
-#: ../../tools/makemo/cfg.c:23 ../../tools/makemo/cfg.c:94
-#: ../../tools/makemo/cfg.c:95 ../../tools/makemo/cfg.c:144
+#: ../../tools/makemo/cfg.c:25 ../../tools/makemo/cfg.c:97
+#: ../../tools/makemo/cfg.c:98 ../../tools/makemo/cfg.c:147
 msgid "Image"
 msgstr "图片"
 
-#: ../../tools/makemo/cfg.c:24 ../../tools/makemo/cfg.c:104
-#: ../../tools/makemo/cfg.c:105 ../../tools/makemo/cfg.c:111
+#: ../../tools/makemo/cfg.c:26 ../../tools/makemo/cfg.c:107
+#: ../../tools/makemo/cfg.c:108 ../../tools/makemo/cfg.c:114
 msgid "Text"
-msgstr "文字"
+msgstr "文本"
 
-#: ../../tools/makemo/cfg.c:25 ../../tools/makemo/cfg.c:116
+#: ../../tools/makemo/cfg.c:27 ../../tools/makemo/cfg.c:119
 msgid "Res ID"
 msgstr "资源ID"
 
-#: ../../tools/makemo/cfg.c:27
+#: ../../tools/makemo/cfg.c:29
 msgid "Prop Menu"
 msgstr "属性菜单"
 
-#: ../../tools/makemo/cfg.c:28
+#: ../../tools/makemo/cfg.c:30
 msgid "Add Page"
 msgstr "添加页"
 
-#: ../../tools/makemo/cfg.c:29
+#: ../../tools/makemo/cfg.c:31
 msgid "Delete Page"
 msgstr "删除页"
 
-#: ../../tools/makemo/cfg.c:30
-msgid "Left     Ctrl+Shift+L"
-msgstr "左对齐   Ctrl+Shift+L"
-
-#: ../../tools/makemo/cfg.c:31
-msgid "Right    Ctrl+Shift+R"
-msgstr "右对齐   Ctrl+Shift+R"
-
 #: ../../tools/makemo/cfg.c:32
-msgid "Center   Ctrl+Shift+C"
-msgstr "中间对齐    Ctrl+Shift+C"
+msgid "Left     Ctrl+Shift+L"
+msgstr "左对其              Ctrl+Shift+L"
 
 #: ../../tools/makemo/cfg.c:33
-msgid "Top      Ctrl+Shift+T"
-msgstr "顶对齐   Ctrl+Shift+T"
+msgid "Right    Ctrl+Shift+R"
+msgstr "右对齐              Ctrl+Shift+R"
 
 #: ../../tools/makemo/cfg.c:34
-msgid "Bottom   Ctrl+Shift+B"
-msgstr "底对齐   Ctrl+Shift+B"
+msgid "Center   Ctrl+Shift+C"
+msgstr "居中对齐            Ctrl+Shift+C"
 
 #: ../../tools/makemo/cfg.c:35
-msgid "Middle   Ctrl+Shift+M"
-msgstr "居中对齐    Ctrl+Shift+M"
+msgid "Top      Ctrl+Shift+T"
+msgstr "上对齐             Ctrl+Shift+T"
 
 #: ../../tools/makemo/cfg.c:36
-msgid "Spread Out Horizontally   Ctrl+Shift+H"
-msgstr "水平等间距对齐    Ctrl+Shift+H"
+msgid "Bottom   Ctrl+Shift+B"
+msgstr "下对齐             Ctrl+shift+B"
 
 #: ../../tools/makemo/cfg.c:37
-msgid "Spread Out Vertically     Ctrl+Shift+V"
-msgstr "竖直等间距对齐    Ctrl+Shift+V"
+msgid "Middle   Ctrl+Shift+M"
+msgstr "中对齐             Ctrl+Shift+B"
 
 #: ../../tools/makemo/cfg.c:38
-msgid "Same Width   Ctrl+Shift+W"
-msgstr "等宽对齐    Ctrl+Shift+W"
+msgid "Equal Horizontal Spacing   Ctrl+Shift+H"
+msgstr "水平等间距          Ctrl+Shift+H"
 
 #: ../../tools/makemo/cfg.c:39
-msgid "Same Height  Ctrl+Shift+I"
-msgstr "等高对齐    Ctrl+Shift+I"
+msgid "Equal Vertical Spacing     Ctrl+Shift+V"
+msgstr "垂直等间距          Ctrl+Shift+V"
 
 #: ../../tools/makemo/cfg.c:40
-msgid "Tab Menu"
-msgstr "标签菜单"
+msgid "Same Width   Ctrl+Shift+W"
+msgstr "等宽               Ctrl+Shift+W"
 
 #: ../../tools/makemo/cfg.c:41
-msgid "Move Up"
-msgstr "向上移动"
+msgid "Same Height  Ctrl+Shift+I"
+msgstr "等高               Ctrl+Shift+I"
 
 #: ../../tools/makemo/cfg.c:42
-msgid "Move Down"
-msgstr "向下移动"
+msgid "Tab Menu"
+msgstr ""
+
+#: ../../tools/makemo/cfg.c:43
+msgid "Move Up"
+msgstr "上移"
 
 #: ../../tools/makemo/cfg.c:44
-msgid "Export Template"
-msgstr "导出模板"
-
-#: ../../tools/makemo/cfg.c:45
-msgid "Remove   "
-msgstr "删除    "
+msgid "Move Down"
+msgstr "下移"
 
 #: ../../tools/makemo/cfg.c:46
+msgid "Export Template"
+msgstr "导出为模板"
+
+#: ../../tools/makemo/cfg.c:47
+msgid "Remove   "
+msgstr "移除"
+
+#: ../../tools/makemo/cfg.c:48
 msgid "Format"
 msgstr "格式"
 
-#: ../../tools/makemo/cfg.c:47
-msgid "Action"
-msgstr "操作"
-
-#: ../../tools/makemo/cfg.c:48
-msgid "Preview              Ctrl+Shift+P "
-msgstr "预览           Ctrl+Shift+P"
-
 #: ../../tools/makemo/cfg.c:49
-msgid "Save Dialog Template Source "
-msgstr "保存对话模板"
+msgid "Action"
+msgstr "动作"
 
 #: ../../tools/makemo/cfg.c:50
-msgid "Set Default Renderer Ctrl+Shift+D "
-msgstr "设置默认渲染器    Ctrl+Shift+D"
+msgid "Preview              Ctrl+Shift+P "
+msgstr "预览                 Ctrl+Shift+P"
 
 #: ../../tools/makemo/cfg.c:51
-msgid "Set Screen Size      Ctrl+Shift+S "
-msgstr "设置屏幕大小    Ctrl+Shift+S"
+msgid "Save Dialog Template Source "
+msgstr "保存对话框模板源码"
 
 #: ../../tools/makemo/cfg.c:52
-msgid "Connect Events       Ctrl+Shift+E "
-msgstr "连接事件        Ctrl+Shift+E"
+msgid "Set Default Renderer Ctrl+Shift+D "
+msgstr "设置默认外观渲染器   Ctrl+Shift+D"
 
 #: ../../tools/makemo/cfg.c:53
-msgid "Font Management      Ctrl+Shift+F "
-msgstr "字体管理        Ctrl+Shift+F"
+msgid "Set Screen Size      Ctrl+Shift+S "
+msgstr "设置屏幕大小         Ctrl+Shift+S"
 
 #: ../../tools/makemo/cfg.c:54
-msgid "Set As Start Window"
-msgstr "设置主窗口"
+msgid "Connect Events       Ctrl+Shift+E "
+msgstr "事件连接             Ctrl+Shift+E"
 
 #: ../../tools/makemo/cfg.c:55
-msgid "Show and Snap Grid   Ctrl+Shift+G "
-msgstr "显示网格        Ctrl+Shift+G"
+msgid "Font Management      Ctrl+Shift+F "
+msgstr "字体管理             Ctrl+Shift+F"
 
-#: ../../tools/makemo/cfg.c:56
+#: ../../tools/makemo/cfg.c:57
+msgid "Show and Snap Grid   Ctrl+Shift+G "
+msgstr "显示并对齐网格       Ctrl+Shift+G"
+
+#: ../../tools/makemo/cfg.c:58
 msgid "New"
 msgstr "新建"
 
-#: ../../tools/makemo/cfg.c:57
+#: ../../tools/makemo/cfg.c:59
 msgid "Import UI"
-msgstr "导入界面"
+msgstr "导入UI"
 
-#: ../../tools/makemo/cfg.c:58 ../../tools/makemo/cfg.c:86
-#: ../../tools/makemo/cfg.c:100 ../../tools/makemo/cfg.c:112
-#: ../../tools/makemo/cfg.c:117
+#: ../../tools/makemo/cfg.c:60 ../../tools/makemo/cfg.c:88
+#: ../../tools/makemo/cfg.c:102 ../../tools/makemo/cfg.c:114
+#: ../../tools/makemo/cfg.c:119
 msgid "Save"
 msgstr "保存"
 
-#: ../../tools/makemo/cfg.c:59
+#: ../../tools/makemo/cfg.c:61
 msgid "Close"
 msgstr "关闭"
 
-#: ../../tools/makemo/cfg.c:60 ../../tools/makemo/cfg.c:97
-#: ../../tools/makemo/cfg.c:101
+#: ../../tools/makemo/cfg.c:62 ../../tools/makemo/cfg.c:99
+#: ../../tools/makemo/cfg.c:103
 msgid "Remove"
-msgstr "删除"
+msgstr "移除"
 
-#: ../../tools/makemo/cfg.c:61
+#: ../../tools/makemo/cfg.c:63
 msgid "Undo"
-msgstr "取消"
+msgstr "撤销"
 
-#: ../../tools/makemo/cfg.c:62
+#: ../../tools/makemo/cfg.c:64
 msgid "Redo"
 msgstr "重做"
 
-#: ../../tools/makemo/cfg.c:63 ../../tools/makemo/cfg.c:87
+#: ../../tools/makemo/cfg.c:65 ../../tools/makemo/cfg.c:89
 msgid "Copy"
 msgstr "复制"
 
-#: ../../tools/makemo/cfg.c:64 ../../tools/makemo/cfg.c:88
+#: ../../tools/makemo/cfg.c:66 ../../tools/makemo/cfg.c:90
 msgid "Cut"
 msgstr "剪切"
 
-#: ../../tools/makemo/cfg.c:65 ../../tools/makemo/cfg.c:89
+#: ../../tools/makemo/cfg.c:67 ../../tools/makemo/cfg.c:91
 msgid "Paste"
 msgstr "粘贴"
 
-#: ../../tools/makemo/cfg.c:66 ../../tools/makemo/cfg.c:90
-#: ../../uieditor/uieditor.cpp:673
-msgid "Delete"
-msgstr "删除"
-
-#: ../../tools/makemo/cfg.c:67
+#: ../../tools/makemo/cfg.c:69
 msgid "Left"
 msgstr "左对齐"
 
-#: ../../tools/makemo/cfg.c:68
+#: ../../tools/makemo/cfg.c:70
 msgid "Right"
 msgstr "右对齐"
 
-#: ../../tools/makemo/cfg.c:69
-msgid "Center"
-msgstr "中间对齐"
-
-#: ../../tools/makemo/cfg.c:70
-msgid "Top"
-msgstr "顶对齐"
-
 #: ../../tools/makemo/cfg.c:71
-msgid "Bottom"
-msgstr "底对齐"
-
-#: ../../tools/makemo/cfg.c:72
-msgid "Middle"
+msgid "Center"
 msgstr "居中对齐"
 
+#: ../../tools/makemo/cfg.c:72
+msgid "Top"
+msgstr "上对齐"
+
 #: ../../tools/makemo/cfg.c:73
-msgid "Spread Out Horizontally"
-msgstr "水平等间距对齐"
+msgid "Bottom"
+msgstr "下对齐"
 
 #: ../../tools/makemo/cfg.c:74
-msgid "Spread Out Vertically"
-msgstr "竖直等间距对齐"
+msgid "Middle"
+msgstr "中对齐"
 
 #: ../../tools/makemo/cfg.c:75
-msgid "Same Width"
-msgstr "等宽对齐"
+msgid "Equal Horizontal Spacing"
+msgstr "水平等间距"
 
 #: ../../tools/makemo/cfg.c:76
-msgid "Same Height"
-msgstr "等高对齐"
+msgid "Equal Vertical Spacing"
+msgstr "垂直等间距"
+
+#: ../../tools/makemo/cfg.c:77
+msgid "Same Width"
+msgstr "等宽"
 
 #: ../../tools/makemo/cfg.c:78
-msgid "Renderer PopMenu"
-msgstr "渲染器 弹出菜单"
+msgid "Same Height"
+msgstr "等高"
 
-#: ../../tools/makemo/cfg.c:79
-msgid "New RdrSet"
+#: ../../tools/makemo/cfg.c:80
+msgid "Renderer PopMenu"
+msgstr ""
+
+#: ../../tools/makemo/cfg.c:81
+msgid "New Renderer Set"
 msgstr "新建渲染器集"
 
-#: ../../tools/makemo/cfg.c:80 ../../tools/makemo/cfg.c:91
+#: ../../tools/makemo/cfg.c:82 ../../tools/makemo/cfg.c:94
 msgid "New Renderer"
 msgstr "新建渲染器"
 
-#: ../../tools/makemo/cfg.c:81 ../../tools/makemo/cfg.c:93
+#: ../../tools/makemo/cfg.c:83 ../../tools/makemo/cfg.c:96
 msgid "Add Renderer"
 msgstr "添加渲染器"
 
-#: ../../tools/makemo/cfg.c:82
-msgid "RenererSet"
-msgstr "渲染器集"
-
-#: ../../tools/makemo/cfg.c:83
-msgid "Delete RdrSet"
-msgstr "删除渲染器集"
-
-#: ../../tools/makemo/cfg.c:85 ../../tools/makemo/cfg.c:92
+#: ../../tools/makemo/cfg.c:84 ../../tools/makemo/cfg.c:95
 msgid "Delete Renderer"
 msgstr "删除渲染器"
 
-#: ../../tools/makemo/cfg.c:96
+#: ../../tools/makemo/cfg.c:85
+msgid "Delete Renderer Set"
+msgstr "删除渲染器集"
+
+#: ../../tools/makemo/cfg.c:86
+msgid "Render Set"
+msgstr "渲染器集"
+
+#: ../../tools/makemo/cfg.c:99
 msgid "Sort"
-msgstr "排列"
+msgstr "排序"
 
-#: ../../tools/makemo/cfg.c:98 ../../tools/makemo/cfg.c:102
-#: ../../imgeditor/imgeditor.cpp:184
-msgid "Import"
-msgstr "导入"
-
-#: ../../tools/makemo/cfg.c:99 ../../tools/makemo/cfg.c:103
+#: ../../tools/makemo/cfg.c:102 ../../tools/makemo/cfg.c:106
 msgid "Import All"
 msgstr "导入所有"
 
-#: ../../tools/makemo/cfg.c:106 ../../tools/makemo/cfg.c:113
+#: ../../tools/makemo/cfg.c:109 ../../tools/makemo/cfg.c:116
 msgid "New Text"
 msgstr "新建文本"
 
-#: ../../tools/makemo/cfg.c:107 ../../tools/makemo/cfg.c:114
-msgid "Del Text"
-msgstr "删除文本"
+#: ../../tools/makemo/cfg.c:110 ../../tools/makemo/cfg.c:117
+msgid "Delete Text"
+msgstr "删除文件"
 
-#: ../../tools/makemo/cfg.c:108
+#: ../../tools/makemo/cfg.c:111
 msgid "Translate"
 msgstr "翻译"
 
-#: ../../tools/makemo/cfg.c:109
+#: ../../tools/makemo/cfg.c:112
 msgid "Translate All"
 msgstr "翻译所有"
 
-#: ../../tools/makemo/cfg.c:110
-msgid "Profile ..."
-msgstr "设置 ..."
-
-#: ../../tools/makemo/cfg.c:115
-msgid "Profile"
-msgstr "设置"
-
 #: ../../tools/makemo/cfg.c:118
-msgid "Directory Image View"
-msgstr "目录图片浏览"
-
-#: ../../tools/makemo/cfg.c:119
-msgid "Resource Image View"
-msgstr "资源图片浏览"
-
-#: ../../tools/makemo/cfg.c:120
-msgid "Standard"
-msgstr "标准模块"
+msgid "Profile"
+msgstr "配置"
 
 #: ../../tools/makemo/cfg.c:121
-msgid "Phone"
-msgstr "手机模块"
+msgid "Directory Image View"
+msgstr "本地图片目录"
 
 #: ../../tools/makemo/cfg.c:122
-msgid "Navigator"
-msgstr "浏览"
+msgid "Resource Image View"
+msgstr "资源图片目录"
 
 #: ../../tools/makemo/cfg.c:123
-msgid "Struct View"
-msgstr "结构浏览"
+msgid "Standard"
+msgstr "标准控件"
 
 #: ../../tools/makemo/cfg.c:124
+msgid "Navigator"
+msgstr "导航面板"
+
+#: ../../tools/makemo/cfg.c:125
+msgid "Struct View"
+msgstr "结构面板"
+
+#: ../../tools/makemo/cfg.c:126
 msgid "Property"
 msgstr "属性"
 
-#: ../../tools/makemo/cfg.c:125
+#: ../../tools/makemo/cfg.c:127
 msgid "Event"
 msgstr "事件"
 
-#: ../../tools/makemo/cfg.c:127
-msgid "Labels"
-msgstr "标签"
-
 #: ../../tools/makemo/cfg.c:128
-msgid "Buttons"
-msgstr "按键"
+msgid "Labels"
+msgstr "标签组"
 
-#: ../../tools/makemo/cfg.c:130
-msgid "Containers"
-msgstr "容器"
+#: ../../tools/makemo/cfg.c:129
+msgid "Buttons"
+msgstr "按钮组"
 
 #: ../../tools/makemo/cfg.c:131
-msgid "Listboxes"
-msgstr "列表框"
+msgid "Containers"
+msgstr "容器组"
 
 #: ../../tools/makemo/cfg.c:132
+msgid "Listboxes"
+msgstr "列表组"
+
+#: ../../tools/makemo/cfg.c:133
 msgid "Progress Bar"
 msgstr "进度条"
 
-#: ../../tools/makemo/cfg.c:133
+#: ../../tools/makemo/cfg.c:134
 msgid "Track Bar"
 msgstr "轨迹条"
 
-#: ../../tools/makemo/cfg.c:134
+#: ../../tools/makemo/cfg.c:135
 msgid "Scroll Bar"
 msgstr "滚动条"
 
-#: ../../tools/makemo/cfg.c:135
-msgid "Spinner"
-msgstr "循环框"
-
 #: ../../tools/makemo/cfg.c:136
-msgid "Invisible components"
-msgstr "不可见控件"
-
-#: ../../tools/makemo/cfg.c:137
-msgid "Advance Controls"
-msgstr "高级控件"
+msgid "Spinner"
+msgstr "旋钮"
 
 #: ../../tools/makemo/cfg.c:138
+msgid "Advance Controls"
+msgstr "高级控件组"
+
+#: ../../tools/makemo/cfg.c:139
 msgid "IME Controls"
-msgstr "输入法控件"
+msgstr "IME控件组"
 
-#: ../../tools/makemo/cfg.c:140 ../../tools/makemo/cfg.c:176
+#: ../../tools/makemo/cfg.c:140
+msgid "Deprecated Controls"
+msgstr "已弃用控件组"
+
+#: ../../tools/makemo/cfg.c:142 ../../tools/makemo/cfg.c:180
 msgid "No Control"
-msgstr "无控件"
+msgstr "指针"
 
-#: ../../tools/makemo/cfg.c:141
+#: ../../tools/makemo/cfg.c:143
 msgid "Label"
 msgstr "标签"
 
-#: ../../tools/makemo/cfg.c:142
+#: ../../tools/makemo/cfg.c:144
 msgid "LED Label"
-msgstr "LED 标签"
-
-#: ../../tools/makemo/cfg.c:143
-msgid "Rectangle"
-msgstr "长方形"
+msgstr "LED标签"
 
 #: ../../tools/makemo/cfg.c:145
-msgid "Group Box"
-msgstr "群组框"
-
-#: ../../tools/makemo/cfg.c:146
-msgid "Horz Separator"
-msgstr "水平分隔线"
+msgid "Rectangle"
+msgstr "矩形"
 
 #: ../../tools/makemo/cfg.c:147
-msgid "Vert Separator"
-msgstr "竖直分隔线"
+msgid "Group Box"
+msgstr "分组框"
 
 #: ../../tools/makemo/cfg.c:148
-msgid "Push Button"
-msgstr "按键"
+msgid "Horz Separator"
+msgstr "水平分割条"
 
 #: ../../tools/makemo/cfg.c:149
-msgid "Check Button"
-msgstr "选择按键"
+msgid "Vert Separator"
+msgstr "垂直分割条"
 
 #: ../../tools/makemo/cfg.c:150
-msgid "Radio Button"
-msgstr "多选按键"
+msgid "Push Button"
+msgstr "普通按钮"
 
 #: ../../tools/makemo/cfg.c:151
-msgid "Menu Button"
-msgstr "菜单按键"
+msgid "Check Button"
+msgstr "复选选择"
 
 #: ../../tools/makemo/cfg.c:152
-msgid "Color Button"
-msgstr "颜色按键"
+msgid "Radio Button"
+msgstr "单选按钮"
 
 #: ../../tools/makemo/cfg.c:153
-msgid "Button Group"
-msgstr "按键组"
+msgid "Menu Button"
+msgstr "菜单按钮"
 
 #: ../../tools/makemo/cfg.c:154
-msgid "Single Line Edit"
-msgstr "单行编辑"
+msgid "Color Button"
+msgstr "颜色选择按钮"
 
 #: ../../tools/makemo/cfg.c:155
-msgid "Multiple Line Edit"
-msgstr "多行编辑"
+msgid "Button Group"
+msgstr "按钮分组框"
 
 #: ../../tools/makemo/cfg.c:156
+msgid "Single Line Edit"
+msgstr "单行文本框"
+
+#: ../../tools/makemo/cfg.c:157
+msgid "TextEditor"
+msgstr "文本框"
+
+#: ../../tools/makemo/cfg.c:158
 msgid "Container"
 msgstr "容器"
 
-#: ../../tools/makemo/cfg.c:157
-msgid "Property Sheet"
-msgstr "属性表"
-
-#: ../../tools/makemo/cfg.c:158
-msgid "Panel"
-msgstr "平板"
-
 #: ../../tools/makemo/cfg.c:159
+msgid "Property Sheet"
+msgstr "属性页"
+
+#: ../../tools/makemo/cfg.c:160
+msgid "Panel"
+msgstr "面板"
+
+#: ../../tools/makemo/cfg.c:161
 msgid "Listbox"
 msgstr "列表框"
 
-#: ../../tools/makemo/cfg.c:160
-msgid "Combobox"
-msgstr "多选框"
-
-#: ../../tools/makemo/cfg.c:161
-msgid "Horz Progress Bar"
-msgstr "水平进度条"
-
 #: ../../tools/makemo/cfg.c:162
-msgid "Vert Progress Bar"
-msgstr "竖直进度条"
+msgid "Combobox"
+msgstr "组合框"
 
 #: ../../tools/makemo/cfg.c:163
-msgid "Horz Track Bar"
-msgstr "水平轨迹条"
-
-#: ../../tools/makemo/cfg.c:164
-msgid "Vert Track Bar"
-msgstr "竖直轨迹条"
-
-#: ../../tools/makemo/cfg.c:165
-msgid "Horz Scroll Bar"
-msgstr "水平滚动条"
-
-#: ../../tools/makemo/cfg.c:166
-msgid "Vert Scroll Bar"
-msgstr "竖直滚动条"
-
-#: ../../tools/makemo/cfg.c:167
-msgid "Horz Spinner"
-msgstr "水平循环框"
-
-#: ../../tools/makemo/cfg.c:168
-msgid "Vert Spinner"
-msgstr "竖直循环框"
-
-#: ../../tools/makemo/cfg.c:169
-msgid "Spin Box"
-msgstr "循环框"
-
-#: ../../tools/makemo/cfg.c:170
-msgid "Timer"
-msgstr "定时器"
-
-#: ../../tools/makemo/cfg.c:171
-msgid "Month Calendar"
-msgstr "日历"
-
-#: ../../tools/makemo/cfg.c:172
-msgid "Icon View"
-msgstr "图标窗口"
-
-#: ../../tools/makemo/cfg.c:173
-msgid "List View"
-msgstr "列表窗口"
-
-#: ../../tools/makemo/cfg.c:174
-msgid "Animate"
-msgstr "动画"
-
-#: ../../tools/makemo/cfg.c:175
-msgid "Word Selection"
-msgstr "字选择"
-
-#: ../../tools/makemo/cfg.c:177
 msgid "List"
 msgstr "列表"
 
+#: ../../tools/makemo/cfg.c:164
+msgid "Horz Progress Bar"
+msgstr "水平进度条"
+
+#: ../../tools/makemo/cfg.c:165
+msgid "Vert Progress Bar"
+msgstr "垂直进度条"
+
+#: ../../tools/makemo/cfg.c:166
+msgid "Horz Track Bar"
+msgstr "水平轨迹条"
+
+#: ../../tools/makemo/cfg.c:167
+msgid "Vert Track Bar"
+msgstr "垂直轨迹条"
+
+#: ../../tools/makemo/cfg.c:168
+msgid "Horz Scroll Bar"
+msgstr "水平滚动条"
+
+#: ../../tools/makemo/cfg.c:169
+msgid "Vert Scroll Bar"
+msgstr "垂直滚动条"
+
+#: ../../tools/makemo/cfg.c:170
+msgid "Horz Spinner"
+msgstr "水平旋钮"
+
+#: ../../tools/makemo/cfg.c:171
+msgid "Vert Spinner"
+msgstr "垂直旋钮"
+
+#: ../../tools/makemo/cfg.c:172
+msgid "Spin Box"
+msgstr "旋钮框"
+
+#: ../../tools/makemo/cfg.c:173
+msgid "Timer"
+msgstr "定时器"
+
+#: ../../tools/makemo/cfg.c:174
+msgid "Month Calendar"
+msgstr "月历"
+
+#: ../../tools/makemo/cfg.c:175
+msgid "Icon View"
+msgstr "图标视图"
+
+#: ../../tools/makemo/cfg.c:176
+msgid "List View"
+msgstr "列表视图"
+
+#: ../../tools/makemo/cfg.c:177
+msgid "Animate"
+msgstr "动画"
+
 #: ../../tools/makemo/cfg.c:178
+msgid "Word Selection"
+msgstr "文字选择"
+
+#: ../../tools/makemo/cfg.c:179
+msgid "Multiple Line Edit"
+msgstr "多行文本框"
+
+#: ../../tools/makemo/cfg.c:182
 msgid "PhoneBar"
-msgstr "手机状态栏"
+msgstr "手机状态条"
 
-#: ../../uieditor/font-dialog.cpp:68
-msgid "Family:"
-msgstr "族:"
+#: ../../tools/makemo/cfg.c:21
+msgid "Set Default Value"
+msgstr "设置默认值"
 
-#: ../../uieditor/font-dialog.cpp:83
-msgid "Style:"
-msgstr "类型:"
+#: ../../tools/makemo/cfg.c:22
+msgid "Set All Default Value"
+msgstr "设置所有的默认值"
 
-#: ../../uieditor/font-dialog.cpp:98
-msgid "Size:"
-msgstr "大小:"
+#: ../../tools/makemo/cfg.c:138
+msgid "Invisible components"
+msgstr "不可见组件组"
 
-#: ../../uieditor/font-dialog.cpp:113
-msgid "Effects"
-msgstr "效果"
+#: ../../tools/makemo/cfg.c:143
+msgid "Pointer"
+msgstr "指针"
 
-#: ../../uieditor/font-dialog.cpp:120
-msgid "Italic"
-msgstr "斜体"
-
-#: ../../uieditor/font-dialog.cpp:127
-msgid "Strikeout"
-msgstr "横贯线"
-
-#: ../../uieditor/font-dialog.cpp:134
-msgid "Underline"
-msgstr "下划线"
-
-#: ../../uieditor/font-dialog.cpp:141
-msgid "Charset"
-msgstr "字符集"
-
-#: ../../uieditor/font-dialog.cpp:156
-msgid "Flip"
-msgstr "翻转"
-
-#: ../../uieditor/font-dialog.cpp:171
-msgid "Sample"
-msgstr "示例"
-
-#: ../../uieditor/font-dialog.cpp:178 ../../uieditor/uieditor.cpp:1890
-#: ../../mainframe/select-project-type-dlg.cpp:66
-#: ../../mainframe/mainframe.cpp:288 ../../imgeditor/imgeditor.cpp:191
-msgid "Cancel"
-msgstr "退出"
-
-#: ../../uieditor/font-dialog.cpp:185
-msgid "Ok"
-msgstr "确定"
-
-#: ../../uieditor/font-dialog.cpp:195
-msgid "Font Selecting"
-msgstr "字体 选择"
-
-#: ../../uieditor/font-dialog.cpp:1362
-msgid "This font has been load !"
-msgstr "这个字体已经被加载!"
-
-#: ../../uieditor/font-dialog.cpp:1362
-msgid "Font existed"
-msgstr "字体存在"
-
-#: ../../uieditor/connect-events-wnd.cpp:111
-msgid ""
-"Please input a valid event name.\n"
-"It must be a C function name."
+#: ../../texteditor/textlistpanel.cpp:73
+msgid "Id"
 msgstr ""
-"请输入可用的事件名.\n"
-" 事件名必须是C函数名."
 
-#: ../../uieditor/connect-events-wnd.cpp:544
-msgid "Please select a sender"
-msgstr "请选择发送者"
+#: ../../texteditor/textlistpanel.cpp:74
+msgid "Default Text"
+msgstr "默认文本"
 
-#: ../../uieditor/connect-events-wnd.cpp:550
-msgid "Please select an event"
-msgstr "请选择事件"
+#: ../../texteditor/textlistpanel.cpp:75
+msgid "Current Text"
+msgstr "当前文本"
 
-#: ../../uieditor/fieldpanel.cpp:360
-msgid "Information"
+#: ../../texteditor/text-dlg.cpp:356
+msgid "Language"
+msgstr "语言"
+
+#: ../../texteditor/text-dlg.cpp:357
+msgid "Status"
+msgstr "状态"
+
+#: ../../mainframe/mainframe.cpp:356
+msgid "Message"
 msgstr "信息"
 
-#: ../../uieditor/fieldpanel.cpp:360
-msgid "Do you want clear all the Property? It cannot be recover?"
-msgstr "是否清空所有属性(无法恢复)?"
-
-#: ../../uieditor/proppanel.cpp:129 ../../uieditor/proppanel.cpp:139
-msgid "This ID has exist in the window!"
-msgstr "窗口中已存在此ID"
-
-#: ../../uieditor/proppanel.cpp:161
-#, c-format
-msgid "The Window Width must smaller than Screen Width(%d)"
-msgstr "窗口宽度必须小于屏幕宽度(%d)"
-
-#: ../../uieditor/proppanel.cpp:168
-#, c-format
-msgid "The Window Height must smaller than Screen Height(%d)"
-msgstr "窗口高度必须小于屏幕高度(%d)"
-
-#: ../../uieditor/uieditor.cpp:673
-#, c-format
-msgid "Do You Want Delete \"%s\" From Disk?"
-msgstr "是否将 \"%s\" 从硬盘删除 "
-
-#: ../../uieditor/uieditor.cpp:1395
-msgid "This ID is exist, please select another"
-msgstr "ID已存在, 请另选."
-
-#: ../../uieditor/uieditor.cpp:1416
-#, c-format
+#: ../../mainframe/mainframe.cpp:357
 msgid ""
-"This ID is Pre Defined ID,Cannot use! If Your want use this ID, Please "
-"Change Your ID Name As \"%s\""
-msgstr "此ID是预定义的, 不可使用! 如果仍想使用此ID, 请更改你的ID名为 \"%s\""
+"Your project is an old miniStudio project, it will be converted to new project "
+"format."
+msgstr "您的工程是老版本的miniStudio生成的，将被转为新的工程格式。"
 
-#: ../../uieditor/uieditor.cpp:1866
-msgid "Select Start Window"
-msgstr "选择开始窗口"
-
-#: ../../uieditor/uieditor.cpp:1882
-#: ../../mainframe/select-project-type-dlg.cpp:58
-#: ../../mainframe/mainframe.cpp:285
-msgid "OK"
-msgstr "确定"
-
-#: ../../uieditor/uieditor.cpp:1899
-#: ../../mainframe/select-project-type-dlg.cpp:75
-msgid "Select Start Window ...."
-msgstr "选择开始窗口 ..."
-
-#: ../../uieditor/uieditor.cpp:1958
-msgid "Please Select a Start Window"
-msgstr "请选择一个开始窗口"
-
-#: ../../uieditor/uieditor.cpp:2084
-msgid "Please Select Default Renderer"
-msgstr "请设置默认浏览器"
-
-#: ../../uieditor/edituipanel.cpp:2406
-msgid ""
-"The Value is invalidate or the control cannot accept this value now!\n"
-"Please check the value range or other properties"
-msgstr ""
-"值不可用或者控件不能使用该值!\n"
-" 请检查值范围或者其他属性."
-
-#: ../../uieditor/edituipanel.cpp:3813 ../../imgeditor/imgeditor.cpp:233
-msgid ""
-"Invalidate Name, ID name must start with a Alpha, and only include Alpha, "
-"'_', digit, e.g. IDB_IMAGE1"
-msgstr ""
-"不可用名, ID名必须大写开头, 并且只能包含大写字母, '_', 数字, 例如, IDB_IMAGE1"
-
-#: ../../uieditor/select-template.cpp:390
-msgid "Please Select A template First!"
-msgstr "请选择模板!"
-
-#: ../../uieditor/select-template.cpp:399
+#: ../../rdreditor/rdreditor.cpp:483
 #, c-format
-msgid "Cannot Create the New File \"%s\""
-msgstr "不能创建新文件 \"%s\""
+msgid "The '%s' is used by other resource, cann't cut it.\n"
+msgstr "'%s'已经被其他资源使用，不能剪切。\n"
 
-#: ../../uieditor/select-template.cpp:431
-msgid "Please Input Filename!"
-msgstr "请输入文件名"
-
-#: ../../uieditor/select-template.cpp:438
-msgid ""
-"The File Name is too Long, it will be cut. Do You Want Input a New File Name?"
-msgstr "文件名长度过长， 需调整. 是否输入一个新的文件名?"
-
-#: ../../uieditor/select-template.cpp:456
-#, c-format
-msgid "This File \"%s\" has opened, input another name!"
-msgstr "文件 \"%s\" 已被打开， 请输入其他文件名!"
-
-#: ../../uieditor/select-template.cpp:465
-#, c-format
-msgid "The File \"%s\" exits, Do you want overwrite it?"
-msgstr "文件 \"%s\" 已存在, 是否覆盖"
-
-#: ../../mainframe/newidrange.cpp:96
-#, c-format
-msgid "Free Range (For type : %s %s)"
-msgstr "可用范围 (类型: %s %s)"
-
-#: ../../mainframe/newidrange.cpp:137
-#, c-format
-msgid "Min(%d) must < Max(%d), please reinput them"
-msgstr "最小 (%d) 必须小于 最大(%d), 请重新输入"
-
-#: ../../mainframe/newidrange.cpp:144
-#, c-format
-msgid "The value of Min and max must be range (%d, %d]"
-msgstr "最小最大值的范围是 (%d, %d]"
-
-#: ../../mainframe/newidrange.cpp:154
-#, c-format
-msgid "ID Range %d ~ %d is invalid"
-msgstr "ID 范围 %d ~ %d 不可用"
-
-#: ../../mainframe/newidrange.cpp:166
-msgid "Query"
-msgstr "疑问"
-
-#: ../../mainframe/newidrange.cpp:166
-#, c-format
-msgid "user \"%s\" is not exist, auto create it?"
-msgstr "用户 \"%s\" 不存在， 是否自动创建?"
-
-#: ../../mainframe/newidrange.cpp:184
-msgid ""
-"When a team develop a project using mStudio and use SVN or CVS to manager "
-"the souce codes, It's very common that the resource info conflict caused by "
-"IDs. And It's hard to be resovled by mannually. \n"
-" \n"
-" \n"
-"To avoid this condation, mStudio ask a Range for every developer. Every "
-"developer just use the IDs in his ranges. \n"
-" \n"
-"Developer must distribute Range by himself, because mStudio don't known how "
-"to find an range which never conflict with others, So the Project Manager "
-"must distribute the ranges for every developer. \n"
-" \n"
-"If mStudio find that there are not any range for the current developer, "
-"mStudio would pop a window and ask developer to give a range. \n"
-" \n"
-"Every resource need a Range: \n"
-" UI:  for MainWindow; \n"
-" Control: for Controls; \n"
-" Image : for Images; \n"
-" Renderer: for Renderer Resource; \n"
-" Renderer-Set: for Renderer Set Resource; \n"
-" Text: for the Text Resource with a name; \n"
-" Anonymity Text: for the Anonymity Text Resource; "
-msgstr "测试文本"
-
-#: ../../mainframe/newidrange.cpp:210
-msgid "ID Range Help"
-msgstr "ID 范围帮助"
-
-#: ../../mainframe/extendidrange.cpp:73
-msgid "Please Input the valid range ( min < max)"
-msgstr "请输入可用范围 ( min < max)"
-
-#: ../../mainframe/extendidrange.cpp:80
-#, c-format
-msgid "The Min Value (%d) cannot less then %d"
-msgstr "最小值 (%d) 不能小于 %d"
-
-#: ../../mainframe/extendidrange.cpp:87
-#, c-format
-msgid "The Max Value  (%d) cannot geater then %d"
-msgstr "最大值 (%d) 不能大于 %d"
-
-#: ../../mainframe/extendidrange.cpp:94
-#, c-format
-msgid "The Range (%d,%d] is not accepted, please input the valid values"
-msgstr "范围 (%d, %d) 不能接受， 请输入可用值"
-
-#: ../../mainframe/idrange-editor.cpp:91
-msgid "Please Select the Right Resource Type Fristly"
-msgstr "请选择正确的资源类型"
-
-#: ../../mainframe/idrange-editor.cpp:110
-msgid "Please Select a IDRange firstly"
-msgstr "请选择ID范围"
-
-#: ../../mainframe/idrange-editor.cpp:118
-msgid "The Current IDRange is Null, cannot extend it"
-msgstr "目前ID范围为空, 不能扩展"
-
-#: ../../mainframe/select-project-type-dlg.cpp:42
-msgid "Select A Project Type"
-msgstr "请选择项目类型"
-
-#: ../../mainframe/select-project-type-dlg.cpp:122
-msgid "Please Select A Project Type Fristly!"
-msgstr "请先选择项目类型!"
-
-#: ../../mainframe/select-project-type-dlg.cpp:130
-msgid "This Project Type is Invalid, Please Selected Another!"
-msgstr "项目类型不可用, 请重新选择!"
-
-#: ../../mainframe/select-project-type-dlg.cpp:139
-msgid "Fatel Error"
-msgstr "致命错误"
-
-#: ../../mainframe/select-project-type-dlg.cpp:139
-#, c-format
-msgid ""
-"Cannot open the configuration file \"%s\", GUI Builder Cannot Continue, "
-"Please Check Your Configuration File"
-msgstr "无法打开配置文件 \"%s\", 界面编辑器无法继续运行, 请检查配置文件."
-
-#: ../../mainframe/mainframe.cpp:116
-msgid "mStudio is not authorized, fail to open multi-window project."
-msgstr "mStudio 未授权, 不能打开多窗口项目."
-
-#: ../../mainframe/mainframe.cpp:117
-msgid "mStudio is not authorized, don't support such multi-window operations."
-msgstr "mStudio 未授权, 不支持多窗口操作."
-
-#: ../../mainframe/mainframe.cpp:118
-msgid ""
-"The license has expired. For continued use, please visit www.minigui.com."
-msgstr "证书已过期. 如需继续使用, 请联系 www.minigui.com."
-
-#: ../../mainframe/mainframe.cpp:119
-msgid "Please make sure the softdog is connected."
-msgstr "请确认软件狗已连接."
-
-#: ../../mainframe/mainframe.cpp:221 ../../mainframe/mainframe.cpp:222
-msgid "MG GUI Builder 0.4"
-msgstr ""
-
-#: ../../mainframe/mainframe.cpp:280
-msgid "static"
-msgstr "静态"
-
-#: ../../mainframe/mainframe.cpp:285 ../../mainframe/mainframe.cpp:288
-msgid "button"
-msgstr "按键"
-
-#: ../../mainframe/mainframe.cpp:521
-msgid "Window"
-msgstr "窗口"
-
-#: ../../mainframe/mainframe.cpp:664
-msgid " - mStudio GUI Builder"
-msgstr " - mStudio 界面编辑器"
-
-#: ../../mainframe/mainframe.cpp:668
-#, c-format
-msgid " (%d day%s remain)"
-msgstr " (%d 天剩余)"
-
-#: ../../mainframe/mainframe.cpp:674
-#, c-format
-msgid "(Evaluation Version, Only %d window supported!)"
-msgstr "(评估版本, 只支持 %d 个窗口!)"
-
-#: ../../mainframe/mainframe.cpp:726
-msgid "You should select a valid resource. Do you want reselect?"
-msgstr "请选择可用资源. 请重选."
-
-#: ../../resideditor/resid-list-panel.cpp:73
-msgid "Name"
-msgstr "名字"
-
-#: ../../resideditor/resid-list-panel.cpp:74
-msgid "Type"
-msgstr "类型"
-
-#: ../../resideditor/resid-list-panel.cpp:75
-msgid "Value"
-msgstr "值"
-
-#: ../../resideditor/resid-list-panel.cpp:185
-#, c-format
-msgid ""
-"The id(%d) is out of the current user \"%s\", do you want to set the id too?"
-msgstr "id (%d) 已超出当前用户 \"%s\" 范围, 重新设置id?"
-
-#: ../../resideditor/resid-editor.cpp:84
-msgid "Resource ID Editor"
-msgstr "资源ID编辑器"
-
-#: ../../imgeditor/imgeditor.cpp:123
-#, c-format
-msgid "The '%s' cannot be removed. It's used by other resource or not exist."
-msgstr "'%s' 不能删除. 已被其他资源使用或不存在."
-
-#: ../../imgeditor/imgeditor.cpp:170
-msgid ""
-"Please give a name for the adding image: \n"
-" (---- likes 'IDB_IMG_254' ----)"
-msgstr ""
-"请给添加的图片设置ID名: \n"
-" (---- 例如 'IDB_IMG_254' ----)"
-
-#: ../../imgeditor/imgeditor.cpp:201
-msgid "Import Image Resource"
-msgstr "导入图片资源"
-
-#: ../../imgeditor/imgeditor.cpp:451
-#, c-format
-msgid ""
-"Resource \"%s\" has been imported, Do you want overwrite it?\n"
-"From File: \"%s\"\n"
-" Over Write: \"%s\""
-msgstr ""
-"资源 \"%s\" 已被导入, 是否覆盖?\n"
-"从文件: \"%s\"\n"
-" 覆败到: \"%s\""
-
-#: ../../imgeditor/imgeditor.cpp:458
-#, c-format
-msgid ""
-"Image \"%s\" Have an diffrent name in the resource.\n"
-"Do you want repleace the Old Name [%s] to New Name [%s]\n"
-msgstr ""
-"图片 \"%s\" 在资源中有不同名.\n"
-"是否将旧名字 [%s] 更改为新名字 [%s]\n"
-
-#: ../../imgeditor/imgeditor.cpp:471 ../../imgeditor/imgeditor.cpp:492
-#, c-format
-msgid "Cannot copy file from \"%s\" to \"%s\""
-msgstr "不能复制文件从 \"%s\" 到 \"%s\""
-
-#: ../../imgeditor/imgeditor.cpp:487
-#, c-format
-msgid "Cannot Create Image Res \"%s\"(file=\"%s\")"
-msgstr "不能创建图片资源 \"%s\"(file=\"%s\")"
-
-#: ../../imgeditor/imgeditor.cpp:508
-msgid "Please Select An Image!"
-msgstr "请选择图片"
-
-#: ../../texteditor/textlistpanel.cpp:378
-#, c-format
-msgid "Default Text (%s_%s)"
-msgstr "默认文本 (%s_%s)"
-
-#: ../../texteditor/textlistpanel.cpp:384
-#, c-format
-msgid "Current Text (%s_%s)"
-msgstr "当前文本 (%s_%s)"
-
-#: ../../texteditor/textlistpanel.cpp:391
-#, c-format
-msgid "Current Text (No Selected)"
-msgstr "当前文本 (未选择)"
-
-#: ../../tools/makemo/cfg.c:36
-msgid "Spreed Out Horizontally   Ctrl+Shift+H"
-msgstr ""
-
-#: ../../tools/makemo/cfg.c:37
-msgid "Spreed Out Vertically     Ctrl+Shift+V"
-msgstr ""
-
-#: ../../tools/makemo/cfg.c:73
-msgid "Spreed Out Horizontally"
-msgstr ""
-
-#: ../../tools/makemo/cfg.c:74
-msgid "Spreed Out Vertically"
-msgstr ""
+#: ../../mainframe/dlgtmpls.c:2400 ../../mainframe/dlgtmpls.c:2428
+msgid "Select project type"
+msgstr "选择工程类型"

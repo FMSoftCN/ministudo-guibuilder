@@ -26,7 +26,7 @@ public:
 	HWND createPreviewWindow(RendererInstance *instance);
 	void destroyPreviewWindow();
 	RendererInstance* getPreviewInstance() {return inst; }
-	void updateInstanceField(RendererInstance *instance, int id);
+	void updateInstanceField(RendererInstance *instance, int* ids);
 };
 
 #endif /* RDRPREVIEWPANEL_H_ */

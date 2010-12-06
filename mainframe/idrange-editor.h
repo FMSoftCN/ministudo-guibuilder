@@ -16,6 +16,8 @@ protected:
 	void onExit();
 
 	void onResTypeChanged(HWND hCBResType);
+
+	int bChanged;
 };
 
 

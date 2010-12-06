@@ -5,9 +5,6 @@ varname = ""
 
 function dump_tmpl(tmpl)
 	print("---------------------------")
-	print(string.format("Dialog Template : %s\n",tmpl.name))
-	print(string.format("id = %s\n",tmpl.id))
-	print(string.format("serial-number=%u\n",tmpl.serial))
 	print(string.format("ctrolClass=%s\n",tmpl.ctrlClass))
 	print(string.format("x=%d,y=%d,w=%d,h=%d\n",tmpl.x, tmpl.y, tmpl.w, tmpl.h))
 	print(string.format("sytle=%u\n",tmpl.style))
@@ -31,7 +28,7 @@ end
 --
 ----------------------------------------------------
 function dlgtmp_trans(inst)
-	local ctrl_tmpl = compinst:getCompTemplateData(inst)
+	local ctrl_tmpl = compinst.getCompTemplateData(inst)
 
 	--print("dlgtmp_trans")
 	--print(ctrl_tmpl)
@@ -54,7 +51,7 @@ function dlgtmp_trans(inst)
 
 	--dump_tmpl(ctrl_tmpl)
 
-	local str = string.format(format, ctrl_tmpl.ctrlClass, ctrl_tmpl.style, ctrl_tmpl.x, ctrl_tmpl.y, ctrl_tmpl.w, ctrl_tmpl.h, ctrl_tmpl.id, ctrl_tmpl.caption, ctrl_tmpl.exstyle)
+	local str = string.format(format, ctrl_tmpl.ctrlClass, ctrl_tmpl.style, ctrl_tmpl.x, ctrl_tmpl.y, ctrl_tmpl.w, ctrl_tmpl.h, inst.id, ctrl_tmpl.caption, ctrl_tmpl.exstyle)
 
 	--print(str)
 
@@ -62,7 +59,7 @@ function dlgtmp_trans(inst)
 end
 
 -- main function
-function main(file, args, inst)
+function main(file, inst, args)
 	out = assert(io.open(file, "wt"));
 
 	local ctrl_data_name = ""
@@ -72,8 +69,9 @@ function main(file, args, inst)
 	end
 
 	--print("--------------")
+	--print("inst : __inst=" .. inst.__inst .. " id=" .. inst.id .. " name=" .. inst.name .. " serial=" .. inst.serial)
 	
-	local dlgtmpl = compinst:getCompTemplateData(inst)
+	local dlgtmpl = compinst.getCompTemplateData(inst)
 
 	--print("-------2");
 	--print(dlgtmpl);
@@ -81,21 +79,23 @@ function main(file, args, inst)
 	if dlgtmpl == nil then
 		return
 	end
+	--print("---- 3")
 
-	local x = string.gsub(dlgtmpl.name, "ID_(%w+)", "%1")
+	local x = string.gsub(inst.name, "ID_(%w+)", "%1")
 	varname = string.gsub(x, "(%w+)_?", function (w) 
 							return string.upper(string.sub(w, 0, 1)) .. string.lower(string.sub(w, 2))
 							end)
 
+	--print("---- 4")
 	--print(varname)
 
-	local child = compinst:getInstChildren(inst)	
+	local child = compinst.getInstChildren(inst)	
 	if child ~= 0 then
 		ctrl_data_name = string.format("_ctrl_%s", varname)
 		out:write(string.format("static CTRLDATA %s [] = {\n", ctrl_data_name))
-		while child ~= 0 do
+		while child do
 			dlgtmp_trans(child)
-			child = compinst:getNextInstance(child)
+			child = compinst.getNextInstance(child)
 		end
 		out:write("\n};\n")
 	end

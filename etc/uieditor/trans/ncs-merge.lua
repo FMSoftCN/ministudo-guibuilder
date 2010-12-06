@@ -2,20 +2,21 @@
 -- common functions
 
 funcs_decleared={}
+connect_handler=nil
+main_handlers_seted=false
 
-
-function get_func_event_id(line)
+local function get_func_event_id(line)
 	for id, event in line:gmatch("//%$func%s+([#@!%$%%&%*][%d%a_]+)%s+([%a%d_]+)") do
 		return id, event
 	end
 	return nil,nil
 end
 
-function get_handle_entry_name(entry)
+local function get_handle_entry_name(entry)
 	return entry:match("([a-zA-Z0-9_%+-]+)%s*%)?%s*,")
 end
 
-function get_connect_entry_name(entry)
+local function get_connect_entry_name(entry)
 	local  name = ""
 	for w in entry:gmatch("([a-zA-Z0-9_%+-]+)%s*,") do
 		name = name .. w
@@ -172,10 +173,10 @@ function parse_handler_entry(f, line, get_entry_name)
 			break
 		end
 		local entry_name = get_entry_name(line)
-		-- print(entry_name)
+		--print(entry_name)
 		if entry_name ~= nil and entry_name:match("^%s*$") == nil then
 			entries[entry_name] = line
-			-- print("-- handler (" .. entry_name .. ")" .. " = " .. line)
+			--print("-- handler (" .. entry_name .. ")" .. " = " .. line)
 		end
 		line = f:read("*l")
 	end
@@ -413,7 +414,7 @@ function merge_handle_entry(fdst, fout, handle, get_entry_name)
 	--end
 	-- out all the entries
 	for k, h in pairs(entries) do
-		if k:match("-1") == nil and k ~= "0" then
+		if k ~= "-1" and k ~= "0" then
 			fout:write(h .. "\n")
 		end
 	end
@@ -427,7 +428,7 @@ function merge_handle_entry(fdst, fout, handle, get_entry_name)
 	end
 
 	if line and line:match("//%$user") == nil then
-		fout:write("//$user -- TODO: add your handlers hear\n");
+		fout:write("\t//$user -- TODO: add your handlers here\n");
 	end
 
 	while line:match("};") == nil do
@@ -465,6 +466,10 @@ function merge_handle(fdst, fout, line, templs, get_id, head_format, get_entry_n
 		fout:write(line .. "\n")
 		return 
 	end
+    
+    if handle.id:match("#[%w%d_]+") then -- is connect
+        connect_handler = handle
+    end
 	
 	-- get all then functions new inserted
 	local funcs = handle.funcs
@@ -474,7 +479,7 @@ function merge_handle(fdst, fout, line, templs, get_id, head_format, get_entry_n
 			--print(f.seted)
 			-- print functions
 			if f.seted == false  and funcs_decleared[f.name] ~= true then
-				fout:write(string.format("//$func %s %s\n", f.id, f.event))
+				fout:write(string.format("//$func %s %s --Need by merge, don't modify\n", f.id, f.event))
 				fout:write(f.property .. "\n")
 				fout:write("{\n" .. f.content .. "\n}\n\n")
 				funcs_decleared[f.name] = true
@@ -501,6 +506,7 @@ function merge_main_handle(fdst, fout, templs, line)
 	
 	for k, h in pairs(templs) do
 		--print ("++++ h=" .. k)
+        ---- out put the new handlers
 		if h ~= handle and h.seted == false and h.funcs then
 			-- out the functions
 			for m, f in pairs(h.funcs) do
@@ -513,7 +519,9 @@ function merge_main_handle(fdst, fout, templs, line)
 			end
 			-- out the handler
 			-- is connect
+            --- we should not out the connect known, because the conects may be write after the main handler
 			if h.id:match("#[%w%d_]+") then
+            --[[
 				fout:write(string.format("//$connect %s -- Need by merge, don't modify\n", h.id))
 				fout:write(string.format("static NCS_EVENT_CONNECT_INFO %s[] = {\n", h.name))
 				local entries = h.entries
@@ -522,7 +530,9 @@ function merge_main_handle(fdst, fout, templs, line)
 						fout:write(e .. "\n")
 					end
 				end
-				fout:write("//$user -- TODO add your handlers hear\n\t{-1, -1, 0, NULL}\n};\n\n");
+				fout:write("//$user -- TODO add your handlers here\n\t{-1, -1, 0, NULL}\n};\n\n");
+            ]]
+                connect_handler = h -- record this info
 			else -- event handler
 				fout:write(string.format("//$handle %s -- Need by merge, don't modify\n", h.id))
 				fout:write(string.format("static NCS_EVENT_HANDLER %s [] = {\n" , h.name));
@@ -532,7 +542,7 @@ function merge_main_handle(fdst, fout, templs, line)
 						fout:write(e .. "\n")
 					end
 				end
-				fout:write("//$user -- TODO add your handlers hear\n\t{-1,NULL}\n};\n\n");
+				fout:write("\t//$user -- TODO add your handlers here\n\t{-1,NULL}\n};\n\n");
 			end
 		end
 	end
@@ -543,12 +553,37 @@ function merge_main_handle(fdst, fout, templs, line)
 
 	-- merget entries
 	merge_handle_entry(fdst, fout, handle, get_handle_entry_name)
+    main_handlers_seted = true
 end
 
 function merge_mainwnd_entry(fdst, fout, templs)
 	local mainwnd_entry = templs.mainwnd_entry
 	-- print("+++ " .. tostring(mainwnd_entry))
 	if mainwnd_entry == nil then return end
+
+    if not main_handlers_seted then 
+        local handle = templs._main_
+        fout:write("\n//$mainhandle -- Need by merge, don't modify\n")
+        fout:write(string.format("NCS_EVENT_HANDLER_INFO %s[] = {\n", handle.name))
+        for n, e in pairs(handle.entries) do
+            if n ~= "-1" and n ~= "0" then
+                fout:write(e .. "\n")
+            end
+        end
+        fout:write("\t//$user -- TODO add your handlers here\n\t{-1, NULL}\n};\n")
+    end
+
+    if connect_handler ~= nil and not connect_handler.seted then --out the connect
+        local h = connect_handler
+        fout:write(string.format("//$connect %s -- Need by merge, don't modify\n", h.id))
+        fout:write(string.format("static NCS_EVENT_CONNECT_INFO %s[] = {\n", h.name))
+        for n, e in pairs(h.entries) do
+            if n ~="-1-10" and n ~="0" then
+                fout:write(e .. "\n")
+            end
+        end
+        fout:write("\t//$user -- TODO add your handlers here \n\t{-1, -1, 0, NULL}\n};\n\n")
+    end
 	
 	-- print info
 	fout:write("//$mainwnd_entry -- don't modify\n")
@@ -661,5 +696,5 @@ end
 
 -- testing
 
---merge("test1.c", "test1.c.tmpl", "test1.c.tmp")
+--merge("test.c", "test.c.tmpl", "test1.c.tmp")
 

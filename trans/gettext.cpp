@@ -3,10 +3,16 @@
 #include <string.h>
 #include <ctype.h>
 
+#include "mgheads.h"
+
 #include "msd_intl.h"
 #include "read_mo.h"
 
 #ifdef _MSTUDIO_LOCALE
+#define LANG_SECT	"LANGUAGE"
+#define LANG_KEY	"lang"
+#define LANGPATH   "LANGPATH"
+#define PATHKEY	"path"
 /* We assume to have `unsigned long int' value with at least 32 bits.  */
 #define HASHWORDBITS 32
 
@@ -51,7 +57,7 @@ const char* msd_gettext(const char *msgid)
     size_t act = 0;
     size_t top, bottom;
 
-    if(m_list.hash_tab == NULL || !msgid || (strlen(msgid)==0))
+    if(m_list.hash_tab == NULL || !msgid || *msgid == '\0')
         goto not_found;
 
     /* Locate the MSGID and its translation.  */
@@ -106,40 +112,44 @@ not_found:
 }
 
 int
-msd_locale_init(const char *mylocale, const char *lang_path)
+msd_locale_init(const char* str_cfg)
 {
-	uint32_t i;
-	char tmp[256] = { 0 };
-	if (mylocale[0] == '\0' || lang_path[0] == '\0')
+	if(!str_cfg)
+		return 0;
+
+	if(m_list.item != NULL)
 		return 1;
 
-	if (strcmp(mylocale, "en") == 0 || (strlen(mylocale) > 20))
+    char szLocale[16] = {0};
+    char szLangPath[MAX_PATH] = {0};
+
+    GetValueFromEtcFile(str_cfg, LANG_SECT, LANG_KEY, szLocale, sizeof(szLocale)-1);
+
+    GetValueFromEtcFile(str_cfg, LANGPATH, PATHKEY, szLangPath, sizeof(szLangPath)-1);
+
+	if (szLocale[0] == '\0' || szLangPath[0] == '\0')
+		return 1;
+
+	if (strcmp(szLocale, "en") == 0 || (strlen(szLocale) > 20))
 	{
 		return 1;
 	}
 
-	sprintf(tmp, "%s/lang/%s.mo", lang_path, mylocale);
-	read_mo_file(&m_list, tmp);
+	sprintf(szLangPath + strlen(szLangPath), "/lang/%s.mo", szLocale);
+	read_mo_file(&m_list, szLangPath);
 
 	return 0;
 }
 
 void free_mo_info()
 {
-	if (m_list.hash_tab)
-	{
-		free(m_list.hash_tab);
-		m_list.hash_tab = NULL;
-	}
-	if (m_list.item)
-	{
-		free(m_list.item);
-		m_list.item = NULL;
-	}
-	if (m_list.bf.data)
-	{
-		free(m_list.bf.data);
-		m_list.bf.data = NULL;
-	}
+    free(m_list.hash_tab);
+    m_list.hash_tab = NULL;
+
+    free(m_list.item);
+    m_list.item = NULL;
+
+    free(m_list.bf.data);
+    m_list.bf.data = NULL;
 }
 #endif

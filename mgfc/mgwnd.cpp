@@ -242,7 +242,12 @@ DWORD MGMainWnd::DoMode()
 	while( GetMessage (&msg, m_hWnd) ) {
         TranslateMessage (&msg);
         DispatchMessage (&msg);
-  }
+		msg.message = 0;
+	}
+
+	if(msg.message == MSG_QUIT) {
+		DestroyMainWindow(m_hWnd);
+	}
 
    ::MainWindowCleanup (m_hWnd);
 
@@ -373,40 +378,6 @@ HMENU LoadPopMenuItem(PPOPMENUTEMPLATE pPopMenuTemplate,BOOL fStripPopMenu/*=FAL
 	if(fStripPopMenu)
 		hMenu = StripPopupHead(hMenu);
 	return hMenu;
-}
-
-// scroll wnd
-//
-RECT* WindowToClient(HWND hwnd,const RECT* rcWin, RECT* rcCli)
-{
-	const WINDOW_ELEMENT_RENDERER* rdr;
-	int border;
-	if(rcWin == NULL || rcCli == NULL)
-		return NULL;
-
-	rcCli->left = rcCli->top = 0;
-	rcCli->right = RECTWP(rcWin);
-	rcCli->bottom = RECTHP(rcWin);
-
-	const WINDOWINFO* wi = GetWindowInfo(hwnd);
-	if(wi == NULL ||(rdr = wi->we_rdr) == NULL){
-		return rcCli;
-	}
-
-
-	border = ((*rdr->calc_we_metrics)(hwnd, NULL, LFRDR_METRICS_BORDER)*2);
-
-	rcCli->right -= border;
-	rcCli->right -= (*rdr->calc_we_metrics)(hwnd, NULL, LFRDR_METRICS_VSCROLL_W);
-
-	rcCli->bottom -= border;
-	if(IsMainWindow(hwnd)){
-		rcCli->bottom -= (*rdr->calc_we_metrics)(hwnd, NULL, LFRDR_METRICS_CAPTION_H);
-		rcCli->bottom -= (*rdr->calc_we_metrics)(hwnd, NULL, LFRDR_METRICS_MENU_H);
-	}
-	rcCli->bottom -= (*rdr->calc_we_metrics)(hwnd, NULL, LFRDR_METRICS_HSCROLL_H);
-
-	return rcCli;
 }
 
 
@@ -627,7 +598,7 @@ int ProcessScrollMessage(HWND hwnd, int iSBar, int nc,int pos, int line, BOOL bR
 	if(nPos < si.nMin)
 		nPos = si.nMin;
 	else if(nPos >(int) (si.nMax - si.nPage))
-		nPos = si.nMax - si.nPage ;
+		nPos = si.nMax - si.nPage + 1 ;
 
 	si.nPos = nPos;
 	SetScrollInfo(hwnd, iSBar, &si, bRedraw);

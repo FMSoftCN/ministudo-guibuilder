@@ -201,6 +201,8 @@ public:
 
 	BOOL callSpecial(const char* strName, ...);
 
+    void setChanged(BOOL bChanged = TRUE);
+
 private:
 	static void _propsheet_notifi(HWND hwnd, int id, int nc, DWORD add_data);
 
@@ -267,7 +269,7 @@ private:
 
 	void updateMainWindowCaption();
 
-	void updateRdrElement(Instance *inst, int ele_id);
+	void updateRdrElements(Instance *inst, int* ele_ids);
 
 	void onEditUIModified(EditUIPanel *euip, BOOL bModified);
 	void setTabPageTitle(EditUIPanel *euip);

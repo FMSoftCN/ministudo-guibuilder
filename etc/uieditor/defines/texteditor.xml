@@ -25,6 +25,10 @@
 	<property name="ScrollVStep" type="int" default="18"/>
 	<property name="MaxLength"  type="int" default="-1"/>
 
+	<!--	<property name="Title" id="15" type="text" default="">
+		<error-tip>HasTitle must be True</error-tip>
+	</property> -->
+
 	<property name="Case" id="2007" type="enum" default="None">
         <enum>
 			<option name="None" value="0"/>   <!---->
@@ -45,6 +49,19 @@
 			<option name="False" value="0"/>
 		</enum>
 	</property>
+    <property name="BaseLine" type="enum" default="False">
+        <enum>
+            <option name="True" value="0x40"/>
+            <option name="False" value="0"/>
+        </enum>
+    </property>
+
+	<!-- <property name ="HasTitle" type="enum" default="False">
+		<enum>
+			<option name="True" value="0x100"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property> -->
 
 	<property name="NeedIME" id="3001" type="enum" default="True">
 		<enum>
@@ -52,6 +69,7 @@
 			<option name="False" value="1"/>
 		</enum>
 	</property>
+
 	
 	<event id="4150">
 		<handler>void onContChanged(mTextEditor* self, int id, int nc)</handler>

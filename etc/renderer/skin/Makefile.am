@@ -49,7 +49,8 @@ DataFiles= animate.xml \
 	texteditor.xml \
 	abstractlist.xml \
 	list.xml \
-	widget.xml 
+	widget.xml  \
+	imwordsel.xml
 
 ETCDIR=$(prefix)/etc/guibuilder/renderer/skin
 

@@ -11,7 +11,7 @@
 struct CharStream
 {
 	virtual ~CharStream(){}
-	inline bool isSpace(char ch){
+	const inline bool isSpace(char ch){
 		return ch==' ' || ch == '\t' || ch == '\n' || ch == '\r' || ch == '\0';
 	}
 	virtual int getc() = 0;
@@ -98,12 +98,52 @@ protected:
 
 	int resNumber;
 	ResManager** resManagers;
+    struct Version {
+        unsigned int major:16;
+        unsigned int minor:8;
+        unsigned int micro:8;
+        char szVersion[16];
+
+        Version(){
+            major = 0; 
+            minor = 0; 
+            micro = 0;
+            szVersion[0] = '\0';
+        }
+
+        Version(int major, int minor, int micro) {
+            setVersion(major, minor, micro);
+        }
+        friend bool operator == (const Version &v1, const Version &v2) {
+            return (v1.major == v2.major
+                    && v1.minor == v2.minor
+                    && v1.micro == v2.micro);
+        }
+
+        friend bool operator < (const Version &v1, const Version &v2) {
+            return (v1.major < v2.major
+                    || (v1.major == v2.major && v1.minor < v2.minor)
+                    || (v1.major == v2.major && v1.minor < v2.minor && v1.micro == v2.micro));
+        }
+
+        void setVersion(int major, int minor, int micro)
+        {
+            this->major = major;
+            this->micro = micro;
+            this->minor = minor;
+            sprintf(szVersion, "%d.%d.%d",major, minor, micro);
+        }
+    };
+
+    static Version gbVersion;
+    Version prjVersion;
 
 	void onResSwitch(int editorId, int code, HWND hwnd);
 	void onEditorMenuCmd(int ctrlid, int code, HWND hwnd);
 	void onSysMenuCmd(int ctrlid, int code, HWND hwnd);
 
 	void onMenuStatusChanged(ResEditor* editor, int id, DWORD newStatus, int type=MSF_INCLUDE);
+    int getEditorMenuStatus(ResEditor* editor, int id, UINT* status);
 	void setEditorMenuStatus(ResEditorInfo * rei, int id, DWORD newStatus, int type=MSF_INCLUDE);
 
 	void onCSizeChanged(int cx, int cy);
@@ -114,10 +154,10 @@ protected:
 	void onSave();
 
 	//////////////////config
-	const char* getVersion() { return "0.4"; }
-	const char* getFormatVersion(){ return "0.4"; }
-	const char* getEncoding(){ return "utf-8\0\0\0\0\0\0\0\0\0\0";}
-	const char* getVendor(){ return "feynman-mstudio\0\0\0\0\0\0";}
+	const char* getVersion() { return gbVersion.szVersion; }
+	const char* getFormatVersion(){ return gbVersion.szVersion; }
+	const char* getEncoding(){ return "utf-8\0\0\0\0\0\0\0\0\0\0";} //len is 16byte
+	const char* getVendor(){ return "FM-miniStudiio\0\0";} //len is 16byte
 	string getResPackageName() {
 		/**
 		 * in windows, readdir would change the current word dir, so, we
@@ -158,6 +198,8 @@ private:
 #ifdef _MSTUDIO_OFFICIAL_RELEASE
     BOOL    authMode;
     int     validDay;
+    string  sn;
+    string  licenseMode;
 #endif
 
 public:
@@ -170,6 +212,8 @@ public:
     virtual BOOL isAuthMode() { return authMode; }
     virtual BOOL checkSoftDog(int* remainDay);
     virtual BOOL checkLimit();
+    virtual string checkSNInfo();
+
 #endif
 
     virtual const char* getDefRdrName()
@@ -331,6 +375,7 @@ public:
 
 	//configuration
 protected:
+
 	struct ConfigurationInfo{
 		char* name;
 		char* caption;
@@ -407,6 +452,9 @@ protected:
 
 	BOOL loadIDRanageInfo(xmlNodePtr node);
 	BOOL saveIDRangeInfo(TextStream &txtStream);
+
+    //generatre res
+    BOOL generateIncoreRes(int type);
 };
 
 #endif /* MAINFRAME_H_ */

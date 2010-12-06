@@ -3,12 +3,14 @@ INCLUDES= -I. -Iinclude
 
 AUTOMAKE_OPTIONS=foreign
 
+all:builder
+
 
 SUBDIRS=include etc uieditor texteditor imgeditor mainframe mgfc rdreditor resideditor trans 
 
 bin_PROGRAMS=guibuilder
 
-SRCS=build_version.c mainframe/dlgtmpls.c
+SRCS=build_version.h mainframe/dlgtmpls.c
 include common/src.mk
 guibuilder_SOURCES = main.cpp func-win.cpp $(SRCS)
 
@@ -24,7 +26,7 @@ guibuilder_LDADD= mainframe/libmainframe.a \
 
 EXTRA_DIST=
 
-build_version.c:
+build_version.h:
 	./rebuild-version
 
 with-builder:builder all

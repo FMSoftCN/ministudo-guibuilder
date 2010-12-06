@@ -319,8 +319,10 @@ MenuManager::MenuItem::MenuItem(int id, const char* strCaption, int defState)
 
 MenuManager::MenuItem::~MenuItem()
 {
+#ifndef _MSTUDIO_LOCALE
 	if(caption)
-		free(caption);
+	    free(caption);
+#endif
 }
 
 BOOL MenuManager::MenuItem::fillMenuItemInfo(MENUITEMINFO *menuItem, DWORD param)

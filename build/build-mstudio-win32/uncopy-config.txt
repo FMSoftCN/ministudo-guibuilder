@@ -1,0 +1,8 @@
+.svn
+.old
+.txt
+.bak
+Makefile.am
+Makefile.in
+Makefile
+msd

@@ -40,6 +40,7 @@ using namespace std;
 
 IDRangeEditor::IDRangeEditor(HWND hParent)
 {
+	bChanged = 0;
 	//create
 	Create(hParent, GetDlgTemplate(ID_IDRANGEEDITOR));
 
@@ -88,7 +89,7 @@ void IDRangeEditor::onNewRange()
 	IDRangeManager* idrm = (IDRangeManager*)cbResType.GetItemAddData(cbResType.GetCurSel());
 	if(idrm == NULL)
 	{
-		InfoBox(_("Error"), _("Please Select the Right Resource Type Fristly"));
+		InfoBox(_("Error"), _("Please select the correct resource type first."));
 		SetFocus(cbResType.GetHandle());
 		return ;
 	}
@@ -98,6 +99,7 @@ void IDRangeEditor::onNewRange()
 	if(newIdRange.DoMode())
 	{
 		onResTypeChanged(cbResType.GetHandle());
+		bChanged = 1;
 	}
 }
 
@@ -107,7 +109,7 @@ void IDRangeEditor::onExtendRange()
 	HLVITEM hItem = lv.GetSelectedItem();
 	if(hItem == 0)
 	{
-		InfoBox(_("Error"), _("Please Select a IDRange firstly"));
+		InfoBox(_("Error"), _("Please select an ID range first"));
 		SetFocus(lv.GetHandle());
 		return ;
 	}
@@ -115,7 +117,7 @@ void IDRangeEditor::onExtendRange()
 	IDRange *idrange = (IDRange*)lv.GetItemData(hItem);
 	if(idrange == NULL)
 	{
-		InfoBox(_("Error"), _("The Current IDRange is Null, cannot extend it"));
+		InfoBox(_("Error"), _("The current ID range is Null, cannot extend it"));
 		SetFocus(lv.GetHandle());
 		return ;
 	}
@@ -124,12 +126,13 @@ void IDRangeEditor::onExtendRange()
 	if(extendIdRange.DoMode())
 	{
 		onResTypeChanged(GetChild(ID_CB_RESTYPE));
+		bChanged = 1;
 	}
 }
 
 void IDRangeEditor::onExit()
 {
-	EndDialog(0);
+	EndDialog(bChanged);
 }
 
 

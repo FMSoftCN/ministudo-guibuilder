@@ -58,8 +58,10 @@ int ResImageView::removeSelectedImage()
 	if(!item || !sendEvent(IMAGE_VIEW_REMOVED,(DWORD)item->strFile.c_str(), (DWORD)item->id)){
 		return -1;
 	}
+	lockLoading();
 	delete item;
 	SendMessage(hIconView, IVM_DELITEM, sel_idx, 0);
+	unlockLoading(TRUE);
 	int count = GetCount();
 	if(count > 0){
 		if(sel_idx >= count)
@@ -93,3 +95,15 @@ void ResImageView::onRBtnUp(int x, int y, DWORD key_flag)
 }
 
 HWND ResImageView::_hIconView;
+
+
+ImageView::ViewItem* ResImageView::checkAndResetItem(ViewItem* viewItem, DWORD addData, int *pidx)
+{
+	ResImageView::ResViewItem *vi = (ResImageView::ResViewItem*)findImage(addData, pidx);
+	if(vi)
+	{
+		vi->InitFrom(*viewItem);
+	}
+	return (ViewItem*)vi;
+}
+

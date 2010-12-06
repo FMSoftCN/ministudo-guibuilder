@@ -176,7 +176,7 @@ static void save_one_source(TransedObject* tobj, FILE *fp, char *prefix, const c
 		fprintf(fp,"\t%d, /* h */\n",v?v->getValue():0);
 		//caption
 		v = props["caption"];
-		fprintf(fp,"\t\"%s\", /* caption */\n",str_to_c_string(v?v->toString().c_str():"", szbuf));
+		fprintf(fp,"\t_(\"%s\"), /* caption */\n",str_to_c_string(v?v->toString().c_str():"", szbuf));
 		//hIcon
 		fprintf(fp,"\t0, /* hIcon */\n");
 		//hMenu
@@ -213,7 +213,7 @@ static void save_one_source(TransedObject* tobj, FILE *fp, char *prefix, const c
 		fprintf(fp, "%s\t%d, /* id */\n", prefix, v?(v->getValue()&0xFFFF):0);
 		//caption
 		v = props["caption"];
-		fprintf(fp,"%s\t\"%s\", /* caption */\n",prefix, str_to_c_string(v?v->toString().c_str():"",szbuf));
+		fprintf(fp,"%s\t_(\"%s\"), /* caption */\n",prefix, str_to_c_string(v?v->toString().c_str():"",szbuf));
 		//dwAddData
 		fprintf(fp,"%s\t0, /* dwAddData */\n", prefix);
 		//exstyle

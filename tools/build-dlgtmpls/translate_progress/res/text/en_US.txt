@@ -1,0 +1,3 @@
+#The Text of en_US
+0x00022711	"Translate"
+0x00022712	"Cancel"

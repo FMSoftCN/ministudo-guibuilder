@@ -38,7 +38,7 @@ protected:
 	void onHScroll(int hs_nc,int pos){ onScroll(hs_nc, pos, SB_HORZ); }
 	void onVScroll(int hs_nc,int pos){ onScroll(hs_nc, pos, SB_VERT); }
 	void onCSizeChanged(int cx, int cy){
-		updateScrollbar(FALSE);
+		updateScrollbar(TRUE);
 	}
 	BOOL onKeyDown(int scancode, DWORD key_status);
 	BOOL onKeyUp(int scancode, DWORD key_status);
@@ -462,7 +462,7 @@ private:
 	void merge(const char *str_src, const char* str_dest);
 
 public:
-	void updateRdrElement(Instance *inst, int ele_id);
+	void updateRdrElements(Instance *inst, int* ele_ids);
 private:
 	BOOL updateInstanceRdr(ComponentInstance *cinst,int id, DWORD params[2]);
 
@@ -478,6 +478,24 @@ public:
 	void update(){
 		flags |= UpdatePreviewWindow;
 		InvalidateRect();
+	}
+
+	void setDefClientFont(PLOGFONT logfont)
+	{
+		setPreviewWindowClientFont(logfont, baseInstance);
+		update();
+	}
+
+public:
+	void setPreviewWindowClientFont(PLOGFONT logfont, ComponentInstance* inst)
+	{
+		if(!inst || !logfont)
+			return;
+		const char* font_name = (const char*) inst->getField(ComponentInstance::PropFont);
+		if(!font_name || strlen(font_name) <= 0)
+			::SetWindowFont(inst->getPreviewHandler(), logfont);
+		for(ComponentInstance* child = inst->getChildren(); child; child = child->getNext())
+			setPreviewWindowClientFont(logfont, child);
 	}
 };
 

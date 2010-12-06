@@ -19,7 +19,7 @@ extern const char* strNull;
 
 extern const char* fromStringPool(const char* str);
 
-typedef DWORD Value;
+typedef SDWORD Value;
 
 void ClearValueTypes();
 
@@ -250,13 +250,15 @@ public:
 		return (ValueEditor*)GetWindowAdditionalData(hwnd);
 	}
 
-	ValueEditor(){
-		this->hwnd = HWND_INVALID;
-		oldProc = NULL;
-		updator = NULL;
-		vtype = NULL;
-		value = 0;
-		bModified = FALSE;
+	ValueEditor()
+        :hwnd(HWND_INVALID)
+         ,updator(NULL)
+         ,vtype(NULL)
+         ,value(0)
+         ,bModified(FALSE)
+         ,mask(0)
+         ,oldProc(NULL)
+    {
 	}
 
 	HWND createWindow(HWND hParent, int id,
@@ -288,12 +290,15 @@ public:
 		vtype->addValueRef(value);
 		SetWindowText(hwnd, txt.c_str());
 		bModified = FALSE;
+		if(this->vtype)
+			this->vtype->addRef();
 		return TRUE;
 	}
 
 	virtual ~ValueEditor(){
-		if(vtype)
+		if(vtype) {
 			vtype->releaseValue(value);
+        }
 	}
 };
 
@@ -302,7 +307,6 @@ public:
 template<typename TMeta, class TEditor, class TSelf, int VType = VT_UNKNOWN>
 class TBaseValueType : public TValueType<TEditor, VType>
 {
-	static TSelf _singleton;
 public:
 	DWORD toBinary(Value value){
 		return (DWORD)value;
@@ -355,12 +359,11 @@ public:
 	}
 
 	static ValueType* getInstance(){
-		return &_singleton;
+		static TSelf * _psingleton = new TSelf();
+		return _psingleton;
 	}
 };
 
-template<typename TMeta, class TEditor, class TSelf, int VType>
-TSelf TBaseValueType<TMeta, TEditor, TSelf, VType>::_singleton;
 
 //interger value
 class IntValueEditor;
@@ -378,7 +381,7 @@ public:
 	Value newValue(const char* str){
 		if(str == NULL)
 			return (Value)0;
-		return (Value)strtol(str,NULL,0);
+		return (Value)strtol(str, NULL, 0);
 	}
 };
 
@@ -419,8 +422,13 @@ protected:
 			return ;
 		bModified = FALSE;
 		char szText[64];
-		GetWindowText(hwnd, szText, sizeof(szText)-1);
-		Value newValue = vtype->newValue(szText);
+		char *text = szText;
+		int len = GetWindowText(hwnd, szText, sizeof(szText)-1);
+		if(len > 1) {
+			while(text[0] && text[0] == '0') //strip the 0 in the first
+				text ++;
+		}
+		Value newValue = vtype->newValue(text);
 		if(!updatingValue(newValue))
 		{
 			//rollback
@@ -430,9 +438,8 @@ protected:
 		}
 		vtype->releaseValue(value);
 		value = newValue;
-		if ((value = updateValue()) != newValue){
-			SetWindowText(hwnd, vtype->toString(value).c_str());
-		}
+        value = updateValue();
+		SetWindowText(hwnd, vtype->toString(value).c_str());
 	}
 
 public:
@@ -832,8 +839,9 @@ public:
 				it != _instances.end(); ++it)
 		{
 			if(it->second)
-				delete it->second;
+				it->second->release();
 		}
+		_instances.clear();
 	}
 
 	DWORD toRes(Value value)
@@ -1157,10 +1165,9 @@ class TResValueType : public TBaseResValueType<TEditor, VType>
 {
 public:
 	static ValueType* getInstance(){
-		return &_singleton;
+		static TSelf * _psingleton = new TSelf();
+		return _psingleton;
 	}
-private:
-	static TSelf _singleton;
 
 public:
 	TResValueType(int type)
@@ -1169,9 +1176,6 @@ public:
 
 	}
 };
-
-template<class TEditor,class TSelf,int VType>
-TSelf TResValueType<TEditor,TSelf, VType>::_singleton;
 
 ///////
 ///text value
@@ -1261,7 +1265,7 @@ public:
 		ResManager *resMgr = getResManager();
 		if(resMgr){
 			if(!resMgr->setRes(id, binValue))
-				return resMgr->createRes(type,NULL, id,NULL, binValue);
+				return resMgr->createRes(type,NULL, id,(const char*) binValue, 0);
 		}
 		return id;
 	}
@@ -1406,7 +1410,7 @@ protected:
 public:
 	HWND create(HWND hParent, int id)
 	{
-		return createWindow(hParent, id, "combobox",CBS_DROPDOWNLIST|CBS_READONLY|CBS_SORT|CBS_NOTIFY, 100);
+		return createWindow(hParent, id, "combobox",CBS_DROPDOWNLIST|CBS_READONLY|CBS_SORT|CBS_NOTIFY, 0);
 	}
 
 };
@@ -1725,8 +1729,9 @@ public:
 				it != _instances.end(); ++it)
 		{
 			if(it->second)
-				delete it->second;
+				it->second->release();
 		}
+		_instances.clear();
 	}
 };
 
@@ -1880,7 +1885,7 @@ protected:
 
 public:
 	HWND create(HWND hParent, int id){
-		return createWindow(hParent, id, "combobox", CBS_DROPDOWNLIST|CBS_NOTIFY, 100);
+		return createWindow(hParent, id, "combobox", CBS_DROPDOWNLIST|CBS_NOTIFY|CBS_READONLY, 0);
 	}
 	BOOL init(Value value, ValueType* vtype, ValueUpdator * updator, DWORD mask=0);
 };
@@ -1971,8 +1976,9 @@ public:
 				it != _instances.end(); ++it)
 		{
 			if(it->second)
-				delete it->second;
+				it->second->release();
 		}
+		_instances.clear();
 
 	}
 

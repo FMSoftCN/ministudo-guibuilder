@@ -24,6 +24,9 @@
 #define ID_NEWIDRANGE  10015
 #define ID_EXTENDIDRANGE  10016
 #define ID_ABOUT  10017
+#define ID_SETSTARTWINDOW  10018
+#define ID_TRANSLATEPROGRESS  10019
+#define ID_SELECTPROJECTTYPE  10020
 
 #ifdef __cplusplus
 extern "C" {

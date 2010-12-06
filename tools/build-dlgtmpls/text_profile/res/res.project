@@ -1,4 +1,4 @@
-<res-project>
+<res-project version="1.0.6">
 	<configuration name="minigui-3-x-x-ncs" caption="MiniGUI 3.0 With New Control Set">
 		<minigui-version>3.x.x</minigui-version>
 		<control-set>ncs</control-set>
@@ -6,8 +6,10 @@
 	</configuration>
 	<id-range-manager>
 		<resource type="8">
+			<id-range min="0" max="300" owner="dongjunjie"/>
 		</resource>
 		<resource type="16384">
+			<id-range min="9" max="309" owner="dongjunjie"/>
 		</resource>
 		<resource type="32">
 		</resource>
@@ -18,6 +20,7 @@
 		<resource type="2" name="user">
 		</resource>
 		<resource type="2" name="anonymous">
+			<id-range min="10000" max="10300" owner="dongjunjie"/>
 		</resource>
 	</id-range-manager>
 	<uieditor>
@@ -27,6 +30,7 @@
 		<screen>
 			<width>1024</width>
 			<height>768</height>
+			<depth>0</depth><!-- 0=16bpp.rgb565,1=16bpp.rgb555,2=24bpp,3=32bpp -->
 		</screen>
 		<def-font>
 		</def-font>

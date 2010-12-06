@@ -33,6 +33,7 @@ protected:
 	void onCancel();
 	BOOL onKeyDown(int scancode, DWORD key_status);
 	BOOL onInitDialog(HWND hFocus, LPARAM lParam);
+    void onRdrSelChange (int code, HWND hWnd);
 
     string rdrName;
     string clsName;

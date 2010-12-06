@@ -401,14 +401,15 @@ void RendererTreePanel::onRButtonUp(int x, int y, DWORD key_flag)
 {
     GHANDLE sel = GetSelItem();
     mapex<int, int>idsets;
+    UINT status = MFS_DISABLED;
 
     if (!sel || sel == GetRoot()) {
         idsets[ResEditor::RDR_MENUCMD_NEWRDRSET] = 0;
         idsets[ResEditor::RDR_MENUCMD_NEWRDR] = 0;
-        if (Instance::paste())
-            idsets[ResEditor::GBC_PASTE] = MAP_MASK_STATE(0, 0);
-        else
-        	idsets[ResEditor::GBC_PASTE] = MAP_MASK_STATE(0, MFS_DISABLED);
+
+        RendererEditor* resMgr = (RendererEditor*)(g_env->getResManager(NCSRT_RDR | NCSRT_RDRSET));
+        resMgr->getMenuStatus(ResEditor::GBC_PASTE, &status);
+        idsets[ResEditor::GBC_PASTE] = MAP_MASK_STATE(0, status);
     }
     else {
     	int id = GetItemAddData(sel);
@@ -418,20 +419,26 @@ void RendererTreePanel::onRButtonUp(int x, int y, DWORD key_flag)
     	if (ID2TYPE(id) == NCSRT_RDRSET) { //not support copy
             idsets[ResEditor::RDR_MENUCMD_NEWRDR] = MAP_MASK_STATE(0, 0);
             idsets[ResEditor::RDR_MENUCMD_ADDRDR] = MAP_MASK_STATE(0, 0);
-            if (Instance::paste())
-                idsets[ResEditor::GBC_PASTE] = MAP_MASK_STATE(0, 0);
-            else
-            	idsets[ResEditor::GBC_PASTE] = MAP_MASK_STATE(0, MFS_DISABLED);
 
-            idsets[ResEditor::GBC_DELETE] = MAP_MASK_STATE(0, 0);
+            RendererEditor* resMgr = (RendererEditor*)(g_env->getResManager(NCSRT_RDR | NCSRT_RDRSET));
+            resMgr->getMenuStatus(ResEditor::GBC_PASTE, &status);
+            idsets[ResEditor::GBC_PASTE] = MAP_MASK_STATE(0, status);
+
+            idsets[ResEditor::RDR_MENUCMD_DELRDRSET] = MAP_MASK_STATE(0, 0);
     	}
         else {
             idsets[ResEditor::GBC_CUT] = MAP_MASK_STATE(0, 0);
             idsets[ResEditor::GBC_COPY] = MAP_MASK_STATE(0, 0);
-            idsets[ResEditor::GBC_DELETE] = MAP_MASK_STATE(0, 0);
+            idsets[ResEditor::RDR_MENUCMD_DELRDR] = MAP_MASK_STATE(0, 0);
         }
     }
 
     HMENU hMenu = g_env->createPopMenuFromConfig(ResEditor::RDR_POPMENU, idsets);
-	TrackPopupMenu(hMenu, TPM_LEFTALIGN|TPM_DESTROY, x, y, getHandler());
+    //get tree item height
+    HDC hdc = ::GetClientDC(getHandler());
+    int itemHeight = ::GetFontHeight(hdc);
+    ::ReleaseDC(hdc);
+
+	ClientToScreen(&x, &y);
+	TrackPopupMenu(hMenu, TPM_LEFTALIGN | TPM_TOPALIGN |TPM_DESTROY, x, itemHeight + y, getHandler());
 }

@@ -1,0 +1,12 @@
+<res-ids>
+	<res-id>
+		<id  value="0x22711"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id  value="0x22712"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
+</res-ids>

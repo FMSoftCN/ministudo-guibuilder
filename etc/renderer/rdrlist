@@ -48,6 +48,7 @@ renderer/classic/vseparator.xml
 renderer/classic/abstractlist.xml
 renderer/classic/list.xml
 renderer/classic/texteditor.xml
+renderer/classic/imwordsel.xml
 
 renderer/fashion/widget.xml
 renderer/fashion/propsheet.xml
@@ -99,6 +100,7 @@ renderer/fashion/vseparator.xml
 renderer/fashion/abstractlist.xml
 renderer/fashion/list.xml
 renderer/fashion/texteditor.xml
+renderer/fashion/imwordsel.xml
 
 renderer/skin/widget.xml
 renderer/skin/propsheet.xml
@@ -150,6 +152,7 @@ renderer/skin/vseparator.xml
 renderer/skin/abstractlist.xml
 renderer/skin/list.xml
 renderer/skin/texteditor.xml
+renderer/skin/imwordsel.xml
 
 renderer/flat/widget.xml
 renderer/flat/propsheet.xml
@@ -201,4 +204,5 @@ renderer/flat/vseparator.xml
 renderer/flat/abstractlist.xml
 renderer/flat/list.xml
 renderer/flat/texteditor.xml
+renderer/flat/imwordsel.xml
 

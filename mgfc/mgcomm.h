@@ -411,7 +411,7 @@ public:
 	inline BOOL PtIn(const POINT pt){
 		return ::PtInRegion(this,pt.x,pt.y);
 	}
-	inline BOOL PtIn(const MGPoint mgpt){
+	inline BOOL PtIn(const MGPoint& mgpt){
 		return ::PtInRegion(this,mgpt.x,mgpt.y);
 	}
 
@@ -431,7 +431,7 @@ public:
 	inline void Offset(const POINT pt){
 		::OffsetRegion(this,pt.x,pt.y);
 	}
-	inline void Offset(const MGPoint mgpt){
+	inline void Offset(const MGPoint& mgpt){
 		::OffsetRegion(this,mgpt.x,mgpt.y);
 	}
 

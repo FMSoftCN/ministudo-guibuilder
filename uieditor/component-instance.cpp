@@ -462,7 +462,7 @@ static string inst_getComponentInstanceName(Instance* inst, int type)
 				clsName = str + 2;
 
 			char szText[100];
-			sprintf(szText, "%s%d", clsName, inst->getID());
+			sprintf(szText, "%s%ld", clsName, inst->getSerialNumber());
 			return string(szText);
 		}
 	}
@@ -472,36 +472,60 @@ static string inst_getComponentInstanceName(Instance* inst, int type)
 	return string("");
 }
 
+static int make_lua_inst(lua_State* L, Instance* inst, int res_type)
+{
+    if(inst == NULL)
+    {
+        lua_pushnil(L);
+        return 1;
+    }
+
+    lua_newtable(L);
+	int inst_table = lua_gettop(L); //get the index of table on the stack
+
+    //set instance
+    SET_TABLE(L, inst_table, __inst, lua_pushinteger(L, (int)inst));
+
+	//set instance id
+	SET_TABLE(L, inst_table, id, lua_pushstring(L, inst_getID(inst, res_type)));
+	//set instance name
+	SET_TABLE(L, inst_table, name,
+					lua_pushstring(L,inst_getComponentInstanceName(inst, res_type).c_str()));
+
+	//set serial number
+	SET_TABLE(L, inst_table, serial, lua_pushinteger(L,inst->getSerialNumber()));
+
+    return 1;
+}
+
+static Instance* instance_from_lua(lua_State* L, int idx)
+{
+    lua_getfield(L, idx, "__inst");
+    Instance* inst = (Instance*) lua_tointeger(L,-1);
+    lua_pop(L,1);
+    return inst;
+}
+
+
 static int compinst_getNextInstance(lua_State *L)
 {
 	//get instance pointer from L
-	int i = lua_tointeger(L, -1);
-	ComponentInstance* cinst = (ComponentInstance*) i;
+	ComponentInstance* cinst = (ComponentInstance*) instance_from_lua(L, 1);
 	if(cinst)
 		cinst = cinst->getNext();
-
-	i = (int)cinst;
-
-	//lua_pop(L,1);
-	lua_pushinteger(L, i);
-
-	return 1;
+    
+    return make_lua_inst(L, (Instance*)cinst,NCSRT_UI|NCSRT_CONTRL);
 }
 
 static int compinst_getInstChildren(lua_State *L)
 {
 	//get instance pointer from L
-	int i = lua_tointeger(L, -1);
-	ComponentInstance* cinst = (ComponentInstance*) i;
+	ComponentInstance* cinst = (ComponentInstance*) instance_from_lua(L, 1);
 	if(cinst)
 		cinst = cinst->getChildren();
 
-	i = (int)cinst;
+    return make_lua_inst(L, (Instance*)cinst, NCSRT_UI|NCSRT_CONTRL);
 
-	//lua_pop(L,1);
-	lua_pushinteger(L, i);
-
-	return 1;
 }
 
 
@@ -514,15 +538,6 @@ static void inst_getProperties(lua_State* L,Instance* inst, int res_type, int pr
 	lua_newtable(L);
 	int inst_table = lua_gettop(L); //get the index of table on the stack
 	int count = 0;
-
-	//set instance id
-	SET_TABLE(L, inst_table, id, lua_pushstring(L, inst_getID(inst, res_type)));
-	//set instance name
-	SET_TABLE(L, inst_table, name,
-					lua_pushstring(L,inst_getComponentInstanceName(inst, res_type).c_str()));
-
-	//set serial number
-	SET_TABLE(L, inst_table, serial, lua_pushinteger(L,inst->getSerialNumber()));
 
 	const mapex<int, Field*>& fields = inst->getFields();
 	for(mapex<int,Field*>::const_iterator it = fields.lower_bound(prop_begin);
@@ -563,36 +578,26 @@ static void inst_getProperties(lua_State* L,Instance* inst, int res_type, int pr
 static int compinst_getInstanceEvents(lua_State* L)
 {
 	//get first event
-	int i = lua_tointeger(L, -1);
-	ComponentInstance* cinst = (ComponentInstance*) i;
+	ComponentInstance* cinst = (ComponentInstance*) instance_from_lua(L,1);
 
 	if(cinst)
 	{
 		/**
 		 *  --the equivalent lua code
 		 * handlers = { } --create a handlers table
-		 * handlers.id = id -- set id(name)
-		 * handlers.name = instname -- set instance name
-		 * handlers.eventCount = count; -- set event count
 		 *  event = {} -- event is a table
 		 *  event.name = name -- set event name
 		 *  event.funcName = funcName -- set event funcName
 		 *  event.prototype = eventPrototype -- set the prototype of function
 		 *  event.code =  code
-		 *  handlers[0] = event;
+		 *  handlers[1] = event;
 		 *    --- .....
 		 */
-		int count = 0;
 		//create table
 		lua_newtable(L);
 		int handlers = lua_gettop(L); //get the index of table on the stack
-		//set id
-		SET_TABLE(L, handlers, id, lua_pushstring(L,inst_getID(cinst,NCSRT_UI)));
-		//set instance name
-		SET_TABLE(L, handlers, name,
-				lua_pushstring(L,inst_getComponentInstanceName(cinst,NCSRT_UI).c_str()));
 
-		SET_TABLE(L, handlers, serial, lua_pushinteger(L,cinst->getSerialNumber()));
+        int count = 0;
 		//set event
 		const mapex<int, Field*>& fields = cinst->getFields();
 		for(mapex<int,Field*>::const_iterator it = fields.lower_bound(ComponentInstance::PropEventBegin);
@@ -602,8 +607,6 @@ static int compinst_getInstanceEvents(lua_State* L)
 			if(value != 0){
 				FieldType *ft = cinst->getClass()->getFieldType(it->first);
 				EventValueType * mvt = (EventValueType*)ft->vtype;
-				//push key
-				lua_pushinteger(L,count);
 				//-- event = {}
 				lua_newtable(L);
 				int event = lua_gettop(L);
@@ -619,12 +622,9 @@ static int compinst_getInstanceEvents(lua_State* L)
 				//event.content = content
 				SET_TABLE(L, event, content, lua_pushstring(L, mvt->getContent()));
 				//handler[count] = event
-				lua_settable(L, handlers);
-				count ++;
+                lua_rawseti(L, handlers, ++ count);
 			}
 		}
-		//handler[eventCount] = count
-		SET_TABLE(L, handlers, propCount, lua_pushinteger(L, count));
 	}
 	return 1;
 }
@@ -632,9 +632,8 @@ static int compinst_getInstanceEvents(lua_State* L)
 static int compinst_getProperties(lua_State* L)
 {
 	//get instance pointer from L
-	int key_type = lua_tointeger(L, -1);
-	int i = lua_tointeger(L, -2);
-	ComponentInstance* cinst = (ComponentInstance*) i;
+	ComponentInstance* cinst = (ComponentInstance*) instance_from_lua(L, 1);
+    int key_type = lua_tointeger(L, 2);
 	if(cinst)
 	{
 		inst_getProperties(L,(Instance*)cinst, NCSRT_UI|NCSRT_CONTRL,0, ComponentInstance::PropEventBegin-1,key_type);
@@ -672,7 +671,6 @@ static void compinst_setListens(ComponentInstance *inst, lua_State*L, int table,
 			sprintf(szSenderText,"%d",le->sender_id);
 		}
 
-		lua_pushinteger(L, idx++);
 		int t = (lua_newtable(L), lua_gettop(L));
 		SET_TABLE(L, t, listener, lua_pushstring(L,strListenId));
 		SET_TABLE(L, t, listenType, lua_pushstring(L,inst->getClass()->getClassName()));
@@ -682,17 +680,15 @@ static void compinst_setListens(ComponentInstance *inst, lua_State*L, int table,
 		SET_TABLE(L, t, sendSerial, lua_pushinteger(L, sender->getSerialNumber()));
 		SET_TABLE(L, t, event, lua_pushstring(L,evt->getCode()));
 		SET_TABLE(L, t, prototype, lua_pushstring(L,le->prototype.c_str()));
-		lua_settable(L,table);
+        lua_rawseti(L, table, ++idx);
 	}
 }
 
 static int compinst_getInstListens(lua_State *L)
 {
-	int i = lua_tointeger(L, -1);
-	ComponentInstance* cinst = (ComponentInstance*) i;
+	ComponentInstance* cinst = (ComponentInstance*) instance_from_lua(L, 1);
 	ResManager *resMgr = g_env->getResManager(NCSRT_UI);
 
-	int idx = 0;
 	if(cinst)
 	{
 		/*
@@ -705,11 +701,8 @@ static int compinst_getInstListens(lua_State *L)
 		//create table
 		lua_newtable(L);
 		int listens = lua_gettop(L); //get the index of table on the stack
+        int idx = 0;
 		compinst_setListens(cinst,L,listens, idx,resMgr);
-		for(cinst = cinst->getChildren(); cinst; cinst = cinst->getNext())
-		{
-			compinst_setListens(cinst,L,listens, idx,resMgr);
-		}
 	}
 
 	return 1;
@@ -717,15 +710,11 @@ static int compinst_getInstListens(lua_State *L)
 
 static int compinst_getTemplateData(lua_State* L)
 {
-	int i = lua_tointeger(L, -1);
-	ComponentInstance* cinst = (ComponentInstance*) i;
+	ComponentInstance* cinst = (ComponentInstance*) instance_from_lua(L, 1);
 	if(cinst)
 	{
 		/*
 		 * template_table = {}
-		 * template_table.name = instance name
-		 * template_table.id = instance->getID
-		 * template_table.serial = serial_num
 		 * template_table.ctrlClass =
 		 * template_table.x =
 		 * template_table.y =
@@ -742,14 +731,7 @@ static int compinst_getTemplateData(lua_State* L)
 		lua_newtable(L);
 		int inst_table = lua_gettop(L); //get the index of table on the stack
 
-		//set instance id
-		SET_TABLE(L, inst_table, id, lua_pushstring(L, inst_getID(cinst, NCSRT_UI|NCSRT_CONTRL)));
-		//set instance name
-		SET_TABLE(L, inst_table, name,
-						lua_pushstring(L,inst_getComponentInstanceName(cinst, NCSRT_UI|NCSRT_CONTRL).c_str()));
 
-		//set serial number
-		SET_TABLE(L, inst_table, serial, lua_pushinteger(L,cinst->getSerialNumber()));
 		cinst->toLuaTable((void*)L, inst_table);
 	}
 	return 1;
@@ -796,8 +778,8 @@ static void comp_inst_call_lua(ComponentInstance* cinst, const char* scriptFile,
 
 	//push value
 	lua_pushstring(L,fileName);
+    make_lua_inst(L, (Instance*)cinst, NCSRT_CONTRL|NCSRT_UI);
 	lua_pushstring(L,args);
-	lua_pushinteger(L, (int)cinst);
 	//call func
 	lua_pcall(L, 3, 0, 0);
 
@@ -906,8 +888,7 @@ ComponentInstanceLocationUndoRedoCommand::ComponentInstanceLocationUndoRedoComma
 }
 ComponentInstanceLocationUndoRedoCommand::~ComponentInstanceLocationUndoRedoCommand()
 {
-	if(boundInfos)
-		delete[] boundInfos;
+    delete[] boundInfos;
 }
 
 void ComponentInstanceLocationUndoRedoCommand::setInstance(int idx, ComponentInstance *inst, int v1, int v2)
@@ -964,8 +945,7 @@ ComponentInstanceBoundUndoRedoCommand::ComponentInstanceBoundUndoRedoCommand(int
 
 ComponentInstanceBoundUndoRedoCommand::~ComponentInstanceBoundUndoRedoCommand()
 {
-	if(bounds)
-		delete[] bounds;
+    delete[] bounds;
 }
 
 void ComponentInstanceBoundUndoRedoCommand::execute()

@@ -242,6 +242,9 @@ static int _screen_setting_proc(HWND hwnd, int message, WPARAM wParam, LPARAM lP
 			EndDialog(hwnd, FALSE);
 		}
 		return TRUE;
+	case MSG_CLOSE:
+		EndDialog(hwnd, FALSE);
+		return TRUE;
 	}
 
 	return AutoCenterDlgProc(hwnd, message, wParam, lParam);

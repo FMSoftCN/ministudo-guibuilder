@@ -249,9 +249,7 @@ static void onDelIconView(HWND hwnd, HSVITEM hsvi){
 			UnloadBitmap(pivitem->bmp);
 			delete pivitem->bmp;
 		}
-		if(pivitem->addData){
-			free((void*)pivitem->addData);
-		}
+        free((void*)pivitem->addData);
 	}
 }
 
@@ -371,6 +369,7 @@ BEGIN_MSG_MAP(SelectTemplate)
 		MAP_COMMAND(IDOK, onOK)
 		MAP_COMMAND(IDCANCEL, onCancel)
 	END_COMMAND_MAP
+    MAP_CLOSE(onCancel)
 END_MSG_MAP
 
 void SelectTemplate::onOK()
@@ -387,7 +386,7 @@ void SelectTemplate::onOK()
 
 	if(!strfile)
 	{
-		InfoBox(_("Error"), _("Please Select A template First!"));
+		InfoBox(_("Error"), _("Please select a template first!"));
 		::SetFocus(GetChild(100));
 		return ;
 	}
@@ -396,7 +395,7 @@ void SelectTemplate::onOK()
 		return ;
 
 	if(!copyfile(strfile, newFile.c_str())){
-		InfoBox(_("Error"), _("Cannot Create the New File \"%s\""), newFile.c_str());
+		InfoBox(_("Error"), _("Cannot create the new file \"%s\""), newFile.c_str());
 		return;
 	}
 
@@ -428,14 +427,14 @@ BOOL SelectTemplate::updateNewFile()
 
 	if((dwTextLen = GetChildText(101, file, sizeof(szFileName) - len))<=0)
 	{
-		InfoBox(_("Error"), _("Please Input Filename!"));
+		InfoBox(_("Error"), _("Please input filename!"));
 		::SetFocus(GetChild(101));
 		return FALSE;
 	}
 
 	if(dwTextLen >= MAX_FILE_LEN)
 	{
-		if(YesNoBox(_("Warning"), _("The File Name is too Long, it will be cut. Do You Want Input a New File Name?")) == IDYES)
+		if(YesNoBox(_("Warning"), _("The filename is too long, and will be get cut off. Do you want to input another filename?")) == IDYES)
 		{
 			::SetFocus(GetChild(101));
 			return FALSE;
@@ -453,7 +452,7 @@ BOOL SelectTemplate::updateNewFile()
 	}
 
 	if(::SendMessage(hOwner,MSG_SLT_ISOPENED,0, (LPARAM)file)){
-		InfoBox(_("Error"), _("This File \"%s\" has opened, input another name!"),file);
+		InfoBox(_("Error"), _("This file \"%s\" has been opened, please select another file!"),file);
 		::SetFocus(GetChild(101));
 			return FALSE;
 	}
@@ -462,7 +461,7 @@ BOOL SelectTemplate::updateNewFile()
 	if(!IsDlgButtonChecked(102))
 	{
 		if(isFileExist(szFileName)
-				&& YesNoBox(_("Warning"), _("The File \"%s\" exits, Do you want overwrite it?"), szFileName) == IDNO)
+				&& YesNoBox(_("Warning"), _("The File \"%s\" already exists, do you want to overwrite it?"), szFileName) == IDNO)
 		{
 			return FALSE;
 		}

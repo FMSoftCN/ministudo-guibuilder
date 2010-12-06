@@ -39,15 +39,9 @@
 		<Height>22</Height>
 		<Text>0x0002271E</Text>
 	</window>
-	<window class="window::Combobox" serial-number="1872752640">
-		<ID>0x40000066</ID>
-		<X>22</X>
-		<Y>40</Y>
-		<Width>323</Width>
-		<Height>25</Height>
-	</window>
 	<window class="window::ListBox" serial-number="2124048384">
 		<ID>0x40000069</ID>
+		<ScrollBarMode>Always</ScrollBarMode>
 		<X>22</X>
 		<Y>70</Y>
 		<Width>323</Width>
@@ -79,5 +73,22 @@
 		<Width>323</Width>
 		<Height>60</Height>
 		<Text>0x00022723</Text>
+	</window>
+	<window class="window::SlEdit" serial-number="4262944768">
+		<ID>0x40000066</ID>
+		<X>22</X>
+		<Y>35</Y>
+		<Width>280</Width>
+		<Height>30</Height>
+		<Text>0x00022711</Text>
+		<ReadOnly>True</ReadOnly>
+	</window>
+	<window class="window::Button" serial-number="2142371840">
+		<ID>0x4000006d</ID>
+		<X>305</X>
+		<Y>35</Y>
+		<Width>40</Width>
+		<Height>30</Height>
+		<Text>0x0002272B</Text>
 	</window>
 </window>

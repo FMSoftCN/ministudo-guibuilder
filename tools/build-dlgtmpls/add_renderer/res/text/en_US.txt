@@ -1,4 +1,4 @@
 #The Text of en_US
-0x00022712	"Main Frame"
+0x00022712	"Add Renderer to RdrSet"
 0x00022713	"OK"
 0x00022714	"Cancel"

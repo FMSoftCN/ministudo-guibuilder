@@ -42,15 +42,13 @@ using namespace std;
 
 PageWindowInstance::PageWindowInstance(Class* cls)
 :WindowInstance(cls)
+,activePageIndexId(0)
 {
-	// TODO Auto-generated constructor stub
-
-	activePageIndexId = 0;
-
 }
 
 PageWindowInstance::PageWindowInstance(const PageWindowInstance &pwi)
 :WindowInstance(pwi)
+,activePageIndexId(pwi.activePageIndexId)
 {
 
 }
@@ -201,7 +199,7 @@ BOOL PageWindowInstance::insert(ComponentInstance* insert, BOOL bAutoCreate)
 		return FALSE;
 
 	const char* str = page->getCaption();
-	if(str == NULL || strlen(str) == 0)
+	if(str == NULL || *str == '\0')
 	{
 		char szText[100];
 		int count = 0;
@@ -363,6 +361,34 @@ DWORD PageWindowInstance::processMenuCommand(int cmdid)
 			Value val = getField(ft->id);
 			ComponentInstance * page = (ComponentInstance*)ComponentInstance::createFromClassName(NULL,(const char*)ft->vtype->toBinary(val));
 			if(insert(page)){
+                //alloc a id and name for page
+                ResManager *resMgr = g_env->getResManager(NCSRT_CONTRL);
+                if(resMgr)
+                {
+                    const char* strName;
+                    char szName[256];
+                    strName = resMgr->idToName(getID());
+                    if(strName)
+                    {
+                        int page_count = getPageCount();
+                        snprintf(szName, sizeof(szName), "%s_PAGE", strName);
+                        int len  = strlen(szName);
+                        sprintf(szName+len, "%d", page_count);
+                        while(!resMgr->isValidName(szName))
+                        {
+                            sprintf(szName+len, "%d", ++page_count);
+                        }
+                    }
+                    else
+                    {
+                        strcpy(szName, page->newName().c_str()); 
+                    }
+
+                    int id = resMgr->createRes(NCSRT_CONTRL, szName, -1, NULL, (DWORD)(ComponentInstance*)page);
+                    
+                    page->setID(id);
+                }
+
 				//TODO: undo redo support
 				return NEED_UPDATE|INSTANCE_REFRESH;
 			}

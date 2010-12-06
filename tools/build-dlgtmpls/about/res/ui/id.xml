@@ -59,4 +59,14 @@
 		<type>16384</type>
 		<source></source>
 	</res-id>
+	<res-id>
+		<id name="ID_LABEL_SN"  value="0x40000069"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_SN"  value="0x4000006a"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
 </res-ids>

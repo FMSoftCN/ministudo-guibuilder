@@ -3,6 +3,18 @@
 
 #ifdef WIN32
 
+#ifndef  strcasecmp
+#define strcasecmp _stricmp
+#endif
+
+#ifndef strncasecmp
+#define strncasecmp _strnicmp
+#endif
+
+#ifndef snprintf
+#define snprintf _snprintf
+#endif
+
 /* POSIX says these are implementation-defined.
  * To simplify use with Windows API, we treat them the same way.
  */
@@ -63,7 +75,7 @@ int win_find_next_file (int hFind, void *file_data);
 
 int win_is_dir(void *file_data);
 
-char* win_get_file_name(void *file_data);
+char* win_get_file_name(void *file_data, char *buff, int len);
 
 void win_close_find(int hFind);
 
@@ -94,27 +106,47 @@ int win_process_running(int pid);
 
 
 const char* get_cur_user_name(char* puser_name, int max);
+
+char* utf8toascii(const char* utf8str, char* ascii_str, int buff_len);
+char* asciitoutf8(const char* ascii_str, char* utf8str, int buff_len);
+
+int win_system(const char* str_cmd);
+
+int vasprintf(char** pstrp, const char* format, va_list va);
+
 #endif //#fidef WIN32
 
 #ifdef _MSTUDIO_OFFICIAL_RELEASE
+#define MSTUDIO_SIGN_MAXLEN         7
+#define MSTUDIO_SN_MAXLEN           48
+#define MSTUDIO_LICENSE_MAXLEN      7
+#define MSTUDIO_CLIENTABBR_MAXLEN   7
+
 #ifdef WIN32
 typedef __int32 _INT32;
 typedef unsigned __int32 _UINT32;
-struct FMSOFT_AUTH_INFO{
-	char sign[8];
+typedef struct _FMSOFT_AUTH_INFO {
+	char sign[MSTUDIO_SIGN_MAXLEN + 1];
 	_INT32  clientID;
-	_UINT32 validDate;
+	_UINT32 effectiveDate;
 	_UINT32 curDate;
 	_UINT32 expiredDate;
-};
+
+    char    clientAbbr[MSTUDIO_CLIENTABBR_MAXLEN + 1];
+    char    licenseMode[MSTUDIO_LICENSE_MAXLEN + 1];
+}FMSOFT_AUTH_INFO;
+
 #else
-struct FMSOFT_AUTH_INFO{
-	char sign[8];
+typedef struct _FMSOFT_AUTH_INFO {
+	char sign[MSTUDIO_SIGN_MAXLEN + 1];
 	int  clientID;
-	time_t validDate;
+	time_t effectiveDate;
 	time_t curDate;
 	time_t expiredDate;
-};
+
+    char    clientAbbr[MSTUDIO_CLIENTABBR_MAXLEN + 1];
+    char    licenseMode[MSTUDIO_LICENSE_MAXLEN + 1];
+}FMSOFT_AUTH_INFO;
 #endif
 
 #define MSTUDIO_ERR_NOAUTH      0
@@ -125,6 +157,7 @@ struct FMSOFT_AUTH_INFO{
 //valid softdog
 #define MSTUDIO_ERR_VALIDAUTH   3
 
+int fmsoftCheckSNInfo(char* sn, char* license);
 int fmsoftCheckDogValidity(int *remainDay);
 #endif
 

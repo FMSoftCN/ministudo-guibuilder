@@ -38,17 +38,27 @@ using namespace std;
 #include "textlistpanel.h"
 
 TextListPanel::TextListPanel(PanelEventHandler* handler)
-:Panel(handler),EditableListView(this)// listview(this)
+    :Panel(handler)
+    ,EditableListView(this)
+    ,pNameValueType(NULL)
+    ,pdefText(NULL)
+    ,pcurText(NULL)
+    ,preses(NULL)
 {
 	pIdValueType = (IntValueType*)ValueType::getValueType("int");
-	pNameValueType = NULL;
-	pdefText = NULL;
-	pcurText = NULL;
-	preses = NULL;
 }
 
 TextListPanel::~TextListPanel()
 {
+    //before deleting defaultValueType and curValueType, should delete editor 
+    //window to avoid coredump. see retrieveEditor implementation for detail.
+    HWND child = GetChild((int)&defaultValueType);
+    if (child)
+        ::DestroyWindow(child);
+
+    child = GetChild((int)&curValueType);
+    if (child)
+        ::DestroyWindow(child);
 }
 
 HWND TextListPanel::createPanel(HWND hParent)
@@ -59,10 +69,10 @@ HWND TextListPanel::createPanel(HWND hParent)
 	Create(hParent, 0, 0, RECTW(rt), RECTH(rt),
 			WS_CHILD | WS_VISIBLE | WS_HSCROLL | WS_VSCROLL, 0);
 
-	AddColumn(0, 200, "Name",  0, NULL, LVHF_CENTERALIGN);
-	AddColumn(1, 105, "Id",  0, NULL, LVHF_CENTERALIGN);
-	AddColumn(2, 310, "Default Text",  0, NULL, LVHF_CENTERALIGN);
-	AddColumn(3, 310, "Current Text",  0, NULL, LVHF_CENTERALIGN);
+	AddColumn(0, 200, _("Name"),  0, NULL, LVHF_CENTERALIGN);
+	AddColumn(1, 105, _("Id"),  0, NULL, LVHF_CENTERALIGN);
+	AddColumn(2, 310, _("Default Text"),  0, NULL, LVHF_CENTERALIGN);
+	AddColumn(3, 310, _("Current Text"),  0, NULL, LVHF_CENTERALIGN);
 
 	return getHandler();
 }
@@ -388,7 +398,7 @@ void TextListPanel::updateHead(TeNode *def, TeNode *cur)
 	else if (cur == NULL)
 	{
 		col.nCols = 3;
-		sprintf(col.pszHeadText, _("Current Text (No Selected)"));
+		strcpy(col.pszHeadText, _("Current Text (not set)"));
 		ModifyHead(&col);
 	}
 	free(col.pszHeadText);

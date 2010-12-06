@@ -8,6 +8,8 @@
 #ifndef CLASS_INSTANCE_H_
 #define CLASS_INSTANCE_H_
 
+#include "clipboard.h"
+
 class Reference
 {
 	int ref;
@@ -44,14 +46,20 @@ struct FieldType{
 	int id;
 	string name;
 	ValueType * vtype;
+	string error_tip;
 
-	FieldType(int id, const char* name, ValueType* vtype){
+	FieldType(int id, const char* name, ValueType* vtype, const char* error_tip){
 		this->id = id;
 		this->name = name?name:"";
 		this->vtype = vtype;
+		if(error_tip)
+			this->error_tip = error_tip;
+		this->vtype->addRef();
 	}
 
 	~FieldType(){
+		if(vtype)
+			vtype->release();
 	}
 };
 
@@ -86,13 +94,15 @@ protected:
 	static mapex<string, Class*> _classMaper;
 
 	BOOL bContainer;
+    BOOL bControl;
 
-	void addFieldType(const char* name,int id, ValueType* vtype);
+	void addFieldType(const char* name,int id, ValueType* vtype, const char* error_tip = NULL);
 
 private:
 	static BOOL loadClassProperty(xmlNodePtr node, Class *_class, int& prop_id);
 	static BOOL loadClassEvent(xmlNodePtr node, Class *_class, int& event_id, char **default_prototype);
 	static BOOL loadClassDefProperty(xmlNodePtr node, Class *_class, uint8_t attr);
+
 public:
 	static Class* loadFromXML(xmlNodePtr node); //load from xml
 	Class* getSuper() { return super; }
@@ -104,6 +114,10 @@ public:
 
 	int classRefCount();
 
+    static const mapex<string, Class*> getClassMaper(void) { return _classMaper; }
+    BOOL isControl(void) { return bControl; }
+    //call when reading config file, such as control.cfg
+    void initAsControl (BOOL bCtrl) { bControl = bCtrl; }
 
 	Class(const char* name, Class* super = NULL){
 		this->super = super;
@@ -112,6 +126,8 @@ public:
 		//fieldTypeBlocks = NULL;
 		if(name)
 			className = name;
+
+        bControl = FALSE;
 	}
 
 	bool isClass(const char* str){
@@ -315,6 +331,17 @@ public:
 		return listens;
 	};
 
+	template<typename TField>
+	const bool getFieldErrorTip(TField field, string& str) {
+		str = "";
+		FieldType * ft = _class->getFieldType(field);
+		if(!ft)
+			return false;
+		str = ft->error_tip;
+		return true;
+	}
+
+
 	virtual void incUseOfRefReses();
 
 	virtual void decUseOfRefReses();
@@ -323,7 +350,7 @@ public: //copy cut, paste support
 
 	static BOOL copy(Instance** instances, int count);
 	static BOOL cut(Instance** instances, int count);
-	static Instance** paste();
+	static ObjectClipBoard<Instance*>::Array paste();
 
 	/*
 	 *  prop_table = {}
@@ -345,11 +372,11 @@ protected:
 };
 
 #define SET_TABLE(L,t, key, value) do{ \
-	lua_pushstring(L, #key); \
 	value ; \
-	lua_settable(L, t); \
+    lua_setfield(L, t, #key); \
 }while(0)
 
+typedef ObjectClipBoard<Instance*>::Array InstanceArray;
 
 
 template<class TInstance>

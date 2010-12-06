@@ -65,6 +65,7 @@ public:
 	virtual void onResNameChanged(int id, const char* newName);
 	virtual void onResIdChanged(int oldId, int newId);
 
+    BOOL isAvailableIDName(const char* idName);
 protected:
 	void importAll();
 	void import();
@@ -100,6 +101,8 @@ protected:
 
 	BOOL saveConfig(TextStream* stream);
 
+protected:
+	BOOL WndProc(int iMsg,WPARAM wParam,LPARAM lParam,int *pret);
 };
 
 #endif /* IMGEDITOR_H_ */

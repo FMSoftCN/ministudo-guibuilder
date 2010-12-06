@@ -5,19 +5,7 @@
 	<default-property name="Height" value="250"/>
 	<default-property name="Border" value="True"/>
 	
-	<property name="CheckBox" id="2009" type="enum" default="False">
-		<enum>
-			<option name="True" value="0x20"/>
-			<option name="False" value="0"/>
-		</enum>
-	</property>
-	<property name="AutoCheck" type="enum" default="False">
-		<enum>
-			<option name="True" value="0x40"/>
-			<option name="False" value="0"/>
-		</enum>
-	</property>
-	<property name="Tree" type="enum" default="False">
+	<property name="Tree" id="2011" type="enum" default="False">
 		<enum>
 			<option name="True" value="0x80"/>
 			<option name="False" value="0"/>

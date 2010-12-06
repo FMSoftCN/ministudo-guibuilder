@@ -18,8 +18,12 @@
 	</property>
 	
 	<!--   property of spinner -->
-	<property name="MaxPos" id="7" type="int" default="100"/>
-	<property name="MinPos" type="int" default="0"/>
+	<property name="MaxPos" id="7" type="int" default="100">
+		<error-tip>MaxPos must be geater than MinPos</error-tip>
+	</property>
+	<property name="MinPos" type="int" default="0">
+		<error-tip>MinPos must be less than MaxPos</error-tip>
+	</property>
 	<property name="CurPos" type="int" default="0"/>
 	<property name="LineStep" type="int" default="5"/>
 	

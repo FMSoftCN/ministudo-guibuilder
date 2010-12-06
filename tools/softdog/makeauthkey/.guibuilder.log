@@ -1,0 +1,2822 @@
+DEBUG>> main.cpp:116:=======register signal ok
+
+DEBUG>> common/valuetype.cpp:583:Enum (0x819a620) name=Align
+DEBUG>> common/valuetype.cpp:627:option name=Left,value=0x00000000
+DEBUG>> common/valuetype.cpp:627:option name=Right,value=0x00000001
+DEBUG>> common/valuetype.cpp:627:option name=Center,value=0x00000002
+DEBUG>> common/valuetype.cpp:583:Enum (0x819b650) name=VAlign
+DEBUG>> common/valuetype.cpp:627:option name=Top,value=0x00000000
+DEBUG>> common/valuetype.cpp:627:option name=Bottom,value=0x00000001
+DEBUG>> common/valuetype.cpp:627:option name=Middle,value=0x00000002
+DEBUG>> common/valuetype.cpp:583:Enum (0x819a458) name=Boolean
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000001
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> common/valuetype.cpp:583:Enum (0x819a578) name=DrawMode
+DEBUG>> common/valuetype.cpp:627:option name=Normal,value=0x00000000
+DEBUG>> common/valuetype.cpp:627:option name=Scaled,value=0x00000001
+DEBUG>> common/valuetype.cpp:627:option name=Tiled,value=0x00000002
+DEBUG>> common/valuetype.cpp:583:Enum (0x819b180) name=Direction
+DEBUG>> common/valuetype.cpp:627:option name=Horz,value=0x00000002
+DEBUG>> common/valuetype.cpp:627:option name=Vert,value=0x00000000
+DEBUG>> common/valuetype.cpp:583:Enum (0x819b290) name=GradientMode
+DEBUG>> common/valuetype.cpp:627:option name=Horz,value=0x00000000
+DEBUG>> common/valuetype.cpp:627:option name=Vert,value=0x00000001
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/widget.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Widget : (null)
+
+DEBUG>> id=1000, ft=0x819b040
+DEBUG>> id=1001, ft=0x819b070
+DEBUG>> id=1002, ft=0x819acf8
+DEBUG>> id=1003, ft=0x819ad78
+DEBUG>> id=1004, ft=0x819a968
+DEBUG>> id=1005, ft=0x819a9e8
+DEBUG>> id=1006, ft=0x819aa50
+DEBUG>> id=1007, ft=0x819aac0
+DEBUG>> id=1008, ft=0x819b708
+DEBUG>> id=2000, ft=0x819b7a0
+DEBUG>> common/valuetype.cpp:583:Enum (0x819b830) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00400000
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2001, ft=0x819b820
+DEBUG>> common/valuetype.cpp:583:Enum (0x819b910) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x08000000
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2002, ft=0x819b900
+DEBUG>> common/valuetype.cpp:583:Enum (0x819ba08) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000000
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x04000000
+DEBUG>> id=2003, ft=0x819b9f8
+DEBUG>> common/valuetype.cpp:583:Enum (0x819bb00) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00010000
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2004, ft=0x819baf0
+DEBUG>> common/valuetype.cpp:583:Enum (0x819bbf8) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00002000
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=3000, ft=0x819bbe8
+DEBUG>> id=3, ft=0x819bd00
+DEBUG>> id=4, ft=0x819bd88
+DEBUG>> id=4000, ft=0x819be28
+DEBUG>> id=4001, ft=0x819bfe8
+DEBUG>> id=4002, ft=0x819c108
+DEBUG>> id=4003, ft=0x819c1c8
+DEBUG>> id=4004, ft=0x81b91c8
+DEBUG>> id=4005, ft=0x81b92e8
+DEBUG>> id=4006, ft=0x81b9460
+DEBUG>> id=4007, ft=0x81b95a0
+DEBUG>> id=4008, ft=0x81b9660
+DEBUG>> id=4009, ft=0x81b9748
+DEBUG>> id=4010, ft=0x81b98d0
+DEBUG>> id=4011, ft=0x81b9a48
+DEBUG>> id=4012, ft=0x81b9ce8
+DEBUG>> id=4013, ft=0x81b9e80
+DEBUG>> id=4014, ft=0x81b9d80
+DEBUG>> id=4015, ft=0x81ba100
+DEBUG>> id=4016, ft=0x81ba230
+DEBUG>> id=4017, ft=0x81ba3f8
+DEBUG>> id=4018, ft=0x81ba4d8
+DEBUG>> id=4019, ft=0x81ba720
+DEBUG>> id=4020, ft=0x81ba640
+DEBUG>> id=4021, ft=0x81baa38
+DEBUG>> id=4022, ft=0x81bab18
+DEBUG>> id=4023, ft=0x81bad60
+DEBUG>> id=4024, ft=0x81bae70
+DEBUG>> id=4025, ft=0x81baff0
+DEBUG>> id=4026, ft=0x81bac60
+DEBUG>> id=4027, ft=0x818b4a0
+DEBUG>> id=4028, ft=0x818b5f8
+DEBUG>> id=4029, ft=0x818b6c0
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/scrollwidget.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:ScrollWidget : Widget
+
+DEBUG>> id=9, ft=0x819b538
+DEBUG>> id=10, ft=0x81bf5b0
+DEBUG>> id=11, ft=0x81bf620
+DEBUG>> id=12, ft=0x81bf108
+DEBUG>> common/valuetype.cpp:583:Enum (0x81bf1a8) name=
+DEBUG>> common/valuetype.cpp:627:option name=Automatic,value=0x00000000
+DEBUG>> common/valuetype.cpp:627:option name=Always,value=0x00000001
+DEBUG>> common/valuetype.cpp:627:option name=Never,value=0x00000002
+DEBUG>> id=16, ft=0x819b528
+DEBUG>> common/valuetype.cpp:583:Enum (0x81bf358) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00040000
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2048, ft=0x81bf348
+DEBUG>> common/valuetype.cpp:583:Enum (0x81bf438) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00080000
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2049, ft=0x81bf428
+DEBUG>> id=4050, ft=0x81bf688
+DEBUG>> id=4051, ft=0x81bf808
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/panel.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Panel : Widget
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/static.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Static : Widget
+
+DEBUG>> id=7, ft=0x81bee50
+DEBUG>> id=8, ft=0x81bbbd8
+DEBUG>> id=9, ft=0x81bbc70
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/ledlabel.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:LEDLabel : Static
+
+DEBUG>> id=11, ft=0x81beed0
+DEBUG>> id=12, ft=0x81bfaf0
+DEBUG>> id=13, ft=0x81bfb90
+DEBUG>> id=14, ft=0x81bfc30
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/rect.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Rectangle : Widget
+
+DEBUG>> id=7, ft=0x81bfd78
+DEBUG>> id=8, ft=0x81bfe18
+DEBUG>> id=9, ft=0x81bfee0
+DEBUG>> id=10, ft=0x81bff80
+DEBUG>> id=11, ft=0x81c0000
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/image.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Image : Static
+
+DEBUG>> id=11, ft=0x81bb280
+DEBUG>> id=13, ft=0x81bb2f0
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/groupbox.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:GroupBox : Static
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/buttongroup.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:ButtonGroup : GroupBox
+
+DEBUG>> id=4050, ft=0x81bed28
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/button.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Button : Widget
+
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c1118) name=
+DEBUG>> common/valuetype.cpp:627:option name=Label,value=0x00000000
+DEBUG>> common/valuetype.cpp:627:option name=Image,value=0x00000002
+DEBUG>> common/valuetype.cpp:627:option name=ImageLabel,value=0x00000020
+DEBUG>> common/valuetype.cpp:627:option name=VertImageLabel,value=0x00000060
+DEBUG>> id=2005, ft=0x81c1108
+DEBUG>> common/valuetype.cpp:583:Enum (0x81bb480) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000004
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2006, ft=0x81bb470
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c0f80) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000008
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2007, ft=0x81c0f70
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c1080) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000010
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2008, ft=0x81c1070
+DEBUG>> id=7, ft=0x81bb5f0
+DEBUG>> id=8, ft=0x81bb670
+DEBUG>> id=9, ft=0x81bb6f0
+DEBUG>> id=10, ft=0x81bb790
+DEBUG>> id=12, ft=0x81bb460
+DEBUG>> id=13, ft=0x81bb860
+DEBUG>> id=4050, ft=0x81c04f0
+DEBUG>> id=4051, ft=0x81c0588
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/checkbutton.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:CheckButton : Button
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/radiobutton.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:RadioButton : CheckButton
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/menubutton.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:MenuButton : Button
+
+DEBUG>> id=4070, ft=0x81c5380
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/colorbutton.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:ColorButton : Widget
+
+DEBUG>> id=7, ft=0x81c06f0
+DEBUG>> id=4050, ft=0x81c0790
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/container.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Container : ScrollWidget
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/mainwnd.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:MainWnd : Panel
+
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c1500) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x20000000
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2005, ft=0x81c14f0
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c39a8) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x10000000
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000001
+DEBUG>> id=2006, ft=0x81c3998
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c3758) name=
+DEBUG>> common/valuetype.cpp:627:option name=Simple,value=0x00000000
+DEBUG>> common/valuetype.cpp:627:option name=Thick,value=0x00200000
+DEBUG>> common/valuetype.cpp:627:option name=Thin,value=0x00100000
+DEBUG>> common/valuetype.cpp:627:option name=DlgFrame,value=0x00800000
+DEBUG>> id=2007, ft=0x81c3748
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c3f48) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00020000
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2008, ft=0x81c3f38
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c4048) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00010000
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2009, ft=0x81c4038
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c4148) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00001000
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=3001, ft=0x81c4138
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c4248) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00004000
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=3002, ft=0x81c4238
+DEBUG>> common/valuetype.cpp:583:Enum (0x81bbd88) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00008000
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=3003, ft=0x81bbd78
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/dialog.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:DialogBox : MainWnd
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/progressbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:ProgressBar : Widget
+
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c18c0) name=
+DEBUG>> common/valuetype.cpp:627:option name=Horz,value=0x00000000
+DEBUG>> common/valuetype.cpp:627:option name=Vert,value=0x00000002
+DEBUG>> id=2004, ft=0x81c18b0
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c5c58) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000004
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2005, ft=0x81c5c48
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c3c70) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000008
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2006, ft=0x81c3c60
+DEBUG>> id=7, ft=0x81bbed0
+DEBUG>> id=8, ft=0x81bbf50
+DEBUG>> id=9, ft=0x81bbfd0
+DEBUG>> id=10, ft=0x81bc020
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/hprogressbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:HProgressBar : ProgressBar
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/vprogressbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:VProgressBar : ProgressBar
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/propsheet.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:PropSheet : window::Widget
+
+DEBUG>> id=7, ft=0x81bc440
+DEBUG>> id=8, ft=0x81bc138
+DEBUG>> id=10, ft=0x81bc430
+DEBUG>> id=500, ft=0x81bc278
+DEBUG>> id=4050, ft=0x81c5750
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c57e0) name=
+DEBUG>> common/valuetype.cpp:627:option name=Simple,value=0x00000000
+DEBUG>> common/valuetype.cpp:627:option name=Compact,value=0x00000002
+DEBUG>> common/valuetype.cpp:627:option name=Scrollable,value=0x00000004
+DEBUG>> id=2005, ft=0x81c57d0
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c5928) name=
+DEBUG>> common/valuetype.cpp:627:option name=Top,value=0x00000000
+DEBUG>> common/valuetype.cpp:627:option name=Bottom,value=0x00000008
+DEBUG>> id=2006, ft=0x81c5918
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/page.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Page : Container
+
+DEBUG>> id=4100, ft=0x81c5a58
+DEBUG>> id=4101, ft=0x81c1910
+DEBUG>> id=4102, ft=0x81c4a50
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/itemview.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:ItemView : ScrollWidget
+
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c2ff8) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000004
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2006, ft=0x81c2fe8
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c32f0) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000008
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2007, ft=0x81c32e0
+DEBUG>> id=4100, ft=0x81c34a8
+DEBUG>> id=4101, ft=0x81c35f0
+DEBUG>> id=4102, ft=0x81c36f0
+DEBUG>> id=4103, ft=0x81c22f0
+DEBUG>> id=4104, ft=0x81c2410
+DEBUG>> id=4105, ft=0x81c2558
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/scrollview.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:ScrollView : ItemView
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/listbox.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:ListBox : ItemView
+
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c4470) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000010
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2008, ft=0x81c4bd0
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c4520) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000020
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2009, ft=0x81c4510
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c4620) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000040
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2010, ft=0x81c4610
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c1c38) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000080
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2011, ft=0x81c1c28
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c1d38) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000100
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2012, ft=0x81c1d28
+DEBUG>> id=21, ft=0x81c1e28
+DEBUG>> id=4150, ft=0x81c1f58
+DEBUG>> id=4151, ft=0x81c1ff0
+DEBUG>> id=4152, ft=0x81c2108
+DEBUG>> id=4153, ft=0x81c28a0
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/spinner.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Spinner : Widget
+
+DEBUG>> id=2005, ft=0x81c2a28
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c2a88) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000004
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2006, ft=0x81c2a78
+DEBUG>> id=7, ft=0x81c2b80
+DEBUG>> id=8, ft=0x81c2c00
+DEBUG>> id=9, ft=0x81c2c80
+DEBUG>> id=10, ft=0x81c2d00
+DEBUG>> id=4050, ft=0x81c4d28
+DEBUG>> id=4051, ft=0x81c4d98
+DEBUG>> id=4052, ft=0x81c4ed0
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/hspinner.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:HSpinner : Spinner
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/vspinner.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:VSpinner : Spinner
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/spinbox.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:SpinBox : Spinner
+
+DEBUG>> common/valuetype.cpp:583:Enum (0x81bcd78) name=
+DEBUG>> common/valuetype.cpp:627:option name=Number,value=0x00000000
+DEBUG>> common/valuetype.cpp:627:option name=String,value=0x00000008
+DEBUG>> id=2007, ft=0x81bcd68
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c50c8) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000010
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2008, ft=0x81c50b8
+DEBUG>> common/valuetype.cpp:583:Enum (0x81bc648) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000000
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000020
+DEBUG>> id=2009, ft=0x81c5168
+DEBUG>> common/valuetype.cpp:583:Enum (0x81bc738) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000040
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2010, ft=0x81bcd58
+DEBUG>> common/valuetype.cpp:583:Enum (0x81bc890) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000080
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2011, ft=0x81bc880
+DEBUG>> common/valuetype.cpp:583:Enum (0x81bc960) name=
+DEBUG>> common/valuetype.cpp:627:option name=NoCase,value=0x00000000
+DEBUG>> common/valuetype.cpp:627:option name=Upper,value=0x00000100
+DEBUG>> common/valuetype.cpp:627:option name=Lower,value=0x00000200
+DEBUG>> id=2012, ft=0x81bc950
+DEBUG>> common/valuetype.cpp:583:Enum (0x81bcac0) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000400
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2013, ft=0x81bcab0
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/slider.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Slider : Widget
+
+DEBUG>> common/valuetype.cpp:583:Enum (0x81bcbe8) name=
+DEBUG>> common/valuetype.cpp:627:option name=Horz,value=0x00000000
+DEBUG>> common/valuetype.cpp:627:option name=Vert,value=0x00000002
+DEBUG>> id=2005, ft=0x81bcbd8
+DEBUG>> id=7, ft=0x81be2d8
+DEBUG>> id=8, ft=0x81be358
+DEBUG>> id=9, ft=0x81be3d8
+DEBUG>> id=10, ft=0x81be480
+DEBUG>> id=11, ft=0x81be520
+DEBUG>> id=4100, ft=0x81be650
+DEBUG>> id=4101, ft=0x81be6e8
+DEBUG>> id=4102, ft=0x81be820
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/trackbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:TrackBar : Slider
+
+DEBUG>> common/valuetype.cpp:583:Enum (0x81bd400) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000000
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000008
+DEBUG>> id=2006, ft=0x81bd3f0
+DEBUG>> id=13, ft=0x81be860
+DEBUG>> id=14, ft=0x81be8d0
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/htrackbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:HTrackBar : TrackBar
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/vtrackbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:VTrackBar : TrackBar
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/scrollbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:ScrollBar : Slider
+
+DEBUG>> common/valuetype.cpp:583:Enum (0x81bcf18) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000008
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2006, ft=0x81bcf08
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/hscrollbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:HScrollBar : ScrollBar
+
+DEBUG>> common/valuetype.cpp:583:Enum (0x81bd7e8) name=
+DEBUG>> common/valuetype.cpp:627:option name=None,value=0x00000000
+DEBUG>> common/valuetype.cpp:627:option name=Left,value=0x00000010
+DEBUG>> common/valuetype.cpp:627:option name=Right,value=0x00000020
+DEBUG>> id=2007, ft=0x81bd7d8
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/vscrollbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:VScrollBar : ScrollBar
+
+DEBUG>> common/valuetype.cpp:583:Enum (0x81beaa0) name=
+DEBUG>> common/valuetype.cpp:627:option name=None,value=0x00000000
+DEBUG>> common/valuetype.cpp:627:option name=Up,value=0x00000010
+DEBUG>> common/valuetype.cpp:627:option name=Down,value=0x00000020
+DEBUG>> id=2007, ft=0x81bea90
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/combo.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Combobox : Panel
+
+DEBUG>> id=8, ft=0x81bddd8
+DEBUG>> id=9, ft=0x81c9e60
+DEBUG>> id=21, ft=0x81c9ed0
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c9f50) name=
+DEBUG>> common/valuetype.cpp:627:option name=Simple,value=0x00000000
+DEBUG>> common/valuetype.cpp:627:option name=DropDownList,value=0x00000002
+DEBUG>> id=2005, ft=0x81c9f40
+DEBUG>> common/valuetype.cpp:583:Enum (0x81bdbe0) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000004
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2006, ft=0x81bdbd0
+DEBUG>> common/valuetype.cpp:583:Enum (0x81bdcb0) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000000
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000008
+DEBUG>> id=2007, ft=0x81bde58
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c8f70) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000010
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2008, ft=0x81c8f60
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c9030) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000020
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2009, ft=0x81c9020
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c9100) name=
+DEBUG>> common/valuetype.cpp:627:option name=NoCase,value=0x00000000
+DEBUG>> common/valuetype.cpp:627:option name=Upper,value=0x00000040
+DEBUG>> common/valuetype.cpp:627:option name=Lower,value=0x00000080
+DEBUG>> id=2010, ft=0x81c90f0
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c91d0) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000100
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000001
+DEBUG>> id=2011, ft=0x81c91c0
+DEBUG>> id=4100, ft=0x81c9310
+DEBUG>> id=4101, ft=0x81c93a8
+DEBUG>> id=4102, ft=0x81c94a8
+DEBUG>> id=4103, ft=0x81c9650
+DEBUG>> id=4104, ft=0x81c96e8
+DEBUG>> id=4105, ft=0x81c9828
+DEBUG>> id=4106, ft=0x81c9968
+DEBUG>> id=4107, ft=0x81c5d80
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/component.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:InvisibleComponent : (null)
+
+DEBUG>> id=1000, ft=0x81bdec8
+DEBUG>> id=1001, ft=0x81bded8
+DEBUG>> id=1002, ft=0x81bdf38
+DEBUG>> id=1003, ft=0x81c9b90
+DEBUG>> id=1004, ft=0x81c9c10
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/timer.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Timer : InvisibleComponent
+
+DEBUG>> id=1, ft=0x81941a8
+DEBUG>> id=4050, ft=0x81c5fa8
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/monthcalendar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:MonthCalendar : Widget
+
+DEBUG>> id=7, ft=0x81c6c50
+DEBUG>> id=8, ft=0x81c6ca0
+DEBUG>> id=9, ft=0x81c6cf0
+DEBUG>> id=4050, ft=0x81c6d20
+DEBUG>> id=4051, ft=0x81c8920
+DEBUG>> id=4052, ft=0x81c85f0
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/edit.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Edit : ScrollView
+
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c6a30) name=
+DEBUG>> common/valuetype.cpp:627:option name=Left,value=0x00000000
+DEBUG>> common/valuetype.cpp:627:option name=Center,value=0x00000020
+DEBUG>> common/valuetype.cpp:627:option name=Right,value=0x00000040
+DEBUG>> id=2009, ft=0x81c6a20
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c86a0) name=
+DEBUG>> common/valuetype.cpp:627:option name=None,value=0x00000000
+DEBUG>> common/valuetype.cpp:627:option name=Lower,value=0x00000100
+DEBUG>> common/valuetype.cpp:627:option name=Upper,value=0x00000080
+DEBUG>> id=2010, ft=0x81c8690
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c87a0) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000000
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000200
+DEBUG>> id=2011, ft=0x81c8790
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c7df8) name=
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000400
+DEBUG>> id=2012, ft=0x81c7de8
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c7ef8) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000800
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2013, ft=0x81c7ee8
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c7ff8) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000000
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000001
+DEBUG>> id=3001, ft=0x81c7fe8
+DEBUG>> id=22, ft=0x81c80c8
+DEBUG>> id=4150, ft=0x81c60a0
+DEBUG>> id=4151, ft=0x81c6180
+DEBUG>> id=4152, ft=0x81c6220
+DEBUG>> id=4153, ft=0x81c6420
+DEBUG>> id=4154, ft=0x81c6598
+DEBUG>> id=4155, ft=0x81c6608
+DEBUG>> id=4156, ft=0x81c6750
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/sledit.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:SlEdit : Edit
+
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c6910) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00002000
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2014, ft=0x81c6900
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c8188) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00004000
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2015, ft=0x81c83e8
+DEBUG>> id=25, ft=0x81c8278
+DEBUG>> id=26, ft=0x81c68f0
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/mledit.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:MlEdit : Edit
+
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c70a8) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00002000
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2014, ft=0x81c6be8
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c6d70) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00004000
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2015, ft=0x81c6d60
+DEBUG>> id=23, ft=0x81c6e60
+DEBUG>> id=25, ft=0x81c6bd8
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c6f80) name=
+DEBUG>> common/valuetype.cpp:627:option name=Line,value=0x00000000
+DEBUG>> common/valuetype.cpp:627:option name=Block,value=0x00000001
+DEBUG>> id=26, ft=0x81c6f70
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/iconview.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:IconView : ItemView
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/listview.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:ListView : ItemView
+
+DEBUG>> common/valuetype.cpp:583:Enum (0x81ccca0) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000020
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2009, ft=0x81ccc90
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c7230) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000040
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2010, ft=0x81c7290
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c7340) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000080
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2011, ft=0x81c7330
+DEBUG>> common/valuetype.cpp:583:Enum (0x81c7448) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000100
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2012, ft=0x81c7438
+DEBUG>> id=21, ft=0x81c7538
+DEBUG>> id=23, ft=0x81c75d8
+DEBUG>> id=25, ft=0x81ccc80
+DEBUG>> id=26, ft=0x81c7708
+DEBUG>> id=4150, ft=0x81c7860
+DEBUG>> id=4151, ft=0x81c78f8
+DEBUG>> id=4152, ft=0x81c7a48
+DEBUG>> id=4153, ft=0x81c7b98
+DEBUG>> id=4154, ft=0x81c7ce8
+DEBUG>> id=4155, ft=0x81ca3a0
+DEBUG>> id=4156, ft=0x81ca5a8
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/aminate.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Animate : Static
+
+DEBUG>> common/valuetype.cpp:583:Enum (0x81ca688) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000008
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2005, ft=0x81ca678
+DEBUG>> common/valuetype.cpp:583:Enum (0x81ca768) name=
+DEBUG>> common/valuetype.cpp:627:option name=None,value=0x00000000
+DEBUG>> common/valuetype.cpp:627:option name=ImageScaled,value=0x00000010
+DEBUG>> common/valuetype.cpp:627:option name=AutoFit,value=0x00000020
+DEBUG>> id=2006, ft=0x81ca758
+DEBUG>> common/valuetype.cpp:583:Enum (0x81cb310) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000040
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2008, ft=0x81cb300
+DEBUG>> id=11, ft=0x81cb418
+DEBUG>> id=12, ft=0x81cb468
+DEBUG>> id=13, ft=0x81cb4d0
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/separator.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Separator : Widget
+
+DEBUG>> common/valuetype.cpp:583:Enum (0x81ca990) name=
+DEBUG>> common/valuetype.cpp:627:option name=Horz,value=0x00000000
+DEBUG>> common/valuetype.cpp:627:option name=Vert,value=0x00000004
+DEBUG>> id=2005, ft=0x81ca980
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/hseparator.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:HSeparator : Separator
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/vseparator.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:VSeparator : Separator
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/abstractlist.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:AbstractList : ScrollWidget
+
+DEBUG>> common/valuetype.cpp:583:Enum (0x81cbfa8) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000002
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2006, ft=0x81cc1d8
+DEBUG>> id=18, ft=0x81cc058
+DEBUG>> id=24, ft=0x81cc8e8
+DEBUG>> id=25, ft=0x81cc988
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/list.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:List : AbstractList
+
+DEBUG>> common/valuetype.cpp:583:Enum (0x81cb808) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000004
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2007, ft=0x81cb868
+DEBUG>> common/valuetype.cpp:583:Enum (0x81cb8c8) name=
+DEBUG>> common/valuetype.cpp:627:option name=list,value=0x00000000
+DEBUG>> common/valuetype.cpp:627:option name=iconv,value=0x00000001
+DEBUG>> common/valuetype.cpp:627:option name=iconh,value=0x00000002
+DEBUG>> common/valuetype.cpp:627:option name=cboxh,value=0x00000003
+DEBUG>> common/valuetype.cpp:627:option name=group,value=0x00000004
+DEBUG>> id=27, ft=0x81cb8b8
+DEBUG>> id=28, ft=0x81cc2e8
+DEBUG>> id=4160, ft=0x81cba20
+DEBUG>> id=4161, ft=0x81cbab8
+DEBUG>> id=4162, ft=0x81cbba8
+DEBUG>> id=4163, ft=0x81cbdb8
+DEBUG>> id=4164, ft=0x81caae0
+DEBUG>> id=4165, ft=0x81cabf8
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/phonebar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:PhoneBar : Widget
+
+DEBUG>> common/valuetype.cpp:583:Enum (0x81cc4e0) name=
+DEBUG>> common/valuetype.cpp:627:option name=True,value=0x00000008
+DEBUG>> common/valuetype.cpp:627:option name=False,value=0x00000000
+DEBUG>> id=2005, ft=0x81cc4d0
+DEBUG>> Class File:/usr/local/etc/guibuilder//uieditor/defines/imwordsel.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:IMWordSel : Widget
+
+DEBUG>> id=4050, ft=0x819aca0
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/widget.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.Widget : (null)
+
+DEBUG>> id=1000, ft=0x81d2930
+DEBUG>> id=28673, ft=0x81d27e8
+DEBUG>> id=28929, ft=0x81cefd0
+DEBUG>> id=12552, ft=0x81d2548
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/propsheet.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.paged-window::PropSheet : renderer::Classic.Widget
+
+DEBUG>> id=28928, ft=0x81d3548
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/scrollwidget.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.ScrollWidget : renderer::Classic.Widget
+
+DEBUG>> id=8197, ft=0x81d1eb0
+DEBUG>> id=12552, ft=0x81cefa0
+DEBUG>> id=12296, ft=0x81d3190
+DEBUG>> id=12298, ft=0x81dce30
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/itemview.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.ItemView : renderer::Classic.ScrollWidget
+
+DEBUG>> id=28675, ft=0x81dc190
+DEBUG>> id=28931, ft=0x81cef30
+DEBUG>> id=28930, ft=0x81dcfe8
+DEBUG>> id=28674, ft=0x81dd088
+DEBUG>> id=28676, ft=0x81dd128
+DEBUG>> id=28932, ft=0x81dd1d0
+DEBUG>> id=12300, ft=0x81dd278
+DEBUG>> id=12556, ft=0x81dd340
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/iconview.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.IconView : renderer::Classic.ItemView
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/listview.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.ListView : renderer::Classic.ItemView
+
+DEBUG>> id=28928, ft=0x81dd9f8
+DEBUG>> id=28932, ft=0x81dd518
+DEBUG>> id=28676, ft=0x81dd5b8
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/panel.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.Panel : renderer::Classic.Widget
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/container.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.Container : renderer::Classic.ScrollWidget
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/combo.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.Combobox : renderer::Classic.Panel
+
+DEBUG>> id=28928, ft=0x81dc0d8
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/mainwnd.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.MainWnd : renderer::Classic.Panel
+
+DEBUG>> id=8192, ft=0x81db5a0
+DEBUG>> id=4096, ft=0x8207408
+DEBUG>> id=12288, ft=0x81db640
+DEBUG>> id=12544, ft=0x8207548
+DEBUG>> id=12294, ft=0x82077d8
+DEBUG>> id=12550, ft=0x8207880
+DEBUG>> id=8196, ft=0x8207938
+DEBUG>> id=12292, ft=0x8207928
+DEBUG>> id=12548, ft=0x8207a48
+DEBUG>> id=8197, ft=0x8207af0
+DEBUG>> id=12552, ft=0x8207b90
+DEBUG>> id=12296, ft=0x81db7a0
+DEBUG>> id=12298, ft=0x81db848
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/dialog.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.DialogBox : renderer::Classic.MainWnd
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/page.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.Page : renderer::Classic.Container
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/button.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.Button : renderer::Classic.Widget
+
+DEBUG>> id=28672, ft=0x81dbe50
+DEBUG>> id=28928, ft=0x81dbef0
+DEBUG>> id=28932, ft=0x8208128
+DEBUG>> id=28676, ft=0x82081c8
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/checkbutton.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.CheckButton : renderer::Classic.Button
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/radiobutton.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.RadioButton : renderer::Classic.CheckButton
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/listbox.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.ListBox : renderer::Classic.ItemView
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/progressbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.ProgressBar : renderer::Classic.Widget
+
+DEBUG>> id=28931, ft=0x81d55a8
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/hprogressbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.HProgressBar : renderer::Classic.ProgressBar
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/vprogressbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.VProgressBar : renderer::Classic.ProgressBar
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/spinner.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.Spinner : renderer::Classic.Widget
+
+DEBUG>> id=28672, ft=0x81d4658
+DEBUG>> id=28928, ft=0x81d46f8
+DEBUG>> id=28932, ft=0x81d4798
+DEBUG>> id=28676, ft=0x81d37f0
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/hspinner.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.HSpinner : renderer::Classic.Spinner
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/vspinner.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.VSpinner : renderer::Classic.Spinner
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/spinbox.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.SpinBox : renderer::Classic.Spinner
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/trackbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.TrackBar : renderer::Classic.Widget
+
+DEBUG>> id=28928, ft=0x81db1e0
+DEBUG>> id=28932, ft=0x81daf30
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/htrackbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.HTrackBar : renderer::Classic.TrackBar
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/vtrackbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.VTrackBar : renderer::Classic.TrackBar
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/static.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.Static : renderer::Classic.Widget
+
+DEBUG>> id=28672, ft=0x81d3e30
+DEBUG>> id=28676, ft=0x81d3ed0
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/groupbox.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.GroupBox : renderer::Classic.Static
+
+DEBUG>> id=28928, ft=0x81d39e0
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/buttongroup.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.ButtonGroup : renderer::Classic.GroupBox
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/image.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.Image : renderer::Classic.Static
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/rect.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.Rectangle : renderer::Classic.Static
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/slider.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.Slider : renderer::Classic.Widget
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/animate.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.Animate : renderer::Classic.Static
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/ledlabel.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.LEDLabel : renderer::Classic.Static
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/colorbutton.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.ColorButton : renderer::Classic.Button
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/menubutton.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.MenuButton : renderer::Classic.Button
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/monthcalendar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.MonthCalendar : renderer::Classic.Widget
+
+DEBUG>> id=28672, ft=0x81d91c8
+DEBUG>> id=28928, ft=0x81d9268
+DEBUG>> id=28932, ft=0x81d90a8
+DEBUG>> id=28676, ft=0x81d9148
+DEBUG>> id=28930, ft=0x81d8d40
+DEBUG>> id=28674, ft=0x81d8de0
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/scrollview.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.ScrollView : renderer::Classic.ItemView
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/edit.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.Edit : renderer::Classic.ScrollView
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/sledit.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.SlEdit : renderer::Classic.Edit
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/mledit.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.MlEdit : renderer::Classic.Edit
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/scrollbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.ScrollBar : renderer::Classic.Slider
+
+DEBUG>> id=28672, ft=0x81d9b08
+DEBUG>> id=28928, ft=0x81d9ba8
+DEBUG>> id=28932, ft=0x81d9928
+DEBUG>> id=28676, ft=0x81d95b0
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/hscrollbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.HScrollBar : renderer::Classic.ScrollBar
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/vscrollbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.VScrollBar : renderer::Classic.ScrollBar
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/separator.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.Separator : renderer::Classic.Widget
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/hseparator.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.HSeparator : renderer::Classic.Separator
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/classic/vseparator.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Classic.VSeparator : renderer::Classic.Separator
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/widget.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.Widget : (null)
+
+DEBUG>> id=1000, ft=0x81da968
+DEBUG>> id=28673, ft=0x81d52a0
+DEBUG>> id=28929, ft=0x81da0d0
+DEBUG>> id=12548, ft=0x81da170
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/propsheet.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.paged-window::PropSheet : renderer::Fashion.Widget
+
+DEBUG>> id=36865, ft=0x81da018
+DEBUG>> id=24576, ft=0x81da1e0
+DEBUG>> id=24577, ft=0x81da260
+DEBUG>> id=28928, ft=0x820ded8
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/scrollwidget.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.ScrollWidget : renderer::Fashion.Widget
+
+DEBUG>> id=8197, ft=0x820e030
+DEBUG>> id=12552, ft=0x820e660
+DEBUG>> id=12800, ft=0x820e708
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/itemview.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.ItemView : renderer::Fashion.ScrollWidget
+
+DEBUG>> id=28675, ft=0x820e750
+DEBUG>> id=28931, ft=0x820e7b8
+DEBUG>> id=28930, ft=0x820f658
+DEBUG>> id=28674, ft=0x820f6f8
+DEBUG>> id=28676, ft=0x820f798
+DEBUG>> id=28932, ft=0x820e3a8
+DEBUG>> id=12300, ft=0x820e450
+DEBUG>> id=12556, ft=0x820e518
+DEBUG>> id=36867, ft=0x820f148
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/iconview.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.IconView : renderer::Fashion.ItemView
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/listview.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.ListView : renderer::Fashion.ItemView
+
+DEBUG>> id=28928, ft=0x820eea8
+DEBUG>> id=28932, ft=0x820ef28
+DEBUG>> id=28676, ft=0x820f2e8
+DEBUG>> id=36865, ft=0x820f368
+DEBUG>> id=24576, ft=0x820f418
+DEBUG>> id=24577, ft=0x820f498
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/panel.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.Panel : renderer::Fashion.Widget
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/container.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.Container : renderer::Fashion.ScrollWidget
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/combo.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.Combobox : renderer::Fashion.Panel
+
+DEBUG>> id=28928, ft=0x820ed38
+DEBUG>> id=36865, ft=0x8210938
+DEBUG>> id=24576, ft=0x82109d8
+DEBUG>> id=24577, ft=0x820e960
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/mainwnd.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.MainWnd : renderer::Fashion.Panel
+
+DEBUG>> id=8192, ft=0x8210628
+DEBUG>> id=4096, ft=0x820eac0
+DEBUG>> id=12288, ft=0x820eab0
+DEBUG>> id=12544, ft=0x820ec00
+DEBUG>> id=12800, ft=0x820f880
+DEBUG>> id=12294, ft=0x820f928
+DEBUG>> id=12550, ft=0x820f9d0
+DEBUG>> id=12806, ft=0x820fa78
+DEBUG>> id=8196, ft=0x820fb30
+DEBUG>> id=12292, ft=0x820fb20
+DEBUG>> id=12548, ft=0x820fc28
+DEBUG>> id=12296, ft=0x820fcf0
+DEBUG>> id=8197, ft=0x820fd70
+DEBUG>> id=12552, ft=0x820fe10
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/dialog.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.DialogBox : renderer::Fashion.MainWnd
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/page.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.Page : renderer::Fashion.Container
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/button.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.Button : renderer::Fashion.Widget
+
+DEBUG>> id=28672, ft=0x8213b68
+DEBUG>> id=28928, ft=0x8213a08
+DEBUG>> id=28932, ft=0x8213aa8
+DEBUG>> id=28676, ft=0x81d4be0
+DEBUG>> id=36865, ft=0x81d4c60
+DEBUG>> id=24576, ft=0x81d4d10
+DEBUG>> id=24577, ft=0x8210010
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/checkbutton.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.CheckButton : renderer::Fashion.Button
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/radiobutton.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.RadioButton : renderer::Fashion.CheckButton
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/listbox.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.ListBox : renderer::Fashion.ItemView
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/progressbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.ProgressBar : renderer::Fashion.Widget
+
+DEBUG>> id=28934, ft=0x81d5030
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/hprogressbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.HProgressBar : renderer::Fashion.ProgressBar
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/vprogressbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.VProgressBar : renderer::Fashion.ProgressBar
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/spinner.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.Spinner : renderer::Fashion.Widget
+
+DEBUG>> id=28928, ft=0x82113c0
+DEBUG>> id=28932, ft=0x82102f8
+DEBUG>> id=28676, ft=0x81d4e20
+DEBUG>> id=24576, ft=0x81d4ed0
+DEBUG>> id=24577, ft=0x82114f0
+DEBUG>> id=36865, ft=0x81d4ec0
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/hspinner.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.HSpinner : renderer::Fashion.Spinner
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/vspinner.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.VSpinner : renderer::Fashion.Spinner
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/spinbox.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.SpinBox : renderer::Fashion.Spinner
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/trackbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.TrackBar : renderer::Fashion.Widget
+
+DEBUG>> id=28928, ft=0x8210db8
+DEBUG>> id=28932, ft=0x8211a00
+DEBUG>> id=28676, ft=0x8211aa0
+DEBUG>> id=28935, ft=0x8211728
+DEBUG>> id=24576, ft=0x82117c8
+DEBUG>> id=24577, ft=0x8211868
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/htrackbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.HTrackBar : renderer::Fashion.TrackBar
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/vtrackbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.VTrackBar : renderer::Fashion.TrackBar
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/static.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.Static : renderer::Fashion.Widget
+
+DEBUG>> id=28672, ft=0x8212750
+DEBUG>> id=28676, ft=0x8211c78
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/groupbox.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.GroupBox : renderer::Fashion.Static
+
+DEBUG>> id=28928, ft=0x8212698
+DEBUG>> id=36868, ft=0x82122f0
+DEBUG>> id=24576, ft=0x8212088
+DEBUG>> id=24577, ft=0x8212108
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/buttongroup.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.ButtonGroup : renderer::Fashion.GroupBox
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/image.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.Image : renderer::Fashion.Static
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/rect.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.Rectangle : renderer::Fashion.Static
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/slider.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.Slider : renderer::Fashion.Widget
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/animate.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.Animate : renderer::Fashion.Static
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/ledlabel.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.LEDLabel : renderer::Fashion.Static
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/colorbutton.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.ColorButton : renderer::Fashion.Button
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/menubutton.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.MenuButton : renderer::Fashion.Button
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/monthcalendar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.MonthCalendar : renderer::Fashion.Widget
+
+DEBUG>> id=28672, ft=0x820c338
+DEBUG>> id=28928, ft=0x820c3d8
+DEBUG>> id=28932, ft=0x820bdb0
+DEBUG>> id=28676, ft=0x820be50
+DEBUG>> id=28930, ft=0x82130a8
+DEBUG>> id=28674, ft=0x8213148
+DEBUG>> id=36865, ft=0x8211e80
+DEBUG>> id=24576, ft=0x8211f30
+DEBUG>> id=24577, ft=0x8211fb0
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/scrollview.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.ScrollView : renderer::Fashion.ItemView
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/edit.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.Edit : renderer::Fashion.ScrollView
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/sledit.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.SlEdit : renderer::Fashion.Edit
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/mledit.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.MlEdit : renderer::Fashion.Edit
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/scrollbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.ScrollBar : renderer::Fashion.Slider
+
+DEBUG>> id=28928, ft=0x820cde8
+DEBUG>> id=28932, ft=0x820ced8
+DEBUG>> id=28676, ft=0x820cf78
+DEBUG>> id=36865, ft=0x820c668
+DEBUG>> id=24576, ft=0x820c718
+DEBUG>> id=24577, ft=0x820bff0
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/hscrollbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.HScrollBar : renderer::Fashion.ScrollBar
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/vscrollbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.VScrollBar : renderer::Fashion.ScrollBar
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/separator.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.Separator : renderer::Fashion.Widget
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/hseparator.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.HSeparator : renderer::Fashion.Separator
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/fashion/vseparator.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Fashion.VSeparator : renderer::Fashion.Separator
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/widget.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.Widget : (null)
+
+DEBUG>> id=1000, ft=0x820cb18
+DEBUG>> id=12800, ft=0x820da58
+DEBUG>> id=12806, ft=0x820d880
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/propsheet.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.paged-window::PropSheet : renderer::Skin.Widget
+
+DEBUG>> id=28673, ft=0x82166d0
+DEBUG>> id=28928, ft=0x8216770
+DEBUG>> id=32776, ft=0x820c810
+DEBUG>> id=32679, ft=0x820c860
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/scrollwidget.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.ScrollWidget : renderer::Skin.Widget
+
+DEBUG>> id=20485, ft=0x820d718
+DEBUG>> id=20483, ft=0x820d450
+DEBUG>> id=20487, ft=0x820d4c0
+DEBUG>> id=20486, ft=0x8216518
+DEBUG>> id=20484, ft=0x8216588
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/itemview.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.ItemView : renderer::Skin.ScrollWidget
+
+DEBUG>> id=28675, ft=0x8216670
+DEBUG>> id=28931, ft=0x8214090
+DEBUG>> id=28930, ft=0x8214138
+DEBUG>> id=28674, ft=0x820d1b8
+DEBUG>> id=28676, ft=0x820d258
+DEBUG>> id=28932, ft=0x820d300
+DEBUG>> id=12300, ft=0x820d3a8
+DEBUG>> id=12556, ft=0x8216890
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/iconview.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.IconView : renderer::Skin.ItemView
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/listview.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.ListView : renderer::Skin.ItemView
+
+DEBUG>> id=32775, ft=0x82169b8
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/panel.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.Panel : renderer::Skin.Widget
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/container.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.Container : renderer::Skin.ScrollWidget
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/mainwnd.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.MainWnd : renderer::Skin.Panel
+
+DEBUG>> id=12552, ft=0x82177b0
+DEBUG>> id=20490, ft=0x8217830
+DEBUG>> id=20488, ft=0x8217860
+DEBUG>> id=20491, ft=0x8216ff0
+DEBUG>> id=20489, ft=0x8217040
+DEBUG>> id=20485, ft=0x8216a80
+DEBUG>> id=20483, ft=0x8216af0
+DEBUG>> id=20487, ft=0x8216b60
+DEBUG>> id=20486, ft=0x8216be0
+DEBUG>> id=20484, ft=0x8216c50
+DEBUG>> id=8192, ft=0x8216bd0
+DEBUG>> id=4096, ft=0x8217160
+DEBUG>> id=12288, ft=0x8217150
+DEBUG>> id=12294, ft=0x82172c8
+DEBUG>> id=20481, ft=0x8217370
+DEBUG>> id=20482, ft=0x82173c0
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/dialog.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.DialogBox : renderer::Skin.MainWnd
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/page.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.Page : renderer::Skin.Container
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/button.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.Button : renderer::Skin.Widget
+
+DEBUG>> id=32771, ft=0x8216200
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/checkbutton.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.CheckButton : renderer::Skin.Button
+
+DEBUG>> id=32772, ft=0x82176d0
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/radiobutton.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.RadioButton : renderer::Skin.CheckButton
+
+DEBUG>> id=32773, ft=0x8212c28
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/listbox.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.ListBox : renderer::Skin.ItemView
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/combo.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.Combobox : renderer::Skin.Panel
+
+DEBUG>> id=32770, ft=0x8218c58
+DEBUG>> id=32679, ft=0x8218da0
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/progressbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.ProgressBar : renderer::Skin.Widget
+
+DEBUG>> id=28931, ft=0x8212ed0
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/hprogressbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.HProgressBar : renderer::Skin.ProgressBar
+
+DEBUG>> id=32777, ft=0x8219218
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/vprogressbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.VProgressBar : renderer::Skin.ProgressBar
+
+DEBUG>> id=32778, ft=0x8219108
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/spinner.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.Spinner : renderer::Skin.Widget
+
+DEBUG>> id=32770, ft=0x8219380
+DEBUG>> id=32679, ft=0x8219400
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/hspinner.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.HSpinner : renderer::Skin.Spinner
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/vspinner.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.VSpinner : renderer::Skin.Spinner
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/spinbox.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.SpinBox : renderer::Skin.Spinner
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/trackbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.TrackBar : renderer::Skin.Widget
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/htrackbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.HTrackBar : renderer::Skin.TrackBar
+
+DEBUG>> id=32781, ft=0x8219658
+DEBUG>> id=32783, ft=0x82196a8
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/vtrackbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.VTrackBar : renderer::Skin.TrackBar
+
+DEBUG>> id=32782, ft=0x8219ac0
+DEBUG>> id=32784, ft=0x8219b30
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/static.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.Static : renderer::Skin.Widget
+
+DEBUG>> id=28672, ft=0x8219de8
+DEBUG>> id=28676, ft=0x8219e68
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/groupbox.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.GroupBox : renderer::Skin.Static
+
+DEBUG>> id=28928, ft=0x8219d40
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/buttongroup.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.ButtonGroup : renderer::Skin.GroupBox
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/image.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.Image : renderer::Skin.Static
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/rect.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.Rectangle : renderer::Skin.Static
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/slider.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.Slider : renderer::Skin.Widget
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/animate.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.Animate : renderer::Skin.Static
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/ledlabel.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.LEDLabel : renderer::Skin.Static
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/colorbutton.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.ColorButton : renderer::Skin.Button
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/menubutton.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.MenuButton : renderer::Skin.Button
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/monthcalendar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.MonthCalendar : renderer::Skin.Widget
+
+DEBUG>> id=28672, ft=0x821aaa0
+DEBUG>> id=28928, ft=0x821b280
+DEBUG>> id=28932, ft=0x821b320
+DEBUG>> id=28676, ft=0x821a108
+DEBUG>> id=28930, ft=0x821a1b0
+DEBUG>> id=28674, ft=0x821a250
+DEBUG>> id=32770, ft=0x821a2f0
+DEBUG>> id=32679, ft=0x821a370
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/scrollview.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.ScrollView : renderer::Skin.ItemView
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/edit.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.Edit : renderer::Skin.ScrollView
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/sledit.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.SlEdit : renderer::Skin.Edit
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/mledit.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.MlEdit : renderer::Skin.Edit
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/scrollbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.ScrollBar : renderer::Skin.Slider
+
+DEBUG>> id=32770, ft=0x821b7f0
+DEBUG>> id=32679, ft=0x821b870
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/hscrollbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.HScrollBar : renderer::Skin.ScrollBar
+
+DEBUG>> id=20485, ft=0x821ba20
+DEBUG>> id=20486, ft=0x821b8e0
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/vscrollbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.VScrollBar : renderer::Skin.ScrollBar
+
+DEBUG>> id=20483, ft=0x821b668
+DEBUG>> id=20484, ft=0x821b400
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/separator.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.Separator : renderer::Skin.Widget
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/hseparator.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.HSeparator : renderer::Skin.Separator
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/skin/vseparator.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Skin.VSeparator : renderer::Skin.Separator
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/widget.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.Widget : (null)
+
+DEBUG>> id=1000, ft=0x8214c08
+DEBUG>> id=28673, ft=0x82144f8
+DEBUG>> id=28929, ft=0x8214e38
+DEBUG>> id=12548, ft=0x8214a38
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/propsheet.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.paged-window::PropSheet : renderer::Flat.Widget
+
+DEBUG>> id=28672, ft=0x8214720
+DEBUG>> id=28928, ft=0x82147c0
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/scrollwidget.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.ScrollWidget : renderer::Flat.Widget
+
+DEBUG>> id=8197, ft=0x8214658
+DEBUG>> id=12552, ft=0x82160d0
+DEBUG>> id=12296, ft=0x8216170
+DEBUG>> id=12298, ft=0x8215fb8
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/itemview.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.ItemView : renderer::Flat.ScrollWidget
+
+DEBUG>> id=28675, ft=0x8215e88
+DEBUG>> id=28931, ft=0x8214238
+DEBUG>> id=28930, ft=0x82142e0
+DEBUG>> id=28674, ft=0x8214360
+DEBUG>> id=28676, ft=0x8214f58
+DEBUG>> id=28932, ft=0x8215000
+DEBUG>> id=12300, ft=0x82150a8
+DEBUG>> id=12556, ft=0x8215170
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/iconview.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.IconView : renderer::Flat.ItemView
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/listview.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.ListView : renderer::Flat.ItemView
+
+DEBUG>> id=28928, ft=0x821ecf0
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/panel.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.Panel : renderer::Flat.Widget
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/container.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.Container : renderer::Flat.ScrollWidget
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/combo.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.Combobox : renderer::Flat.Panel
+
+DEBUG>> id=28672, ft=0x8215bf8
+DEBUG>> id=28928, ft=0x821e838
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/mainwnd.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.MainWnd : renderer::Flat.Panel
+
+DEBUG>> id=8192, ft=0x821e7b8
+DEBUG>> id=4096, ft=0x821e6c8
+DEBUG>> id=12288, ft=0x821e6b8
+DEBUG>> id=12544, ft=0x8215358
+DEBUG>> id=12294, ft=0x8215400
+DEBUG>> id=12550, ft=0x82154a8
+DEBUG>> id=8196, ft=0x8215560
+DEBUG>> id=12292, ft=0x8215550
+DEBUG>> id=12548, ft=0x8215770
+DEBUG>> id=8197, ft=0x8215818
+DEBUG>> id=12552, ft=0x8215898
+DEBUG>> id=12296, ft=0x8215938
+DEBUG>> id=12298, ft=0x82159e0
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/dialog.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.DialogBox : renderer::Flat.MainWnd
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/page.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.Page : renderer::Flat.Container
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/button.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.Button : renderer::Flat.Widget
+
+DEBUG>> id=28672, ft=0x821e2d8
+DEBUG>> id=28928, ft=0x8218130
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/checkbutton.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.CheckButton : renderer::Flat.Button
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/radiobutton.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.RadioButton : renderer::Flat.CheckButton
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/listbox.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.ListBox : renderer::Flat.ItemView
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/progressbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.ProgressBar : renderer::Flat.Widget
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/hprogressbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.HProgressBar : renderer::Flat.ProgressBar
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/vprogressbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.VProgressBar : renderer::Flat.ProgressBar
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/spinner.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.Spinner : renderer::Flat.Widget
+
+DEBUG>> id=28672, ft=0x8217b48
+DEBUG>> id=28928, ft=0x8217be8
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/hspinner.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.HSpinner : renderer::Flat.Spinner
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/vspinner.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.VSpinner : renderer::Flat.Spinner
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/spinbox.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.SpinBox : renderer::Flat.Spinner
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/trackbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.TrackBar : renderer::Flat.Widget
+
+DEBUG>> id=28672, ft=0x8209300
+DEBUG>> id=28928, ft=0x82093a0
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/htrackbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.HTrackBar : renderer::Flat.TrackBar
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/vtrackbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.VTrackBar : renderer::Flat.TrackBar
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/static.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.Static : renderer::Flat.Widget
+
+DEBUG>> id=28672, ft=0x820a420
+DEBUG>> id=28676, ft=0x820a4c0
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/groupbox.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.GroupBox : renderer::Flat.Static
+
+DEBUG>> id=28672, ft=0x8208500
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/buttongroup.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.ButtonGroup : renderer::Flat.GroupBox
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/image.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.Image : renderer::Flat.Static
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/rect.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.Rectangle : renderer::Flat.Static
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/slider.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.Slider : renderer::Flat.Widget
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/animate.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.Animate : renderer::Flat.Static
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/ledlabel.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.LEDLabel : renderer::Flat.Static
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/colorbutton.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.ColorButton : renderer::Flat.Button
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/menubutton.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.MenuButton : renderer::Flat.Button
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/monthcalendar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.MonthCalendar : renderer::Flat.Widget
+
+DEBUG>> id=28672, ft=0x82217f8
+DEBUG>> id=28928, ft=0x8221580
+DEBUG>> id=28932, ft=0x8221620
+DEBUG>> id=28676, ft=0x8208ea0
+DEBUG>> id=28930, ft=0x8208f48
+DEBUG>> id=28674, ft=0x82219a8
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/scrollview.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.ScrollView : renderer::Flat.ItemView
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/edit.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.Edit : renderer::Flat.ScrollView
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/sledit.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.SlEdit : renderer::Flat.Edit
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/mledit.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.MlEdit : renderer::Flat.Edit
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/scrollbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.ScrollBar : renderer::Flat.Slider
+
+DEBUG>> id=28672, ft=0x8221f08
+DEBUG>> id=28928, ft=0x8221bf0
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/hscrollbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.HScrollBar : renderer::Flat.ScrollBar
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/vscrollbar.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.VScrollBar : renderer::Flat.ScrollBar
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/separator.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.Separator : renderer::Flat.Widget
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/hseparator.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.HSeparator : renderer::Flat.Separator
+
+DEBUG>> Class File:/usr/local/etc/guibuilder//renderer/flat/vseparator.xml
+DEBUG>> ./common/class-instance.cpp:237:--- load class:Flat.VSeparator : renderer::Flat.Separator
+
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=X value=0
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Y value=0
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Width value=467
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Height value=340
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118aa0
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Text value=生成授权文件
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x819b830
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Border value=True
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x81c1500
+DEBUG>> ./common/class-instance.cpp:898:Property Name=HasCaption value=True
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x81c39a8
+DEBUG>> ./common/class-instance.cpp:898:Property Name=SystemMenu value=True
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x81c3758
+DEBUG>> ./common/class-instance.cpp:898:Property Name=BorderType value=DlgFrame
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x81c3f48
+DEBUG>> ./common/class-instance.cpp:898:Property Name=MinimizeBox value=True
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x81c4048
+DEBUG>> ./common/class-instance.cpp:898:Property Name=MaximizeBox value=True
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=X value=78
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Y value=76
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Width value=45
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Height value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118aa0
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Text value=
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=X value=1
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Y value=76
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Width value=73
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Height value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118aa0
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Text value=起始日期
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=X value=154
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Y value=76
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Width value=45
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Height value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118aa0
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Text value=
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=X value=229
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Y value=76
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Width value=45
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Height value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118aa0
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Text value=
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=X value=305
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Y value=76
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Width value=45
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Height value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118aa0
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Text value=
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=X value=381
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Y value=76
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Width value=45
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Height value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118aa0
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Text value=
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=X value=125
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Y value=76
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Width value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Height value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118aa0
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Text value=年
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=X value=202
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Y value=76
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Width value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Height value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118aa0
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Text value=月
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=X value=277
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Y value=76
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Width value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Height value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118aa0
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Text value=日
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=X value=354
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Y value=76
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Width value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Height value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118aa0
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Text value=时
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=X value=431
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Y value=76
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Width value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Height value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118aa0
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Text value=分
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=X value=78
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Y value=122
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Width value=45
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Height value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118aa0
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Text value=
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=X value=1
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Y value=122
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Width value=73
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Height value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118aa0
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Text value=终止日期
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=X value=155
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Y value=121
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Width value=45
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Height value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118aa0
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Text value=
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=X value=229
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Y value=122
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Width value=45
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Height value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118aa0
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Text value=
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=X value=305
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Y value=122
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Width value=45
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Height value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118aa0
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Text value=
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=X value=381
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Y value=122
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Width value=45
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Height value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118aa0
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Text value=
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=X value=122
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Y value=121
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Width value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Height value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118aa0
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Text value=年
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=X value=202
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Y value=122
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Width value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Height value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118aa0
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Text value=月
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=X value=277
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Y value=122
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Width value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Height value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118aa0
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Text value=日
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=X value=354
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Y value=122
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Width value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Height value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118aa0
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Text value=时
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=X value=431
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Y value=122
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Width value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Height value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118aa0
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Text value=分
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=X value=-1
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Y value=28
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Width value=75
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Height value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118aa0
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Text value=用户ID
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=X value=90
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Y value=29
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Width value=105
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Height value=25
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118aa0
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Text value=
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=X value=100
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Y value=259
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Width value=90
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Height value=30
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118aa0
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Text value=确定
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x81c0560
+DEBUG>> ./common/class-instance.cpp:898:Property Name=onPushed value=onPushed
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=X value=267
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Y value=259
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Width value=90
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118a80
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Height value=30
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x8118aa0
+DEBUG>> ./common/class-instance.cpp:898:Property Name=Text value=关闭
+DEBUG>> ./common/class-instance.cpp:897:ValueType=0x81c0560
+DEBUG>> ./common/class-instance.cpp:898:Property Name=onPushed value=onPushed
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=SecondaryDC binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TopMost binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ToolWindow binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HasCaption binary=0x20000000
+DEBUG>> window-instance.cpp:659:Field: name=SystemMenu binary=0x10000000
+DEBUG>> window-instance.cpp:659:Field: name=BorderType binary=0x00800000
+DEBUG>> window-instance.cpp:659:Field: name=MinimizeBox binary=0x00020000
+DEBUG>> window-instance.cpp:659:Field: name=MaximizeBox binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=LabelType binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Checkable binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoCheck binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ThreeDCheck binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=LabelType binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Checkable binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoCheck binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ThreeDCheck binary=0x00000000
+DEBUG>> id=2005, ft=0x81c14f0
+DEBUG>> id=2006, ft=0x81c3998
+DEBUG>> id=2007, ft=0x81c3748
+DEBUG>> id=2008, ft=0x81c3f38
+DEBUG>> id=2009, ft=0x81c4038
+DEBUG>> id=3001, ft=0x81c4138
+DEBUG>> id=3002, ft=0x81c4238
+DEBUG>> id=3003, ft=0x81bbd78
+DEBUG>> id=3, ft=0x819bd00
+DEBUG>> id=4, ft=0x819bd88
+DEBUG>> id=1000, ft=0x819b040
+DEBUG>> id=1001, ft=0x819b070
+DEBUG>> id=1002, ft=0x819acf8
+DEBUG>> id=1003, ft=0x819ad78
+DEBUG>> id=1004, ft=0x819a968
+DEBUG>> id=1005, ft=0x819a9e8
+DEBUG>> id=1006, ft=0x819aa50
+DEBUG>> id=1007, ft=0x819aac0
+DEBUG>> id=1008, ft=0x819b708
+DEBUG>> id=2000, ft=0x819b7a0
+DEBUG>> id=2001, ft=0x819b820
+DEBUG>> id=2002, ft=0x819b900
+DEBUG>> id=2003, ft=0x819b9f8
+DEBUG>> id=2004, ft=0x819baf0
+DEBUG>> id=3000, ft=0x819bbe8
+DEBUG>> id=4000, ft=0x819be28
+DEBUG>> id=4001, ft=0x819bfe8
+DEBUG>> id=4002, ft=0x819c108
+DEBUG>> id=4003, ft=0x819c1c8
+DEBUG>> id=4004, ft=0x81b91c8
+DEBUG>> id=4005, ft=0x81b92e8
+DEBUG>> id=4006, ft=0x81b9460
+DEBUG>> id=4007, ft=0x81b95a0
+DEBUG>> id=4008, ft=0x81b9660
+DEBUG>> id=4009, ft=0x81b9748
+DEBUG>> id=4010, ft=0x81b98d0
+DEBUG>> id=4011, ft=0x81b9a48
+DEBUG>> id=4012, ft=0x81b9ce8
+DEBUG>> id=4013, ft=0x81b9e80
+DEBUG>> id=4014, ft=0x81b9d80
+DEBUG>> id=4015, ft=0x81ba100
+DEBUG>> id=4016, ft=0x81ba230
+DEBUG>> id=4017, ft=0x81ba3f8
+DEBUG>> id=4018, ft=0x81ba4d8
+DEBUG>> id=4019, ft=0x81ba720
+DEBUG>> id=4020, ft=0x81ba640
+DEBUG>> id=4021, ft=0x81baa38
+DEBUG>> id=4022, ft=0x81bab18
+DEBUG>> id=4023, ft=0x81bad60
+DEBUG>> id=4024, ft=0x81bae70
+DEBUG>> id=4025, ft=0x81baff0
+DEBUG>> id=4026, ft=0x81bac60
+DEBUG>> id=4027, ft=0x818b4a0
+DEBUG>> id=4028, ft=0x818b5f8
+DEBUG>> id=4029, ft=0x818b6c0
+DEBUG>> id=2005, ft=0x81c14f0
+DEBUG>> id=2006, ft=0x81c3998
+DEBUG>> id=2007, ft=0x81c3748
+DEBUG>> id=2008, ft=0x81c3f38
+DEBUG>> id=2009, ft=0x81c4038
+DEBUG>> id=3001, ft=0x81c4138
+DEBUG>> id=3002, ft=0x81c4238
+DEBUG>> id=3003, ft=0x81bbd78
+DEBUG>> id=3, ft=0x819bd00
+DEBUG>> id=4, ft=0x819bd88
+DEBUG>> id=1000, ft=0x819b040
+DEBUG>> id=1001, ft=0x819b070
+DEBUG>> id=1002, ft=0x819acf8
+DEBUG>> id=1003, ft=0x819ad78
+DEBUG>> id=1004, ft=0x819a968
+DEBUG>> id=1005, ft=0x819a9e8
+DEBUG>> id=1006, ft=0x819aa50
+DEBUG>> id=1007, ft=0x819aac0
+DEBUG>> id=1008, ft=0x819b708
+DEBUG>> id=2000, ft=0x819b7a0
+DEBUG>> id=2001, ft=0x819b820
+DEBUG>> id=2002, ft=0x819b900
+DEBUG>> id=2003, ft=0x819b9f8
+DEBUG>> id=2004, ft=0x819baf0
+DEBUG>> id=3000, ft=0x819bbe8
+DEBUG>> id=4000, ft=0x819be28
+DEBUG>> id=4001, ft=0x819bfe8
+DEBUG>> id=4002, ft=0x819c108
+DEBUG>> id=4003, ft=0x819c1c8
+DEBUG>> id=4004, ft=0x81b91c8
+DEBUG>> id=4005, ft=0x81b92e8
+DEBUG>> id=4006, ft=0x81b9460
+DEBUG>> id=4007, ft=0x81b95a0
+DEBUG>> id=4008, ft=0x81b9660
+DEBUG>> id=4009, ft=0x81b9748
+DEBUG>> id=4010, ft=0x81b98d0
+DEBUG>> id=4011, ft=0x81b9a48
+DEBUG>> id=4012, ft=0x81b9ce8
+DEBUG>> id=4013, ft=0x81b9e80
+DEBUG>> id=4014, ft=0x81b9d80
+DEBUG>> id=4015, ft=0x81ba100
+DEBUG>> id=4016, ft=0x81ba230
+DEBUG>> id=4017, ft=0x81ba3f8
+DEBUG>> id=4018, ft=0x81ba4d8
+DEBUG>> id=4019, ft=0x81ba720
+DEBUG>> id=4020, ft=0x81ba640
+DEBUG>> id=4021, ft=0x81baa38
+DEBUG>> id=4022, ft=0x81bab18
+DEBUG>> id=4023, ft=0x81bad60
+DEBUG>> id=4024, ft=0x81bae70
+DEBUG>> id=4025, ft=0x81baff0
+DEBUG>> id=4026, ft=0x81bac60
+DEBUG>> id=4027, ft=0x818b4a0
+DEBUG>> id=4028, ft=0x818b5f8
+DEBUG>> id=4029, ft=0x818b6c0
+WARNING>> mainframe.cpp:1039:header(/media/backup/work/softdog/apps/makeauthkey/include/resource.h), package(/media/backup/work/softdog/apps/makeauthkey/res//mg.res) 
+
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HasCaption binary=0x20000000
+DEBUG>> window-instance.cpp:659:Field: name=SystemMenu binary=0x10000000
+DEBUG>> window-instance.cpp:659:Field: name=BorderType binary=0x00800000
+DEBUG>> window-instance.cpp:659:Field: name=MinimizeBox binary=0x00020000
+DEBUG>> window-instance.cpp:659:Field: name=MaximizeBox binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=SecondaryDC binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TopMost binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ToolWindow binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=LabelType binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Checkable binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoCheck binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ThreeDCheck binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=LabelType binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Checkable binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoCheck binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ThreeDCheck binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+WARNING>> rdreditor.cpp:353:id.xml path:[/media/backup/work/softdog/apps/makeauthkey/res/renderer/id.xml] 
+
+WARNING>> mainframe.cpp:1039:header(/media/backup/work/softdog/apps/makeauthkey/include/resource.h), package(/media/backup/work/softdog/apps/makeauthkey/res//mg.res) 
+
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HasCaption binary=0x20000000
+DEBUG>> window-instance.cpp:659:Field: name=SystemMenu binary=0x10000000
+DEBUG>> window-instance.cpp:659:Field: name=BorderType binary=0x00800000
+DEBUG>> window-instance.cpp:659:Field: name=MinimizeBox binary=0x00020000
+DEBUG>> window-instance.cpp:659:Field: name=MaximizeBox binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=SecondaryDC binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TopMost binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ToolWindow binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00400000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSort binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Loop binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Align binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Case binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HideSel binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ReadOnly binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=BaseLine binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Password binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoSelect binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=HScroll binary=0x00040000
+DEBUG>> window-instance.cpp:659:Field: name=VScroll binary=0x00080000
+DEBUG>> window-instance.cpp:659:Field: name=Transparent binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=NeedIME binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Notify binary=0x00000001
+DEBUG>> window-instance.cpp:659:Field: name=Border binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Visible binary=0x08000000
+DEBUG>> window-instance.cpp:659:Field: name=Enabled binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=TabStop binary=0x00010000
+DEBUG>> window-instance.cpp:659:Field: name=LabelType binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=Checkable binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=AutoCheck binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: name=ThreeDCheck binary=0x00000000
+DEBUG>> window-instance.cpp:659:Field: n

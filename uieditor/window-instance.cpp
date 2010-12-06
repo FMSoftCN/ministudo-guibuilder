@@ -172,7 +172,7 @@ void WindowInstance::saveXMLToStream(TextStream *stream, int saveFlag)
 			//save value
 			if(saveFlag & WI_SAVE_INDEPEND){
 				if(ft->vtype->getType() == VT_TEXT){
-					stream->printf("%s",(const char*)(ft->vtype->toBinary(field->value)));
+					stream->printf("%s",_ERT((const char*)(ft->vtype->toBinary(field->value))));
 				} else if(ft->vtype->getType() == VT_IMAGE
 						|| ft->vtype->getType() == VT_RDR)
 				{
@@ -237,6 +237,9 @@ int WindowInstance::saveBinToStream(BinStream *stream)
 		stream->save32((this->id)&0xFFFF);
 	else
 		stream->save32(this->id);
+
+    //save the serial num
+    stream->save32(getSerialNumber());
 
 	//3). save caption id //text
 	ft = _class->getFieldType(PropText);
@@ -587,7 +590,8 @@ HWND WindowInstance::createOldWindow(HWND hParent)
 				DefaultMainWinProc,
 				x,y, x+w, y+h,
 				getField(_class->getFieldId("bkcolor")),
-				0
+				0,
+                0
 			};
 
 		hwnd = CreateMainWindowEx(&mainCreate,
@@ -736,7 +740,7 @@ BOOL WindowInstance::updateSpecialField(int field_id, DWORD param)
 	if(field_id == PropRenderer && param!=0 && IsWindow(hwnd))
 	{
 		DWORD* params = (DWORD*)param;
-		int element_id = (int)params[0];
+		int* element_ids = (int*)params[0];
 		RendererInstance * rdrInst = (RendererInstance*)params[1];
 		if(rdrInst == NULL)
 			return bret;
@@ -744,7 +748,7 @@ BOOL WindowInstance::updateSpecialField(int field_id, DWORD param)
 		int rdr_res_id = (int)getField(field_id);
 		if(rdr_res_id == rdrInst->getID())
 		{
-			rdrInst->updatePreviewWindow(element_id, hwnd);
+			rdrInst->updatePreviewWindow(element_ids, hwnd);
 			return TRUE;
 		}
 	}
@@ -773,7 +777,30 @@ int WindowInstance::syncPreviewWindow(int id)
 			}
 		case PropText:
 			{
-				SetWindowText(hwnd, getCaption());
+				const char* strcaption = getCaption();
+				int len = 0;
+				if(strcaption)
+					len = strlen(strcaption);
+				int newlen = SendMessage(hwnd, MSG_SETTEXT, 0, (LPARAM)strcaption);//SetWindowText(hwnd, getCaption());
+				if(newlen < len)
+				{
+					ValueType *vtype = _class->getFieldValueType(PropText);
+					if(vtype)
+					{
+						TextValueType *tvtype = dynamic_cast<TextValueType*>(vtype);
+						newlen = GetWindowTextLength(hwnd);
+						char* newstrcap = (char*)malloc(newlen + 1);
+						if(newlen > 0)
+						{
+							GetWindowText(hwnd, newstrcap, newlen);
+						}
+						newstrcap[newlen] = 0;
+						Value v = getField(PropText);
+						tvtype->saveToRes(v, (DWORD)newstrcap);
+						free(newstrcap);
+						return SPWE_NEWVALUE;
+					}
+				}
 				return SPWE_OK;
 			}
 		case PropRenderer:
@@ -786,14 +813,20 @@ int WindowInstance::syncPreviewWindow(int id)
 		case PropFont:
 			{
 				int font_id;
-				PLOGFONT old = ::SetWindowFont(hwnd, CreateLogFontByName(getFont()));
+                PLOGFONT newFont = (PLOGFONT) LoadResource(getFont(), RES_TYPE_FONT, 0L);
+				PLOGFONT old = ::SetWindowFont(hwnd, newFont);
 
 				for(font_id = 0; font_id < NR_SYSLOGFONTS; font_id++)
 				{
 					if (old == ::GetSystemFont (font_id))
 						return SPWE_OK;
 				}
-				::DestroyLogFont(old);
+                if(old)
+                {
+                    //FixedMe: Need the interface to get key from font
+                    ReleaseRes(*((RES_KEY*)((unsigned char*)old) + sizeof(LOGFONT)));
+                }
+
 				return SPWE_OK;
 			}
 		}
@@ -1046,7 +1079,7 @@ int WindowInstance::_main_window_proc(HWND hwnd, int message, WPARAM wParam, LPA
 		break;
 	}
 
-	if(wi->old_proc)
+	if(wi && wi->old_proc)
 		return (wi->old_proc)(hwnd, message, wParam, lParam);
 
 	return DefaultMainWinProc(hwnd, message, wParam, lParam);

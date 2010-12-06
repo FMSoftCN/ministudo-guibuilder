@@ -29,6 +29,7 @@ using namespace std;
 
 #include "log.h"
 #include "undo-redo.h"
+#include "msd_intl.h"
 
 #include "stream.h"
 #include "resenv.h"
@@ -51,54 +52,6 @@ using namespace std;
 #define IDC_SCHARSET   2200
 #define IDC_CCHARSET   2300
 
-#if 0
-static CTRLDATA _add_newitem_ctrltmpl[] =
-{
-	{ CTRL_STATIC,
-		WS_CHILD | WS_VISIBLE | SS_LEFT,
-		30, 10, 150, 20,
-		IDC_SLANG,
-		"Select Language:", 0,
-		WS_EX_TRANSPARENT | WS_EX_USEPARENTRDR
-	},
-	{CTRL_COMBOBOX,
-		WS_CHILD | WS_VISIBLE | WS_TABSTOP | CBS_DROPDOWNLIST
-		| CBS_NOTIFY | CBS_READONLY | WS_BORDER | CBS_EDITNOBORDER,
-		30, 35, 150, 20,
-		IDC_CLANG,
-		"",  0,
-		WS_EX_USEPARENTRDR
-	},
-    {
-		CTRL_BUTTON,
-		WS_VISIBLE | BS_DEFPUSHBUTTON | WS_TABSTOP | WS_GROUP,
-		30, 70, 70, 25,
-		IDOK,
-		"OK",
-		0
-    },
-	{
-		CTRL_BUTTON,
-		WS_VISIBLE | BS_PUSHBUTTON | WS_TABSTOP,
-		150, 70, 70, 25,
-		IDCANCEL,
-		"Cancel",
-		0
-	},
-};
-
-static DLGTEMPLATE _add_newitem_dlgtmpl =
-{
-	WS_BORDER | WS_CAPTION,
-	WS_EX_NONE,
-	120, 120, 240, 140,
-	"Add Language",
-	0, 0,
-	TABLESIZE(_add_newitem_ctrltmpl),
-	_add_newitem_ctrltmpl,
-	0
-};
-#endif
 
 BOOL NewItemDialog::onInitDialog(HWND hFocus, LPARAM lParam)
 {
@@ -160,8 +113,7 @@ void NewItemDialog::onDestroy()
 	for(int i=0; i< count; i++)
 	{
 		char* str = (char*)::SendMessage(hwnd, CB_GETITEMADDDATA, i, 0);
-		if(str)
-			free(str);
+        free(str);
 	}
 }
 
@@ -320,7 +272,7 @@ void AddTextDialog::appendText(const char* plang_country)
 	char *pTmp = NULL;
 	list<TeNode*>::iterator listIter;
 
-	if(!plang_country || 0 == strlen(plang_country))
+	if(!plang_country || *plang_country == '\0' || !pConfigList)
 		return ;
 
 	strcpy(sLang, plang_country);
@@ -401,8 +353,8 @@ END_MSG_MAP
 void AddTextDialog::InitListView()
 {
 	listview.Attach(m_hWnd, 100);
-	listview.AddColumn(0, 140, "language",  0, NULL, LVCF_LEFTALIGN);
-	listview.AddColumn(1, 140, "status",  0, NULL, LVCF_LEFTALIGN);
+	listview.AddColumn(0, 140, _("Language"),  0, NULL, LVCF_LEFTALIGN);
+	listview.AddColumn(1, 140, _("Status"),  0, NULL, LVCF_LEFTALIGN);
 
 	updateText();
 }
@@ -416,6 +368,8 @@ void AddTextDialog::updateText()
 	char buff[64] = {0};
 
 	listview.clearAll();
+	if(!pConfigList)
+		return;
 
 	for(listIter = pConfigList->begin(), i = 0; listIter != pConfigList->end(); ++listIter, ++i)
 	{
@@ -534,48 +488,12 @@ AddTextDialog::AddTextDialog(HWND hParent, list<TeNode*> &configList)
 
 AddTextDialog::~AddTextDialog()
 {
+	pConfigList = NULL;
 	Destroy();
 }
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-static CTRLDATA _prog_ctrltmpl[] =
-{
-	{CTRL_STATIC,
-		WS_VISIBLE,
-		15, 10, 140, 20,
-		IDTITLE,
-		"",  0,
-		WS_EX_USEPARENTRDR
-	},
-	{CTRL_PROGRESSBAR,
-		WS_VISIBLE,
-		15, 35, 210, 25,
-		IDCPROG,
-		"",  0,
-		WS_EX_USEPARENTRDR
-	},
-	{
-		CTRL_BUTTON,
-		WS_VISIBLE | BS_PUSHBUTTON,
-		70, 70, 100, 25,
-		IDCANCEL,
-		"Cancel",0
-	},
-};
-
-static DLGTEMPLATE _prog_dlgtmpl =
-{
-	WS_BORDER | WS_CAPTION | WS_VISIBLE,
-	WS_EX_NONE,
-	120, 120, 240, 130,
-	"Translater",
-	0, 0,
-	TABLESIZE(_prog_ctrltmpl),
-	_prog_ctrltmpl,
-	0
-};
 
 BEGIN_MSG_MAP(ProgressDialog)
 	MAP_INITDIALOG(onInitDialog)
@@ -600,7 +518,7 @@ ProgressDialog :: ProgressDialog(HWND hParent, const char* name, Translater *ts)
 	int x, y;
 	RECT rs, rp;
 
-	Create(hParent, &_prog_dlgtmpl);
+	Create(hParent, GetDlgTemplate(ID_TRANSLATEPROGRESS));
 
 	GetWindowRect(&rs);
 	::GetWindowRect(hParent, &rp);

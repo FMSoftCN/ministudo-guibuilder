@@ -94,27 +94,20 @@ Translator::~Translator()
 	for(map<string,Setter*>::iterator it = sets.begin();
 		it != sets.end(); ++it)
 	{
-		Setter *s = it->second;
-		if(s)
-			delete s;
+		delete it->second;
 	}
 	
 	for(map<string,Setter*>::iterator it = source_defaults.begin();
 		it != source_defaults.end(); ++it)
 	{
-		Setter *s = it->second;
-		if(s)
-			delete s;
+		delete it->second;
 	}
 
 	for(map<string,Translate*>::iterator it = translates.begin();
 		it != translates.end(); ++it)
 	{
-		Translate* t = it->second;
-		if(t)
-			delete t;
+		delete it->second;
 	}
-
 }
 
 
@@ -306,7 +299,7 @@ Translator * Translator::createFromXML(xmlNodePtr rnode)
 			Translate* tt = new Translate();
 			for(xmlNodePtr tn = node->xmlChildrenNode; tn; tn = tn->next)
 			{
-				xmlChar* x1, *x2;
+				xmlChar* x1;
 				if(xhIsNode(tn, "source"))
 				{
 					x1 = xmlGetProp(tn, (const xmlChar*)"name");
@@ -388,6 +381,7 @@ bool LoadTranslators(const char* list_file)
 		}
 	}
 
+    fclose(fp);
 	return true;
 }
 

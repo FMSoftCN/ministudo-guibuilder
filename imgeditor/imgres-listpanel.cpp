@@ -77,7 +77,7 @@ BOOL ImageResListPanel::AddRes(const char *idName, int id)
 
 	listbox.SetItemAddData(add, (DWORD)id);
 
-	sendEvent(IMGRES_LISTPANEL_ADD_IMAGE, (DWORD)id);
+	//sendEvent(IMGRES_LISTPANEL_ADD_IMAGE, (DWORD)id);
 
 	return TRUE;
 }

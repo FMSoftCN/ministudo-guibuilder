@@ -54,10 +54,11 @@ FieldPanel::~FieldPanel() {
 HWND FieldPanel::createPanel(HWND hParent)
 {
     RECT rt;
-    GetClientRect(&rt);
+	::GetClientRect(hParent,&rt);
+
 	Create(hParent, 0, 0,RECTW(rt), RECTH(rt), WS_CHILD|WS_VISIBLE|LVCF_TREEVIEW|WS_HSCROLL|WS_VSCROLL,0);
-	AddColumn(0, 134, "Name",  0, NULL, LVHF_CENTERALIGN);
-	AddColumn(1, 110, "Value",  0, NULL, LVHF_CENTERALIGN);
+	AddColumn(0, 134, _("Name"),  0, NULL, LVHF_CENTERALIGN);
+	AddColumn(1, 110, _("Value"),  0, NULL, LVHF_CENTERALIGN);
 
 	return getHandler();
 }
@@ -229,7 +230,7 @@ void FieldPanel::appendField(int id, const char* name,Value value,ValueType* vty
 
 void FieldPanel::updateEditingField()
 {
-	HWND hEditor = getCurentEditor(1);
+	HWND hEditor = getCurrentEditor(1);
 	int id;
 	if(!getCurData((DWORD*)&id))
 		return ;
@@ -259,6 +260,43 @@ void FieldPanel::updateEditingField()
 			SetSubitemText(hlv,1,vt->toString(value).c_str());
 		}
 	}
+}
+
+void FieldPanel::refreshFields(Instance *inst, int *ele_ids)
+{
+	if(inst == NULL || inst != instance)
+		return;
+
+	//refresh all 
+    if (ele_ids == NULL) {
+        LVITEM lvitem;
+        int id = 0, idx = 0, itemCount = 0;
+
+        itemCount = GetItemCount();
+
+        while (idx < itemCount) {
+            lvitem.nItem = idx;
+            if (GetItem(0, &lvitem) == LV_OKAY) {
+                id = lvitem.itemData;
+                if (id > 0) {
+                    Value value = instance->getField(id);
+                    ValueType *vtype = instance->getClass()->getFieldValueType(id);
+                    if(vtype) {
+                        SetSubitemText(idx, 1, vtype->toString(value).c_str());
+                    }
+                }
+            }
+            idx ++;
+        }
+        updateEditingField();
+    }
+    else {
+        //refresh specified items
+        while (*ele_ids) {
+            refreshField(inst, *ele_ids);
+            ele_ids++;
+        }
+    }
 }
 
 void FieldPanel::refreshField(Instance* inst, int id)
@@ -353,30 +391,42 @@ void FieldPanel::setDefValue()
 
 void FieldPanel::setAllDefValue()
 {
-	int id = 0, idx = 0, itemCount = 0;
 	if(!instance)
 		return;
 
-	if(YesNoBox(_("Information"), _("Do you want clear all the Property? It cannot be recover?"))==IDNO)
-	{
+    int size = instance->getFieldsSize();
+    if (size <= 0)
+        return;
+
+	if(YesNoBox(_("Information"), _("All the properties would be unrecoverable after erasing. Are you sure you want to erase them?"))==IDNO)
 		return;
-	}
+
+    mapex<int, Field*> fields = instance->getFields();
+    int *ids, i = 0;
+	ids = new int(size + 1);
+
+    for (mapex<int, Field*>::iterator it = fields.begin();
+            it != fields.end(); ++it, ++i) {
+        ids[i] = it->first;
+    }
+    ids[size] = 0;
 
 	cleanAll();
 
 	//refresh all items on panel
 	LVITEM lvitem;
+	int id = 0, idx = 0, itemCount = 0;
+
 	itemCount = GetItemCount();
+
 	while (idx < itemCount) {
 		lvitem.nItem = idx;
 		if (GetItem(0, &lvitem) == LV_OKAY) {
 			id = lvitem.itemData;
 			if (id > 0) {
 				Value value = instance->getField(id);
-
 				ValueType *vtype = instance->getClass()->getFieldValueType(id);
-				if(vtype)
-				{
+				if(vtype) {
 					SetSubitemText(idx, 1, vtype->toString(value).c_str());
 				}
 			}
@@ -384,7 +434,8 @@ void FieldPanel::setAllDefValue()
 		idx ++;
 	}
 	updateEditingField();
-	sendEvent(FIELDPANEL_INSTANCE_FIELD_RESET, (DWORD)instance);
+	sendEvent(FIELDPANEL_INSTANCE_FIELD_RESET, (DWORD)instance, (DWORD)ids);
+	delete[] ids;
 }
 
 BOOL FieldPanel::WndProc(int iMsg,WPARAM wParam,LPARAM lParam,int *pret)
@@ -408,6 +459,10 @@ BOOL FieldPanel::WndProc(int iMsg,WPARAM wParam,LPARAM lParam,int *pret)
 			break;
 		}
 	}
+    else if(iMsg == MSG_SHOWPAGE) {
+        updateEditors();
+        SetFocus(getCurrentEditor(1));
+    }
 
 	return EditableListView::WndProc(iMsg, wParam, lParam, pret);
 }

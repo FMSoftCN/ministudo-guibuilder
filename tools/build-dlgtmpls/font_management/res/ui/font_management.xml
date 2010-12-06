@@ -41,6 +41,7 @@
 	</window>
 	<window class="window::ListView" serial-number="4067840000">
 		<ID>0x400000a1</ID>
+		<ScrollBarMode>Always</ScrollBarMode>
 		<X>20</X>
 		<Y>32</Y>
 		<Width>464</Width>

@@ -20,7 +20,16 @@
 			<option name="False" value="0"/>
 		</enum>
 	</property>
+
+	<property name="HasToolTip" type="enum" default="False">
+		<enum>
+			<option name="True" value="0x8000"/>
+			<option name="False" value="0"/>
+		</enum>
+	</property>
 	
-	<property name="ToolTip" id="25" type="text" />
+	<property name="ToolTip" id="25" type="text">
+		<error-tip>HasToolTip must be True</error-tip>
+	</property>
 	<property name="PasswordChar" id="26" type="char" default="*"/>
 </window>

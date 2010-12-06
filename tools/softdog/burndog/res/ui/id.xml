@@ -1,0 +1,47 @@
+<res-ids>
+	<res-id>
+		<id name="ID_MAINWND1"  value="0x80001"/>
+		<type>8</type>
+		<source>res/ui/burndog.xml</source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC1"  value="0x400003e9"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_STATIC2"  value="0x400003ea"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_SLEDIT1"  value="0x400003eb"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_BUTTON1"  value="0x400003ec"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_SLEDIT2"  value="0x400003ed"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_BUTTON3"  value="0x400003ee"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_BUTTON4"  value="0x400003ef"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_BUTTON5"  value="0x400003f0"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+</res-ids>

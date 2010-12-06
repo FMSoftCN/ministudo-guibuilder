@@ -47,6 +47,7 @@ public:
 		return (FieldPanel*)(EditableListView*)GetWindowAdditionalData(hwnd);
 	}
 
+	void refreshFields(Instance *inst, int *ele_ids = NULL);
 	void refreshField(Instance* inst, int id);
 
 	void refreshInstanceIdName(int inst_id, const char* name);

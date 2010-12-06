@@ -33,14 +33,14 @@
          ContentWidth/Height, ViewHeight/Width, Margins, etc.-->
          
  <event id="4050">
-	 <handler>void onHScroll(mWidget* self, int message, int hs_nc, int pos)</handler>
+	 <handler>void onHScroll(mWidget* self, int message, int code, int pos)</handler>
 		<code>MSG_HSCROLL</code>
-		<content>_c(self)->wndProc(self, message, (WPARAM)hs_nc, (LPARAM)pos);</content>
+		<content>_c(self)->wndProc(self, message, (WPARAM)code, (LPARAM)pos);</content>
 	</event>
 	<event>
-		<handler>void onVScroll(mWidget* self, int message, int hs_nc, int pos)</handler>
+		<handler>void onVScroll(mWidget* self, int message, int code, int pos)</handler>
 		<code>MSG_VSCROLL</code>
-		<content>_c(self)->wndProc(self, message, (WPARAM)hs_nc, (LPARAM)pos);</content>
+		<content>_c(self)->wndProc(self, message, (WPARAM)code, (LPARAM)pos);</content>
 	</event>
 </window>
 

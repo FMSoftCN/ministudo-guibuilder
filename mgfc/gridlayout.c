@@ -4,7 +4,7 @@
 #include <minigui/gdi.h>
 #include <minigui/window.h>
 
-#define SPLITER_SIZE 2
+#define SPLITER_SIZE 4
 #include "gridlayout.h"
 
 HCURSOR hhorzCur= IDC_SIZENS;
@@ -252,13 +252,10 @@ void CleanupGridLayout(GRID_LAYOUT *playout, void (*free_cell)(GRID_CELL*))
 		}
 		free(playout->cells[col]);
 	}
+
 	free(playout->cells);
-
-	if(playout->row_height)
-		free(playout->row_height);
-
-	if(playout->col_width)
-		free(playout->col_width);
+    free(playout->row_height);
+    free(playout->col_width);
 /*
 	if(playout->bkground.type == lbtBmpBrush){
 		UnloadBitmap(playout->bkground.data.tilBmp);

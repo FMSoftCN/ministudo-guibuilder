@@ -11,6 +11,8 @@
 #include "valuetype.h"
 #include "editable-listview.h"
 
+#define RESIDLISTPANEL_CHANGED  1
+
 class ResIdListPanel:public Panel,ResEnumHandler,EditableListViewHandler, ValueUpdator
 {
 	EditableListView listview;

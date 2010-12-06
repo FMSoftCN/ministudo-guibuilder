@@ -43,7 +43,9 @@ using namespace std;
 #include "resid-editor.h"
 #include "resid-list-panel.h"
 
-ResIdEditor::ResIdEditor() {
+ResIdEditor::ResIdEditor()
+:res_id_panel(NULL) 
+{
 }
 
 ResIdEditor::~ResIdEditor() {
@@ -59,6 +61,8 @@ Panel* ResIdEditor::createPanel(const char* name, const char* caption, const map
 
 DWORD ResIdEditor::processEvent(Panel* sender, int event_id, DWORD param1, DWORD param2)
 {
+	if(event_id == RESIDLISTPANEL_CHANGED)
+		enableMenuItem(GBC_SAVE);
 	return 0;
 }
 

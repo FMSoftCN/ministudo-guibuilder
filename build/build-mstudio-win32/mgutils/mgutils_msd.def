@@ -1,0 +1,7 @@
+LIBRARY	"libmgutils_msd"
+
+EXPORTS
+	DefColorDialogProc
+	DefFileDialogProc
+	DefFontDialogProc
+	DefInfoDialogProc

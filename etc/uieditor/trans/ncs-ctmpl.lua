@@ -1,47 +1,118 @@
 --- lua tranlsate New Control Set C Source
 --
-
--- global variable
-event_handlers = {}
-varname = ""
-func_declear = ""
-func_return = ""
-func_name = ""
-func_content = ""
-main_handlers_name = ""
-main_handlers_id = "-1"
-main_serial = 0
-event_name = ""
-out = nil
-inst_serial = 0
-is_start_wnd = false
-
-funcs_decleared={}
-
-local function dump_handlers(handlers)
-	if handlers then
-		print (string.format("instance id : %s\n", handlers.id))
-		print (string.format("instance name : %s\n", handlers.name))
-		print (string.format("event count : %d\n", handlers.propCount))
-		
-		local i = 0
-		while i < handlers.propCount do
-			print (string.format("\tevent name : %s\n", handlers[i].name))
-			print (string.format("event funcName : %s\n", handlers.funcName))
-			print (string.format("\tevent prototype : %s\n", handlers[i].prototype))
-			print (string.format("\tevent code : %s\n", handlers[i].code))
-			i = i + 1
-		end
-
-	end
+------------------------------------------------------------------------------
+-- dubeg  dump inst
+local function dump_table(debug_out, prefix, t)
+    if t == nil then return end
+    for k, v in pairs(t) do 
+        debug_out:write(string.format("%s%s:\t%s\n",prefix, tostring(k) , tostring(v))) 
+        if type(v) == "table" then
+            dump_table(debug_out,prefix .. "\t", v)
+        end
+    end
 end
 
-local function out_function(prefix)
-	if funcs_decleared[func_name] == true then
-		return
-	end
+local function dump_inst(debug_out, prefix, inst)
+    dump_table(debug_out, prefix, inst)
+    
+    -- get events
+    debug_out:write(string.format("%s------- dump events ----\n",prefix))
+    dump_table(debug_out, prefix .. "\t", compinst.getInstanceEvents(inst))
+    debug_out:write(string.format("%s------- dump connects ---\n", prefix))
+    dump_table(debug_out, prefix .. "\t", compinst.getInstListens(inst))
+    debug_out:write(string.format("%s------- dump children ---\n", prefix))
+    local child = compinst.getInstChildren(inst)
+    while child do
+        dump_inst(debug_out, prefix .. "\t", child)
+        child = compinst.getNextInstance(child)
+    end
+end
 
-	local strformat = [==[
+local function dump_insts(file, inst)
+    local debug_out = io.open(file .. ".debug", "wt")
+
+    dump_inst(debug_out, "", inst)
+
+    debug_out:close()
+end
+
+local function save_table(prefix,out, t)
+    if t == nil then return end
+    for k,v in pairs(t) do
+        if type(k) == "string" then
+            out:write(string.format("%s%s=",prefix, tostring(k)));
+        else
+            out:write(prefix)
+        end
+        if type(v) == "string" then out:write(string.format("\"%s\",\n", tostring(v)))
+        elseif type(v) == "integer" then out:write(string.format("%d,\n", tostring(v)))
+        elseif type(v) == "table" then 
+            out:write("{")
+            save_table(prefix .. "\t", out, v)
+            out:write(string.format("%s},\n",prefix))
+        else 
+            out:write(string.format("%s,\n",tostring(v))) 
+        end
+    end
+end
+
+function save_next(out, inst)
+   local next_ist = compinst.getNextInstance(inst)
+   if next_ist ~= nil then   save_next(out, next_ist) end
+   save_inst(out, inst)
+end
+
+function save_inst(out, inst)
+
+    local child = compinst.getInstChildren(inst)
+    if child ~= nil then
+        save_next(out, child)
+    end
+
+    out:write(string.format("%s = {\n\tid=\"%s\",\n\tname=\"%s\",\n\tserial=%u,\n",inst.name, inst.id, inst.name, inst.serial));
+    out:write("\tevents= { \n")
+    save_table("\t\t",out, compinst.getInstanceEvents(inst));
+    out:write("\t},\n")
+    out:write("\tlistens = {\n")
+    save_table("\t\t",out, compinst.getInstListens(inst));
+    out:write("\t}, \n")
+
+    child = compinst.getInstChildren(inst)
+    if child ~= nil then
+        out:write(string.format("\tchildren = %s,", child.name))
+    end
+    local nxt = compinst.getNextInstance(inst)
+    if nxt ~= nil then
+        out:write(string.format("\tnext = %s", nxt.name))
+    end
+    out:write("\n}\n")
+end
+
+local function save_insts(file, inst)
+    local out = io.open(file .. "-obj.lua", "wt")
+    save_inst(out, inst)
+    out:close(out)
+end
+
+
+--------------------------------------------------------------------------------
+-- global variables
+event_handlers={}
+connect_handers={}
+funcs_decleared={}
+main_serial = 0
+
+
+-----------------------------------------------------------------------------------------------
+
+local function get_inst_name(handler_name)
+	local x = string.gsub(handler_name, "ID_(%w+)", "%1")
+	return string.gsub(x, "(%w+)_?", function (w) 
+							return string.upper(string.sub(w, 0, 1)) .. string.lower(string.sub(w, 2))
+							end)
+end
+
+local function_format = [==[
 
 //$func %s%u %s -- Need by merge, don't modify
 static %s 
@@ -51,113 +122,67 @@ static %s
 }
 
 ]==]
-	
-	local x = string.format(strformat, prefix, inst_serial, event_name, func_declear, func_content)
-	-- print(x)
-	out:write(x)
 
-	funcs_decleared[func_name] = true
-end
+----------------------------------------------------------------------------
+-- gen the functions
+function gen_instance_events(out, inst)
+    local handlers = compinst.getInstanceEvents(inst)
 
-local function get_inst_name(handler_name)
-	local x = string.gsub(handler_name, "ID_(%w+)", "%1")
-	return string.gsub(x, "(%w+)_?", function (w) 
-							return string.upper(string.sub(w, 0, 1)) .. string.lower(string.sub(w, 2))
-							end)
-end
+    if handlers == nil  or #handlers <= 0 then
+        return nil
+    end
+    
+    local event_list = {}
+   
+    -- get name of events
+    local varname = get_inst_name(inst.name)
+    
+    for _, handler in pairs(handlers) do
+        --- funcName, e.g  onCreate, onPaint,
+        local func_name = varname .. "_" .. handler.funcName
+        --- func_name would be mainwnd1_onCreate, e.g
+        local event_name = handler.name
+        -- get declar of function  eg.  BOOL @(mWidget* self, DWORD dwAdd) , replace '@'
+        local func_declear = string.gsub(handler.prototype, "@", func_name)
+        -- get the return of function
+        --local func_return = string.gsub(handlers[i].prototype, "(%w+%s*%*?)%s*@%s(.*%s)", "%1")
+        --func_return = string.gsub(func_return, "%s", "")
+        
+        --if func_return == nil then func_return = "int" end
 
+        local func_content = handler.content
+        if func_content == nil then func_content = "" end
 
-function trans_inst(inst)
-	local handlers = compinst:getInstanceEvents(inst)
+        -- out function
+        out:write(string.format(function_format, "@", inst.serial, event_name, func_declear, func_content))
+        
+        -- apend function name and function code into event list 
+        event_list[handler.code] = func_name
 
-	if handlers == nil then
-		return
-	end
-
-	 --print(out) 
-	 --
-	-- change id name , e.g ID_MAIN_TEST => MainTest
-	varname = get_inst_name(handlers.name)
-	-- get serial number of instance
-	inst_serial = handlers.serial
-	if main_serial == 0 then main_serial = inst_serial end
-	if main_handlers_name == "" then
-		main_handlers_name = varname
-		main_handlers_id = handlers.id
-	end
-
-	--print ("varname:" .. varname)
-	--for each event, save delcears
-	local i = 0
-	while i < handlers.propCount do
-		func_name = varname .. "_" .. handlers[i].funcName
-		event_name = handlers[i].name
-		-- get declear of function
-		func_declear = string.gsub(handlers[i].prototype, "@", func_name)
-		--get the return type of function
-		func_return = string.gsub(handlers[i].prototype, "(%w+%s*%*?)%s*@%s*%(.*%)", "%1")
-		func_return = string.gsub(func_return, "%s", "")
-		func_content = handlers[i].content
-		
-		if not func_return then
-			func_return = "int"
-		end
-
-		--print ("func_name:" .. func_name)
-		--print ("func_declear:" .. func_declear)
-		--print ("func_return:" .. func_return )
-		--print(out_function)
-
-		out_function("@")
-
-		--save handlers info
-
-		i = i + 1
-	end
-
-	--- save handlers
-	if handlers.propCount > 0 then
-		local strfromat = [==[
+    end
+    
+    --- out put the handler array
+    local strformat=[==[
 //$handle @%u -- Need by merge, don't modify
 static NCS_EVENT_HANDLER %s_handlers [] = {
 ]==]
+    out:write(string.format(strformat, inst.serial, varname))
 
-		out:write(string.format(strfromat, inst_serial, varname))
-		i = 0
-		while i < handlers.propCount do
-			func_name = varname .. "_" .. handlers[i].funcName
-			out:write(string.format("\t{%s, %s},\n",handlers[i].code , func_name ))
-			
-			i = i + 1
-		end
-		--out null
-		out:write("\n//$user --TODO: Add your handlers here\n\t{-1, NULL}\n};\n\n")
-
-		-- save the name of handler
-		event_handlers[handlers.id] = varname .. "_handlers"
-	end
-	
-	local child = compinst:getInstChildren(inst)
-	while child ~= 0 do
-		trans_inst(child)
-		child = compinst:getNextInstance(child)
-	end
-
+    for code,func in pairs(event_list) do
+        out:write(string.format("\t{%s,%s},\n", code, func))
+    end
+    -- out null
+    out:write("\n\t//$user --TODO: Add your handlers here\n\t{-1, NULL}\n};\n")
+        
+    event_handlers[inst.serial] = {varname, inst.name }
 end
 
--- out the event listen
-function trans_event_listens(inst)
-	if inst == nil then
-		return 0
-	end
+local function gen_instance_connects(out, inst)
+    if inst == nil then return end
 
-	local listens = compinst:getInstListens(inst)
+    local listens = compinst.getInstListens(inst)
 
-	-- print("listens " .. tostring(listens))
-
-	if listens == nil then return 0 end
-
-	local count = 0
+    if listens == nil then return end
 
 	local funcFormat=[[
 //$func #%u %s_%u_%u -- Need by merge, don't modify
@@ -169,58 +194,57 @@ static BOOL %s (m%s *self, m%s* sender, int id, DWORD param)
 }
 
 ]]
-	for k,v in pairs(listens) do
-		--parse event
-		-- print(string.format("listen=%s, sender=%s, event=%s, prototype=%s\n",v.listener, v.sender, v.event, v.prototype))
-		local event = v.event:match("%(([%w%d_]+)%)")
-		if event ~= nil then v.event = event; end
-		if funcs_decleared[v.prototype] ~= true then
-			--gen functions
-			out:write(string.format(funcFormat, main_serial,v.event, v.sendSerial, v.listenSerial,
-					v.prototype, v.listenType, v.sendType))
-			count = count + 1
-			funcs_decleared[v.prototype] = true
-		end
-	end
 
-	-- out the connections	
-	local connectFormat=[[
-//$connect #%u -- Need by merge, don't modify
-static NCS_EVENT_CONNECT_INFO %s_connects[] = {
-]]
-	if count > 0 then
-		out:write(string.format(connectFormat, main_serial, main_handlers_name))
-
-		for k, v in pairs(listens) do
-			out:write(string.format("\t{%s, %s, %s, (NCS_CB_ONOBJEVENT)%s},\n", v.sender, v.listener, v.event, v.prototype))
-		end
-		out:write("\n//$user --TODO: Add your handlers here\n\t{-1, -1, 0, NULL }\n};\n\n")
-	end
-
-	return count;
-
+    for k, v in pairs(listens) do
+        local event = v.event:match("%(([%w%d_]+)%)")
+        if event ~= nil then v.event = event end
+        if not funcs_decleared[v.prototype] then
+            -- gen functions
+            out:write(string.format(funcFormat, main_serial, v.event, v.sendSerial, v.listenSerial, 
+                v.prototype, v.listenType, v.sendType))
+            --- mind the prototype, to avoid the redeclear the C function
+            funcs_decleared[v.prototype] = true
+        end
+        --print("---- insert : event, send, listners:", v.event, v.sender, v.listener)
+        table.insert(connect_handers, v)
+    end
+    
 end
 
--- main function
-function trans_main(file, args, inst)
+local function gen_instance(out, inst)
+    gen_instance_events(out, inst)
+    gen_instance_connects(out, inst)
+    
+    --gen children
 
-	-- print(file)
-	-- print(args)
-	--
-	
-	if string.find(args, "%-start%-wnd") then
-		is_start_wnd = true
-	end
+    local child = compinst.getInstChildren(inst)
 
-	-- print(args)
-	-- print(is_start_wnd)
+    while child ~= nil do
+        gen_instance(out, child)
+        child = compinst.getNextInstance(child)
+    end
+end
 
-	out = assert(io.open(file, "wt"));
 
-	out:write([==[
+----------------------------------------------------------------------------
+--main function
+function trans_main(file, inst)
+
+    if inst == nil then return end
+
+    --dump_insts(file, inst)
+    --save_insts(file, inst)
+
+    local out = assert(io.open(file, "wt"));
+
+    if out == nil then return end
+
+    main_serial = inst.serial
+
+    out:write([==[
 /**************************************************************
 *  This file is generated automatically, don't modify it.
-*  Feynman software Technology Co.,Ltd
+*  Beijing Feynman Software Technology Co.,Ltd
 *
 **************************************************************/
 
@@ -240,27 +264,40 @@ function trans_main(file, args, inst)
 
 
 ]==]
-);
+)
+    local handlers = gen_instance(out, inst)
+    local main_var_name = get_inst_name(inst.name)
 
-	local first_inst = inst;
-	while inst ~= 0 do
-		trans_inst(inst)
-		inst = compinst:getNextInstance(inst)	
-	end
-
-	local connects = trans_event_listens(first_inst)
-
-	-- save all handlers
-	local strformat = [==[
+    -- save all handlers
+    local strformat = [==[
 //$mainhandle -- Need by merge, don't modify
 static NCS_EVENT_HANDLER_INFO mainwnd_%s_handlers[] = {
 ]==]
-	out:write(string.format(strformat, main_handlers_name))
-	for k,v in pairs(event_handlers) do
-		out:write(string.format("\t{%s, %s},\n", k, v))
-	end
+    out:write(string.format(strformat, main_var_name))
 
-	out:write("\n//$user --TODO: Add your handlers here\n\t{-1, NULL}\n};\n");	
+    for serial, handler in pairs(event_handlers) do
+        out:write(string.format("\t{%d, %s_handlers}, /*%s*/\n", serial, handler[1], handler[2]))
+    end
+    -- save end
+    out:write("\n\t//$user --TODO Add your handlers here\n\t{ -1, NULL } \n};\n")
+
+    -- out the connections
+    local have_connects = #connect_handers > 0
+
+    if have_connects then
+        out:write(string.format([==[
+//$connect #%u -- Need by merge, don't modify
+static NCS_EVENT_CONNECT_INFO %s_connects[] = {
+]==], inst.serial, main_var_name))
+        for k, v in pairs(connect_handers) do
+            --print("----",k,v,v.sendSerial, v.listenSerial, v.event, v.prototype, v.sender, v.listene )
+            local connect_str =string.format("\t{%d, %d, %s, (NCS_CB_ONOBJEVENT)%s},/* %s - %s */ \n",
+                v.sendSerial, v.listenSerial, v.event, v.prototype, v.sender, v.listener)
+            --print(connect_str)
+            out:write(connect_str)
+        end
+        out:write("\n\t//$user --TODO: Add your handlers here\n\t{-1, -1, 0, NULL } \n};\n\n")
+    end
 
 	-- out the main entry
 	local str_main_entry_format=[[
@@ -280,18 +317,11 @@ NCS_WND_EXPORT mMainWnd* ntCreate%sEx(HPACKAGE package, HWND hParent, HICON h_ic
 }
 
 ]]
-	
-	local connect_handler_name = "NULL"
 
-	if connects > 0 then
-		connect_handler_name = main_handlers_name .. "_connects"
-	end
-	
-	-- print(str_main_entry_format)
-	out:write(string.format(str_main_entry_format, main_handlers_name, main_handlers_id, main_handlers_name, connect_handler_name))
-		
+    local connects_name = have_connects and main_var_name .. "_connects" or "NULL"
 
-	out:close();
+    out:write(string.format(str_main_entry_format, main_var_name, inst.id, main_var_name, connects_name))
+
+    out:close()
 
 end
-

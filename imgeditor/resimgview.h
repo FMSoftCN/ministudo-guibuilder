@@ -16,8 +16,11 @@ public:
 	class ResViewItem : public ImageView::ViewItem
 	{
 	public:
-		ResViewItem(const char* file, DWORD add_data)
-		:ImageView::ViewItem(file, add_data){
+		ResViewItem() {
+			id = 0;
+		}
+		ResViewItem(const char* file, DWORD add_data, BOOL bDelayLoadImage)
+		:ImageView::ViewItem(file, add_data, bDelayLoadImage){
 			id = (int)add_data;
 		}
 
@@ -28,10 +31,19 @@ public:
 		DWORD getAddData(){return (DWORD)id;}
 	};
 
-	ViewItem* NewViewItem(const char* file, DWORD addData){
+	ViewItem* NewViewItem(const char* file, DWORD addData, BOOL bDelayLoadImage=FALSE){
 		if(!ImageView::ViewItem::validateFile(file))
 			return NULL;
-		return new ResViewItem(file, addData);
+		return new ResViewItem(file, addData, bDelayLoadImage);
+	}
+
+	ViewItem * NewViewItem(const ViewItem *vi, DWORD addData) {
+		if(!vi)
+			return NULL;
+		ResViewItem * rvi = new ResViewItem();
+		rvi->InitFrom(*vi);
+		rvi->setAddData(addData);
+		return (ViewItem*)rvi;
 	}
 
 	ResImageView(PanelEventHandler* handler);
@@ -65,6 +77,9 @@ protected:
 		}
 		return NULL;
 	}
+
+	ViewItem* checkAndResetItem(ViewItem* viewItem, DWORD addData, int *pidx);
+
 public:
 	static HWND _hIconView;
 

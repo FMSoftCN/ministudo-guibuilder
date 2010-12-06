@@ -300,4 +300,7 @@ public:
 	}
 };
 
+std::string EntityReferenceTranslate(const char* str);
+#define _ERT(str)   EntityReferenceTranslate(str).c_str()
+
 #endif /* STREAM_H_ */

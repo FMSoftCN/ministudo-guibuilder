@@ -48,7 +48,9 @@
 		</enum>
 	</property>
 	
-	<property name="MaxLength" id="22" type="int" default="-1"/>
+	<property name="MaxLength" id="22" type="int" default="-1">
+		<error-tip>MaxLength must be more than the length of Text, or -1, mean infinite.</error-tip>
+	</property>
 	
 	<event id="4150">
 		<handler>void onEditChanged(mEdit *self, int id, int nc, DWORD add_data)</handler>

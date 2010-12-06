@@ -5,6 +5,7 @@
    <property name="ColorBgWindow" id="28929" type="color" default="0xFFFFFFFF"/>
    
    <!-- No Client Properties, Implement by MiniGUI 3.0 -->
+	<property name="ColorBorderScrollBar" id="12292" type="color" default="0xFF000000"/>
    <!-- WE_FGC_INACTIVE_WND_BORDER -->
   	<property name="ColorBorderInActive" id="12548" type="color" default="0xFF000000"/>
  

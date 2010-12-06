@@ -89,89 +89,6 @@ void RendererEditor::getName(Class *cls,
 	}
 }
 
-BOOL RendererEditor::load_control_node(xmlNodePtr node)
-{
-	xmlChar *xclassname = NULL;
-
-	for(node = node->xmlChildrenNode; node; node=node->next) {
-		if(node->type != XML_ELEMENT_NODE)
-			continue;
-
-		if(xmlStrcmp(node->name,(const xmlChar*)"classname") == 0) {
-			xclassname = xhGetNodeText(node);
-            char* clsname = (char *)strstr((const char*)xclassname, "::");
-
-            if (clsname) {
-                while(*clsname==':') clsname ++;
-                ctrls_config.insert((const char*)clsname);
-            }
-            else {
-                ctrls_config.insert((const char*)xclassname);
-            }
-
-            if(xclassname)
-                xmlFree(xclassname);
-		}
-	}
-
-	return TRUE;
-}
-
-BOOL RendererEditor::load_controls_node(xmlNodePtr node)
-{
-	for(node = node->xmlChildrenNode; node; node=node->next) {
-        if (xhIsNode(node, "control"))
-            load_control_node(node);
-		else if(xhIsNode(node, "controls"))
-            load_controls_node(node);
-	}
-
-	return TRUE;
-}
-
-BOOL RendererEditor::load_config(const char* cfgfile)
-{
-	xmlDocPtr doc;
-	xmlNodePtr node;
-	if(cfgfile == NULL){
-		fprintf(stderr,"RdrEditor::load: param \"cfgfile\" is NULL\n");
-		return TRUE;
-	}
-
-	doc = xmlParseFile(cfgfile);
-	if(doc == NULL){
-		fprintf(stderr, "TooboxPanel::load: cfgfile=\"%s\" is not a corrent xml file\n",cfgfile);
-		return FALSE;
-	}
-
-	node = xmlDocGetRootElement(doc);
-	if(node == NULL || xmlStrcmp(node->name, (const xmlChar*)"controls")){
-		fprintf(stderr, "RdrEditor::load: cfgfile=\"%s\" did not find root \"controls\"\n",cfgfile);
-		return FALSE;
-	}
-
-	node = node->xmlChildrenNode;
-
-	while(node){
-		if(node->type == XML_ELEMENT_NODE){
-            if (xhIsNode(node, "control"))
-                load_control_node(node);
-            else if(xhIsNode(node, "controls"))
-                load_controls_node(node);
-		}
-		node = node->next;
-	}
-
-	//insert speical control
-	ctrls_config.insert("MainWnd");
-	ctrls_config.insert("DialogBox");
-	ctrls_config.insert("Page");
-
-	xmlFreeDoc(doc);
-
-	return TRUE;
-}
-
 void RendererEditor::load_classes(const char* rdrlist)
 {
 	char szLine[256];
@@ -224,15 +141,33 @@ void RendererEditor::load_classes(const char* rdrlist)
 }
 
 RendererEditor::RendererEditor()
-:idrmRdr(this, NCSRT_RDR), idrmRdrSet(this, NCSRT_RDRSET)
+    :rdrPreviewPanel(NULL)
+    ,rdrTreePanel(NULL)
+    ,rdrPanel(NULL)
+    ,xmlRdrFile("res/renderer/rdr.xml")
+    ,status(0)
+    ,idrmRdr(this, NCSRT_RDR)
+    ,idrmRdrSet(this, NCSRT_RDRSET)
+    ,copyPasteInfo()
 {
-	rdrPreviewPanel = NULL;
-	rdrTreePanel = NULL;
-	rdrPanel = NULL;
-	xmlRdrFile = "res/renderer/rdr.xml";
-	status = 0;
-	if (load_config(g_env->getConfigFile("uieditor/control.cfg").c_str()))
-        load_classes(g_env->getConfigFile("renderer/rdrlist").c_str());
+    mapex<string, Class*> maper = Class::getClassMaper();
+    for (map<string, Class*>::iterator it = maper.begin();
+            it != maper.end(); ++it)
+    {
+        Class* cls = Class::getClassByName("window", it->first.c_str());
+
+        if (cls && cls->isControl()) {
+            const char* clsName = strrchr(it->first.c_str(), ':') + 1;
+            ctrls_config.insert(clsName);
+        }
+
+        //insert speical control
+        ctrls_config.insert("MainWnd");
+        ctrls_config.insert("DialogBox");
+        ctrls_config.insert("Page");
+    }
+
+    load_classes(g_env->getConfigFile("renderer/rdrlist").c_str());
 }
 
 
@@ -533,20 +468,35 @@ void RendererEditor::copy(BOOL bremove)
 {
 	if (rdrTreePanel) {
 		GHANDLE sel = rdrTreePanel->getSelItem();
-		int id = -1;
 		if (rdrTreePanel->isValidIdHandle(sel)) {
-			id = rdrTreePanel->GetItemAddData(sel);
+			int id = rdrTreePanel->GetItemAddData(sel);
 
 			if (ID2TYPE(id) == NCSRT_RDR) {
 	            RendererInstance *inst = (RendererInstance*)getRes(id);
 	            if (!inst)
 	                return;
+
+                if (bremove) {
+                    RdrResource *resource = (RdrResource *)reses.at(id);
+                    if (!resource || resource->use_ref > 0) {
+                        InfoBox(_("Error"),
+                            _("The \'%s\' is used by other resource, cann't cut it.\n"), 
+                            resource->name.c_str());
+                        return;
+                    }
+                }
+
 	    		Instance** instances = new Instance*[1];
 	    		instances[0] = (Instance*)inst;
 	    		Instance::copy(instances, 1);
 
-	    		if(bremove)
-	    		{
+	    		if(bremove) {
+                    //delete preview window
+                    RendererInstance *preview_inst = rdrPreviewPanel->getPreviewInstance();
+                    if (preview_inst && (preview_inst == inst)) {
+                        rdrPreviewPanel->destroyPreviewWindow();
+                    }
+
 					GHANDLE parent = rdrTreePanel->getParentHandle(sel);
                     if(parent) {
                         int rdrset_id = rdrTreePanel->getItemAddData((GHANDLE)parent);
@@ -555,12 +505,17 @@ void RendererEditor::copy(BOOL bremove)
                             rdrset_inst->removeInstance(inst);
                         }
                     }
+                    copyPasteInfo.isCut = TRUE;
+                    copyPasteInfo.name = idToName(id);
                     removeRes(id);
                     rdrTreePanel->removeItem(id, parent);
 	    		}
+                else {
+                    copyPasteInfo.isCut = FALSE;
+                    copyPasteInfo.name = idToName(id);
+                }
 
 	    		delete[] instances;
-				enableMenuItem(GBC_PASTE);
 			}
 		}
 	}
@@ -570,9 +525,9 @@ void RendererEditor::paste()
 {
 	if (rdrTreePanel) {
 		GHANDLE sel = rdrTreePanel->getSelItem();
-		Instance** instances;
+		InstanceArray instances;
 
-		if (sel && (instances = Instance::paste())!=NULL) {
+		if (sel && (instances = Instance::paste())) {
 			int container_id = rdrTreePanel->getItemAddData(sel);
 			if (ID2TYPE(container_id) != NCSRT_RDR) { //root or rdrset
                 RendererSet *rdrset_inst = (RendererSet *)getRes(container_id);
@@ -588,8 +543,20 @@ void RendererEditor::paste()
 
                     //whether can be insert.
                     if (!rdrset_inst || rdrset_inst->accept(cinst)) {
-                        if (-1 == addResource<RendererInstance>(cinst, NULL)) {
-                            cinst->release();
+						//FIXED ME don't use copyPasteInfo to releate a name
+						string name = "";
+						if(copyPasteInfo.isCut) {
+							name = copyPasteInfo.name;
+							int i = 0;
+							while(!isValidName(name.c_str())){
+								char szName[30];
+								sprintf(szName, "%d", i++);
+								name = copyPasteInfo.name + szName;
+							}
+						}
+
+                        if (-1 == addResource<RendererInstance>(cinst, 
+                                    copyPasteInfo.isCut ? name.c_str() : NULL)) {
                             continue;
                         }
                     }
@@ -598,6 +565,7 @@ void RendererEditor::paste()
                         rdrset_inst->insertInstance(cinst);
                     }
                     rdrTreePanel->insertItem(cinst->getID(), sel);
+                    enableMenuItem(GBC_SAVE);
 				}
 
 				if(Instance::paste() == NULL)
@@ -673,12 +641,12 @@ void RendererEditor::executeCommand(int cmd_id, int status, DWORD param)
 
         if (!resource || resource->use_ref > 0) {
             InfoBox(_("Error"),
-                    _("The \'%s\' is used by other resource, cann't delete it."),
+                    _("The \'%s\' is used by other resource, cannot delete it."),
                     resource->name.c_str());
             break;
         }
         DWORD instance = resource->getRes();
-        if (ID2TYPE(id) == NCSRT_RDR) {
+        if (ID2TYPE(id) == NCSRT_RDR && cmd_id != RDR_MENUCMD_DELRDRSET) {
             //delete preview window
             RendererInstance* inst = (RendererInstance*)instance;//resource->getRes();
             RendererInstance *preview_inst = rdrPreviewPanel->getPreviewInstance();
@@ -695,23 +663,21 @@ void RendererEditor::executeCommand(int cmd_id, int status, DWORD param)
                     rdrset_inst->removeInstance(inst);
                 }
             }
+            rdrTreePanel->removeItem(id, parent);
+            removeRes(id);
+            enableMenuItem(GBC_SAVE);
         }
-        else if (ID2TYPE(id) == NCSRT_RDRSET) {
+        else if (ID2TYPE(id) == NCSRT_RDRSET && cmd_id != RDR_MENUCMD_DELRDR) {
         	RendererSet *inst = (RendererSet *)instance;
         	if (inst->hasRefInstance()) {
                 InfoBox(_("Error"),
-                        _("The RendererSet has the only reference resource, cann't delete it."));
+                        _("The RendererSet only has the reference resource, cann't delete it."));
 				break;
         	}
-
+            removeRes(id);
+            rdrTreePanel->removeItem(id, parent);
+            enableMenuItem(GBC_SAVE);
         }
-        else {
-        	break;
-        }
-
-        removeRes(id);
-        rdrTreePanel->removeItem(id, parent);
-		enableMenuItem(GBC_SAVE);
 
         break;
     }
@@ -757,53 +723,108 @@ DWORD RendererEditor::processEvent(Panel* sender, int event_id, DWORD param1, DW
 	switch(event_id) {
 	case RDRTREE_SELCHANGE:
 		{
+			Instance* inst = NULL;
 			if(ID2TYPE(param1) == NCSRT_RDR)
 			{
-				Instance* inst = (Instance*)(RendererInstance*)getRes((int)param1);
-				if(inst)
-				{
-					//rdrTreePanel send
-					rdrPanel->setInstance(inst);
-					//rdrPreviewPanel
-					rdrPreviewPanel->createPreviewWindow((RendererInstance*)inst);
-				}
+				inst = (Instance*)(RendererInstance*)getRes((int)param1);
 				enableMenuItem(GBC_COPY, inst != NULL);
 				enableMenuItem(GBC_CUT, inst != NULL);
 				enableMenuItem(GBC_DELETE, inst != NULL);
+				enableMenuItem(RDR_MENUCMD_NEWRDR, FALSE);
 				enableMenuItem(RDR_MENUCMD_DELRDR, inst != NULL);
-				enableMenuItem(RDR_MENUCMD_DELRDRSET, inst != NULL);
+
+				enableMenuItem(RDR_MENUCMD_NEWRDRSET, FALSE);
+				enableMenuItem(RDR_MENUCMD_DELRDRSET, FALSE);
 				enableMenuItem(RDR_MENUCMD_ADDRDR, FALSE);
+                enableMenuItem(GBC_PASTE, FALSE);
 			}
 			else if (ID2TYPE(param1) == NCSRT_RDRSET)
 			{
 				enableMenuItem(GBC_COPY, FALSE);
 				enableMenuItem(GBC_CUT, FALSE);
 				enableMenuItem(GBC_DELETE);
-				enableMenuItem(RDR_MENUCMD_DELRDR);
+				enableMenuItem(RDR_MENUCMD_DELRDR, FALSE);
+				enableMenuItem(RDR_MENUCMD_NEWRDR);
+
+				enableMenuItem(RDR_MENUCMD_NEWRDRSET, FALSE);
 				enableMenuItem(RDR_MENUCMD_DELRDRSET);
 				enableMenuItem(RDR_MENUCMD_ADDRDR, TRUE);
+
+                //update paste menu status
+                InstanceArray instances = Instance::paste();
+                BOOL accept = FALSE;
+                if (instances) {
+                    RendererSet *rdrset_inst = (RendererSet *)getRes(param1);
+                    if (!rdrset_inst)
+                        break;
+
+                    for(int i=0; instances[i]; i++) {
+                        RendererInstance* cinst = dynamic_cast<RendererInstance*>(instances[i]);
+                        if(cinst == NULL)
+                            continue;
+
+                        if (rdrset_inst->accept(cinst)) {
+                            accept = TRUE;
+                            break;
+                        }
+                    }
+                }
+                //switch status
+                if (accept)
+                    enableMenuItem(GBC_PASTE);
+                else
+                    enableMenuItem(GBC_PASTE, FALSE);
 			}
 			else
 			{
+                //root
 				enableMenuItem(GBC_COPY, FALSE);
 				enableMenuItem(GBC_CUT, FALSE);
 				enableMenuItem(GBC_DELETE, FALSE);
+				enableMenuItem(RDR_MENUCMD_NEWRDR);
 				enableMenuItem(RDR_MENUCMD_DELRDR, FALSE);
+
+				enableMenuItem(RDR_MENUCMD_NEWRDRSET);
 				enableMenuItem(RDR_MENUCMD_DELRDRSET, FALSE);
 				enableMenuItem(RDR_MENUCMD_ADDRDR, FALSE);
+                if (Instance::paste())
+                    enableMenuItem(GBC_PASTE);
 			}
+			//rdrTreePanel send
+			rdrPanel->setInstance(inst);
+			//rdrPreviewPanel
+			rdrPreviewPanel->createPreviewWindow((RendererInstance*)inst);
 			break;
 		}
 
+	case FIELDPANEL_INSTANCE_FIELD_RESET:
+    {
+		//rdrPanel send
+		if ((int*)param2 != 0) {
+			rdrPreviewPanel->updateInstanceField((RendererInstance*)param1, (int*)param2);
+
+			//call special
+			ResManager *resMgr = g_env->getResManager(NCSRT_UI);
+            if (resMgr)
+                resMgr->callSpecial("updateRdrElements", (Instance*)(RendererInstance*)param1, (int*)param2);
+
+			setRdrXmlChanged();
+			//enable save menu
+			enableMenuItem(GBC_SAVE);
+        }
+
+        break;
+    }
 	case FIELDPANEL_INSTANCE_FIELD_CHANGED:
 	{
 		//rdrPanel send
 		if ((int)param2 != 0) {
 			//update Preview Window
-			rdrPreviewPanel->updateInstanceField((RendererInstance*)param1, (int)param2);
+            int ids[2] = {(int)param2, 0};
+			rdrPreviewPanel->updateInstanceField((RendererInstance*)param1, ids);
 			//call special
 			ResManager *resMgr = g_env->getResManager(NCSRT_UI);
-			resMgr->callSpecial("updateRdrElement", (Instance*)(RendererInstance*)param1, (int)param2);
+			resMgr->callSpecial("updateRdrElements", (Instance*)(RendererInstance*)param1, ids);
 			setRdrXmlChanged();
 			//enable save menu
 			enableMenuItem(GBC_SAVE);
@@ -1190,10 +1211,8 @@ void RendererEditor::onResValueChanged(int res_id)
 		int updatedFields[100];
 		int count = inst->getReferencedFieldIds(res_id, updatedFields, sizeof(updatedFields)/sizeof(int));
 		if (count > 0) {
-			for(int i=0; i<count; i++)
-			{
-				rdrPreviewPanel->updateInstanceField((RendererInstance*)inst, updatedFields[i]);
-			}
+            updatedFields[count] = 0;
+            rdrPreviewPanel->updateInstanceField((RendererInstance*)inst, updatedFields);
 			setRdrXmlChanged();
 		}
 	}
@@ -1232,6 +1251,11 @@ void RendererEditor::onResNameChanged(int res_id, const char* newName)
 			setRdrXmlChanged();
 		}
 	}
+}
+
+void RendererEditor::refreshRdrPanel(RendererInstance *inst)
+{
+    rdrPanel->refreshFields(inst);
 }
 
 ////////////////////////

@@ -83,12 +83,12 @@ static inline void set_scroll_info(HWND hwnd, int iSbar, SCROLLINFO *psi, int do
 	psi->fMask = SIF_ALL;
 	GetScrollInfo(hwnd, iSbar, psi);
 	psi->nMin = 0;
-	psi->nMax = doc_size;
+	psi->nMax = doc_size ;
 	psi->nPage = view_size;
 	if(psi->nPos < psi->nMin)
 		psi->nPos = psi->nMin;
 	else if(psi->nPos > (int)(psi->nMax - psi->nPage))
-		psi->nPos = psi->nMax - psi->nPage;
+		psi->nPos = psi->nMax - psi->nPage + 1;
 
 	SetScrollInfo(hwnd, iSbar, psi,bupdate);
 }
@@ -119,13 +119,13 @@ EditUIPanel::EditUIPanel(PanelEventHandler* handler)
 
 EditUIPanel::~EditUIPanel() {
 	// TODO Auto-generated destructor stub
-	if(baseInstance)
-		delete baseInstance;
+    delete baseInstance;
 
 	UnloadBitmap(&bmpOutline);
 #ifdef WIN32
 	free(editor_win_rdr);
 #endif
+	baseInstance = NULL;
 }
 
 void EditUIPanel::selectInstance(ComponentInstance * instance)
@@ -496,6 +496,8 @@ void EditUIPanel::onMouseMove(int x, int y, DWORD key_flag)
 		//get offset
 		::ClientToScreen(curContainer->getPreviewHandler(), &cx, &cy);
 		::ScreenToWindow(hwndTopMost, &cx, &cy);
+		cx -= xpos;
+		cy -= ypos;
 		OffsetRect(&rt, cx, cy);
 		SelectClipRect(_hdc, &rt);
 	}
@@ -1123,11 +1125,8 @@ void EditUIPanel::onCreatingUp(int x, int y)
 		HWND hctrl = cinst->createPreviewWindow();
 
 		const char *def_f = getDefaultClientFont();
-		if (def_f && NULL == (const char *)cinst->getField(ComponentInstance::PropFont))
-		{
-			LOGFONT *font = (LOGFONT *)LoadResource(def_f, RES_TYPE_FONT, 0L);
-			::SetWindowFont(hctrl, font);
-		}
+		if(def_f)
+			setPreviewWindowClientFont((LOGFONT*)LoadResource(def_f, RES_TYPE_FONT, 0L), cinst);
 		//cancel all the selection
 		cancelSelectAll();
 		insertSelect(hctrl, TRUE);
@@ -1694,6 +1693,10 @@ BOOL EditUIPanel::open(const char* xmlFile)
 		return FALSE;
 	}
 
+	const char *def_f = getDefaultClientFont();
+	if(def_f)
+		setDefClientFont((LOGFONT*)LoadResource(def_f, RES_TYPE_FONT, 0L));
+
 	curContainer = baseInstance;
 	cancelSelectAll();
 	insertSelect(hwndTopMost, TRUE);
@@ -2055,7 +2058,6 @@ static void draw_mainwind_anchor(HWND hwnd, HDC hdc, int xoff, int yoff, bool bS
 ///////////////////////////////////////////////////
 void EditUIPanel::drawSelections(HDC hdc)
 {
-	RECT rt;
 	HDC hdct = (HDC)0;
 	if(hdc == (HDC)0){
 		hdct = GetClientDC();
@@ -2069,11 +2071,6 @@ void EditUIPanel::drawSelections(HDC hdc)
 	{
 		drawSelection(hdct, selectedWnd[i]);
 	}
-
-
-	//GetClientRect(&rt);
-
-	//SelectClipRect(hdct, &rt);
 
 	draw_mainwind_anchor(hwndTopMost, hdct, -xpos, -ypos, selectedWnd.empty());
 
@@ -2398,12 +2395,14 @@ int EditUIPanel::updateInstanceField(Instance *instance, int id)
 			//send event
 			//sendEvent(EDITUIPANEL_FIELD_UPDATE,(DWORD)(Instance*)cinst, (DWORD)id);
 		}*/
-		ret = ComponentInstance::SPWE_OK;
 	}
 	else{
 		if(ret == ComponentInstance::SPWE_REJECT)
 		{
-			InfoBox(_("Error"), _("The Value is invalidate or the control cannot accept this value now!\nPlease check the value range or other properties")
+			string str;
+			instance->getFieldErrorTip(id, str);
+			InfoBox(_("Error"), 
+                    _("The Value is invalid or the control cannot accept this value now!\n\nPlease check the value range or other dependency properties.\n\nError Tip: %s"), str.c_str()
 				 );
 			return ret;
 		}
@@ -2421,10 +2420,10 @@ int EditUIPanel::updateInstanceField(Instance *instance, int id)
 	return ret;
 }
 
-void EditUIPanel::updateRdrElement(Instance *inst, int ele_id)
+void EditUIPanel::updateRdrElements(Instance *inst, int* ele_ids)
 {
 	int id = inst->getID();
-	DWORD params[2] = { ele_id, (DWORD)((RendererInstance*)inst)};
+	DWORD params[2] = {(DWORD)ele_ids, (DWORD)((RendererInstance*)inst)};
 	if(updateInstanceRdr(baseInstance, id, params))
 		flags |= UpdatePreviewWindow;
 }
@@ -2668,7 +2667,7 @@ void EditUIPanel::copy(BOOL bremove /*= FALSE*/)
 
 void EditUIPanel::paste()
 {
-	Instance** instances;
+	InstanceArray instances;
 
 	ComponentInstance* container = curContainer;
 	if(container == NULL)
@@ -2678,7 +2677,7 @@ void EditUIPanel::paste()
 	else if(!container->isContainer())
 		container = container->getParent();
 
-	if(container && (instances = Instance::paste())!=NULL)
+	if(container && (instances = Instance::paste()))
 	{
 		//cancel the selected
 		cancelSelectAll();
@@ -2688,14 +2687,12 @@ void EditUIPanel::paste()
 				continue;
 
 			int x,y;
-
 			cinst->getLocation(x, y);
   //          offset_pos += 10;
 			x += 10; //offset_pos;
 			y += 10; //offset_pos;
 			snapeGrid(x,y);
 			//cinst->setLocation(x,y);
-
 			cinst = (ComponentInstance*)cinst->clone();
 			if(!cinst)
 				continue;
@@ -2705,6 +2702,7 @@ void EditUIPanel::paste()
 				cinst->release();
 				continue;
 			}
+
 			//add into the resource
 			addResource(cinst);
 
@@ -2712,12 +2710,11 @@ void EditUIPanel::paste()
 			//insert into selection
 			insertSelect(cinst->getPreviewHandler(), i==0);
 			const char *def_f = getDefaultClientFont();
-			if (def_f && NULL == (const char *)cinst->getField(ComponentInstance::PropFont))
-			{
-				LOGFONT *font = (LOGFONT *)LoadResource(def_f, RES_TYPE_FONT, 0L);
-				::SetWindowFont(cinst->getPreviewHandler(), font);
-			}
+			
+			if(def_f)
+				setPreviewWindowClientFont((LOGFONT*)LoadResource(def_f, RES_TYPE_FONT, 0L), cinst);
 		}
+		
 		setSourceChanged();
 		//send event
 		notifySelChanged();
@@ -3004,14 +3001,30 @@ DWORD EditUIPanel::processEvent(Panel* sender, int event_id, DWORD param1/* = 0*
 		RendererInstance * rdrInst = dynamic_cast<RendererInstance*>(inst);
 		if(rdrInst)
 		{
-			//update rdreditor's preview wondow
-			rdrInst->updatePreviewWindow((int)param2, curWnd);
-			DWORD params[2] = { param2, (DWORD)rdrInst };
+			//update rdreditor's preview window
+            int ids[2] = {(int)param2, 0};
+			rdrInst->updatePreviewWindow(ids, curWnd);
+			DWORD params[2] = {(DWORD)ids, (DWORD)rdrInst};
 
 			//update all the editors
 			return sendEvent(EDITUIPANEL_UPDATE_SPECIAL_FIELD,(DWORD)ComponentInstance::PropRenderer, (DWORD)params);
 		}
 	}
+    else if(event_id == FIELDPANEL_INSTANCE_FIELD_RESET)
+	{
+		Instance * inst = (Instance*)param1;
+		RendererInstance * rdrInst = dynamic_cast<RendererInstance*>(inst);
+		if(rdrInst)
+		{
+			//update rdreditor's preview window
+            rdrInst->updatePreviewWindow((int*)param2, curWnd);
+
+			//update rdreditor's preview window
+			DWORD params[2] = {param2, (DWORD)rdrInst};
+			//update all the editors
+			return sendEvent(EDITUIPANEL_UPDATE_SPECIAL_FIELD, (DWORD)ComponentInstance::PropRenderer, (DWORD)params);
+        }
+    }
 	return 0;
 }
 
@@ -3297,7 +3310,6 @@ void EditUIPanel::hideInstances()
 
 BOOL EditUIPanel::onKeyDown(int scancode, DWORD key_status)
 {
-	//printf("---- onKeyDown: scancode=%d\n",scancode);
 	switch(scancode)
 	{
 	case SCANCODE_REMOVE:
@@ -3704,10 +3716,9 @@ void EditUIPanel::connectEvents()
 	//if(::IsWindow(curWnd) && (cinst=ComponentInstance::FromHandler(curWnd)))
 	{
 		try{
-		//	if(!cinst->isContainer())
-			//	cinst = cinst->getParent();
 			ComponentInstance* cinst = ComponentInstance::FromHandler(curWnd);
-			ConnectEventsWnd cew(GetHandle(), baseInstance, cinst?cinst->getID():0);
+
+			ConnectEventsWnd cew(GetHandle(), baseInstance, cinst, cinst?cinst->getID():0);
 			if(cew.DoMode())
 			{
 				//set source changed
@@ -3750,28 +3761,40 @@ static CTRLDATA _input_ctrls [] =
 		10, 10, 200, 30,
 		0,
 		"Template Name :",
-		0
+		0,
+        WS_EX_NONE,
+        NULL,
+        NULL
 	},
 	{
 		"sledit", WS_VISIBLE|WS_BORDER,
 		20, 40, 230, 30,
 		IDC_INPUT,
 		"",
-		0
+		0,
+        WS_EX_NONE,
+        NULL,
+        NULL
 	},
 	{
 		"button", WS_VISIBLE|BS_PUSHBUTTON,
 		110, 95, 70, 25,
 		IDOK,
 		"OK",
-		0
+		0,
+        WS_EX_NONE,
+        NULL,
+        NULL
 	},
 	{
 		"button", WS_VISIBLE|BS_PUSHBUTTON,
 		190, 95, 70, 25,
 		IDCANCEL,
 		"Cancel",
-		0
+		0,
+        WS_EX_NONE,
+        NULL,
+        NULL
 	}
 };
 
@@ -3810,7 +3833,7 @@ static int _importProc(HWND hDlg, int message, WPARAM wParam, LPARAM lParam)
 					EndDialog(hDlg, 1);
 					break;
 				}
-				MessageBox(hDlg,_("Invalidate Name, ID name must start with a Alpha, and only include Alpha, \'_\', digit, e.g. IDB_IMAGE1"),_("Error") ,MB_OK);
+				MessageBox(hDlg,_("Invalid Name, ID name must start with a capital letter, and only contain capital letter, \'_\', digit, e.g. IDB_IMAGE1"),_("Error") ,MB_OK);
 				SendMessage(hEdit, EM_SELECTALL, 0, 0);
 				SetFocus(hEdit);
 				break;

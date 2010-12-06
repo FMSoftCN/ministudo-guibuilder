@@ -19,10 +19,15 @@ fi
 
 COUNT=`printf "%03d" ${COUNT}`
 
-cat >build_version.c << _ACEOF
+cat >build_version.h << _ACEOF
+
+#ifndef GUIBUILDER_BUILDVERSION_H
+#define GUIBUILDER_BUILDVERSION_H
 
 #ifndef BUILD_VERSION
 #define BUILD_VERSION "${DATE}${COUNT}"
+#endif
+
 #endif
 
 _ACEOF

@@ -27,6 +27,9 @@ using namespace std;
 #include "panel.h"
 #include "panellayout.h"
 #include "reseditor.h"
+#ifdef WIN32
+#include "func-win.h"
+#endif
 
 ResEditor::ResEditor()
 {
@@ -57,8 +60,7 @@ ResEditor::~ResEditor()
 
 	for(it = reses.begin(); it != reses.end(); ++it){
 		res = it->second;
-		if(res)
-			delete res;
+        delete res;
 	}
 }
 /*
@@ -228,7 +230,16 @@ BOOL ResEditor::loadXMLIDs(const char* xmlFile)
 				if(xname)
 					namedRes[resource->name] = resource;
 			}*/
-			createRes(type, (const char*)xname,id, (const char*)xsource, 0);
+#ifdef WIN32
+			if(xsource)
+			{
+				char szSource[1024];
+				utf8toascii((const char*)xsource, szSource, sizeof(szSource));
+				createRes(type, (const char*)xname,id, szSource, 0);
+			}
+			else
+#endif
+				createRes(type, (const char*)xname,id, (const char*)xsource, 0);
 		}
 
 		if(xname)
@@ -275,13 +286,21 @@ BOOL ResEditor::saveXMLIDs(const char* xmlFile)
 			stream.indent();
 			stream.printf("<id ");
 			if(resource->name.length() > 0)
-				stream.printf("name=\"%s\" ", resource->name.c_str());
+				stream.printf("name=\"%s\" ", _ERT(resource->name.c_str()));
 			stream.println(" value=\"0x%x\"/>", resource->id);
 			stream.println("<type>%d</type>", typeFromId(resource->id));
 			stream.printf("<source>");
 			const char* source = g_env->getString(resource->source_id);
 			if(source)
+			{
+#ifdef WIN32
+				char szText[1024];
+				asciitoutf8(source, szText, sizeof(szText));
+				stream.printf("%s",szText);
+#else
 				stream.printf("%s",source);
+#endif
+			}
 			stream.println("</source>");
 			stream.unindent();
 			stream.println("</res-id>");
@@ -326,7 +345,7 @@ int ResEditor::newResId(int type, const char* name)
 
 	do{
 		int i = 0;
-		for(int id = idrm->nextId(owner); id != -1 && i < 65535; id = idrm->nextId(owner))
+		for(int id = idrm->nextId(owner); id != -1 && i < 65535; id = idrm->nextId(owner) , i ++)
 		{
 			if(reses.count(id) <= 0)
 			{
@@ -475,7 +494,10 @@ BOOL IDRange::extend(int min, int max)
 
 ///////////////////////////////////
 IDRangeManager::IDRangeManager(ResManager* resManager, int type, const char* name, int limit_min, int limit_max)
-:resManager(resManager), type(type), limit_min(limit_min), limit_max(limit_max)
+    : type(type), 
+    limit_min(limit_min), 
+    limit_max(limit_max),
+    resManager(resManager)
 {
 	if(name)
 		this->name = name;
@@ -565,9 +587,10 @@ void IDRangeManager::excludeIDRange(IDRangeInfoList& list, int min, int max)
 		return;
 	}
 
-	IDRangeInfoList::iterator it = list.begin();
-	while(it != list.end())
+	int i = 0;
+	while(i < list.size())
 	{
+		IDRangeInfoList::iterator it = list.begin() + i;
 		if(it->min >= max)
 			return;
 
@@ -581,7 +604,6 @@ void IDRangeManager::excludeIDRange(IDRangeInfoList& list, int min, int max)
 				//insert one
 				it->max = min;
 
-				++ it;
 				list.insert(it, IDRangeInfo(max, prev_max));
 				return;
 			}
@@ -590,10 +612,7 @@ void IDRangeManager::excludeIDRange(IDRangeInfoList& list, int min, int max)
 		{
 			if(it->max <= max)
 			{
-				//delete it
-				IDRangeInfoList::iterator tmpit = it;
-				++it;
-				list.erase(tmpit);
+				list.erase(it);
 				continue;
 			}
 			if(it->max > max)
@@ -603,7 +622,7 @@ void IDRangeManager::excludeIDRange(IDRangeInfoList& list, int min, int max)
 			}
 
 		}
-		++ it;	
+		i ++;
 	}
 
 }
@@ -692,11 +711,15 @@ int IDRangeManager::nextId(IDRangeOwner* owner)
 		{
 			//find next used is not null
 			cur_idrange = header;
+            while(cur_idrange && cur_idrange->unusedCount() <= 0)
+                cur_idrange = cur_idrange->next;
+
 			while(cur_idrange)
 			{
 				cur_idrange = get_next_idrange(cur_idrange, owner);
 				if(cur_idrange && cur_idrange->getUsed() < (cur_idrange->max - cur_idrange->min))
 					break;
+				cur_idrange = cur_idrange->next;
 			}	
 			
 			if(!cur_idrange)

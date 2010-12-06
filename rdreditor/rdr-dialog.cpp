@@ -105,7 +105,7 @@ void NewRdrSetDialog::onOK()
 		EndDialog(IDOK);
 	}
 	else {
-		MessageBox(_("Warning"), _("The ID name is invalid or has been used. \n Please input again."), MB_OK);
+		MessageBox(_("Warning"), _("The ID name is invalid or already used.\n Please input another name."), MB_OK);
 	}
 }
 
@@ -118,7 +118,7 @@ BOOL NewRdrSetDialog::onInitDialog(HWND hFocus, LPARAM lParam)
 {
     set <string> rdrList;
     set <string>::iterator it;
-    HWND hRdrWnd, hClsWnd, hEditWnd;
+    HWND hRdrWnd, hEditWnd;
     int idx;
 	RendererEditor* resMgr = (RendererEditor*)(g_env->getResManager(NCSRT_RDR | NCSRT_RDRSET));
 
@@ -155,8 +155,38 @@ BEGIN_MSG_MAP(NewRdrDialog)
 	BEGIN_COMMAND_MAP
 		MAP_COMMAND(IDOK, onOK)
 		MAP_COMMAND(IDCANCEL, onCancel)
+        MAP_COMMANDEX(ID_COMB_RDR, onRdrSelChange)
 	END_COMMAND_MAP
 END_MSG_MAP_PARENT_PROC(MGDialog)
+
+void NewRdrDialog::onRdrSelChange (int code, HWND hWnd)
+{
+    if (visibleCls && code == CBN_SELCHANGE) {
+        RendererEditor* resMgr = 
+            (RendererEditor*)(g_env->getResManager(NCSRT_RDR | NCSRT_RDRSET));
+        if (!resMgr)
+            return;
+
+        //change class combobox's content
+        HWND hClsWnd = GetChild(ID_COMB_CTRL);
+        char rdrName[MAX_NAME_LEN], clsName[MAX_NAME_LEN];
+        set <string> clsList;
+        set <string>::iterator it;
+        int clsSelIdx;
+
+        GetChildText(ID_COMB_RDR, rdrName, MAX_NAME_LEN);
+        GetChildText(ID_COMB_CTRL, clsName, MAX_NAME_LEN);
+
+        resMgr->getClassList(rdrName, clsList);
+        ::SendMessage(hClsWnd, CB_RESETCONTENT, 0, 0);
+	    for (it = clsList.begin(); it != clsList.end(); ++it) {
+			::SendMessage(hClsWnd, CB_ADDSTRING, 0, (LPARAM)it->c_str());
+	    }
+
+        clsSelIdx = ::SendMessage(hClsWnd, CB_FINDSTRING, 0, (LPARAM)clsName);
+	    ::SendMessage(hClsWnd, CB_SETCURSEL, clsSelIdx, 0);
+    }
+}
 
 BOOL NewRdrDialog::onKeyDown(int scancode, DWORD key_status)
 {
@@ -191,7 +221,7 @@ void NewRdrDialog::onOK()
 		EndDialog(IDOK);
 	}
 	else {
-		MessageBox(_("Warning"), _("The ID name is invalid or has been used. \n Please input again."), MB_OK);
+		MessageBox(_("Warning"), _("The ID name is invalid or already used.\n Please input another name."), MB_OK);
 	}
 }
 
@@ -227,8 +257,8 @@ BOOL NewRdrDialog::onInitDialog(HWND hFocus, LPARAM lParam)
     idx = ::SendMessage(hRdrWnd, CB_FINDSTRING, 0, (LPARAM)rdrName.c_str());
     ::SendMessage(hRdrWnd, CB_SETCURSEL, idx, 0);
 
-
 	hClsWnd = GetChild(ID_COMB_CTRL);
+
 	if (!visibleCls) {
 		if (strcmp(clsName.c_str(), "") != 0)
 			::SendMessage(hClsWnd, CB_ADDSTRING, 0, (LPARAM)clsName.c_str());

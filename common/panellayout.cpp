@@ -521,6 +521,12 @@ static int _panel_proc(HWND hwnd, int message, WPARAM wParam, LPARAM lParam)
 			return 0;
 		}
 	}
+    else if(message == MSG_SHOWPAGE) {
+        HWND hchild = GetNextChild(hwnd, HWND_NULL);
+        if(IsWindow(hchild))
+            return SendMessage(hchild, message, wParam, lParam);
+        return 1;
+    }
 
 	return DefaultControlProc(hwnd, message, wParam, lParam);
 }

@@ -14,9 +14,11 @@ class Panel
 {
 protected:
 	PanelEventHandler * handler;
-	DWORD sendEvent(int event_id, DWORD param1=0, DWORD param2=0){
+	DWORD sendEvent(int event_id, DWORD param1=0, DWORD param2=0) {
 		if(handler)
 			return handler->processEvent(this, event_id, param1, param2);
+
+        return 0;
 	}
 
 public:

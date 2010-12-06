@@ -17,7 +17,7 @@ local function get_xvfb_exec()
         if osname == "linux" then
             guibuilder_path = string.format("%s/bin/gvfb", guibuilder_path)
         elseif osname == "windows" then
-            guibuilder_path = string.format("%s\\bin\\wvfb2.exe", guibuilder_path)
+            guibuilder_path = string.format("%s\\wvfb2.exe", guibuilder_path)
         end
 		return guibuilder_path
 	end
@@ -32,7 +32,7 @@ local function get_xvfb_exec()
 end
 
 local function get_xvfb_caption()
-	return "mStudio Emulator"
+	return "miniStudio Emulator"
 end
 
 local function get_resource_path()
@@ -156,7 +156,7 @@ out:write([[
 # MiniGUI Ver 2.2.1
 # This configuration file is for MiniGUI Look and Feel.
 #
-# Copyright (C) 2002~2008 Feynman Software
+# Copyright (C) 2002~2010 FMSoft.
 # Copyright (C) 1998~2002 Wei Yongming.
 #
 # Web:   http://www.minigui.com
@@ -235,10 +235,10 @@ local def_cap_font_id  = 1
 local def_ctrl_font_id = 1
 local def_fonts = ""
 
-if cfginfo.capition_font then
+if cfginfo.caption_font then
 	def_cap_font_id =  def_font_count
 	def_font_count = def_font_count + 1
-	def_fonts = string.format("font%d=%s\n", def_cap_font_id, cfginfo.capition_font)
+	def_fonts = string.format("font%d=%s\n", def_cap_font_id, cfginfo.caption_font)
 end
 
 if cfginfo.control_font then
@@ -288,7 +288,7 @@ fontfile0=font/Courier-rr-8-13.vbf
 local upf_str = [[
 [upf]
 font_number=%d
-name0=upf-unifont-rrncnn-16-16-ISO8859-1,ISO8859-15,GB2312,BIG5, GBK,UTF-8, UTF-16LE, UTF-16BE
+name0=upf-unifont-rrncnn-16-16-ISO8859-1,ISO8859-15,GB2312,BIG5,GBK,UTF-8,UTF-16LE,UTF-16BE
 fontfile0=font/unifont_160_50.upf
 %s
 
