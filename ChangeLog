@@ -1,5 +1,9 @@
 ************************************************************************************
 What's New in guibuilder 1.0.6 ( 2010/9 ~ )
+03/03. BUGFIXING #?. fix bug of system core dump when input '_' in input method 
+opening.(xwyan)
+	* include/valuetype.h
+
 03/03. BUGFIXING #?. Should get correct resource package name when generating
 incore resource by res2c.(xwyan)
 	* mainframe/mainframe.cpp
