@@ -1352,8 +1352,9 @@ void MainFrame::processArgs(CharStream* cs)
                 }
             } else if(strcmp(szName, "project-name") == 0) {
                 //TODO get prohject name
-                if(cs->getPath(szName,sizeof(szName)) > 0)
+                if(cs->getPath(szName,sizeof(szName)) > 0) {
                     strPrjName = szName;
+                }
             } else if(strcmp(szName, "project-file") == 0
                       || strcmp(szName, "file") == 0) {
                 //TODO open file
@@ -1451,37 +1452,24 @@ void MainFrame::deleteRefRes(int id)
 
 void MainFrame::setProjectPath(const char* path)
 {
+    char sep;
     if(path == NULL)
         return;
 
+    sep = getPathSeparator();
     int len = strlen(path);
-    if(path[len-1] == '/' || path[len-1] == '\\')
+    if(path[len-1] == sep)
         len --;
 
     if(!strPrjPath.empty() && strncmp(strPrjPath.c_str(), path, len) == 0)
-        return ;
+        return;
 
     strPrjPath.clear();
-    strPrjPath.append(path,len);
+    strPrjPath.append(path, len);
 
-    
-#ifdef WIN32
-	strResPath = strPrjPath + "\\res";
-#else
-	strResPath = strPrjPath + "/res";
-#endif
-
-#ifdef WIN32
-	strHeaderFile = strPrjPath + "\\include\\resource.h";
-#else
-    strHeaderFile = strPrjPath + "/include/resource.h";
-#endif
-
-#ifdef WIN32
-	strSrcPath = strPrjPath + "\\src";
-#else
-    strSrcPath = strPrjPath + "/src";
-#endif
+	strResPath = strPrjPath + sep + "res";
+	strHeaderFile = strPrjPath + sep + "include" + sep + "resource.h";
+	strSrcPath = strPrjPath + sep + "src";
 
     //update res
     for(list<ResEditorInfo*>::iterator it = resEditors.begin(); it != resEditors.end(); ++it) {
@@ -2588,18 +2576,17 @@ BOOL MainFrame::generateIncoreRes(int type)
         strcmd += "/mgncs.cfg";
     } else {
         strcmd = "res2c -p " + strPrjPath;
+        //we should append correct resource package name
         {
-            char *packageName = (char*)getResPackageName().c_str();
-#ifdef WIN32
-            packageName = strrchr(packageName, '\\'); 
-#else
-            packageName = strrchr(packageName, '/'); 
-#endif
-            if (packageName) {
-                //skip separator
-                packageName += 1;
-                strcmd += " -r ";
-                strcmd += packageName;
+            string packageName = getResPackageName();
+            size_t found = packageName.find_last_of(getPathSeparator());
+
+            if (found != string::npos) {
+                packageName = packageName.substr(found + 1);
+                if (packageName.compare(getResPackageSuffix()) != 0) {
+                    strcmd += " -r ";
+                    strcmd += packageName;
+                }
             }
         }
         strcmd += " -d src/incore-res";

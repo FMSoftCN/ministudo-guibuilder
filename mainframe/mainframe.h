@@ -158,23 +158,39 @@ protected:
 	const char* getFormatVersion(){ return gbVersion.szVersion; }
 	const char* getEncoding(){ return "utf-8\0\0\0\0\0\0\0\0\0\0";} //len is 16byte
 	const char* getVendor(){ return "FM-miniStudiio\0\0";} //len is 16byte
-	string getResPackageName() {
+
+    const char getPathSeparator()
+    {
+#ifdef WIN32
+        return '\\';
+#else
+        return '/';
+#endif
+    }
+
+    const char* getResPackageSuffix()
+    {
+        return ".res";
+    }
+
+	string getResPackageName() 
+    {
 		/**
 		 * in windows, readdir would change the current word dir, so, we
 		 * must use the absolut path
 		*/
-        if (configuration.resPackName)
+        const char sep = getPathSeparator();
+        if (configuration.resPackName && configuration.resPackName[0] != '\0')
 		{
 			const char* pack_name = NULL;
-            pack_name = strrchr(configuration.resPackName, '/');
-			if(pack_name == NULL)
-				pack_name = strchr(configuration.resPackName,'\\');
+            pack_name = strrchr(configuration.resPackName, sep);
 			if(pack_name == NULL)
 				pack_name = configuration.resPackName;
-			return string(strResPath + "/" + pack_name);
+			return string(strResPath + sep + pack_name);
 		}
-        else
-            return string(strResPath+"/"+getPrjName()+".res");
+        else {
+            return string(strResPath + sep + getPrjName() + getResPackageSuffix());
+        }
 	}
 	void writeStringResource(BinStream* bin);
 
@@ -249,6 +265,16 @@ public:
 
 	virtual const char* getPrjName()
 	{
+        //make sure project name is not null.
+        if (strPrjName.compare("") == 0) {
+            string pwd = getenv("PWD");
+            size_t found = pwd.find_last_of(getPathSeparator());
+            if (found != string::npos) {
+                strPrjName = pwd.substr(found + 1);
+            }
+            else 
+                strPrjName = pwd;
+        }
 		return strPrjName.c_str();
 	}
 
