@@ -2587,9 +2587,9 @@ BOOL MainFrame::generateIncoreRes(int type)
         strcmd += strPrjPath;
         strcmd += "/mgncs.cfg";
     } else {
-        strcmd = "res2c -p " + strPrjPath;
+        strcmd = "res2c -p " + strPrjPath + " -r ";
         if(strPrjName.size() > 0)
-            strcmd += " -r " + strPrjName + ".res";
+            strcmd += getResPackageName().c_str();
         strcmd += " -d src/incore-res";
     }
 
