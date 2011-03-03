@@ -2587,11 +2587,24 @@ BOOL MainFrame::generateIncoreRes(int type)
         strcmd += strPrjPath;
         strcmd += "/mgncs.cfg";
     } else {
-        strcmd = "res2c -p " + strPrjPath + " -r ";
-        if(strPrjName.size() > 0)
-            strcmd += getResPackageName().c_str();
+        strcmd = "res2c -p " + strPrjPath;
+        {
+            char *packageName = (char*)getResPackageName().c_str();
+#ifdef WIN32
+            packageName = strrchr(packageName, '\\'); 
+#else
+            packageName = strrchr(packageName, '/'); 
+#endif
+            if (packageName) {
+                //skip separator
+                packageName += 1;
+                strcmd += " -r ";
+                strcmd += packageName;
+            }
+        }
         strcmd += " -d src/incore-res";
     }
+    printf ("strcmd:%s. respackage name:%s \n", strcmd.c_str(), getResPackageName().c_str());
 
 #ifdef WIN32
 	win_system(strcmd.c_str());

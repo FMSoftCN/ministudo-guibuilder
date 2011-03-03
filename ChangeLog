@@ -1,12 +1,16 @@
 ************************************************************************************
 What's New in guibuilder 1.0.6 ( 2010/9 ~ )
+03/03. BUGFIXING #?. Should get correct resource package name when generating
+incore resource by res2c.(xwyan)
+	* mainframe/mainframe.cpp
+
 12/02. BUGFIXING #?. Changed the default screen size to 800x600, same as
 MiniGUI.cfg in process mode(dongjunjie)
 	* uieditor/uieditor.cpp
 
 11/30. BUGFIXING #5334. Fixed the bug of image editor(dongjunjie)
 	* imgeditor/imgeditor.cpp
-   
+
 11/29. BUGFIXING #?, Changed the name mStudio to miniStudio(dongjunjie)
 	* M       tools/makemo/zh.po
 	* M       mainframe/mainframe.cpp
