@@ -189,7 +189,7 @@ protected:
 	{
 		ValueEditor * _this = fromHandle(hwnd);
 		if(_this)
-			return _this->wndProc(message, wParam,lParam);
+			return _this->wndProc(message, wParam, lParam);
 
 		return DefaultControlProc(hwnd, message, wParam, lParam);
 	}
@@ -1094,18 +1094,24 @@ typedef TBaseResValueType<IDValueEditor> IDValueType;
 class IDValueEditor: public ValueEditor
 {
 protected:
-	int wndProc(int message, WPARAM wParam, LPARAM lParam){
-        switch (message) {
+	int wndProc(int message, WPARAM wParam, LPARAM lParam)
+    {
+        switch (message) 
+        {
             case MSG_CHAR:
-                if(isalnum(wParam) || wParam == 8 || wParam == 127 || wParam == '_' ) {
-                    bModified = TRUE;
-                    break;
+                //only support ascii character.
+                if (!((0x0ff0000 & wParam) >> 16) && !HIBYTE(wParam)) {
+                    unsigned char ch = LOBYTE (wParam);
+                    if(ch == 8 || ch == 127 || ch == '\b' || ch == '_' || isalnum(ch)) {
+                        bModified = TRUE;
+                        break;
+                    }
                 }
 
                 return 0;
 
             case MSG_KEYDOWN:
-                if(wParam == SCANCODE_ENTER){
+                if(wParam == SCANCODE_ENTER) {
                     onSaveValue();
                     return 0;
                 }
@@ -1117,7 +1123,8 @@ protected:
 		return ValueEditor::wndProc(message, wParam, lParam);
 	}
 
-	void onSaveValue(){
+	void onSaveValue()
+    {
 		if(!bModified)
 			return;
 		bModified = FALSE;
@@ -1126,10 +1133,10 @@ protected:
 		GetWindowText(hwnd, szText, sizeof(szText)-1);
 
 		ResManager* resMgr = g_env->getResManager(ID2TYPE(value));
-		if(!updatingValue(resMgr->nameToId(szText)))
-		{
+
+		if(!updatingValue(resMgr->nameToId(szText))) {
 			SetWindowText(hwnd, resMgr->idToName(value));
-			return ;
+			return;
 		}
 		int newid = resMgr->setResName(value, szText, mask);
 		if(newid != -1){
