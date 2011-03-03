@@ -2604,7 +2604,6 @@ BOOL MainFrame::generateIncoreRes(int type)
         }
         strcmd += " -d src/incore-res";
     }
-    printf ("strcmd:%s. respackage name:%s \n", strcmd.c_str(), getResPackageName().c_str());
 
 #ifdef WIN32
 	win_system(strcmd.c_str());
