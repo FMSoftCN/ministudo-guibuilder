@@ -102,6 +102,7 @@ private:
 	static BOOL loadClassProperty(xmlNodePtr node, Class *_class, int& prop_id);
 	static BOOL loadClassEvent(xmlNodePtr node, Class *_class, int& event_id, char **default_prototype);
 	static BOOL loadClassDefProperty(xmlNodePtr node, Class *_class, uint8_t attr);
+	static BOOL loadClassDefEvent(xmlNodePtr node, Class* _class, int attr);
 
 public:
 	static Class* loadFromXML(xmlNodePtr node); //load from xml

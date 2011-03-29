@@ -271,6 +271,9 @@ Class* Class::loadFromXML(xmlNodePtr node)
 		else if(xmlStrcmp(node->name, (const xmlChar*)"event") == 0){
 			loadClassEvent(node, _class, event_id, &def_prototype);
 		}
+		else if(xmlStrcmp(node->name, (const xmlChar*)"set-event") == 0) {
+			loadClassDefEvent(node, _class, FIELD_ATTR_FIXED) ;
+		}
 		else if(xmlStrcmp(node->name, (const xmlChar*)"set-property") == 0){
 			loadClassDefProperty(node, _class, FIELD_ATTR_FIXED);
 		}
@@ -500,6 +503,33 @@ BOOL Class::loadClassDefProperty(xmlNodePtr node, Class *_class, uint8_t attr)
 		field = new Field;
 		field->id = ft->id;
 		field->value = value;
+		field->attr = attr;
+		_class->defaultFields[ft->id] = field;
+	}
+
+	return TRUE;
+
+}
+
+BOOL Class::loadClassDefEvent(xmlNodePtr node, Class* _class, int attr)
+{
+	int id = xhGetIntProp(node, "id");
+	
+	FieldType *ft = _class->getFieldType(id);
+
+	if(!ft)
+		return FALSE;
+
+	Field *field = _class->defaultFields.at(ft->id);
+
+	if(field){
+		field->attr = attr;
+	}
+	else
+	{
+		field = new Field;
+		field->id = ft->id;
+		field->value = 0;
 		field->attr = attr;
 		_class->defaultFields[ft->id] = field;
 	}

@@ -5,6 +5,8 @@
 	<set-property name="Text" value="0"/>
 	<default-property name="Width" value="120"/>
 	<default-property name="Height" value="30"/>
+
+	<set-event id="4052"/>
 	
 	<event id="4070">
 		<handler>void onItemChanged(mWidget* self, int id, int nc, DWORD wParam)</handler>
