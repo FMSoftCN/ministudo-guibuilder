@@ -2273,7 +2273,7 @@ static CTRLDATA _SetStartWindow_controls[] = {
 		},
 		{
 			"listbox", /* class_name */
-			0x08410001, /* style */
+			0x08490001, /* style */
 			10, /* x */
 			37, /* y */
 			196, /* w */
