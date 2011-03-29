@@ -561,6 +561,7 @@ string Class::newClassName(Class* cls)
 		strName = str;
 	}
 
+	_class_map_ref[cls] ++;
 	int ref = _class_map_ref.at(cls);
 
 	sprintf(szName, "ID_%s%d", strName, ref);
@@ -590,7 +591,6 @@ Instance::Instance(Class* cls)
 	ref_list = NULL;
 
 	_class->addRef();
-	_class_map_ref[cls] ++;
 }
 
 Instance::Instance(InstanceNotificationHandler* notification, Class* cls, int id)
@@ -601,7 +601,6 @@ Instance::Instance(InstanceNotificationHandler* notification, Class* cls, int id
 	bLocked = FALSE;
 	//TODO release ref_list
 	ref_list = NULL;
-	_class_map_ref[cls] ++;
 }
 
 int Instance::getIDValueType(int id)
@@ -1259,7 +1258,7 @@ void Instance::incUseOfRefReses()
 		resMgr = g_env->getResManager(ID2TYPE(res_ref->field->value));
 		if(!resMgr)
 			continue;
-		resMgr->use(res_ref->field->value,FALSE); 
+		resMgr->use(res_ref->field->value,FALSE);
 	}
 }
 
