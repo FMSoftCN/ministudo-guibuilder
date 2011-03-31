@@ -3,7 +3,7 @@
 0x00022712	"About GUI Builder"
 0x00022713	"OK"
 0x00022714	"Cancel"
-0x00022715	"Copyright (c) 2010 Beijing Feynman Software Technology Co., Ltd."
+0x00022715	"Copyright (c) 2010 Beijing FMSoft Technologies Co., LTD."
 0x00022716	"Version:"
 0x00022717	"Vesrion:"
 0x00022718	"Build:"

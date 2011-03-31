@@ -22,18 +22,18 @@
 	</window>
 	<window class="window::Image" serial-number="2133794816">
 		<ID>0x40000068</ID>
-		<X>24</X>
-		<Y>12</Y>
-		<Width>416</Width>
+		<X>92</X>
+		<Y>16</Y>
+		<Width>247</Width>
 		<Height>52</Height>
 	</window>
 	<window class="window::Static" serial-number="2950057984">
 		<ID>0x4000000a</ID>
 		<Align>Center</Align>
 		<AutoWrap>True</AutoWrap>
-		<X>28</X>
+		<X>44</X>
 		<Y>280</Y>
-		<Width>412</Width>
+		<Width>328</Width>
 		<Height>40</Height>
 		<Text>0x00022715</Text>
 	</window>

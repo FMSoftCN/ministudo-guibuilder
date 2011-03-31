@@ -798,7 +798,7 @@ msgid "Extend Range"
 msgstr "扩展范围"
 
 #: ../../mainframe/dlgtmpls.c:2111
-msgid "Copyright (c) 2010 Beijing Feynman Software Technology Co., Ltd."
+msgid "Copyright (c) 2010 Beijing FMSoft Technologies CO., LTD."
 msgstr "Copyright (c) 2010 北京飞漫软件技术有限公司"
 
 #: ../../mainframe/dlgtmpls.c:2125

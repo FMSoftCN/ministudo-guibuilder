@@ -1,9 +1,9 @@
 
-#include <minigui/common.h>                                   
-#include <minigui/minigui.h>        
-#include <minigui/gdi.h>      
-#include <minigui/window.h>     
-#include <minigui/control.h>     
+#include <minigui/common.h>
+#include <minigui/minigui.h>
+#include <minigui/gdi.h>
+#include <minigui/window.h>
+#include <minigui/control.h>
 #include "msd_intl.h"
 
 #undef _
@@ -2108,7 +2108,7 @@ static CTRLDATA _About_controls[] = {
 			412, /* w */
 			40, /* h */
 			10, /* id */
-			_("Copyright (c) 2010 Beijing Feynman Software Technology Co., Ltd."), /* caption */
+			_("Copyright (c) 2010 Beijing FMSoft Technologies CO., LTD."), /* caption */
 			0, /* dwAddData */
 			0, /* exstye */
 			NULL, /* werdr_name */
@@ -2496,7 +2496,7 @@ DLGTEMPLATE * GetDlgTemplate(int id)
 
 	if(templs[id])
 		templs[id]->dwStyle &= ~WS_VISIBLE;
-	
+
 	return templs[id];
 }
 
@@ -2518,7 +2518,7 @@ int AutoCenterDlgProc(HWND hwnd, int message, WPARAM wParam, LPARAM lParam)
 		{
 			GetWindowRect(hwnd, &rcParent);
 		}
-		
+
 		x = rcParent.left + (RECTW(rcParent) - RECTW(rcSelf)) / 3;
 		y = rcParent.top + (RECTH(rcParent) - RECTH(rcSelf)) / 3;
 		MoveWindow(hwnd, x, y, RECTW(rcSelf), RECTH(rcSelf), TRUE);

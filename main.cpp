@@ -228,7 +228,7 @@ static void show_version()
     //printf("%s\n", PACKAGE_STRING);
     printf("GUIBuilder %s\n", PACKAGE_VERSION);
     printf("Build-Version: %s\n", BUILD_VERSION);
-    printf("Copyright Feynman Soft Inc.\n");
+    printf("Copyright Beijing FMSoft Technologies CO., LTD.\n");
 }
 
 static BOOL processArgs(int argc, const char* argv[])
