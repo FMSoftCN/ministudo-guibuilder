@@ -822,11 +822,11 @@ msgid "About GUI Builder"
 msgstr "关于界面设计器"
 
 #: ../../mainframe/dlgtmpls.c:2268
-msgid "Select start window"
+msgid "Select Start Window"
 msgstr "选择启动窗口"
 
 #: ../../mainframe/dlgtmpls.c:2296
-msgid "Select start window ..."
+msgid "Select Start Window ..."
 msgstr "选择启动窗口 ..."
 
 #: ../../mainframe/extendidrange.cpp:73
@@ -888,12 +888,12 @@ msgid "File"
 msgstr "文件"
 
 #: ../../tools/makemo/cfg.c:2
-msgid "New         Ctrl+N"
-msgstr "新建        Ctrl+N"
+msgid "New ...        Ctrl+N"
+msgstr "新建 ...       Ctrl+N"
 
 #: ../../tools/makemo/cfg.c:3
-msgid "Import UI   Ctrl+O"
-msgstr "导入UI      Ctrl+O"
+msgid "Import UI ...  Ctrl+O"
+msgstr "导入UI ...     Ctrl+O"
 
 #: ../../tools/makemo/cfg.c:4
 msgid "Save        Ctrl+S"
@@ -940,15 +940,15 @@ msgid "Advance"
 msgstr "高级"
 
 #: ../../tools/makemo/cfg.c:15
-msgid "ID Range Manager..."
+msgid "ID Range Manager ..."
 msgstr "ID范围管理..."
 
 #: ../../tools/makemo/cfg.c:16
-msgid "Generate mgncs.cfg's incore resource "
+msgid "Generate mgncs.cfg's Incore Resource "
 msgstr "生成mgncs.cfg的内建资源"
 
 #: ../../tools/makemo/cfg.c:17
-msgid "Generate resource package's incore resource "
+msgid "Generate Resource Package's Incore Resource "
 msgstr "生成资源包的内建资源"
 
 #: ../../tools/makemo/cfg.c:18
@@ -956,7 +956,7 @@ msgid "Help"
 msgstr "帮助"
 
 #: ../../tools/makemo/cfg.c:19
-msgid "About           "
+msgid "About ...          "
 msgstr "关于 "
 
 #: ../../tools/makemo/cfg.c:20
@@ -1059,7 +1059,7 @@ msgid "Move Down"
 msgstr "下移"
 
 #: ../../tools/makemo/cfg.c:46
-msgid "Export Template"
+msgid "Export Template ..."
 msgstr "导出为模板"
 
 #: ../../tools/makemo/cfg.c:47
@@ -1079,27 +1079,27 @@ msgid "Preview              Ctrl+Shift+P "
 msgstr "预览                 Ctrl+Shift+P"
 
 #: ../../tools/makemo/cfg.c:51
-msgid "Save Dialog Template Source "
+msgid "Save Dialog Template Source ..."
 msgstr "保存对话框模板源码"
 
 #: ../../tools/makemo/cfg.c:52
-msgid "Set Default Renderer Ctrl+Shift+D "
+msgid "Set Default Renderer ... Ctrl+Shift+D "
 msgstr "设置默认外观渲染器   Ctrl+Shift+D"
 
 #: ../../tools/makemo/cfg.c:53
-msgid "Set Screen Size      Ctrl+Shift+S "
+msgid "Set Screen Size ...      Ctrl+Shift+S "
 msgstr "设置屏幕大小         Ctrl+Shift+S"
 
 #: ../../tools/makemo/cfg.c:54
-msgid "Connect Events       Ctrl+Shift+E "
+msgid "Connect Events ...       Ctrl+Shift+E "
 msgstr "事件连接             Ctrl+Shift+E"
 
 #: ../../tools/makemo/cfg.c:55
-msgid "Font Management      Ctrl+Shift+F "
+msgid "Font Management ...      Ctrl+Shift+F "
 msgstr "字体管理             Ctrl+Shift+F"
 
 #: ../../tools/makemo/cfg.c:57
-msgid "Show and Snap Grid   Ctrl+Shift+G "
+msgid "Show And Snap Grid   Ctrl+Shift+G "
 msgstr "显示并对齐网格       Ctrl+Shift+G"
 
 #: ../../tools/makemo/cfg.c:58
