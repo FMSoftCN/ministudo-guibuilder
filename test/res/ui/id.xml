@@ -1,11 +1,66 @@
 <res-ids>
 	<res-id>
+		<id name="ID_MAINWND1"  value="0x80001"/>
+		<type>8</type>
+		<source>res/ui/dd.xml</source>
+	</res-id>
+	<res-id>
+		<id name="ID_MAINWND2"  value="0x80002"/>
+		<type>8</type>
+		<source>res/ui/111.xml</source>
+	</res-id>
+	<res-id>
+		<id name="ID_MAINWND3"  value="0x80003"/>
+		<type>8</type>
+		<source>res/ui/fffff.xml</source>
+	</res-id>
+	<res-id>
+		<id name="ID_MAINWND4"  value="0x80004"/>
+		<type>8</type>
+		<source>res/ui/dddd.xml</source>
+	</res-id>
+	<res-id>
+		<id name="ID_MAINWND5"  value="0x80005"/>
+		<type>8</type>
+		<source>res/ui/edsw.xml</source>
+	</res-id>
+	<res-id>
+		<id name="ID_MAINWND6"  value="0x80006"/>
+		<type>8</type>
+		<source>res/ui/edfe.xml</source>
+	</res-id>
+	<res-id>
+		<id name="ID_MAINWND7"  value="0x80007"/>
+		<type>8</type>
+		<source>res/ui/ededededeeee.xml</source>
+	</res-id>
+	<res-id>
+		<id name="ID_MAINWND8"  value="0x80008"/>
+		<type>8</type>
+		<source>res/ui/eeeee.xml</source>
+	</res-id>
+	<res-id>
+		<id name="ID_MAINWND9"  value="0x80009"/>
+		<type>8</type>
+		<source>res/ui/ws.xml</source>
+	</res-id>
+	<res-id>
+		<id name="ID_MAINWND10"  value="0x8000a"/>
+		<type>8</type>
+		<source>res/ui/wqa.xml</source>
+	</res-id>
+	<res-id>
 		<id name="ID_TEST"  value="0x80066"/>
 		<type>8</type>
 		<source>res/ui/test.xml</source>
 	</res-id>
 	<res-id>
 		<id name="ID_BUTTON0"  value="0x40000002"/>
+		<type>16384</type>
+		<source></source>
+	</res-id>
+	<res-id>
+		<id name="ID_MENUBUTTON1"  value="0x4000000a"/>
 		<type>16384</type>
 		<source></source>
 	</res-id>

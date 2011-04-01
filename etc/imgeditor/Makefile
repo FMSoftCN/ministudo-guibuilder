@@ -45,20 +45,20 @@ CONFIG_CLEAN_VPATH_FILES =
 SOURCES =
 DIST_SOURCES =
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/dongjunjie/work/branches/mstudio-rel-1-0-6/guibuilder/missing --run aclocal-1.11
-AMTAR = ${SHELL} /home/dongjunjie/work/branches/mstudio-rel-1-0-6/guibuilder/missing --run tar
-AUTOCONF = ${SHELL} /home/dongjunjie/work/branches/mstudio-rel-1-0-6/guibuilder/missing --run autoconf
-AUTOHEADER = ${SHELL} /home/dongjunjie/work/branches/mstudio-rel-1-0-6/guibuilder/missing --run autoheader
-AUTOMAKE = ${SHELL} /home/dongjunjie/work/branches/mstudio-rel-1-0-6/guibuilder/missing --run automake-1.11
+ACLOCAL = ${SHELL} /home/wangjian/work/guibuilder/rel-1-0/missing --run aclocal-1.11
+AMTAR = ${SHELL} /home/wangjian/work/guibuilder/rel-1-0/missing --run tar
+AUTOCONF = ${SHELL} /home/wangjian/work/guibuilder/rel-1-0/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/wangjian/work/guibuilder/rel-1-0/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/wangjian/work/guibuilder/rel-1-0/missing --run automake-1.11
 AWK = gawk
 CC = gcc
 CCDEPMODE = depmode=gcc3
-CFLAGS = -I/usr/local/mstudio/include -I/usr/include/lua5.1 -I/usr/include/libxml2
+CFLAGS = -g -O2 -I/usr/include/libxml2
 CPP = gcc -E
-CPPFLAGS = -I/usr/local/mstudio/include -I/usr/include/lua5.1 -I/usr/include/libxml2
-CXX = g++ -g
+CPPFLAGS = -g -O2 -I/usr/include/libxml2
+CXX = g++
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -I/usr/local/mstudio/include -I/usr/include/lua5.1 -I/usr/include/libxml2
+CXXFLAGS = -g -O2 -I/usr/include/libxml2
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
@@ -73,11 +73,11 @@ INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
-LDFLAGS = -L/usr/local/mstudio/lib  -lmgutils_msd -lmgplus_msd -lmgncs_msd -lcurl -lxml2 -lminigui_msd -lpthread -lpng -ljpeg -lfreetype -llua
+LDFLAGS =   -lmgutils_msd -lmgplus_msd -lmgncs_msd -lcurl -lxml2 -lminigui_msd -lpthread -lpng -ljpeg -lfreetype -llua
 LIBOBJS = 
 LIBS =  -lmgutils_msd -lmgplus_msd -lmgncs_msd -lcurl -lxml2 -lminigui_msd -lpthread -lpng -ljpeg -lfreetype -llua
 LTLIBOBJS = 
-MAKEINFO = ${SHELL} /home/dongjunjie/work/branches/mstudio-rel-1-0-6/guibuilder/missing --run makeinfo
+MAKEINFO = ${SHELL} /home/wangjian/work/guibuilder/rel-1-0/missing --run makeinfo
 MKDIR_P = /bin/mkdir -p
 OBJEXT = o
 PACKAGE = guibuilder
@@ -93,12 +93,12 @@ SET_MAKE =
 SHELL = /bin/bash
 STRIP = 
 VERSION = 1.0.6
-abs_builddir = /home/dongjunjie/work/branches/mstudio-rel-1-0-6/guibuilder/etc/imgeditor
-abs_srcdir = /home/dongjunjie/work/branches/mstudio-rel-1-0-6/guibuilder/etc/imgeditor
-abs_top_builddir = /home/dongjunjie/work/branches/mstudio-rel-1-0-6/guibuilder
-abs_top_srcdir = /home/dongjunjie/work/branches/mstudio-rel-1-0-6/guibuilder
+abs_builddir = /home/wangjian/work/guibuilder/rel-1-0/etc/imgeditor
+abs_srcdir = /home/wangjian/work/guibuilder/rel-1-0/etc/imgeditor
+abs_top_builddir = /home/wangjian/work/guibuilder/rel-1-0
+abs_top_srcdir = /home/wangjian/work/guibuilder/rel-1-0
 ac_ct_CC = gcc
-ac_ct_CXX = 
+ac_ct_CXX = g++
 am__include = include
 am__leading_dot = .
 am__quote = 
@@ -111,7 +111,7 @@ datadir = ${datarootdir}
 datarootdir = ${prefix}/share
 docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
 dvidir = ${docdir}
-exec_prefix = /usr/local
+exec_prefix = ${prefix}
 guibuilder_BINARY_AGE = 0
 guibuilder_INTERFACE_AGE = 0
 guibuilder_MAJOR_VERSION = 1
@@ -122,7 +122,7 @@ host_alias =
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/dongjunjie/work/branches/mstudio-rel-1-0-6/guibuilder/install-sh
+install_sh = ${SHELL} /home/wangjian/work/guibuilder/rel-1-0/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -131,7 +131,7 @@ mandir = ${datarootdir}/man
 mkdir_p = /bin/mkdir -p
 oldincludedir = /usr/include
 pdfdir = ${docdir}
-prefix = /usr/local/mstudio
+prefix = /usr/local
 program_transform_name = s,x,x,
 psdir = ${docdir}
 sbindir = ${exec_prefix}/sbin
@@ -157,9 +157,9 @@ $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign etc/imgeditor/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu etc/imgeditor/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --foreign etc/imgeditor/Makefile
+	  $(AUTOMAKE) --gnu etc/imgeditor/Makefile
 .PRECIOUS: Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \

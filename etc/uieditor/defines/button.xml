@@ -66,9 +66,9 @@
 		<handler>onPushed</handler>
 		<code>NCS_NOTIFY_CODE(NCSN_BUTTON_PUSHED)</code>
 	</event>
-	<!--event>   move to checkbutton and radiobutton
+	<event>
 		<handler>onStateChanged</handler>
 		<code>NCS_NOTIFY_CODE(NCSN_BUTTON_STATE_CHANGED)</code>
-	</event-->
+	</event>
 </window>
 
