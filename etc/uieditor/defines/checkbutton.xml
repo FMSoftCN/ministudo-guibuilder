@@ -11,5 +11,9 @@
 	<default-property name="Align" value="Left"/>
 	<default-property name="AutoCheck" value="True"/>
 	
+	<event>
+		<handler>onStateChanged</handler>
+		<code>NCS_NOTIFY_CODE(NCSN_BUTTON_STATE_CHANGED)</code>
+	</event>
 </window>
 
