@@ -663,16 +663,18 @@ void UIEditor::executeCommand(int cmd_id, int status, DWORD param)
             curEdit->redo();
     } else if(cmd_id == UI_MENUCMD_SNAPGRID) {
 
-        for(mapex<string, EditUIPanel*>::iterator it = editors.begin();
-                it != editors.end(); ++it) {
-            EditUIPanel* e = it->second;
-            e->autoSetSnapeGrid();
-        }
-        if(configFlags & UICF_GRID)
-            configFlags &= ~UICF_GRID;
-        else
-            configFlags |= UICF_GRID;
-        checkMenuItem(UI_MENUCMD_SNAPGRID,configFlags & UICF_GRID);
+		if (editors.size() > 0){
+			for(mapex<string, EditUIPanel*>::iterator it = editors.begin();
+					it != editors.end(); ++it) {
+				EditUIPanel* e = it->second;
+				e->autoSetSnapeGrid();
+			}
+			if(configFlags & UICF_GRID)
+				configFlags &= ~UICF_GRID;
+			else
+				configFlags |= UICF_GRID;
+			checkMenuItem(UI_MENUCMD_SNAPGRID,configFlags & UICF_GRID);
+		}
         enableMenuItem(ResEditor::GBC_SAVE, TRUE);
     } else if (cmd_id == UI_MEMUCMD_EXPORT_TEMPLATE) {
         if(curEdit)
