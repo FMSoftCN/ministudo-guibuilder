@@ -267,7 +267,7 @@ public:
 	{
         //make sure project name is not null.
         if (strPrjName.compare("") == 0) {
-            string pwd = getenv("PWD");
+            string pwd(getenv("PWD"));
             size_t found = pwd.find_last_of(getPathSeparator());
             if (found != string::npos) {
                 strPrjName = pwd.substr(found + 1);

@@ -76,12 +76,13 @@ int main(int argc, const char* argv[])
     // this gbPath like "C;\......\mstudio\guibuilder\"
 
     strcpy(mgPath, gbPath);
-    strcat (mgPath, "\\config\\");
+    strcat (mgPath, "config\\");
 
     win_setenv("GUIBUILDER_PATH", gbPath);
     win_setenv("MG_CFG_PATH", mgPath);
     win_setenv("NCS_CFG_PATH", mgPath);
 
+	//DPRINT("%s:%d\n", __FILE__, __LINE__);
 #else
     {
         char* gb_path;
@@ -109,17 +110,26 @@ int main(int argc, const char* argv[])
     main_thread = pthread_self();
 #endif
 
+	//DPRINT("%s:%d\n", __FILE__, __LINE__);
     if(!processArgs(argc, argv))
         return 0;
 
+	//DPRINT("%s:%d\n", __FILE__, __LINE__);
+	
     if (InitGUI (argc, argv) != 0)
+	{
+		//log_dead("InitGUI failed!\n");
         return 1;
+	}
 
+	//DPRINT("%s:%d\n", __FILE__, __LINE__);
     if ( registerSigHandlers() == 0 )
         DPRINT("=======register signal ok\n");
 
+	//DPRINT("%s:%d\n", __FILE__, __LINE__);
     iRet = MiniGUIAppMain (argc, argv);
     TerminateGUI (iRet);
+	//DPRINT("%s:%d\n", __FILE__, __LINE__);
     return iRet;
 }
 
