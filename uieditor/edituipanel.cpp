@@ -48,7 +48,12 @@ using namespace std;
 
 #include "defundo-redo-observer.h"
 #include "edituipanel.h"
+
+#include "rdrpanel.h"
 #include "rdreditor/rdr-instance.h"
+#include "rdreditor/rdrtreepanel.h"
+#include "rdreditor/rdr-preview-panel.h"
+#include "rdreditor/rdreditor.h"
 
 #include "codecombin.h"
 #include "socket-client.h"
@@ -3005,7 +3010,10 @@ DWORD EditUIPanel::processEvent(Panel* sender, int event_id, DWORD param1/* = 0*
             int ids[2] = {(int)param2, 0};
 			rdrInst->updatePreviewWindow(ids, curWnd);
 			DWORD params[2] = {(DWORD)ids, (DWORD)rdrInst};
-
+			
+			RendererEditor* rdrEd =
+				(RendererEditor*)(g_env->getResManager(NCSRT_RDR | NCSRT_RDRSET));
+			rdrEd->setRdrXmlChanged();
 			//update all the editors
 			return sendEvent(EDITUIPANEL_UPDATE_SPECIAL_FIELD,(DWORD)ComponentInstance::PropRenderer, (DWORD)params);
 		}
@@ -3022,6 +3030,9 @@ DWORD EditUIPanel::processEvent(Panel* sender, int event_id, DWORD param1/* = 0*
 			//update rdreditor's preview window
 			DWORD params[2] = {param2, (DWORD)rdrInst};
 			//update all the editors
+			RendererEditor* rdrEd =
+				(RendererEditor*)(g_env->getResManager(NCSRT_RDR | NCSRT_RDRSET));
+			rdrEd->setRdrXmlChanged();
 			return sendEvent(EDITUIPANEL_UPDATE_SPECIAL_FIELD, (DWORD)ComponentInstance::PropRenderer, (DWORD)params);
         }
     }
