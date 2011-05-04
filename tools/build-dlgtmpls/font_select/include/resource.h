@@ -1,5 +1,5 @@
 /****************************************/
-/* This file is generate by mstudio,    */
+/* This file is generate by miniStudio,    */
 /* Please Don't edit it.                */
 /*                                      */
 /* This file define the IDs used by     */

@@ -123,7 +123,7 @@ protected:
         friend bool operator < (const Version &v1, const Version &v2) {
             return (v1.major < v2.major
                     || (v1.major == v2.major && v1.minor < v2.minor)
-                    || (v1.major == v2.major && v1.minor < v2.minor && v1.micro == v2.micro));
+                    || (v1.major == v2.major && v1.minor == v2.minor && v1.micro < v2.micro));
         }
 
         void setVersion(int major, int minor, int micro)

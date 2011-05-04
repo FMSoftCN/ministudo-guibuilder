@@ -9,4 +9,9 @@
 		<type>2</type>
 		<source></source>
 	</res-id>
+	<res-id>
+		<id  value="0x2283e"/>
+		<type>2</type>
+		<source></source>
+	</res-id>
 </res-ids>

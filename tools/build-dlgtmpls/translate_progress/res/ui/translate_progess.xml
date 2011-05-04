@@ -27,7 +27,7 @@
 		<Y>8</Y>
 		<Width>363</Width>
 		<Height>46</Height>
-		<Text>0x00000000</Text>
+		<Text>0x0002283E</Text>
 	</window>
 	<window class="window::HProgressBar" serial-number="1769629696">
 		<ID>0x4000006f</ID>

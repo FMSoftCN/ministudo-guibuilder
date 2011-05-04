@@ -20,13 +20,12 @@
 
 
 //$mainhandle -- Need by merge, don't modify
-static NCS_EVENT_HANDLER_INFO mainwnd_TransProgress_handlers[] = {
-
+NCS_EVENT_HANDLER_INFO mainwnd_TransProgress_handlers [] = {
 	//$user --TODO Add your handlers here
 	{ -1, NULL } 
 };
 
-//$mainwnd_entry -- don't modify this function
+//$mainwnd_entry -- don't modify
 NCS_WND_EXPORT mMainWnd* ntCreateTransProgressEx(HPACKAGE package, HWND hParent, HICON h_icon, HMENU h_menu, DWORD user_data)
 {
 	// please don't change me

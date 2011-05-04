@@ -1,3 +1,4 @@
 #The Text of en_US
 0x00022711	"Translate"
 0x00022712	"Cancel"
+0x0002283E	"0x00000000"

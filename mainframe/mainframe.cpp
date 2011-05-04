@@ -240,7 +240,7 @@ string MainFrame::checkSNInfo()
 BOOL MainFrame::Create()
 {
     MGMainWnd::Create(WS_VISIBLE,
-                      _("MG GUI Builder 1.0.6"),
+                      _("MG GUI Builder 1.0.8"),
                       0,0,g_rcScr.right,g_rcScr.bottom,
                       HWND_DESKTOP,(HCURSOR)0,(HMENU)NULL,
                       (HICON)0,

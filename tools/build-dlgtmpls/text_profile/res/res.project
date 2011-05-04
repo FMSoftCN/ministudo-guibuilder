@@ -1,4 +1,4 @@
-<res-project version="1.0.6">
+<res-project version="1.0.8">
 	<configuration name="minigui-3-x-x-ncs" caption="MiniGUI 3.0 With New Control Set">
 		<minigui-version>3.x.x</minigui-version>
 		<control-set>ncs</control-set>
@@ -40,6 +40,6 @@
 		<active-window>0x00080457</active-window>
 	</uieditor>
 	<image-editor>
-		<dir-path>/home/dongjunjie/</dir-path>
+		<dir-path>/</dir-path>
 	</image-editor>
 </res-project>

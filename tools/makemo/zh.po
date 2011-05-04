@@ -403,7 +403,7 @@ msgid "Please make sure the softdog is connected."
 msgstr "请确认软件狗已连接。"
 
 #: ../../mainframe/mainframe.cpp:246
-msgid "MG GUI Builder 1.0.6"
+msgid "MG GUI Builder 1.0.8"
 msgstr ""
 
 #: ../../mainframe/mainframe.cpp:325 ../../mainframe/dlgtmpls.c:21
