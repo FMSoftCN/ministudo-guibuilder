@@ -660,7 +660,7 @@ DWORD WindowInstance::getCommStyle(int id_begin, int id_end){
 
 		DWORD d = ft->vtype->toBinary(v);
 
-		DPRINT("Field: name=%s binary=0x%08X",ft->name.c_str(), d);
+//		DPRINT("Field: name=%s binary=0x%08X",ft->name.c_str(), d);
 
 		dw |= d;
 	}

@@ -419,7 +419,7 @@ void *TextEditor::_trans(void *arg)
 	const char *src;
 
 	TextEditor *_ths = (TextEditor *)arg;
-
+	pthread_setcanceltype(PTHREAD_CANCEL_ASYNCHRONOUS, NULL);
 	HLVITEM sel =_ths->listPanel->GetSelectedItem();
 	_ths->listPanel->GetSubitemText(sel, 1, buff, 7);
 	buff[7] = '\0';
@@ -445,16 +445,20 @@ void *TextEditor::_trans(void *arg)
 
 void TextEditor::onTransAll(void)
 {
+	void *tred;
 	if (!pDefTeNode || !pCurTeNode)
 		return;
 	ts = GTranslater::getInstance();
 	progDlg = new ProgressDialog (GetHandle(), "", ts);
 
 	pthread_create(&pt_trans, NULL, _transAll, this);
-
+	
 	if (IDCANCEL == progDlg->DoMode())
 	{
+		//pthread_detach(pt_trans);
 		pthread_cancel(pt_trans);
+		
+		//pthread_join(pt_trans, &tred);
 	}
 	delete progDlg;
 	g_env->updateAllRes(NCSRT_TEXT);
@@ -467,7 +471,7 @@ void *TextEditor::_transAll(void *arg)
 	map<int, ResEditor::Resource*>::iterator it;
 
 	TextEditor *_ths = (TextEditor *)arg;
-
+	pthread_setcanceltype(PTHREAD_CANCEL_ASYNCHRONOUS, NULL);
 	_ths->progDlg->setTotal(100 * _ths->reses.size());
 
 	for(it = _ths->reses.begin(), idx = 1; it != _ths->reses.end(); ++it, idx++)

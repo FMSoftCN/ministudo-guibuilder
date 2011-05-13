@@ -186,7 +186,9 @@ protected:
             pack_name = strrchr(configuration.resPackName, sep);
 			if(pack_name == NULL)
 				pack_name = configuration.resPackName;
-			return string(strResPath + sep + pack_name);
+			//return string(strResPath + sep + pack_name);
+			//DPRINT("+++++++++++++++++++++++++++++++++++pack_name=%s-------------peizhi:%s---------------------------------\n",pack_name,string(strResPath + sep + getPrjName() + getResPackageSuffix()).c_str());
+			return string(strResPath + sep + getPrjName() + getResPackageSuffix());
 		}
         else {
             return string(strResPath + sep + getPrjName() + getResPackageSuffix());
@@ -266,7 +268,7 @@ public:
 	virtual const char* getPrjName()
 	{
         //make sure project name is not null.
-        if (strPrjName.compare("") == 0) {
+		if (strPrjName.compare("") == 0) {
             string pwd(getenv("PWD"));
             size_t found = pwd.find_last_of(getPathSeparator());
             if (found != string::npos) {
