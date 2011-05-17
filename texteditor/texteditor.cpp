@@ -1002,7 +1002,24 @@ BOOL TeNode::readText(const char* strFile)
 
 	return TRUE;
 }
+/*
+string& replace_all(string& str,const string& old_value,const string& new_value) 
+{ 
+	while(true) { 
+		string::size_type pos(0); 
+		if( (pos=str.find(old_value))!=string::npos ) 
+			str.replace(pos,old_value.length(),new_value); 
+		else break; 
+	} 
+	return str; 
+}
 
+string& special_character(string& str)
+{
+	const string sep_windows = "\\";
+	const string star_char = "\*";
+}
+*/
 static inline void save_fromated_text(TextStream& stream, string &str)
 {
 	char szBuff[100];
@@ -1032,6 +1049,12 @@ static inline void save_fromated_text(TextStream& stream, string &str)
 			szBuff[idx++] = '\\';
 			szBuff[idx++] = 'n';
 			break;
+#ifdef WIN32
+		case '\\':
+			szBuff[idx++] = '\\';
+			szBuff[idx++] = '\\';
+			 break;
+#endif
 		default:
 			szBuff[idx++] = *strText;
 			break;
@@ -1068,6 +1091,8 @@ BOOL TeNode::saveText()
 	for(map<int,string>::iterator it = langMap.begin();
 		it != langMap.end(); ++it)
 	{
+		string temp = it->second;
+		LOG_WARNING("*****int 0x%08X, string =%s\n", it->first,temp.c_str() );
 		stream.printf("0x%08X\t",it->first);
 		save_fromated_text(stream, it->second);
 	}

@@ -4,9 +4,10 @@
  *  Created on: 2009-3-20
  *      Author: dongjunjie
  */
-
 #ifndef MAINFRAME_H_
 #define MAINFRAME_H_
+#include <string>
+using namespace std;
 
 struct CharStream
 {
@@ -172,7 +173,7 @@ protected:
     {
         return ".res";
     }
-
+	
 	string getResPackageName() 
     {
 		/**
@@ -182,15 +183,30 @@ protected:
         const char sep = getPathSeparator();
         if (configuration.resPackName && configuration.resPackName[0] != '\0')
 		{
-			const char* pack_name = NULL;
-            pack_name = strrchr(configuration.resPackName, sep);
+			/*
+            const char* pack_name = NULL;
+			pack_name = strrchr(configuration.resPackName, sep);
 			if(pack_name == NULL)
 				pack_name = configuration.resPackName;
-			//return string(strResPath + sep + pack_name);
-			//DPRINT("+++++++++++++++++++++++++++++++++++pack_name=%s-------------peizhi:%s---------------------------------\n",pack_name,string(strResPath + sep + getPrjName() + getResPackageSuffix()).c_str());
-			return string(strResPath + sep + getPrjName() + getResPackageSuffix());
+				*/
+			string sep_linux = "/";
+			string sep_windows = "\\";
+			string pack_name;
+			pack_name = string(configuration.resPackName);
+			string::size_type pos;
+			pos = pack_name.find_last_of(sep_linux);
+			if (pos != string::npos)
+				pack_name = pack_name.substr(pos + 1);
+			
+			//pack_name = replace_all(string(pack_name), sep_linux, sep_windows).c_str();
+			
+			LOG_WARNING("--------pack_name=%s----:%s----\n",pack_name.c_str(),string(strResPath + sep + pack_name.c_str()).c_str());
+			return string(strResPath + sep + pack_name.c_str());
+			
+			//return string(strResPath + sep + getPrjName() + getResPackageSuffix());
 		}
         else {
+			LOG_WARNING("+++++++++++++++++++++++++++++++++++pack_name=-------------peizhi:%s--+++++++++++++\n",string(strResPath + sep + getPrjName() + getResPackageSuffix()).c_str());
             return string(strResPath + sep + getPrjName() + getResPackageSuffix());
         }
 	}
