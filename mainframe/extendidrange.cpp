@@ -77,7 +77,7 @@ void ExtendIDRange::onOK()
 
 	if(min < (idrange->prev?idrange->prev->max:idrange->manager->getLimitMin()))
 	{
-		InfoBox(_("Error"), _("The Min Value (%d) must be greater then or equal %d"), 
+		InfoBox(_("Error"), _("The Min Value (%d) must be greater than or equal %d"), 
 				min, idrange->prev ? idrange->prev->max : idrange->manager->getLimitMin());
 		SetFocus(GetChild(ID_SLE_MIN));
 		return ;
@@ -85,7 +85,7 @@ void ExtendIDRange::onOK()
 
 	if(max > (idrange->next?idrange->next->min:idrange->manager->getLimitMax()))
 	{
-		InfoBox(_("Error"), _("The Max Value  (%d) must be less then or equal %d"), 
+		InfoBox(_("Error"), _("The Max Value  (%d) must be less than or equal %d"), 
 				max, idrange->next ? idrange->next->min : idrange->manager->getLimitMax());
 		SetFocus(GetChild(ID_SLE_MAX));
 		return ;
