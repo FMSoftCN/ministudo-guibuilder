@@ -244,7 +244,7 @@ function trans_main(file, inst)
     out:write([==[
 /**************************************************************
 *  This file is generated automatically, don't modify it.
-*  Beijing Feynman Software Technology Co.,Ltd
+*  Beijing FMSoft Technologies Co., Ltd
 *
 **************************************************************/
 
