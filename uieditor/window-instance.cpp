@@ -145,14 +145,15 @@ void WindowInstance::saveXMLToStream(TextStream *stream, int saveFlag)
 	stream->indent();
 	//print id
 	if ((saveFlag & WI_SAVE_TMPL) && resMgr){
-		if(strcasecmp(getControlClass(), "mainwnd") == 0)
+		if(strcasecmp(getControlClass(), "mainwnd") == 0 || id < 0){ /* Fix Bug 5609*/
 			stream->println("<ID>-1</ID>");
-		else
-			stream->println("<ID name=\"%s\" type=\"%d\">0x%0x</ID>",resMgr->idToName(id), ID2TYPE(id), id);
+		} else {
+			stream->println("<ID name=\"%s\" type=\"%d\">0x%0x</ID>", resMgr->idToName(id), ID2TYPE(id), id);
+		}
 	}else if((saveFlag & WI_SAVE_INDEPEND) && resMgr) {
-		stream->println("<ID name=\"%s\">0x%0x</ID>",resMgr->idToName(id),id);
+		stream->println("<ID name=\"%s\">0x%0x</ID>", resMgr->idToName(id), id);
 	}else{
-		stream->println("<ID>0x%0x</ID>",id);
+		stream->println("<ID>0x%0x</ID>", id);
 	}
 	//print fileds
 	for(map<int, Field*>::iterator it = fields.begin(); it != fields.end(); ++it)
