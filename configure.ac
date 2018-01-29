@@ -40,7 +40,7 @@ AC_PROG_INSTALL
 AC_PROG_MAKE_SET
 AC_PROG_RANLIB
 
-AM_INIT_AUTOMAKE(guibuilder, $guibuilder_VERSION,-)
+AM_INIT_AUTOMAKE
 
 # Checks for libraries.
 
