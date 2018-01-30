@@ -117,7 +117,7 @@ LIBS="$LIBS `xml2-config --libs`"
 LIBS="$LIBS -lminigui_msd -lpthread -lpng -ljpeg -lfreetype"
 AC_CHECK_HEADERS([lua.h])
 
-LIBS="$LIBS -llua"
+LIBS="$LIBS -llua5.1 -ldl"
 
 dnl macro definition
 build_official_release="no"
