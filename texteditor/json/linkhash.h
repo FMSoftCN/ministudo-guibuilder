@@ -36,11 +36,11 @@ typedef void (lh_entry_free_fn) (struct lh_entry *e);
 /**
  * callback function prototypes
  */
-typedef unsigned long (lh_hash_fn) (void *k);
+typedef unsigned long (lh_hash_fn) (const void *k);
 /**
  * callback function prototypes
  */
-typedef int (lh_equal_fn) (void *k1, void *k2);
+typedef int (lh_equal_fn) (const void *k1, const void *k2);
 
 /**
  * An entry in the hash table
@@ -132,11 +132,11 @@ struct lh_table {
 /**
  * Pre-defined hash and equality functions
  */
-extern unsigned long lh_ptr_hash(void *k);
-extern int lh_ptr_equal(void *k1, void *k2);
+extern unsigned long lh_ptr_hash(const void *k);
+extern int lh_ptr_equal(const void *k1, const void *k2);
 
-extern unsigned long lh_char_hash(void *k);
-extern int lh_char_equal(void *k1, void *k2);
+extern unsigned long lh_char_hash(const void *k);
+extern int lh_char_equal(const void *k1, const void *k2);
 
 
 /**
@@ -223,7 +223,7 @@ extern int lh_table_insert(struct lh_table *t, void *k, void *v);
  * @param k a pointer to the key to lookup
  * @return a pointer to the record structure of the value or NULL if it does not exist.
  */
-extern struct lh_entry* lh_table_lookup_entry(struct lh_table *t, void *k);
+extern struct lh_entry* lh_table_lookup_entry(struct lh_table *t, const void *k);
 
 /**
  * Lookup a record into the table
@@ -231,7 +231,7 @@ extern struct lh_entry* lh_table_lookup_entry(struct lh_table *t, void *k);
  * @param k a pointer to the key to lookup
  * @return a pointer to the found value or NULL if it does not exist.
  */
-extern void* lh_table_lookup(struct lh_table *t, void *k);
+extern void* lh_table_lookup(struct lh_table *t, const void *k);
 
 
 /**
@@ -255,7 +255,7 @@ extern int lh_table_delete_entry(struct lh_table *t, struct lh_entry *e);
  * @return 0 if the item was deleted.
  * @return -1 if it was not found.
  */
-extern int lh_table_delete(struct lh_table *t, void *k);
+extern int lh_table_delete(struct lh_table *t, const void *k);
 
 
 void lh_abort(const char *msg, ...);

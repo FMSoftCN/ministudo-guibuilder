@@ -11,6 +11,7 @@
 
 #include "config.h"
 
+#define _GNU_SOURCE         /* See feature_test_macros(7) */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -24,6 +25,7 @@
 #include "bits.h"
 #include "debug.h"
 #include "printbuf.h"
+
 
 struct printbuf* printbuf_new()
 {

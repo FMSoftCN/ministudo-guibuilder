@@ -92,7 +92,7 @@ protected:
 
 	void resetRenderer();
 
-	static int _main_window_proc(HWND hwnd, int message, WPARAM wParam, LPARAM lParam);
+	static LRESULT _main_window_proc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam);
 	WNDPROC old_proc;
 
 	BOOL useNewControlSet(){

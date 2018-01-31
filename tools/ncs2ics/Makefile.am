@@ -3,7 +3,7 @@ TOP=../..
 
 ETCDIR=$(prefix)/etc/guibuilder/tools/ncs2ics
 
-INCLUDES=-I. -I.. -I$(TOP)/include
+AM_CPPFLAGS=-I. -I.. -I$(TOP)/include
 
 AUTOMAKE_OPTIONS=foreign
 

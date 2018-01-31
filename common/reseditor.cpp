@@ -146,7 +146,7 @@ void ResEditor::enumRes(ResEnumHandler *handler)
 	}
 }
 
-BOOL ResEditor::WndProc(int iMsg,WPARAM wParam,LPARAM lParam,int *pret)
+BOOL ResEditor::WndProc(UINT iMsg,WPARAM wParam,LPARAM lParam,int *pret)
 {
 	if(iMsg == MSG_DESTROY)
 	{

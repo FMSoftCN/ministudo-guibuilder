@@ -85,7 +85,7 @@ int PageWindowInstance::getPageCount()
 	}
 	else
 	{
-		return SendMessage(hwnd, PSM_GETPAGECOUNT, 0, 0);
+		return (int)SendMessage(hwnd, PSM_GETPAGECOUNT, 0, 0);
 	}
 }
 
@@ -119,7 +119,7 @@ BOOL PageWindowInstance::addPage(WindowInstance* page)
 	}
 	//old
 	{
-		int idx = ::SendMessage(hwnd, PSM_ADDPAGE, (WPARAM)&page_templ, (LPARAM)DefaultControlProc);
+		int idx = (int)::SendMessage(hwnd, PSM_ADDPAGE, (WPARAM)&page_templ, (LPARAM)DefaultControlProc);
 		if(idx < 0){
 			return FALSE;
 		}
@@ -158,7 +158,7 @@ BOOL PageWindowInstance::reAddPage(WindowInstance* page)
 	}
 	else
 	{
-		int newidx = ::SendMessage(hwnd, PSM_ADDPAGE, (WPARAM)&page_templ, (LPARAM)DefaultControlProc);
+		int newidx = (int)::SendMessage(hwnd, PSM_ADDPAGE, (WPARAM)&page_templ, (LPARAM)DefaultControlProc);
 		if(newidx < 0){
 			return FALSE;
 		}
@@ -255,7 +255,7 @@ BOOL PageWindowInstance::remove(ComponentInstance* insert, BOOL bAutoDestroy)
 		}
 		else //old
 		{
-			int idx = ::SendMessage(hwnd, PSM_GETPAGEINDEX, (WPARAM)hPage, 0);
+			int idx = (int)::SendMessage(hwnd, PSM_GETPAGEINDEX, (WPARAM)hPage, 0);
 			if(idx < 0)
 				return TRUE;
 			::SendMessage(hwnd, PSM_REMOVEPAGE, (WPARAM)idx, 0);
@@ -281,7 +281,7 @@ int PageWindowInstance::setActivePage(int idx)
 	}
 	else
 	{
-		int max_id = ::SendMessage(hwnd, PSM_GETPAGECOUNT, 0, 0);
+		int max_id = (int)::SendMessage(hwnd, PSM_GETPAGECOUNT, 0, 0);
 		if(idx < 0)
 			idx = 0;
 		else if(idx >= max_id)

@@ -57,8 +57,8 @@ int RendererPanel::_rdr_cmp(HLVITEM nItem1,
 	RendererPanel* rdrPanel =  (RendererPanel*)fromHandle(sortData->hLV);
 	Instance * inst = /*pinst_editor->fieldPanel->*/rdrPanel->getInstance();
 
-	int id1 = ::SendMessage(sortData->hLV,LVM_GETITEMADDDATA, 0, (LPARAM) nItem1);
-	int id2 = ::SendMessage(sortData->hLV,LVM_GETITEMADDDATA, 0, (LPARAM) nItem2);
+	int id1 = (int)::SendMessage(sortData->hLV,LVM_GETITEMADDDATA, 0, (LPARAM) nItem1);
+	int id2 = (int)::SendMessage(sortData->hLV,LVM_GETITEMADDDATA, 0, (LPARAM) nItem2);
 
 	int id1type = id1 ? (inst->getIDValueType(id1)) : 0;
 	int id2type = id2 ? (inst->getIDValueType(id2)) : 0;

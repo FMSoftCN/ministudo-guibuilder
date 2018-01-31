@@ -782,7 +782,7 @@ int WindowInstance::syncPreviewWindow(int id)
 				int len = 0;
 				if(strcaption)
 					len = strlen(strcaption);
-				int newlen = SendMessage(hwnd, MSG_SETTEXT, 0, (LPARAM)strcaption);//SetWindowText(hwnd, getCaption());
+				int newlen = (int)SendMessage(hwnd, MSG_SETTEXT, 0, (LPARAM)strcaption);//SetWindowText(hwnd, getCaption());
 				if(newlen < len)
 				{
 					ValueType *vtype = _class->getFieldValueType(PropText);
@@ -1027,7 +1027,7 @@ static void draw_gride(HWND hwnd, HDC hdc, int space){
 	}
 }
 
-int WindowInstance::_main_window_proc(HWND hwnd, int message, WPARAM wParam, LPARAM lParam)
+LRESULT WindowInstance::_main_window_proc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	WindowInstance* wi = (WindowInstance*)GetWindowAdditionalData(hwnd);
 

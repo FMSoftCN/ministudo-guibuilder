@@ -185,7 +185,7 @@ protected:
 	virtual void onSaveValue() {	}
 
 	//subclass the proc
-	static int editor_proc(HWND hwnd, int message, WPARAM wParam, LPARAM lParam)
+	static LRESULT editor_proc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 	{
 		ValueEditor * _this = fromHandle(hwnd);
 		if(_this)
@@ -201,13 +201,13 @@ protected:
 			_this->onNotify(id, nc, add_data);
 	}
 
-	int callOldProc(int message,WPARAM wParam, LPARAM lParam){
+	LRESULT callOldProc(UINT message,WPARAM wParam, LPARAM lParam){
 		if(oldProc)
 			return (oldProc)(hwnd, message, wParam, lParam);
 		return DefaultControlProc(hwnd, message, wParam, lParam);
 	}
 
-	virtual int wndProc(int message, WPARAM wParam, LPARAM lParam) {
+	virtual LRESULT wndProc(UINT message, WPARAM wParam, LPARAM lParam) {
 		if(MSG_DESTROY == message){
 			WNDPROC _old_proc = oldProc;
 			SetWindowAdditionalData(hwnd, 0);
@@ -388,7 +388,7 @@ public:
 class IntValueEditor : public ValueEditor
 {
 protected:
-	int wndProc(int message, WPARAM wParam, LPARAM lParam){
+	LRESULT wndProc(UINT message, WPARAM wParam, LPARAM lParam){
 		switch (message) {
 			case MSG_CHAR:
 				if((wParam >='0' && wParam <= '9') || wParam == 127/*back space*/ || wParam == '-'){
@@ -499,7 +499,7 @@ public:
 class CharValueEditor : public ValueEditor
 {
 protected:
-	int wndProc(int message, WPARAM wParam, LPARAM lParam){
+	LRESULT wndProc(UINT message, WPARAM wParam, LPARAM lParam){
    switch (message) {
    case MSG_CHAR:
 	   bModified = TRUE;
@@ -670,7 +670,7 @@ protected:
 	bool extend_dlg;
 
 
-	int wndProc(int message, WPARAM wParam, LPARAM lParam)
+	LRESULT wndProc(UINT message, WPARAM wParam, LPARAM lParam)
 	{
 		if(message == MSG_COMMAND)
 		{
@@ -764,7 +764,7 @@ protected:
 	}
 	void onExtend();
 
-	int wndProc(int message, WPARAM wParam, LPARAM lParam)
+	LRESULT wndProc(UINT message, WPARAM wParam, LPARAM lParam)
 	{
 		if(message == MSG_COMMAND)
 		{
@@ -887,7 +887,7 @@ typedef TBaseStringValueType<FontValueEditor, VT_FONT> FontValueType;
 class ColorValueEditor : public ExtendEditor
 {
 protected:
-	int wndProc(int message, WPARAM wParam, LPARAM lParam);
+	LRESULT wndProc(UINT message, WPARAM wParam, LPARAM lParam);
 
 	void onExtend();
 
@@ -1094,7 +1094,7 @@ typedef TBaseResValueType<IDValueEditor> IDValueType;
 class IDValueEditor: public ValueEditor
 {
 protected:
-	int wndProc(int message, WPARAM wParam, LPARAM lParam)
+	LRESULT wndProc(UINT message, WPARAM wParam, LPARAM lParam)
     {
         switch (message) 
         {
@@ -1189,7 +1189,7 @@ public:
 
 class MutliStringEditor : public ExtendEditor
 {
-	static int _multiTextEditProc(HWND hDlg, int message, WPARAM wParam, LPARAM lParam);
+	static LRESULT _multiTextEditProc(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam);
 public:
 	MutliStringEditor(){}
 protected:
@@ -1221,7 +1221,7 @@ protected:
 		updateValue();
 	}
 
-	int wndProc(int message, WPARAM wParam, LPARAM lParam)
+	LRESULT wndProc(UINT message, WPARAM wParam, LPARAM lParam)
 	{
 		if(message == MSG_COMMAND)
 		{
@@ -1298,7 +1298,7 @@ protected:
 		return NCSRT_IMAGE; //TODO return Image res type
 	}
 
-/*	int wndProc(int message, WPARAM wParam, LPARAM lParam){
+/*	LRESULT wndProc(UINT message, WPARAM wParam, LPARAM lParam){
 		return RefResEditor::wndProc(message, wParam, lParam);
 	}*/
 };
@@ -1337,11 +1337,11 @@ protected:
 			return ;
 		bModified = FALSE;
 		//get ADD data
-		int sel_idx = ::SendMessage(hwnd,CB_GETCURSEL, 0, 0);
+		LRESULT sel_idx = ::SendMessage(hwnd,CB_GETCURSEL, 0, 0);
 		if(sel_idx < 0)
 			return ;
-		int id = ::SendMessage(hwnd, CB_GETITEMADDDATA, sel_idx, 0);
-		if(id == (int)value)
+		LRESULT id = ::SendMessage(hwnd, CB_GETITEMADDDATA, sel_idx, 0);
+		if(id == (LRESULT)value)
 			return;
 		//update
 		if(!updatingValue(id))
@@ -1399,11 +1399,11 @@ protected:
 			return ;
 		bModified = FALSE;
 		//get ADD data
-		int sel_idx = ::SendMessage(hwnd,CB_GETCURSEL, 0, 0);
+		LRESULT sel_idx = ::SendMessage(hwnd,CB_GETCURSEL, 0, 0);
 		if(sel_idx < 0)
 			return ;
-		int id = ::SendMessage(hwnd, CB_GETITEMADDDATA, sel_idx, 0);
-		if(id == (int)value && id != -1)
+		LRESULT id = ::SendMessage(hwnd, CB_GETITEMADDDATA, sel_idx, 0);
+		if(id == (LRESULT)value && id != -1)
 			return;
 		//update
 		if(!updatingValue(id))

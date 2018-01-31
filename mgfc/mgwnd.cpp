@@ -84,7 +84,7 @@ MGDialog::~MGDialog()
 {
 }
 
-BOOL MGDialog::WndProc(int iMsg,WPARAM wParam,LPARAM lParam,int *pret)
+BOOL MGDialog::WndProc(UINT iMsg,WPARAM wParam,LPARAM lParam,int *pret)
 {
 	if (iMsg == MSG_CLOSE) {
 		EndDialog(IDCANCEL);
@@ -269,7 +269,7 @@ DWORD MGMainWnd::DoMode()
 }
 
 
-int MGMainWnd::_mainWndProc(HWND hWnd,int iMsg,WPARAM wParam,LPARAM lParam)
+LRESULT MGMainWnd::_mainWndProc(HWND hWnd,UINT iMsg,WPARAM wParam,LPARAM lParam)
 {
 	MGMainWnd *pThis;
 	pThis = (MGMainWnd*)GetWindowAdditionalData(hWnd);

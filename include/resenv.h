@@ -8,7 +8,8 @@
 #ifndef RESENV_H_
 #define RESENV_H_
 
-#include "gbconfig.h"
+//#include "gbconfig.h"
+#include "guibuilder.h"
 
 #define DEF_TEMPL_PATH ("uieditor/templates")
 #define USR_TEMPL_PATH ("user-templates")

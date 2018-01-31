@@ -1,4 +1,4 @@
-INCLUDES = -I . -I ../include
+AM_CPPFLAGS = -I . -I ../include
 
 SUBDIRS=json
 

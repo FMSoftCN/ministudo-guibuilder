@@ -216,7 +216,7 @@ void SelectTemplate::loadTemplFromDir(const char* path)
 }
 
 
-static int _template_proc(HWND hwnd, int message, WPARAM wParam, LPARAM lParam)
+static LRESULT _template_proc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	if(message == MSG_SIZECHANGED)
 	{
@@ -279,7 +279,7 @@ HWND SelectTemplate::insertNewPage(HWND hPropSheet, const char* szPath)
 	memset(&_template, 0, sizeof(DLGTEMPLATE));
 	_template.caption = szCaption;
 
-	int idx = ::SendMessage(hPropSheet, PSM_ADDPAGE, (WPARAM)&_template, (LPARAM) _template_proc);
+	int idx = (int)::SendMessage(hPropSheet, PSM_ADDPAGE, (WPARAM)&_template, (LPARAM) _template_proc);
 
 	if(idx!= PS_ERR){
 		RECT rt;
@@ -376,12 +376,12 @@ void SelectTemplate::onOK()
 {
 	//get current idx
 	HWND hPropSheet = GetChild(100);
-	int idx = ::SendMessage(hPropSheet, PSM_GETACTIVEINDEX, 0, 0);
-	HWND hPage = ::SendMessage(hPropSheet, PSM_GETPAGE, idx, 0);
+	int idx = (int)::SendMessage(hPropSheet, PSM_GETACTIVEINDEX, 0, 0);
+	HWND hPage = (HWND)::SendMessage(hPropSheet, PSM_GETPAGE, idx, 0);
 	HWND hIconView = ::GetNextChild(hPage, 0);
 
 
-	idx = ::SendMessage(hIconView, IVM_GETCURSEL, 0, 0);
+	idx = (int)::SendMessage(hIconView, IVM_GETCURSEL, 0, 0);
 	char* strfile = (char*)::SendMessage(hIconView, IVM_GETITEMADDDATA, idx, 0);
 
 	if(!strfile)

@@ -479,7 +479,7 @@ BEGIN_MSG_MAP(StructPanel)
 	END_COMMAND_MAP
 END_MSG_MAP
 #else
-BOOL StructPanel::WndProc(int iMsg,WPARAM wParam,LPARAM lParam,int *pret) 
+BOOL StructPanel::WndProc(UINT iMsg,WPARAM wParam,LPARAM lParam,int *pret) 
 {
 	if(iMsg == MSG_RBUTTONDOWN)
 	{

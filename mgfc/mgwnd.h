@@ -50,7 +50,7 @@ public:
 	}
 
 
-	inline int SendMessage(int iMsg, WPARAM wParam=0, LPARAM lParam=0)
+	inline LRESULT SendMessage(int iMsg, WPARAM wParam=0, LPARAM lParam=0)
 	{
 		return ::SendMessage(m_hWnd,iMsg,wParam,lParam);
 	}
@@ -111,11 +111,11 @@ public:
 		return hWnd;
 	}
 
-	inline int GetWindowText(char* txtBuf,int nMaxLen)
+	inline LRESULT GetWindowText(char* txtBuf,int nMaxLen)
 	{
 		return SendMessage(MSG_GETTEXT, (WPARAM)nMaxLen, (LPARAM)txtBuf);
 	}
-	inline int GetWindowTextLength()
+	inline LRESULT GetWindowTextLength()
 	{
 		return SendMessage(MSG_GETTEXTLENGTH);
 	}
@@ -546,14 +546,14 @@ protected:
 	 *       BOOL. if is TRUE, the *pret will be return to the caller.
 	 *         FALSE, the *pret value is ignored.
 	 */
-	virtual BOOL WndProc(int iMsg,WPARAM wParam,LPARAM lParam,int *pret)=0;
+	virtual BOOL WndProc(UINT iMsg,WPARAM wParam,LPARAM lParam,int *pret)=0;
 	virtual void OnClose(){
 		Destroy();
 		PostQuitMessage();
 	}
 
 private:
-	static int _mainWndProc(HWND hWnd,int iMsg,WPARAM wParam,LPARAM lParam);
+	static LRESULT _mainWndProc(HWND hWnd, UINT iMsg,WPARAM wParam,LPARAM lParam);
 };
 
 /*
@@ -566,7 +566,7 @@ public:
 	~MGDialog();
 
 protected:
-	virtual BOOL WndProc(int iMsg,WPARAM wParam,LPARAM lParam,int *pret)=0;
+	virtual BOOL WndProc(UINT iMsg,WPARAM wParam,LPARAM lParam,int *pret)=0;
 };
 
 #define RETURN(ret) do{if(pret)*pret=ret; return TRUE;}while(0)
@@ -579,13 +579,13 @@ protected:
 /*
  * Declear message mapping in extend class of MGWnd.
  */
-#define DECLARE_MSG_MAP protected: BOOL WndProc(int iMsg,WPARAM wParam,LPARAM lParam,int *pret)
+#define DECLARE_MSG_MAP protected: BOOL WndProc(UINT iMsg,WPARAM wParam,LPARAM lParam,int *pret)
 
 /*
  * begin message mapping. write into the implement files
  */
 #define BEGIN_MSG_MAP(BaseClass) \
-	BOOL BaseClass::WndProc(int iMsg,WPARAM wParam,LPARAM lParam,int *pret) { \
+	BOOL BaseClass::WndProc(UINT iMsg,WPARAM wParam,LPARAM lParam,int *pret) { \
 		switch(iMsg) {
 
 #define END_MSG_MAP  } return FALSE; }
@@ -593,7 +593,7 @@ protected:
 #define END_MSG_MAP_PARENT_PROC(ParentCls)    } return ParentCls::WndProc(iMsg, wParam, lParam, pret); }
 
 //this marco support a hook proc to get all of message
-// BOOL HookProc(int message, WPARAM, LPARAM, int *prt)
+// BOOL HookProc(UINT message, WPARAM, LPARAM, int *prt)
 #define HOOK_MSG(HookProc)  }  \
 	if(HookProc(iMsg, wParam, lParam, pret)) return TRUE; \
 	switch(iMsg) {
@@ -930,7 +930,7 @@ protected:
 	{ \
 		return OnMessage(wParam,lParam,pret); \
 	}
-//BOOL OnMessageRange(int iMsg,WPARAM wParam,LPARAM lParam,int *pret);
+//BOOL OnMessageRange(UINT iMsg,WPARAM wParam,LPARAM lParam,int *pret);
 #define MAP_MESSAGE_RANGE(message_begin,message_end,OnMessageRange)  case message_begin ... message_end: \
 	return OnMessageRange(iMsg,wParam,lParam,pret);
 

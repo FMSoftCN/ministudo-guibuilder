@@ -13,9 +13,9 @@
 
 class ImageView: public Panel {
 
-	static int iconProc(HWND hwnd, int message, WPARAM wParam, LPARAM lParam);
+	static LRESULT iconProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam);
 	static void _iconview_notification(HWND hwnd, int id, int nc, DWORD add_data);
-	static int _inputProc(HWND hDlg, int message, WPARAM wParam, LPARAM lParam);
+	static LRESULT _inputProc(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam);
 	void onIconViewNotification(int id, int nc, DWORD add_data);
 
 public:
@@ -89,7 +89,7 @@ public:
 
 		ViewItemIterator(HWND hIconView){
 			this->hIconView = hIconView;
-			count = SendMessage(hIconView, IVM_GETITEMCOUNT, 0, 0);
+			count = (int)SendMessage(hIconView, IVM_GETITEMCOUNT, 0, 0);
 			cur_idx = 0;
 		}
 	public:
@@ -170,8 +170,8 @@ protected:
 
 	template<int (*cmp_fn)(const ViewItem&,const ViewItem&), class TImageView>
 	static int _file_desc_cmp(HSVITEM hsvi1, HSVITEM hsvi2){
-		ViewItem *v1 = (ViewItem *)SendMessage(TImageView::_hIconView, IVM_GETITEMADDDATA, 0, hsvi1);
-		ViewItem *v2 = (ViewItem *)SendMessage(TImageView::_hIconView, IVM_GETITEMADDDATA, 0, hsvi2);
+		ViewItem *v1 = (ViewItem *)SendMessage(TImageView::_hIconView, IVM_GETITEMADDDATA, 0, (LPARAM)hsvi1);
+		ViewItem *v2 = (ViewItem *)SendMessage(TImageView::_hIconView, IVM_GETITEMADDDATA, 0, (LPARAM)hsvi2);
 		if(v1 == NULL)
 			return -1;
 		else if(v2 == NULL)

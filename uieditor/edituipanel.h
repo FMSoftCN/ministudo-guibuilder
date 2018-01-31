@@ -123,11 +123,8 @@ private:
 
 public:
 
-#ifdef WIN32
 	WINDOW_ELEMENT_RENDERER *editor_win_rdr;
-#else
-	WINDOW_ELEMENT_RENDERER editor_win_rdr;
-#endif
+
 	///////////////
 	BOOL isSourceChanged(){
 		return flags & SourceChanged;

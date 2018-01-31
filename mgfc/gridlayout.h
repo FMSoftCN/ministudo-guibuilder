@@ -180,7 +180,7 @@ BOOL GetHittedGridCenterPos (GRID_LAYOUT* layout, int x, int y, int* grid_x, int
 //
 void SetGridLayoutRect(GRID_LAYOUT* playout, int x, int y, int width, int height);
 
-int GridLayoutHookProc(HWND hwnd,  GRID_LAYOUT* gl, int message, WPARAM wParam, LPARAM lParam );
+LRESULT GridLayoutHookProc(HWND hwnd,  GRID_LAYOUT* gl, UINT message, WPARAM wParam, LPARAM lParam );
 
 /*BOOL  ApplyGridLayout(HWND hwnd, GRID_LAYOUT* playout);*/
 

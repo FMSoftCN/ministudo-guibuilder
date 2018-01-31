@@ -193,7 +193,7 @@ public:
 			REQ_MOUSE_AREA, //鼠标在需要鼠标消息的区域
 	};
 	virtual int hittest(int x, int y);
-	virtual int processMessage(int message, WPARAM wParam, LPARAM lParam);
+	virtual LRESULT processMessage(UINT message, WPARAM wParam, LPARAM lParam);
 
 	enum enumPorp{
 		PropClass = 1000,

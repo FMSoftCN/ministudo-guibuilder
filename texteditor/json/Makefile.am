@@ -1,5 +1,5 @@
 
-INCLUDES = -I.
+AM_CPPFLAGS = -I.
 
 noinst_LIBRARIES= libjson.a
 

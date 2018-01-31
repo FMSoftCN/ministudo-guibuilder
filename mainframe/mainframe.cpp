@@ -244,7 +244,7 @@ BOOL MainFrame::Create()
                       0,0,g_rcScr.right,g_rcScr.bottom,
                       HWND_DESKTOP,(HCURSOR)0,(HMENU)NULL,
                       (HICON)0,
-                      DWORD2PIXEL(HDC_SCREEN, 0x674E4A));
+                      DWORD2Pixel(HDC_SCREEN, 0x674E4A));
 
     char szPath[1024];
     //try load from project, which name "<project-path>/res/res.project"
@@ -798,7 +798,7 @@ END_MSG_MAP
 void MainFrame::onEditorMenuCmd(int ctrlid, int code, HWND hwnd)
 {
     if(curEditor)
-        curEditor->editor->executeCommand(ctrlid, code, hwnd);
+        curEditor->editor->executeCommand(ctrlid, code, (DWORD)hwnd);
 }
 
 void MainFrame::onResSwitch(int editorId, int code, HWND hwnd)
@@ -877,7 +877,7 @@ void MainFrame::onDestroy()
 #define   LOGO_FILE         "icon/gblogo.png"
 #define   PKG_STR_MAXLEN    256
 
-static int AboutProc(HWND hwnd, int message, WPARAM wParam, LPARAM lParam)
+static LRESULT AboutProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     static BITMAP logo_bmp;
     switch(message) {

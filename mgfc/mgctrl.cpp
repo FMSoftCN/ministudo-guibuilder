@@ -42,7 +42,7 @@ BOOL MGUserCtrl::Register(const char* spClass,DWORD opMask, DWORD dwStyle/* = WS
 	return RegisterWindowClass(&wndCls)==ERR_OK;
 }
 
-int MGUserCtrl::_WndProc(HWND hWnd, int iMsg, WPARAM wParam, LPARAM lParam)
+LRESULT MGUserCtrl::_WndProc(HWND hWnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 {
 	MGUserCtrl* pThis = (MGUserCtrl*)GetWindowAdditionalData(hWnd);
 	if(pThis)
@@ -230,7 +230,7 @@ int MGSheetPage::OnSheetCmd(WPARAM wParam,LPARAM lParam)
 	return 0;
 }
 
-BOOL MGSheetPage::WndProc(int iMsg,WPARAM wParam,LPARAM lParam,int *pret)
+BOOL MGSheetPage::WndProc(UINT iMsg,WPARAM wParam,LPARAM lParam,int *pret)
 {
 	switch(iMsg){
 	case MSG_INITPAGE:

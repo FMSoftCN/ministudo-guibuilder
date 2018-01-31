@@ -438,7 +438,7 @@ void FieldPanel::setAllDefValue()
 	delete[] ids;
 }
 
-BOOL FieldPanel::WndProc(int iMsg,WPARAM wParam,LPARAM lParam,int *pret)
+BOOL FieldPanel::WndProc(UINT iMsg,WPARAM wParam,LPARAM lParam,int *pret)
 {
 
 	if(iMsg == MSG_RBUTTONUP)

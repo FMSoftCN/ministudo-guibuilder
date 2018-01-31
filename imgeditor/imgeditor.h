@@ -102,7 +102,7 @@ protected:
 	BOOL saveConfig(TextStream* stream);
 
 protected:
-	BOOL WndProc(int iMsg,WPARAM wParam,LPARAM lParam,int *pret);
+	BOOL WndProc(UINT iMsg,WPARAM wParam,LPARAM lParam,int *pret);
 };
 
 #endif /* IMGEDITOR_H_ */

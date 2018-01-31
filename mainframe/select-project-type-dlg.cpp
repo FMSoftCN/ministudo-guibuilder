@@ -72,7 +72,7 @@ void SelectProjectTypeDlg::onOK()
 {
 	//get current name of
 	HWND hwnd = GetChild(100);
-	int idx = ::SendMessage(hwnd, LB_GETCURSEL, 0, 0);
+	LRESULT idx = ::SendMessage(hwnd, LB_GETCURSEL, 0, 0);
 	if(idx < 0)
 	{
 		InfoBox(_("Error"), _("Please select the project type fristly!"));
@@ -202,7 +202,7 @@ BOOL SelectProjectTypeDlg::initProjectInfo(const char* cfgPath)
 		//get Caption
 		if(GetValueFromEtc(hEtc,szSection,"caption",szValue, sizeof(szValue))!=ETC_OK)
 			continue;
-		int idx = ::SendMessage(hwnd, LB_ADDSTRING, 0, (LPARAM)szValue);
+		LRESULT idx = ::SendMessage(hwnd, LB_ADDSTRING, 0, (LPARAM)szValue);
 		if(idx < 0)
 			continue;
 
@@ -220,7 +220,7 @@ FAILED:
 void SelectProjectTypeDlg::onDestroy()
 {
 	HWND hwnd = GetChild(100);
-	for(int i=0; i< ::SendMessage(hwnd, LB_GETCOUNT, 0, 0); i++)
+	for(int i=0; i< (int)::SendMessage(hwnd, LB_GETCOUNT, 0, 0); i++)
 	{
 		char* str = (char*)::SendMessage(hwnd, LB_GETITEMADDDATA, i, 0);
         free(str);

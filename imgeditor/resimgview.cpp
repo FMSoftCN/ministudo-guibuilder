@@ -50,7 +50,7 @@ ResImageView::~ResImageView()
 
 int ResImageView::removeSelectedImage()
 {
-	int sel_idx = SendMessage(hIconView, IVM_GETCURSEL, 0, 0);
+	LRESULT sel_idx = SendMessage(hIconView, IVM_GETCURSEL, 0, 0);
 	if(sel_idx < 0)
 		return -1;
 

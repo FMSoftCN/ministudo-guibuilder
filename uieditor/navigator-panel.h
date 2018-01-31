@@ -119,7 +119,7 @@ protected:
 
 	void showPanel();
 
-	static int _new_icon_view_proc(HWND hwnd, int message, WPARAM wParam, LPARAM lParam);
+	static LRESULT _new_icon_view_proc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam);
 	WNDPROC oldIconViewProc;
 };
 

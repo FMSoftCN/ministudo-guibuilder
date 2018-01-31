@@ -34,7 +34,7 @@ extern "C" {
 
 extern DLGTEMPLATE * GetDlgTemplate(int id);
 
-extern int AutoCenterDlgProc(HWND hwnd, int message, WPARAM wParam, LPARAM lParam);
+extern LRESULT AutoCenterDlgProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam);
 
 extern PCTRLDATA GetControlData(DLGTEMPLATE *tmpl, int id);
 

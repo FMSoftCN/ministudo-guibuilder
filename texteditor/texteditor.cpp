@@ -560,7 +560,7 @@ void TextEditor::updateCombobox()
 		}
 
 		sprintf(sItemName, "%s_%s", txtNode->langType, txtNode->country);
-		int idx = ::SendMessage(hCombobox, CB_ADDSTRING, 0, (LPARAM)sItemName);
+		LRESULT idx = ::SendMessage(hCombobox, CB_ADDSTRING, 0, (LPARAM)sItemName);
 
 		sprintf(szFileName,"%s/text/%s_%s.txt",g_env->getResourcePath(), txtNode->langType, txtNode->country);
 		FILE *fp = fopen(szFileName, "rt");

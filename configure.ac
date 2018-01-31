@@ -31,7 +31,6 @@ AC_DEFINE_UNQUOTED(GUIBUILD_BINARY_AGE, $guibuilder_BINARY_AGE,
             [Binary age of guibuilder])
 
 
-
 # Checks for programs.
 AC_PROG_AWK
 AC_PROG_CXX

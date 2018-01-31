@@ -252,7 +252,7 @@ BOOL MGServerApp::OnActiveChanged(MGLayer* pLayer,MGClient *pClient)
         return TRUE;
 }
 
-BOOL MGServerApp::OnEventProc(int message,WPARAM wParam,LPARAM lParam,int *pret)
+BOOL MGServerApp::OnEventProc(UINT message,WPARAM wParam,LPARAM lParam,int *pret)
 {
 	return TRUE;
 }

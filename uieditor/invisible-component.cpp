@@ -300,7 +300,7 @@ const char* InvisibleComponent::getControlClass()
 
 /////////////////////////////////
 
-int InvisibleComponent::_invcomp_preview_proc(HWND hWnd, int message, WPARAM wParam, LPARAM lParam)
+LRESULT InvisibleComponent::_invcomp_preview_proc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	InvisibleComponent* pic = (InvisibleComponent*)GetWindowAdditionalData(hWnd);
 	switch(message)

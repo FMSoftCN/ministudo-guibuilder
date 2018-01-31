@@ -55,7 +55,7 @@ using namespace std;
 
 BOOL NewItemDialog::onInitDialog(HWND hFocus, LPARAM lParam)
 {
-	int idx;
+	LRESULT idx;
 	HWND hLang = GetChild(IDC_CLANG);
 	char szPath[1024];
 
@@ -108,7 +108,7 @@ FAILED:
 void NewItemDialog::onDestroy()
 {
 	HWND hwnd = GetChild(IDC_CLANG);
-	int count = ::SendMessage(hwnd, CB_GETCOUNT, 0, 0);
+	int count = (int)::SendMessage(hwnd, CB_GETCOUNT, 0, 0);
 
 	for(int i=0; i< count; i++)
 	{

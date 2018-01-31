@@ -509,7 +509,7 @@ void TextListPanel::deleteItemById(int id)
 	deleteItem(hitem, TRUE);
 }
 
-BOOL TextListPanel::WndProc(int iMsg,WPARAM wParam,LPARAM lParam,int *pret)
+BOOL TextListPanel::WndProc(UINT iMsg,WPARAM wParam,LPARAM lParam,int *pret)
 {
 
 	if(iMsg == MSG_RBUTTONUP)

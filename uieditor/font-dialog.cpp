@@ -864,7 +864,7 @@ static int InitDialog (HWND hWnd)
 static LOGFONT* CreateFont(HWND hWnd, char *name)
 {
     HWND hctrl;
-    int  sel, checked, size;
+    LRESULT  sel, checked, size;
     char chset [LEN_FONT_NAME +1];
     char family [LEN_FONT_NAME +1];
 	char szSize[10];
@@ -946,7 +946,7 @@ static int SaveFontData (HWND hDlg, PLOGFONT font, char * name)
     return 0;
 }
 
-static int FontSelProc (HWND hDlg, int message, WPARAM wParam, LPARAM lParam)
+static LRESULT FontSelProc (HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 {
     static PLOGFONT font = NULL;
     static char font_name[256];
@@ -1258,14 +1258,14 @@ int FontMngDlg::RefreshList (HWND hListView)
 	{
 		lvItem.nItem = i;
 		lvItem.nItemHeight = 25;
-	    GHANDLE item = ::SendMessage(hListView, LVM_ADDITEM, 0, (LPARAM)&lvItem);
+	    GHANDLE item = (GHANDLE)::SendMessage(hListView, LVM_ADDITEM, 0, (LPARAM)&lvItem);
 
 	    subdata.flags = 0;
 	    subdata.image = 0;
 	    subdata.nItem = lvItem.nItem;
 	    subdata.subItem = 0;
 	    subdata.pszText = (char *)((*it)->font_name.c_str());
-	    ::SendMessage (hListView, LVM_SETSUBITEM, item, (LPARAM) &subdata);
+	    ::SendMessage (hListView, LVM_SETSUBITEM, (WPARAM)item, (LPARAM) &subdata);
 	}
 /*
 	i++;
@@ -1421,14 +1421,14 @@ void FontMngDlg::onImport()
 		LVSUBITEM subdata;
 		lvItem.nItem = ::SendMessage(hListView, LVM_GETITEMCOUNT, 0, 0);
 		lvItem.nItemHeight = 25;
-	    GHANDLE item = ::SendMessage(hListView, LVM_ADDITEM, 0, (LPARAM)&lvItem);
+	    GHANDLE item = (GHANDLE)::SendMessage(hListView, LVM_ADDITEM, 0, (LPARAM)&lvItem);
 
 	    subdata.flags = 0;
 	    subdata.image = 0;
 	    subdata.nItem = lvItem.nItem;
 	    subdata.subItem = 0;
 	    subdata.pszText = font_name;
-	    ::SendMessage (hListView, LVM_SETSUBITEM, item, (LPARAM) &subdata);
+	    ::SendMessage (hListView, LVM_SETSUBITEM, (WPARAM)item, (LPARAM) &subdata);
         //load ExFont
         loadExFont(exfont);
 

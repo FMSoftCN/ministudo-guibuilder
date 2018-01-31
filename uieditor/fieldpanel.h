@@ -79,7 +79,7 @@ protected:
 
 	virtual ValueType * getIDValueType() { return NULL; }
 
-	BOOL WndProc(int iMsg,WPARAM wParam,LPARAM lParam,int *pret);
+	BOOL WndProc(UINT iMsg,WPARAM wParam,LPARAM lParam,int *pret);
 
 	void onRButtonUp(int x, int y);
 

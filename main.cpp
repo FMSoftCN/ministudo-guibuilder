@@ -19,7 +19,8 @@
 #include "mgfcheads.h"
 #include <mgplus/mgplus.h>
 
-#include "gbconfig.h"
+//#include "gbconfig.h"
+#include "include/guibuilder.h"
 #include "log.h"
 #include "qvfb.h"
 

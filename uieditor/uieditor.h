@@ -304,7 +304,7 @@ protected:
 		return editors.at(file)!=NULL;
 	}
 
-	BOOL WndProc(int iMsg,WPARAM wParam,LPARAM lParam,int *pret);
+	BOOL WndProc(UINT iMsg,WPARAM wParam,LPARAM lParam,int *pret);
 
 /*******************/
 //config

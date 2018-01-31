@@ -1,5 +1,5 @@
 
-INCLUDES= -I. -Iinclude
+AM_CPPFLAGS= -I. -Iinclude
 
 AUTOMAKE_OPTIONS=foreign
 

@@ -297,7 +297,7 @@ BOOL RendererTreePanel::removeItem(int id, GHANDLE parent, BOOL delAllRef)
 BOOL RendererTreePanel::selectItem(int id, GHANDLE parent)
 {
     GHANDLE item = findItem(id, parent);
-    return SetSelItem(item);
+    return (NULL != SetSelItem(item));
 }
 
 GHANDLE RendererTreePanel::findItem(int id, GHANDLE parent)
@@ -370,7 +370,7 @@ MAP_RBUTTONUP(onRButtonUp)
 	END_COMMAND_MAP
 END_MSG_MAP
 #else
-BOOL RendererTreePanel::WndProc(int iMsg,WPARAM wParam,LPARAM lParam,int *pret) 
+BOOL RendererTreePanel::WndProc(UINT iMsg,WPARAM wParam,LPARAM lParam,int *pret) 
 {
 	if(iMsg == MSG_RBUTTONUP)
 	{
@@ -394,7 +394,7 @@ void RendererTreePanel::onPopupMenuCmd(int id)
     RendererEditor* resMgr =
         (RendererEditor*)(g_env->getResManager(NCSRT_RDR | NCSRT_RDRSET));
 
-    resMgr->executeCommand(id, 0, m_hWnd);
+    resMgr->executeCommand(id, 0, (DWORD)m_hWnd);
 }
 
 void RendererTreePanel::onRButtonUp(int x, int y, DWORD key_flag)

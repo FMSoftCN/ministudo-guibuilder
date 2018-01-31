@@ -7,8 +7,8 @@
 #define SPLITER_SIZE 4
 #include "gridlayout.h"
 
-HCURSOR hhorzCur= IDC_SIZENS;
-HCURSOR hverCur = IDC_SIZEWE;
+HCURSOR hhorzCur= (HCURSOR)IDC_SIZENS;
+HCURSOR hverCur = (HCURSOR)IDC_SIZEWE;
 static void recalca_units(LAYOUT_UNIT* units, int n, int width)
 {
 	int i;
@@ -359,7 +359,7 @@ void GridLayoutEnumAllCellObjs(GRID_LAYOUT* playout, BOOL (*deal_obj)(GRID_CELL*
 	}
 }
 
-BOOL inline is_in_gridlayout (int x, int y, GRID_LAYOUT* layout)
+BOOL is_in_gridlayout (int x, int y, GRID_LAYOUT* layout)
 {
     int in_x, in_y;
 
@@ -583,7 +583,7 @@ static void updateSpliterSize(GRID_LAYOUT* gl, int is_horz, int idx, int x, int 
 
 }
 
-static BOOL processSpliter(HWND hwnd, GRID_LAYOUT* gl, int message, WPARAM wParam, LPARAM lParam)
+static BOOL processSpliter(HWND hwnd, GRID_LAYOUT* gl, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	static int _old_x = 0;
 	static int _old_y = 0;
@@ -603,7 +603,7 @@ static BOOL processSpliter(HWND hwnd, GRID_LAYOUT* gl, int message, WPARAM wPara
 			if(_spliter_idx > 0 && !((_is_horz && gl->row_cnt-1<=_spliter_idx) || (!_is_horz && gl->col_cnt -1<= _spliter_idx) ))
 			{
 				//
-				SetCursor(GetSystemCursor(_is_horz?hhorzCur:hverCur));
+				SetCursor(GetSystemCursor((int)(_is_horz?hhorzCur:hverCur)));
 				if(MSG_LBUTTONDOWN == message){
 					_spliter_layout = gl;
 					_old_x = x;
@@ -624,7 +624,7 @@ static BOOL processSpliter(HWND hwnd, GRID_LAYOUT* gl, int message, WPARAM wPara
 	{
 	case MSG_MOUSEMOVE:
 	{
-		SetCursor(GetSystemCursor(_is_horz?hhorzCur:hverCur));
+		SetCursor(GetSystemCursor((int)(_is_horz?hhorzCur:hverCur)));
 		//FIXME: when Call GetCapture, MiniGUI send x, y to window as screen position
 		ScreenToClient(hwnd, &x, &y);
 		drawSpliterBar(_hdc, _spliter_layout, _is_horz, _old_x, _old_y);
@@ -650,7 +650,7 @@ static BOOL processSpliter(HWND hwnd, GRID_LAYOUT* gl, int message, WPARAM wPara
 	return FALSE;
 }
 
-int GridLayoutHookProc(HWND hwnd, GRID_LAYOUT* gl, int message, WPARAM wParam, LPARAM lParam )
+LRESULT GridLayoutHookProc(HWND hwnd, GRID_LAYOUT* gl, UINT message, WPARAM wParam, LPARAM lParam )
 {
 	if(gl){
 		if(message == MSG_CSIZECHANGED)

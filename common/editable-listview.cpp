@@ -53,7 +53,7 @@ static void my_draw_hdr_bk (HWND hWnd, HLVHDR hlvhdr, HDC hdc, RECT *rcDraw)
     gal_pixel oldClr;
     DWORD color = GetWindowElementAttr(hWnd, WE_BGC_HIGHLIGHT_ITEM);
 
-    oldClr = SetBrushColor (hdc, DWORD2PIXEL(hdc, color));
+    oldClr = SetBrushColor (hdc, DWORD2Pixel(hdc, color));
     if (rcDraw->left == 0)
         rcDraw->left += 1;
 
@@ -162,7 +162,7 @@ void EditableListView::updateEditors()
 
 	hOldSelItem = GetSelectedItem();
 	DWORD add_data = GetItemData(hOldSelItem);
-	int cx = SendMessage(SVM_GETCONTENTX);
+	LRESULT cx = SendMessage(SVM_GETCONTENTX);
 	RECT rt;
 
 	if(!GetSelectedItemRect(&rt))
@@ -246,7 +246,7 @@ void EditableListView::deleteItem(HLVITEM hlv, BOOL autoSelect)
 
 }
 
-BOOL EditableListView::WndProc(int iMsg,WPARAM wParam,LPARAM lParam,int *pret)
+BOOL EditableListView::WndProc(UINT iMsg,WPARAM wParam,LPARAM lParam,int *pret)
 {
 	//printf( "message = 0x%08X\n", iMsg);
 	HWND hactive;
@@ -274,7 +274,7 @@ BOOL EditableListView::WndProc(int iMsg,WPARAM wParam,LPARAM lParam,int *pret)
 	{
 		if(hOldSelItem != (HLVITEM)0){
 			RECT rt;
-			//int cx = -SendMessage(SVM_GETCONTENTX);
+			//LRESULT cx = -SendMessage(SVM_GETCONTENTX);
 			if(!GetSelectedItemRect(&rt))
 				return FALSE;
 

@@ -202,7 +202,7 @@ int ComponentInstance::hittest(int x, int y)
 	//	GetWindowRect(hwnd, &rc);
 	//	if(!PtInRect(&rc, x, y))
 	//		return OUT;
-	int hitcode = ::SendMessage(hwnd, MSG_HITTEST, x,y);
+	LRESULT hitcode = ::SendMessage(hwnd, MSG_HITTEST, x,y);
 	if(hitcode == HT_UNKNOWN || hitcode == HT_OUT || hitcode == HT_TRANSPARENT)
 		return OUT;
 
@@ -222,7 +222,7 @@ int ComponentInstance::hittest(int x, int y)
 	return OUT;
 }
 
-int ComponentInstance::processMessage(int message, WPARAM wParam, LPARAM lParam)
+LRESULT ComponentInstance::processMessage(UINT message, WPARAM wParam, LPARAM lParam)
 {
 	return SendMessage(hwnd, message, wParam, lParam);
 }

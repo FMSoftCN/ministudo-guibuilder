@@ -299,7 +299,7 @@ typedef struct _IMPORT_DLG_ADDDATA {
     char        *idName;
 }IMPORT_DLG_ADDDATA;
 
-static int _importProc(HWND hDlg, int message, WPARAM wParam, LPARAM lParam)
+static LRESULT _importProc(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	HWND hEdit;
 	char * str_id_name;
@@ -786,14 +786,14 @@ BOOL ImageEditor::saveConfig(TextStream* stream)
 	return TRUE;
 }
 
-BOOL ImageEditor::WndProc(int iMsg, WPARAM wParam, LPARAM lParam, int *pret)
+BOOL ImageEditor::WndProc(UINT iMsg, WPARAM wParam, LPARAM lParam, int *pret)
 {
 	if(iMsg == MSG_COMMAND)
 	{
 		if(HIWORD(wParam) == PSN_ACTIVE_CHANGED)
 		{
-			HWND hProp = lParam;
-			int idx = ::SendMessage(hProp, PSM_GETACTIVEINDEX, 0, 0);
+			HWND hProp = (HWND)lParam;
+			LRESULT idx = ::SendMessage(hProp, PSM_GETACTIVEINDEX, 0, 0);
 			HWND hActivePage = (HWND)::SendMessage(hProp, PSM_GETPAGE, idx, 0);
 			BOOL bIsDir = hActivePage == ::GetParent(dir_img_view->getHandler());
 			BOOL bIsImportEnable = FALSE;

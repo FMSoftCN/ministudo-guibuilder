@@ -142,7 +142,7 @@ static void init_depth(HWND hcb)
 }
 
 static WNDPROC _old_edit = NULL;
-static int _number_edit_proc(HWND hwnd, int message, WPARAM wParam, LPARAM lParam)
+static LRESULT _number_edit_proc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	if(message == MSG_CHAR)
 	{
@@ -181,7 +181,7 @@ FAILED:
 }
 
 
-static int _screen_setting_proc(HWND hwnd, int message, WPARAM wParam, LPARAM lParam)
+static LRESULT _screen_setting_proc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	ScreenSetting * ss;
 	char szText[100];

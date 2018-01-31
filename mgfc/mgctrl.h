@@ -33,15 +33,15 @@ public:
 protected:
 	static WNDPROC _oldProc;
 
-	inline int CallOldProc(int iMsg,WPARAM wParam,LPARAM lParam){
+	inline LRESULT CallOldProc(UINT iMsg,WPARAM wParam,LPARAM lParam){
 		if(_oldProc)
 			return (*_oldProc)(MGSUBCLASS_HWND,iMsg,wParam,lParam);
 		return 0;
 	}
 
-	virtual BOOL WndProc(int iMsg,WPARAM wParam,LPARAM lParam,int *pret)=0;
+	virtual BOOL WndProc(UINT iMsg,WPARAM wParam,LPARAM lParam,int *pret)=0;
 private:
-	static int _newCtrlProc(HWND hWnd,int iMsg,WPARAM wParam,LPARAM lParam)
+	static LRESULT _newCtrlProc(HWND hWnd,UINT iMsg,WPARAM wParam,LPARAM lParam)
 	{
 		TMGStaticSubclass<TMGCtrlWnd> *pThis = (TMGStaticSubclass<TMGCtrlWnd>*)
 		GetWindowAdditionalData(hWnd);
@@ -87,11 +87,11 @@ public:
 	}
 protected:
 	WNDPROC m_oldProc;
-	virtual BOOL WndProc(int iMsg,WPARAM wParam,LPARAM lParam,int *pret)=0;
-	inline int CallOldProc(int iMsg,WPARAM wParam,LPARAM lParam)
+	virtual BOOL WndProc(UINT iMsg,WPARAM wParam,LPARAM lParam,int *pret)=0;
+	inline LRESULT CallOldProc(UINT iMsg,WPARAM wParam,LPARAM lParam)
 		{ if(m_oldProc) return (*m_oldProc)(MGSUBCLASS_HWND,iMsg,wParam,lParam); return 0; }
 private:
-	static int _newCtrlProc(HWND hWnd,int iMsg,WPARAM wParam,LPARAM lParam)
+	static LRESULT _newCtrlProc(HWND hWnd,UINT iMsg,WPARAM wParam,LPARAM lParam)
 	{
 		TMGDynanicSubclass<TMGCtrlWnd> *pThis = (TMGDynanicSubclass<TMGCtrlWnd>*)
 			GetWindowAdditionalData(hWnd);
@@ -193,7 +193,7 @@ public:
 
 	inline HWND Attach(HWND hWnd)
 	{
-		int hwndOld = m_hWnd;
+		HWND hwndOld = m_hWnd;
 		if(::IsWindow(hWnd))
 		{
 			hwndOld = MGWnd::Attach(hWnd);
@@ -215,10 +215,10 @@ public:
 	}
 
 protected:
-	virtual BOOL WndProc(int iMsg,WPARAM wParam,LPARAM lParam,int *pret)=0;
+	virtual BOOL WndProc(UINT iMsg,WPARAM wParam,LPARAM lParam,int *pret)=0;
 
 //private:
-	static int _WndProc(HWND hWnd,int iMsg,WPARAM wParam,LPARAM lParam);
+	static LRESULT _WndProc(HWND hWnd,UINT iMsg,WPARAM wParam,LPARAM lParam);
 };
 
 
@@ -299,25 +299,25 @@ public:
 
 	inline int SelectAll()
 	{
-		return SendMessage(EM_SELECTALL);
+		return (int)SendMessage(EM_SELECTALL);
 	}
 
 	inline int GetSelPos(int* pline_pos,int *pchar_pos)
 	{
-		return SendMessage(EM_GETSELPOS,(WPARAM)pline_pos,(LPARAM)pchar_pos);
+		return (int)SendMessage(EM_GETSELPOS,(WPARAM)pline_pos,(LPARAM)pchar_pos);
 	}
 
 	inline int Copy()
 	{
-		return SendMessage(EM_COPYTOCB);
+		return (int)SendMessage(EM_COPYTOCB);
 	}
 	inline int Cut()
 	{
-		return SendMessage(EM_CUTTOCB);
+		return (int)SendMessage(EM_CUTTOCB);
 	}
 	inline int Paste()
 	{
-		return SendMessage(EM_INSERTCBTEXT);
+		return (int)SendMessage(EM_INSERTCBTEXT);
 	}
 
 	inline void SetLineSperatorCharDisp(unsigned char ch)
@@ -330,23 +330,23 @@ public:
 	}
 	inline int GetLineCount()
 	{
-		return SendMessage(EM_GETLINECOUNT);
+		return (int)SendMessage(EM_GETLINECOUNT);
 	}
 	inline int GetLineHeight()
 	{
-		return SendMessage(EM_GETLINEHEIGHT);
+		return (int)SendMessage(EM_GETLINEHEIGHT);
 	}
 	inline int SetLineHeight(int height)
 	{
-		return SendMessage(EM_SETLINEHEIGHT,(WPARAM)height);
+		return (int)SendMessage(EM_SETLINEHEIGHT,(WPARAM)height);
 	}
 	inline int LineScroll()
 	{
-		return SendMessage(EM_LINESCROLL);
+		return (int)SendMessage(EM_LINESCROLL);
 	}
 	inline int InsertText(const char* text,int len)
 	{
-		return SendMessage(EM_INSERTTEXT,(WPARAM)len,(LPARAM)text);
+		return (int)SendMessage(EM_INSERTTEXT,(WPARAM)len,(LPARAM)text);
 	}
 	inline int InsertText(const char* text)
 	{
@@ -354,11 +354,11 @@ public:
 	}
 	inline int GetMaxLimit()
 	{
-		return SendMessage(EM_GETMAXLIMIT);
+		return (int)SendMessage(EM_GETMAXLIMIT);
 	}
 	inline int SetMaxLimit(int limit)
 	{
-		return SendMessage(EM_LIMITTEXT,(WPARAM)limit);
+		return (int)SendMessage(EM_LIMITTEXT,(WPARAM)limit);
 	}
 	inline void Redo()
 	{
@@ -390,7 +390,7 @@ public:
 	}
 	inline int ChangeCaretSharp(int new_sharp)
 	{
-		return SendMessage(EM_CHANGECARETSHAPE,(WPARAM)new_sharp);
+		return (int)SendMessage(EM_CHANGECARETSHAPE,(WPARAM)new_sharp);
 	}
 	inline void RefreshCaret()
 	{
@@ -410,7 +410,7 @@ public:
 	}
 	inline int GetTitleText(char* titleText,int nMax)
 	{
-		return SendMessage(EM_GETTITLETEXT,(WPARAM)nMax,(LPARAM)titleText);
+		return (int)SendMessage(EM_GETTITLETEXT,(WPARAM)nMax,(LPARAM)titleText);
 	}
 	inline void SetTipText(const char* tipText,int len)
 	{
@@ -422,7 +422,7 @@ public:
 	}
 	inline int GetTipText(char* tipText,int nMax)
 	{
-		return SendMessage(EM_GETTIPTEXT,(WPARAM)nMax,(LPARAM)tipText);
+		return (int)SendMessage(EM_GETTIPTEXT,(WPARAM)nMax,(LPARAM)tipText);
 	}
 
 	int Find(const char* pFind,BOOL fDown=TRUE,BOOL fCaps=FALSE);
@@ -458,19 +458,19 @@ public:
 
 	inline int GetCheck()
 	{
-		return SendMessage(BM_GETCHECK);
+		return (int)SendMessage(BM_GETCHECK);
 	}
 	inline int SetCheck(int check_state)
 	{
-		return SendMessage(BM_SETCHECK,(WPARAM)check_state);
+		return (int)SendMessage(BM_SETCHECK,(WPARAM)check_state);
 	}
 	inline int GetState()
 	{
-		return SendMessage(BM_GETSTATE);
+		return (int)SendMessage(BM_GETSTATE);
 	}
 	inline int SetState(int push_state)
 	{
-		return SendMessage(BM_SETSTATE,(WPARAM)push_state);
+		return (int)SendMessage(BM_SETSTATE,(WPARAM)push_state);
 	}
 	inline void SetStyle(int button_style)
 	{
@@ -504,11 +504,11 @@ public:
 
 	inline int AddString(const char*text)
 	{
-		return SendMessage(LB_ADDSTRING,0,(LPARAM)text);
+		return (int)SendMessage(LB_ADDSTRING,0,(LPARAM)text);
 	}
 	inline int AddItem(PLISTBOXITEMINFO plbii)
 	{
-		return SendMessage(LB_ADDSTRING,0,(LPARAM)plbii);
+		return (int)SendMessage(LB_ADDSTRING,0,(LPARAM)plbii);
 	}
 	inline int AddItem(char* string,DWORD cmFlag,HICON hIcon)
 	{
@@ -520,11 +520,11 @@ public:
 	}
 	inline int InsertString(int idx,const char* text)
 	{
-		return SendMessage(LB_INSERTSTRING,(WPARAM)idx,(LPARAM)text);
+		return (int)SendMessage(LB_INSERTSTRING,(WPARAM)idx,(LPARAM)text);
 	}
 	inline int InsertItem(int idx,PLISTBOXITEMINFO plbii)
 	{
-		return SendMessage(LB_INSERTSTRING,(WPARAM)idx,(LPARAM)plbii);
+		return (int)SendMessage(LB_INSERTSTRING,(WPARAM)idx,(LPARAM)plbii);
 	}
 	inline int InsertItem(int idx,char* string,DWORD cmFlag,HICON hIcon)
 	{
@@ -536,56 +536,56 @@ public:
 	}
 	inline int DeleteItem(int itemIdx)
 	{
-		return SendMessage(LB_DELETESTRING,(WPARAM)itemIdx);
+		return (int)SendMessage(LB_DELETESTRING,(WPARAM)itemIdx);
 	}
 
 	inline void ResetContent(){ SendMessage(LB_RESETCONTENT); }
 
-	inline int IsSelect(int idx){ return SendMessage(LB_GETSEL,(WPARAM)idx); }
+	inline int IsSelect(int idx){ return (int)SendMessage(LB_GETSEL,(WPARAM)idx); }
 
 	inline int Select(int idx)
 	{
-		return SendMessage(LB_SETSEL,(WPARAM)1,(LPARAM)idx);
+		return (int)SendMessage(LB_SETSEL,(WPARAM)1,(LPARAM)idx);
 	}
 	inline int Unselect(int idx)
 	{
-		return SendMessage(LB_SETSEL,(WPARAM)0,(LPARAM)idx);
+		return (int)SendMessage(LB_SETSEL,(WPARAM)0,(LPARAM)idx);
 	}
 	inline int AutoSelect(int idx)
 	{
-		return SendMessage(LB_SETSEL,(WPARAM)-1,(LPARAM)idx);
+		return (int)SendMessage(LB_SETSEL,(WPARAM)-1,(LPARAM)idx);
 	}
 
-	inline int GetCurSel(){ return SendMessage(LB_GETCURSEL); }
+	inline int GetCurSel(){ return (int)SendMessage(LB_GETCURSEL); }
 
-	inline int SetCurSel(int cursel){ return SendMessage(LB_SETCURSEL,(WPARAM)cursel); }
+	inline int SetCurSel(int cursel){ return (int)SendMessage(LB_SETCURSEL,(WPARAM)cursel); }
 
 	inline int GetItemText(int idx,char *text)
 	{
-		return SendMessage(LB_GETTEXT,(WPARAM)idx,(LPARAM)text);
+		return (int)SendMessage(LB_GETTEXT,(WPARAM)idx,(LPARAM)text);
 	}
 
 	inline int GetItemTextLen(int idx)
 	{
-		return SendMessage(LB_GETTEXTLEN,(WPARAM)idx);
+		return (int)SendMessage(LB_GETTEXTLEN,(WPARAM)idx);
 	}
 
-	inline int GetCount(){ return SendMessage(LB_GETCOUNT); }
+	inline int GetCount(){ return (int)SendMessage(LB_GETCOUNT); }
 
-	inline int GetTopIndex(){ return SendMessage(LB_GETTOPINDEX); }
+	inline int GetTopIndex(){ return (int)SendMessage(LB_GETTOPINDEX); }
 
-	inline int SetTopIndex(int idx){ return SendMessage(LB_SETTOPINDEX,(WPARAM)idx); }
+	inline int SetTopIndex(int idx){ return (int)SendMessage(LB_SETTOPINDEX,(WPARAM)idx); }
 
 	inline int FindString(int idx,const char* string)
 	{
-		return SendMessage(LB_FINDSTRING,(WPARAM)idx,(LPARAM)string);
+		return (int)SendMessage(LB_FINDSTRING,(WPARAM)idx,(LPARAM)string);
 	}
 
-	inline int GetSelCount(){ return SendMessage(LB_GETSELCOUNT); }
+	inline int GetSelCount(){ return (int)SendMessage(LB_GETSELCOUNT); }
 
 	inline int GetSelItems(int nItem,int *pInt)
 	{
-		return SendMessage(LB_GETSELITEMS,(WPARAM)nItem,(LPARAM)pInt);
+		return (int)SendMessage(LB_GETSELITEMS,(WPARAM)nItem,(LPARAM)pInt);
 	}
 	inline int *GetSelItems(int *npItem)
 	{
@@ -609,17 +609,17 @@ public:
 
 	inline int GetItemRect(int idx,PRECT prc)
 	{
-		return SendMessage(LB_GETITEMRECT,(WPARAM)idx,(LPARAM)prc);
+		return (int)SendMessage(LB_GETITEMRECT,(WPARAM)idx,(LPARAM)prc);
 	}
 
 	inline int GetItemData(int idx,PLISTBOXITEMINFO plbii)
 	{
-		return SendMessage(LB_GETITEMDATA,(WPARAM)idx,(LPARAM)plbii);
+		return (int)SendMessage(LB_GETITEMDATA,(WPARAM)idx,(LPARAM)plbii);
 	}
 
 	inline int SetItemData(int idx,PLISTBOXITEMINFO plbii)
 	{
-		return SendMessage(LB_SETITEMDATA,(WPARAM)idx,(LPARAM)plbii);
+		return (int)SendMessage(LB_SETITEMDATA,(WPARAM)idx,(LPARAM)plbii);
 	}
 	inline int SetItemData(int idx,char* string,DWORD cmFlag,HICON hIcon)
 	{
@@ -632,12 +632,12 @@ public:
 
 	inline int SetCaretIndex(int idx)
 	{
-		return SendMessage(LB_SETCARETINDEX,(WPARAM)idx);
+		return (int)SendMessage(LB_SETCARETINDEX,(WPARAM)idx);
 	}
 
 	inline int GetCaretIndex(int idx)
 	{
-		return SendMessage(LB_GETCARETINDEX);
+		return (int)SendMessage(LB_GETCARETINDEX);
 	}
 
 	inline void SetItemHeight(int height)
@@ -645,27 +645,27 @@ public:
 		SendMessage(LB_SETITEMHEIGHT,0,(LPARAM)height);
 	}
 
-	inline int GetItemHeight(){ return SendMessage(LB_GETITEMHEIGHT); }
+	inline int GetItemHeight(){ return (int)SendMessage(LB_GETITEMHEIGHT); }
 
 	inline int FindStringExact(int idx,const char* string)
 	{
-		return SendMessage(LB_FINDSTRINGEXACT,(WPARAM)idx,(LPARAM)string);
+		return (int)SendMessage(LB_FINDSTRINGEXACT,(WPARAM)idx,(LPARAM)string);
 	}
 
 	inline int SetItemText(int idx,const char* string)
 	{
-		return SendMessage(LB_SETTEXT,(WPARAM)idx,(LPARAM)string);
+		return (int)SendMessage(LB_SETTEXT,(WPARAM)idx,(LPARAM)string);
 	}
 
 	inline int GetCheckMark(int idx)
 	{
-		return SendMessage(LB_GETCHECKMARK,(WPARAM)idx);
+		return (int)SendMessage(LB_GETCHECKMARK,(WPARAM)idx);
 	}
 	#define IsItemChecked(idx) (GetCheckMark(idx)==CMFLAG_CHECKED)
 
 	inline int SetCheckMark(int idx,int status)
 	{
-		return SendMessage(LB_SETCHECKMARK,(WPARAM)idx,(LPARAM)status);
+		return (int)SendMessage(LB_SETCHECKMARK,(WPARAM)idx,(LPARAM)status);
 	}
 	#define CheckItem(idx)     SetCheckMark(idx,CMFLAG_CHECKED)
 	#define PartCheckItem(idx) SetCheckMark(idx,CMFLAG_PARTCHECKED)
@@ -678,12 +678,12 @@ public:
 
 	inline int SetItemAddData(int idx,DWORD addData)
 	{
-		return SendMessage(LB_SETITEMADDDATA,(WPARAM)idx,(LPARAM)addData);
+		return (int)SendMessage(LB_SETITEMADDDATA,(WPARAM)idx,(LPARAM)addData);
 	}
 
 	inline int SetStrCmpFunc(int (*my_strcmp)(const char*,const char*,size_t))
 	{
-		return SendMessage(LB_SETSTRCMPFUNC,0,(LPARAM)my_strcmp);
+		return (int)SendMessage(LB_SETSTRCMPFUNC,0,(LPARAM)my_strcmp);
 	}
 };
 
@@ -699,7 +699,7 @@ public:
 
 	inline int GetEditSel(int *pstart,int *pend)
 	{
-		return SendMessage(CB_GETEDITSEL,(WPARAM)pstart,(LPARAM)pend);
+		return (int)SendMessage(CB_GETEDITSEL,(WPARAM)pstart,(LPARAM)pend);
 	}
 
 	inline void SetLimitText(int newLimit)
@@ -709,45 +709,45 @@ public:
 
 	inline int SetEditSel(int start,int end)
 	{
-		return SendMessage(CB_SETEDITSEL,(WPARAM)start,(LPARAM)end);
+		return (int)SendMessage(CB_SETEDITSEL,(WPARAM)start,(LPARAM)end);
 	}
 
 	inline int AddString(const char* string)
 	{
-		return SendMessage(CB_ADDSTRING,0,(LPARAM)string);
+		return (int)SendMessage(CB_ADDSTRING,0,(LPARAM)string);
 	}
 
 	inline int DeleteString(int idx)
 	{
-		return SendMessage(CB_DELETESTRING,(WPARAM)idx);
+		return (int)SendMessage(CB_DELETESTRING,(WPARAM)idx);
 	}
 
-	inline int GetCount(){ return SendMessage(CB_GETCOUNT); }
+	inline int GetCount(){ return (int)SendMessage(CB_GETCOUNT); }
 
-	inline int GetCurSel(){ return SendMessage(CB_GETCURSEL); }
+	inline int GetCurSel(){ return (int)SendMessage(CB_GETCURSEL); }
 
-	inline int SetCurSel(int idx){ return SendMessage(CB_SETCURSEL,(WPARAM)idx); }
+	inline int SetCurSel(int idx){ return (int)SendMessage(CB_SETCURSEL,(WPARAM)idx); }
 
 	inline int GetLBText(int idx,char* string)
 	{
-		return SendMessage(CB_GETLBTEXT,(WPARAM)idx,(LPARAM)string);
+		return (int)SendMessage(CB_GETLBTEXT,(WPARAM)idx,(LPARAM)string);
 	}
 
 	inline int GetLBTextLen(int idx)
 	{
-		return SendMessage(CB_GETLBTEXTLEN,(WPARAM)idx);
+		return (int)SendMessage(CB_GETLBTEXTLEN,(WPARAM)idx);
 	}
 
 	inline int InsertString(int idx,char *string)
 	{
-		return SendMessage(CB_INSERTSTRING,(WPARAM)idx,(LPARAM)string);
+		return (int)SendMessage(CB_INSERTSTRING,(WPARAM)idx,(LPARAM)string);
 	}
 
 	inline void ResetContent(){ SendMessage(CB_RESETCONTENT); }
 
 	inline int FindString(int idxStart,char* string)
 	{
-		return SendMessage(CB_FINDSTRING,(WPARAM)idxStart,(LPARAM)string);
+		return (int)SendMessage(CB_FINDSTRING,(WPARAM)idxStart,(LPARAM)string);
 	}
 
 	inline DWORD GetItemAddData(int idx)
@@ -757,36 +757,36 @@ public:
 
 	inline int SetItemAddData(int idx,DWORD addData)
 	{
-		return SendMessage(CB_SETITEMADDDATA,(WPARAM)idx,(LPARAM)addData);
+		return (int)SendMessage(CB_SETITEMADDDATA,(WPARAM)idx,(LPARAM)addData);
 	}
 
 	inline int GetDroppedControlRect(PRECT *prc)
 	{
-		return SendMessage(CB_GETDROPPEDCONTROLRECT,0,(LPARAM)prc);
+		return (int)SendMessage(CB_GETDROPPEDCONTROLRECT,0,(LPARAM)prc);
 	}
 
 	inline int SetItemHeight(int height)
 	{
-		return SendMessage(CB_SETITEMHEIGHT,0,(LPARAM)height);
+		return (int)SendMessage(CB_SETITEMHEIGHT,0,(LPARAM)height);
 	}
 
-	inline int GetItemHeight(){ return SendMessage(CB_GETITEMHEIGHT); }
+	inline int GetItemHeight(){ return (int)SendMessage(CB_GETITEMHEIGHT); }
 
 	inline BOOL GetDroppedState(){ return (BOOL)SendMessage(CB_GETDROPPEDSTATE); }
 
 	inline int FindStringExact(int idxStart,char* string)
 	{
-		return SendMessage(CB_FINDSTRINGEXACT,(WPARAM)idxStart,(LPARAM)string);
+		return (int)SendMessage(CB_FINDSTRINGEXACT,(WPARAM)idxStart,(LPARAM)string);
 	}
 
 	inline int SetSpinFormat(const char* format)
 	{
-		return SendMessage(CB_SETSPINFORMAT,0,(LPARAM)format);
+		return (int)SendMessage(CB_SETSPINFORMAT,0,(LPARAM)format);
 	}
 
 	inline int SetSpinRange(int new_min,int new_max)
 	{
-		return SendMessage(CB_SETSPINRANGE,(WPARAM)new_min,(LPARAM)new_max);
+		return (int)SendMessage(CB_SETSPINRANGE,(WPARAM)new_min,(LPARAM)new_max);
 	}
 
 	inline void GetSpinRange(int *pspin_min,int *pspin_max)
@@ -799,16 +799,16 @@ public:
 		SendMessage(CB_SETSPINVALUE,(WPARAM)new_value);
 	}
 
-	inline int GetSpinValue(){ return SendMessage(CB_GETSPINVALUE); }
+	inline int GetSpinValue(){ return (int)SendMessage(CB_GETSPINVALUE); }
 
 	inline int SetSpinPace(int new_pace,int new_fastpace)
 	{
-		return SendMessage(CB_SETSPINPACE,(WPARAM)new_pace,(LPARAM)new_fastpace);
+		return (int)SendMessage(CB_SETSPINPACE,(WPARAM)new_pace,(LPARAM)new_fastpace);
 	}
 
 	inline int GetSpinPace(int *pspin_pace,int *pspin_fastpace)
 	{
-		return SendMessage(CB_GETSPINPACE,(WPARAM)pspin_pace,(LPARAM)pspin_fastpace);
+		return (int)SendMessage(CB_GETSPINPACE,(WPARAM)pspin_pace,(LPARAM)pspin_fastpace);
 	}
 
 	#define SPIN_UP    0
@@ -825,7 +825,7 @@ public:
 
 	inline int SetStrCmpFunc(int (*my_strcmp)(const char*,const char*,size_t))
 	{
-		return SendMessage(CB_SETSTRCMPFUNC,0,(LPARAM)my_strcmp);
+		return (int)SendMessage(CB_SETSTRCMPFUNC,0,(LPARAM)my_strcmp);
 	}
 
 	inline void GetChildren(HWND *pedit,HWND *plistbox)
@@ -847,17 +847,17 @@ public:
 
 	inline int SetRange(int min,int max)
 	{
-		return SendMessage(PBM_SETRANGE,(WPARAM)min,(LPARAM)max);
+		return (int)SendMessage(PBM_SETRANGE,(WPARAM)min,(LPARAM)max);
 	}
 
 	inline int SetStep(int stepinc)
 	{
-		return SendMessage(PBM_SETSTEP,(WPARAM)stepinc);
+		return (int)SendMessage(PBM_SETSTEP,(WPARAM)stepinc);
 	}
 
 	inline int SetPos(int nPos)
 	{
-		return SendMessage(PBM_SETPOS,(WPARAM)nPos);
+		return (int)SendMessage(PBM_SETPOS,(WPARAM)nPos);
 	}
 
 	inline void SetDeltaPos(int posInc)
@@ -879,33 +879,33 @@ public:
 
 	inline int SetRange(int min,int max)
 	{
-		return SendMessage(TBM_SETRANGE,(WPARAM)min,(LPARAM)max);
+		return (int)SendMessage(TBM_SETRANGE,(WPARAM)min,(LPARAM)max);
 	}
 
-	inline int GetMin(){ return SendMessage(TBM_GETMIN); }
+	inline int GetMin(){ return (int)SendMessage(TBM_GETMIN); }
 
-	inline int GetMax(){ return SendMessage(TBM_GETMAX); }
+	inline int GetMax(){ return (int)SendMessage(TBM_GETMAX); }
 
 	inline void SetPos(int pos)
 	{
 		SendMessage(TBM_SETPOS,(WPARAM)pos);
 	}
 
-	inline int GetPos(){ return SendMessage(TBM_GETPOS); }
+	inline int GetPos(){ return (int)SendMessage(TBM_GETPOS); }
 
 	inline int SetLineSize(int linesize)
 	{
-		return SendMessage(TBM_SETLINESIZE,(WPARAM)linesize);
+		return (int)SendMessage(TBM_SETLINESIZE,(WPARAM)linesize);
 	}
 
-	inline int GetLineSize(){ return SendMessage(TBM_GETLINESIZE); }
+	inline int GetLineSize(){ return (int)SendMessage(TBM_GETLINESIZE); }
 
 	inline int SetPageSize(int pagesize)
 	{
-		return SendMessage(TBM_SETPAGESIZE,(WPARAM)pagesize);
+		return (int)SendMessage(TBM_SETPAGESIZE,(WPARAM)pagesize);
 	}
 
-	inline int GetPageSize(){ return SendMessage(TBM_GETPAGESIZE); }
+	inline int GetPageSize(){ return (int)SendMessage(TBM_GETPAGESIZE); }
 
 	inline void SetTip(const char* starttip,const char* endtip)
 	{
@@ -914,24 +914,24 @@ public:
 
 	inline int GetTip(char* starttip,char* endtip)
 	{
-		return SendMessage(TBM_GETTIP,(WPARAM)starttip,(LPARAM)endtip);
+		return (int)SendMessage(TBM_GETTIP,(WPARAM)starttip,(LPARAM)endtip);
 	}
 
 	inline int SetTickFreq(int tickfreq)
 	{
-		return SendMessage(TBM_SETTICKFREQ,(WPARAM)tickfreq);
+		return (int)SendMessage(TBM_SETTICKFREQ,(WPARAM)tickfreq);
 	}
 
-	inline int GetTickFreq(){ return SendMessage(TBM_GETTICKFREQ); }
+	inline int GetTickFreq(){ return (int)SendMessage(TBM_GETTICKFREQ); }
 
 	inline int SetMin(int min)
 	{
-		return SendMessage(TBM_SETMIN,(WPARAM)min);
+		return (int)SendMessage(TBM_SETMIN,(WPARAM)min);
 	}
 
 	inline int SetMax(int max)
 	{
-		return SendMessage(TBM_SETMAX,(WPARAM)max);
+		return (int)SendMessage(TBM_SETMAX,(WPARAM)max);
 	}
 };
 
@@ -954,7 +954,7 @@ public:
 
 	inline int AddItem(PTOOLBARITEMINFO ptbii)
 	{
-		return SendMessage(TBM_ADDITEM,0,(LPARAM)ptbii);
+		return (int)SendMessage(TBM_ADDITEM,0,(LPARAM)ptbii);
 	}
 
 	inline int AddItem(int insPos,int Id,char* NBmpPath,char* HBmpPath,char* DBmpPath,DWORD dwAddData=0)
@@ -1000,7 +1000,7 @@ public:
 	inline int AddItem(PNTBITEMINFO pntbii)
 	{
 		//printf("addItem:%d\n",pntbii);
-		return SendMessage(NTBM_ADDITEM,0,(LPARAM)pntbii);
+		return (int)SendMessage(NTBM_ADDITEM,0,(LPARAM)pntbii);
 		//return 0;
 	}
 	inline int AddItem(DWORD which,DWORD flags,int id,const char* text,
@@ -1030,12 +1030,12 @@ public:
 
 	inline int GetItem(int id,PNTBITEMINFO pntbii)
 	{
-		return SendMessage(NTBM_GETITEM,(WPARAM)id,(LPARAM)pntbii);
+		return (int)SendMessage(NTBM_GETITEM,(WPARAM)id,(LPARAM)pntbii);
 	}
 
 	inline int SetItem(int id,PNTBITEMINFO pntbii)
 	{
-		return SendMessage(NTBM_SETITEM,(WPARAM)id,(LPARAM)pntbii);
+		return (int)SendMessage(NTBM_SETITEM,(WPARAM)id,(LPARAM)pntbii);
 	}
 
 	inline int SetItem(int id,DWORD which,DWORD flags,const char* text,
@@ -1058,12 +1058,12 @@ public:
 
 	inline int EnableItem(int id,BOOL fEnable=TRUE)
 	{
-		return SendMessage(NTBM_ENABLEITEM,(WPARAM)id,(LPARAM)fEnable);
+		return (int)SendMessage(NTBM_ENABLEITEM,(WPARAM)id,(LPARAM)fEnable);
 	}
 
 	inline int SetBitmap(NTBINFO* pntbi)
 	{
-		return SendMessage(NTBM_SETBITMAP,0,(LPARAM)pntbi);
+		return (int)SendMessage(NTBM_SETBITMAP,0,(LPARAM)pntbi);
 	}
 	inline int SetBitmap(PBITMAP image,int h_cell,int w_cell,int nr_cells,int nr_cols=4)
 	{
@@ -1103,7 +1103,7 @@ public:
 
 	inline int AddItem(PCOOLBARITEMINFO pcbii)
 	{
-		return SendMessage(CBM_ADDITEM,0,(LPARAM)pcbii);
+		return (int)SendMessage(CBM_ADDITEM,0,(LPARAM)pcbii);
 	}
 
 	inline int AddItem(int insPos,int id,int ItemType,PBITMAP Bmp,const char*ItemHint,const char* Caption,DWORD dwAddData=0)
@@ -1121,7 +1121,7 @@ public:
 
 	inline int EnableItem(int id,BOOL fEnable=TRUE)
 	{
-		return SendMessage(CBM_ENABLE,(WPARAM)id,(LPARAM)fEnable);
+		return (int)SendMessage(CBM_ENABLE,(WPARAM)id,(LPARAM)fEnable);
 	}
 };
 
@@ -1138,17 +1138,17 @@ public:
 
 	inline int AddCtrls(int ctrlNum,PCTRLDATA pctrls)
 	{
-		return SendMessage(SVM_ADDCTRLS,(WPARAM)ctrlNum,(LPARAM)pctrls);
+		return (int)SendMessage(SVM_ADDCTRLS,(WPARAM)ctrlNum,(LPARAM)pctrls);
 	}
 
 	inline int SetContWidth(int cont_w)
 	{
-		return SendMessage(SVM_SETCONTWIDTH,(WPARAM)cont_w);
+		return (int)SendMessage(SVM_SETCONTWIDTH,(WPARAM)cont_w);
 	}
 
 	inline int SetContHeight(int cont_h)
 	{
-		return SendMessage(SVM_SETCONTHEIGHT,(WPARAM)cont_h);
+		return (int)SendMessage(SVM_SETCONTHEIGHT,(WPARAM)cont_h);
 	}
 
 	inline HWND GetCtrl(int id)
@@ -1156,76 +1156,76 @@ public:
 		return (HWND)SendMessage(SVM_GETCTRL,(WPARAM)id);
 	}
 
-	inline int ResetContent(){ return SendMessage(SVM_RESETCONTENT); }
+	inline int ResetContent(){ return (int)SendMessage(SVM_RESETCONTENT); }
 
 	inline int GetMargins(PRECT prcMargin)
 	{
-		return SendMessage(SVM_GETMARGINS,0,(LPARAM)prcMargin);
+		return (int)SendMessage(SVM_GETMARGINS,0,(LPARAM)prcMargin);
 	}
 
 	inline int SetMargins(const PRECT prcMargin)
 	{
-		return SendMessage(SVM_SETMARGINS,0,(LPARAM)prcMargin);
+		return (int)SendMessage(SVM_SETMARGINS,0,(LPARAM)prcMargin);
 	}
 
-	inline int GetLeftMargin(){ return SendMessage(SVM_GETLEFTMARGIN); }
+	inline int GetLeftMargin(){ return (int)SendMessage(SVM_GETLEFTMARGIN); }
 
-	inline int GetTopMargin(){ return SendMessage(SVM_GETTOPMARGIN); }
+	inline int GetTopMargin(){ return (int)SendMessage(SVM_GETTOPMARGIN); }
 
-	inline int GetRightMargin(){ return SendMessage(SVM_GETRIGHTMARGIN); }
+	inline int GetRightMargin(){ return (int)SendMessage(SVM_GETRIGHTMARGIN); }
 
-	inline int GetBottomMargin(){ return SendMessage(SVM_GETBOTTOMMARGIN); }
+	inline int GetBottomMargin(){ return (int)SendMessage(SVM_GETBOTTOMMARGIN); }
 
-	inline int GetVisibleWidth(){ return SendMessage(SVM_GETVISIBLEWIDTH); }
+	inline int GetVisibleWidth(){ return (int)SendMessage(SVM_GETVISIBLEWIDTH); }
 
-	inline int GetVisibleHeight(){ return SendMessage(SVM_GETVISIBLEHEIGHT); }
+	inline int GetVisibleHeight(){ return (int)SendMessage(SVM_GETVISIBLEHEIGHT); }
 
-	inline int GetContWidth(){ return SendMessage(SVM_GETCONTWIDTH); }
+	inline int GetContWidth(){ return (int)SendMessage(SVM_GETCONTWIDTH); }
 
-	inline int GetContHeight(){ return SendMessage(SVM_GETCONTHEIGHT); }
+	inline int GetContHeight(){ return (int)SendMessage(SVM_GETCONTHEIGHT); }
 
 	inline int SetContRange(int cont_w,int cont_h)
 	{
-		return SendMessage(SVM_SETCONTRANGE,(WPARAM)cont_w,(LPARAM)cont_h);
+		return (int)SendMessage(SVM_SETCONTRANGE,(WPARAM)cont_w,(LPARAM)cont_h);
 	}
 
-	inline int GetContentX(){ return SendMessage(SVM_GETCONTENTX); }
+	inline int GetContentX(){ return (int)SendMessage(SVM_GETCONTENTX); }
 
-	inline int GetContentY(){ return SendMessage(SVM_GETCONTENTY); }
+	inline int GetContentY(){ return (int)SendMessage(SVM_GETCONTENTY); }
 
 	inline int SetContenPos(int cont_x,int cont_y)
 	{
-		return SendMessage(SVM_SETCONTPOS,(WPARAM)cont_x,(LPARAM)cont_y);
+		return (int)SendMessage(SVM_SETCONTPOS,(WPARAM)cont_x,(LPARAM)cont_y);
 	}
 
 	inline int SetContainerProc(WNDPROC pfn)
 	{
-		return SendMessage(SVM_SETCONTAINERPROC,0,(LPARAM)pfn);
+		return (int)SendMessage(SVM_SETCONTAINERPROC,0,(LPARAM)pfn);
 	}
 
-	inline int GetFocusChild(){ return SendMessage(SVM_GETFOCUSCHILD); }
+	inline int GetFocusChild(){ return (int)SendMessage(SVM_GETFOCUSCHILD); }
 
-	inline int GetHScrollVal(){ return SendMessage(SVM_GETHSCROLLVAL); }
+	inline int GetHScrollVal(){ return (int)SendMessage(SVM_GETHSCROLLVAL); }
 
-	inline int GetVScrollVal(){ return SendMessage(SVM_GETVSCROLLVAL); }
+	inline int GetVScrollVal(){ return (int)SendMessage(SVM_GETVSCROLLVAL); }
 
-	inline int GetHScrollPageVal(){ return SendMessage(SVM_GETHSCROLLPAGEVAL); }
+	inline int GetHScrollPageVal(){ return (int)SendMessage(SVM_GETHSCROLLPAGEVAL); }
 
-	inline int GetVScrollPageVal(){ return SendMessage(SVM_GETVSCROLLPAGEVAL); }
+	inline int GetVScrollPageVal(){ return (int)SendMessage(SVM_GETVSCROLLPAGEVAL); }
 
 	inline int SetScrollVal(int hval,int vval)
 	{
-		return SendMessage(SVM_SETSCROLLVAL,(WPARAM)hval,(LPARAM)vval);
+		return (int)SendMessage(SVM_SETSCROLLVAL,(WPARAM)hval,(LPARAM)vval);
 	}
 
 	inline int SetScrollPageVal(int hval,int vval)
 	{
-		return SendMessage(SVM_SETSCROLLPAGEVAL,(WPARAM)hval,(LPARAM)vval);
+		return (int)SendMessage(SVM_SETSCROLLPAGEVAL,(WPARAM)hval,(LPARAM)vval);
 	}
 
 	inline int MakePosVisible(int pos_x,int pos_y)
 	{
-		return SendMessage(SVM_MAKEPOSVISIBLE,(WPARAM)pos_x,(LPARAM)pos_y);
+		return (int)SendMessage(SVM_MAKEPOSVISIBLE,(WPARAM)pos_x,(LPARAM)pos_y);
 	}
 
 };
@@ -1242,22 +1242,22 @@ public:
 
 	inline int AddItem(PSVITEMINFO psvii,HSVITEM *phsvi)
 	{
-		return SendMessage(SVM_ADDITEM,(WPARAM)phsvi,(LPARAM)psvii);
+		return (int)SendMessage(SVM_ADDITEM,(WPARAM)phsvi,(LPARAM)psvii);
 	}
 
 	inline int DeleteItem(int nItem,HSVITEM hsvi)
 	{
-		return SendMessage(SVM_DELITEM,(WPARAM)nItem,(LPARAM)hsvi);
+		return (int)SendMessage(SVM_DELITEM,(WPARAM)nItem,(LPARAM)hsvi);
 	}
 
 	inline int SetItemDraw(SVITEM_DRAWFUNC pfn)
 	{
-		return SendMessage(SVM_SETITEMDRAW,0,(LPARAM)pfn);
+		return (int)SendMessage(SVM_SETITEMDRAW,0,(LPARAM)pfn);
 	}
 
 	inline int SetItemOPS(PSVITEMOPS piop)
 	{
-		return SendMessage(SVM_SETITEMOPS,0,(LPARAM)piop);
+		return (int)SendMessage(SVM_SETITEMOPS,0,(LPARAM)piop);
 	}
 
 	inline int SetItemOPS(SVITEM_INITFUNC initItem,SVITEM_DESTROYFUNC destroyItem,SVITEM_DRAWFUNC drawItem)
@@ -1269,36 +1269,36 @@ public:
 		return SetItemOPS(&iop);
 	}
 
-	inline int GetCurSel(){ return SendMessage(SVM_GETCURSEL); }
+	inline int GetCurSel(){ return (int)SendMessage(SVM_GETCURSEL); }
 
 	inline int SelectItem(int nItem,BOOL bSel=TRUE)
 	{
-		return SendMessage(SVM_SELECTITEM,(WPARAM)nItem,(LPARAM)bSel);
+		return (int)SendMessage(SVM_SELECTITEM,(WPARAM)nItem,(LPARAM)bSel);
 	}
 
 	inline int ShowItem(int nItem,HSVITEM hsvi)
 	{
-		return SendMessage(SVM_SHOWITEM,(WPARAM)nItem,(LPARAM)hsvi);
+		return (int)SendMessage(SVM_SHOWITEM,(WPARAM)nItem,(LPARAM)hsvi);
 	}
 
 	inline int ChooseItem(int nItem,HSVITEM hsvi)
 	{
-		return SendMessage(SVM_CHOOSEITEM,(WPARAM)nItem,(LPARAM)hsvi);
+		return (int)SendMessage(SVM_CHOOSEITEM,(WPARAM)nItem,(LPARAM)hsvi);
 	}
 
 	inline int SetCurSel(int nItem,BOOL bVisible=TRUE)
 	{
-		return SendMessage(SVM_SETCURSEL,(WPARAM)nItem,(LPARAM)bVisible);
+		return (int)SendMessage(SVM_SETCURSEL,(WPARAM)nItem,(LPARAM)bVisible);
 	}
 
 	inline int SetItemInit(SVITEM_INITFUNC pfn)
 	{
-		return SendMessage(SVM_SETITEMINIT,0,(LPARAM)pfn);
+		return (int)SendMessage(SVM_SETITEMINIT,0,(LPARAM)pfn);
 	}
 
 	inline int SetItemDestroy(SVITEM_DESTROYFUNC pfn)
 	{
-		return SendMessage(SVM_SETITEMDESTROY,0,(LPARAM)pfn);
+		return (int)SendMessage(SVM_SETITEMDESTROY,0,(LPARAM)pfn);
 	}
 
 	inline int SetItemCmp(SVITEM_CMP pfn)
@@ -1308,34 +1308,34 @@ public:
 
 	inline int SortItems(SVITEM_CMP pfn)
 	{
-		return SendMessage(SVM_SORTITEMS,0,(LPARAM)pfn);
+		return (int)SendMessage(SVM_SORTITEMS,0,(LPARAM)pfn);
 	}
 
-	inline int GetItemCount(){ return SendMessage(SVM_GETITEMCOUNT); }
+	inline int GetItemCount(){ return (int)SendMessage(SVM_GETITEMCOUNT); }
 
 	inline int GetItemAddData(int nItem,HSVITEM hsvi)
 	{
-		return SendMessage(SVM_GETITEMADDDATA,(WPARAM)nItem,(LPARAM)hsvi);
+		return (int)SendMessage(SVM_GETITEMADDDATA,(WPARAM)nItem,(LPARAM)hsvi);
 	}
 
 	inline int SetItemAddData(int nItem,int addData)
 	{
-		return SendMessage(SVM_SETITEMADDDATA,(WPARAM)nItem,(LPARAM)addData);
+		return (int)SendMessage(SVM_SETITEMADDDATA,(WPARAM)nItem,(LPARAM)addData);
 	}
 
 	inline int RefreshItem(int nItem,HSVITEM hsvi)
 	{
-		return SendMessage(SVM_REFRESHITEM,(WPARAM)nItem,(LPARAM)hsvi);
+		return (int)SendMessage(SVM_REFRESHITEM,(WPARAM)nItem,(LPARAM)hsvi);
 	}
 
 	inline int SetItemHeight(int nItem,int height)
 	{
-		return SendMessage(SVM_SETITEMHEIGHT,(WPARAM)nItem,(LPARAM)height);
+		return (int)SendMessage(SVM_SETITEMHEIGHT,(WPARAM)nItem,(LPARAM)height);
 	}
 
 	inline int GetFirstVisibleItem()
 	{
-		return SendMessage(SVM_GETFIRSTVISIBLEITEM);
+		return (int)SendMessage(SVM_GETFIRSTVISIBLEITEM);
 	}
 };
 
@@ -1371,12 +1371,12 @@ public:
 
 	inline int DeleteTree(GHANDLE item)
 	{
-		return SendMessage(TVM_DELTREE,(WPARAM)item);
+		return (int)SendMessage(TVM_DELTREE,(WPARAM)item);
 	}
 
 	inline int SearchItem(GHANDLE item,const char* string)
 	{
-		return SendMessage(TVM_SEARCHITEM,(WPARAM)item,(LPARAM)string);
+		return (int)SendMessage(TVM_SEARCHITEM,(WPARAM)item,(LPARAM)string);
 	}
 
 	inline GHANDLE FindChild(GHANDLE item,const char* string)
@@ -1384,7 +1384,7 @@ public:
 		return (GHANDLE)SendMessage(TVM_FINDCHILD,(WPARAM)item,(LPARAM)string);
 	}
 
-	inline GHANDLE GetSelItem(){ return SendMessage(TVM_GETSELITEM); }
+	inline GHANDLE GetSelItem(){ return (GHANDLE)SendMessage(TVM_GETSELITEM); }
 
 	inline GHANDLE SetSelItem(GHANDLE item)
 	{
@@ -1398,12 +1398,12 @@ public:
 
 	inline int GetItemText(GHANDLE item,char* buffer)
 	{
-		return SendMessage(TVM_GETITEMTEXT,(WPARAM)item,(LPARAM)buffer);
+		return (int)SendMessage(TVM_GETITEMTEXT,(WPARAM)item,(LPARAM)buffer);
 	}
 
 	inline int GetItemInfo(GHANDLE item,TVITEMINFO *ptvii)
 	{
-		return SendMessage(TVM_GETITEMINFO,(WPARAM)item,(LPARAM)ptvii);
+		return (int)SendMessage(TVM_GETITEMINFO,(WPARAM)item,(LPARAM)ptvii);
 	}
 
 	inline DWORD GetItemAddData(GHANDLE item)
@@ -1422,7 +1422,7 @@ public:
 
 	inline int SetItemInfo(GHANDLE item,TVITEMINFO *ptvii)
 	{
-		return SendMessage(TVM_SETITEMINFO,(WPARAM)item,(LPARAM)ptvii);
+		return (int)SendMessage(TVM_SETITEMINFO,(WPARAM)item,(LPARAM)ptvii);
 	}
 
 	inline int SetItemInfo(GHANDLE item,const char* text,DWORD dwFlags=0,DWORD dwAddData=0)
@@ -1473,7 +1473,7 @@ public:
 
 	inline GHANDLE GetRelatedItem(GHANDLE item,int related)
 	{
-		return SendMessage(TVM_GETRELATEDITEM,(WPARAM)related,(LPARAM)item);
+		return (GHANDLE)SendMessage(TVM_GETRELATEDITEM,(WPARAM)related,(LPARAM)item);
 	}
 	inline GHANDLE GetParentItem(GHANDLE item)
 	{
@@ -1494,7 +1494,7 @@ public:
 
 	inline int SetStrCmpFunc(int(*my_strcmp)(const char*,const char*,size_t))
 	{
-		return SendMessage(TVM_SETSTRCMPFUNC,0,(LPARAM)my_strcmp);
+		return (int)SendMessage(TVM_SETSTRCMPFUNC,0,(LPARAM)my_strcmp);
 	}
 };
 
@@ -1526,7 +1526,7 @@ public:
 
 	inline int FillSubitem(HLVITEM pi,PLVSUBITEM plvitem)
 	{
-		return SendMessage(LVM_FILLSUBITEM,(WPARAM)pi,(LPARAM)plvitem);
+		return (int)SendMessage(LVM_FILLSUBITEM,(WPARAM)pi,(LPARAM)plvitem);
 	}
 
 	inline int FillSubitem(PLVSUBITEM plvsubitem)
@@ -1567,22 +1567,22 @@ public:
 
 	inline int DeleteItem(int nRow,HLVITEM pi)
 	{
-		return SendMessage(LVM_DELITEM,(WPARAM)nRow,(LPARAM)pi);
+		return (int)SendMessage(LVM_DELITEM,(WPARAM)nRow,(LPARAM)pi);
 	}
 
 	inline int ClearSubitem(HLVITEM pi,PLVSUBITEM psubitem=NULL)
 	{
-		return SendMessage(LVM_CLEARSUBITEM,(WPARAM)pi,(LPARAM)psubitem);
+		return (int)SendMessage(LVM_CLEARSUBITEM,(WPARAM)pi,(LPARAM)psubitem);
 	}
 
 	inline int DeleteColumn(int nCol)
 	{
-		return SendMessage(LVM_DELCOLUMN,(WPARAM)nCol);
+		return (int)SendMessage(LVM_DELCOLUMN,(WPARAM)nCol);
 	}
 
 	inline int ColumnSort(int nCol)
 	{
-		return SendMessage(LVM_COLSORT,(WPARAM)nCol);
+		return (int)SendMessage(LVM_COLSORT,(WPARAM)nCol);
 	}
 
 	inline void SetSubitemColor(HLVITEM pi,PLVSUBITEM psubitem)
@@ -1610,7 +1610,7 @@ public:
 
 	inline int GetSubitemText(HLVITEM pi,PLVSUBITEM plvfi)
 	{
-		return SendMessage(LVM_GETSUBITEMTEXT,(WPARAM)pi,(LPARAM)plvfi);
+		return (int)SendMessage(LVM_GETSUBITEMTEXT,(WPARAM)pi,(LPARAM)plvfi);
 	}
 
 	inline int GetSubitemText(HLVITEM pi,int subItem,char *buf,int nMax)
@@ -1639,9 +1639,9 @@ public:
 		return GetSubitemText((HLVITEM)NULL,&lvSubitem);
 	}
 
-	inline int GetItemCount(){ return SendMessage(LVM_GETITEMCOUNT); }
+	inline int GetItemCount(){ return (int)SendMessage(LVM_GETITEMCOUNT); }
 
-	inline int GetColumnCount(){ return SendMessage(LVM_GETCOLUMNCOUNT); }
+	inline int GetColumnCount(){ return (int)SendMessage(LVM_GETCOLUMNCOUNT); }
 
 	inline HLVITEM GetSelectedItem(){ return (HLVITEM)SendMessage(LVM_GETSELECTEDITEM); }
 
@@ -1649,7 +1649,7 @@ public:
 
 	inline int ModifyHead(PLVCOLUMN pcol)
 	{
-		return SendMessage(LVM_MODIFYHEAD,0,(LPARAM)pcol);
+		return (int)SendMessage(LVM_MODIFYHEAD,0,(LPARAM)pcol);
 	}
 
 	inline void SelectItem(int nRow,HLVITEM pi)
@@ -1664,7 +1664,7 @@ public:
 
 	inline int GetSubitemLen(HLVITEM pi,PLVSUBITEM plvsubitem)
 	{
-		return SendMessage(LVM_GETSUBITEMLEN,(WPARAM)pi,(LPARAM)plvsubitem);
+		return (int)SendMessage(LVM_GETSUBITEMLEN,(WPARAM)pi,(LPARAM)plvsubitem);
 	}
 
 	inline int GetSubitemLen(HLVITEM pi,int subItem)
@@ -1695,12 +1695,12 @@ public:
 
 	inline int SetColumn(PLVCOLUMN pcol)
 	{
-		return SendMessage(LVM_SETCOLUMN,0,(LPARAM)pcol);
+		return (int)SendMessage(LVM_SETCOLUMN,0,(LPARAM)pcol);
 	}
 
 	inline int SetSubitemText(HLVITEM pi,PLVSUBITEM plvsubitem)
 	{
-		return SendMessage(LVM_SETSUBITEMTEXT,(WPARAM)pi,(LPARAM)plvsubitem);
+		return (int)SendMessage(LVM_SETSUBITEMTEXT,(WPARAM)pi,(LPARAM)plvsubitem);
 	}
 
 	inline int SetSubitemText(HLVITEM pi,int subItem,const char* szText)
@@ -1732,7 +1732,7 @@ public:
 
 	inline int SetSubitem(HLVITEM pi,PLVSUBITEM plvsubitem)
 	{
-		return SendMessage(LVM_SETSUBITEM,(WPARAM)pi,(LPARAM)plvsubitem);
+		return (int)SendMessage(LVM_SETSUBITEM,(WPARAM)pi,(LPARAM)plvsubitem);
 	}
 	inline int SetSubitem(PLVSUBITEM plvsubitem)
 	{
@@ -1759,12 +1759,12 @@ public:
 
 	inline int GetColumnWidth(int nCol)
 	{
-		return SendMessage(LVM_GETCOLUMNWIDTH,(WPARAM)nCol);
+		return (int)SendMessage(LVM_GETCOLUMNWIDTH,(WPARAM)nCol);
 	}
 
 	inline int GetItem(HLVITEM pi,PLVITEM pitem_info)
 	{
-		return SendMessage(LVM_GETITEM,(WPARAM)pi,(LPARAM)pitem_info);
+		return (int)SendMessage(LVM_GETITEM,(WPARAM)pi,(LPARAM)pitem_info);
 	}
 
 	inline DWORD GetItemData(HLVITEM pi)
@@ -1780,23 +1780,23 @@ public:
 
 	inline int GetItemState(HLVITEM pi,UINT mask)
 	{
-		return SendMessage(LVM_GETITEMSTATE,(WPARAM)pi,(LPARAM)mask);
+		return (int)SendMessage(LVM_GETITEMSTATE,(WPARAM)pi,(LPARAM)mask);
 	}
 
 	inline int SetItemState(HLVITEM pi,UINT mask)
 	{
-		return SendMessage(LVM_SETITEMSTATE,(WPARAM)pi,(LPARAM)mask);
+		return (int)SendMessage(LVM_SETITEMSTATE,(WPARAM)pi,(LPARAM)mask);
 	}
 
-	inline int GetSelectedColumn(){ return SendMessage(LVM_GETSELECTEDCOLUMN); }
+	inline int GetSelectedColumn(){ return (int)SendMessage(LVM_GETSELECTEDCOLUMN); }
 
 	inline BOOL GetSelectedItemRect(RECT* prt){
-		return SendMessage(LVM_GETSELECTEDITEMRECT, 0, (LPARAM)prt);
+		return (int)SendMessage(LVM_GETSELECTEDITEMRECT, 0, (LPARAM)prt);
 	}
 
-	inline int GetSelectedCount(){ return SendMessage(LVM_GETSELECTEDCOUNT); }
+	inline int GetSelectedCount(){ return (int)SendMessage(LVM_GETSELECTEDCOUNT); }
 
-	inline int GetTopvisible(){ return SendMessage(LVM_GETTOPVISIBLE); }
+	inline int GetTopvisible(){ return (int)SendMessage(LVM_GETTOPVISIBLE); }
 
 	inline BOOL SortItems(PLVSORTDATA sortData,PFNLVCOMPARE pfnCompare)
 	{
@@ -1820,7 +1820,7 @@ public:
 
 	inline int SetItemAddData(HLVITEM pi,DWORD dwAddData)
 	{
-		return SendMessage(LVM_SETITEMADDDATA,(WPARAM)pi,(LPARAM)dwAddData);
+		return (int)SendMessage(LVM_SETITEMADDDATA,(WPARAM)pi,(LPARAM)dwAddData);
 	}
 
 	inline void ChooseItem(HLVITEM pi,int nRow)
@@ -1830,7 +1830,7 @@ public:
 
 	inline int SetStrCmpFunc(int (*my_strcmp)(const char*,const char*,size_t))
 	{
-		return SendMessage(LVM_SETSTRCMPFUNC,0,(LPARAM)my_strcmp);
+		return (int)SendMessage(LVM_SETSTRCMPFUNC,0,(LPARAM)my_strcmp);
 	}
 
 	inline HLVITEM GetRelatedItem(HLVITEM item,int related)
@@ -1865,27 +1865,27 @@ public:
 
 	DECLARE_CTRL_CLASS(CTRL_MONTHCALENDAR)
 
-	inline int GetCurDay(){ return SendMessage(MCM_GETCURDAY); }
+	inline int GetCurDay(){ return (int)SendMessage(MCM_GETCURDAY); }
 	inline void SetCurDay(int day){ SendMessage(MCM_SETCURDAY,(WPARAM)day); }
 
-	inline int GetCurMonth(){ return SendMessage(MCM_GETCURMONTH); }
+	inline int GetCurMonth(){ return (int)SendMessage(MCM_GETCURMONTH); }
 	inline void SetCurMonth(int month){ SendMessage(MCM_SETCURMONTH,(WPARAM)month); }
 
-	inline int GetCurYear(){ return SendMessage(MCM_GETCURYEAR); }
+	inline int GetCurYear(){ return (int)SendMessage(MCM_GETCURYEAR); }
 	inline void SetCurYear(int year){ SendMessage(MCM_SETCURYEAR,(WPARAM)year); }
 
-	inline int GetCurWeekday(){ return SendMessage(MCM_GETCURWEEKDAY); }
+	inline int GetCurWeekday(){ return (int)SendMessage(MCM_GETCURWEEKDAY); }
 
-	inline int GetCurMonthLen(){ return SendMessage(MCM_GETCURMONLEN); }
+	inline int GetCurMonthLen(){ return (int)SendMessage(MCM_GETCURMONLEN); }
 
 	inline void SetToday(){ SendMessage(MCM_SETTODAY); }
 
-	inline int GetFirstWeekday(){ return SendMessage(MCM_GETFIRSTWEEKDAY); }
+	inline int GetFirstWeekday(){ return (int)SendMessage(MCM_GETFIRSTWEEKDAY); }
 
 	inline void GetCurDate(PSYSTEMTIME psysTm){ SendMessage(MCM_GETCURDATE,0,(LPARAM)psysTm); }
 
-	inline int GetMinRerqWidth(){ return SendMessage(MCM_GETMINREQRECTW); }
-	inline int GetMinRerqHeight(){ return SendMessage(MCM_GETMINREQRECTH); }
+	inline int GetMinRerqWidth(){ return (int)SendMessage(MCM_GETMINREQRECTW); }
+	inline int GetMinRerqHeight(){ return (int)SendMessage(MCM_GETMINREQRECTH); }
 
 	inline void SetCurDate(PSYSTEMTIME psysTm){ SendMessage(MCM_SETCURDATE,0,(LPARAM)psysTm); }
 
@@ -1910,7 +1910,7 @@ public:
 
 	inline BOOL GetSpinInfo(SPININFO *pspinfo)
 	{
-		return SendMessage (SPM_GETINFO, 0, (LPARAM)pspinfo)==0 ;
+		return (BOOL)SendMessage (SPM_GETINFO, 0, (LPARAM)pspinfo)==0 ;
 	}
 
 	inline int GetMax()
@@ -1939,7 +1939,7 @@ public:
 
 	inline BOOL SetSpinInfo(PSPININFO pspinfo)
 	{
-		return SendMessage(SPM_SETINFO,0,(LPARAM)pspinfo)==0;
+		return (BOOL)SendMessage(SPM_SETINFO,0,(LPARAM)pspinfo)==0;
 	}
 
 	inline BOOL SetSpinInfo(int max,int min,int cur)
@@ -1985,7 +1985,7 @@ public:
 	virtual void OnCancel(LPARAM lParam){}
 
 protected:
-	BOOL WndProc(int iMsg,WPARAM wParam,LPARAM lParam,int *pret);
+	BOOL WndProc(UINT iMsg,WPARAM wParam,LPARAM lParam,int *pret);
 };
 
 
@@ -2006,7 +2006,7 @@ public:
 	inline HWND GetActivePageHandle(){ return (HWND)SendMessage(PSM_GETACTIVEPAGE);}
 	inline MGUserCtrl* GetActivePage(){ return (MGUserCtrl*)MGWnd::WndFromHandle(GetActivePageHandle()); }
 	inline int  GetActiveIndex(){ return (int)SendMessage(PSM_GETACTIVEINDEX); }
-	inline BOOL SetActiveIndex(int nPage){ return SendMessage(PSM_SETACTIVEINDEX,(WPARAM)nPage)==PS_OKAY; }
+	inline BOOL SetActiveIndex(int nPage){ return (BOOL)SendMessage(PSM_SETACTIVEINDEX,(WPARAM)nPage)==PS_OKAY; }
 	inline HWND GetPageHandle(int index){ return (HWND)SendMessage(PSM_GETPAGE,(WPARAM)index); }
 	inline MGSheetPage* GetPage(int index){ return (MGSheetPage*)MGWnd::WndFromHandle(GetPageHandle(index)); }
 	inline BOOL GetPageIndex(HWND hWndPage){ return (SendMessage(PSM_GETPAGEINDEX,(WPARAM)hWndPage)==PS_OKAY); }
@@ -2047,7 +2047,7 @@ public:
 	}
 
 	inline int SheetCmd(WPARAM wParam,LPARAM lParam=0){
-		return SendMessage(PSM_SHEETCMD,wParam,lParam);
+		return (int)SendMessage(PSM_SHEETCMD,wParam,lParam);
 	}
 	inline void OkaySheets(){ SheetCmd(IDOK); }
 	inline void CancelSheets(){ SheetCmd(IDCANCEL); }

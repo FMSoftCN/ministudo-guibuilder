@@ -267,7 +267,7 @@ void FontValueEditor::setValue(const char *font_name)
 
 ///////////////////////////
 //color
-int ColorValueEditor::wndProc(int message, WPARAM wParam, LPARAM lParam)
+LRESULT ColorValueEditor::wndProc(UINT message, WPARAM wParam, LPARAM lParam)
 {
 	if(message == MSG_PAINT){
 		RECT rt;
@@ -378,7 +378,7 @@ static DLGTEMPLATE _multi_text_editor_dlg = {
         0
 };
 
-int MutliStringEditor::_multiTextEditProc(HWND hDlg, int message, WPARAM wParam, LPARAM lParam)
+LRESULT MutliStringEditor::_multiTextEditProc(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	MutliStringEditor *te;
 
@@ -676,7 +676,7 @@ void EnumValueEditor::onSaveValue()
 
 	bModified = FALSE;
 
-	int cur_sel = SendMessage(hwnd,CB_GETCURSEL, 0 , 0);
+	LRESULT cur_sel = SendMessage(hwnd,CB_GETCURSEL, 0 , 0);
 	if(cur_sel < 0)
 		return ;
 	EnumValueType::Option * option = (EnumValueType::Option *)SendMessage(hwnd, CB_GETITEMADDDATA, cur_sel, 0);
@@ -705,7 +705,7 @@ BOOL EnumValueEditor::initEditor()
 		{
 			EnumValueType::Option* option = *it;
 			//DP(0x20, "--- option caption=%s", option->caption);
-			int idx = SendMessage (hwnd, CB_ADDSTRING, 0,
+			LRESULT idx = SendMessage (hwnd, CB_ADDSTRING, 0,
 					(LPARAM)(option->caption?option->caption:option->name));
 			SendMessage(hwnd, CB_SETITEMADDDATA, idx, (LPARAM)option);
 			if(evt->equal(option->value, value)){

@@ -506,7 +506,7 @@ Panel * PanelLayout::loadPanel(int row, int col, xmlNodePtr node, PanelManager *
 }
 
 ///////////////////////////
-static int _panel_proc(HWND hwnd, int message, WPARAM wParam, LPARAM lParam)
+static LRESULT _panel_proc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	if(message == MSG_SIZECHANGED)
 	{
@@ -543,9 +543,9 @@ HWND PanelLayout::getWindowOwner(int col, int row, const char* strCaption/* = NU
 		memset(&panel_template, 0, sizeof(DLGTEMPLATE));
 		panel_template.caption = _(strCaption);
 
-		int idx = ::SendMessage(howner, PSM_ADDPAGE, (WPARAM)&panel_template, (LPARAM) _panel_proc);
+		LRESULT idx = ::SendMessage(howner, PSM_ADDPAGE, (WPARAM)&panel_template, (LPARAM) _panel_proc);
 
-		if(idx!= PS_ERR)
+		if(idx != PS_ERR)
 			return (HWND)::SendMessage(howner, PSM_GETPAGE, (WPARAM)idx, 0);
 	}
 

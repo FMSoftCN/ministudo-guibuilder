@@ -206,7 +206,7 @@ int NavigatorPanel::findByEditUIPanel(EditUIPanel* eui)
 {
 	if(eui == NULL)
 		return -1;
-	for(int i=0; i<SendMessage(hIconView, IVM_GETITEMCOUNT, 0, 0); i++)
+	for(int i=0; i<(int)SendMessage(hIconView, IVM_GETITEMCOUNT, 0, 0); i++)
 	{
 		/*PanelInfo * pi = (PanelInfo*)::SendMessage(hIconView, IVM_GETITEMADDDATA, i, 0);
 		if(pi && pi->equal(eui))
@@ -233,7 +233,7 @@ void NavigatorPanel::updateEditUIPanel(EditUIPanel* eui)
 
 void NavigatorPanel::showPanel()
 {
-	int idx = ::SendMessage(hIconView,IVM_GETCURSEL, 0, 0);
+	LRESULT idx = ::SendMessage(hIconView,IVM_GETCURSEL, 0, 0);
 	if(idx < 0)
 		return;
 
@@ -262,7 +262,7 @@ void NavigatorPanel::_iconview_notifi(HWND hIconView, int id, int nc, DWORD add_
 		{
 			if(np->flags)
 				return;
-			int curSel = SendMessage(hIconView, IVM_GETCURSEL, 0, 0);
+			LRESULT curSel = SendMessage(hIconView, IVM_GETCURSEL, 0, 0);
 			/*PanelInfo* pi = (PanelInfo*)SendMessage(hIconView,
 					IVM_GETITEMADDDATA,	curSel, 0);
 			if (pi)
@@ -275,7 +275,7 @@ void NavigatorPanel::_iconview_notifi(HWND hIconView, int id, int nc, DWORD add_
 	}
 }
 
-int NavigatorPanel::_new_icon_view_proc(HWND hwnd, int message, WPARAM wParam, LPARAM lParam)
+LRESULT NavigatorPanel::_new_icon_view_proc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	NavigatorPanel * np = (NavigatorPanel*) GetWindowAdditionalData(hwnd);
 

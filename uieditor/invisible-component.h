@@ -37,7 +37,7 @@ public:
 	void toLuaTable(void *luaState, int table_idx);
 
 private:
-	static int _invcomp_preview_proc(HWND hWnd, int message, WPARAM wParam, LPARAM lParam);
+	static LRESULT _invcomp_preview_proc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 	static PBITMAP getBitmapByInstance(Class *cls);
 	static map<DWORD, BITMAP> _comp_bmps;
 

@@ -568,7 +568,7 @@ void RendererEditor::paste()
                     enableMenuItem(GBC_SAVE);
 				}
 
-				if(Instance::paste() == NULL)
+				if(Instance::paste())
 					enableMenuItem(GBC_PASTE, FALSE);
 			}
 		}
@@ -598,7 +598,7 @@ void RendererEditor::executeCommand(int cmd_id, int status, DWORD param)
         GHANDLE parent = 0;
         int inst_id;
 
-        if (param == rdrTreePanel->getHandler()) {
+        if (param == (DWORD)rdrTreePanel->getHandler()) {
             int sel_id = rdrTreePanel->getSelItemAddData();
 
             if (sel_id != -1 && ID2TYPE(sel_id) == NCSRT_RDRSET) {

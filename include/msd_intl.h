@@ -8,7 +8,8 @@
 #ifndef MSD_INTL_H_
 #define MSD_INTL_H_
 
-#include "gbconfig.h"
+//#include "gbconfig.h"
+#include "guibuilder.h"
 
 #ifdef __cplusplus
 extern "C" {

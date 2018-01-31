@@ -1,5 +1,5 @@
 
-INCLUDES = -I . -I ../include
+AM_CPPFLAGS = -I . -I ../include
 
 noinst_LIBRARIES=libuieditor.a
 

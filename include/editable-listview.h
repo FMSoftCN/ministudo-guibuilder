@@ -30,7 +30,7 @@ class EditableListView : public TMGStaticSubclass<MGListView>
 	}
 
 protected:
-	BOOL WndProc(int iMsg,WPARAM wParam,LPARAM lParam,int *pret);
+	BOOL WndProc(UINT iMsg,WPARAM wParam,LPARAM lParam,int *pret);
 
 public:
 	EditableListView(EditableListViewHandler * handler=NULL);

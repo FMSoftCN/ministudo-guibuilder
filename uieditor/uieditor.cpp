@@ -570,11 +570,7 @@ void UIEditor::executeCommand(int cmd_id, int status, DWORD param)
                     if (!def_cap_font.empty()) {
                         //LOGFONT *font = (def_cap_font.c_str());
                         LOGFONT *font = (LOGFONT *)LoadResource(def_cap_font.c_str(), RES_TYPE_FONT, 0L);
-#ifdef WIN32
                         eui->editor_win_rdr->we_fonts[WE_CAPTION] = font;
-#else
-                        eui->editor_win_rdr.we_fonts[WE_CAPTION] = font;
-#endif
                     }
                 }
             }
@@ -633,11 +629,7 @@ void UIEditor::executeCommand(int cmd_id, int status, DWORD param)
                 LOGFONT *cap_font = (LOGFONT *)LoadResource(def_cap_font.c_str(), RES_TYPE_FONT, 0L);
                 for(it = editors.begin(); it != editors.end(); ++it) {
                     EditUIPanel* eui = it->second;
-#ifdef WIN32
                     eui->editor_win_rdr->we_fonts[WE_CAPTION] = cap_font;
-#else
-                    eui->editor_win_rdr.we_fonts[WE_CAPTION] = cap_font;
-#endif
                     eui->update();
                 }
             }
@@ -786,11 +778,7 @@ BOOL UIEditor::open(const char* xmlFile, BOOL bhide/*=FALSE*/)
     if (!def_cap_font.empty()) {
         //LOGFONT *font = CreateLogFontByName(def_cap_font.c_str());
         LOGFONT *font = (LOGFONT *)LoadResource(def_cap_font.c_str(), RES_TYPE_FONT, 0L);
-#ifdef WIN32
         euip->editor_win_rdr->we_fonts[WE_CAPTION] = font;
-#else
-        euip->editor_win_rdr.we_fonts[WE_CAPTION] = font;
-#endif
     }
 
     if(!euip->isHidden())
@@ -879,7 +867,7 @@ void UIEditor::close(BOOL bremove_from_dist /*= FALSE*/)
         processEvent(NULL, EDITUIPANEL_SELCHANGE, 0, 0);
 
         //remove page
-        int idx = ::SendMessage(hPropSheet,PSM_GETPAGEINDEX, (WPARAM)hwnd, 0);
+        int idx = (int)::SendMessage(hPropSheet,PSM_GETPAGEINDEX, (WPARAM)hwnd, 0);
         if(idx >= 0)
             ::SendMessage(hPropSheet, PSM_REMOVEPAGE, (WPARAM)idx, 0);
 
@@ -1405,7 +1393,7 @@ BOOL UIEditor::setResId(int oldId, int newId, DWORD res/*=0*/)
     return TRUE;
 }
 
-BOOL UIEditor::WndProc(int iMsg,WPARAM wParam,LPARAM lParam,int *pret)
+BOOL UIEditor::WndProc(UINT iMsg,WPARAM wParam,LPARAM lParam,int *pret)
 {
     if(iMsg == MSG_SLT_ISOPENED) {
         *pret = isFileOpend((const char*)lParam);
@@ -1764,11 +1752,11 @@ static void init_startwnd_list(HWND hwnd, SelectStartWndInfo* info)
         ResEditor::Resource * res = info->mainwindows[i];
         int idx;
         if(res->name.length()>0) {
-            idx = SendMessage(hlist, LB_ADDSTRING, 0, (LPARAM)res->name.c_str());
+            idx = (int)SendMessage(hlist, LB_ADDSTRING, 0, (LPARAM)res->name.c_str());
         } else {
             char szText[256];
             sprintf(szText,"%d(%s)",res->id,g_env->getString(res->source_id));
-            idx = SendMessage(hlist, LB_ADDSTRING, 0, (LPARAM)szText);
+            idx = (int)SendMessage(hlist, LB_ADDSTRING, 0, (LPARAM)szText);
         }
 
         SendMessage(hlist, LB_SETITEMADDDATA, idx, (LPARAM)res->id);
@@ -1779,7 +1767,7 @@ static void init_startwnd_list(HWND hwnd, SelectStartWndInfo* info)
     SendMessage(hlist, LB_SETCURSEL, selidx,0);
 }
 
-static int _startwnd_proc(HWND hwnd, int message, WPARAM wParam, LPARAM lParam)
+static LRESULT _startwnd_proc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     SelectStartWndInfo * info = (SelectStartWndInfo*)GetWindowAdditionalData(hwnd);
     switch(message) {
@@ -1889,7 +1877,7 @@ static void init_rdrwnd_list(HWND hwnd, SelectDefRdrInfo* info)
     int idx;
     for(set<string>::iterator it = info->rdrNameSet.begin();
             it != info->rdrNameSet.end(); it++) {
-        idx = SendMessage(hlist, LB_ADDSTRING, 0, (LPARAM)it->c_str());
+        idx = (int)SendMessage(hlist, LB_ADDSTRING, 0, (LPARAM)it->c_str());
         if(strcasecmp(info->rdrName.c_str(), it->c_str()) == 0)
             selidx = idx;
     }
@@ -1897,7 +1885,7 @@ static void init_rdrwnd_list(HWND hwnd, SelectDefRdrInfo* info)
     SendMessage(hlist, LB_SETCURSEL, selidx, 0);
 }
 
-static int _rdrwnd_proc(HWND hwnd, int message, WPARAM wParam, LPARAM lParam)
+static LRESULT _rdrwnd_proc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     SelectDefRdrInfo * info = (SelectDefRdrInfo*)GetWindowAdditionalData(hwnd);
     switch(message) {
@@ -2144,7 +2132,7 @@ void UIEditor::showPanel(EditUIPanel* panel , BOOL bshow /*= TRUE*/)
         HWND hwnd = curEdit->getHandler();
         hwnd = ::GetParent(hwnd);
         //remove page
-        int idx = ::SendMessage(hPropSheet,PSM_GETPAGEINDEX, (WPARAM)hwnd, 0);
+        int idx = (int)::SendMessage(hPropSheet,PSM_GETPAGEINDEX, (WPARAM)hwnd, 0);
         if(idx >= 0)
             ::SendMessage(hPropSheet, PSM_REMOVEPAGE, (WPARAM)idx, 0);
         panel->hide(TRUE);

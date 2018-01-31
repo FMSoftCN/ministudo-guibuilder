@@ -111,11 +111,9 @@ EditUIPanel::EditUIPanel(PanelEventHandler* handler)
 	flags = 0;
 	hdcPreviewWnd = HDC_INVALID;
 	hwndTopMost = HWND_INVALID;
-#ifdef WIN32
+
 	editor_win_rdr = (WINDOW_ELEMENT_RENDERER *)calloc(1, sizeof(WINDOW_ELEMENT_RENDERER));
-#else
-	memset(&editor_win_rdr, 0, sizeof(editor_win_rdr));
-#endif
+
 	//init outline bitmap
 	InitBitmap(HDC_SCREEN, 96, 96, 0, NULL, &bmpOutline);
 	//set undo redo
@@ -127,9 +125,7 @@ EditUIPanel::~EditUIPanel() {
     delete baseInstance;
 
 	UnloadBitmap(&bmpOutline);
-#ifdef WIN32
 	free(editor_win_rdr);
-#endif
 	baseInstance = NULL;
 }
 
@@ -221,7 +217,8 @@ void EditUIPanel::active()
 		baseInstance->updatePrevWindow(FALSE);
 	sendEvent(UIMENUITEM_ENABLE,ResEditor::GBC_UNDO,canUndo());
 	sendEvent(UIMENUITEM_ENABLE,ResEditor::GBC_REDO,canRedo());
-	sendEvent(UIMENUITEM_ENABLE,ResEditor::GBC_PASTE,(DWORD)(Instance::paste()!=NULL));
+	//sendEvent(UIMENUITEM_ENABLE,ResEditor::GBC_PASTE,(DWORD)(Instance::paste() != NULL));
+	sendEvent(UIMENUITEM_ENABLE,ResEditor::GBC_PASTE,(DWORD)(Instance::paste()));
 	sendEvent(UIMENUITEM_CHECK,ResEditor::UI_MENUCMD_SNAPGRID,isSnapeGrid());
 	notifySelChanged();
 }
@@ -1710,11 +1707,7 @@ BOOL EditUIPanel::open(const char* xmlFile)
 	//set renderer
 	WINDOWINFO *win_info = (WINDOWINFO*)::GetWindowInfo(hwndTopMost);
 	dumpWindowRenderer(win_info->we_rdr);
-#ifdef WIN32
 	win_info->we_rdr = editor_win_rdr;
-#else
-	win_info->we_rdr = &editor_win_rdr;
-#endif
 	//set Secodery data
 	HDC hdc_secd = ::GetSecondaryDC(hwndTopMost);
 	::SetSecondaryDC(hwndTopMost, hdc_secd, DoubleBufferProc);
@@ -2477,11 +2470,7 @@ void EditUIPanel::syncSelectedWndFromInstance(ComponentInstance* cinst, HWND hol
 		//set renderer
 		WINDOWINFO *win_info =  (WINDOWINFO*)::GetWindowInfo(hwndTopMost);
 		dumpWindowRenderer(win_info->we_rdr);
-#ifdef WIN32
 		win_info->we_rdr = editor_win_rdr;
-#else
-		win_info->we_rdr = &editor_win_rdr;
-#endif
 
 		//set Secodery data
 		HDC hdc_secd = ::GetSecondaryDC(hwndTopMost);
@@ -2967,17 +2956,10 @@ void EditUIPanel::dumpWindowRenderer(WINDOW_ELEMENT_RENDERER *win_rdr)
 		return;
 
 	(static_cast<WindowInstance*>(baseInstance))->old_win_rdr = win_rdr;
-#ifdef WIN32
 	memcpy(editor_win_rdr, win_rdr, sizeof(WINDOW_ELEMENT_RENDERER));
 	editor_win_rdr->draw_caption = draw_caption;
 	editor_win_rdr->draw_border = draw_border;
 	editor_win_rdr->draw_caption_button = draw_caption_button;
-#else
-	memcpy(&editor_win_rdr, win_rdr, sizeof(editor_win_rdr));
-	editor_win_rdr.draw_caption = draw_caption;
-	editor_win_rdr.draw_border = draw_border;
-	editor_win_rdr.draw_caption_button = draw_caption_button;
-#endif
 }
 
 void EditUIPanel::setRendererEditor(FieldPanel* panelRdr)
@@ -3082,11 +3064,8 @@ void EditUIPanel::setDefRenderer(const char* defRdrName)
 		//set renderer
 		WINDOWINFO *win_info = (WINDOWINFO*)::GetWindowInfo(hwndTopMost);
 		dumpWindowRenderer(win_info->we_rdr);
-#ifdef WIN32
+
 		win_info->we_rdr = editor_win_rdr;
-#else
-		win_info->we_rdr = &editor_win_rdr;
-#endif
 
 		flags |= UpdatePreviewWindow;
 		InvalidateRect();
@@ -3820,7 +3799,7 @@ static DLGTEMPLATE _input_dlg =
 	_input_ctrls
 };
 
-static int _importProc(HWND hDlg, int message, WPARAM wParam, LPARAM lParam)
+static LRESULT _importProc(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	HWND hEdit;
 	char * str_id_name;

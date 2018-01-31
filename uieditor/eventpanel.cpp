@@ -59,8 +59,8 @@ BOOL EventPanel::setField(Class* cls, int id, const char* name, ValueType* vtype
 
 int EventPanel::_event_cmp(HLVITEM nItem1, HLVITEM nItem2, PLVSORTDATA sortData)
 {
-	int id1 = ::SendMessage(sortData->hLV,LVM_GETITEMADDDATA, 0, (LPARAM) nItem1);
-	int id2 = ::SendMessage(sortData->hLV,LVM_GETITEMADDDATA, 0, (LPARAM) nItem2);
+	LRESULT id1 = ::SendMessage(sortData->hLV,LVM_GETITEMADDDATA, 0, (LPARAM) nItem1);
+	LRESULT id2 = ::SendMessage(sortData->hLV,LVM_GETITEMADDDATA, 0, (LPARAM) nItem2);
 
 	int clsId1 = id1 / 50;
 	int clsId2 = id2 / 50;

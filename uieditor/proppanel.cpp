@@ -201,7 +201,7 @@ BOOL PropertyPanel::updatingValue(Value old_value, Value new_value,ValueType *vt
 					sprintf(szIdName,"%d",rdr_res_id);
 				}
 				//insert a new one
-				int idx = ::SendMessage(hrdr_editor, CB_ADDSTRING,0, (LPARAM)szIdName);
+				int idx = (int)::SendMessage(hrdr_editor, CB_ADDSTRING,0, (LPARAM)szIdName);
 				::SendMessage(hrdr_editor, CB_SETITEMADDDATA, idx, (LPARAM)rdr_res_id);
 				//set selected
 				::SendMessage(hrdr_editor, CB_SETCURSEL,idx, 0);
@@ -288,13 +288,13 @@ BOOL PropertyPanel::updateEditorContent(HWND hEditor, ValueType *vtype, Value va
 		int idx;
 		for(map<int,string>::iterator it = rdrs.begin(); it != rdrs.end(); ++it)
 		{
-			idx = ::SendMessage(hEditor, CB_ADDSTRING,0, (LPARAM)it->second.c_str());
+			idx = (int)::SendMessage(hEditor, CB_ADDSTRING,0, (LPARAM)it->second.c_str());
 			::SendMessage(hEditor, CB_SETITEMADDDATA, idx, (LPARAM)it->first);
 			if((int)value == it->first)
 				sel_idx = idx;
 		}
 		//add new open
-		idx = ::SendMessage(hEditor, CB_ADDSTRING, 0, (LPARAM)"[New Renderer ...]");
+		idx = (int)::SendMessage(hEditor, CB_ADDSTRING, 0, (LPARAM)"[New Renderer ...]");
 		::SendMessage(hEditor, CB_SETITEMADDDATA, idx, (LPARAM)-1);
 		if(sel_idx >= 0)
 			::SendMessage(hEditor, CB_SETCURSEL,sel_idx, 0);
@@ -320,7 +320,7 @@ BOOL PropertyPanel::updateEditorContent(HWND hEditor, ValueType *vtype, Value va
 		int idx;
 		for(map<int,string>::iterator it = group.begin(); it != group.end(); ++it)
 		{
-			idx = ::SendMessage(hEditor, CB_ADDSTRING,0, (LPARAM)it->second.c_str());
+			idx = (int)::SendMessage(hEditor, CB_ADDSTRING,0, (LPARAM)it->second.c_str());
 			::SendMessage(hEditor, CB_SETITEMADDDATA, idx, (LPARAM)it->first);
 			if((int)value == it->first)
 				sel_idx = idx;
@@ -339,8 +339,8 @@ int PropertyPanel::_prop_cmp(HLVITEM nItem1, HLVITEM nItem2, PLVSORTDATA sortDat
 {
 	// 0 is ID
 	// PropClass ~ PropMax < PropStyle < new control set ids < PropExStyle
-	int id1 = ::SendMessage(sortData->hLV,LVM_GETITEMADDDATA, 0, (LPARAM) nItem1);
-	int id2 = ::SendMessage(sortData->hLV,LVM_GETITEMADDDATA, 0, (LPARAM) nItem2);
+	int id1 = (int)::SendMessage(sortData->hLV,LVM_GETITEMADDDATA, 0, (LPARAM) nItem1);
+	int id2 = (int)::SendMessage(sortData->hLV,LVM_GETITEMADDDATA, 0, (LPARAM) nItem2);
 
 	int clsid1 = getClassId(id1);
 	int clsid2 = getClassId(id2);

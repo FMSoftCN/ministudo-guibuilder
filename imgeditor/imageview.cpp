@@ -81,7 +81,7 @@ HWND ImageView::createPanel(HWND hParent)
 	return hIconView;
 }
 
-int ImageView::iconProc(HWND hwnd, int message, WPARAM wParam, LPARAM lParam)
+LRESULT ImageView::iconProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	ImageView *_this = (ImageView *)GetWindowAdditionalData(hwnd);
 	if (message == MSG_RBUTTONDOWN)
@@ -140,7 +140,7 @@ BOOL ImageView::InsertFile(const char* img_file, int at, DWORD addData,BOOL bDel
 		{
 			item->setFile(img_file);
 			//refresh
-			SendMessage(getHandler(), IVM_REFRESHITEM, 0, item->hIconItem);
+			SendMessage(getHandler(), IVM_REFRESHITEM, 0, (LPARAM)item->hIconItem);
 			return TRUE;
 		}
 
@@ -210,7 +210,7 @@ BOOL ImageView::RemoveFile(const char* img_file, DWORD addData)
 	if(item)
 	{
 		lockLoading();
-		SendMessage(hIconView, IVM_DELITEM, 0, item->hIconItem);
+		SendMessage(hIconView, IVM_DELITEM, 0, (LPARAM)item->hIconItem);
 		delete item;
 		unlockLoading(TRUE);
 		return TRUE;
@@ -224,7 +224,7 @@ BOOL ImageView::RefreshFile(const char* img, DWORD addData)
 	ViewItem * item = findImage(img,addData);
 	if(item)
 	{
-		SendMessage(hIconView, IVM_REFRESHITEM, 0, item->hIconItem);
+		SendMessage(hIconView, IVM_REFRESHITEM, 0, (LPARAM)item->hIconItem);
 	}
 
 	return TRUE;

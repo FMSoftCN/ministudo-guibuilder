@@ -1051,16 +1051,16 @@ extern DLGTEMPLATE DefSimpleFontDlg;
 extern DLGTEMPLATE DefSimpleInfoDlg;
 
 /** The default File Open/Save Dialog callback procedure. */
-extern int DefFileDialogProc (HWND hDlg, int message, WPARAM wParam, LPARAM lParam);
+extern LRESULT DefFileDialogProc (HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam);
 
 /** The default Color Selection Dialog callback procedure. */
-extern int DefColorDialogProc (HWND hDlg, int message, WPARAM wParam, LPARAM lParam);
+extern LRESULT DefColorDialogProc (HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam);
 
 /** The default Font Selection Dialog callback procedure. */
-extern int DefFontDialogProc (HWND hDlg, int message, WPARAM wParam, LPARAM lParam);
+extern LRESULT DefFontDialogProc (HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam);
 
 /** The default Information Dialog callback procedure. */
-extern int DefInfoDialogProc (HWND hDlg, int message, WPARAM wParam, LPARAM lParam);
+extern LRESULT DefInfoDialogProc (HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam);
 
     /** @} end of templates_fns */
 

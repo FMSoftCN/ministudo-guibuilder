@@ -64,7 +64,7 @@ private:
 	void insertText(int item,ResEditor::Resource* res);
 	void updateText(HLVITEM hlvItem, int item,ResEditor::Resource* res);
 
-	BOOL WndProc(int iMsg,WPARAM wParam,LPARAM lParam,int *pret);
+	BOOL WndProc(UINT iMsg,WPARAM wParam,LPARAM lParam,int *pret);
 	void onRButtonUp(int x, int y, DWORD key_flag);
 	void onPopupMenuCmd(int id);
 };

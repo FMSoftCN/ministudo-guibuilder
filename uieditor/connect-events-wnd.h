@@ -66,7 +66,7 @@ protected:
 	ComponentInstance * inst;
 	ComponentInstance * baseInstance;
 
-	BOOL onInitDialog(WPARAM wParam,LPARAM lParam);
+	BOOL onInitDialog(HWND hFocus, LPARAM lParam);
 	void onAddEvent();
 	void onDeleteEvent();
 	void onModify();

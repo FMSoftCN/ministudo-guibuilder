@@ -196,7 +196,7 @@ public:
 
 	DECLARE_MSG_MAP;
 
-	BOOL onInitDialog(WPARAM wParam, LPARAM lParam)
+	BOOL onInitDialog(HWND hFocus, LPARAM lParam)
 	{
 		eventNameEditor.Attach(m_hWnd, ID_SLE_INPUTEVENT);
 
@@ -356,7 +356,7 @@ public:
 
 	DECLARE_MSG_MAP;
 
-	BOOL onInitDialog(WPARAM wParam, LPARAM lParam)
+	BOOL onInitDialog(HWND hFocus, LPARAM lParam)
 	{
 		eventNameEditor.Attach(m_hWnd, ID_SLE_EVENT);
 		//init dialog
@@ -406,7 +406,7 @@ public:
 		if(id >= ComponentInstance::PropEventBegin+50)
 		{
 			//insert name and id
-			int idx = ::SendMessage((HWND)user, LB_ADDSTRING, 0, (LPARAM)name);
+			LRESULT idx = ::SendMessage((HWND)user, LB_ADDSTRING, 0, (LPARAM)name);
 			::SendMessage((HWND)user, LB_SETITEMADDDATA, idx, (LPARAM)id);
 		}
 		else if(id > ComponentInstance::PropEventEnd)
@@ -418,7 +418,7 @@ public:
 	ComponentInstance * getSenderFromControl()
 	{
 		HWND hctrl = GetChild(ID_SL_SENDER);
-		int idx = ::SendMessage(hctrl, CB_GETCURSEL, 0, 0);
+		LRESULT idx = ::SendMessage(hctrl, CB_GETCURSEL, 0, 0);
 		if(idx < 0)
 			return NULL;
 		return (ComponentInstance*)
@@ -434,7 +434,7 @@ public:
 
 		hlb = GetChild(ID_LB_SENDER);
 
-		int idx  = ::SendMessage(hlb, LB_GETCURSEL, 0, 0);
+		LRESULT idx  = ::SendMessage(hlb, LB_GETCURSEL, 0, 0);
 		if(idx < 0)
 			return ;
 
@@ -566,7 +566,7 @@ BEGIN_MSG_MAP(ConnectEventsWnd)
 END_MSG_MAP
 
 
-BOOL ConnectEventsWnd::onInitDialog(WPARAM wParam,LPARAM lParam)
+BOOL ConnectEventsWnd::onInitDialog(HWND hFocus,LPARAM lParam)
 {
 	HWND hslListener;
 	ResManager *resMgr;
@@ -644,7 +644,7 @@ void ConnectEventsWnd::onDeleteEvent()
 		return;
 
 	HWND hlv = GetChild(ID_LV_LISTEN);
-	HLVITEM hlvItem = ::SendMessage(hlv, LVM_GETSELECTEDITEM, 0, 0);
+	HLVITEM hlvItem = (HLVITEM)::SendMessage(hlv, LVM_GETSELECTEDITEM, 0, 0);
 	if(hlvItem == 0)
 		return ;
 
@@ -693,14 +693,14 @@ void ConnectEventsWnd::onModify()
 		le->prototype = mew.getEventName();
 		//update list view
 		HWND hlv = GetChild(ID_LV_LISTEN);
-		HLVITEM hlvItem = ::SendMessage(hlv, LVM_GETSELECTEDITEM, 0, 0);
+		HLVITEM hlvItem = (HLVITEM)::SendMessage(hlv, LVM_GETSELECTEDITEM, 0, 0);
 		if(hlvItem == 0)
 			return;
 		LVSUBITEM lvSubItem;
 		memset(&lvSubItem, 0, sizeof(lvSubItem));
 		lvSubItem.subItem = 2;
 		lvSubItem.pszText = (char*)le->prototype.c_str();
-		::SendMessage(hlv,LVM_SETSUBITEMTEXT, hlvItem, (LPARAM)&lvSubItem);
+		::SendMessage(hlv,LVM_SETSUBITEMTEXT, (WPARAM)hlvItem, (LPARAM)&lvSubItem);
 		bChanged = TRUE;
 	}
 }
@@ -727,7 +727,7 @@ void ConnectEventsWnd::addListenEntry(HWND hlv, ResManager *resMgr, ListenEntry*
 
 	//add into listview
 	lvItem.itemData = (DWORD)le;
-	HLVITEM hlvItem = ::SendMessage(hlv, LVM_ADDITEM, 0, (LPARAM)&lvItem);
+	HLVITEM hlvItem = (HLVITEM)::SendMessage(hlv, LVM_ADDITEM, 0, (LPARAM)&lvItem);
 
 	//insert sender
 	lvSubItem.nItem = lvItem.nItem;
@@ -809,7 +809,7 @@ ComponentInstance * ConnectEventsWnd::getListener()
 ListenEntry* ConnectEventsWnd::getCurListen()
 {
 	HWND hlv = GetChild(ID_LV_LISTEN);
-	HLVITEM hlvItem = ::SendMessage(hlv, LVM_GETSELECTEDITEM, 0, 0);
+	HLVITEM hlvItem = (HLVITEM)::SendMessage(hlv, LVM_GETSELECTEDITEM, 0, 0);
 	if(hlvItem == 0)
 		return NULL;
 

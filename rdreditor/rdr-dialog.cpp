@@ -119,7 +119,7 @@ BOOL NewRdrSetDialog::onInitDialog(HWND hFocus, LPARAM lParam)
     set <string> rdrList;
     set <string>::iterator it;
     HWND hRdrWnd, hEditWnd;
-    int idx;
+    LRESULT idx;
 	RendererEditor* resMgr = (RendererEditor*)(g_env->getResManager(NCSRT_RDR | NCSRT_RDRSET));
 
     //limit edit maximum length
@@ -172,7 +172,7 @@ void NewRdrDialog::onRdrSelChange (int code, HWND hWnd)
         char rdrName[MAX_NAME_LEN], clsName[MAX_NAME_LEN];
         set <string> clsList;
         set <string>::iterator it;
-        int clsSelIdx;
+        LRESULT clsSelIdx;
 
         GetChildText(ID_COMB_RDR, rdrName, MAX_NAME_LEN);
         GetChildText(ID_COMB_CTRL, clsName, MAX_NAME_LEN);
@@ -236,7 +236,7 @@ BOOL NewRdrDialog::onInitDialog(HWND hFocus, LPARAM lParam)
     set <string> rdrList;
     set <string>::iterator it;
     HWND hRdrWnd, hClsWnd, hEditWnd;
-    int idx;
+    LRESULT idx;
 	RendererEditor* resMgr = (RendererEditor*)(g_env->getResManager(NCSRT_RDR | NCSRT_RDRSET));
 
     //set renderer list
@@ -376,7 +376,7 @@ void AddRdrDialog::onOK()
         (RendererEditor*)(g_env->getResManager(NCSRT_RDR | NCSRT_RDRSET));
 
     HWND hWnd = GetChild(IDC_IDLIST);
-	int count = ::SendMessage(hWnd, LB_GETSELCOUNT, 0, 0);
+	LRESULT count = ::SendMessage(hWnd, LB_GETSELCOUNT, 0, 0);
 
 	if (count > 0) {
 		char name [2*MAX_NAME_LEN];

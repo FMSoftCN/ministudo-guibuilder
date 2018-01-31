@@ -19,7 +19,7 @@ protected:
 	//implement FieldEnumHandler
 	BOOL setField(Class* cls, int id, const char* name, ValueType* vtype, DWORD user);
 
-	BOOL WndProc(int iMsg,WPARAM wParam,LPARAM lParam,int *pret)
+	BOOL WndProc(UINT iMsg,WPARAM wParam,LPARAM lParam,int *pret)
 	{
 		if(iMsg == MSG_LBUTTONDBLCLK){
 			DWORD event_id;
