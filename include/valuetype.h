@@ -136,11 +136,11 @@ public:
 		if(!IsWindow(hParent))
 			return HWND_INVALID;
 
-		HWND hwnd = GetDlgItem(hParent, (int)this);
+		HWND hwnd = GetDlgItem(hParent, (LINT)this);
 		if(!IsControl(hwnd))
 		{
 			editor = new TEditor();
-			hwnd = editor->create(hParent, (int)this);
+			hwnd = editor->create(hParent, (LINT)this);
 		}
 		else{
 			editor = (TEditor*)(TEditor::fromHandle(hwnd));
@@ -195,7 +195,7 @@ protected:
 	}
 
 	//Notification
-	static void editor_notification(HWND hwnd, int id, int nc, DWORD add_data){
+	static void editor_notification(HWND hwnd, LINT id, int nc, DWORD add_data){
 		ValueEditor * _this = fromHandle(hwnd);
 		if(_this)
 			_this->onNotify(id, nc, add_data);
@@ -227,7 +227,7 @@ protected:
 		return callOldProc(message, wParam, lParam);
 	}
 
-	virtual void onNotify(int id, int nc, DWORD add_data){
+	virtual void onNotify(LINT id, int nc, DWORD add_data){
 	}
 
 	virtual void onResetValue(Value newValue)
@@ -261,7 +261,7 @@ public:
     {
 	}
 
-	HWND createWindow(HWND hParent, int id,
+	HWND createWindow(HWND hParent, LINT id,
 			const char* className, DWORD style, DWORD ex_style, DWORD dwData = 0)
 	{
 		hwnd = CreateWindowEx(className, "",
@@ -273,7 +273,7 @@ public:
 		return hwnd;
 	}
 
-	virtual HWND create(HWND hParent, int id) = 0;
+	virtual HWND create(HWND hParent, LINT id) = 0;
 
 	BOOL init(Value value, ValueType* vtype, ValueUpdator * updator, DWORD mask=0){
 		//if(this->vtype)
@@ -443,7 +443,7 @@ protected:
 	}
 
 public:
-	HWND create(HWND hParent, int id){
+	HWND create(HWND hParent, LINT id){
 		HWND sleWnd = createWindow(hParent, id, "sledit", ES_LEFT, 0);
         SendMessage(sleWnd, EM_LIMITTEXT, 63, 0);
         return sleWnd;
@@ -533,7 +533,7 @@ protected:
 		updateValue();
 	}
 public:
-	HWND create(HWND hParent, int id){
+	HWND create(HWND hParent, LINT id){
 			HWND hwnd = createWindow(hParent, id, "sledit", ES_LEFT, 0);
 			SendMessage(hwnd, EM_LIMITTEXT, 8,0);
 			return hwnd;
@@ -622,7 +622,7 @@ typedef TBaseStringValueType<StringValueEditor, VT_STRING> StringValueType;
 class StringValueEditor : public ValueEditor
 {
 protected:
-	void onNotify(int id, int nc, DWORD add_data){
+	void onNotify(LINT id, int nc, DWORD add_data){
 		if(nc == EN_UPDATE || nc == EN_ENTER)
 			onSaveValue();
 		else if(nc == EN_CHANGE)
@@ -652,7 +652,7 @@ protected:
 	}
 
 public:
-	HWND create(HWND hParent, int id){
+	HWND create(HWND hParent, LINT id){
 		return createWindow(hParent, id, "sledit", ES_LEFT, 0);
 	}
 };
@@ -666,7 +666,7 @@ protected:
 	enum { EXTEND_ID = 100, EDITOR_ID=101};
 	virtual void onEditor(int nc, HWND heditor) {}
 	virtual void onExtend() {}
-	virtual void createEditor(int id, const RECT *rt) {}
+	virtual void createEditor(LINT id, const RECT *rt) {}
 	bool extend_dlg;
 
 
@@ -688,6 +688,7 @@ protected:
 			RECT *prt = (RECT*)lParam;
 			//calc editor
 			HWND heditor = GetDlgItem(hwnd, EDITOR_ID);
+
 			HWND hextend = GetDlgItem(hwnd, EXTEND_ID);
 			int width = RECTWP(prt);
 			int height = RECTHP(prt);
@@ -738,7 +739,7 @@ public:
 	{
 	}
 
-	HWND create(HWND hParent, int id){
+	HWND create(HWND hParent, LINT id){
 		createWindow(hParent, id, "static", 0,0);
 		oldProc = DefaultControlProc;
 		RECT rt;
@@ -758,7 +759,7 @@ class FileValueEditor : public ExtendEditor
 {
 protected:
 	string lastPath;
-	void createEditor(int id, const RECT *rt){
+	void createEditor(LINT id, const RECT *rt){
 		//create a editor
 		CreateWindowEx("sledit", "", ES_LEFT|WS_CHILD|WS_VISIBLE, 0, EDITOR_ID, rt->left, rt->top, RECTWP(rt), RECTHP(rt), hwnd, 0);
 	}
@@ -874,7 +875,7 @@ protected:
 	void onExtend();
 	void setValue(const char* font_name);
 
-	void createEditor(int id, const RECT *rt)
+	void createEditor(LINT id, const RECT *rt)
 	{
 		CreateWindowEx("static", "", ES_LEFT|WS_CHILD|WS_VISIBLE, 0, EDITOR_ID, rt->left, rt->top, RECTWP(rt), RECTHP(rt), hwnd, 0);
 	}
@@ -891,7 +892,7 @@ protected:
 
 	void onExtend();
 
-	void createEditor(int id, const RECT *rt){
+	void createEditor(LINT id, const RECT *rt){
 		//create a editor
 		//CreateWindowEx("sledit", "", ES_LEFT|WS_CHILD|WS_VISIBLE, 0, EDITOR_ID, rt->left, rt->top, RECTWP(rt), RECTHP(rt), hwnd, 0);
 	}
@@ -1148,7 +1149,7 @@ protected:
 	}
 
 public:
-	HWND create(HWND hParent, int id){
+	HWND create(HWND hParent, LINT id){
 		HWND sleWnd = createWindow(hParent, id, "sledit", ES_LEFT, 0);
         SendMessage(sleWnd, EM_LIMITTEXT, 63, 0);
         return sleWnd;
@@ -1193,7 +1194,7 @@ class MutliStringEditor : public ExtendEditor
 public:
 	MutliStringEditor(){}
 protected:
-	void createEditor(int id, const RECT *rt);
+	void createEditor(LINT id, const RECT *rt);
 	void onExtend(); //show a multi text edit dialog
 
 	void onSaveValue()
@@ -1225,7 +1226,7 @@ protected:
 	{
 		if(message == MSG_COMMAND)
 		{
-			int id = LOWORD(wParam);
+			LINT id = LOWORD(wParam);
 			int code = HIWORD(wParam);
 			if(id == EDITOR_ID){
 				if(code == EN_CHANGE)
@@ -1283,7 +1284,7 @@ class RefResEditor : public TBaseResValueEditor<ExtendEditor>
 {
 protected:
 	void onExtend();
-	void createEditor(int id, const RECT *rt){
+	void createEditor(LINT id, const RECT *rt){
 		//create a editor
 		CreateWindowEx("sledit", "", ES_LEFT|WS_CHILD|WS_VISIBLE, 0, EDITOR_ID, rt->left, rt->top, RECTWP(rt), RECTHP(rt), hwnd, 0);
 	}
@@ -1323,7 +1324,7 @@ protected:
 		return NCSRT_CONTRL; //TODO return Renderer res type
 	}
 
-	void onNotify(int id, int nc, DWORD add_data)
+	void onNotify(LINT id, int nc, DWORD add_data)
 	{
 		if(nc == CBN_SELCHANGE){
 			bModified = TRUE;
@@ -1356,7 +1357,7 @@ protected:
 	}
 
 public:
-	HWND create(HWND hParent, int id)
+	HWND create(HWND hParent, LINT id)
 	{
 		return createWindow(hParent, id, "combobox",CBS_DROPDOWNLIST|CBS_READONLY|CBS_SORT|CBS_NOTIFY, 100);
 	}
@@ -1385,7 +1386,7 @@ protected:
 		return NCSRT_RDR; //TODO return Renderer res type
 	}
 
-	void onNotify(int id, int nc, DWORD add_data)
+	void onNotify(LINT id, int nc, DWORD add_data)
 	{
 		if(nc == CBN_SELECTOK){
 			bModified = TRUE;
@@ -1415,7 +1416,7 @@ protected:
 	}
 
 public:
-	HWND create(HWND hParent, int id)
+	HWND create(HWND hParent, LINT id)
 	{
 		return createWindow(hParent, id, "combobox",CBS_DROPDOWNLIST|CBS_READONLY|CBS_SORT|CBS_NOTIFY, 0);
 	}
@@ -1589,13 +1590,13 @@ class EnumValueEditor : public TCompositeValueEditor<EnumValue>
 {
 protected:
 
-	void onNotify(int id, int nc, DWORD add_data);
+	void onNotify(LINT id, int nc, DWORD add_data);
 	BOOL initEditor();
 
 	void onSaveValue();
 
 public:
-	HWND create(HWND hParent, int id){
+	HWND create(HWND hParent, LINT id){
 		return createWindow(hParent, id, "combobox",
 				CBS_DROPDOWNLIST|CBS_READONLY|CBS_NOTIFY, 0);
 	}
@@ -1878,7 +1879,7 @@ protected:
 		return ValueEditor::wndProc(message, wParam, lParam);
 	}
 
-	void onNotify(int id, int nc, DWORD add_data){
+	void onNotify(LINT id, int nc, DWORD add_data){
 		if(nc == CBN_SELCHANGE){
 			bModified = TRUE;
 			onSaveValue();
@@ -1891,7 +1892,7 @@ protected:
 	void insertFuncName(const char* szFuncName);
 
 public:
-	HWND create(HWND hParent, int id){
+	HWND create(HWND hParent, LINT id){
 		return createWindow(hParent, id, "combobox", CBS_DROPDOWNLIST|CBS_NOTIFY|CBS_READONLY, 0);
 	}
 	BOOL init(Value value, ValueType* vtype, ValueUpdator * updator, DWORD mask=0);

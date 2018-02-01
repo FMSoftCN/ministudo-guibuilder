@@ -103,7 +103,7 @@ LRESULT ImageView::iconProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lPara
 	return def_icon_proc(hwnd, message, wParam, lParam);
 }
 
-void ImageView::_iconview_notification(HWND hwnd, int id, int nc, DWORD add_data)
+void ImageView::_iconview_notification(HWND hwnd, LINT id, int nc, DWORD add_data)
 {
 	ImageView* _this = (ImageView*)GetWindowAdditionalData(hwnd);
 
@@ -111,7 +111,7 @@ void ImageView::_iconview_notification(HWND hwnd, int id, int nc, DWORD add_data
 		_this->onIconViewNotification(id, nc, add_data);
 }
 
-void ImageView::onIconViewNotification(int id, int nc, DWORD add_data)
+void ImageView::onIconViewNotification(LINT id, int nc, DWORD add_data)
 {
 	if (nc == IVN_SELCHANGED){
 		ViewItem * item = (ViewItem*)SendMessage(hIconView, IVM_GETITEMADDDATA, 0, (LPARAM)add_data);

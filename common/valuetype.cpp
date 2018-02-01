@@ -327,7 +327,7 @@ Value TextValueType::newValue(const char* str)
 	return (Value)id;
 }
 
-void MutliStringEditor::createEditor(int id, const RECT* rt)
+void MutliStringEditor::createEditor(LINT id, const RECT* rt)
 {
 	CreateWindow("sledit", "", ES_LEFT|WS_VISIBLE, id,
 			rt->left, rt->top, RECTWP(rt), RECTHP(rt), hwnd, 0);
@@ -661,7 +661,7 @@ Value EnumValueType::newValue(const char* str)
 mapex<string, EnumValueType*,mystr_less > EnumValueType::_instances;
 
 // EnunValueEditor
-void EnumValueEditor::onNotify(int id, int nc, DWORD add_data)
+void EnumValueEditor::onNotify(LINT id, int nc, DWORD add_data)
 {
 	if(nc == CBN_SELCHANGE){
 		bModified = TRUE;

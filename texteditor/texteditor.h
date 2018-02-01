@@ -113,8 +113,8 @@ private:
 	void updateCombobox();
 	void createTextFile(const char *szFileName);
 	BOOL open(const char* xmlFile);
-	void onTextComboboxNotification(HWND hwnd, int id, int nc, DWORD add_data);
-	static void _textCombobox_notifi(HWND hwnd, int id, int nc, DWORD add_data);
+	void onTextComboboxNotification(HWND hwnd, LINT id, int nc, DWORD add_data);
+	static void _textCombobox_notifi(HWND hwnd, LINT id, int nc, DWORD add_data);
 	BOOL initEditor();
 
 	void onNewText();

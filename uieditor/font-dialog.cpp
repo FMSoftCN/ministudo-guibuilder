@@ -364,7 +364,7 @@ static int * insertIntArray(int * tarr, int tn, int nin, int * newlen, int *inse
 	return tarr;
 }
 
-#define GetFontSize(font_ops)   ((int(*)(PLOGFONT,const DEVFONT*,int))(((int*)(font_ops))[4]))
+#define GetFontSize(font_ops)   ((int(*)(PLOGFONT,const DEVFONT*,int))(((intptr_t*)(font_ops))[4]))
 static void EnumSupportSize(NCS_PFONT pfont, const DEVFONT* dev_font)
 {
 	LOGFONT font;
@@ -911,7 +911,7 @@ static LOGFONT* CreateFont(HWND hWnd, char *name)
 	SendMessage(hctrl, CB_GETLBTEXT, sel, (LPARAM)szSize);
 	size = atoi(szSize);
 	if (name)
-		sprintf(name, "*-%s-%c%c%c%c%c%c-*-%d-%s",
+		sprintf(name, "*-%s-%c%c%c%c%c%c-*-%ld-%s",
 			family, weight, slant, flip, '*', underline, strikeout, size, chset);
 
     return CreateLogFont (FONT_TYPE_NAME_ALL, family,

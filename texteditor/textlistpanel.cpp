@@ -52,11 +52,11 @@ TextListPanel::~TextListPanel()
 {
     //before deleting defaultValueType and curValueType, should delete editor 
     //window to avoid coredump. see retrieveEditor implementation for detail.
-    HWND child = GetChild((int)&defaultValueType);
+    HWND child = GetChild((LINT)&defaultValueType);
     if (child)
         ::DestroyWindow(child);
 
-    child = GetChild((int)&curValueType);
+    child = GetChild((LINT)&curValueType);
     if (child)
         ::DestroyWindow(child);
 }

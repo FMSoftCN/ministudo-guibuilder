@@ -14,9 +14,9 @@
 class ImageView: public Panel {
 
 	static LRESULT iconProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam);
-	static void _iconview_notification(HWND hwnd, int id, int nc, DWORD add_data);
+	static void _iconview_notification(HWND hwnd, LINT id, int nc, DWORD add_data);
 	static LRESULT _inputProc(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam);
-	void onIconViewNotification(int id, int nc, DWORD add_data);
+	void onIconViewNotification(LINT id, int nc, DWORD add_data);
 
 public:
 	class ViewItem

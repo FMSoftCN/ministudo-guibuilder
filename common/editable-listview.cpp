@@ -36,7 +36,7 @@ EditableListView::~EditableListView() {
     delete[] editors;
 }
 
-void EditableListView::editable_listview_notifi(HWND hwnd, int id, int nc, DWORD add_data)
+void EditableListView::editable_listview_notifi(HWND hwnd, LINT id, int nc, DWORD add_data)
 {
 	EditableListView * _this = (EditableListView*)MGWnd::WndFromHandle(hwnd);
 	if(_this == NULL)

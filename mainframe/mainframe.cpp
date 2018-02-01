@@ -71,7 +71,7 @@ static MainFrame* mainframe = NULL;
 MainFrame::Version MainFrame::gbVersion(GUIBUILD_MAJOR_VERSION, GUIBUILD_MINOR_VERSION, GUIBUILD_MICRO_VERSION);
 
 
-BOOL MainFrame::auto_save_timer(HWND hwnd, int id, DWORD count)
+BOOL MainFrame::auto_save_timer(HWND hwnd, LINT id, DWORD count)
 {
     MainFrame * mainframe = (MainFrame*)WndFromHandle(hwnd);
     if(mainframe) {
@@ -394,7 +394,7 @@ static bool load_ntb_item(xmlNodePtr node, PNTBITEMINFO pntbii)
 }
 
 
-static void selector_res_proc(HWND hwnd, int id, int nc, DWORD add_data)
+static void selector_res_proc(HWND hwnd, LINT id, int nc, DWORD add_data)
 {
     HWND hParent = GetParent(hwnd);
     SendMessage(hParent, MSG_COMMAND, nc, 0);
@@ -559,7 +559,7 @@ void MainFrame::initWindowMenu(HMENU hMenu, ResEditorInfo * who)
     InsertMenuItem(hMenu,GetMenuItemCount(hMenu)-1, TRUE, &popmii);
 }
 
-static void checkSelectorRes(HWND hwnd, int id, BOOL check)
+static void checkSelectorRes(HWND hwnd, LINT id, BOOL check)
 {
     NTBITEMINFO ntbii;
     ntbii.which = MTB_WHICH_FLAGS;
@@ -738,7 +738,7 @@ CONTINUE:
     while (GetMessage (&Msg, m_hWnd)) {
         TranslateMessage(&Msg);
         if(Msg.hwnd == hRefPanel && Msg.message == MSG_COMMAND) {
-            int id = LOWORD (Msg.wParam);
+            LINT id = LOWORD (Msg.wParam);
             if(id == IDOK || id == IDCANCEL) {
                 if(id == IDOK) {
                     resid = refedResEditor->editor->getSelectedResID();
@@ -1166,7 +1166,7 @@ void MainFrame::onSave()
     free(type_item);
 }
 
-static HMENU getMenuItemInfoById(HMENU hMenu, int id, MENUITEMINFO* info)
+static HMENU getMenuItemInfoById(HMENU hMenu, LINT id, MENUITEMINFO* info)
 {
     MENUITEMINFO mii;
     if(GetMenuItemInfo(hMenu, id, MF_BYCOMMAND, info) == 0)
@@ -1187,7 +1187,7 @@ static HMENU getMenuItemInfoById(HMENU hMenu, int id, MENUITEMINFO* info)
     return (HMENU)0;
 }
 
-void MainFrame::onMenuStatusChanged(ResEditor* editor, int id, DWORD newStatus, int type/*=MSF_INCLUDE*/)
+void MainFrame::onMenuStatusChanged(ResEditor* editor, LINT id, DWORD newStatus, int type/*=MSF_INCLUDE*/)
 {
     ResEditorInfo *rei = NULL;
     if(id == 0)
@@ -1224,7 +1224,7 @@ void MainFrame::onMenuStatusChanged(ResEditor* editor, int id, DWORD newStatus, 
     }
 }
 
-int MainFrame::getEditorMenuStatus(ResEditor* editor, int id, UINT* status)
+int MainFrame::getEditorMenuStatus(ResEditor* editor, LINT id, UINT* status)
 {
     if (!status)
         return -1;
@@ -1261,7 +1261,7 @@ int MainFrame::getEditorMenuStatus(ResEditor* editor, int id, UINT* status)
     return -1;
 }
 
-void MainFrame::setEditorMenuStatus(ResEditorInfo *rei, int id, DWORD newStatus, int type)
+void MainFrame::setEditorMenuStatus(ResEditorInfo *rei, LINT id, DWORD newStatus, int type)
 {
 
     if(!rei)
@@ -1863,7 +1863,7 @@ static void load_accelerator(xmlNodePtr node, HACCEL hAccel)
 }
 /////
 
-static void newtoolbar_notif_proc(HWND htoolbar, int id, int nc, DWORD add_data)
+static void newtoolbar_notif_proc(HWND htoolbar, LINT id, int nc, DWORD add_data)
 {
     HWND hParent = GetParent(htoolbar);
     SendMessage(hParent, MSG_COMMAND, nc, 0);

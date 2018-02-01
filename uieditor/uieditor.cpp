@@ -1020,7 +1020,7 @@ void UIEditor::closeAll()
 
 }
 
-void UIEditor::_propsheet_notifi(HWND hwnd, int id, int nc, DWORD add_data)
+void UIEditor::_propsheet_notifi(HWND hwnd, LINT id, int nc, DWORD add_data)
 {
     if(nc == PSN_ACTIVE_CHANGED) {
         UIEditor * uie = (UIEditor*)::GetWindowAdditionalData(hwnd);

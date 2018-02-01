@@ -484,7 +484,7 @@ static int make_lua_inst(lua_State* L, Instance* inst, int res_type)
 	int inst_table = lua_gettop(L); //get the index of table on the stack
 
     //set instance
-    SET_TABLE(L, inst_table, __inst, lua_pushinteger(L, (int)inst));
+    SET_TABLE(L, inst_table, __inst, lua_pushinteger(L, (lua_Integer)inst));
 
 	//set instance id
 	SET_TABLE(L, inst_table, id, lua_pushstring(L, inst_getID(inst, res_type)));

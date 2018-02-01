@@ -54,21 +54,24 @@ PanelLayout::~PanelLayout()
 
 static BOOL PanelLayout_ShowPanel(GRID_CELL*cell,GRID_LAYOUT* _this,int row, int col,void * usr)
 {
+    int show = usr ? 1 : 0;
 	if(cell->type == gct_user){
 		GRID_USER_TYPE *usr = cell->data.user;
 		PanelCell *pc = (PanelCell*) usr->user;
-		if(pc)
-			pc->show((int)usr);
+		if(pc) {
+			pc->show(show);
+        }
 	}
 	else if(cell->type == gct_hwnd){
-		ShowWindow(cell->data.hwnd, ((BOOL)usr)?SW_SHOW:SW_HIDE);
+		ShowWindow(cell->data.hwnd, show ? SW_SHOW : SW_HIDE);
 	}
 	return TRUE;
 }
 
 void PanelLayout::show(int show)
 {
-	EnumAllCellObjs(PanelLayout_ShowPanel, (void*)show);
+    LINT param = show ? 1 : 0;
+	EnumAllCellObjs(PanelLayout_ShowPanel, (void*)param);
 }
 
 void PanelLayout::setSubPanelLayout(int row, int col, PanelLayout * pl)

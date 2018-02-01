@@ -7,8 +7,6 @@
 #define SPLITER_SIZE 4
 #include "gridlayout.h"
 
-HCURSOR hhorzCur= (HCURSOR)IDC_SIZENS;
-HCURSOR hverCur = (HCURSOR)IDC_SIZEWE;
 static void recalca_units(LAYOUT_UNIT* units, int n, int width)
 {
 	int i;
@@ -603,7 +601,7 @@ static BOOL processSpliter(HWND hwnd, GRID_LAYOUT* gl, UINT message, WPARAM wPar
 			if(_spliter_idx > 0 && !((_is_horz && gl->row_cnt-1<=_spliter_idx) || (!_is_horz && gl->col_cnt -1<= _spliter_idx) ))
 			{
 				//
-				SetCursor(GetSystemCursor((int)(_is_horz?hhorzCur:hverCur)));
+				SetCursor(GetSystemCursor(_is_horz?IDC_SIZENS:IDC_SIZEWE));
 				if(MSG_LBUTTONDOWN == message){
 					_spliter_layout = gl;
 					_old_x = x;
@@ -624,7 +622,7 @@ static BOOL processSpliter(HWND hwnd, GRID_LAYOUT* gl, UINT message, WPARAM wPar
 	{
 	case MSG_MOUSEMOVE:
 	{
-		SetCursor(GetSystemCursor((int)(_is_horz?hhorzCur:hverCur)));
+		SetCursor(GetSystemCursor(_is_horz?IDC_SIZENS:IDC_SIZEWE));
 		//FIXME: when Call GetCapture, MiniGUI send x, y to window as screen position
 		ScreenToClient(hwnd, &x, &y);
 		drawSpliterBar(_hdc, _spliter_layout, _is_horz, _old_x, _old_y);
@@ -672,10 +670,10 @@ static BOOL _gridlayout_show(GRID_CELL* cell,GRID_LAYOUT* _this,int row, int col
 		ShowWindow(cell->data.hwnd, data?SW_SHOW:SW_HIDE);
 		break;
 	case gct_grid:
-		GridLayoutShow(cell->data.grid, (int)data);
+		GridLayoutShow(cell->data.grid, data ? 1 : 0);
 		break;
 	case gct_user:
-		grid_cell_show(cell,(int)data);
+		grid_cell_show(cell, data ? 1 : 0);
 		break;
 	}
 	return TRUE;
@@ -683,7 +681,8 @@ static BOOL _gridlayout_show(GRID_CELL* cell,GRID_LAYOUT* _this,int row, int col
 
 void GridLayoutShow(GRID_LAYOUT* gl, int show)
 {
-	GridLayoutEnumAllCellObjs(gl,_gridlayout_show,(void *)show);
+    LINT param = show ? 1 : 0;
+	GridLayoutEnumAllCellObjs(gl,_gridlayout_show, (void*)param);
 }
 
 /*

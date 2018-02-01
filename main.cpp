@@ -354,7 +354,7 @@ static void termination_handler (int signum)
 static void* wait_for_other_args(void * param)
 {
     char szBuff[4096];
-    int fd = (int)param;
+    int fd = *(int*)param;
 
     //struct timeval tv = {1, 500000};
     while(!exit_system) {
@@ -507,7 +507,7 @@ static void start_project(const char* strProjectPath)
     atexit(onTerminate);
 
     //start fifo thread
-    pthread_create(&pip_id, NULL, wait_for_other_args, (void*)fifo_fd);
+    pthread_create(&pip_id, NULL, wait_for_other_args, (void*)&fifo_fd);
 }
 extern void exitSystem(void);
 static void segvsig_handler (int v)

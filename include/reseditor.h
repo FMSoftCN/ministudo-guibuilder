@@ -24,8 +24,8 @@ class ResEditorNotificationHandler
 public:
 	virtual ~ResEditorNotificationHandler(){}
 	virtual void onNotification(ResEditor* editor, int nc, DWORD param) = 0;
-	virtual void onMenuStatusChanged(ResEditor* editor, int id, DWORD newStatus, int type=MSF_INCLUDE) = 0;
-    virtual int getEditorMenuStatus(ResEditor* editor, int id, UINT* status) = 0;
+	virtual void onMenuStatusChanged(ResEditor* editor, LINT id, DWORD newStatus, int type=MSF_INCLUDE) = 0;
+    virtual int getEditorMenuStatus(ResEditor* editor, LINT id, UINT* status) = 0;
 
 };
 
@@ -140,7 +140,7 @@ public:
 		return 0;
 	}
 
-	int getMenuStatus(int id, UINT* status) {
+	int getMenuStatus(LINT id, UINT* status) {
         return notification->getEditorMenuStatus(this, id, status);
     }
 	enum commCommand {

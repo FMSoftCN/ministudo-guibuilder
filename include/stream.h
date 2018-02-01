@@ -31,7 +31,7 @@ public:
 	virtual ~StreamStorage(){}
 	virtual void write(int size, const void* data) = 0;
 	virtual void flush() = 0;
-	virtual int seek(int offset, int where) = 0;
+	virtual int seek(long offset, int where) = 0;
 	virtual int tell() = 0;
 	virtual bool ready() = 0;
 };
@@ -277,7 +277,7 @@ public:
 			fflush(file);
 	}
 
-	int seek(int offset, int where)
+	int seek(long offset, int where)
 	{
 		if(file){
 			if(where == seek_begin)

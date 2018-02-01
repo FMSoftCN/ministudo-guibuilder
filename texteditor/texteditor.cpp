@@ -669,7 +669,7 @@ Panel* TextEditor::createPanel(const char* name, const char* caption, const mape
 	return NULL;
 }
 
-void TextEditor::_textCombobox_notifi(HWND hwnd, int id, int nc, DWORD add_data)
+void TextEditor::_textCombobox_notifi(HWND hwnd, LINT id, int nc, DWORD add_data)
 {
 	TextEditor* _this = (TextEditor*)GetWindowAdditionalData(hwnd);
 
@@ -677,7 +677,7 @@ void TextEditor::_textCombobox_notifi(HWND hwnd, int id, int nc, DWORD add_data)
 		_this->onTextComboboxNotification(hwnd, id, nc, add_data);
 }
 
-void TextEditor::onTextComboboxNotification(HWND hwnd, int id, int nc, DWORD add_data)
+void TextEditor::onTextComboboxNotification(HWND hwnd, LINT id, int nc, DWORD add_data)
 {
     TeNode *pNode = NULL;
     list<TeNode*>::iterator listIter;

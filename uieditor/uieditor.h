@@ -204,7 +204,7 @@ public:
     void setChanged(BOOL bChanged = TRUE);
 
 private:
-	static void _propsheet_notifi(HWND hwnd, int id, int nc, DWORD add_data);
+	static void _propsheet_notifi(HWND hwnd, LINT id, int nc, DWORD add_data);
 
 	void changeCurEditor(BOOL bSendEvent = FALSE);
 

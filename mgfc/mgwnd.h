@@ -168,22 +168,22 @@ public:
 
 	inline int LoadControls(PCTRLDATA pctrlData,int controls){ return ::MGLoadControls(m_hWnd,pctrlData,controls); }
 
-	inline HWND GetChild(int nItemID){ return GetDlgItem(m_hWnd,nItemID);}
+	inline HWND GetChild(LINT nItemID){ return GetDlgItem(m_hWnd,nItemID);}
 
-	inline int  GetChildInt(int nItemID) { return (int)GetDlgItemInt(m_hWnd,nItemID,NULL,TRUE); }
-	inline UINT GetChildUINT(int nItemID) { return (UINT)GetDlgItemInt(m_hWnd,nItemID,NULL,FALSE); }
-	inline BOOL SetChildInt(int nItemID,int iValue) { return SetDlgItemInt(m_hWnd,nItemID,(UINT)iValue,TRUE);}
-	inline BOOL SetChildInt(int nItemID,UINT uValue) { return SetDlgItemInt(m_hWnd,nItemID,uValue,FALSE); }
+	inline int  GetChildInt(LINT nItemID) { return (int)GetDlgItemInt(m_hWnd,nItemID,NULL,TRUE); }
+	inline UINT GetChildUINT(LINT nItemID) { return (UINT)GetDlgItemInt(m_hWnd,nItemID,NULL,FALSE); }
+	inline BOOL SetChildInt(LINT nItemID,int iValue) { return SetDlgItemInt(m_hWnd,nItemID,(UINT)iValue,TRUE);}
+	inline BOOL SetChildInt(LINT nItemID,UINT uValue) { return SetDlgItemInt(m_hWnd,nItemID,uValue,FALSE); }
 
-	inline int GetChildText(int nItemID,char *txtBuf,int txtMax) { return GetDlgItemText(m_hWnd,nItemID,txtBuf,txtMax); }
-	inline char* GetChildText(int nItemID,int *plen) { return GetDlgItemText2(m_hWnd,nItemID,plen); }
-	inline BOOL SetChildText(int nItemID,const char* txt) { return SetDlgItemText(m_hWnd,nItemID,txt); }
+	inline int GetChildText(LINT nItemID,char *txtBuf,int txtMax) { return GetDlgItemText(m_hWnd,nItemID,txtBuf,txtMax); }
+	inline char* GetChildText(LINT nItemID,int *plen) { return GetDlgItemText2(m_hWnd,nItemID,plen); }
+	inline BOOL SetChildText(LINT nItemID,const char* txt) { return SetDlgItemText(m_hWnd,nItemID,txt); }
 
-	inline BOOL IsChildEnable(int nItemID)	{ return ::IsWindowEnabled(GetChild(nItemID)); }
-	inline BOOL EnableChild(int nItemID,BOOL fEnable=TRUE){ return ::EnableWindow(GetChild(nItemID),fEnable); }
+	inline BOOL IsChildEnable(LINT nItemID)	{ return ::IsWindowEnabled(GetChild(nItemID)); }
+	inline BOOL EnableChild(LINT nItemID,BOOL fEnable=TRUE){ return ::EnableWindow(GetChild(nItemID),fEnable); }
 
-	inline BOOL IsChildVisible(int nItemID){ return ::IsWindowVisible(GetChild(nItemID)); }
-	inline BOOL VisibleChild(int nItemID,BOOL fVisible=TRUE)
+	inline BOOL IsChildVisible(LINT nItemID){ return ::IsWindowVisible(GetChild(nItemID)); }
+	inline BOOL VisibleChild(LINT nItemID,BOOL fVisible=TRUE)
 	{
 		return ::ShowWindow(GetChild(nItemID),fVisible?SW_SHOWNORMAL:SW_HIDE);
 	}
@@ -342,22 +342,22 @@ public:
 	inline UINT GetCaretBlinkTime(){ return ::GetCaretBlinkTime(m_hWnd); }
 	inline BOOL SetCaretBlinkTime(UINT uTime){ return ::SetCaretBlinkTime(m_hWnd,uTime); }
 
-	inline void CheckRadioButton(int idFirstButton, int idLastButton, int idCheckButton)
+	inline void CheckRadioButton(LINT idFirstButton, LINT idLastButton, LINT idCheckButton)
 	{
 		::CheckRadioButton(m_hWnd,idFirstButton,idLastButton,idCheckButton);
 	}
 
-	inline int IsDlgButtonChecked(int idButton)
+	inline int IsDlgButtonChecked(LINT idButton)
 	{
 		return ::IsDlgButtonChecked(m_hWnd,idButton);
 	}
 
-	inline void CheckDlgButton(int nItemID,int nCheck){ return ::CheckDlgButton(m_hWnd,nItemID,nCheck); }
-	inline void SetDlgItemCheck(int nItemID) { CheckDlgButton(nItemID, BST_CHECKED); }
-	inline void ClearDlgItemCheck(int nItemID) { CheckDlgButton(nItemID, BST_UNCHECKED); }
-	inline void MyCheckRadioButton(int idFirstButton, int idLastButton, int idCheckButton)
+	inline void CheckDlgButton(LINT nItemID,int nCheck){ return ::CheckDlgButton(m_hWnd,nItemID,nCheck); }
+	inline void SetDlgItemCheck(LINT nItemID) { CheckDlgButton(nItemID, BST_CHECKED); }
+	inline void ClearDlgItemCheck(LINT nItemID) { CheckDlgButton(nItemID, BST_UNCHECKED); }
+	inline void MyCheckRadioButton(LINT idFirstButton, LINT idLastButton, LINT idCheckButton)
 	{
-		for(int i=idFirstButton;i<=idLastButton;i++)
+		for(LINT i=idFirstButton;i<=idLastButton;i++)
 		{
 			if(i==idCheckButton)
 				SetDlgItemCheck(i);
@@ -366,7 +366,7 @@ public:
 		}
 	}
 
-	inline void SetChildFocus(int nItemID){ SetFocus(GetChild(nItemID)); }
+	inline void SetChildFocus(UINT nItemID){ SetFocus(GetChild(nItemID)); }
 
 	inline int MessageBox(const char* pszCaption=NULL,const char* pszText=NULL,DWORD dwStyle = MB_OK|MB_ICONINFORMATION)
 	{
@@ -419,8 +419,8 @@ public:
 	}
 
 	//timer
-	inline BOOL SetTimer(int id,unsigned int speed){ return ::SetTimer(m_hWnd,id,speed); }
-	inline void KillTimer(int id){ ::KillTimer(m_hWnd,id); }
+	inline BOOL SetTimer(LINT id,unsigned int speed){ return ::SetTimer(m_hWnd,id,speed); }
+	inline void KillTimer(LINT id){ ::KillTimer(m_hWnd,id); }
 
 	//scroll control
 	inline BOOL EnableScrollBar(int iSBar=SB_HORZ,BOOL bEnable=TRUE)
@@ -998,7 +998,7 @@ protected:
 typedef struct _pop_menu_template POPMENUTEMPLATE;
 typedef POPMENUTEMPLATE * PPOPMENUTEMPLATE;
 typedef struct _menu_item_template{
-	int   Id;//=-1 mean create a sperator
+	LINT   Id;//=-1 mean create a sperator
 	UINT  initState;
 	const char* strCaption;
 	PPOPMENUTEMPLATE subMenu;
@@ -1050,9 +1050,9 @@ public:
 	BOOL LoadMenuBar(PMENUBARTEMPLATE pMenuBarTemplate);
 	BOOL LoadPopupMenu(PPOPMENUTEMPLATE pPopMenuTemplate);
 
-	inline BOOL InsertMenuItem(int item,BOOL flag,PMENUITEMINFO pmii){ return ::InsertMenuItem(m_hMenu,item,flag,pmii)==0; }
+	inline BOOL InsertMenuItem(LINT item,BOOL flag,PMENUITEMINFO pmii){ return ::InsertMenuItem(m_hMenu,item,flag,pmii)==0; }
 
-	inline BOOL InsertMenuItem(int item,int id,const char* strCaption,UINT state=MFS_ENABLED,HMENU hSubmenu=(HMENU)NULL)
+	inline BOOL InsertMenuItem(LINT item, LINT id,const char* strCaption,UINT state=MFS_ENABLED,HMENU hSubmenu=(HMENU)NULL)
 	{
 		MENUITEMINFO mii;
 		mii.id = id;
@@ -1075,7 +1075,7 @@ public:
 		return InsertMenuItem(item,MF_BYPOSITION,&mii);
 	}
 
-	inline BOOL InsertSeparator(int item)
+	inline BOOL InsertSeparator(LINT item)
 	{
 		MENUITEMINFO mii;
 		mii.type = MFT_SEPARATOR;
@@ -1083,7 +1083,7 @@ public:
 		return InsertMenuItem(item,MF_BYPOSITION,&mii);
 	}
 
-	inline int TrackPopupMenu(int x=0,int y=0,HWND hWnd=(HWND)NULL,UINT flag=TPM_LEFTALIGN)
+	inline int TrackPopupMenu(LINT x=0,int y=0,HWND hWnd=(HWND)NULL,UINT flag=TPM_LEFTALIGN)
 	{
 		return ::TrackPopupMenu(m_hMenu,flag,x,y,hWnd);
 	}
@@ -1092,18 +1092,18 @@ public:
 
 	inline int GetMenuItemCount(){ return ::GetMenuItemCount(m_hMenu); }
 
-	inline int GetMenuItemID(int iPos){ return ::GetMenuItemID(m_hMenu,iPos); }
+	inline LINT GetMenuItemID(int iPos){ return ::GetMenuItemID(m_hMenu,iPos); }
 
 	inline HMENU GetPopupSubMenu(){ return ::GetPopupSubMenu(m_hMenu); }
 
 	inline HMENU GetSubMenu(int iPos){ return ::GetSubMenu(m_hMenu,iPos); }
 
-	inline void EnableMenuItem(int item,BOOL fEnable=TRUE)
+	inline void EnableMenuItem(LINT item,BOOL fEnable=TRUE)
 	{
 		::EnableMenuItem(m_hMenu,item,MF_BYPOSITION|((fEnable)?MFS_ENABLED:MFS_DISABLED));
 	}
 
-	inline int GetMenuItemInfo(int item,PMENUITEMINFO pmii,BOOL flag=MF_BYCOMMAND)
+	inline int GetMenuItemInfo(UINT item,PMENUITEMINFO pmii,BOOL flag=MF_BYCOMMAND)
 	{
 		return ::GetMenuItemInfo(m_hMenu,item,flag,pmii);
 	}
@@ -1112,21 +1112,21 @@ public:
 
 	inline int IsMenu(){ return ::IsMenu(m_hMenu); }
 
-	inline int DeleteMenu(int item,BOOL flag=MF_BYCOMMAND){ return ::DeleteMenu(m_hMenu,item,flag); }
+	inline int DeleteMenu(LINT item,BOOL flag=MF_BYCOMMAND){ return ::DeleteMenu(m_hMenu,item,flag); }
 
-	inline int RemoveMenu(int item,BOOL flag=MF_BYCOMMAND){ return ::RemoveMenu(m_hMenu,item,flag); }
+	inline int RemoveMenu(LINT item,BOOL flag=MF_BYCOMMAND){ return ::RemoveMenu(m_hMenu,item,flag); }
 
-	inline int CheckMenuRadioItem(int first,int last,int checkItem,UINT flag=MF_BYCOMMAND)
+	inline int CheckMenuRadioItem(LINT first,LINT last,LINT checkItem,UINT flag=MF_BYCOMMAND)
 	{
 		return ::CheckMenuRadioItem(m_hMenu,first,last,checkItem,flag);
 	}
 
-	inline int SetMenuItemBitmaps(int item,UINT flag=MF_BYCOMMAND,PBITMAP hBmpUnchecked=NULL,PBITMAP hBmpChecked=NULL)
+	inline int SetMenuItemBitmaps(LINT item,UINT flag=MF_BYCOMMAND,PBITMAP hBmpUnchecked=NULL,PBITMAP hBmpChecked=NULL)
 	{
 		return ::SetMenuItemBitmaps(m_hMenu,item,flag,hBmpUnchecked,hBmpChecked);
 	}
 
-	inline int SetMenuItemInfo(int item,PMENUITEMINFO pmii,UINT flag=MF_BYCOMMAND)
+	inline int SetMenuItemInfo(LINT item,PMENUITEMINFO pmii,UINT flag=MF_BYCOMMAND)
 	{
 		return ::SetMenuItemInfo(m_hMenu,item,flag,pmii);
 	}

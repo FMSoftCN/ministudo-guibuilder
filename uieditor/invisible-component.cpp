@@ -179,7 +179,7 @@ int InvisibleComponent::saveBinToStream(BinStream *stream)
 	int size = 0;
 	int id;
 	FieldType * ft;
-	int begin_pos;
+	long begin_pos;
 
 	begin_pos = stream->tell();
 	//save stream
@@ -257,16 +257,16 @@ int InvisibleComponent::saveBinToStream(BinStream *stream)
 	if(count > 0)
 	{
 		//goto offset_props
-		stream->seek(begin_pos+ (int)&(((NCSRM_WINHEADER*)0)->offset_props), StreamStorage::seek_begin);
+		stream->seek(begin_pos+ (long)&(((NCSRM_WINHEADER*)0)->offset_props), StreamStorage::seek_begin);
 		stream->save32(cur_pos1-begin_pos);
-		stream->seek(begin_pos+ (int)&(((NCSRM_WINHEADER*)0)->nr_props),
+		stream->seek(begin_pos+ (long)&(((NCSRM_WINHEADER*)0)->nr_props),
 				StreamStorage::seek_begin);
 		stream->save32(count);
 		size += count * sizeof(Uint32) * 3;
 	}
 
 	//save size
-	stream->seek(begin_pos + (int)&(((NCSRM_WINHEADER*)0)->size), StreamStorage::seek_begin);
+	stream->seek(begin_pos + (long)&(((NCSRM_WINHEADER*)0)->size), StreamStorage::seek_begin);
 	stream->save32(size);
 
 	stream->seek(cur_pos2, StreamStorage::seek_begin);

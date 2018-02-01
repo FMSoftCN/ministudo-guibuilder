@@ -12,7 +12,7 @@ class NavigatorPanel: public Panel {
 
 	HWND hIconView;
 
-	static void _iconview_notifi(HWND hIconView, int id, int nc, DWORD add_data);
+	static void _iconview_notifi(HWND hIconView, LINT id, int nc, DWORD add_data);
 
 public:
 	NavigatorPanel(PanelEventHandler* handler);

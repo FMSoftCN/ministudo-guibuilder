@@ -82,7 +82,7 @@ protected:
 	BOOL isModified;
 	int  save_counter;
 
-	static BOOL auto_save_timer(HWND hwnd, int id, DWORD count);
+	static BOOL auto_save_timer(HWND hwnd, LINT id, DWORD count);
 
 	BITMAP bmp_logo;
 
@@ -143,9 +143,9 @@ protected:
 	void onEditorMenuCmd(int ctrlid, int code, HWND hwnd);
 	void onSysMenuCmd(int ctrlid, int code, HWND hwnd);
 
-	void onMenuStatusChanged(ResEditor* editor, int id, DWORD newStatus, int type=MSF_INCLUDE);
-    int getEditorMenuStatus(ResEditor* editor, int id, UINT* status);
-	void setEditorMenuStatus(ResEditorInfo * rei, int id, DWORD newStatus, int type=MSF_INCLUDE);
+	void onMenuStatusChanged(ResEditor* editor, LINT id, DWORD newStatus, int type=MSF_INCLUDE);
+    int getEditorMenuStatus(ResEditor* editor, LINT id, UINT* status);
+	void setEditorMenuStatus(ResEditorInfo * rei, LINT id, DWORD newStatus, int type=MSF_INCLUDE);
 
 	void onCSizeChanged(int cx, int cy);
 	//BOOL OnKeyDown(int scancode,DWORD key_status);

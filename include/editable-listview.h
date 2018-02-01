@@ -19,7 +19,7 @@ public:
 
 class EditableListView : public TMGStaticSubclass<MGListView>
 {
-	static void editable_listview_notifi(HWND hwnd, int id, int nc, DWORD add_data);
+	static void editable_listview_notifi(HWND hwnd, LINT id, int nc, DWORD add_data);
 
 	EditableListViewHandler * handler ;
 

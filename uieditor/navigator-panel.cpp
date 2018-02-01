@@ -252,7 +252,7 @@ void NavigatorPanel::showPanel()
 
 }
 
-void NavigatorPanel::_iconview_notifi(HWND hIconView, int id, int nc, DWORD add_data)
+void NavigatorPanel::_iconview_notifi(HWND hIconView, LINT id, int nc, DWORD add_data)
 {
 	NavigatorPanel * np = (NavigatorPanel*) GetWindowAdditionalData(hIconView);
 
