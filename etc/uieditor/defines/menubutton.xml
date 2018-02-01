@@ -9,7 +9,7 @@
 	<set-event id="4052"/>
 	
 	<event id="4070">
-		<handler>void onItemChanged(mWidget* self, int id, int nc, DWORD wParam)</handler>
+		<handler>void onItemChanged(mWidget* self, LINT id, int nc, DWORD wParam)</handler>
 		<code>NCS_NOTIFY_CODE(NCSN_MNUBTN_ITEMCHANGED)</code>
 	</event>
 </window>

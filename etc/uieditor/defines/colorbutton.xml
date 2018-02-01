@@ -14,7 +14,7 @@
 	<property name="CurColor" id="7" type="color" default="0xFFFFFFFF"/>
 
 	<event id="4050">
-		<handler>void onColorChanged(mColorButton *self, int id, int nc, DWORD add_data)</handler>
+		<handler>void onColorChanged(mColorButton *self, LINT id, int nc, DWORD add_data)</handler>
 		<code>NCS_NOTIFY_CODE(NCSN_CLRBTN_COLORCHANGED)</code>
 	</event>
 </window>

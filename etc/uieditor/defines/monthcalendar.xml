@@ -11,7 +11,7 @@
 	<property name="Day" type="int"/>
 	
 	<event id="4050">
-		<handler>void onYearChanged(mMonthCalendar* self, int id, int nc, DWORD add_data)</handler>
+		<handler>void onYearChanged(mMonthCalendar* self, LINT id, int nc, DWORD add_data)</handler>
 		<code>NCS_NOTIFY_CODE(NCSN_CDR_YEAR_CHANGED)</code>
 	</event>
 	

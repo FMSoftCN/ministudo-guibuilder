@@ -78,7 +78,7 @@
 		<content>return TRUE;</content>
 	</event>
 	<event>
-		<handler>void onFontChanged(mWidget* self, int message)</handler>
+		<handler>void onFontChanged(mWidget* self, UINT message)</handler>
 		<code>MSG_FONTCHANGED</code>
 	</event>
 	<event>
@@ -96,27 +96,27 @@
         <content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
 	</event>
 	<event>
-		<handler>BOOL onKeyDown(mWidget* self, int message, int scancode, DWORD key_status)</handler>
+		<handler>BOOL onKeyDown(mWidget* self, UINT message, int scancode, DWORD key_status)</handler>
 		<code>MSG_KEYDOWN</code>
 		<content>return NCSR_CONTINUE_MSG; /*continue Default message process*/</content>
 	</event>
 	<event>
-		<handler>BOOL onKeyUp(mWidget* self, int message, int scancode, DWORD key_status)</handler>
+		<handler>BOOL onKeyUp(mWidget* self, UINT message, int scancode, DWORD key_status)</handler>
 		<code>MSG_KEYUP</code>
 		<content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
 	</event>
 	<event>
-		<handler>BOOL onChar(mWidget* self, int message, int scancode, DWORD key_status)</handler>
+		<handler>BOOL onChar(mWidget* self, UINT message, int scancode, DWORD key_status)</handler>
 		<code>MSG_CHAR</code>
 		<content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
 	</event>
 	<event>
-		<handler>BOOL onSysKeyDown(mWidget* self, int message, int scancode, DWORD key_status)</handler>
+		<handler>BOOL onSysKeyDown(mWidget* self, UINT message, int scancode, DWORD key_status)</handler>
 		<code>MSG_SYSKEYDOWN</code>
 		<content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
 	</event>
 	<event>
-		<handler>BOOL onSysKeyUp(mWidget* self, int message, int scancode, DWORD key_status)</handler>
+		<handler>BOOL onSysKeyUp(mWidget* self, UINT message, int scancode, DWORD key_status)</handler>
 		<code>MSG_SYSKEYUP</code>
 		<content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
 	</event>
@@ -126,77 +126,77 @@
 		<content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
 	</event>
 	<event>
-		<handler>BOOL onKeyLongPress(mWidget* self, int message, int scancode, DWORD key_status)</handler>
+		<handler>BOOL onKeyLongPress(mWidget* self, UINT message, int scancode, DWORD key_status)</handler>
 		<code>MSG_KEYLONGPRESS</code>
 		<content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
 	</event>
 	<event>
-		<handler>BOOL onKeyAlwaysPress(mWidget* self, int message, int scancode, DWORD key_status)</handler>
+		<handler>BOOL onKeyAlwaysPress(mWidget* self, UINT message, int scancode, DWORD key_status)</handler>
 		<code>MSG_KEYALWAYSPRESS</code>
 		<content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
 	</event>
 	<event>
-		<handler>BOOL onLButtonDown(mWidget* self, int message, int x, int y, DWORD key_status)</handler>
+		<handler>BOOL onLButtonDown(mWidget* self, UINT message, int x, int y, DWORD key_status)</handler>
 		<code>MSG_LBUTTONDOWN</code>
 		<content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
 	</event>
 	<event>
-		<handler>BOOL onLButtonUp(mWidget* self, int message, int x, int y, DWORD key_status)</handler>
+		<handler>BOOL onLButtonUp(mWidget* self, UINT message, int x, int y, DWORD key_status)</handler>
 		<code>MSG_LBUTTONUP</code>
 		<content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
 	</event>
 	<event>
-		<handler>BOOL onLButtonDblClk(mWidget* self, int message, int x, int y, DWORD key_status)</handler>
+		<handler>BOOL onLButtonDblClk(mWidget* self, UINT message, int x, int y, DWORD key_status)</handler>
 		<code>MSG_LBUTTONDBLCLK</code>
 		<content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
 	</event>
 	<event>
-		<handler>BOOL onMouseMove(mWidget* self, int message, int x, int y, DWORD key_status)</handler>
+		<handler>BOOL onMouseMove(mWidget* self, UINT message, int x, int y, DWORD key_status)</handler>
 		<code>MSG_MOUSEMOVE</code>
 		<content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
 	</event>
 	<event>
-		<handler>BOOL onRButtonDown(mWidget* self, int message, int x, int y, DWORD key_status)</handler>
+		<handler>BOOL onRButtonDown(mWidget* self, UINT message, int x, int y, DWORD key_status)</handler>
 		<code>MSG_RBUTTONDOWN</code>
 		<content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
 	</event>
 	<event>
-		<handler>BOOL onRButtonUp(mWidget* self, int message, int x, int y, DWORD key_status)</handler>
+		<handler>BOOL onRButtonUp(mWidget* self, UINT message, int x, int y, DWORD key_status)</handler>
 		<code>MSG_RBUTTONUP</code>
 		<content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
 	</event>
 	<event>
-		<handler>BOOL onRButtonDblClk(mWidget* self, int message, int x, int y, DWORD key_status)</handler>
+		<handler>BOOL onRButtonDblClk(mWidget* self, UINT message, int x, int y, DWORD key_status)</handler>
 		<code>MSG_RBUTTONDBLCLK</code>
 		<content>return NCSR_CONTINUE_MSG; /*continue default message process*/</content>
 	</event>
 	<event>
-		<handler>int onHitTest(mWidget* self, int message, int x, int y)</handler>
+		<handler>int onHitTest(mWidget* self, UINT message, int x, int y)</handler>
 		<code>MSG_HITTEST</code>
 		<content>return _c(self)->wndProc(self, message, (WPARAM)x, (LPARAM)y);</content>
 	</event>
 	<event>
-		<handler>BOOL onCommand(mWidget* self, int id, int code, HWND hCtrl)</handler>
+		<handler>BOOL onCommand(mWidget* self, LINT id, int code, HWND hCtrl)</handler>
 		<code>MSG_COMMAND</code>
 		<content>return NCSR_CONTINUE_MSG;/*continue default message process*/</content>
 	</event>
 	<event>
-		<handler>void onDestroy(mWidget* self, int message)</handler>
+		<handler>void onDestroy(mWidget* self, UINT message)</handler>
 		<code>MSG_DESTROY</code>
 	</event>
 	<event>
-		<handler>void onSetFocus(mWidget* self, int message)</handler>
+		<handler>void onSetFocus(mWidget* self, UINT message)</handler>
 		<code>MSG_SETFOCUS</code>
 		<content/>
 	</event>
 	<event>
-		<handler>void onKillFocus(mWidget* self, int message)</handler>
+		<handler>void onKillFocus(mWidget* self, UINT message)</handler>
 		<code>MSG_KILLFOCUS</code>
 		<content/>
 	</event>
 	
 	<event>
-		<handler>void onActive(mWidget* self, int message)</handler>
+		<handler>void onActive(mWidget* self, UINT message)</handler>
 		<code>MSG_ACTIVE</code>
 		<content/>
 	</event>

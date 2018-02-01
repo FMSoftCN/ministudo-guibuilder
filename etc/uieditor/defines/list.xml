@@ -26,7 +26,7 @@
 	<property name="defNodeH" id="29" type="int" default="24"/>
 
 	<event id="4160">
-		<handler>void onSelChanged(mList *self, int id, int nc, DWORD addData)</handler>
+		<handler>void onSelChanged(mList *self, LINT id, int nc, DWORD addData)</handler>
 		<code>NCS_NOTIFY_CODE(NCSN_LIST_SELCHANGED)</code>
 	</event>
 

@@ -53,7 +53,7 @@
 	</property>
 	
 	<event id="4150">
-		<handler>void onEditChanged(mEdit *self, int id, int nc, DWORD add_data)</handler>
+		<handler>void onEditChanged(mEdit *self, LINT id, int nc, DWORD add_data)</handler>
 		<code>NCS_NOTIFY_CODE(NCSN_EDIT_CHANGE)</code>
 	</event>
 	
