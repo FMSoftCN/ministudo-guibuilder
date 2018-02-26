@@ -251,18 +251,18 @@ int WindowInstance::saveBinToStream(BinStream *stream)
 		stream->save32(0);
 
 	//4) save rdr id
-	stream->save32(ft->vtype->toRes(getField(PropRenderer)));
+	stream->save32((uint32_t)ft->vtype->toRes(getField(PropRenderer)));
 
 	//5) save x, y, w, h
-	stream->save32(getField(PropX));
-	stream->save32(getField(PropY));
-	stream->save32(getField(PropWidth));
-	stream->save32(getField(PropHeight));
+	stream->save32((uint32_t)getField(PropX));
+	stream->save32((uint32_t)getField(PropY));
+	stream->save32((uint32_t)getField(PropWidth));
+	stream->save32((uint32_t)getField(PropHeight));
 	//6) save style
-	stream->save32(getStyle());
+	stream->save32((uint32_t)getStyle());
 
 	//7) save exstyle
-	stream->save32(getExStyle());
+	stream->save32((uint32_t)getExStyle());
 	//save bkcolor
 	if(isFieldExist(PropBkColor))
 	{
