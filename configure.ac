@@ -2,12 +2,12 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.61)
-AC_INIT([guibuilder], [1.0.8], -)
+AC_INIT([guibuilder], [1.2.0], -)
 AC_CONFIG_SRCDIR([main.cpp])
 
 guibuilder_MAJOR_VERSION=1
-guibuilder_MINOR_VERSION=0
-guibuilder_MICRO_VERSION=8
+guibuilder_MINOR_VERSION=2
+guibuilder_MICRO_VERSION=0
 guibuilder_INTERFACE_AGE=0
 guibuilder_BINARY_AGE=0
 guibuilder_VERSION=$guibuilder_MAJOR_VERSION.$guibuilder_MINOR_VERSION.$guibuilder_MICRO_VERSION
