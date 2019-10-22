@@ -1,0 +1,51 @@
+1. What is the mgcfg-trans?
+	mgcfg-trans is a tool which used to translate configuration file into c code. It help the MiniGUI to struct the incore resource configueration
+
+2. How to use?
+    ./mgcfg-trans -?  to see the help info
+
+3. Macro control in MiniGUI.cfg
+Some thing is unused in the MiniGUI.cfg. To avoid the ununsed information to be translated, you can add macro control in the MiniGUI.cfg
+
+At the new line and the first char:
+
+#{{if/ifndef/ifdefine/else/elif ...
+....
+#}}
+
+"#{{"  tell the mgcfg-trans to expend as C preprocess 
+"#}}" tell the mgcfg-trans to expaned "#endif" in the new line 
+
+Use the macro control correctly:
+1. for all section, from the beginning of section name:
+
+#{{if ....
+[section]
+key1=value1
+key2=value2
+...
+#}}
+
+2. for part keys of a section, after the section name:
+[section]
+#{{if ...
+key1=value1
+key2=value2
+...
+#}}
+keym=valuem
+keyn=vlauen
+...
+
+3. the wrong using:
+1) cannot add new keys after "#}}" if "#{{" is before section
+#{{if ...
+[section]
+key1=value1
+key2=value2
+...
+#}}
+keym=valuem
+...
+
+
